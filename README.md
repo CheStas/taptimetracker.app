@@ -115,3 +115,16 @@ See `docs/SPEC.md` §20 for what is collected; `privacy/index.html` says the sam
 ```sh
 npm test
 ```
+
+## Releases
+Commit messages (and PR titles, for squash merges) follow [Conventional Commits](https://www.conventionalcommits.org/):
+`feat:`, `fix:`, `perf:`, `refactor:`, `docs:`, `test:`, `build:`, `ci:`, `chore:`, with an optional scope
+(`feat(summary): …`). A `!` after the type (`feat!: …`) or a `BREAKING CHANGE:` footer marks a breaking change.
+
+[release-please](https://github.com/googleapis/release-please) runs on every push to `main`
+(`.github/workflows/release-please.yml`). When there are `feat`, `fix`, `perf` or `revert` commits since the last
+release, it opens or updates a release PR that bumps `version` in `package.json` (shown in the app's About) and adds
+a section to [CHANGELOG.md](CHANGELOG.md). Merging that PR tags `vX.Y.Z` and creates the GitHub release. Before 1.0,
+`feat` bumps the minor version, `fix` the patch, and a breaking change the minor. Other types never trigger a release
+and stay out of the changelog. To force a version, add a `Release-As: 1.0.0` footer to a commit. Settings live in
+`release-please-config.json` and `.release-please-manifest.json`.
