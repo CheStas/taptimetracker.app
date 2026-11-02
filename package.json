@@ -1,4 +1,5 @@
 {
+  "name": "time-tracker",
   "type": "module",
   "private": true,
   "version": "0.7.0",
