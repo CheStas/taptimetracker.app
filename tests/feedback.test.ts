@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { onRequestPost } from '../functions/api/feedback.ts';
+import { onRequestPost } from '../worker/feedback.ts';
 
 const URL = 'https://tracker.example/api/feedback';
 

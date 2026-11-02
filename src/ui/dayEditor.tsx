@@ -11,6 +11,7 @@ import { openSessionEditor, confirmDeleteSession } from './activityPopup.tsx';
 import { TimelineBar, activityRange, logRows, GapRow, dayLookup } from './summary.tsx';
 import { Icon } from './icons.tsx';
 import { AppHeader, type Nav } from './header.tsx';
+import { Footer } from './footer.tsx';
 import { confirmDialog, openModal, useAppState } from './hooks.tsx';
 
 export function DayEditor({ nav, onBack }: { nav: Nav; onBack: () => void }) {
@@ -73,6 +74,7 @@ export function DayEditor({ nav, onBack }: { nav: Nav; onBack: () => void }) {
           }}>Clear whole day</button>
         </div>
       </div>
+      <Footer onSettings={nav.onSettings} />
     </section>
   );
 }

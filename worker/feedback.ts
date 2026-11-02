@@ -1,6 +1,6 @@
-// Cloudflare Pages Function: POST /api/feedback from the app's feedback form (src/ui/feedback.tsx). Each message is
-// stored in the KV namespace bound as FEEDBACK (Pages → Settings → Bindings), keyed by time, and kept until deleted.
-// Read them in the dashboard (Workers & Pages → KV) or with `wrangler kv key list --binding FEEDBACK`.
+// POST /api/feedback from the app's feedback form (src/ui/feedback.tsx), routed here by worker/index.ts. Each message
+// is stored in the KV namespace bound as FEEDBACK (kv_namespaces in wrangler.jsonc), keyed by time, and kept until deleted.
+// Read them in the dashboard (Workers & Pages → KV) or with `npx wrangler kv key list --binding FEEDBACK --remote`.
 // Nothing else is stored: no IP address, no country, no cookie.
 
 /** The part of Cloudflare's KVNamespace this uses. */

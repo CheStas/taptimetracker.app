@@ -1,5 +1,5 @@
 // Send feedback: a message, an optional email for a reply and, if ticked, the app version and browser, posted to the
-// site's Cloudflare Pages Function (functions/api/feedback.ts). Nothing from the tracker is attached.
+// site's Cloudflare Worker (worker/feedback.ts). Nothing from the tracker is attached.
 import { useState } from 'preact/hooks';
 import { track } from '../analytics.ts';
 import { openModal } from './hooks.tsx';

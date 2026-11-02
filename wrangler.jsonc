@@ -1,0 +1,16 @@
+// Cloudflare Worker config: the built site (dist/) as static assets, plus worker/index.ts for /api/* only.
+// `npx wrangler deploy` (or .github/workflows/deploy.yml) uploads both; this file, not the dashboard, sets the bindings.
+{
+  // The existing Worker's name (Workers & Pages); a different name creates a second Worker.
+  "name": "winter-hill-6e35",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "run_worker_first": ["/api/*"]
+  },
+  "kv_namespaces": [
+    // Storage & Databases → Workers KV → the namespace's ID (not secret).
+    { "binding": "FEEDBACK", "id": "522e77e2f1d74d68aaf5f2d1bd9567b9" }
+  ]
+}

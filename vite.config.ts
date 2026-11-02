@@ -10,8 +10,8 @@ import pkg from './package.json' with { type: 'json' };
 // `--mode single` builds only the app, inlined into one HTML file that works from file:// (see npm run build:single).
 const pages = { landing: 'index.html', app: 'app/index.html', privacy: 'privacy/index.html', terms: 'terms/index.html',
   similar: 'similar/index.html' };
-// The single file has no favicon or manifest next to it.
-const dropSiteLinks = { name: 'drop-site-links', transformIndexHtml: (html: string) => html.replace(/\s*<link rel="(icon|manifest)"[^>]*>/g, '') };
+// The single file has no favicon, manifest or icons next to it.
+const dropSiteLinks = { name: 'drop-site-links', transformIndexHtml: (html: string) => html.replace(/\s*<link rel="(icon|manifest|apple-touch-icon)"[^>]*>/g, '') };
 
 export default defineConfig(({ mode }) => ({
   base: './', // relative paths, so dist/ works from any static host or subpath

@@ -1,4 +1,5 @@
-// Entry point: view switching (hash routes), Esc/back, theme, full screen, quit, day rollover, wake lock, auto-export.
+// Entry point: view switching (hash routes), Esc/back, theme, full screen, quit, day rollover, wake lock, auto-export,
+// the service worker.
 import { render } from 'preact';
 import { useEffect, useLayoutEffect, useRef, useState } from 'preact/hooks';
 import { parseHash, routeHash, type Route, type View } from './route.ts';
@@ -11,7 +12,7 @@ import { Settings } from './ui/settings.tsx';
 import { Summary } from './ui/summary.tsx';
 import { DayEditor } from './ui/dayEditor.tsx';
 import { ModalHost, closeTopModal, confirmDialog, messageDialog } from './ui/hooks.tsx';
-import { ScrollTop, type Nav } from './ui/header.tsx';
+import { HoverTip, ScrollTop, type Nav } from './ui/header.tsx';
 import { openProfilePicker } from './ui/profiles.tsx';
 import { download, fmtDayShort, fmtHours, isoDay, slug } from './ui/util.ts';
 import '@fontsource/geist-sans/latin-400.css';
@@ -94,6 +95,7 @@ function App() {
       {view === 'summary' && <Summary nav={nav} onBack={up} onDayEditor={toEditor} />}
       {view === 'day-editor' && <DayEditor nav={nav} onBack={up} />}
       <ScrollTop />
+      <HoverTip />
       <ModalHost />
     </>
   );
@@ -135,6 +137,11 @@ const usageSnapshot = () => {
 
 async function start() {
   if (!DEMO) navigator.storage?.persist?.();
+  // The PWA's service worker (public/app/sw.js): installable without the browser's address bar, and offline. Not in dev
+  // or the single file (file:// has none).
+  if (import.meta.env.PROD && import.meta.env.MODE !== 'single' && 'serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').catch((e) => console.warn('Service worker unavailable:', e.message));
+  }
   await init();
   applyTheme();
   startStats();

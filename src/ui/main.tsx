@@ -1,5 +1,6 @@
 // Main screen: welcome strip, header with live totals, the activity buttons, the unused strip, today's timeline and
-// group totals, all in one viewport; the footer (privacy note, links, quick settings) sits below it.
+// group totals, all in one viewport; the footer (privacy note, links, quick settings) sits below it, also while the
+// welcome strip shows.
 import { useLayoutEffect, useRef, useState } from 'preact/hooks';
 import {
   tap, visibleActivities, activeSegment, todayTotals, todayTotal, activityById, isGroupOn, groupById, setSetting,
@@ -9,8 +10,9 @@ import { slotColor } from '../theme.ts';
 import type { Activity, Layout } from '../types.ts';
 import { fmtDur, fmtHMS, fmtHM, fmtClock } from './util.ts';
 import { openActivityPopup } from './activityPopup.tsx';
-import { AboutLinks, MainScreenSwitch, PrivacyNote, ThemeSwatches, VERSION, currentTheme, layoutName } from './about.tsx';
+import { AboutLinks, ThemeSwatches } from './about.tsx';
 import { AppHeader, type Nav } from './header.tsx';
+import { Footer } from './footer.tsx';
 import { useAppState, useNow } from './hooks.tsx';
 
 const LONG_PRESS_MS = 600;
@@ -35,7 +37,6 @@ export function Main({ nav, onDayEditor }: { nav: Nav; onDayEditor: () => void }
     main = main.filter((a) => totals.has(a.id));
   }
   const intro = !s.introDismissed;
-  const footer = s.showFooter && !intro;
 
   return (
     <div class="main-page">
@@ -61,7 +62,7 @@ export function Main({ nav, onDayEditor }: { nav: Nav; onDayEditor: () => void }
         </div>
         {s.showTimeline && !fresh && <DayTimeline now={now} />}
         {s.showGroups && !fresh && <GroupTotals now={now} />}
-        {footer && (
+        {s.showFooter && (
           <a class="more-hint" href="#footer" aria-label="More below: links and themes" onClick={(e) => {
             e.preventDefault();
             document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' });
@@ -70,7 +71,7 @@ export function Main({ nav, onDayEditor }: { nav: Nav; onDayEditor: () => void }
           </a>
         )}
       </section>
-      {footer && <Footer onSettings={nav.onSettings} />}
+      <Footer onSettings={nav.onSettings} />
     </div>
   );
 }
@@ -216,7 +217,7 @@ function DayTimeline({ now }: { now: number }) {
       </div>
       <div class="blocks">
         {blocks.map((b) => (
-          <div key={b.key} class={b.color ? 'block' : 'block idle'} title={b.title} style={{ flexGrow: b.ms, background: b.color }}>
+          <div key={b.key} class={b.color ? 'block' : 'block idle'} data-tip={b.title} style={{ flexGrow: b.ms, background: b.color }}>
             {b.color && b.ms >= LABEL_MIN_MS ? <span>{fmtHM(b.ms)}</span> : null}
           </div>
         ))}
@@ -244,33 +245,6 @@ function GroupTotals({ now }: { now: number }) {
     <div class="group-line">
       {[...entries, ['idle', idle] as [string, number]].map(([name, ms]) => <span key={name}>{name} <strong class="num">{fmtHM(ms)}</strong></span>)}
     </div>
-  );
-}
-
-/** The privacy note, then about, links, and the quick settings: theme and main screen. */
-function Footer({ onSettings }: { onSettings: (section?: string) => void }) {
-  const { layout } = useAppState().profile.settings;
-  const more = (section: string) => <button class="lnk lnk-muted" onClick={() => onSettings(section)}>More in Settings</button>;
-  return (
-    <footer id="footer" class="main-footer">
-      <PrivacyNote><button class="lnk lnk-muted" onClick={() => onSettings('backup')}>Export in Settings</button></PrivacyNote>
-      <div class="about">
-        <strong>Time Tracker</strong>
-        <span class="muted">A chess clock for your work day.</span>
-        <span class="muted num small">{VERSION}</span>
-      </div>
-      <nav aria-label="About" class="links"><AboutLinks variant="footer" /></nav>
-      <div class="quick">
-        <div class="theme-switch" role="group" aria-label="Theme">
-          <span class="muted theme-head"><span>Theme · <strong>{currentTheme().name}</strong></span>{more('appearance')}</span>
-          <ThemeSwatches />
-        </div>
-        <div class="theme-switch" role="group" aria-label="Main screen">
-          <span class="muted theme-head"><span>Buttons · <strong>{layoutName(layout)}</strong></span>{more('main-screen')}</span>
-          <MainScreenSwitch />
-        </div>
-      </div>
-    </footer>
   );
 }
 
