@@ -102,9 +102,9 @@ from 09:00, no meeting entry. Backdating from the popup and the day editor is no
 - When the app is opened after one or more missed boundaries, the day is closed at the first missed boundary.
 
 ## 6. Main screen
-The main screen fills exactly one viewport (`height: 100vh`, min 640 px) and never scrolls inside itself (only when
-the buttons cannot fit at all does the buttons area scroll, rather than clip). The footer sits below it and is reached
-by scrolling the page. All numbers use tabular figures so they do not jitter while ticking. All colors come from the
+The main screen fills exactly one viewport (`height: 100dvh`, the visible one on phones; min 640 px) and never scrolls
+inside itself (only when the buttons cannot fit at all does the buttons area scroll, rather than clip). The footer sits
+below it and is reached by scrolling the page; the page can always be scrolled (§6.1). All numbers use tabular figures so they do not jitter while ticking. All colors come from the
 theme (§16). Top to bottom:
 1. **Welcome strip** (new users only, see §6.1).
 2. **Header** (surface color, bottom border; the same header on every page, §6.3):
@@ -144,7 +144,9 @@ theme (§16). Top to bottom:
 5. **Timeline** (toggle, **on** by default; shown once something is tracked today): hour labels above (the first
    activity's start at the left edge, then each full hour, thinned out when narrow), a 36 px bar of rounded blocks
    with 3 px gaps, one per session plus the running one; untracked gaps between activities are `track`-colored idle
-   blocks. Blocks of 35 min or more show their duration inside; every block has a tooltip "Task · 1h 15m". It grows
+   blocks. Blocks of 35 min or more show their duration inside; hovering a block shows its label right above it at once: "Task · 1h 15m". On a touch screen the label shows while a
+   finger is on a block (sliding along the bar moves it from block to block) and for 1.5 s after it lifts; a tap does
+   not toggle it. This holds for the Summary timelines too. It grows
    live while an activity runs.
 6. **Group totals** (toggle, **on** by default; shown once something is tracked today): "productive 6h 51m ·
    non-productive 1h 52m · idle 0m", centered, muted labels and values in the text color. One entry per group with
@@ -157,11 +159,15 @@ theme (§16). Top to bottom:
   Summary and Settings stay; Reset day, Full screen and Close app move into a **⋯ More** button that opens a
   bottom-sheet menu (56 px rows, then Cancel; each item opens its own flow). Tiles: two per row (basis 150 px), min
   height 140 px, padding 16 px, total 32 px. Rows: padding 12 × 16 px, total 24 px. Circles: 62 % of the desktop
-  diameter, total 22 px. The buttons area scrolls inside the viewport; header, timeline and totals stay put. The
+  diameter, total 22 px. The buttons area scrolls inside the viewport; header, timeline and totals stay put.
+  **Touch screens** (`pointer: coarse`, all layouts): the buttons take no swipes (they are for tap and hold), so the
+  buttons area keeps a 36 px margin on each side, inside its scroll box; a swipe there scrolls the buttons, then the page. The
   timeline labels only every second hour; the "Tap to switch" hint is hidden. The page never scrolls sideways.
 
 ### 6.1 Footer and welcome strip
-- **Footer** (below the fold, toggle *Show the footer*, **on** by default):
+- **Footer** (at the bottom of every page: below the fold on Main, after the content on Summary, Settings and the day
+  editor; toggle *Show the footer*, **on** by default; the welcome strip does not hide it). With the footer off, every
+  page still ends in 96 px of empty space, so it can always be scrolled (a phone's browser bars, the Back to top button):
   - **Privacy note** first, full width (a `chip` box, radius 12 px): "**Privacy first: everything you track stays in this
     browser. No account and no internet connection needed. You are responsible for your data, so export a backup
     regularly.**" and, on the right, an "Export in Settings" link (opens Settings → Backup), styled like "More in
@@ -181,12 +187,11 @@ theme (§16). Top to bottom:
        Settings" link opens Settings → Appearance → Main screen.
 - **Welcome strip** (top, above the header) while the profile's `introDismissed` is false: "New here?", the first-run
   hint, the same three links, compact theme swatches and a **Got it** button that sets `introDismissed = true` for
-  good. While it shows, the footer and the more hint are hidden (the links are at the top instead); afterwards the
-  links are in the footer and in Settings → About.
+  good. The footer and the more hint stay below as usual; afterwards the links are in the footer and in Settings → About.
 - **Who is new:** only the profile opened on a first run (an empty database) starts with `introDismissed = false`.
   Other seeded profiles, profiles added later, imports and upgrades from earlier versions start with `true`.
 - **Kiosk:** in `--kiosk` mode the page still scrolls by touch; *Show the footer* off hides the footer and the more
-  hint completely.
+  hint (the empty space at the end stays).
 
 ### 6.2 Navigation, full screen, closing
 - **Esc = back**, following a fixed hierarchy with no loops: open popup → closes it; Day editor → where it was opened
@@ -314,10 +319,13 @@ The period (Day, Week, Month, Custom) changes what each block shows, not the ord
    days") · vs previous period ("+41h 51m", sub "previous: 2h 46m"; "—" and "no data in September" when it is empty).
 4. **Timeline** (Day): 44 px blocks from the first start to the last end (or now), idle gaps as `track` blocks,
    durations inside blocks of 40 min or more, hour labels with the start and end at the edges. Tap a block: it gets
-   a ring and the card shows "Task · 12:14 – 13:29 · 1h 15m"; tap again to clear. The running block pulses.
+   a ring and the card shows "Task · 12:14 – 13:29 · 1h 15m"; tap again to clear. With a mouse, hovering a block shows the
+   same label right above it. The running block pulses.
 5. **Per day** (Week, Month, Custom): a row per day: day name and date, a bar on a shared clock axis (08:00–20:00
-   widened to the earliest start and latest end, full hours, 4 labels), blocks at their real times colored by Group
-   by, durations inside blocks of 70 min or more (not in Month), the total. Dashed lines mark the average start and
+   widened to the earliest start and latest end, full hours, 4 labels centered on their time, each with a dotted line down
+   through every day's bar), blocks at their real times colored by Group
+   by, durations inside blocks of 70 min or more (not in Month), the total. Hovering a block shows "Task · 09:00 – 10:15 ·
+   1h 15m" (with the Group by value in brackets when grouped). Dashed lines mark the average start and
    end (explained in the card hint; hidden with fewer than 2 tracked days). Two or more empty days in a row collapse
    into one dashed line "Sat 24 – Sun 25 · nothing tracked". A tap opens a detail strip (each group's time that day
    and "Open day ›"); one at a time. Rows are 44 px (bar 28 px), in Month 36 px (bar 20 px). Ranges longer than 45 days
@@ -565,8 +573,12 @@ Every popup uses one dialog component.
   your own** → `app/` (no `?demo`). A demo open in another tab gives way when a new one wipes the database.
 - **PWA:** `public/app/manifest.webmanifest` with `scope` and `start_url` = `app/`, so the installed app opens straight
   in the app and never shows the site pages. Icons: `public/favicon.svg` (also the site's favicon) and PNGs rendered
-  from it (`public/app/icon-192.png`, `icon-512.png`). There is no service worker yet, so the app needs the network
-  to load.
+  from it (`public/app/icon-192.png`, `icon-512.png`). A service worker (`public/app/sw.js`, registered in production
+  builds) makes it installable as a standalone app (no browser address bar; without one, Chrome may only add a browser
+  shortcut) and lets it open offline: network first, the last fetched copy of each file as the fallback. The feedback
+  API and the stats always use the network. `app/index.html` also has `mobile-web-app-capable`,
+  `apple-mobile-web-app-capable` and an `apple-touch-icon`. Links to the site pages leave the app's scope, so an
+  installed app shows them with the browser's toolbar.
 - `public/` is copied as is. The single-file build (`--mode single`) builds only the app and drops the favicon and
   manifest links.
 

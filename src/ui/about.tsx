@@ -88,7 +88,7 @@ export const MAIN_TOGGLES: { key: keyof Settings; label: string; hint: string; i
   { key: 'unusedStrip', label: 'Move unused activities to a strip', hint: 'Activities with no time today become small chips under the buttons', icon: 'unusedStrip' },
   { key: 'showTimeline', label: 'Show today’s timeline', hint: 'The colored session bar at the bottom of the main screen' },
   { key: 'showGroups', label: 'Show group totals', hint: 'Time per group and idle time, on one line under the timeline' },
-  { key: 'showFooter', label: 'Show the footer', hint: 'Links and the quick settings at the very bottom' },
+  { key: 'showFooter', label: 'Show the footer', hint: 'Links and the quick settings at the bottom of every page' },
 ];
 
 /** Footer: the layout switch and the icon toggles. */

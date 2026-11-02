@@ -102,11 +102,20 @@ a.lnk { display: inline-flex; align-items: center; justify-content: center; gap:
 .scroll-top:hover { background: var(--accent); filter: brightness(1.06); }
 .scroll-top.shown { opacity: 1; transform: none; pointer-events: auto; }
 @media (prefers-reduced-motion: reduce) { .scroll-top { transition: none; } }
-/* Room at the bottom of every scrolling page so the button never covers the last controls. */
-.main-footer, .settings-layout, .summary, .page { padding-bottom: 96px !important; }
+/* Room at the bottom of every page, so the button never covers the last controls and the page can always be scrolled
+   (also on Main, whose screen is exactly one viewport): the footer's padding, or this space when the footer is off. */
+.app-footer { padding-bottom: 96px !important; }
+.end-space { height: 96px; flex: none; }
 
-/* ---------- main screen: exactly one viewport, the footer below it ---------- */
-.main-screen { height: 100vh; min-height: 640px; display: flex; flex-direction: column; }
+/* The hover label of timeline blocks ([data-tip]), floating just above the block. */
+.hover-tip {
+  position: fixed; z-index: 20; transform: translateY(-100%); max-width: calc(100vw - 16px); padding: 6px 10px;
+  border-radius: 8px; background: var(--text); color: var(--bg); font-size: 13px; font-weight: 500; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis; pointer-events: none; box-shadow: 0 2px 8px var(--shadow);
+}
+
+/* ---------- main screen: exactly one viewport (the visible one on phones), the footer below it ---------- */
+.main-screen { height: 100vh; height: 100dvh; min-height: 640px; display: flex; flex-direction: column; }
 
 .welcome {
   display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding: 8px var(--pad-x);
@@ -260,14 +269,14 @@ a.got-it { display: inline-flex; align-items: center; text-decoration: none; }
 .more-hint { align-self: center; display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 20px; margin-bottom: 2px; color: var(--muted); flex: none; }
 .more-hint svg { width: 20px; height: 12px; }
 
-.main-footer {
+.app-footer {
   display: flex; flex-wrap: wrap; gap: 32px 56px; padding: 36px var(--pad-x) 40px;
   border-top: 1px solid var(--line); background: var(--surface); font-size: 14px;
 }
-.main-footer .about { flex: 1 1 260px; display: flex; flex-direction: column; gap: 8px; }
-.main-footer .about strong { font-size: 16px; font-weight: 600; }
-.main-footer .about .muted:not(.num) { max-width: 340px; }
-.main-footer .links { flex: 0 1 200px; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+.app-footer .about { flex: 1 1 260px; display: flex; flex-direction: column; gap: 8px; }
+.app-footer .about strong { font-size: 16px; font-weight: 600; }
+.app-footer .about .muted:not(.num) { max-width: 340px; }
+.app-footer .links { flex: 0 1 200px; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
 .quick { flex: 2 1 420px; display: flex; flex-direction: column; gap: 22px; min-width: 0; }
 .theme-switch { display: flex; flex-direction: column; gap: 10px; }
 .quick-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
@@ -281,7 +290,7 @@ button.icon.round.toggle[aria-pressed="true"], button.icon.round.current { backg
 }
 .note strong { font-weight: 600; max-width: 760px; }
 .note .lnk { flex: none; }
-.main-footer .note { flex: 1 1 100%; }
+.app-footer .note { flex: 1 1 100%; }
 .theme-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .theme-head strong { color: var(--text); font-weight: 600; }
 
@@ -565,7 +574,10 @@ button.day-row:hover { background: color-mix(in srgb, var(--text) 3%, transparen
 .day-row.open { background: var(--chip); }
 .day-row.axis { min-height: 16px; }
 .axis-labels { position: relative; height: 16px; font-size: 11px; color: var(--muted); }
-.axis-labels span { position: absolute; top: 0; white-space: nowrap; }
+.axis-labels span { position: absolute; top: 0; white-space: nowrap; transform: translateX(-50%); }
+/* Dotted lines from the axis labels down through the day bars, under the blocks; they span the gaps between rows. */
+.axis-labels .guide, .day-bar .guide { position: absolute; top: -8px; bottom: -8px; border-left: 1px dotted var(--muted); opacity: .6; transform: none; pointer-events: none; }
+.axis-labels .guide { top: 15px; bottom: -4px; }
 .day-name { display: flex; flex-direction: column; line-height: 1.2; }
 .day-name strong { font-size: 13px; font-weight: 600; }
 .day-name .muted { font-size: 11px; }
@@ -691,4 +703,13 @@ button.day-row:hover { background: color-mix(in srgb, var(--text) 3%, transparen
   .day-row { grid-template-columns: 46px minmax(0, 1fr) 54px; gap: 8px; }
   .day-detail { margin-left: 0; }
   .share { flex-direction: column; align-items: stretch; }
+}
+
+/* ---------- touch screens ---------- */
+/* The buttons take no swipes (touch-action: none, for tap and hold), so the buttons area keeps a finger-wide margin on
+   both sides, inside its scroll box: a swipe there scrolls the buttons, then the page. All layouts. */
+@media (pointer: coarse) {
+  .buttons { padding-inline: 36px; }
+  /* Swiping along a timeline moves its label from block to block (HoverTip); up and down still scroll the page. */
+  .blocks, .day-bar { touch-action: pan-y; }
 }

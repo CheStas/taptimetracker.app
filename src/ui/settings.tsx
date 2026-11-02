@@ -18,6 +18,7 @@ import { download, isoDay, fmtSwitch, slug } from './util.ts';
 import { Icon } from './icons.tsx';
 import { AboutLinks, LayoutSwitch, MAIN_TOGGLES, PrivacyNote, UsageStats, VERSION, currentTheme } from './about.tsx';
 import { AppHeader, type Nav } from './header.tsx';
+import { Footer } from './footer.tsx';
 import { confirmDialog, useAppState } from './hooks.tsx';
 
 const MIN_SWITCH = [0, 15, 30, 60, 120, 180, 300];
@@ -228,6 +229,7 @@ export function Settings({ nav, onBack, onDayEditor, section }: { nav: Nav; onBa
           </section>
         </div>
       </div>
+      <Footer onSettings={nav.onSettings} />
     </div>
   );
 }

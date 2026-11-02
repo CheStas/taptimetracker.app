@@ -1,6 +1,6 @@
-// The header every page shares (profile button or back + page name, Today, Now, clock, app buttons) and the floating
-// "Back to top" button.
-import { useEffect, useState } from 'preact/hooks';
+// The header every page shares (profile button or back + page name, Today, Now, clock, app buttons), the floating
+// "Back to top" button and the hover label of timeline blocks.
+import { useEffect, useLayoutEffect, useRef, useState } from 'preact/hooks';
 import { activeSegment, activityById, firstStart, todayTotal } from '../state.ts';
 import { DEMO } from '../db.ts';
 import { slotColor } from '../theme.ts';
@@ -157,4 +157,71 @@ export function ScrollTop() {
       aria-hidden={!shown} onClick={() => window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' })}
     ><Icon name="arrowUp" /></button>
   );
+}
+
+/**
+ * The label of timeline blocks: an element with `data-tip` shows it right above itself (at once, unlike `title`, and not
+ * clipped by the block). Mouse: while hovering. Touch: from the moment a finger is down on a block, following it along
+ * the bar, until 1.5 s after it lifts; the tap itself still does what it does (the label is not tied to the click).
+ */
+export function HoverTip() {
+  const [tip, setTip] = useState<{ text: string; x: number; y: number } | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    let touching = false;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const show = (el: HTMLElement | null | undefined, touch: boolean) => {
+      clearTimeout(timer);
+      if (!el) return setTip(null);
+      const r = el.getBoundingClientRect();
+      // Higher above the block for a finger, so the fingertip does not cover it.
+      setTip({ text: el.dataset.tip!, x: r.left + r.width / 2, y: r.top - (touch ? 14 : 6) });
+    };
+    // A touch pointer stays on the element it went down on, so look up what is under the finger.
+    const under = (e: PointerEvent) => document.elementFromPoint(e.clientX, e.clientY)?.closest<HTMLElement>('[data-tip]');
+    const over = (e: PointerEvent) => {
+      if (e.pointerType === 'mouse') show((e.target as Element).closest<HTMLElement>('[data-tip]'), false);
+    };
+    const out = (e: PointerEvent) => e.pointerType === 'mouse' && !e.relatedTarget && setTip(null);
+    const down = (e: PointerEvent) => {
+      if (e.pointerType === 'mouse') return;
+      const el = under(e);
+      touching = Boolean(el);
+      show(el, true);
+    };
+    const move = (e: PointerEvent) => {
+      const el = touching && under(e);
+      if (el) show(el, true);
+    };
+    const up = () => {
+      if (!touching) return;
+      touching = false;
+      timer = setTimeout(() => setTip(null), 1500);
+    };
+    const hide = () => {
+      clearTimeout(timer);
+      touching = false;
+      setTip(null);
+    };
+    const events: [string, EventListener][] = [
+      ['pointerover', over as EventListener], ['pointerout', out as EventListener], ['pointerdown', down as EventListener],
+      ['pointermove', move as EventListener], ['pointerup', up], ['pointercancel', hide],
+    ];
+    for (const [type, fn] of events) document.addEventListener(type, fn);
+    window.addEventListener('scroll', hide, { passive: true });
+    return () => {
+      clearTimeout(timer);
+      for (const [type, fn] of events) document.removeEventListener(type, fn);
+      window.removeEventListener('scroll', hide);
+    };
+  }, []);
+  // Centered over the block, kept 8 px inside the window.
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el || !tip) return;
+    const w = el.offsetWidth;
+    el.style.left = `${Math.max(8, Math.min(tip.x - w / 2, innerWidth - w - 8))}px`;
+  }, [tip]);
+  if (!tip) return null;
+  return <div ref={ref} class="hover-tip" role="tooltip" style={{ top: `${tip.y}px` }}>{tip.text}</div>;
 }

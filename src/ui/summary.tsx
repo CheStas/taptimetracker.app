@@ -16,6 +16,7 @@ import {
 import { fmtClock, fmtHM, fmtHours, fmtHoursShort, fmtRange, fmtDayShort, targetText } from './util.ts';
 import { Icon } from './icons.tsx';
 import { AppHeader, type Nav } from './header.tsx';
+import { Footer } from './footer.tsx';
 import { useAppState, useNow } from './hooks.tsx';
 
 // ---------- shared with the day editor ----------
@@ -203,7 +204,7 @@ export function Summary({ nav, onBack, onDayEditor }: { nav: Nav; onBack: () => 
             {isDay && <DayTimelineCard day={stats.days[0]} g={g} nameOf={nameIn(dayRecords)} />}
             {!isDay && (
               <PerDay
-                period={period} stats={stats} g={g} resetHour={s.resetHour} weekStart={weekStart}
+                period={period} stats={stats} g={g} nameOf={nameIn(dayRecords)} resetHour={s.resetHour} weekStart={weekStart}
                 onOpenDay={(n) => setPeriod(periodOf('day', n, weekStart))}
               />
             )}
@@ -221,6 +222,7 @@ export function Summary({ nav, onBack, onDayEditor }: { nav: Nav; onBack: () => 
           </>}
         </>}
       </div>
+      <Footer onSettings={nav.onSettings} />
     </div>
   );
 }
@@ -511,10 +513,11 @@ function DayTimelineCard({ day, g, nameOf }: { day: DayStats; g: Grouping; nameO
         {blocks.map((b, i) => {
           const ms = b.end - b.start;
           const name = b.idle ? 'Idle' : nameOf(b.p.activityId, b.p.dayId);
+          const end = !b.idle && b.p.live ? 'now' : fmtClock(b.end);
           return (
             <button
               key={i} class={`block${b.idle ? ' idle' : ''}`} aria-pressed={sel === i}
-              aria-label={`${name} ${fmtClock(b.start)} to ${!b.idle && b.p.live ? 'now' : fmtClock(b.end)}`}
+              aria-label={`${name} ${fmtClock(b.start)} to ${end}`} data-tip={`${name} · ${fmtClock(b.start)} – ${end} · ${fmtHM(ms)}`}
               style={{ flexGrow: ms, background: b.idle ? undefined : g.color(g.keyOf(b.p.activityId)) }}
               onClick={() => setSel(sel === i ? null : i)}
             >
@@ -530,8 +533,8 @@ function DayTimelineCard({ day, g, nameOf }: { day: DayStats; g: Grouping; nameO
 
 // ---------- Week / Month / Custom: per day ----------
 
-function PerDay({ period, stats, g, resetHour, weekStart, onOpenDay }: {
-  period: Period; stats: PeriodStats; g: Grouping; resetHour: number; weekStart: number; onOpenDay: (n: DayNum) => void;
+function PerDay({ period, stats, g, nameOf, resetHour, weekStart, onOpenDay }: {
+  period: Period; stats: PeriodStats; g: Grouping; nameOf: NameOf; resetHour: number; weekStart: number; onOpenDay: (n: DayNum) => void;
 }) {
   const [sel, setSel] = useState<DayNum | null>(null);
   const compact = period.kind === 'month';
@@ -560,6 +563,9 @@ function PerDay({ period, stats, g, resetHour, weekStart, onOpenDay }: {
   const [lo, hi] = axis;
   const pos = (ms: number) => `${((ms - lo) / (hi - lo)) * 100}%`;
   const base0 = dayStart(period.from, resetHour);
+  const ticks = axisTicks(axis);
+  // A dotted line down from each axis label through every day's bar.
+  const guides = ticks.map((t) => <span key={t} class="guide" style={{ left: pos(t) }} />);
   const showAvg = stats.tracked > 1;
   const hint = showAvg
     ? `dashed: average start ${fmtClock(base0 + stats.avgStart!)} · end ${fmtClock(base0 + stats.avgEnd!)} · tap a day for details`
@@ -569,9 +575,8 @@ function PerDay({ period, stats, g, resetHour, weekStart, onOpenDay }: {
       <div class="day-row axis">
         <span />
         <span class="num axis-labels">
-          {axisTicks(axis).map((t, i) => (
-            <span key={i} style={{ left: pos(t), transform: i === 0 ? 'none' : i === 3 ? 'translateX(-100%)' : 'translateX(-50%)' }}>{fmtClock(base0 + t)}</span>
-          ))}
+          {ticks.map((t) => <span key={t} style={{ left: pos(t) }}>{fmtClock(base0 + t)}</span>)}
+          {guides}
         </span>
         <span />
       </div>
@@ -593,10 +598,13 @@ function PerDay({ period, stats, g, resetHour, weekStart, onOpenDay }: {
             <button class={`day-row${open ? ' open' : ''}`} aria-expanded={open} onClick={() => setSel(open ? null : d.day)}>
               <span class="day-name"><strong>{fmtDow(d.day)}</strong><span class="muted">{fmtMD(d.day)}</span></span>
               <span class="day-bar">
+                {guides}
                 {d.pieces.map((p) => {
                   const ms = p.end - p.start;
+                  const key = g.keyOf(p.activityId);
+                  const tip = `${nameOf(p.activityId, p.dayId)}${g.dim ? ` (${g.name(key)})` : ''} · ${fmtClock(p.start)} – ${p.live ? 'now' : fmtClock(p.end)} · ${fmtHM(ms)}`;
                   return (
-                    <span key={`${p.segId}-${p.start}`} class="day-block" style={{ left: pos(p.start - base), width: pos(lo + ms), background: g.color(g.keyOf(p.activityId)) }}>
+                    <span key={`${p.segId}-${p.start}`} class="day-block" data-tip={tip} style={{ left: pos(p.start - base), width: pos(lo + ms), background: g.color(key) }}>
                       {!compact && ms >= 70 * MIN ? <span>{fmtHM(ms)}</span> : null}
                     </span>
                   );
