@@ -592,6 +592,6 @@ Every popup uses one dialog component.
 - **Choice:** localStorage `usage-stats` = `on`/`off`, shared by the app (Settings → About) and the privacy page.
   Without a choice it is on, unless the browser sends Do Not Track or Global Privacy Control. Off also sets Umami's own
   `umami.disabled`.
-- **Feedback:** `functions/api/feedback.ts`, a Cloudflare Pages Function. It checks the origin, size, fields and a
-  honeypot, and stores the message in the KV namespace bound as `FEEDBACK` (503 until it is bound). No IP or country
-  is stored.
+- **Feedback:** `worker/feedback.ts`, in the site's Cloudflare Worker (`wrangler.jsonc`; only `/api/*` runs code, the
+  rest is static assets). It checks the origin, size, fields and a honeypot, and stores the message in the KV
+  namespace bound as `FEEDBACK` (503 until it is bound). No IP or country is stored.

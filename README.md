@@ -61,12 +61,18 @@ is a demo on sample data in its own throwaway database. Each browser on each dev
 own data; nothing syncs, so use export/import to move data. Prefer HTTPS: on plain HTTP the screen isn't kept awake
 and storage may be evicted.
 
-### Hosting on Cloudflare Pages (usage stats and feedback)
-Build command `npm run build`, output `dist`. The `functions/` folder becomes the site's `/api/feedback`.
+### Hosting on Cloudflare Workers (usage stats and feedback)
+`wrangler.jsonc` describes one Worker: `dist/` as static assets, served without running any code, and
+`worker/index.ts` for `/api/*` only (the site's `/api/feedback`). `npm run build && npx wrangler deploy` uploads both.
+- **Deploy:** `.github/workflows/deploy.yml` tests, builds and runs `wrangler deploy` on every push to `main`. It needs
+  the repository secrets `CLOUDFLARE_API_TOKEN` (the "Edit Cloudflare Workers" token template) and
+  `CLOUDFLARE_ACCOUNT_ID`; `name` in `wrangler.jsonc` must be the Worker's name.
 - **Usage stats:** create a website in [Umami Cloud](https://cloud.umami.is) and set `VITE_UMAMI_ID` (its website id)
-  as a build variable; set `VITE_UMAMI_SRC` too if the account is in another region. Without it no stats are sent.
-- **Feedback:** create a KV namespace and bind it as `FEEDBACK` (Settings → Bindings). Until then the form answers
-  "could not be sent". Read messages in the dashboard or with `wrangler kv key list --binding FEEDBACK`.
+  as a repository variable for the workflow; set `VITE_UMAMI_SRC` too if the account is in another region. Without it
+  no stats are sent.
+- **Feedback:** create a KV namespace (Storage & Databases → Workers KV) and put its ID in `kv_namespaces` in
+  `wrangler.jsonc`, bound as `FEEDBACK`. Without it the form answers "could not be sent". Read messages in the
+  dashboard or with `npx wrangler kv key list --binding FEEDBACK --remote`.
 
 See `docs/SPEC.md` §20 for what is collected; `privacy/index.html` says the same in plain words.
 

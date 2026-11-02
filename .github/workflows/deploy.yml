@@ -1,0 +1,39 @@
+name: deploy
+
+# Builds the site and deploys the Cloudflare Worker (wrangler.jsonc: dist/ as static assets plus worker/ for /api/*) on
+# every push to main, a merged pull request included.
+# Needs the repository secrets CLOUDFLARE_API_TOKEN ("Edit Cloudflare Workers" template) and CLOUDFLARE_ACCOUNT_ID;
+# the VITE_UMAMI_ID / VITE_UMAMI_SRC repository variables are optional.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+        env:
+          VITE_UMAMI_ID: ${{ vars.VITE_UMAMI_ID }}
+          VITE_UMAMI_SRC: ${{ vars.VITE_UMAMI_SRC }}
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
