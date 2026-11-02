@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.8.0](https://github.com/CheStas/taptimetracker.app/compare/v0.7.0...v0.8.0) (2026-11-02)
+
+
+### Features
+
+* footer on every page, scroll room and touch margins on main, timeline labels on hover and touch, per-day guide lines, service worker for a standalone PWA ([878f4b2](https://github.com/CheStas/taptimetracker.app/commit/878f4b2d64a19a206f56419b9577a2fc790dc0dd))
+* serve the site from a Cloudflare Worker with /api/feedback; deploy on push to main ([cfdfc51](https://github.com/CheStas/taptimetracker.app/commit/cfdfc5144a72dac6bd91ab83f8446023e14335d2))
+* serve the site from a Cloudflare Worker with /api/feedback; deploy on push to mainFeat/cloudflare worker ([d17c276](https://github.com/CheStas/taptimetracker.app/commit/d17c2764e737f292b42286b85ff11132f969c49a))
+
 ## [0.7.0](https://github.com/CheStas/taptimetracker.app/releases/tag/v0.7.0) (2026-11-02)
 
 First tagged release. It covers everything built so far; later entries list only what changed since the
