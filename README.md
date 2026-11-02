@@ -64,9 +64,10 @@ and storage may be evicted.
 ### Hosting on Cloudflare Workers (usage stats and feedback)
 `wrangler.jsonc` describes one Worker: `dist/` as static assets, served without running any code, and
 `worker/index.ts` for `/api/*` only (the site's `/api/feedback`). `npm run build && npx wrangler deploy` uploads both.
-- **Deploy:** `.github/workflows/deploy.yml` tests, builds and runs `wrangler deploy` on every push to `main`. It needs
-  the repository secrets `CLOUDFLARE_API_TOKEN` (the "Edit Cloudflare Workers" token template) and
-  `CLOUDFLARE_ACCOUNT_ID`; `name` in `wrangler.jsonc` must be the Worker's name.
+- **Deploy:** `.github/workflows/deploy.yml` tests, builds and runs `wrangler deploy` when a release PR is merged
+  (release-please creates the release), or by hand from the Actions tab. It needs the repository secrets
+  `CLOUDFLARE_API_TOKEN` (the "Edit Cloudflare Workers" token template) and `CLOUDFLARE_ACCOUNT_ID`; `name` in
+  `wrangler.jsonc` must be the Worker's name.
 - **Usage stats:** create a website in [Umami Cloud](https://cloud.umami.is) and set `VITE_UMAMI_ID` (its website id)
   as a repository variable for the workflow; set `VITE_UMAMI_SRC` too if the account is in another region. Without it
   no stats are sent.
@@ -129,8 +130,8 @@ Commit messages (and PR titles, for squash merges) follow [Conventional Commits]
 
 [release-please](https://github.com/googleapis/release-please) runs on every push to `main`
 (`.github/workflows/release-please.yml`). When there are `feat`, `fix`, `perf` or `revert` commits since the last
-release, it opens or updates a release PR that bumps `version` in `package.json` (shown in the app's About) and adds
-a section to [CHANGELOG.md](CHANGELOG.md). Merging that PR tags `vX.Y.Z` and creates the GitHub release. Before 1.0,
-`feat` bumps the minor version, `fix` the patch, and a breaking change the minor. Other types never trigger a release
-and stay out of the changelog. To force a version, add a `Release-As: 1.0.0` footer to a commit. Settings live in
-`release-please-config.json` and `.release-please-manifest.json`.
+release, it opens or updates a release PR that bumps `version` in `package.json` (shown in the app's About) and adds a
+section to [CHANGELOG.md](CHANGELOG.md). Merging that PR tags `vX.Y.Z`, creates the GitHub release and deploys the
+site. Before 1.0, `feat` bumps the minor version, `fix` the patch, and a breaking change the minor. Other types never
+trigger a release and stay out of the changelog. To force a version, add a `Release-As: 1.0.0` footer to a commit.
+Settings live in `release-please-config.json` and `.release-please-manifest.json`.
