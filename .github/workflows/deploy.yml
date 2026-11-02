@@ -1,13 +1,12 @@
 name: deploy
 
-# Builds the site and deploys the Cloudflare Worker (wrangler.jsonc: dist/ as static assets plus worker/ for /api/*) on
-# every push to main, a merged pull request included.
+# Builds the site and deploys the Cloudflare Worker (wrangler.jsonc: dist/ as static assets plus worker/ for /api/*).
+# Runs when release-please.yml creates a release, or by hand (Actions → deploy → Run workflow).
 # Needs the repository secrets CLOUDFLARE_API_TOKEN ("Edit Cloudflare Workers" template) and CLOUDFLARE_ACCOUNT_ID;
 # the VITE_UMAMI_ID / VITE_UMAMI_SRC repository variables are optional.
 
 on:
-  push:
-    branches: [main]
+  workflow_call:
   workflow_dispatch:
 
 permissions:

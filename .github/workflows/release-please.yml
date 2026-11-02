@@ -1,5 +1,8 @@
 name: release-please
 
+# On every push to main: open or update the release PR. When that PR is merged, release-please tags the release and
+# the site is deployed (deploy.yml). A release made with GITHUB_TOKEN triggers no other workflow, hence the job here.
+
 on:
   push:
     branches: [main]
@@ -11,8 +14,17 @@ permissions:
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
     steps:
       - uses: googleapis/release-please-action@v5
+        id: release
         with:
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
+
+  deploy:
+    needs: release-please
+    if: needs.release-please.outputs.release_created == 'true'
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
