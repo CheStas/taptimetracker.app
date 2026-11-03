@@ -75,7 +75,7 @@ and storage may be evicted.
   `wrangler.jsonc`, bound as `FEEDBACK`. Without it the form answers "could not be sent". Read messages in the
   dashboard or with `npx wrangler kv key list --binding FEEDBACK --remote`.
 
-See `docs/SPEC.md` §20 for what is collected; `privacy/index.html` says the same in plain words.
+See `docs/SPEC.md` §20 for what is collected; the privacy page (`src/site/pages/privacy.html`) says the same in plain words.
 
 ## Use
 - **Tap** to switch the activity; **tap the active row** to stop all.

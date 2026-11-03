@@ -18,6 +18,7 @@ import { Icon } from './icons.tsx';
 import { AppHeader, type Nav } from './header.tsx';
 import { Footer } from './footer.tsx';
 import { useAppState, useNow } from './hooks.tsx';
+import { locale, t, tn, type Key } from '../i18n.ts';
 
 // ---------- shared with the day editor ----------
 
@@ -58,7 +59,7 @@ export function logRows(segments: Segment[], now: number): LogRow[] {
 }
 
 export const GapRow = ({ gap }: { gap: Gap }) => (
-  <li class="gap muted"><span>{fmtRange(gap.start, gap.end)}</span><span>idle {fmtHM(gap.end - gap.start)}</span></li>
+  <li class="gap muted"><span>{fmtRange(gap.start, gap.end)}</span><span>{t('summary.idleFor', { time: fmtHM(gap.end - gap.start) })}</span></li>
 );
 
 /** Horizontal bar: one coloured block per segment, positioned within [from, to], labelled with its duration. */
@@ -86,16 +87,17 @@ export function TimelineBar({ from, to, segments, lookup }: { from: number; to: 
 // ---------- labels ----------
 
 const MIN = 60000;
-const fmtMD = (n: DayNum) => dayDate(n).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
-const fmtDow = (n: DayNum) => dayDate(n).toLocaleDateString(undefined, { weekday: 'short' });
-const fmtMonth = (n: DayNum) => dayDate(n).toLocaleDateString(undefined, { month: 'long', year: 'numeric' });
-const fmtMonthName = (n: DayNum) => dayDate(n).toLocaleDateString(undefined, { month: 'long' });
+const fmtMD = (n: DayNum) => dayDate(n).toLocaleDateString(locale(), { month: 'short', day: 'numeric' });
+const fmtDow = (n: DayNum) => dayDate(n).toLocaleDateString(locale(), { weekday: 'short' });
+const fmtMonth = (n: DayNum) => dayDate(n).toLocaleDateString(locale(), { month: 'long', year: 'numeric' });
+/** "September", "вересень": the month on its own (standalone form where the language has one). */
+const fmtMonthName = (n: DayNum) => new Intl.DateTimeFormat(locale(), { month: 'long' }).format(dayDate(n));
 /** "Wed 28" */
 const fmtDowDate = (n: DayNum) => `${fmtDow(n)} ${ymd(n)[2]}`;
-const days = (n: number) => `${n} day${n === 1 ? '' : 's'}`;
+const days = (n: number) => tn('summary.days', n);
 
 function periodLabel(p: Period, today: DayNum) {
-  if (p.kind === 'day') return `${p.from === today ? 'Today · ' : ''}${fmtDayShort(dayDate(p.from).getTime())}`;
+  if (p.kind === 'day') return p.from === today ? t('header.today', { date: fmtDayShort(dayDate(p.from).getTime()) }) : fmtDayShort(dayDate(p.from).getTime());
   if (p.kind === 'month') return fmtMonth(p.from);
   return `${fmtMD(p.from)} – ${fmtMD(p.to)}`;
 }
@@ -103,19 +105,28 @@ function periodLabel(p: Period, today: DayNum) {
 function periodSub(p: Period, today: DayNum) {
   if (p.kind === 'day' || p.kind === 'week') return '';
   const last7 = p.kind === 'custom' && p.to === today && periodLength(p) === 7;
-  return `${days(periodLength(p))}${last7 ? ' · Last 7 days' : ''}`;
+  return `${days(periodLength(p))}${last7 ? ` · ${quickLabel('Last 7 days')}` : ''}`;
 }
 
-const JUMP: Record<PeriodKind, string> = { day: 'Today', week: 'This week', month: 'This month', custom: 'Last 7 days' };
-const PERIODS: { kind: PeriodKind; label: string }[] = [
-  { kind: 'day', label: 'Day' }, { kind: 'week', label: 'Week' }, { kind: 'month', label: 'Month' }, { kind: 'custom', label: 'Custom' },
-];
+const QUICK_KEYS: Record<QuickRange, Key> = {
+  'Today': 'summary.quick.today', 'Yesterday': 'summary.quick.yesterday', 'This week': 'summary.quick.thisWeek',
+  'Last week': 'summary.quick.lastWeek', 'Last 7 days': 'summary.quick.last7', 'This month': 'summary.quick.thisMonth',
+  'Last month': 'summary.quick.lastMonth', 'Last 30 days': 'summary.quick.last30',
+};
+const quickLabel = (q: QuickRange) => t(QUICK_KEYS[q]);
+const JUMP: Record<PeriodKind, QuickRange> = { day: 'Today', week: 'This week', month: 'This month', custom: 'Last 7 days' };
+const PERIODS: PeriodKind[] = ['day', 'week', 'month', 'custom'];
 
-/** "previous week", "September", "the previous 10 days": what "vs …" compares with. */
-function previousName(p: Period) {
-  if (p.kind === 'month') return fmtMonthName(stepPeriod(p, -1).from);
-  if (p.kind === 'week') return 'previous week';
-  return `previous ${days(periodLength(p))}`;
+/** The "vs …" tile's label and its "no data in …" line: one sentence each per period kind, so every language can
+ * inflect them ("vs September", "the previous 10 days"). */
+function versus(p: Period) {
+  if (p.kind === 'month') {
+    const month = fmtMonthName(stepPeriod(p, -1).from);
+    return { label: t('summary.vsMonth', { month }), none: t('summary.noDataMonth', { month }) };
+  }
+  if (p.kind === 'week') return { label: t('summary.vsWeek'), none: t('summary.noDataWeek') };
+  const n = periodLength(p);
+  return { label: tn('summary.vsDays', n), none: tn('summary.noDataDays', n) };
 }
 
 // ---------- grouping ----------
@@ -135,7 +146,7 @@ function grouping(dim: Dimension | null): Grouping {
   return {
     dim,
     keyOf: (id) => optionOf(activityById(id), dim)?.id ?? NOT_SET,
-    name: (key) => opt(key)?.name ?? 'Not set',
+    name: (key) => opt(key)?.name ?? t('summary.notSet'),
     color: (key) => (opt(key) ? slotColor(opt(key)!.colorSlot) : 'var(--notset)'),
   };
 }
@@ -183,9 +194,9 @@ export function Summary({ nav, onBack, onDayEditor }: { nav: Nav; onBack: () => 
 
   return (
     <div class="summary-page">
-      <AppHeader nav={nav} page="summary" title="Summary" onBack={onBack} />
+      <AppHeader nav={nav} page="summary" title={t('summary.title')} onBack={onBack} />
       <div class="summary">
-        {past === null ? <p class="muted">Loading…</p> : <>
+        {past === null ? <p class="muted">{t('summary.loading')}</p> : <>
           <PeriodCard
             period={period} setPeriod={setPeriod} today={today} weekStart={weekStart} byDay={byDay}
           />
@@ -193,11 +204,11 @@ export function Summary({ nav, onBack, onDayEditor }: { nav: Nav; onBack: () => 
           {empty ? (
             <section class="card empty-card">
               <Icon name="calendar" />
-              <h2>{isDay ? `Nothing tracked on ${fmtDayShort(dayDate(period.from).getTime())}` : `Nothing tracked from ${fmtMD(period.from)} to ${fmtMD(period.to)}`}</h2>
-              <p class="muted">Pick another period, or start an activity on the main screen.</p>
+              <h2>{isDay ? t('summary.emptyDay', { date: fmtDayShort(dayDate(period.from).getTime()) }) : t('summary.emptyRange', { from: fmtMD(period.from), to: fmtMD(period.to) })}</h2>
+              <p class="muted">{t('summary.emptyHint')}</p>
               <div class="row-buttons">
-                <button class="primary" onClick={() => setPeriod(quickRange('Last 7 days', today, weekStart))}>Last 7 days</button>
-                <button class="secondary" onClick={onBack}>Main screen</button>
+                <button class="primary" onClick={() => setPeriod(quickRange('Last 7 days', today, weekStart))}>{quickLabel('Last 7 days')}</button>
+                <button class="secondary" onClick={onBack}>{t('footer.mainScreen')}</button>
               </div>
             </section>
           ) : <>
@@ -265,23 +276,23 @@ function PeriodCard({ period, setPeriod, today, weekStart, byDay }: PeriodCardPr
   const picking = picker && picker.a !== null && picker.z === null;
 
   const label = picker?.a != null ? `${fmtMD(picker.a)} – ${picker.z != null ? fmtMD(picker.z) : '…'}` : periodLabel(period, today);
-  const sub = picker?.a != null ? (picker.z != null ? days(picker.z - picker.a + 1) : 'pick the last day') : periodSub(period, today);
+  const sub = picker?.a != null ? (picker.z != null ? days(picker.z - picker.a + 1) : t('summary.pickLast')) : periodSub(period, today);
 
   return (
-    <section class="card period-card" aria-label="Period">
-      <div class="segmented period-kinds" role="group" aria-label="Period kind">
-        {PERIODS.map(({ kind, label: name }) => (
+    <section class="card period-card" aria-label={t('summary.period')}>
+      <div class="segmented period-kinds" role="group" aria-label={t('summary.periodKind')}>
+        {PERIODS.map((kind) => (
           <button key={kind} class="seg" aria-pressed={period.kind === kind} onClick={() => {
             if (kind === period.kind) return;
             const anchor = today >= period.from && today <= period.to ? today : period.kind === 'custom' ? period.to : period.from;
             setPeriod(periodOf(kind, anchor, weekStart));
-          }}>{name}</button>
+          }}>{t(`summary.kinds.${kind}`)}</button>
         ))}
       </div>
       <div class="period-line">
         <span class="period-nav">
-          <button class="icon round plain" aria-label="Previous period" onClick={() => setPeriod(stepPeriod(period, -1))}><Icon name="prev" /></button>
-          <button class="period-label" aria-expanded={Boolean(picker)} aria-label={`Choose period, ${label}`} onClick={() => {
+          <button class="icon round plain" aria-label={t('summary.prevPeriod')} onClick={() => setPeriod(stepPeriod(period, -1))}><Icon name="prev" /></button>
+          <button class="period-label" aria-expanded={Boolean(picker)} aria-label={t('summary.choosePeriod', { label })} onClick={() => {
             const [y, m] = ymd(period.from);
             setPicker(picker ? null : { month: dayNum(y, m, 1), a: null, z: null });
           }}>
@@ -289,14 +300,14 @@ function PeriodCard({ period, setPeriod, today, weekStart, byDay }: PeriodCardPr
             {sub && <span class="period-sub hide-sm">{sub}</span>}
             <span class={`chev${picker ? ' open' : ''}`}><Icon name="chevronDown" /></span>
           </button>
-          <button class="icon round plain" aria-label="Next period" onClick={() => setPeriod(stepPeriod(period, 1))}><Icon name="next" /></button>
-          {!samePeriod(period, current) && <button class="pill" onClick={() => setPeriod(current)}>{JUMP[period.kind]}</button>}
+          <button class="icon round plain" aria-label={t('summary.nextPeriod')} onClick={() => setPeriod(stepPeriod(period, 1))}><Icon name="next" /></button>
+          {!samePeriod(period, current) && <button class="pill" onClick={() => setPeriod(current)}>{quickLabel(JUMP[period.kind])}</button>}
         </span>
         {dims.length > 0 && (
-          <div class="group-by" role="group" aria-label="Group by">
-            <span class="muted small hide-sm">Group by</span>
+          <div class="group-by" role="group" aria-label={t('summary.groupBy')}>
+            <span class="muted small hide-sm">{t('summary.groupBy')}</span>
             <span class="segmented scroll">
-              {[{ id: 'activity', name: 'Activity' }, ...dims].map((d) => (
+              {[{ id: 'activity', name: t('summary.activity') }, ...dims].map((d) => (
                 <button key={d.id} class="seg" aria-pressed={(dimensionById(s.summaryGroupBy) ? s.summaryGroupBy : 'activity') === d.id} onClick={() => setSetting('summaryGroupBy', d.id)}>{d.name}</button>
               ))}
             </span>
@@ -315,7 +326,7 @@ function PeriodCard({ period, setPeriod, today, weekStart, byDay }: PeriodCardPr
 }
 
 /** Day number 3 (1970-01-04) is a Sunday, so 3 + w is weekday w. */
-const weekdayName = (w: number, style: 'short' | 'long') => dayDate(3 + w).toLocaleDateString(undefined, { weekday: style });
+const weekdayName = (w: number, style: 'short' | 'long') => dayDate(3 + w).toLocaleDateString(locale(), { weekday: style });
 const weekdayHeads = (weekStart: number) => Array.from({ length: 7 }, (_, i) => weekdayName((weekStart + i) % 7, 'short').slice(0, 2));
 
 /** Day and Week: the week strip; Custom up to 14 days: one cell per day; Month and longer (up to 62 days): a month grid. */
@@ -333,7 +344,7 @@ function Folded({ period, weekStart, byDay, onPick }: { period: Period; weekStar
           const v = dayTotal(byDay, n);
           return (
             <button key={n} class={`strip-cell${period.kind === 'day' && n === period.from ? ' on' : ''}`} style={heatStyle(v, longest)}
-              aria-label={`${fmtDayShort(dayDate(n).getTime())}, ${v ? fmtHours(v) : 'nothing tracked'}`} onClick={() => onPick(n)}>
+              aria-label={`${fmtDayShort(dayDate(n).getTime())}, ${v ? fmtHours(v) : t('summary.nothing')}`} onClick={() => onPick(n)}>
               <span class="strip-top">{fmtDowDate(n)}</span>
               <span class="num strip-bottom">{v ? fmtHoursShort(v) : '—'}</span>
             </button>
@@ -354,7 +365,7 @@ function Folded({ period, weekStart, byDay, onPick }: { period: Period; weekStar
           const inside = n >= period.from && n <= period.to;
           const v = dayTotal(byDay, n);
           return inside
-            ? <button key={n} class="num month-cell" style={heatStyle(v, longest)} aria-label={`${fmtDayShort(dayDate(n).getTime())}, ${v ? fmtHours(v) : 'nothing tracked'}`} onClick={() => onPick(n)}>{ymd(n)[2]}</button>
+            ? <button key={n} class="num month-cell" style={heatStyle(v, longest)} aria-label={`${fmtDayShort(dayDate(n).getTime())}, ${v ? fmtHours(v) : t('summary.nothing')}`} onClick={() => onPick(n)}>{ymd(n)[2]}</button>
             : <span key={n} />;
         })}
       </div>
@@ -386,9 +397,9 @@ function Picker({ picker, setPicker, today, weekStart, byDay, picking, onApply }
     <div class="picker">
       <div class="picker-cal">
         <div class="picker-month">
-          <button class="icon round plain" aria-label="Previous month" onClick={() => toMonth(-1)}><Icon name="prev" /></button>
+          <button class="icon round plain" aria-label={t('summary.prevMonth')} onClick={() => toMonth(-1)}><Icon name="prev" /></button>
           <strong>{fmtMonth(month)}</strong>
-          <button class="icon round plain" aria-label="Next month" onClick={() => toMonth(1)}><Icon name="next" /></button>
+          <button class="icon round plain" aria-label={t('summary.nextMonth')} onClick={() => toMonth(1)}><Icon name="next" /></button>
         </div>
         <div class="month-heads">{weekdayHeads(weekStart).map((h, i) => <span key={i}>{h}</span>)}</div>
         <div class="picker-cells">
@@ -400,7 +411,7 @@ function Picker({ picker, setPicker, today, weekStart, byDay, picking, onApply }
             return (
               <button
                 key={n} class={`num pick-cell${inside ? ' in' : ''}${edge ? ' edge' : ''}${n === today ? ' today' : ''}`} style={heatStyle(v, longest)}
-                aria-pressed={edge} aria-label={`${fmtDayShort(dayDate(n).getTime())}, ${v ? fmtHours(v) : 'nothing tracked'}`}
+                aria-pressed={edge} aria-label={`${fmtDayShort(dayDate(n).getTime())}, ${v ? fmtHours(v) : t('summary.nothing')}`}
                 onClick={() => setPicker(picking && n >= a! ? { ...picker, z: n, quick: undefined } : { ...picker, a: n, z: null, quick: undefined })}
               >{ymd(n)[2]}</button>
             );
@@ -408,24 +419,24 @@ function Picker({ picker, setPicker, today, weekStart, byDay, picking, onApply }
         </div>
       </div>
       <div class="picker-side">
-        <span class="muted small">Quick ranges</span>
+        <span class="muted small">{t('summary.quickRanges')}</span>
         <div class="pills">
           {QUICK_RANGES.map((q) => (
             <button key={q} class="pill" aria-pressed={picker.quick === q} onClick={() => {
               const p = quickRange(q, today, weekStart);
               const [py, pm] = ymd(p.from);
               setPicker({ month: dayNum(py, pm, 1), a: p.from, z: p.to, quick: q });
-            }}>{q}</button>
+            }}>{quickLabel(q)}</button>
           ))}
         </div>
-        <span class="muted">{picking ? 'Now tap the last day. Both days are included.' : 'Tap the first day, then the last day. Both days are included.'}</span>
-        <span class="muted small">Shaded days have tracked time. Weeks start on {wsName} (Settings → Day).</span>
+        <span class="muted">{t(picking ? 'summary.pickLastHint' : 'summary.pickFirstHint')}</span>
+        <span class="muted small">{t('summary.shadedHint', { day: wsName })}</span>
         <div class="row-buttons">
-          <button class="secondary" onClick={() => setPicker(null)}>Cancel</button>
+          <button class="secondary" onClick={() => setPicker(null)}>{t('common.cancel')}</button>
           <button class="primary" disabled={a === null} onClick={() => {
             if (picker.quick) onApply(quickRange(picker.quick, today, weekStart));
             else if (a !== null) onApply(rangePeriod(a, z ?? a, weekStart));
-          }}>Apply</button>
+          }}>{t('common.apply')}</button>
         </div>
       </div>
     </div>
@@ -441,30 +452,30 @@ function Tiles({ period, stats, prev, today, running }: { period: Period; stats:
     const sessions = d.pieces.length;
     const live = d.pieces.some((p) => p.live);
     tiles.push(
-      { label: 'Total tracked', value: fmtHours(d.total), sub: running ? 'running · live' : periodLabel(period, today).replace('Today · ', '') },
-      { label: 'First – last', value: d.first === null ? '—' : `${fmtClock(d.first)} – ${live ? 'now' : fmtClock(d.last!)}`, sub: d.first === null ? '' : 'first start to last end' },
-      { label: 'Idle', value: d.first === null ? '—' : fmtHours(d.idle), sub: 'gaps between activities' },
-      { label: 'Switches', value: sessions ? String(sessions - 1) : '—', sub: `${sessions} session${sessions === 1 ? '' : 's'}` },
+      { label: t('summary.total'), value: fmtHours(d.total), sub: running ? t('summary.live') : fmtDayShort(dayDate(period.from).getTime()) },
+      { label: t('summary.firstLast'), value: d.first === null ? '—' : `${fmtClock(d.first)} – ${live ? t('time.now') : fmtClock(d.last!)}`, sub: d.first === null ? '' : t('summary.firstLastHint') },
+      { label: t('header.idle'), value: d.first === null ? '—' : fmtHours(d.idle), sub: t('summary.idleHint') },
+      { label: t('summary.switches'), value: sessions ? String(sessions - 1) : '—', sub: tn('summary.sessions', sessions) },
     );
   } else {
     const diff = stats.total - prev.total;
     tiles.push(
-      { label: 'Total tracked', value: fmtHours(stats.total), sub: periodLabel(period, today) },
-      { label: 'Avg per tracked day', value: stats.tracked ? fmtHours(stats.total / stats.tracked) : '—', sub: stats.tracked ? `${stats.tracked} tracked day${stats.tracked === 1 ? '' : 's'}` : 'no tracked days' },
+      { label: t('summary.total'), value: fmtHours(stats.total), sub: periodLabel(period, today) },
+      { label: t('summary.avg'), value: stats.tracked ? fmtHours(stats.total / stats.tracked) : '—', sub: stats.tracked ? tn('summary.trackedDays', stats.tracked) : t('summary.noTrackedDays') },
       {
-        label: `vs ${previousName(period)}`,
+        label: versus(period).label,
         value: prev.total && stats.total ? `${diff >= 0 ? '+' : '−'}${fmtHours(Math.abs(diff))}` : '—',
-        sub: prev.total ? `previous: ${fmtHours(prev.total)}` : `no data in ${period.kind === 'month' ? '' : 'the '}${previousName(period)}`,
+        sub: prev.total ? t('summary.previous', { time: fmtHours(prev.total) }) : versus(period).none,
       },
     );
   }
   return (
     <div class="tiles-grid">
-      {tiles.map((t) => (
-        <div key={t.label} class="fig">
-          <span class="fig-label">{t.label}</span>
-          <span class="num fig-value">{t.value}</span>
-          <span class="fig-sub">{t.sub}</span>
+      {tiles.map((tile) => (
+        <div key={tile.label} class="fig">
+          <span class="fig-label">{tile.label}</span>
+          <span class="num fig-value">{tile.value}</span>
+          <span class="fig-sub">{tile.sub}</span>
         </div>
       ))}
     </div>
@@ -499,25 +510,25 @@ function DayTimelineCard({ day, g, nameOf }: { day: DayStats; g: Grouping; nameO
     if (left > 0.08 && left < 0.92) ticks.push({ t, left });
   }
   const picked = sel !== null ? blocks[sel] : undefined;
-  const pickedName = picked && (picked.idle ? 'Idle' : nameOf(picked.p.activityId, picked.p.dayId));
+  const pickedName = picked && (picked.idle ? t('header.idle') : nameOf(picked.p.activityId, picked.p.dayId));
   return (
-    <Card label="Timeline" title="Timeline" hint={picked
-      ? <span class="strong">{pickedName} · {fmtClock(picked.start)} – {!picked.idle && picked.p.live ? 'now' : fmtClock(picked.end)} · {fmtHM(picked.end - picked.start)}</span>
-      : 'Tap a block for details'}>
+    <Card label={t('summary.timeline')} title={t('summary.timeline')} hint={picked
+      ? <span class="strong">{pickedName} · {fmtClock(picked.start)} – {!picked.idle && picked.p.live ? t('time.now') : fmtClock(picked.end)} · {fmtHM(picked.end - picked.start)}</span>
+      : t('summary.tapBlock')}>
       <div class="ticks num">
         <span style={{ left: 0, transform: 'none' }}>{fmtClock(from)}</span>
         {ticks.map(({ t, left }) => <span key={t} class={new Date(t).getHours() % 2 ? 'hide-sm' : ''} style={{ left: `${left * 100}%` }}>{fmtClock(t)}</span>)}
-        <span style={{ left: '100%', transform: 'translateX(-100%)' }}>{live ? 'now' : fmtClock(to)}</span>
+        <span style={{ left: '100%', transform: 'translateX(-100%)' }}>{live ? t('time.now') : fmtClock(to)}</span>
       </div>
       <div class="blocks big">
         {blocks.map((b, i) => {
           const ms = b.end - b.start;
-          const name = b.idle ? 'Idle' : nameOf(b.p.activityId, b.p.dayId);
-          const end = !b.idle && b.p.live ? 'now' : fmtClock(b.end);
+          const name = b.idle ? t('header.idle') : nameOf(b.p.activityId, b.p.dayId);
+          const end = !b.idle && b.p.live ? t('time.now') : fmtClock(b.end);
           return (
             <button
               key={i} class={`block${b.idle ? ' idle' : ''}`} aria-pressed={sel === i}
-              aria-label={`${name} ${fmtClock(b.start)} to ${end}`} data-tip={`${name} · ${fmtClock(b.start)} – ${end} · ${fmtHM(ms)}`}
+              aria-label={t('summary.blockLabel', { name, from: fmtClock(b.start), to: end })} data-tip={`${name} · ${fmtClock(b.start)} – ${end} · ${fmtHM(ms)}`}
               style={{ flexGrow: ms, background: b.idle ? undefined : g.color(g.keyOf(b.p.activityId)) }}
               onClick={() => setSel(sel === i ? null : i)}
             >
@@ -543,7 +554,7 @@ function PerDay({ period, stats, g, nameOf, resetHour, weekStart, onOpenDay }: {
     const rows = weekRows(stats.days, weekStart);
     const max = Math.max(1, ...rows.map((r) => r.total));
     return (
-      <Card label="Per week" title="Per week" hint="bar = total by group">
+      <Card label={t('summary.perWeek')} title={t('summary.perWeek')} hint={t('summary.perWeekHint')}>
         {rows.map((r) => (
           <div key={r.from} class="day-row">
             <span class="day-name"><strong>{fmtMD(r.from)}</strong><span class="muted">– {fmtMD(r.to)}</span></span>
@@ -568,10 +579,10 @@ function PerDay({ period, stats, g, nameOf, resetHour, weekStart, onOpenDay }: {
   const guides = ticks.map((t) => <span key={t} class="guide" style={{ left: pos(t) }} />);
   const showAvg = stats.tracked > 1;
   const hint = showAvg
-    ? `dashed: average start ${fmtClock(base0 + stats.avgStart!)} · end ${fmtClock(base0 + stats.avgEnd!)} · tap a day for details`
-    : 'tap a day for details';
+    ? t('summary.avgHint', { start: fmtClock(base0 + stats.avgStart!), end: fmtClock(base0 + stats.avgEnd!) })
+    : t('summary.tapDay');
   return (
-    <Card label="Per day" title="Per day" hint={hint} class={compact ? 'compact' : ''}>
+    <Card label={t('summary.perDay')} title={t('summary.perDay')} hint={hint} class={compact ? 'compact' : ''}>
       <div class="day-row axis">
         <span />
         <span class="num axis-labels">
@@ -585,7 +596,7 @@ function PerDay({ period, stats, g, nameOf, resetHour, weekStart, onOpenDay }: {
           return (
             <div key={`gap-${r.from}`} class="day-row gap-row">
               <span />
-              <span class="gap-text">{fmtDowDate(r.from)} – {fmtDowDate(r.to)} · nothing tracked</span>
+              <span class="gap-text">{fmtDowDate(r.from)} – {fmtDowDate(r.to)} · {t('summary.nothing')}</span>
               <span />
             </div>
           );
@@ -602,7 +613,7 @@ function PerDay({ period, stats, g, nameOf, resetHour, weekStart, onOpenDay }: {
                 {d.pieces.map((p) => {
                   const ms = p.end - p.start;
                   const key = g.keyOf(p.activityId);
-                  const tip = `${nameOf(p.activityId, p.dayId)}${g.dim ? ` (${g.name(key)})` : ''} · ${fmtClock(p.start)} – ${p.live ? 'now' : fmtClock(p.end)} · ${fmtHM(ms)}`;
+                  const tip = `${nameOf(p.activityId, p.dayId)}${g.dim ? ` (${g.name(key)})` : ''} · ${fmtClock(p.start)} – ${p.live ? t('time.now') : fmtClock(p.end)} · ${fmtHM(ms)}`;
                   return (
                     <span key={`${p.segId}-${p.start}`} class="day-block" data-tip={tip} style={{ left: pos(p.start - base), width: pos(lo + ms), background: g.color(key) }}>
                       {!compact && ms >= 70 * MIN ? <span>{fmtHM(ms)}</span> : null}
@@ -619,7 +630,7 @@ function PerDay({ period, stats, g, nameOf, resetHour, weekStart, onOpenDay }: {
                 {totalsBy(d.byActivity, g.keyOf).map(([k, v]) => (
                   <span key={k} class={`part${g.dim ? '' : ' cap'}`}><span class="sq" style={{ background: g.color(k) }} />{g.name(k)} <span class="num muted">{fmtHours(v.total)}</span></span>
                 ))}
-                <button class="pill strong" onClick={() => onOpenDay(d.day)}>Open day ›</button>
+                <button class="pill strong" onClick={() => onOpenDay(d.day)}>{t('summary.openDay')} ›</button>
               </div>
             )}
           </div>
@@ -654,10 +665,10 @@ function Share({ period, stats, g, nameOf }: { period: Period; stats: PeriodStat
           <span class="share-line">
             <span class="sq" style={{ background: slotColor(a?.colorSlot ?? 0) }} />
             <span class="ellipsis" title={nameOf(id, dayId)}>{nameOf(id, dayId)}</span>
-            {isRemoved(a) && <span class="muted small">(removed)</span>}
+            {isRemoved(a) && <span class="muted small">{t('editor.removed')}</span>}
           </span>
           {!nested && !isDay && target > 0 && (
-            <span class="share-sub">target {fmtHours(target)} · met on {targetMetDays(stats.days, id, target)} of {stats.tracked} days</span>
+            <span class="share-sub">{tn('summary.targetMet', stats.tracked, { target: fmtHours(target), met: targetMetDays(stats.days, id, target) })}</span>
           )}
         </span>
         <span class="num">{fmtHours(ms)}</span>
@@ -674,11 +685,11 @@ function Share({ period, stats, g, nameOf }: { period: Period; stats: PeriodStat
 
   return (
     <Card
-      label="Share" title={<>Share <span class="muted">· {g.dim?.name ?? 'Activity'}</span></>}
-      hint={g.dim ? 'tap an option to see its activities' : isDay ? '' : 'avg over tracked days'}
+      label={t('summary.share')} title={<>{t('summary.share')} <span class="muted">· {g.dim?.name ?? t('summary.activity')}</span></>}
+      hint={g.dim ? t('summary.tapOption') : isDay ? '' : t('summary.avgOver')}
     >
       <div class="share">
-        <svg class="donut" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="Share of time">
+        <svg class="donut" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label={t('summary.shareOfTime')}>
           <circle cx="80" cy="80" r={R} fill="none" stroke="var(--track)" stroke-width="22" />
           {groups.map(([k, v]) => {
             const len = (v.total / total) * CIRC;
@@ -689,11 +700,11 @@ function Share({ period, stats, g, nameOf }: { period: Period; stats: PeriodStat
             acc += len;
             return el;
           })}
-          <text x="80" y="80" text-anchor="middle" class="donut-total">{Math.round(total / 3600000)}h</text>
-          <text x="80" y="97" text-anchor="middle" class="donut-sub">tracked</text>
+          <text x="80" y="80" text-anchor="middle" class="donut-total">{t('summary.donutHours', { h: Math.round(total / 3600000) })}</text>
+          <text x="80" y="97" text-anchor="middle" class="donut-sub">{t('main.tracked')}</text>
         </svg>
         <div class="share-table">
-          <div class="share-row head"><span>Name</span><span>Total</span><span>Share</span><span class="hide-sm">{isDay ? 'Target' : 'Avg / day'}</span></div>
+          <div class="share-row head"><span>{t('summary.name')}</span><span>{t('summary.totalCol')}</span><span>{t('summary.share')}</span><span class="hide-sm">{t(isDay ? 'summary.target' : 'summary.avgDay')}</span></div>
           {g.dim
             ? groups.map(([k, v]) => {
               const on = Boolean(open[k]);
@@ -705,7 +716,7 @@ function Share({ period, stats, g, nameOf }: { period: Period; stats: PeriodStat
                       <span class={`chev-r${on ? ' open' : ''}`}><Icon name="chevronRight" /></span>
                       <span class="sq" style={{ background: g.color(k) }} />
                       <strong class="ellipsis">{g.name(k)}</strong>
-                      <span class="muted small nowrap">{acts.length} activit{acts.length === 1 ? 'y' : 'ies'}</span>
+                      <span class="muted small nowrap">{tn('settings.activityCount', acts.length)}</span>
                     </span>
                     <span class="num strong">{fmtHours(v.total)}</span>
                     <span class="num muted">{pct(v.total)}</span>
@@ -731,8 +742,8 @@ function Sessions({ day, stats, g, nameOf, onEdit }: { day: DayStats; stats: Per
   const row = (b: (typeof rows)[number], i: number) => (
     <div key={i} class={`log-row${b.idle ? ' idle' : ''}`}>
       <span class="sq" style={b.idle ? undefined : { background: slotColor(activityById(b.p.activityId)?.colorSlot ?? 0) }} />
-      <span class="ellipsis">{b.idle ? 'Idle' : nameOf(b.p.activityId, b.p.dayId)}</span>
-      <span class="num muted">{fmtClock(b.start)} – {!b.idle && b.p.live ? 'now' : fmtClock(b.end)}</span>
+      <span class="ellipsis">{b.idle ? t('header.idle') : nameOf(b.p.activityId, b.p.dayId)}</span>
+      <span class="num muted">{fmtClock(b.start)} – {!b.idle && b.p.live ? t('time.now') : fmtClock(b.end)}</span>
       <span class="num">{!b.idle && b.p.live ? '● ' : ''}{fmtHM(b.end - b.start)}</span>
     </div>
   );
@@ -747,20 +758,20 @@ function Sessions({ day, stats, g, nameOf, onEdit }: { day: DayStats; stats: Per
         head(k, g.name(k), g.color(k), v.total),
         ...rows.map((b, i) => (!b.idle && g.keyOf(b.p.activityId) === k ? row(b, i) : null)),
       ]),
-      ...(idle.length ? [head('idle', 'Idle', 'var(--track)', idle.reduce((sum, b) => sum + b.end - b.start, 0)), ...rows.map((b, i) => (b.idle ? row(b, i) : null))] : []),
+      ...(idle.length ? [head('idle', t('header.idle'), 'var(--track)', idle.reduce((sum, b) => sum + b.end - b.start, 0)), ...rows.map((b, i) => (b.idle ? row(b, i) : null))] : []),
     ];
   } else body = rows.map(row);
   return (
-    <section class="card" aria-label="Sessions">
+    <section class="card" aria-label={t('summary.sessionsTitle')}>
       <div class="card-head sessions-head">
-        <h2>Sessions <span class="muted">· {day.pieces.length} session{day.pieces.length === 1 ? '' : 's'}</span></h2>
+        <h2>{t('summary.sessionsTitle')} <span class="muted">· {tn('summary.sessions', day.pieces.length)}</span></h2>
         {g.dim && (
           <label class="check">
             <input type="checkbox" checked={s.summaryGroupLog} onChange={(e) => setSetting('summaryGroupLog', e.currentTarget.checked)} />
-            Group by {g.dim.name}
+            {t('summary.groupLog', { name: g.dim.name })}
           </label>
         )}
-        <button class="secondary push" onClick={onEdit}>Edit sessions…</button>
+        <button class="secondary push" onClick={onEdit}>{t('popup.editSessions')}</button>
       </div>
       {body}
     </section>

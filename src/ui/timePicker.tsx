@@ -1,5 +1,6 @@
 // Touch-friendly time picker: big HH:MM display, +/- steps and "x min ago" shortcuts.
 import { fmtClock } from './util.ts';
+import { t } from '../i18n.ts';
 
 const STEPS = [-15, -5, -1, 1, 5, 15];
 const AGO = [0, 5, 10, 15, 30, 60];
@@ -37,7 +38,7 @@ export function TimePicker({ value, onChange, min, max, label, disabled }: Props
         <div class="tp-ago">
           {AGO.map((m) => (
             <button type="button" key={m} class="pill" aria-pressed={fmtClock(value) === fmtClock(clampTime(now - m * 60000, min))} onClick={() => set(Date.now() - m * 60000)}>
-              {m ? `${m}m ago` : 'now'}
+              {m ? t('time.ago', { m }) : t('time.now')}
             </button>
           ))}
         </div>

@@ -2,6 +2,7 @@
 import type { ComponentChildren } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import { state, subscribe } from '../state.ts';
+import { t } from '../i18n.ts';
 
 /** Re-render on every state change; returns the (mutable) state. */
 export function useAppState() {
@@ -84,7 +85,7 @@ export function confirmDialog({ title, body, ok, danger, cancel = true }: Confir
         <h2 class="dialog-title">{title}</h2>
         <p class="dialog-text">{body}</p>
         <div class="dialog-actions">
-          {cancel && <button class="secondary" onClick={close}>Cancel</button>}
+          {cancel && <button class="secondary" onClick={close}>{t('common.cancel')}</button>}
           <button class={danger ? 'danger-fill' : 'primary'} onClick={() => {
             resolve(true);
             close();
@@ -96,7 +97,7 @@ export function confirmDialog({ title, body, ok, danger, cancel = true }: Confir
 }
 
 /** A message with an OK button. */
-export const messageDialog = (title: string, body: ComponentChildren) => confirmDialog({ title, body, ok: 'OK', cancel: false });
+export const messageDialog = (title: string, body: ComponentChildren) => confirmDialog({ title, body, ok: t('common.ok'), cancel: false });
 
 function Dialog({ m }: { m: Modal }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -106,7 +107,7 @@ function Dialog({ m }: { m: Modal }) {
     <div class="modal-backdrop" onClick={(e) => e.target === e.currentTarget && m.close()}>
       <div ref={ref} class={`modal modal-${m.size}`} role="dialog" aria-modal="true" tabIndex={-1}>
         <span class="grab" aria-hidden="true" />
-        {m.closeButton && <button class="modal-close icon round" aria-label="Close" onClick={m.close}>×</button>}
+        {m.closeButton && <button class="modal-close icon round" aria-label={t('common.close')} onClick={m.close}>×</button>}
         {m.content}
       </div>
     </div>

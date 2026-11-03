@@ -165,6 +165,10 @@ export function renderPage(page: Page, code: string, locales: Locale[]): string 
     .replace('<body>', `<body class="${page.body}">`);
 }
 
+/** Page path -> the languages it exists in, for the app's links to the site (__SITE_PAGES__). */
+export const sitePageLocales = (locales = loadLocales()) =>
+  Object.fromEntries(PAGES.map((p) => [p.path, pageLocales(p, locales).map((l) => l.code)]));
+
 export function sitemap(locales: Locale[]): string {
   const urls = PAGES.flatMap((page) => {
     const available = pageLocales(page, locales);

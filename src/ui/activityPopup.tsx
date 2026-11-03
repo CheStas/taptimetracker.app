@@ -8,6 +8,7 @@ import { slotColor } from '../theme.ts';
 import { fmtClock, fmtDur, fmtDurWords, fmtHM, fmtRange, targetText } from './util.ts';
 import { TimePicker, clampTime } from './timePicker.tsx';
 import { confirmDialog, openModal, useAppState, useNow } from './hooks.tsx';
+import { t, tn } from '../i18n.ts';
 
 export const openActivityPopup = (activityId: string, onEditSessions: () => void) =>
   openModal((close) => <ActivityPopup activityId={activityId} close={close} onEditSessions={onEditSessions} />, { size: 'activity' });
@@ -16,9 +17,9 @@ export const openActivityPopup = (activityId: string, onEditSessions: () => void
 export async function confirmDeleteSession(seg: Segment, now = Date.now()) {
   const a = activityById(seg.activityId);
   const ok = await confirmDialog({
-    title: 'Delete this session?',
-    body: `${a?.name ?? 'Session'} · ${fmtRange(seg.start, seg.end)} (${fmtDurWords(duration(seg, now))}). This time becomes idle. You can add it back in the day editor.`,
-    ok: 'Delete', danger: true,
+    title: t('session.deleteTitle'),
+    body: t('session.deleteBody', { name: a?.name ?? t('session.session'), range: fmtRange(seg.start, seg.end), duration: fmtDurWords(duration(seg, now)) }),
+    ok: t('common.delete'), danger: true,
   });
   if (ok) deleteSession(seg);
 }
@@ -50,8 +51,8 @@ function ActivityPopup({ activityId, close, onEditSessions }: { activityId: stri
         <div>
           <h2 class="dialog-title">{a.name}</h2>
           <span class="muted">
-            Today <span class="num strong">{fmtHM(total)}</span> in {list.length} session{list.length === 1 ? '' : 's'}
-            {running ? ' · running' : ''}{a.targetMin ? ` · ${targetText(a.targetMin, total)}` : ''}
+            {t('popup.today')} <span class="num strong">{fmtHM(total)}</span> {tn('popup.sessions', list.length)}
+            {running ? ` · ${t('popup.running')}` : ''}{a.targetMin ? ` · ${targetText(a.targetMin, total)}` : ''}
           </span>
         </div>
       </div>
@@ -60,23 +61,23 @@ function ActivityPopup({ activityId, close, onEditSessions }: { activityId: stri
           <li key={s.id}>
             <span class="num">{fmtRange(s.start, s.end)}</span>
             <span class={`num${s.end === null ? ' live' : ' muted'}`}>{s.end === null ? '● ' : ''}{fmtDur(duration(s, now))}</span>
-            <button class="ghost" onClick={() => openSessionEditor(s)}>Edit</button>
-            <button class="ghost danger" onClick={() => confirmDeleteSession(s, now)}>Delete</button>
+            <button class="ghost" onClick={() => openSessionEditor(s)}>{t('common.edit')}</button>
+            <button class="ghost danger" onClick={() => confirmDeleteSession(s, now)}>{t('common.delete')}</button>
           </li>
-        )) : <li class="muted">No sessions today.</li>}
+        )) : <li class="muted">{t('popup.noSessions')}</li>}
       </ul>
       <div class="correct">
-        <span class="label">Correct the timeline</span>
+        <span class="label">{t('popup.correct')}</span>
         <TimePicker value={since} onChange={setSince} min={state.day.startedAt} />
         <div class="since-actions">
-          <button class="fill-c" onClick={() => apply(a.id)}>▶ {a.name} active since {fmtClock(since)}</button>
-          <button onClick={() => apply(null)}>■ Stop all since {fmtClock(since)}</button>
+          <button class="fill-c" onClick={() => apply(a.id)}>▶ {t('popup.activeSince', { name: a.name, time: fmtClock(since) })}</button>
+          <button onClick={() => apply(null)}>■ {t('popup.stopSince', { time: fmtClock(since) })}</button>
         </div>
       </div>
       <button class="secondary wide" onClick={() => {
         close();
         onEditSessions();
-      }}>Edit sessions…</button>
+      }}>{t('popup.editSessions')}</button>
     </div>
   );
 }
@@ -96,20 +97,20 @@ function SessionEditor({ seg, day, close }: { seg: Segment; day: Day; close: () 
   const [running, setRunning] = useState(seg.end === null);
   return (
     <div class="dialog-body popup" style={{ '--c': a ? slotColor(a.colorSlot) : 'var(--muted)' }}>
-      <h2 class="dialog-title"><span class="sq" /> Edit {a?.name ?? 'session'}</h2>
-      <TimePicker value={start} onChange={setStart} min={day.startedAt} max={max} label="Start" />
+      <h2 class="dialog-title"><span class="sq" /> {t('session.editTitle', { name: a?.name ?? t('session.session') })}</h2>
+      <TimePicker value={start} onChange={setStart} min={day.startedAt} max={max} label={t('session.start')} />
       {max === undefined && (
         <label class="check">
-          <input type="checkbox" checked={running} onChange={(e) => setRunning(e.currentTarget.checked)} /> Still running
+          <input type="checkbox" checked={running} onChange={(e) => setRunning(e.currentTarget.checked)} /> {t('session.stillRunning')}
         </label>
       )}
-      <TimePicker value={end} onChange={setEnd} min={start} max={max} label="End" disabled={running} />
+      <TimePicker value={end} onChange={setEnd} min={start} max={max} label={t('session.end')} disabled={running} />
       <div class="dialog-actions">
-        <button class="secondary" onClick={close}>Cancel</button>
+        <button class="secondary" onClick={close}>{t('common.cancel')}</button>
         <button class="primary" onClick={() => {
           editSession(seg, start, running ? null : end);
           close();
-        }}>Save</button>
+        }}>{t('common.save')}</button>
       </div>
     </div>
   );

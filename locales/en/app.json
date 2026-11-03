@@ -1,0 +1,485 @@
+{
+  "common": {
+    "cancel": "Cancel",
+    "ok": "OK",
+    "close": "Close",
+    "off": "Off",
+    "save": "Save",
+    "apply": "Apply",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "rename": "Rename",
+    "back": "Back"
+  },
+  "time": {
+    "now": "now",
+    "ago": "{m}m ago"
+  },
+  "dur": {
+    "hms": "{h}h {m}m {s}s",
+    "ms": "{m}m {s}s",
+    "hm": "{h}h {m}m",
+    "hmShort": "{h}h{m}",
+    "m": "{m}m",
+    "sec": "{s} s",
+    "min": "{m} min"
+  },
+  "target": {
+    "left": "{time} left",
+    "over": "{time} over"
+  },
+  "demo": {
+    "title": "Demo",
+    "text": "Sample data in a throwaway profile: play freely, a reload starts it over. Your own data is not touched.",
+    "start": "Start your own"
+  },
+  "header": {
+    "switchProfile": "Switch profile, {name} is open",
+    "today": "Today · {date}",
+    "since": "since {time}",
+    "now": "Now",
+    "active": "Active",
+    "idle": "Idle",
+    "clock": "Clock",
+    "app": "App",
+    "reset": "Reset day",
+    "fullscreen": "Full screen",
+    "leaveFullscreen": "Leave full screen",
+    "close": "Close app",
+    "more": "More",
+    "moreLabel": "More: reset day, full screen, close app",
+    "top": "Back to top"
+  },
+  "main": {
+    "readyTitle": "Ready to start the day",
+    "ready": "{strong} · Tap an activity to start tracking · hold one to set an earlier start",
+    "unused": "Not used today",
+    "tapHint": "Tap to switch · tap the running one to stop · hold for sessions",
+    "moreBelow": "More below: links and themes",
+    "allGroupsOff": "Nothing to show: all groups are off (Settings → Groups).",
+    "noActivities": "No activities. Add some in Settings.",
+    "ofToday": "{pct}% of today",
+    "leftOfTarget": "{time} left of {target} target",
+    "overTarget": "{time} over target",
+    "running": "Running",
+    "idle": "Idle",
+    "runningTag": "(running)",
+    "timeline": "Today’s timeline",
+    "noGroup": "no group",
+    "tracked": "tracked",
+    "idleTotal": "idle"
+  },
+  "welcome": {
+    "label": "Welcome",
+    "title": "New here?",
+    "text": "Tap an activity to start the day · hold one to set an earlier start.",
+    "ok": "Got it"
+  },
+  "footer": {
+    "more": "More in Settings",
+    "export": "Export in Settings",
+    "tagline": "A chess clock for your work day.",
+    "theme": "Theme",
+    "mainScreen": "Main screen",
+    "buttons": "Buttons"
+  },
+  "about": {
+    "label": "About",
+    "what": "What is it?",
+    "similar": "Similar apps",
+    "feedback": "Send feedback",
+    "offline": "This page is on the website, which this offline file does not include.",
+    "privacyNote": "Privacy first: everything you track stays in this browser. No account and no internet connection needed. You are responsible for your data, so export a backup regularly.",
+    "statsUnavailable": "This copy (the demo, the offline file or a local build) sends no usage stats.",
+    "statsLabel": "Share anonymous usage stats",
+    "statsHint": "Which screens and features get used, never what you track. No cookies, no account, nothing personal.",
+    "statsDnt": "Your browser asks sites not to track, so this is off until you turn it on.",
+    "statsPlea": "It is your choice, and you can turn it off. Please consider leaving it on: Time Tracker is free, and these counts are the only way to know anyone uses it. If nobody does, it gets no more updates and will be retired.",
+    "statsLink": "What is collected"
+  },
+  "layout": {
+    "label": "Button layout",
+    "tiles": "Tiles",
+    "rows": "Rows",
+    "circles": "Circles"
+  },
+  "toggles": {
+    "popularity": {
+      "label": "Size buttons by today’s usage",
+      "hint": "Tiles grow wider, rows taller, circles larger as you use them"
+    },
+    "unusedStrip": {
+      "label": "Move unused activities to a strip",
+      "hint": "Activities with no time today become small chips under the buttons"
+    },
+    "showTimeline": {
+      "label": "Show today’s timeline",
+      "hint": "The colored session bar at the bottom of the main screen"
+    },
+    "showGroups": {
+      "label": "Show group totals",
+      "hint": "Time per group and idle time, on one line under the timeline"
+    },
+    "showFooter": {
+      "label": "Show the footer",
+      "hint": "Links and the quick settings at the bottom of every page"
+    }
+  },
+  "session": {
+    "session": "Session",
+    "deleteTitle": "Delete this session?",
+    "deleteBody": "{name} · {range} ({duration}). This time becomes idle. You can add it back in the day editor.",
+    "editTitle": "Edit {name}",
+    "start": "Start",
+    "end": "End",
+    "stillRunning": "Still running"
+  },
+  "popup": {
+    "today": "Today",
+    "sessions": {
+      "one": "in {n} session",
+      "other": "in {n} sessions"
+    },
+    "running": "running",
+    "noSessions": "No sessions today.",
+    "correct": "Correct the timeline",
+    "activeSince": "{name} active since {time}",
+    "stopSince": "Stop all since {time}",
+    "editSessions": "Edit sessions…"
+  },
+  "editor": {
+    "title": "Day editor",
+    "day": "Day",
+    "prev": "Previous day",
+    "next": "Next day",
+    "today": "Today · {date}",
+    "removed": "(removed)",
+    "noneToday": "No sessions today.",
+    "noneDay": "No sessions on this day.",
+    "addRange": "Add range",
+    "clearTodayTitle": "Clear today?",
+    "clearDayTitle": "Clear this day?",
+    "clearBody": "All its sessions are deleted. You can then rebuild the day with “Add range”.",
+    "clearOk": "Clear day",
+    "clear": "Clear whole day",
+    "idleNone": "idle (none)",
+    "from": "From",
+    "to": "To",
+    "keepRunning": "Until now and keep running"
+  },
+  "feedback": {
+    "title": "Send feedback",
+    "offline": "This offline file cannot send messages. Open the online version of the app to send feedback.",
+    "thanks": "Thank you",
+    "sent": "Your message is on its way. Every one of them is read.",
+    "intro": "A bug, a missing feature, or just that you use it: all of it helps decide what comes next.",
+    "message": "Your message",
+    "email": "Email",
+    "emailHint": "Email, only if you want a reply",
+    "device": "Include the app version and browser",
+    "failed": "It could not be sent just now. Your text is still here, try again in a moment.",
+    "sending": "Sending…",
+    "send": "Send"
+  },
+  "profiles": {
+    "switch": "Switch profile",
+    "runningIn": "{name} is running in {profile}.",
+    "anActivity": "An activity",
+    "runningNote": "{strong} It keeps counting while another profile is open.",
+    "statusRunning": "{name} running · {time} today",
+    "statusIdle": "Idle · last used {date}",
+    "statusNew": "Nothing tracked yet",
+    "open": "Open",
+    "switchTo": "Switch",
+    "manage": "Add, rename or delete profiles in Settings"
+  },
+  "settings": {
+    "title": "Settings",
+    "sectionsLabel": "Settings sections",
+    "sections": {
+      "profiles": "Profiles",
+      "groups": "Groups",
+      "categories": "Categories",
+      "activities": "Activities",
+      "appearance": "Appearance",
+      "day": "Day",
+      "device": "Device",
+      "backup": "Backup",
+      "about": "About"
+    },
+    "importFailed": "Import failed: {error}",
+    "up": "Move up",
+    "down": "Move down",
+    "activityCount": {
+      "one": "{n} activity",
+      "other": "{n} activities"
+    },
+    "profiles": {
+      "intro": "Each profile is a separate workspace with its own activities, groups, days, summary, settings and backup. One is open at a time; a running activity keeps counting while you are in another profile. A new profile starts with a copy of this profile’s settings.",
+      "placeholder": "New profile name, e.g. Home",
+      "add": "Add profile",
+      "name": "Profile name",
+      "isOpen": "open",
+      "openOther": "Open another profile first",
+      "deleteTitle": "Delete the profile “{name}”?",
+      "deleteBody": "ALL its activities, days and history are deleted. This cannot be undone (export a backup first)."
+    },
+    "groups": {
+      "intro": "The main screen shows activities of groups that are on, plus those without a group. Several groups can be on at once; a group stays on or off until you change it.",
+      "placeholder": "Add groups: one per line or comma-separated",
+      "name": "Group name",
+      "on": "On",
+      "deleteTitle": "Delete the group “{name}”?",
+      "deleteBody": "Its activities are kept and move to “no group”."
+    },
+    "categories": {
+      "intro": "Categories split your time in the Summary. A dimension has options; each activity picks at most one option per dimension. Activities without one count as “Not set”, so every dimension adds up to 100%.",
+      "empty": "No categories yet",
+      "example": "For example, {focus}: {productive} / {nonProductive}, or {company}: {people} / {alone}.",
+      "addExample": "Add “{name}” example",
+      "newName": "New dimension",
+      "addEmpty": "Add an empty dimension",
+      "placeholder": "New dimension, e.g. Energy",
+      "add": "Add dimension",
+      "dimension": "Dimension",
+      "dimensionName": "Dimension name",
+      "set": {
+        "one": "{set} of {n} activity set",
+        "other": "{set} of {n} activities set"
+      },
+      "deleteTitle": "Delete the dimension “{name}”?",
+      "deleteBody": "Every activity loses its option of it. Nothing else changes.",
+      "colorOf": "Color of {name}: {color}",
+      "optionName": "Option name",
+      "deleteOptionTitle": "Delete the option “{name}”?",
+      "deleteOptionBody": "Its activities become “Not set” for {dimension}.",
+      "addOption": "Add an option",
+      "newOption": "New option"
+    },
+    "activities": {
+      "taken": "Already exists (names are unique; a removed one can be restored or deleted below): {names}",
+      "placeholder": "Add activities: one per line or comma-separated",
+      "removedTitle": "Removed activities",
+      "removedIntro": "Removed activities keep their history; restore them any time. Delete takes one off this list, and its tracked time stays in the summary. Adding an activity with the same name later continues that history.",
+      "restore": "Restore",
+      "deleteTitle": "Delete “{name}”?",
+      "deleteBody": "It leaves this list for good. Its tracked time stays in the summary.",
+      "colorLabel": "Color of {name}: change in Activity colors",
+      "colorTitle": "Change in Appearance → Activity colors",
+      "name": "Name",
+      "exists": "An activity named “{name}” already exists.",
+      "group": "Group",
+      "noGroup": "No group",
+      "target": "target",
+      "min": "min",
+      "hasTime": "has time today",
+      "hideToday": "Hide today",
+      "remove": "Remove",
+      "removeTitle": "Remove “{name}”?",
+      "removeBody": "Its history is kept and it can be restored."
+    },
+    "theme": {
+      "lowContrast": "“{name}” is installed, but these activity colors are hard to see on its background (under 3:1): {slots}.",
+      "intro": "A theme sets the whole look: surfaces, text and the activity colors. The same idea as an editor or terminal theme.",
+      "mode": "Theme mode",
+      "fixed": "Fixed",
+      "system": "Follow system",
+      "import": "Import theme",
+      "systemNote": "Follow system: {light} in light mode, {dark} in dark mode. Tap a theme while the system is in that mode to change it (now: {mode}).",
+      "dark": "dark",
+      "light": "light",
+      "name": "Theme name",
+      "export": "Export",
+      "deleteTitle": "Delete the theme “{name}”?",
+      "deleteBody": "Profiles that use it switch to Paper or Graphite."
+    },
+    "colors": {
+      "title": "Activity colors",
+      "intro": "Each theme has 16 color slots, like a terminal palette. An activity picks a slot, so it changes color with the theme and stays readable in every one. With more activities than slots, colors repeat; names are always shown next to colors.",
+      "of": "{name} color",
+      "slot": "Slot {n}, {name}"
+    },
+    "day": {
+      "reset": "Automatic reset at",
+      "weekStart": "Week starts on",
+      "system": "System ({day})",
+      "weekHint": "used by the Week period, the calendar and the heatmap",
+      "minSwitch": "Minimum switch",
+      "minSwitchHint": "shorter runs go to the next (or previous) activity",
+      "autoExport": "Download a JSON backup when a day closes",
+      "autoExportHint": "One file per closed day, in your downloads",
+      "editTimeline": "Edit timeline…"
+    },
+    "device": {
+      "language": "Language",
+      "languageHint": "also used by the website on this device",
+      "fullscreen": "Start in full screen",
+      "fullscreenHint": "On the first tap; the full screen icon toggles, hold Esc to leave",
+      "awake": "Keep the screen on",
+      "awakeHint": "While the app is open and visible",
+      "awakeUnavailable": "Not available here: needs localhost or HTTPS"
+    },
+    "backup": {
+      "importTitle": "Import into this profile?",
+      "importBody": "Import replaces ALL data and settings of the profile “{name}”. Other profiles are not changed.",
+      "importOk": "Import",
+      "importDone": "Import done.",
+      "intro": "Export and import cover this profile only; import replaces its data and settings.",
+      "export": "Export JSON",
+      "import": "Import JSON"
+    }
+  },
+  "slots": {
+    "blue": "blue",
+    "green": "green",
+    "orange": "orange",
+    "purple": "purple",
+    "red": "red",
+    "cyan": "cyan",
+    "yellow": "yellow",
+    "neutral": "neutral",
+    "pink": "pink",
+    "teal": "teal",
+    "lime": "lime",
+    "brown": "brown",
+    "indigo": "indigo",
+    "olive": "olive",
+    "wine": "wine",
+    "slate": "slate"
+  },
+  "seed": {
+    "names": {
+      "default": "Default",
+      "work": "Work",
+      "meeting": "meeting",
+      "task": "task",
+      "code review": "code review",
+      "communication": "communication",
+      "setup": "setup",
+      "break": "break",
+      "planning": "Planning",
+      "focus": "Focus",
+      "productive": "Productive",
+      "non-productive": "Non-productive",
+      "company": "Company",
+      "with people": "With people",
+      "alone": "Alone"
+    }
+  },
+  "summary": {
+    "title": "Summary",
+    "idleFor": "idle {time}",
+    "notSet": "Not set",
+    "loading": "Loading…",
+    "days": {
+      "one": "{n} day",
+      "other": "{n} days"
+    },
+    "quick": {
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "thisWeek": "This week",
+      "lastWeek": "Last week",
+      "last7": "Last 7 days",
+      "thisMonth": "This month",
+      "lastMonth": "Last month",
+      "last30": "Last 30 days"
+    },
+    "kinds": {
+      "day": "Day",
+      "week": "Week",
+      "month": "Month",
+      "custom": "Custom"
+    },
+    "emptyDay": "Nothing tracked on {date}",
+    "emptyRange": "Nothing tracked from {from} to {to}",
+    "emptyHint": "Pick another period, or start an activity on the main screen.",
+    "pickLast": "pick the last day",
+    "period": "Period",
+    "periodKind": "Period kind",
+    "prevPeriod": "Previous period",
+    "nextPeriod": "Next period",
+    "choosePeriod": "Choose period, {label}",
+    "groupBy": "Group by",
+    "activity": "Activity",
+    "nothing": "nothing tracked",
+    "prevMonth": "Previous month",
+    "nextMonth": "Next month",
+    "quickRanges": "Quick ranges",
+    "pickLastHint": "Now tap the last day. Both days are included.",
+    "pickFirstHint": "Tap the first day, then the last day. Both days are included.",
+    "shadedHint": "Shaded days have tracked time. Weeks start on {day} (Settings → Day).",
+    "total": "Total tracked",
+    "live": "running · live",
+    "firstLast": "First – last",
+    "firstLastHint": "first start to last end",
+    "idleHint": "gaps between activities",
+    "switches": "Switches",
+    "sessions": {
+      "one": "{n} session",
+      "other": "{n} sessions"
+    },
+    "avg": "Avg per tracked day",
+    "trackedDays": {
+      "one": "{n} tracked day",
+      "other": "{n} tracked days"
+    },
+    "noTrackedDays": "no tracked days",
+    "previous": "previous: {time}",
+    "timeline": "Timeline",
+    "tapBlock": "Tap a block for details",
+    "blockLabel": "{name} {from} to {to}",
+    "perWeek": "Per week",
+    "perWeekHint": "bar = total by group",
+    "avgHint": "dashed: average start {start} · end {end} · tap a day for details",
+    "tapDay": "tap a day for details",
+    "perDay": "Per day",
+    "openDay": "Open day",
+    "targetMet": {
+      "one": "target {target} · met on {met} of {n} day",
+      "other": "target {target} · met on {met} of {n} days"
+    },
+    "share": "Share",
+    "tapOption": "tap an option to see its activities",
+    "avgOver": "avg over tracked days",
+    "shareOfTime": "Share of time",
+    "donutHours": "{h}h",
+    "name": "Name",
+    "totalCol": "Total",
+    "target": "Target",
+    "avgDay": "Avg / day",
+    "sessionsTitle": "Sessions",
+    "groupLog": "Group by {name}",
+    "vsWeek": "vs the previous week",
+    "vsMonth": "vs {month}",
+    "vsDays": {
+      "one": "vs the previous day",
+      "other": "vs the previous {n} days"
+    },
+    "noDataWeek": "no data in the previous week",
+    "noDataMonth": "no data in {month}",
+    "noDataDays": {
+      "one": "no data in the previous day",
+      "other": "no data in the previous {n} days"
+    }
+  },
+  "dialogs": {
+    "theActivity": "The activity",
+    "resetTitle": "Reset the day?",
+    "resetStops": "{name} stops now.",
+    "resetBody": "{date} closes with {total} tracked and a new day starts. You can still edit the closed day from Summary.",
+    "closeTitle": "Close Time Tracker?",
+    "closeRunning": "{name} keeps counting while the app is closed. Open the app again to stop it or switch.",
+    "closeIdle": "Nothing is running.",
+    "closeYourself": "Close the window yourself",
+    "closeYourselfBody": "The browser does not let this page close its own window. Press Alt+F4 or Ctrl+W.",
+    "keepsCounting": "{name} keeps counting."
+  },
+  "errors": {
+    "notExport": "Not a Time Tracker export",
+    "itermXml": "Unknown XML file (expected an iTerm .itermcolors file)",
+    "jsonTheme": "Unknown JSON theme (expected our theme file, a VS Code color theme or base16)",
+    "themeFile": "Unknown theme file (supported: our theme .json, VS Code .json, base16 .yaml/.json, Alacritty .toml, iTerm .itermcolors)"
+  }
+}

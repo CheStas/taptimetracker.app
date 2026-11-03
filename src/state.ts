@@ -6,6 +6,7 @@ import { assign, switchTo, closeAt, totals, dayTotal, openSegment, uuid } from '
 import { seed, seedRecords, newActivity, nameKey, withDefaults, normalizeActivity, DEFAULT_SETTINGS } from './seed.ts';
 import { profileExport, readImport, normalizeGroup } from './backup.ts';
 import { sampleExport } from './sample.ts';
+import { seedName, t } from './i18n.ts';
 import { BUILTIN, pickThemePatch, upgradeTheme, type Theme, type ThemeFile } from './theme.ts';
 import { track, trackOnce } from './analytics.ts';
 import type { Activity, CategoryOption, Day, Dimension, Group, Profile, Segment, Settings } from './types.ts';
@@ -82,25 +83,36 @@ async function firstRun(): Promise<Profile[]> {
       const value = await db.getSetting<unknown>(key, undefined);
       if (value !== undefined) stored[key] = value;
     }
-    const profile: Profile = { id: uid(), name: 'Default', order: 0, settings: withDefaults(stored) };
+    const profile: Profile = { id: uid(), name: seedName('Default'), order: 0, settings: withDefaults(stored) };
     await db.put('profiles', profile);
     await db.put('activities', ...activities.map((a) => ({ ...normalizeActivity(a), profileId: profile.id, groupId: null })));
     await db.put('days', ...days.map((d) => ({ ...d, profileId: profile.id })));
     return [profile];
   }
-  const records = seedRecords(seed, uid);
+  const records = seedRecords(seed, uid, seedName);
   await db.put('profiles', ...records.profiles);
   await db.put('groups', ...records.groups);
   await db.put('activities', ...records.activities);
   return records.profiles;
 }
 
+/** The sample's names (activities, categories, the closed days' snapshots) in the app's language. */
+function localSample(x: ReturnType<typeof sampleExport>) {
+  for (const a of x.activities) a.name = seedName(a.name);
+  for (const d of x.categories) {
+    d.name = seedName(d.name);
+    for (const o of d.options) o.name = seedName(o.name);
+  }
+  for (const day of x.days) for (const s of Object.values(day.snapshot?.activities ?? {})) s.name = seedName(s.name);
+  return x;
+}
+
 /** app/?demo: a fresh demo database with one "Work" profile holding the sample, in the system's light or dark theme. */
 async function demoRun() {
   await db.wipeDemo();
   const id = uid();
-  const { settings, themes: _, ...data } = readImport(sampleExport(), id, uid);
-  const profile: Profile = { id, name: 'Work', order: 0, settings: withDefaults({ ...settings, themeMode: 'system', introDismissed: true }) };
+  const { settings, themes: _, ...data } = readImport(localSample(sampleExport()), id, uid);
+  const profile: Profile = { id, name: seedName('Work'), order: 0, settings: withDefaults({ ...settings, themeMode: 'system', introDismissed: true }) };
   await db.replaceProfile(id, { profile, ...data });
 }
 
@@ -620,7 +632,7 @@ export async function profileStatus(id: string, now = Date.now()): Promise<Profi
   }
   const act = open && activities.find((a) => a.id === open.activityId);
   return {
-    running: open && { name: act?.name ?? 'An activity', colorSlot: act?.colorSlot ?? 0, since: open.start },
+    running: open && { name: act?.name ?? t('profiles.anActivity'), colorSlot: act?.colorSlot ?? 0, since: open.start },
     todayMs: dayTotal(today, now),
     lastUsed,
   };

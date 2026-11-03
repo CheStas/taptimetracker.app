@@ -274,7 +274,7 @@ least 44 px tall, with a visible focus ring.
 - **Day:** automatic reset hour (0–23); **Week starts on** System (from the locale, Monday when it says nothing) /
   Monday / Sunday / Saturday, used by the Week period, the calendar and the heatmap; minimum switch Off / 15 s / 30 s
   / 1 min (default) / 2 min / 3 min / 5 min (§4.2); auto-export a JSON file when a day closes; Edit timeline…
-- **Device:** start in full screen; keep the screen on (**on** by default; §10)
+- **Device:** language (§21.4; per device, shared with the website); start in full screen; keep the screen on (**on** by default; §10)
 - **Backup:** first the privacy note from the footer (§6.1, bold, in a `chip` box), then export the open profile to
   JSON, import JSON into the open profile (replaces that profile's data and settings, after a confirmation; other
   profiles are untouched)
@@ -613,8 +613,8 @@ is generated at build time and the app uses a small typed `t()` (`src/i18n.ts`).
 - `locales/<code>/<page>.json`: one file per site page (`home`, `similar`, …): title, description, Open Graph text and
   the page's copy. Values may contain inline HTML (links, `<strong>`, `<em>`).
 - `locales/<code>/app.json`: the app's strings (§21.4).
-- **A page exists in a language when its file exists**, e.g. `locales/uk/similar.json`. Privacy and terms have no
-  page file in any language: they are English only, their copy is in the template (§21.2). A new language can launch
+- **A page exists in a language when its file exists**, e.g. `locales/uk/similar.json`. Privacy and terms are marked
+  `englishOnly` in `PAGES` and have no page file: their copy is in the template (§21.2). A new language can launch
   with only some pages translated.
 - The build **fails** when a language's file lacks a key that the English file has, or has a key English does not,
   so a half-translated page never goes live. `npm test` checks the same for `app.json`.
@@ -656,16 +656,21 @@ Latin Extended and Cyrillic). The subsets are split by `unicode-range`, so an En
   language it has, else English. `<html lang>` follows it.
 - **Settings → Device → Language:** a select with every language in its own name; changing it saves `locale` and
   re-renders the app at once. The single-file build has the same setting.
-- `t('key', { name: … })` with `{name}` placeholders. Counts use the language's plural rules (`Intl.PluralRules`): a
+- `t('key', { name: … })` with `{name}` placeholders, `tx` for sentences with elements in them (a link, `<strong>`). Counts use the language's plural rules (`Intl.PluralRules`): a
   plural value is an object with the forms that language needs (English `one`/`other`; Ukrainian `one`/`few`/`many`/
   `other`, as in 1 хвилина, 2 хвилини, 5 хвилин). English is bundled; other languages are loaded on start
   (`import()`), so the app downloads only its own.
 - **Dates** (weekday, month names) use the app's language through `Intl.DateTimeFormat`; durations use the
   language's units ("8h 43m" / "8 год 43 хв"). The first day of the week still follows the browser's region (§8 Week
   starts on), not the app's language.
-- **First-run and demo data:** the default activity, group and profile names (`config/seed.json`) and the demo's
-  sample names are looked up in `app.json` (`seed.*`), so a Ukrainian first run starts with Ukrainian names. Names a
-  user typed are never translated, and nothing already stored changes when the language changes.
+- **First-run and demo data:** the default activity, group and profile names (`config/seed.json`), the demo's sample
+  names and the "Focus" example in Settings → Categories are looked up in `app.json` `seed.names` (keyed by the English
+  name in lower case), so a Ukrainian first run starts with Ukrainian names. Names a user typed are never translated,
+  and nothing already stored changes when the language changes.
+- **Names in title case** ("code review" → "Code Review") only in English (CSS `--names-case`); other languages show
+  names as typed.
+- Labels never hold a sentence built from pieces in another sentence: where grammar depends on the period (the
+  Summary's "vs …" tile) each case has its own key.
 - "What is it?" and "Similar apps" (§6.1) open the site page in the app's language when it exists there, else English.
 - Backup files, theme files and usage-stats event values stay language-independent.
 

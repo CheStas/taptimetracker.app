@@ -7,6 +7,7 @@ import { slotColor } from '../theme.ts';
 import { fmtDur, fmtHMS, fmtClock, fmtDayShort } from './util.ts';
 import { Icon, type IconName } from './icons.tsx';
 import { openModal, useAppState, useNow } from './hooks.tsx';
+import { t } from '../i18n.ts';
 
 /** What the header buttons do; App passes the same object to every page. */
 export interface Nav {
@@ -45,52 +46,52 @@ export function AppHeader({ nav, page, title, onBack }: Props) {
   return (
     <>
       {DEMO && (
-        <section class="welcome demo" aria-label="Demo">
-          <strong>Demo</strong>
-          <span class="muted">Sample data in a throwaway profile: play freely, a reload starts it over. Your own data is not touched.</span>
-          <a class="got-it" href="./">Start your own</a>
+        <section class="welcome demo" aria-label={t('demo.title')}>
+          <strong>{t('demo.title')}</strong>
+          <span class="muted">{t('demo.text')}</span>
+          <a class="got-it" href="./">{t('demo.start')}</a>
         </section>
       )}
       <header class="app-header">
         {onBack ? (
           <span class="page-title">
-            <button class="icon round" aria-label="Back" title="Back" onClick={onBack}><Icon name="back" /></button>
+            <button class="icon round" aria-label={t('common.back')} title={t('common.back')} onClick={onBack}><Icon name="back" /></button>
             <h1>{title}<span class="muted hide-sm"> · {state.profile.name}</span></h1>
           </span>
         ) : state.profiles.length > 1 && (
-          <button class="prof" aria-label={`Switch profile, ${state.profile.name} is open`} onClick={nav.onProfiles}>
+          <button class="prof" aria-label={t('header.switchProfile', { name: state.profile.name })} onClick={nav.onProfiles}>
             <span class="initial">{state.profile.name.trim().charAt(0).toUpperCase()}</span>
             <span class="name hide-sm">{state.profile.name}</span>
             <Icon name="chevronDown" />
           </button>
         )}
         <div class="stat">
-          <span class="k">Today · {fmtDayShort(now)}</span>
-          <span class="v"><span class="num big">{fmtHMS(todayTotal(now))}</span>{first !== null && <span class="muted since">since {fmtClock(first)}</span>}</span>
+          <span class="k">{t('header.today', { date: fmtDayShort(now) })}</span>
+          <span class="v"><span class="num big">{fmtHMS(todayTotal(now))}</span>{first !== null && <span class="muted since">{t('header.since', { time: fmtClock(first) })}</span>}</span>
         </div>
         {/* While idle the header just says "Idle": no idle duration. */}
         <div class="stat now">
-          <span class="k">Now</span>
+          <span class="k">{t('header.now')}</span>
           <span class="v">
             <span class="dot" style={{ background: active ? slotColor(active.colorSlot) : 'var(--line)' }} />
-            <span class="now-name">{open ? active?.name ?? 'Active' : 'Idle'}</span>
+            <span class="now-name">{open ? active?.name ?? t('header.active') : t('header.idle')}</span>
             {open && <span class="num muted">{fmtDur(now - open.start)}</span>}
           </span>
         </div>
         <div class="header-end">
           <div class="stat clock">
-            <span class="k">Clock</span>
+            <span class="k">{t('header.clock')}</span>
             <span class="num big">{fmtClock(now)}</span>
           </div>
-          <nav class="icons" aria-label="App">
-            {navButton('summary', 'Summary', 'summary', nav.onSummary)}
-            {navButton('settings', 'Settings', 'settings', () => nav.onSettings())}
-            <button class="icon round hide-sm" aria-label="Reset day" title="Reset day" onClick={nav.onReset}><Icon name="reset" /></button>
-            <button class="icon round hide-sm" aria-label={fullscreen ? 'Leave full screen' : 'Full screen'} title="Full screen" onClick={nav.onFullscreen}>
+          <nav class="icons" aria-label={t('header.app')}>
+            {navButton('summary', t('summary.title'), 'summary', nav.onSummary)}
+            {navButton('settings', t('settings.title'), 'settings', () => nav.onSettings())}
+            <button class="icon round hide-sm" aria-label={t('header.reset')} title={t('header.reset')} onClick={nav.onReset}><Icon name="reset" /></button>
+            <button class="icon round hide-sm" aria-label={t(fullscreen ? 'header.leaveFullscreen' : 'header.fullscreen')} title={t('header.fullscreen')} onClick={nav.onFullscreen}>
               <Icon name={fullscreen ? 'minimize' : 'maximize'} />
             </button>
-            <button class="icon round hide-sm" aria-label="Close app" title="Close app" onClick={nav.onQuit}><Icon name="power" /></button>
-            <button class="icon round show-sm" aria-label="More: reset day, full screen, close app" title="More" onClick={() => openMoreMenu(nav, fullscreen)}>
+            <button class="icon round hide-sm" aria-label={t('header.close')} title={t('header.close')} onClick={nav.onQuit}><Icon name="power" /></button>
+            <button class="icon round show-sm" aria-label={t('header.moreLabel')} title={t('header.more')} onClick={() => openMoreMenu(nav, fullscreen)}>
               <Icon name="more" />
             </button>
           </nav>
@@ -110,11 +111,11 @@ function openMoreMenu({ onReset, onFullscreen, onQuit }: Nav, fullscreen: boolea
   );
   openModal((close) => (
     <div class="dialog-body menu">
-      <h2 class="menu-title">More</h2>
-      {item(close, 'reset', 'Reset day', onReset)}
-      {item(close, fullscreen ? 'minimize' : 'maximize', fullscreen ? 'Leave full screen' : 'Full screen', onFullscreen)}
-      {item(close, 'power', 'Close app', onQuit)}
-      <button class="secondary wide" onClick={close}>Cancel</button>
+      <h2 class="menu-title">{t('header.more')}</h2>
+      {item(close, 'reset', t('header.reset'), onReset)}
+      {item(close, fullscreen ? 'minimize' : 'maximize', t(fullscreen ? 'header.leaveFullscreen' : 'header.fullscreen'), onFullscreen)}
+      {item(close, 'power', t('header.close'), onQuit)}
+      <button class="secondary wide" onClick={close}>{t('common.cancel')}</button>
     </div>
   ), { size: 'menu', closeButton: false });
 }
@@ -153,7 +154,7 @@ export function ScrollTop() {
   const smooth = !matchMedia('(prefers-reduced-motion: reduce)').matches;
   return (
     <button
-      class={`scroll-top${shown ? ' shown' : ''}`} aria-label="Back to top" title="Back to top" tabIndex={shown ? 0 : -1}
+      class={`scroll-top${shown ? ' shown' : ''}`} aria-label={t('header.top')} title={t('header.top')} tabIndex={shown ? 0 : -1}
       aria-hidden={!shown} onClick={() => window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' })}
     ><Icon name="arrowUp" /></button>
   );

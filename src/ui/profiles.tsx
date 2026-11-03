@@ -4,6 +4,7 @@ import { state, switchProfile, activeSegment, activityById, profileStatus, type 
 import { slotColor } from '../theme.ts';
 import { fmtHM, fmtDayShort } from './util.ts';
 import { openModal, useAppState } from './hooks.tsx';
+import { t, tx } from '../i18n.ts';
 
 export const openProfilePicker = (onSettings: (section?: string) => void) =>
   openModal((close) => <ProfilePicker close={close} onSettings={onSettings} />, { size: 'profiles' });
@@ -21,11 +22,11 @@ function ProfilePicker({ close, onSettings }: { close: () => void; onSettings: (
   const running = open && activityById(open.activityId);
   return (
     <div class="dialog-body">
-      <h2 class="dialog-title">Switch profile</h2>
+      <h2 class="dialog-title">{t('profiles.switch')}</h2>
       {open && (
         <p class="notice">
           <span class="dot" style={{ background: running ? slotColor(running.colorSlot) : 'var(--muted)' }} />
-          <span><strong>{running?.name ?? 'An activity'} is running in {state.profile.name}.</strong> It keeps counting while another profile is open.</span>
+          <span>{tx('profiles.runningNote', { strong: <strong>{t('profiles.runningIn', { name: running?.name ?? t('profiles.anActivity'), profile: state.profile.name })}</strong> })}</span>
         </p>
       )}
       <div class="profile-list">
@@ -33,9 +34,9 @@ function ProfilePicker({ close, onSettings }: { close: () => void; onSettings: (
           const current = p.id === state.profile.id;
           const st = status[p.id];
           const sub = !st ? '…'
-            : st.running ? `${st.running.name} running · ${fmtHM(st.todayMs)} today`
-            : st.lastUsed !== null ? `Idle · last used ${fmtDayShort(st.lastUsed)}`
-            : 'Nothing tracked yet';
+            : st.running ? t('profiles.statusRunning', { name: st.running.name, time: fmtHM(st.todayMs) })
+            : st.lastUsed !== null ? t('profiles.statusIdle', { date: fmtDayShort(st.lastUsed) })
+            : t('profiles.statusNew');
           return (
             <button
               key={p.id} class={`profile-row${current ? ' current' : ''}`} aria-current={current ? 'true' : undefined}
@@ -49,7 +50,7 @@ function ProfilePicker({ close, onSettings }: { close: () => void; onSettings: (
                 <span class="profile-name">{p.name}</span>
                 <span class="profile-sub"><span class="dot" style={{ background: st?.running ? slotColor(st.running.colorSlot) : 'var(--line-2)' }} />{sub}</span>
               </span>
-              <span class={`profile-tag${current ? '' : ' accent'}`}>{current ? 'Open' : 'Switch'}</span>
+              <span class={`profile-tag${current ? '' : ' accent'}`}>{t(current ? 'profiles.open' : 'profiles.switchTo')}</span>
             </button>
           );
         })}
@@ -57,7 +58,7 @@ function ProfilePicker({ close, onSettings }: { close: () => void; onSettings: (
       <button class="lnk lnk-muted dialog-link" onClick={() => {
         close();
         onSettings('profiles');
-      }}>Add, rename or delete profiles in Settings</button>
+      }}>{t('profiles.manage')}</button>
     </div>
   );
 }

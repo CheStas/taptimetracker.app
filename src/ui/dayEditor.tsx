@@ -13,6 +13,7 @@ import { Icon } from './icons.tsx';
 import { AppHeader, type Nav } from './header.tsx';
 import { Footer } from './footer.tsx';
 import { confirmDialog, openModal, useAppState } from './hooks.tsx';
+import { t } from '../i18n.ts';
 
 export function DayEditor({ nav, onBack }: { nav: Nav; onBack: () => void }) {
   useAppState();
@@ -35,43 +36,43 @@ export function DayEditor({ nav, onBack }: { nav: Nav; onBack: () => void }) {
 
   return (
     <section class="view">
-      <AppHeader nav={nav} page="day-editor" title="Day editor" onBack={onBack} />
+      <AppHeader nav={nav} page="day-editor" title={t('editor.title')} onBack={onBack} />
       <div class="page">
-        <nav class="day-step" aria-label="Day">
-          <button class="icon round" aria-label="Previous day" title="Previous day" disabled={i <= 0} onClick={() => step(days[i - 1])}>
+        <nav class="day-step" aria-label={t('editor.day')}>
+          <button class="icon round" aria-label={t('editor.prev')} title={t('editor.prev')} disabled={i <= 0} onClick={() => step(days[i - 1])}>
             <Icon name="prev" />
           </button>
-          <h2>{isToday ? `Today · ${fmtDayShort(day.startedAt)}` : fmtDate(day.startedAt)}</h2>
-          <button class="icon round" aria-label="Next day" title="Next day" disabled={i < 0 || i >= days.length - 1} onClick={() => step(days[i + 1])}>
+          <h2>{isToday ? t('editor.today', { date: fmtDayShort(day.startedAt) }) : fmtDate(day.startedAt)}</h2>
+          <button class="icon round" aria-label={t('editor.next')} title={t('editor.next')} disabled={i < 0 || i >= days.length - 1} onClick={() => step(days[i + 1])}>
             <Icon name="next" />
           </button>
         </nav>
         <div>{segments.length > 0 && <TimelineBar from={from} to={to} segments={segments} lookup={lookup} />}</div>
         <ul class="sessions">
-          {rows.length ? rows.map(({ seg, gap, t }) => {
-            if (gap) return <GapRow key={`gap-${t}`} gap={gap} />;
+          {rows.length ? rows.map(({ seg, gap, t: at }) => {
+            if (gap) return <GapRow key={`gap-${at}`} gap={gap} />;
             const a = lookup(seg.activityId);
             return (
               <li key={seg.id}>
                 <span class="dot" style={{ '--c': a?.color ?? 'var(--muted)' }} />
-                <span class="grow">{a?.name ?? '?'}{a?.removed && <> <span class="muted">(removed)</span></>}</span>
+                <span class="grow">{a?.name ?? '?'}{a?.removed && <> <span class="muted">{t('editor.removed')}</span></>}</span>
                 <span>{fmtRange(seg.start, seg.end)}</span>
                 <span class="muted">{fmtDur(duration(seg, now))}</span>
-                <button onClick={() => openSessionEditor(seg, day)}>Edit</button>
-                <button class="danger" onClick={() => confirmDeleteSession(seg, now)}>Delete</button>
+                <button onClick={() => openSessionEditor(seg, day)}>{t('common.edit')}</button>
+                <button class="danger" onClick={() => confirmDeleteSession(seg, now)}>{t('common.delete')}</button>
               </li>
             );
-          }) : <li class="muted">No sessions {isToday ? 'today' : 'on this day'}.</li>}
+          }) : <li class="muted">{t(isToday ? 'editor.noneToday' : 'editor.noneDay')}</li>}
         </ul>
         <div class="row">
-          <button class="primary" onClick={() => openModal((close) => <AddRange day={day} close={close} />, { size: 'activity' })}>+ Add range</button>
+          <button class="primary" onClick={() => openModal((close) => <AddRange day={day} close={close} />, { size: 'activity' })}>+ {t('editor.addRange')}</button>
           <button class="danger" onClick={async () => {
             const ok = await confirmDialog({
-              title: `Clear ${isToday ? 'today' : 'this day'}?`,
-              body: 'All its sessions are deleted. You can then rebuild the day with "Add range".', ok: 'Clear day', danger: true,
+              title: t(isToday ? 'editor.clearTodayTitle' : 'editor.clearDayTitle'),
+              body: t('editor.clearBody'), ok: t('editor.clearOk'), danger: true,
             });
             if (ok) clearDay(day.id);
-          }}>Clear whole day</button>
+          }}>{t('editor.clear')}</button>
         </div>
       </div>
       <Footer onSettings={nav.onSettings} />
@@ -89,26 +90,26 @@ function AddRange({ day, close }: { day: Day; close: () => void }) {
   const [running, setRunning] = useState(false);
   return (
     <div class="dialog-body popup">
-      <h2 class="dialog-title">Add range</h2>
+      <h2 class="dialog-title">{t('editor.addRange')}</h2>
       <div class="chips">
         {acts.map((a) => (
           <button key={a.id} class={`chip${chosen === a.id ? ' active' : ''}`} style={{ '--c': slotColor(a.colorSlot) }} onClick={() => setChosen(a.id)}>{a.name}</button>
         ))}
-        <button class={`chip${chosen === null ? ' active' : ''}`} onClick={() => setChosen(null)}>idle (none)</button>
+        <button class={`chip${chosen === null ? ' active' : ''}`} onClick={() => setChosen(null)}>{t('editor.idleNone')}</button>
       </div>
-      <TimePicker value={from} onChange={setFrom} min={day.startedAt} max={max} label="From" />
-      <TimePicker value={to} onChange={setTo} min={from} max={max} label="To" disabled={running} />
+      <TimePicker value={from} onChange={setFrom} min={day.startedAt} max={max} label={t('editor.from')} />
+      <TimePicker value={to} onChange={setTo} min={from} max={max} label={t('editor.to')} disabled={running} />
       {max === undefined && (
         <label class="check">
-          <input type="checkbox" checked={running} onChange={(e) => setRunning(e.currentTarget.checked)} /> Until now and keep running
+          <input type="checkbox" checked={running} onChange={(e) => setRunning(e.currentTarget.checked)} /> {t('editor.keepRunning')}
         </label>
       )}
       <div class="dialog-actions">
-        <button class="secondary" onClick={close}>Cancel</button>
+        <button class="secondary" onClick={close}>{t('common.cancel')}</button>
         <button class="primary" onClick={() => {
           assignRange(chosen, from, running ? null : to, day.id);
           close();
-        }}>Apply</button>
+        }}>{t('common.apply')}</button>
       </div>
     </div>
   );
