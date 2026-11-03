@@ -1,0 +1,87 @@
+{
+  "title": "Similar apps — Time Tracker",
+  "description": "Other one-tap time trackers, ordered from most to least similar to Time Tracker, and how they differ.",
+  "heading": "Similar apps",
+  "intro": "Time Tracker works like a chess clock: tap an activity to start it, tap another to switch, only one runs at a time, and past times can be corrected. These apps work in the same or a similar way. They are ordered <strong>from most to least similar</strong>.",
+  "takeaway": {
+    "lead": "<strong>In short:</strong> none of them combines all of the following:",
+    "web": "a web page that runs anywhere, even as a single offline file",
+    "touch": "a touchscreen and wall-display layout",
+    "backdate": "“active since…” backdating that takes the time away from other activities",
+    "offline": "storage that stays on the device, with no account",
+    "closest": "The closest matches are native phone apps: TickTappy, aTimeLogger and Simple Time Tracker."
+  },
+  "source": "source",
+  "timeryFor": "for",
+  "platform": "Platform",
+  "similar": "Why it is similar",
+  "differences": "Main differences",
+  "tools": {
+    "t1": {
+      "platform": "iPhone, iPad, Mac, Watch; free + premium (sync)",
+      "similar": "Colored tag buttons: tap to start, <strong>tap again to stop</strong>, starting another tag <strong>stops the running one</strong>. <strong>Start a timer in the past</strong> (e.g. 30 min ago), quick time adjustment after start/stop, editing past entries, archiving tags without losing history, day/week summaries. Offline, no account.",
+      "differences": "Apple only; not a web page; no wall-display mode"
+    },
+    "t2": {
+      "platform": "iOS",
+      "similar": "Starts and stops an activity with <strong>one tap</strong>; pause/resume; optional simultaneous activities; reports.",
+      "differences": "Native app; several activities can run at once (optional); not a kiosk layout"
+    },
+    "t3": {
+      "platform": "Android + Wear OS; open source (GPL-3.0)",
+      "similar": "Starts activities with <strong>one click</strong> from a grid of activity buttons; record history, statistics, backups, home-screen widgets; a record can be divided and its activity changed.",
+      "differences": "Android only; not a web app"
+    },
+    "t4": {
+      "platform": "iOS",
+      "similar": "<strong>One tap</strong> to start, stop or <strong>switch</strong> activities; the start time of a running entry can be moved.",
+      "differences": "Apple only; segmented entries can’t be adjusted after a while"
+    },
+    "t5": {
+      "platform": "iOS",
+      "similar": "Starts and stops task tracking with <strong>one tap</strong>; reports per task.",
+      "differences": "Native app; switching and pause behavior not described"
+    },
+    "t6": {
+      "platform": "Physical 8- or 12-sided tracker die + app; subscription",
+      "similar": "Same “one active activity” idea as a <strong>physical device</strong>: flip the die to switch activity, turn it off or double-tap to stop. Forgotten time is fixed in a calendar-like editor.",
+      "differences": "Needs hardware; cloud account; no on-screen buttons (<a href=\"https://www.timedoctor.com/blog/timeular-vs-timeflip/\">comparison</a>)"
+    },
+    "t7": {
+      "platform": "Web, on a shared device; free feature of Clockify",
+      "similar": "A <strong>shared-device / kiosk</strong> web page: people clock in and <strong>switch projects or tasks</strong> and breaks; reports in Clockify (<a href=\"https://clockify.me/help/track-time-and-expenses/clock-in-and-out-via-kiosk\">help</a>).",
+      "differences": "Built for teams (PIN/QR sign-in); cloud only; no per-activity button board"
+    },
+    "t8": {
+      "platform": "Web app; open source (GPL-3.0), self-host or hosted",
+      "similar": "Web-based, with an <strong>interactive timeline</strong> for editing records; tags instead of projects; daily/weekly/monthly <strong>targets</strong>; reports (PDF/CSV); Pomodoro mode (<a href=\"https://www.linuxlinks.com/timetagger-web-based-time-tracking-solution/\">overview</a>).",
+      "differences": "Python server; not a big-button touch board; no tap-to-switch"
+    },
+    "t9": {
+      "platform": "iOS/Mac client for Toggl (cloud)",
+      "similar": "<strong>Saved timers started with one click</strong>; editing and splitting entries; in Toggl you drag a block to change its start or stop time (<a href=\"https://clockk.com/alt/does-toggl-have-a-timer\">guide</a>).",
+      "differences": "Cloud account; desktop/phone UI; free tier is limited"
+    },
+    "t10": {
+      "platform": "Static web page (vanilla JS, Bootstrap), localStorage mode",
+      "similar": "Closest <strong>tech stack</strong>: plain JS, browser storage, one card per activity with start/stop and an hours total.",
+      "differences": "No automatic switching, per-day totals view or backdating"
+    },
+    "t11": {
+      "platform": "Offline PWA (Next.js), IndexedDB",
+      "similar": "Similar <strong>storage approach</strong> (offline, IndexedDB, survives reloads).",
+      "differences": "A start/stop/lap stopwatch, not an activity board"
+    },
+    "t12": {
+      "platform": "Open-source web/desktop trackers",
+      "similar": "General time tracking with projects/tasks, timers and reports; self-hostable or local-first (<a href=\"https://super-productivity.com/blog/best-open-source-time-tracking-apps-2026/\">comparison</a>).",
+      "differences": "Project/billing oriented; no one-tap activity board"
+    },
+    "t13": {
+      "platform": "Android / Linux",
+      "similar": "The <strong>chess-clock interaction</strong> Time Tracker is modelled on: big buttons, one tap hands the clock to the other side.",
+      "differences": "Two players, counts down, no logging, totals or history"
+    }
+  },
+  "sources": "Researched in October 2026. Descriptions come from each app’s own listing or docs, plus third-party summaries; nothing was installed or tested."
+}

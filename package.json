@@ -17,8 +17,8 @@
     "start:kiosk": "scripts/start.sh --kiosk"
   },
   "dependencies": {
+    "@fontsource/geist": "^5.3.0",
     "@fontsource/geist-mono": "^5.3.0",
-    "@fontsource/geist-sans": "^5.3.0",
     "preact": "^11.0.2"
   },
   "devDependencies": {

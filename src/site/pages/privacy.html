@@ -1,20 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy — Time Tracker</title>
   <meta name="description" content="Everything you track stays in your browser. The site counts visits anonymously, without cookies, and you can turn that off.">
-  <link rel="canonical" href="https://taptimetracker.app/privacy/">
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  {{@seo}}
+  <link rel="icon" href="{{@root}}favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/src/site/site.css">
   <script type="module" src="/src/site/site.ts"></script>
 </head>
-<body class="legal">
-  <header class="site-header">
-    <a class="brand" href="../"><img src="../favicon.svg" alt="">Time Tracker</a>
-    <a class="button" href="../app/">Open the app</a>
-  </header>
+<body>
+  {{@banner}}
+  {{@header}}
   <main>
     <h1>Privacy</h1>
     <p class="updated">Last updated 1 November 2026</p>
@@ -70,10 +68,6 @@
     <p>For questions or a deletion request, use Send feedback in the app. If this policy changes, the new version is
       posted here with a new date.</p>
   </main>
-  <footer class="site-footer">
-    <a href="../">Home</a>
-    <a href="../terms/">Terms of use</a>
-    <a href="../similar/">Similar apps</a>
-  </footer>
+  {{@footer}}
 </body>
 </html>

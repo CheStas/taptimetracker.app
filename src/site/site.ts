@@ -1,6 +1,7 @@
-// The site pages' script: anonymous usage stats (src/analytics.ts) and, on the privacy page, the switch for them. The
-// choice is shared with the app (same localStorage).
+// The site pages' script: anonymous usage stats (src/analytics.ts), on the privacy page the switch for them, and the
+// language banner and choice (§21). Both choices are shared with the app (same localStorage).
 import { browserOptsOut, setStatsOn, startStats, statsAvailable, statsChoice, statsOn } from '../analytics.ts';
+import { preferredLocale, saveLocale } from '../locale.ts';
 
 startStats();
 
@@ -24,3 +25,27 @@ function showChoice() {
   box.append(button);
 }
 showChoice();
+
+// ---------- language ----------
+const pageLocale = document.documentElement.lang;
+
+// A link to another language (switcher, banner) saves it; a link into the app saves the page's language, so the app
+// opens in the language the visitor was reading.
+document.addEventListener('click', (e) => {
+  const a = (e.target as Element).closest?.('a');
+  if (!a) return;
+  if (a.dataset.locale) saveLocale(a.dataset.locale);
+  else if (/(^|\/)app\/(\?|$)/.test(a.getAttribute('href') ?? '')) saveLocale(pageLocale);
+});
+
+// The banner: never a redirect, only a suggestion when this page exists in the preferred language (§21.2).
+const banners = [...document.querySelectorAll<HTMLElement>('.lang-banner')];
+const want = preferredLocale((document.documentElement.dataset.locales ?? '').split(' '));
+const banner = banners.find((b) => b.dataset.locale === want);
+if (banner && want !== pageLocale) {
+  banner.hidden = false;
+  banner.querySelector('.close')?.addEventListener('click', () => {
+    saveLocale(pageLocale);
+    banner.hidden = true;
+  });
+}
