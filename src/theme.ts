@@ -1,6 +1,7 @@
 // Themes: color tokens + 16 activity color slots, the built-in set, resolving a profile's theme, and importing theme
 // files from other apps. Pure: no DOM, no storage.
 import type { Settings } from './types.ts';
+import { t } from './i18n.ts';
 
 export const TOKENS = ['bg', 'surface', 'chip', 'line', 'track', 'text', 'muted', 'onAccent'] as const;
 export type Token = (typeof TOKENS)[number];
@@ -302,7 +303,7 @@ export function parseThemeFile(text: string, filename = 'theme'): ThemeFile {
   const trimmed = text.trim();
   if (trimmed.startsWith('<')) {
     if (/Ansi \d+ Color/.test(trimmed)) return fromITerm(name, trimmed);
-    throw new Error('Unknown XML file (expected an iTerm .itermcolors file)');
+    throw new Error(t('errors.itermXml'));
   }
   if (trimmed.startsWith('{')) {
     const data = parseJsonc(trimmed) as Record<string, unknown>;
@@ -315,12 +316,12 @@ export function parseThemeFile(text: string, filename = 'theme'): ThemeFile {
     }
     const base16 = (data.palette as Record<string, string>) ?? data;
     if (typeof base16.base00 === 'string') return fromBase16(String(data.scheme ?? data.name ?? name), base16);
-    throw new Error('Unknown JSON theme (expected our theme file, a VS Code color theme or base16)');
+    throw new Error(t('errors.jsonTheme'));
   }
   if (/^\s*\[colors\./m.test(trimmed)) return fromAlacritty(name, trimmed);
   const yaml = parseFlatYaml(trimmed);
   if (yaml.base00) return fromBase16(name, yaml);
-  throw new Error('Unknown theme file (supported: our theme .json, VS Code .json, base16 .yaml/.json, Alacritty .toml, iTerm .itermcolors)');
+  throw new Error(t('errors.themeFile'));
 }
 
 /** A stored or embedded theme with fewer than 16 slots (from before they existed) gets the rest derived. */

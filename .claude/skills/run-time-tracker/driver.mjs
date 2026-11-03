@@ -64,7 +64,8 @@ async function launch() {
 
 const errors = [];
 async function newPage(browser, viewport) {
-  const ctx = await browser.newContext({ viewport, deviceScaleFactor: 1 });
+  // English whatever the system language: the steps find controls by their English labels, and the docs show English.
+  const ctx = await browser.newContext({ viewport, deviceScaleFactor: 1, locale: process.env.LOCALE ?? 'en-US' });
   const page = await ctx.newPage();
   page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`));
   // The dev server has no favicon: that 404 is expected.

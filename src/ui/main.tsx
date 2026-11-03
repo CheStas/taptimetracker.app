@@ -14,6 +14,7 @@ import { AboutLinks, ThemeSwatches } from './about.tsx';
 import { AppHeader, type Nav } from './header.tsx';
 import { Footer } from './footer.tsx';
 import { useAppState, useNow } from './hooks.tsx';
+import { t, tx } from '../i18n.ts';
 
 const LONG_PRESS_MS = 600;
 /** Timeline blocks this long or longer show their duration inside. */
@@ -44,12 +45,12 @@ export function Main({ nav, onDayEditor }: { nav: Nav; onDayEditor: () => void }
         {intro && <WelcomeStrip />}
         <AppHeader nav={nav} page="main" />
         {fresh && main.length > 0 && (
-          <p class="ready"><strong>Ready to start the day</strong> · Tap an activity to start tracking · hold one to set an earlier start</p>
+          <p class="ready">{tx('main.ready', { strong: <strong>{t('main.readyTitle')}</strong> })}</p>
         )}
         <Buttons main={main} rest={rest} layout={s.layout} sizing={s.popularity && !fresh} totals={totals} dayMs={dayMs} now={now} pressed={pressed} handlers={handlers} />
         <div class="unused">
           {rest.length > 0 && <>
-            <span class="muted">Not used today</span>
+            <span class="muted">{t('main.unused')}</span>
             <div class="chips" {...handlers}>
               {rest.map((a) => (
                 <button key={a.id} class={`chip${pressed === a.id ? ' pressing' : ''}`} data-id={a.id}>
@@ -58,12 +59,12 @@ export function Main({ nav, onDayEditor }: { nav: Nav; onDayEditor: () => void }
               ))}
             </div>
           </>}
-          <span class="muted tap-hint">Tap to switch · tap the running one to stop · hold for sessions</span>
+          <span class="muted tap-hint">{t('main.tapHint')}</span>
         </div>
         {s.showTimeline && !fresh && <DayTimeline now={now} />}
         {s.showGroups && !fresh && <GroupTotals now={now} />}
         {s.showFooter && (
-          <a class="more-hint" href="#footer" aria-label="More below: links and themes" onClick={(e) => {
+          <a class="more-hint" href="#footer" aria-label={t('main.moreBelow')} onClick={(e) => {
             e.preventDefault();
             document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' });
           }}>
@@ -78,12 +79,12 @@ export function Main({ nav, onDayEditor }: { nav: Nav; onDayEditor: () => void }
 
 function WelcomeStrip() {
   return (
-    <section class="welcome" aria-label="Welcome">
-      <strong>New here?</strong>
-      <span class="muted">Tap an activity to start the day · hold one to set an earlier start.</span>
-      <nav aria-label="About" class="links"><AboutLinks variant="strip" /></nav>
+    <section class="welcome" aria-label={t('welcome.label')}>
+      <strong>{t('welcome.title')}</strong>
+      <span class="muted">{t('welcome.text')}</span>
+      <nav aria-label={t('about.label')} class="links"><AboutLinks variant="strip" /></nav>
       <ThemeSwatches compact />
-      <button class="got-it" onClick={() => setSetting('introDismissed', true)}>Got it</button>
+      <button class="got-it" onClick={() => setSetting('introDismissed', true)}>{t('welcome.ok')}</button>
     </section>
   );
 }
@@ -109,7 +110,7 @@ function Buttons({ main, rest, layout, sizing, totals, dayMs, now, pressed, hand
   if (main.length === 0 && rest.length === 0) {
     return (
       <main class="buttons empty">
-        <p class="muted">{state.groups.some((g) => !isGroupOn(g)) ? 'Nothing to show: all groups are off (Settings → Groups).' : 'No activities. Add some in Settings.'}</p>
+        <p class="muted">{state.groups.some((g) => !isGroupOn(g)) ? t('main.allGroupsOff') : t('main.noActivities')}</p>
       </main>
     );
   }
@@ -124,8 +125,9 @@ function Buttons({ main, rest, layout, sizing, totals, dayMs, now, pressed, hand
         const over = total - target;
         // Progress: toward the target when there is one, otherwise the share of today.
         const progress = target ? Math.min(1, total / target) : pct / 100;
-        const long = !target ? `${pct}% of today` : over <= 0 ? `${fmtHM(-over)} left of ${fmtHM(target)} target` : `${fmtHM(over)} over target`;
-        const short = !target ? `${pct}% of today` : over <= 0 ? `${fmtHM(-over)} left` : `${fmtHM(over)} over`;
+        const long = !target ? t('main.ofToday', { pct }) : over <= 0
+          ? t('main.leftOfTarget', { time: fmtHM(-over), target: fmtHM(target) }) : t('main.overTarget', { time: fmtHM(over) });
+        const short = !target ? t('main.ofToday', { pct }) : t(over <= 0 ? 'target.left' : 'target.over', { time: fmtHM(Math.abs(over)) });
         const run = active && open ? fmtDur(now - open.start) : '';
         const cls = `act${active ? ' active' : ''}${pressed === a.id ? ' pressing' : ''}`;
         const style = { '--c': slotColor(a.colorSlot), '--k': k };
@@ -164,7 +166,7 @@ function Buttons({ main, rest, layout, sizing, totals, dayMs, now, pressed, hand
               <span class="sq" />{name}<span class="sub num">{pct}%</span>
             </span>
             <span class="tile-bottom">
-              {active && <span class="running"><span class="pulse" />Running <span class="num">{run}</span></span>}
+              {active && <span class="running"><span class="pulse" />{t('main.running')} <span class="num">{run}</span></span>}
               <span class="total num">{fmtHMS(total)}</span>
               <span class="progress">{meter}<span class="sub">{long}</span></span>
             </span>
@@ -187,11 +189,11 @@ function DayTimeline({ now }: { now: number }) {
   const blocks: { key: string; ms: number; color?: string; title: string }[] = [];
   let prevEnd = from;
   for (const s of segs) {
-    if (s.start > prevEnd) blocks.push({ key: `gap-${prevEnd}`, ms: s.start - prevEnd, title: `Idle · ${fmtHM(s.start - prevEnd)}` });
+    if (s.start > prevEnd) blocks.push({ key: `gap-${prevEnd}`, ms: s.start - prevEnd, title: `${t('main.idle')} · ${fmtHM(s.start - prevEnd)}` });
     const end = s.end ?? now;
     const a = activityById(s.activityId);
     // The running block is at least a minute wide so it shows from the first second.
-    blocks.push({ key: s.id, ms: Math.max(end - s.start, s.end === null ? 60000 : 0), color: a && slotColor(a.colorSlot), title: `${a?.name ?? '?'} · ${fmtHM(end - s.start)}${s.end === null ? ' (running)' : ''}` });
+    blocks.push({ key: s.id, ms: Math.max(end - s.start, s.end === null ? 60000 : 0), color: a && slotColor(a.colorSlot), title: `${a?.name ?? '?'} · ${fmtHM(end - s.start)}${s.end === null ? ` ${t('main.runningTag')}` : ''}` });
     prevEnd = Math.max(prevEnd, end);
   }
 
@@ -210,7 +212,7 @@ function DayTimeline({ now }: { now: number }) {
 
   // On a phone only every second hour is labelled.
   return (
-    <section class="day-timeline" aria-label="Today's timeline">
+    <section class="day-timeline" aria-label={t('main.timeline')}>
       <div class="ticks num" ref={ref}>
         <span style={{ left: 0, transform: 'none' }}>{fmtClock(from)}</span>
         {ticks.map(({ t, left }) => <span key={t} class={new Date(t).getHours() % 2 ? 'hide-sm' : ''} style={{ left: `${left * 100}%` }}>{fmtClock(t)}</span>)}
@@ -238,12 +240,12 @@ function GroupTotals({ now }: { now: number }) {
   const entries: [string, number][] = state.groups.length
     ? [
       ...state.groups.filter((g) => byGroup.has(g.id)).map((g): [string, number] => [g.name, byGroup.get(g.id)!]),
-      ...(byGroup.has(null) ? [['no group', byGroup.get(null)!] as [string, number]] : []),
+      ...(byGroup.has(null) ? [[t('main.noGroup'), byGroup.get(null)!] as [string, number]] : []),
     ]
-    : [['tracked', todayTotal(now)]];
+    : [[t('main.tracked'), todayTotal(now)]];
   return (
     <div class="group-line">
-      {[...entries, ['idle', idle] as [string, number]].map(([name, ms]) => <span key={name}>{name} <strong class="num">{fmtHM(ms)}</strong></span>)}
+      {[...entries, [t('main.idleTotal'), idle] as [string, number]].map(([name, ms]) => <span key={name}>{name} <strong class="num">{fmtHM(ms)}</strong></span>)}
     </div>
   );
 }

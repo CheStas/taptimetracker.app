@@ -15,6 +15,7 @@ import { ModalHost, closeTopModal, confirmDialog, messageDialog } from './ui/hoo
 import { HoverTip, ScrollTop, type Nav } from './ui/header.tsx';
 import { openProfilePicker } from './ui/profiles.tsx';
 import { download, fmtDayShort, fmtHours, isoDay, slug } from './ui/util.ts';
+import { initLocale, onLocaleChange, t } from './i18n.ts';
 import './fonts.css';
 import './styles.css';
 
@@ -95,6 +96,13 @@ function App() {
   );
 }
 
+/** The app, re-mounted when the language changes (Settings → Device → Language), so every string is redrawn. */
+function Root() {
+  const [version, setVersion] = useState(0);
+  useEffect(() => onLocaleChange(() => setVersion((v) => v + 1)), []);
+  return <App key={version} />;
+}
+
 const darkQuery = matchMedia('(prefers-color-scheme: dark)');
 
 /**
@@ -136,6 +144,8 @@ async function start() {
   if (import.meta.env.PROD && import.meta.env.MODE !== 'single' && 'serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js').catch((e) => console.warn('Service worker unavailable:', e.message));
   }
+  // The language first: the first-run seed names (init) and the first render use it.
+  await initLocale();
   await init();
   applyTheme();
   startStats();
@@ -160,7 +170,7 @@ async function start() {
 
   setInterval(() => checkRollover(), 1000);
 
-  render(<App />, document.getElementById('app')!);
+  render(<Root />, document.getElementById('app')!);
   document.addEventListener('visibilitychange', syncWakeLock);
   syncWakeLock();
 }
@@ -182,15 +192,15 @@ async function toggleFullscreen() {
 /** The running activity's name, or null while idle. */
 const runningName = () => {
   const open = activeSegment();
-  return open ? activityById(open.activityId)?.name ?? 'The activity' : null;
+  return open ? activityById(open.activityId)?.name ?? t('dialogs.theActivity') : null;
 };
 
 async function confirmReset() {
   const name = runningName();
   const ok = await confirmDialog({
-    title: 'Reset the day?',
-    body: `${name ? `${name} stops now. ` : ''}${fmtDayShort(state.day.startedAt)} closes with ${fmtHours(todayTotal())} tracked and a new day starts. You can still edit the closed day from Summary.`,
-    ok: 'Reset day', danger: true,
+    title: t('dialogs.resetTitle'),
+    body: `${name ? `${t('dialogs.resetStops', { name })} ` : ''}${t('dialogs.resetBody', { date: fmtDayShort(state.day.startedAt), total: fmtHours(todayTotal()) })}`,
+    ok: t('header.reset'), danger: true,
   });
   if (ok) resetDay();
 }
@@ -198,16 +208,16 @@ async function confirmReset() {
 async function quit() {
   const name = runningName();
   const ok = await confirmDialog({
-    title: 'Close Time Tracker?',
-    body: name ? `${name} keeps counting while the app is closed. Open the app again to stop it or switch.` : 'Nothing is running.',
-    ok: 'Close app',
+    title: t('dialogs.closeTitle'),
+    body: name ? t('dialogs.closeRunning', { name }) : t('dialogs.closeIdle'),
+    ok: t('header.close'),
   });
   if (!ok) return;
   window.close();
   // Browsers only let scripts close app windows / script-opened tabs; tell the user otherwise.
   setTimeout(() => messageDialog(
-    'Close the window yourself',
-    `The browser does not let this page close its own window. Press Alt+F4 or Ctrl+W.${name ? ` ${name} keeps counting.` : ''}`,
+    t('dialogs.closeYourself'),
+    `${t('dialogs.closeYourselfBody')}${name ? ` ${t('dialogs.keepsCounting', { name })}` : ''}`,
   ), 300);
 }
 

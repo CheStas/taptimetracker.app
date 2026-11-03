@@ -66,24 +66,25 @@ export function withDefaults(stored: Partial<Settings> = {}, defaults = DEFAULT_
 }
 
 /** Profiles, groups and activities to store on first run; activity order follows the file (groups first). */
-export function seedRecords({ profiles, palette, settings }: Seed, uid: () => string) {
+/** `local` names the records in the app's language (i18n seedName); the seed file itself stays English. */
+export function seedRecords({ profiles, palette, settings }: Seed, uid: () => string, local: (name: string) => string = (n) => n) {
   const out = { profiles: [] as Profile[], groups: [] as Group[], activities: [] as Activity[] };
   const slots = paletteSlots(palette);
   profiles.forEach((p, i) => {
     // Only the profile opened on first run shows the welcome strip.
-    const profile: Profile = { id: uid(), name: p.name, order: i, settings: { ...settings, introDismissed: i !== 0, ...p.settings } };
+    const profile: Profile = { id: uid(), name: local(p.name), order: i, settings: { ...settings, introDismissed: i !== 0, ...p.settings } };
     out.profiles.push(profile);
     let order = 0;
     const add = (list: SeedActivity[] = [], groupId: string | null) => {
       for (const item of list) {
         const { name, slot, color, targetMin = null } = typeof item === 'string' ? { name: item } : item;
-        const a = newActivity(name, order++, profile.id, uid(), slots);
+        const a = newActivity(local(name), order++, profile.id, uid(), slots);
         const colorSlot = slot !== undefined ? toSlot(slot) : color !== undefined ? nearestSlot(color) : a.colorSlot;
         out.activities.push({ ...a, groupId, targetMin, colorSlot });
       }
     };
     (p.groups ?? []).forEach((g, j) => {
-      const group: Group = { id: uid(), profileId: profile.id, name: g.name, order: j, on: g.on ?? true };
+      const group: Group = { id: uid(), profileId: profile.id, name: local(g.name), order: j, on: g.on ?? true };
       out.groups.push(group);
       add(g.activities, group.id);
     });

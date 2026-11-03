@@ -4,27 +4,30 @@
 import type { ComponentChildren } from 'preact';
 import { state, pickTheme, systemDark, setSetting } from '../state.ts';
 import { resolveTheme, type Theme } from '../theme.ts';
-import type { Layout, Settings } from '../types.ts';
+import type { Layout } from '../types.ts';
 import { Icon, type IconName } from './icons.tsx';
 import { messageDialog } from './hooks.tsx';
 import { openFeedback } from './feedback.tsx';
 import { browserOptsOut, setStatsOn, statsAvailable, statsChoice, statsOn } from '../analytics.ts';
 import { useState } from 'preact/hooks';
+import { locale, t, type Key } from '../i18n.ts';
 
 export const VERSION = `v${__APP_VERSION__}`;
 
-// The site pages sit next to the app (app/ → ../). The single-file build has no site around it.
+// The site pages sit next to the app (app/ → ../), English at the root and other languages under their code; the
+// app links to its own language's page where there is one. The single-file build has no site around it.
 const SITE = import.meta.env.MODE === 'single' ? null : '../';
+const sitePage = (path: string) => `${SITE}${locale() !== 'en' && __SITE_PAGES__[path]?.includes(locale()) ? `${locale()}/` : ''}${path}`;
 
-const LINKS: { id: string; label: string; href?: string }[] = [
-  { id: 'what', label: 'What is it?', href: SITE ?? undefined },
-  { id: 'compare', label: 'Similar apps', href: SITE ? `${SITE}similar/` : undefined },
-  { id: 'feedback', label: 'Send feedback' },
+const LINKS: { id: string; label: Key; path?: string }[] = [
+  { id: 'what', label: 'about.what', path: '' },
+  { id: 'compare', label: 'about.similar', path: 'similar/' },
+  { id: 'feedback', label: 'about.feedback' },
 ];
 
 const openLink = (link: (typeof LINKS)[number]) => link.id === 'feedback'
   ? openFeedback(VERSION)
-  : messageDialog(link.label, 'This page is on the website, which this offline file does not include.');
+  : messageDialog(t(link.label), t('about.offline'));
 
 /** The three links (a page link, or a button for a placeholder); `variant` picks the look of the place they are in. */
 export function AboutLinks({ variant }: { variant: 'strip' | 'footer' | 'settings' }) {
@@ -34,11 +37,11 @@ export function AboutLinks({ variant }: { variant: 'strip' | 'footer' | 'setting
         const content = (
           <>
             {variant === 'footer' && l.id === 'feedback' && <Icon name="feedback" />}
-            {l.label}
+            {t(l.label)}
           </>
         );
-        return l.href
-          ? <a key={l.id} class={`lnk lnk-${variant}`} href={l.href}>{content}</a>
+        return SITE && l.path !== undefined
+          ? <a key={l.id} class={`lnk lnk-${variant}`} href={sitePage(l.path)}>{content}</a>
           : <button key={l.id} class={`lnk lnk-${variant}`} onClick={() => openLink(l)}>{content}</button>;
       })}
     </>
@@ -52,7 +55,7 @@ export const currentTheme = () => resolveTheme(state.profile.settings, state.the
 export function ThemeSwatches({ compact }: { compact?: boolean }) {
   const current = currentTheme();
   return (
-    <div class={`swatches${compact ? ' compact' : ''}`} role="group" aria-label="Theme">
+    <div class={`swatches${compact ? ' compact' : ''}`} role="group" aria-label={t('footer.theme')}>
       {state.themes.map((t: Theme) => (
         <button
           key={t.id} class={`sw${t.id === current.id ? ' on' : ''}`} aria-label={t.name} title={t.name}
@@ -65,17 +68,17 @@ export function ThemeSwatches({ compact }: { compact?: boolean }) {
   );
 }
 
-const LAYOUTS: { id: Layout; label: string }[] = [{ id: 'tiles', label: 'Tiles' }, { id: 'rows', label: 'Rows' }, { id: 'circles', label: 'Circles' }];
-export const layoutName = (id: Layout) => LAYOUTS.find((l) => l.id === id)?.label ?? id;
+const LAYOUTS: Layout[] = ['tiles', 'rows', 'circles'];
+export const layoutName = (id: Layout) => t(`layout.${id}`);
 
 /** Tiles / Rows / Circles (Settings → Main screen and the footer). */
 export function LayoutSwitch() {
   const layout = state.profile.settings.layout;
   return (
-    <div class="segmented" role="group" aria-label="Button layout">
-      {LAYOUTS.map((l) => (
-        <button key={l.id} class="seg" aria-label={l.label} title={l.label} aria-pressed={layout === l.id} onClick={() => setSetting('layout', l.id)}>
-          <span class={`layout-icon ${l.id}`} aria-hidden="true"><i /><i /></span><span class="seg-label">{l.label}</span>
+    <div class="segmented" role="group" aria-label={t('layout.label')}>
+      {LAYOUTS.map((id) => (
+        <button key={id} class="seg" aria-label={layoutName(id)} title={layoutName(id)} aria-pressed={layout === id} onClick={() => setSetting('layout', id)}>
+          <span class={`layout-icon ${id}`} aria-hidden="true"><i /><i /></span><span class="seg-label">{layoutName(id)}</span>
         </button>
       ))}
     </div>
@@ -83,13 +86,15 @@ export function LayoutSwitch() {
 }
 
 /** The main screen toggles; the ones with an icon also sit in the footer as icon toggles. */
-export const MAIN_TOGGLES: { key: keyof Settings; label: string; hint: string; icon?: IconName }[] = [
-  { key: 'popularity', label: 'Size buttons by today’s usage', hint: 'Tiles grow wider, rows taller, circles larger as you use them', icon: 'sizeByUsage' },
-  { key: 'unusedStrip', label: 'Move unused activities to a strip', hint: 'Activities with no time today become small chips under the buttons', icon: 'unusedStrip' },
-  { key: 'showTimeline', label: 'Show today’s timeline', hint: 'The colored session bar at the bottom of the main screen' },
-  { key: 'showGroups', label: 'Show group totals', hint: 'Time per group and idle time, on one line under the timeline' },
-  { key: 'showFooter', label: 'Show the footer', hint: 'Links and the quick settings at the bottom of every page' },
+export const MAIN_TOGGLES: { key: 'popularity' | 'unusedStrip' | 'showTimeline' | 'showGroups' | 'showFooter'; icon?: IconName }[] = [
+  { key: 'popularity', icon: 'sizeByUsage' },
+  { key: 'unusedStrip', icon: 'unusedStrip' },
+  { key: 'showTimeline' },
+  { key: 'showGroups' },
+  { key: 'showFooter' },
 ];
+export const toggleLabel = (key: (typeof MAIN_TOGGLES)[number]['key']) => t(`toggles.${key}.label`);
+export const toggleHint = (key: (typeof MAIN_TOGGLES)[number]['key']) => t(`toggles.${key}.hint`);
 
 /** Footer: the layout switch and the icon toggles. */
 export function MainScreenSwitch() {
@@ -97,11 +102,11 @@ export function MainScreenSwitch() {
   return (
     <div class="quick-row">
       <LayoutSwitch />
-      {MAIN_TOGGLES.filter((t) => t.icon).map((t) => (
+      {MAIN_TOGGLES.filter((m) => m.icon).map((m) => (
         <button
-          key={t.key} class="icon round toggle" aria-label={t.label} title={t.label} aria-pressed={Boolean(s[t.key])}
-          onClick={() => setSetting(t.key, !s[t.key] as never)}
-        ><Icon name={t.icon!} /></button>
+          key={m.key} class="icon round toggle" aria-label={toggleLabel(m.key)} title={toggleLabel(m.key)} aria-pressed={Boolean(s[m.key])}
+          onClick={() => setSetting(m.key, !s[m.key] as never)}
+        ><Icon name={m.icon!} /></button>
       ))}
     </div>
   );
@@ -111,10 +116,7 @@ export function MainScreenSwitch() {
 export function PrivacyNote({ children }: { children?: ComponentChildren }) {
   return (
     <p class="note">
-      <strong>
-        Privacy first: everything you track stays in this browser. No account and no internet connection needed. You are
-        responsible for your data, so export a backup regularly.
-      </strong>
+      <strong>{t('about.privacyNote')}</strong>
       {children}
     </p>
   );
@@ -123,7 +125,7 @@ export function PrivacyNote({ children }: { children?: ComponentChildren }) {
 /** Settings → About: anonymous usage stats, on unless the visitor (or their browser's Do Not Track) said no. */
 export function UsageStats() {
   const [on, setOn] = useState(statsOn);
-  if (!statsAvailable()) return <p class="muted small">This copy (the demo, the offline file or a local build) sends no usage stats.</p>;
+  if (!statsAvailable()) return <p class="muted small">{t('about.statsUnavailable')}</p>;
   const change = (v: boolean) => {
     setStatsOn(v);
     setOn(v);
@@ -134,16 +136,15 @@ export function UsageStats() {
         <label class="toggle">
           <input type="checkbox" checked={on} onChange={(e) => change(e.currentTarget.checked)} />
           <span class="toggle-text">
-            <span>Share anonymous usage stats</span>
-            <span class="muted small">Which screens and features get used, never what you track. No cookies, no account, nothing personal.</span>
+            <span>{t('about.statsLabel')}</span>
+            <span class="muted small">{t('about.statsHint')}</span>
           </span>
         </label>
       </div>
       <p class="muted small">
-        {!statsChoice() && browserOptsOut() && 'Your browser asks sites not to track, so this is off until you turn it on. '}
-        It is your choice, and you can turn it off. Please consider leaving it on: Time Tracker is free, and these
-        counts are the only way to know anyone uses it. If nobody does, it gets no more updates and will be retired.{' '}
-        <a href="../privacy/">What is collected</a>
+        {!statsChoice() && browserOptsOut() && `${t('about.statsDnt')} `}
+        {t('about.statsPlea')}{' '}
+        <a href="../privacy/" hreflang="en">{t('about.statsLink')}</a>
       </p>
     </>
   );

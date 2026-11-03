@@ -3,6 +3,7 @@
 import { useState } from 'preact/hooks';
 import { track } from '../analytics.ts';
 import { openModal } from './hooks.tsx';
+import { t } from '../i18n.ts';
 
 const MAX_MESSAGE = 4000;
 
@@ -23,17 +24,17 @@ function FeedbackForm({ version, close }: { version: string; close: () => void }
   if (!FEEDBACK_URL) {
     return (
       <div class="dialog-body">
-        <h2 class="dialog-title">Send feedback</h2>
-        <p class="dialog-text">This offline file cannot send messages. Open the online version of the app to send feedback.</p>
+        <h2 class="dialog-title">{t('feedback.title')}</h2>
+        <p class="dialog-text">{t('feedback.offline')}</p>
       </div>
     );
   }
   if (status === 'sent') {
     return (
       <div class="dialog-body">
-        <h2 class="dialog-title">Thank you</h2>
-        <p class="dialog-text">Your message is on its way. Every one of them is read.</p>
-        <div class="dialog-actions"><button class="primary" onClick={close}>Close</button></div>
+        <h2 class="dialog-title">{t('feedback.thanks')}</h2>
+        <p class="dialog-text">{t('feedback.sent')}</p>
+        <div class="dialog-actions"><button class="primary" onClick={close}>{t('common.close')}</button></div>
       </div>
     );
   }
@@ -63,20 +64,20 @@ function FeedbackForm({ version, close }: { version: string; close: () => void }
 
   return (
     <form class="dialog-body feedback" onSubmit={onSubmit}>
-      <h2 class="dialog-title">Send feedback</h2>
-      <p class="dialog-text">A bug, a missing feature, or just that you use it: all of it helps decide what comes next.</p>
-      <textarea name="message" rows={6} maxLength={MAX_MESSAGE} required aria-label="Your message" placeholder="Your message" />
-      <input type="email" name="email" maxLength={200} aria-label="Email" placeholder="Email, only if you want a reply" />
+      <h2 class="dialog-title">{t('feedback.title')}</h2>
+      <p class="dialog-text">{t('feedback.intro')}</p>
+      <textarea name="message" rows={6} maxLength={MAX_MESSAGE} required aria-label={t('feedback.message')} placeholder={t('feedback.message')} />
+      <input type="email" name="email" maxLength={200} aria-label={t('feedback.email')} placeholder={t('feedback.emailHint')} />
       {/* Honeypot: hidden from people, filled in by spam bots. */}
       <input type="text" name="website" class="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" />
       <label class="toggle">
         <input type="checkbox" checked={withDevice} onChange={(e) => setWithDevice(e.currentTarget.checked)} />
-        <span class="toggle-text"><span>Include the app version and browser</span><span class="muted small">{device}</span></span>
+        <span class="toggle-text"><span>{t('feedback.device')}</span><span class="muted small">{device}</span></span>
       </label>
-      {status === 'failed' && <p class="notice">It could not be sent just now. Your text is still here, try again in a moment.</p>}
+      {status === 'failed' && <p class="notice">{t('feedback.failed')}</p>}
       <div class="dialog-actions">
-        <button type="button" class="secondary" onClick={close}>Cancel</button>
-        <button type="submit" class="primary" disabled={status === 'sending'}>{status === 'sending' ? 'Sending…' : 'Send'}</button>
+        <button type="button" class="secondary" onClick={close}>{t('common.cancel')}</button>
+        <button type="submit" class="primary" disabled={status === 'sending'}>{t(status === 'sending' ? 'feedback.sending' : 'feedback.send')}</button>
       </div>
     </form>
   );
