@@ -46,6 +46,18 @@ describe('site pages', () => {
     expect(html).toContain('<a href="../uk/" hreflang="uk" lang="uk" data-locale="uk">');
   });
 
+  it('serve the not-found page from any depth, unindexed and unlisted', () => {
+    expect(pagePath(page('404'), 'uk', locales)).toBe('uk/404.html');
+    const html = renderPage(page('404'), 'uk', locales);
+    expect(html).toContain('<base href="/">');
+    expect(html).toContain('<meta name="robots" content="noindex">');
+    expect(html).not.toContain('rel="canonical"');
+    expect(html).toContain('<a class="button primary" href="/uk/">');
+    expect(html).toContain('<a href="/" hreflang="en" lang="en" data-locale="en">');
+    expect(renderPage(page('home'), 'en', locales)).not.toContain('404');
+    expect(sitemap(locales)).not.toContain('404');
+  });
+
   it('list every page and language in the sitemap', () => {
     const xml = sitemap(locales);
     expect(xml).toContain('<loc>https://taptimetracker.app/uk/similar/</loc>');

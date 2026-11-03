@@ -547,6 +547,7 @@ Every popup uses one dialog component.
 | `/privacy/` | `src/site/pages/privacy.html` | Privacy: no account, no server, data stays in the browser. English only. |
 | `/terms/` | `src/site/pages/terms.html` | Terms of use: free, as is, backups are the user's job. English only. |
 | `/similar/`, `/uk/similar/` | `src/site/pages/similar.html` | Similar apps: one card per tool, most similar first, then ideas worth borrowing. A normal page with its text in locale files; `docs/SIMILAR-TOOLS.md` stays as the research notes behind it and is not built. Linked from the landing footer and the app's Similar apps. |
+| `/404.html`, `/uk/404.html` | `src/site/pages/404.html` | Not found (below): served with status 404 for any missing URL. Not a page of its own. |
 
 The site pages are generated per language at build time from these templates (§21); there are no HTML files for
 them in the repo root.
@@ -584,6 +585,16 @@ them in the repo root.
   API and the stats always use the network. `app/index.html` also has `mobile-web-app-capable`,
   `apple-mobile-web-app-capable` and an `apple-touch-icon`. Links to the site pages leave the app's scope, so an
   installed app shows them with the browser's toolbar.
+- **Not found:** `wrangler.jsonc` sets `assets.not_found_handling` to `404-page`, so Cloudflare answers any missing URL
+  with the nearest `404.html` and **status 404** (never a redirect to the home page and never a 200, which search
+  engines would treat as a soft 404). `/uk/…` gets the Ukrainian one, everything else the English one. The page is
+  `noindex`, has no canonical or hreflang, is not in `sitemap.xml` and not in the footer's page list; it can be served
+  at any depth, so it has `<base href="/">` and root-relative links. The joke: a stopwatch frozen at **4:04**, "This
+  page clocked out", and (with JavaScript) a live counter of the time spent on the page, "not on your timesheet".
+  Buttons: the home page and **Open the app**; the footer's language links go to each language's home page. A page
+  view is still counted (§20), so broken links show up in the stats.
+  `npm run dev` does the same (the site plugin answers unhandled page views with it); `npx serve dist` only knows
+  the root `404.html`, so it shows English everywhere. `npx wrangler dev` after a build is the faithful preview.
 - `public/` is copied as is (no `sitemap.xml` there: the build writes it). The single-file build (`--mode single`) builds only the app and drops the favicon and
   manifest links.
 
@@ -611,7 +622,7 @@ is generated at build time and the app uses a small typed `t()` (`src/i18n.ts`).
   the first one (`en`) is the default. Codes are ISO 639-1 language codes (`uk`, never the country code `ua`).
 - `locales/<code>/site.json`: the strings every site page shares (header, footer, switcher, language banner).
 - `locales/<code>/<page>.json`: one file per site page (`home`, `similar`, …): title, description, Open Graph text and
-  the page's copy. Values may contain inline HTML (links, `<strong>`, `<em>`).
+  the page's copy (`404` for the not-found page). Values may contain inline HTML (links, `<strong>`, `<em>`).
 - `locales/<code>/app.json`: the app's strings (§21.4).
 - **A page exists in a language when its file exists**, e.g. `locales/uk/similar.json`. Privacy and terms are marked
   `englishOnly` in `PAGES` and have no page file: their copy is in the template (§21.2). A new language can launch
