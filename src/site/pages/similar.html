@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description|attr}}">
+  {{@seo}}
+  <link rel="icon" href="{{@root}}favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/src/site/site.css">
+  <script type="module" src="/src/site/site.ts"></script>
+</head>
+<body>
+  {{@banner}}
+  {{@header}}
+  <main>
+    <h1>{{heading}}</h1>
+    <p>{{intro}}</p>
+    <p>{{takeaway.lead}}</p>
+    <ul>
+      <li>{{takeaway.web}}</li>
+      <li>{{takeaway.touch}}</li>
+      <li>{{takeaway.backdate}}</li>
+      <li>{{takeaway.offline}}</li>
+    </ul>
+    <p>{{takeaway.closest}}</p>
+    <ol class="tools">
+      <li class="tool">
+        <h2><span class="rank">1</span><span><a href="https://apps.apple.com/app/ticktappy/id6757327485">TickTappy</a></span></h2>
+        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t1.platform}}</p>
+        <dl><dt>{{similar}}</dt><dd>{{tools.t1.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t1.differences}}</dd></dl>
+      </li>
+      <li class="tool">
+        <h2><span class="rank">2</span><span><a href="https://apps.apple.com/app/id576718804">aTimeLogger</a></span></h2>
+        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t2.platform}}</p>
+        <dl><dt>{{similar}}</dt><dd>{{tools.t2.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t2.differences}}</dd></dl>
+      </li>
+      <li class="tool">
+        <h2><span class="rank">3</span><span><a href="https://f-droid.org/en/packages/com.razeeman.util.simpletimetracker">Simple Time Tracker</a> (<a href="https://github.com/Razeeman/Android-SimpleTimeTracker">{{source}}</a>)</span></h2>
+        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t3.platform}}</p>
+        <dl><dt>{{similar}}</dt><dd>{{tools.t3.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t3.differences}}</dd></dl>
+      </li>
+      <li class="tool">
+        <h2><span class="rank">4</span><span><a href="https://apps.apple.com/app/id6758586452">Takt – Time Tracking</a></span></h2>
+        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t4.platform}}</p>
+        <dl><dt>{{similar}}</dt><dd>{{tools.t4.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t4.differences}}</dd></dl>
+      </li>
+      <li class="tool">
+        <h2><span class="rank">5</span><span><a href="https://apple.co/32b8qMr">ATracker PRO</a></span></h2>
+        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t5.platform}}</p>
+        <dl><dt>{{similar}}</dt><dd>{{tools.t5.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t5.differences}}</dd></dl>
+      </li>
+      <li class="tool">
+        <h2><span class="rank">6</span><span><a href="https://timeular.com/">Timeular</a> / <a href="https://www.capterra.co.uk/software/1061612/timeflip2">TimeFlip2</a></span></h2>
+        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t6.platform}}</p>
+        <dl><dt>{{similar}}</dt><dd>{{tools.t6.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t6.differences}}</dd></dl>
+      </li>
+      <li class="tool">
+        <h2><span class="rank">7</span><span><a href="https://clockify.me/features/kiosk">Clockify Kiosk</a></span></h2>
+        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t7.platform}}</p>
+        <dl><dt>{{similar}}</dt><dd>{{tools.t7.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t7.differences}}</dd></dl>
+      </li>
+      <li class="tool">
+        <h2><span class="rank">8</span><span><a href="https://github.com/almarklein/timetagger">TimeTagger</a></span></h2>
+        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t8.platform}}</p>
+        <dl><dt>{{similar}}</dt><dd>{{tools.t8.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t8.differences}}</dd></dl>
+      </li>
+      <li class="tool">
+        <h2><span class="rank">9</span><span><a href="https://apps.apple.com/app/id1425368544">Timery</a> {{timeryFor}} <a href="https://toggl.com/track/">Toggl Track</a></span></h2>
+        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t9.platform}}</p>
+        <dl><dt>{{similar}}</dt><dd>{{tools.t9.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t9.differences}}</dd></dl>
+      </li>
+      <li class="tool">
+        <h2><span class="rank">10</span><span><a href="https://github.com/MarsiaLi/tracker">MarsiaLi/tracker</a></span></h2>
+        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t10.platform}}</p>
+        <dl><dt>{{similar}}</dt><dd>{{tools.t10.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t10.differences}}</dd></dl>
+      </li>
+      <li class="tool">
+        <h2><span class="rank">11</span><span><a href="https://github.com/silas229/wk-timer">wk-timer</a></span></h2>
+        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t11.platform}}</p>
+        <dl><dt>{{similar}}</dt><dd>{{tools.t11.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t11.differences}}</dd></dl>
+      </li>
+      <li class="tool">
+        <h2><span class="rank">12</span><span><a href="https://www.kimai.org/">Kimai</a>, <a href="https://www.solidtime.io/">solidtime</a>, <a href="https://super-productivity.com/">Super Productivity</a></span></h2>
+        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t12.platform}}</p>
+        <dl><dt>{{similar}}</dt><dd>{{tools.t12.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t12.differences}}</dd></dl>
+      </li>
+      <li class="tool">
+        <h2><span class="rank">13</span><span><a href="https://f-droid.org/packages/com.chess.clock/">Chess.com Chess Clock</a>, <a href="https://apps.gnome.org/Chessclock/">GNOME Chess Clock</a></span></h2>
+        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t13.platform}}</p>
+        <dl><dt>{{similar}}</dt><dd>{{tools.t13.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t13.differences}}</dd></dl>
+      </li>
+    </ol>
+
+    <p class="fine">{{sources}}</p>
+  </main>
+  {{@footer}}
+</body>
+</html>

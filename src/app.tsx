@@ -15,13 +15,7 @@ import { ModalHost, closeTopModal, confirmDialog, messageDialog } from './ui/hoo
 import { HoverTip, ScrollTop, type Nav } from './ui/header.tsx';
 import { openProfilePicker } from './ui/profiles.tsx';
 import { download, fmtDayShort, fmtHours, isoDay, slug } from './ui/util.ts';
-import '@fontsource/geist-sans/latin-400.css';
-import '@fontsource/geist-sans/latin-500.css';
-import '@fontsource/geist-sans/latin-600.css';
-import '@fontsource/geist-sans/latin-700.css';
-import '@fontsource/geist-mono/latin-400.css';
-import '@fontsource/geist-mono/latin-500.css';
-import '@fontsource/geist-mono/latin-600.css';
+import './fonts.css';
 import './styles.css';
 
 /** The history entry's state: the view it was opened from (set by `go`). */

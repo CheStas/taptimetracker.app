@@ -1,7 +1,6 @@
 /* The static site pages (landing, privacy, terms): the app's tokens and fonts, a simple centered column. */
 @import '../tokens.css';
-@import '@fontsource/geist-sans/latin-400.css';
-@import '@fontsource/geist-sans/latin-600.css';
+@import '../fonts.css';
 
 * { box-sizing: border-box; }
 html, body { margin: 0; background: var(--bg); color: var(--text); }
@@ -12,6 +11,9 @@ a { color: var(--accent); }
 .site-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 72px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; color: var(--text); text-decoration: none; }
 .brand img { width: 28px; height: 28px; }
+.brand, .site-header .button { white-space: nowrap; }
+/* A long "Open the app" (Ukrainian) and the name do not fit side by side on a small phone: the logo stays. */
+@media (max-width: 400px) { .site-header .button { padding: 0 14px; } .brand span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); } }
 main { flex: 1; padding-block: 32px 64px; }
 h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 16px; }
 .lead { font-size: 20px; color: var(--muted); margin: 0 0 32px; }
@@ -77,8 +79,25 @@ h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.1; letter-spacing: -0.02e
 
 .site-footer { display: flex; flex-wrap: wrap; gap: 8px 20px; padding-block: 24px; border-top: 1px solid var(--line); font-size: 14px; }
 .site-footer a { color: var(--muted); }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.site-footer .langs { margin-left: auto; }
+.site-footer .langs a[aria-current] { color: var(--text); font-weight: 600; text-decoration: none; }
+.muted { color: var(--muted); }
 
-/* Similar apps: the doc from docs/SIMILAR-TOOLS.md (scripts/similarTools.ts), its table as a grid of cards. */
+/* The language suggestion (src/site/site.ts): a strip above the header, in the suggested language. */
+.lang-banner {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 16px;
+  padding: 10px 16px; background: var(--surface); border-bottom: 1px solid var(--line); font-size: 15px;
+}
+.lang-banner[hidden] { display: none; }
+.lang-banner .button { min-height: 40px; padding: 0 16px; }
+.lang-banner .close {
+  min-width: 40px; min-height: 40px; border: 0; border-radius: 10px; background: none; color: var(--muted);
+  font: inherit; cursor: pointer;
+}
+.lang-banner .close:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+/* Similar apps: an intro, then one card per app in a grid. */
 .similar .site-header, .similar main, .similar .site-footer { max-width: 1120px; }
 .similar main > p, .similar main > ul { max-width: 760px; color: var(--muted); }
 .similar main > h2 { font-size: clamp(22px, 3vw, 28px); line-height: 1.2; margin: 48px 0 12px; }
