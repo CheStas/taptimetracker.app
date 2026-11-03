@@ -14,7 +14,7 @@ More screens, desktop and phone: **[docs/screenshots](docs/screenshots/README.md
 | ![Summary: day, week grouped by Focus, month and the period picker](docs/screenshots/demo-summary.webp) | ![Phone: tiles, activity sheet, More menu and Summary](docs/screenshots/demo-phone.webp) |
 
 Docs: [docs/SPEC.md](docs/SPEC.md) (the full spec), [docs/DESIGN.md](docs/DESIGN.md) (layout rules for changes
-without a new design), [docs/SIMILAR-TOOLS.md](docs/SIMILAR-TOOLS.md) (comparable apps).
+without a new design), [docs/SIMILAR-TOOLS.md](docs/SIMILAR-TOOLS.md) (research notes on comparable apps).
 
 ## Setup
 Preact + TypeScript, built with Vite. Install the dependencies once:
@@ -108,7 +108,17 @@ See `docs/SPEC.md` §20 for what is collected; `privacy/index.html` says the sam
 - Switches shorter than a minute are not counted (the time goes to the next or previous activity); change the
   threshold in **Settings → Day → Minimum switch**. The same section sets the reset hour and the first day of the week.
 - The screen stays on while the app is open; turn this off in **Settings → Device → Keep the screen on**.
+- **Language:** English or Ukrainian, from the browser's languages; change it in **Settings → Device → Language** or
+  with the switcher in the website's footer. The website has its own URL per language (`/uk/`, …).
 - **Esc** goes back (popup → screen → main). In full screen, hold Esc to leave full screen.
+
+## Languages
+Copy lives in [`locales/`](locales/): `locales.json` lists the languages, and each `locales/<code>/` folder holds
+`site.json` (shared site strings), one file per site page (`home.json`, `similar.json`) and `app.json` (the app). To
+add a language, add it to `locales.json` and copy `locales/en/` to `locales/<code>/` and translate it; a page without a
+file in a language is simply not published in it. The build fails when a file misses a key or has an extra one.
+Site pages are templates in `src/site/pages/`, rendered per language at build time with canonical, hreflang and the
+sitemap generated (see [SPEC §21](docs/SPEC.md#21-languages)).
 
 ## Data
 - First-run profiles, groups, activities and default settings come from [`config/seed.json`](config/seed.json).
