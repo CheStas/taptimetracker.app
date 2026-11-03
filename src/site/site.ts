@@ -49,3 +49,18 @@ if (banner && want !== pageLocale) {
     banner.hidden = true;
   });
 }
+
+// ---------- not found ----------
+// The 404 page times the visit, m:ss, from when it opened.
+const lost = document.getElementById('time-lost');
+const clock = lost?.querySelector('time');
+if (lost && clock) {
+  const start = Date.now();
+  const tick = () => {
+    const s = Math.floor((Date.now() - start) / 1000);
+    clock.textContent = `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+  };
+  tick();
+  lost.hidden = false;
+  setInterval(tick, 1000);
+}

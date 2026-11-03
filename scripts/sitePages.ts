@@ -17,12 +17,14 @@ export const ORIGIN = 'https://taptimetracker.app';
 export interface Locale { code: string; name: string; ogLocale: string }
 export interface Page {
   id: string;
-  /** The URL path below the language prefix: '' for the home page, 'similar/' … */
+  /** The URL path below the language prefix: '' for the home page, 'similar/' … ('404.html' is a file, not a folder.) */
   path: string;
   /** The <body> class. */
   body: string;
   /** Only in English, with its copy in the template (privacy, terms): it has no locale file. */
   englishOnly?: boolean;
+  /** The not-found page: served at any missing URL, so root-relative links; not in the footer, sitemap or app links. */
+  notFound?: boolean;
 }
 
 /** Footer order. A new page is a template, an entry here and its locale files. */
@@ -31,7 +33,9 @@ export const PAGES: Page[] = [
   { id: 'similar', path: 'similar/', body: 'similar' },
   { id: 'privacy', path: 'privacy/', body: 'legal', englishOnly: true },
   { id: 'terms', path: 'terms/', body: 'legal', englishOnly: true },
+  { id: '404', path: '404.html', body: 'not-found', notFound: true },
 ];
+const listed = PAGES.filter((p) => !p.notFound);
 
 type Dict = Record<string, string>;
 const readJson = (file: string) => JSON.parse(readFileSync(file, 'utf8'));
@@ -91,7 +95,7 @@ export function renderPage(page: Page, code: string, locales: Locale[]): string 
   const [en] = locales;
   const locale = locales.find((l) => l.code === code)!;
   const here = pagePath(page, code, locales);
-  const root = '../'.repeat(here.split('/').length - 1) || './';
+  const root = page.notFound ? '/' : '../'.repeat(here.split('/').length - 1) || './';
   const site = loadDict(code, 'site')!;
   const dict: Dict = { ...site, ...(page.englishOnly ? {} : loadDict(code, page.id)) };
   const available = pageLocales(page, locales);
@@ -128,12 +132,12 @@ export function renderPage(page: Page, code: string, locales: Locale[]): string 
     <a class="button" href="${root}app/">${t('openApp')}</a>
   </header>`,
     footer: () => {
-      const links = PAGES.filter((p) => p.id !== page.id).map((p) => {
+      const links = listed.filter((p) => p.id !== page.id).map((p) => {
         const english = !pageLocales(p, locales).some((l) => l.code === code);
         return `<a href="${href(p.id)}"${english ? ` hreflang="${en.code}"` : ''}>${t(`footer.${p.id}`)}${english ? ` <span class="muted">${t('footer.english')}</span>` : ''}</a>`;
       });
       const langs = locales.map((l) => {
-        const target = available.some((a) => a.code === l.code) ? page : byId('home');
+        const target = !page.notFound && available.some((a) => a.code === l.code) ? page : byId('home');
         const current = l.code === code ? ' aria-current="true"' : '';
         return `<a href="${root}${pagePath(target, l.code, locales)}" hreflang="${l.code}" lang="${l.code}" data-locale="${l.code}"${current}>${l.name}</a>`;
       });
@@ -167,10 +171,10 @@ export function renderPage(page: Page, code: string, locales: Locale[]): string 
 
 /** Page path -> the languages it exists in, for the app's links to the site (__SITE_PAGES__). */
 export const sitePageLocales = (locales = loadLocales()) =>
-  Object.fromEntries(PAGES.map((p) => [p.path, pageLocales(p, locales).map((l) => l.code)]));
+  Object.fromEntries(listed.map((p) => [p.path, pageLocales(p, locales).map((l) => l.code)]));
 
 export function sitemap(locales: Locale[]): string {
-  const urls = PAGES.flatMap((page) => {
+  const urls = listed.flatMap((page) => {
     const available = pageLocales(page, locales);
     return available.map((l) => {
       const alts = available.length > 1
@@ -194,7 +198,7 @@ function entries(): Map<string, { page: Page; code: string; path: string }> {
   for (const page of PAGES) {
     for (const l of pageLocales(page, locales)) {
       const path = pagePath(page, l.code, locales);
-      out.set(resolve(ROOT, path, 'index.html'), { page, code: l.code, path });
+      out.set(resolve(ROOT, path, path.endsWith('.html') ? '' : 'index.html'), { page, code: l.code, path });
     }
   }
   return out;
@@ -211,8 +215,8 @@ export function sitePages(): Plugin {
     config() {
       check();
       pages = entries();
-      const input = Object.fromEntries([...pages.values()].map(({ page, code, path }) => [
-        code === loadLocales()[0].code ? page.id : `${page.id}-${code}`, resolve(ROOT, path, 'index.html')]));
+      const input = Object.fromEntries([...pages].map(([file, { page, code }]) => [
+        code === loadLocales()[0].code ? page.id : `${page.id}-${code}`, file]));
       return { build: { rollupOptions: { input } } };
     },
     resolveId(id) {
@@ -247,6 +251,25 @@ export function sitePages(): Plugin {
         }
         try {
           const html = await server.transformIndexHtml(req.url ?? path, renderPage(e.page, e.code, loadLocales()));
+          res.setHeader('content-type', 'text/html');
+          res.end(html);
+        } catch (err) {
+          next(err);
+        }
+      });
+      // After Vite's own files and HTML: a page view nothing answered gets the not-found page, as on Cloudflare
+      // (wrangler.jsonc not_found_handling): /uk/… the Ukrainian one, with status 404.
+      return () => server.middlewares.use(async (req, res, next) => {
+        const path = (req.url ?? '/').split('?')[0];
+        if (req.method !== 'GET' || !req.headers.accept?.includes('text/html')
+          || existsSync(resolve(ROOT, `.${path.endsWith('/') ? `${path}index.html` : path}`))) return next();
+        const locales = loadLocales();
+        const notFound = PAGES.find((p) => p.notFound)!;
+        const first = ((req as { originalUrl?: string }).originalUrl ?? path).split('/')[1];
+        const code = pageLocales(notFound, locales).some((l) => l.code === first) ? first : locales[0].code;
+        try {
+          const html = await server.transformIndexHtml(`/${pagePath(notFound, code, locales)}`, renderPage(notFound, code, locales));
+          res.statusCode = 404;
           res.setHeader('content-type', 'text/html');
           res.end(html);
         } catch (err) {

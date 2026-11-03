@@ -1,0 +1,8 @@
+{
+  "title": "Page not found — Time Tracker",
+  "watch": "Session not found",
+  "heading": "This page clocked out",
+  "lead": "Nothing is tracked at this address. The page may have moved, or the link has a typo.",
+  "lost": "You’ve spent <time>0:00</time> here. Don’t worry, it’s not on your timesheet.",
+  "home": "Go to the home page"
+}

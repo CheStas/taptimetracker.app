@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Served at any missing URL (/a/b/c), so every relative URL, including the built assets, resolves from the root. -->
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="{{@root}}favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/src/site/site.css">
+  <script type="module" src="/src/site/site.ts"></script>
+</head>
+<body>
+  {{@header}}
+  <main>
+    <div class="stopwatch" aria-hidden="true">
+      <span class="face">4<span class="colon">:</span>04</span>
+      <span class="label">{{watch}}</span>
+    </div>
+    <h1>{{heading}}</h1>
+    <p class="lead">{{lead}}</p>
+    <p id="time-lost" class="time-lost" hidden>{{lost}}</p>
+    <div class="actions">
+      <a class="button primary" href="{{@href:home}}">{{home}}</a>
+      <a class="button" href="{{@app}}">{{openApp}}</a>
+    </div>
+  </main>
+  {{@footer}}
+</body>
+</html>
