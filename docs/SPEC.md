@@ -541,20 +541,25 @@ Every popup uses one dialog component.
 
 | Path | Source | Content |
 |---|---|---|
-| `/` | `index.html` | Landing page (below). No redirect for returning users. |
-| `/app/` | `app/index.html` | The app (the PWA). |
+| `/`, `/uk/` | `src/site/pages/home.html` | Landing page (below). No redirect for returning users. |
+| `/app/` | `app/index.html` | The app (the PWA). One address for every language (§21). |
 | `/app/?demo` | `app/index.html` | The demo: the app on sample data in a throwaway database (below). |
-| `/privacy/` | `privacy/index.html` | Privacy: no account, no server, data stays in the browser. |
-| `/terms/` | `terms/index.html` | Terms of use: free, as is, backups are the user's job. |
-| `/similar/` | `similar/index.html` | Similar apps: `docs/SIMILAR-TOOLS.md` rendered at build time (`scripts/similarTools.ts`), its table as one card per tool. Linked from the landing footer and the app's Similar apps. |
+| `/privacy/` | `src/site/pages/privacy.html` | Privacy: no account, no server, data stays in the browser. English only. |
+| `/terms/` | `src/site/pages/terms.html` | Terms of use: free, as is, backups are the user's job. English only. |
+| `/similar/`, `/uk/similar/` | `src/site/pages/similar.html` | Similar apps: one card per tool, most similar first, then ideas worth borrowing. A normal page with its text in locale files; `docs/SIMILAR-TOOLS.md` stays as the research notes behind it and is not built. Linked from the landing footer and the app's Similar apps. |
 
-- Every site page has the same header (logo + name → `/`, **Open the app**) and a footer with the other pages.
+The site pages are generated per language at build time from these templates (§21); there are no HTML files for
+them in the repo root.
+
+- Every site page has the same header (logo + name → the home page in its language, **Open the app**) and a footer
+  with the other pages and the language switcher (§21).
 - The pages are plain HTML, so they load fast and can be indexed. Their only script is `src/site/site.ts`: usage stats
   (§20) and the privacy page's on/off switch.
 - **Search and link previews:** the site lives at `https://taptimetracker.app/`. Every site page has a
-  `<link rel="canonical">` to its URL there; the landing page also has Open Graph and Twitter card tags (image
-  `public/og.png`, 1200×630, written by `npm run screenshots`) and `WebApplication` JSON-LD. `public/robots.txt` points
-  to `public/sitemap.xml` (landing, similar, privacy, terms; add new pages there). The app (`app/`) is `noindex`, so
+  `<link rel="canonical">` to its own URL there (each language its own); the landing page also has Open Graph and
+  Twitter card tags (image `public/og.png`, 1200×630, written by `npm run screenshots`) and `WebApplication` JSON-LD,
+  translated. `public/robots.txt` points to `sitemap.xml`, which the build writes from the page list (every page in
+  every language it exists in, with its alternates; §21). The app (`app/`) is `noindex`, so
   the landing page is what ranks and `app/?demo` is never a duplicate. Copy says "time tracker", the phrase people
   search for ("activity tracker" means fitness bands).
 - **Landing page:** hand-written copy (not spec wording), in this order: hero (headline, a lead that ends on privacy:
@@ -579,7 +584,7 @@ Every popup uses one dialog component.
   API and the stats always use the network. `app/index.html` also has `mobile-web-app-capable`,
   `apple-mobile-web-app-capable` and an `apple-touch-icon`. Links to the site pages leave the app's scope, so an
   installed app shows them with the browser's toolbar.
-- `public/` is copied as is. The single-file build (`--mode single`) builds only the app and drops the favicon and
+- `public/` is copied as is (no `sitemap.xml` there: the build writes it). The single-file build (`--mode single`) builds only the app and drops the favicon and
   manifest links.
 
 ## 20. Usage stats and feedback
@@ -595,3 +600,72 @@ Every popup uses one dialog component.
 - **Feedback:** `worker/feedback.ts`, in the site's Cloudflare Worker (`wrangler.jsonc`; only `/api/*` runs code, the
   rest is static assets). It checks the origin, size, fields and a honeypot, and stores the message in the KV
   namespace bound as `FEEDBACK` (503 until it is bound). No IP or country is stored.
+
+## 21. Languages
+English (default) and Ukrainian. A language is added with config and copy only, no code: an entry in
+`locales/locales.json` and a folder `locales/<code>/` with the same files as `locales/en/`. No i18n library: the site
+is generated at build time and the app uses a small typed `t()` (`src/i18n.ts`).
+
+### 21.1 Locale files
+- `locales/locales.json`: the languages in switcher order, `{ "code": "uk", "name": "Українська", "ogLocale": "uk_UA" }`;
+  the first one (`en`) is the default. Codes are ISO 639-1 language codes (`uk`, never the country code `ua`).
+- `locales/<code>/site.json`: the strings every site page shares (header, footer, switcher, language banner).
+- `locales/<code>/<page>.json`: one file per site page (`home`, `similar`, …): title, description, Open Graph text and
+  the page's copy. Values may contain inline HTML (links, `<strong>`, `<em>`).
+- `locales/<code>/app.json`: the app's strings (§21.4).
+- **A page exists in a language when its file exists**, e.g. `locales/uk/similar.json`. Privacy and terms have no
+  page file in any language: they are English only, their copy is in the template (§21.2). A new language can launch
+  with only some pages translated.
+- The build **fails** when a language's file lacks a key that the English file has, or has a key English does not,
+  so a half-translated page never goes live. `npm test` checks the same for `app.json`.
+
+### 21.2 Site pages
+- A Vite plugin (`scripts/sitePages.ts`) renders every page in every language it exists in from
+  `src/site/pages/<page>.html` and adds each as a build input; `npm run dev` serves them the same way. Templates use
+  `{{key}}` (the page's file, then `site.json`) and `{{@…}}` for generated parts: `@lang`, `@root` (relative path to
+  the site root), `@seo`, `@header`, `@footer`, `@banner`. The page list (id, path) is `PAGES` in that plugin.
+- **URLs:** English at the root with no prefix (`/`, `/similar/`), every other language under its code (`/uk/`,
+  `/uk/similar/`). Existing English URLs and rankings are unchanged.
+- **SEO on every page:** `<html lang>`, a self-referencing canonical, `<link rel="alternate" hreflang>` for every
+  language the page exists in plus `x-default` (English), and, on the landing page, `og:locale` and
+  `og:locale:alternate`, translated Open Graph text and JSON-LD with `inLanguage`. `sitemap.xml` lists every page in
+  every language with `xhtml:link` alternates.
+- **English-only pages** (privacy, terms) are linked from the footer of every language; on a non-English page the link
+  says "(English)" and has `hreflang="en"`. There is no `/uk/privacy/`: an English copy under a Ukrainian address would
+  be duplicate content.
+- **Language switcher** in every site footer: one real link per language (crawlable), named in its own language, the
+  current one marked (`aria-current`). It points to the same page in that language, or that language's home page when
+  the page does not exist in it. Choosing one saves it (below).
+- **No automatic redirects** by `Accept-Language` or saved choice: search engines crawl without that header, so every
+  URL always serves its own language.
+- **Language banner** (top of the page, above the header): shown when the preferred language differs from the page's
+  and the page exists in it. Preferred = the saved choice, else the first browser language (`navigator.languages`)
+  that the site has, else none. Written in the preferred language: "Ця сторінка доступна українською." **Перейти** · ✕.
+  The link saves that choice and opens the page in it; ✕ saves the page's language as the choice. Without
+  JavaScript it never shows.
+- **The saved choice** is localStorage `locale` (a code), shared with the app (same origin). It is set by the switcher,
+  the banner and by any link from a site page to the app (so the app opens in the language the visitor was reading).
+
+### 21.3 Fonts
+Geist Sans has no Cyrillic, so the site and the app use `@fontsource/geist` and `@fontsource/geist-mono` (Latin,
+Latin Extended and Cyrillic). The subsets are split by `unicode-range`, so an English page only downloads Latin.
+
+### 21.4 The app
+- One address for all languages: `/app/` (also the PWA's scope and the demo); the app is `noindex`, so its language
+  does not need a URL. Language = localStorage `locale` if it names a language the app has, else the first browser
+  language it has, else English. `<html lang>` follows it.
+- **Settings → Device → Language:** a select with every language in its own name; changing it saves `locale` and
+  re-renders the app at once. The single-file build has the same setting.
+- `t('key', { name: … })` with `{name}` placeholders. Counts use the language's plural rules (`Intl.PluralRules`): a
+  plural value is an object with the forms that language needs (English `one`/`other`; Ukrainian `one`/`few`/`many`/
+  `other`, as in 1 хвилина, 2 хвилини, 5 хвилин). English is bundled; other languages are loaded on start
+  (`import()`), so the app downloads only its own.
+- **Dates** (weekday, month names) use the app's language through `Intl.DateTimeFormat`; durations use the
+  language's units ("8h 43m" / "8 год 43 хв"). The first day of the week still follows the browser's region (§8 Week
+  starts on), not the app's language.
+- **First-run and demo data:** the default activity, group and profile names (`config/seed.json`) and the demo's
+  sample names are looked up in `app.json` (`seed.*`), so a Ukrainian first run starts with Ukrainian names. Names a
+  user typed are never translated, and nothing already stored changes when the language changes.
+- "What is it?" and "Similar apps" (§6.1) open the site page in the app's language when it exists there, else English.
+- Backup files, theme files and usage-stats event values stay language-independent.
+
