@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.10.0](https://github.com/CheStas/taptimetracker.app/compare/v0.9.0...v0.10.0) (2026-11-04)
+
+
+### Features
+
+* **app:** keep the screen on from the footer and drop desktop-only pieces ([5f92df7](https://github.com/CheStas/taptimetracker.app/commit/5f92df7d5937bbe7fa03d938f6fce4ef24be0b70))
+* **site:** rename to Tap Time Tracker and add FAQ, how-tos, structured data and llms.txt ([13385cb](https://github.com/CheStas/taptimetracker.app/commit/13385cb0a640481fdf479842e04b0ed6bc68396c))
+
 ## [0.9.0](https://github.com/CheStas/taptimetracker.app/compare/v0.8.0...v0.9.0) (2026-11-04)
 
 
