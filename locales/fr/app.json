@@ -95,7 +95,7 @@
     "statsLabel": "Partager des statistiques d’utilisation anonymes",
     "statsHint": "Quels écrans et fonctions sont utilisés, jamais ce que vous suivez. Pas de cookies, pas de compte, rien de personnel.",
     "statsDnt": "Votre navigateur demande aux sites de ne pas vous pister, donc c’est désactivé jusqu’à ce que vous l’activiez.",
-    "statsPlea": "C’est votre choix, et vous pouvez le désactiver. Pensez quand même à le laisser activé : Time Tracker est gratuit, et ces comptages sont le seul moyen de savoir si quelqu’un l’utilise. Si personne ne l’utilise, il ne recevra plus de mises à jour et sera abandonné.",
+    "statsPlea": "C’est votre choix, et vous pouvez le désactiver. Pensez quand même à le laisser activé : Tap Time Tracker est gratuit, et ces comptages sont le seul moyen de savoir si quelqu’un l’utilise. Si personne ne l’utilise, il ne recevra plus de mises à jour et sera abandonné.",
     "statsLink": "Ce qui est collecté"
   },
   "layout": {
@@ -478,7 +478,7 @@
     "resetTitle": "Réinitialiser la journée ?",
     "resetStops": "{name} s’arrête maintenant.",
     "resetBody": "La journée du {date} se termine avec {total} suivi et une nouvelle journée commence. Vous pouvez toujours modifier la journée terminée depuis le Résumé.",
-    "closeTitle": "Fermer Time Tracker ?",
+    "closeTitle": "Fermer Tap Time Tracker ?",
     "closeRunning": "{name} continue de compter pendant que l’app est fermée. Rouvrez l’app pour l’arrêter ou changer.",
     "closeIdle": "Rien ne tourne.",
     "closeYourself": "Fermez la fenêtre vous-même",
@@ -486,7 +486,7 @@
     "keepsCounting": "{name} continue de compter."
   },
   "errors": {
-    "notExport": "Ce n’est pas un export de Time Tracker",
+    "notExport": "Ce n’est pas un export de Tap Time Tracker",
     "itermXml": "Fichier XML inconnu (attendu : un fichier .itermcolors d’iTerm)",
     "jsonTheme": "Thème JSON inconnu (attendu : notre fichier de thème, un thème de couleurs VS Code ou base16)",
     "themeFile": "Fichier de thème inconnu (pris en charge : notre thème .json, VS Code .json, base16 .yaml/.json, Alacritty .toml, iTerm .itermcolors)"

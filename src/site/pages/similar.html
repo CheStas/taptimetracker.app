@@ -6,6 +6,96 @@
   <title>{{title}}</title>
   <meta name="description" content="{{description|attr}}">
   {{@seo}}
+  {{@ld}}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Apps similar to Tap Time Tracker, most similar first",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 13,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "TickTappy",
+          "url": "https://apps.apple.com/app/ticktappy/id6757327485"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "aTimeLogger",
+          "url": "https://apps.apple.com/app/id576718804"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Simple Time Tracker",
+          "url": "https://f-droid.org/en/packages/com.razeeman.util.simpletimetracker"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Takt – Time Tracking",
+          "url": "https://apps.apple.com/app/id6758586452"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "ATracker PRO",
+          "url": "https://apple.co/32b8qMr"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Timeular / TimeFlip2",
+          "url": "https://timeular.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Clockify Kiosk",
+          "url": "https://clockify.me/features/kiosk"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "TimeTagger",
+          "url": "https://github.com/almarklein/timetagger"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Timery for Toggl Track",
+          "url": "https://apps.apple.com/app/id1425368544"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "MarsiaLi/tracker",
+          "url": "https://github.com/MarsiaLi/tracker"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "wk-timer",
+          "url": "https://github.com/silas229/wk-timer"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Kimai, solidtime, Super Productivity",
+          "url": "https://www.kimai.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "Chess.com Chess Clock, GNOME Chess Clock",
+          "url": "https://f-droid.org/packages/com.chess.clock/"
+        }
+      ]
+    }
+  </script>
   <link rel="icon" href="{{@root}}favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/src/site/site.css">
   <script type="module" src="/src/site/site.ts"></script>
@@ -24,73 +114,112 @@
       <li>{{takeaway.offline}}</li>
     </ul>
     <p>{{takeaway.closest}}</p>
-    <ol class="tools">
-      <li class="tool">
-        <h2><span class="rank">1</span><span><a href="https://apps.apple.com/app/ticktappy/id6757327485">TickTappy</a></span></h2>
-        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t1.platform}}</p>
-        <dl><dt>{{similar}}</dt><dd>{{tools.t1.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t1.differences}}</dd></dl>
-      </li>
-      <li class="tool">
-        <h2><span class="rank">2</span><span><a href="https://apps.apple.com/app/id576718804">aTimeLogger</a></span></h2>
-        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t2.platform}}</p>
-        <dl><dt>{{similar}}</dt><dd>{{tools.t2.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t2.differences}}</dd></dl>
-      </li>
-      <li class="tool">
-        <h2><span class="rank">3</span><span><a href="https://f-droid.org/en/packages/com.razeeman.util.simpletimetracker">Simple Time Tracker</a> (<a href="https://github.com/Razeeman/Android-SimpleTimeTracker">{{source}}</a>)</span></h2>
-        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t3.platform}}</p>
-        <dl><dt>{{similar}}</dt><dd>{{tools.t3.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t3.differences}}</dd></dl>
-      </li>
-      <li class="tool">
-        <h2><span class="rank">4</span><span><a href="https://apps.apple.com/app/id6758586452">Takt – Time Tracking</a></span></h2>
-        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t4.platform}}</p>
-        <dl><dt>{{similar}}</dt><dd>{{tools.t4.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t4.differences}}</dd></dl>
-      </li>
-      <li class="tool">
-        <h2><span class="rank">5</span><span><a href="https://apple.co/32b8qMr">ATracker PRO</a></span></h2>
-        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t5.platform}}</p>
-        <dl><dt>{{similar}}</dt><dd>{{tools.t5.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t5.differences}}</dd></dl>
-      </li>
-      <li class="tool">
-        <h2><span class="rank">6</span><span><a href="https://timeular.com/">Timeular</a> / <a href="https://www.capterra.co.uk/software/1061612/timeflip2">TimeFlip2</a></span></h2>
-        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t6.platform}}</p>
-        <dl><dt>{{similar}}</dt><dd>{{tools.t6.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t6.differences}}</dd></dl>
-      </li>
-      <li class="tool">
-        <h2><span class="rank">7</span><span><a href="https://clockify.me/features/kiosk">Clockify Kiosk</a></span></h2>
-        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t7.platform}}</p>
-        <dl><dt>{{similar}}</dt><dd>{{tools.t7.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t7.differences}}</dd></dl>
-      </li>
-      <li class="tool">
-        <h2><span class="rank">8</span><span><a href="https://github.com/almarklein/timetagger">TimeTagger</a></span></h2>
-        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t8.platform}}</p>
-        <dl><dt>{{similar}}</dt><dd>{{tools.t8.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t8.differences}}</dd></dl>
-      </li>
-      <li class="tool">
-        <h2><span class="rank">9</span><span><a href="https://apps.apple.com/app/id1425368544">Timery</a> {{timeryFor}} <a href="https://toggl.com/track/">Toggl Track</a></span></h2>
-        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t9.platform}}</p>
-        <dl><dt>{{similar}}</dt><dd>{{tools.t9.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t9.differences}}</dd></dl>
-      </li>
-      <li class="tool">
-        <h2><span class="rank">10</span><span><a href="https://github.com/MarsiaLi/tracker">MarsiaLi/tracker</a></span></h2>
-        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t10.platform}}</p>
-        <dl><dt>{{similar}}</dt><dd>{{tools.t10.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t10.differences}}</dd></dl>
-      </li>
-      <li class="tool">
-        <h2><span class="rank">11</span><span><a href="https://github.com/silas229/wk-timer">wk-timer</a></span></h2>
-        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t11.platform}}</p>
-        <dl><dt>{{similar}}</dt><dd>{{tools.t11.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t11.differences}}</dd></dl>
-      </li>
-      <li class="tool">
-        <h2><span class="rank">12</span><span><a href="https://www.kimai.org/">Kimai</a>, <a href="https://www.solidtime.io/">solidtime</a>, <a href="https://super-productivity.com/">Super Productivity</a></span></h2>
-        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t12.platform}}</p>
-        <dl><dt>{{similar}}</dt><dd>{{tools.t12.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t12.differences}}</dd></dl>
-      </li>
-      <li class="tool">
-        <h2><span class="rank">13</span><span><a href="https://f-droid.org/packages/com.chess.clock/">Chess.com Chess Clock</a>, <a href="https://apps.gnome.org/Chessclock/">GNOME Chess Clock</a></span></h2>
-        <p class="kind"><span class="sr">{{platform}}: </span>{{tools.t13.platform}}</p>
-        <dl><dt>{{similar}}</dt><dd>{{tools.t13.similar}}</dd><dt>{{differences}}</dt><dd>{{tools.t13.differences}}</dd></dl>
-      </li>
-    </ol>
+    <div class="compare">
+      <table class="tools">
+        <thead>
+          <tr>
+            <th scope="col" class="rank">{{rank}}</th>
+            <th scope="col">{{app}}</th>
+            <th scope="col">{{platform}}</th>
+            <th scope="col">{{similar}}</th>
+            <th scope="col">{{differences}}</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="rank" data-label="{{rank|attr}}">1</td>
+          <th scope="row"><a href="https://apps.apple.com/app/ticktappy/id6757327485">TickTappy</a></th>
+          <td data-label="{{platform|attr}}">{{tools.t1.platform}}</td>
+          <td data-label="{{similar|attr}}">{{tools.t1.similar}}</td>
+          <td data-label="{{differences|attr}}">{{tools.t1.differences}}</td>
+        </tr>
+        <tr>
+          <td class="rank" data-label="{{rank|attr}}">2</td>
+          <th scope="row"><a href="https://apps.apple.com/app/id576718804">aTimeLogger</a></th>
+          <td data-label="{{platform|attr}}">{{tools.t2.platform}}</td>
+          <td data-label="{{similar|attr}}">{{tools.t2.similar}}</td>
+          <td data-label="{{differences|attr}}">{{tools.t2.differences}}</td>
+        </tr>
+        <tr>
+          <td class="rank" data-label="{{rank|attr}}">3</td>
+          <th scope="row"><a href="https://f-droid.org/en/packages/com.razeeman.util.simpletimetracker">Simple Time Tracker</a> (<a href="https://github.com/Razeeman/Android-SimpleTimeTracker">{{source}}</a>)</th>
+          <td data-label="{{platform|attr}}">{{tools.t3.platform}}</td>
+          <td data-label="{{similar|attr}}">{{tools.t3.similar}}</td>
+          <td data-label="{{differences|attr}}">{{tools.t3.differences}}</td>
+        </tr>
+        <tr>
+          <td class="rank" data-label="{{rank|attr}}">4</td>
+          <th scope="row"><a href="https://apps.apple.com/app/id6758586452">Takt – Time Tracking</a></th>
+          <td data-label="{{platform|attr}}">{{tools.t4.platform}}</td>
+          <td data-label="{{similar|attr}}">{{tools.t4.similar}}</td>
+          <td data-label="{{differences|attr}}">{{tools.t4.differences}}</td>
+        </tr>
+        <tr>
+          <td class="rank" data-label="{{rank|attr}}">5</td>
+          <th scope="row"><a href="https://apple.co/32b8qMr">ATracker PRO</a></th>
+          <td data-label="{{platform|attr}}">{{tools.t5.platform}}</td>
+          <td data-label="{{similar|attr}}">{{tools.t5.similar}}</td>
+          <td data-label="{{differences|attr}}">{{tools.t5.differences}}</td>
+        </tr>
+        <tr>
+          <td class="rank" data-label="{{rank|attr}}">6</td>
+          <th scope="row"><a href="https://timeular.com/">Timeular</a> / <a href="https://www.capterra.co.uk/software/1061612/timeflip2">TimeFlip2</a></th>
+          <td data-label="{{platform|attr}}">{{tools.t6.platform}}</td>
+          <td data-label="{{similar|attr}}">{{tools.t6.similar}}</td>
+          <td data-label="{{differences|attr}}">{{tools.t6.differences}}</td>
+        </tr>
+        <tr>
+          <td class="rank" data-label="{{rank|attr}}">7</td>
+          <th scope="row"><a href="https://clockify.me/features/kiosk">Clockify Kiosk</a></th>
+          <td data-label="{{platform|attr}}">{{tools.t7.platform}}</td>
+          <td data-label="{{similar|attr}}">{{tools.t7.similar}}</td>
+          <td data-label="{{differences|attr}}">{{tools.t7.differences}}</td>
+        </tr>
+        <tr>
+          <td class="rank" data-label="{{rank|attr}}">8</td>
+          <th scope="row"><a href="https://github.com/almarklein/timetagger">TimeTagger</a></th>
+          <td data-label="{{platform|attr}}">{{tools.t8.platform}}</td>
+          <td data-label="{{similar|attr}}">{{tools.t8.similar}}</td>
+          <td data-label="{{differences|attr}}">{{tools.t8.differences}}</td>
+        </tr>
+        <tr>
+          <td class="rank" data-label="{{rank|attr}}">9</td>
+          <th scope="row"><a href="https://apps.apple.com/app/id1425368544">Timery</a> {{timeryFor}} <a href="https://toggl.com/track/">Toggl Track</a></th>
+          <td data-label="{{platform|attr}}">{{tools.t9.platform}}</td>
+          <td data-label="{{similar|attr}}">{{tools.t9.similar}}</td>
+          <td data-label="{{differences|attr}}">{{tools.t9.differences}}</td>
+        </tr>
+        <tr>
+          <td class="rank" data-label="{{rank|attr}}">10</td>
+          <th scope="row"><a href="https://github.com/MarsiaLi/tracker">MarsiaLi/tracker</a></th>
+          <td data-label="{{platform|attr}}">{{tools.t10.platform}}</td>
+          <td data-label="{{similar|attr}}">{{tools.t10.similar}}</td>
+          <td data-label="{{differences|attr}}">{{tools.t10.differences}}</td>
+        </tr>
+        <tr>
+          <td class="rank" data-label="{{rank|attr}}">11</td>
+          <th scope="row"><a href="https://github.com/silas229/wk-timer">wk-timer</a></th>
+          <td data-label="{{platform|attr}}">{{tools.t11.platform}}</td>
+          <td data-label="{{similar|attr}}">{{tools.t11.similar}}</td>
+          <td data-label="{{differences|attr}}">{{tools.t11.differences}}</td>
+        </tr>
+        <tr>
+          <td class="rank" data-label="{{rank|attr}}">12</td>
+          <th scope="row"><a href="https://www.kimai.org/">Kimai</a>, <a href="https://www.solidtime.io/">solidtime</a>, <a href="https://super-productivity.com/">Super Productivity</a></th>
+          <td data-label="{{platform|attr}}">{{tools.t12.platform}}</td>
+          <td data-label="{{similar|attr}}">{{tools.t12.similar}}</td>
+          <td data-label="{{differences|attr}}">{{tools.t12.differences}}</td>
+        </tr>
+        <tr>
+          <td class="rank" data-label="{{rank|attr}}">13</td>
+          <th scope="row"><a href="https://f-droid.org/packages/com.chess.clock/">Chess.com Chess Clock</a>, <a href="https://apps.gnome.org/Chessclock/">GNOME Chess Clock</a></th>
+          <td data-label="{{platform|attr}}">{{tools.t13.platform}}</td>
+          <td data-label="{{similar|attr}}">{{tools.t13.similar}}</td>
+          <td data-label="{{differences|attr}}">{{tools.t13.differences}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
 
     <p class="fine">{{sources}}</p>
   </main>

@@ -1,0 +1,26 @@
+# Tap Time Tracker
+
+> Tap Time Tracker is a free one-tap time tracker that runs in the browser: one big button per activity, tap when you switch, and see your day, week and month laid out. There is no account, and what you track never leaves your device.
+
+Key facts:
+
+- Works like a chess clock: tapping an activity starts it and stops the one that was running; only one runs at a time. Tapping the running one stops tracking.
+- Forgotten switches are fixed afterwards: hold an activity and set when it really started ("active since 10:40"); the time moves over from whatever was running.
+- Privacy: no sign-up, no ads, no cookies. Everything is stored in the browser's own storage (IndexedDB) on the device and is never uploaded. The site counts visits anonymously (Umami, no cookies), never what is tracked, and that can be turned off.
+- Summary of a day, week, month or any range on one clock, grouped by your own categories; daily targets; profiles; three layouts; seven themes plus imported ones; full-screen / wall-display use.
+- Runs on any modern browser (laptop, tablet, phone, touchscreen) and offline once opened; installable to the home screen or desktop. No sync between devices: data moves with an exported JSON backup file.
+- Free, with no paid tier. Available in English, Spanish, German, French, Japanese, Portuguese, Turkish, Italian, Persian, Dutch, Chinese and Ukrainian.
+- Contact: contact@taptimetracker.app
+
+## Pages
+
+- [Home](https://taptimetracker.app/): what it does, how it works, privacy, and frequently asked questions (https://taptimetracker.app/#faq)
+- [The app](https://taptimetracker.app/app/): the tracker itself
+- [Live demo](https://taptimetracker.app/app/?demo): the app on three weeks of sample data, in a sandbox
+- [Similar apps](https://taptimetracker.app/similar/): a ranked comparison of 13 similar time trackers and how they differ
+- [Privacy](https://taptimetracker.app/privacy/): what is stored where, and the anonymous usage stats
+- [Terms of use](https://taptimetracker.app/terms/)
+
+## Other languages
+
+Every page except privacy and terms exists under a language prefix: /es/, /de/, /fr/, /ja/, /pt/, /tr/, /it/, /fa/, /nl/, /zh/, /uk/ (for example https://taptimetracker.app/de/similar/). The full list is in https://taptimetracker.app/sitemap.xml.

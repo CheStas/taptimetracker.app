@@ -1,10 +1,11 @@
 {
-  "brand": "Time Tracker",
+  "brand": "Tap Time Tracker",
   "openApp": "باز کردن برنامه",
   "footer": {
     "pages": "صفحه‌ها",
     "language": "زبان",
     "home": "خانه",
+    "faq": "پرسش‌های متداول",
     "similar": "برنامه‌های مشابه",
     "privacy": "حریم خصوصی",
     "terms": "شرایط استفاده",

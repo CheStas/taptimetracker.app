@@ -1,8 +1,8 @@
 {
-  "title": "Benzer uygulamalar — Time Tracker",
-  "description": "Diğer tek dokunuşluk zaman takip uygulamaları; Time Tracker’a en çok benzeyenden en aza doğru sıralı ve nasıl farklılaştıklarıyla.",
+  "title": "Benzer uygulamalar — Tap Time Tracker",
+  "description": "Diğer tek dokunuşluk zaman takip uygulamaları; Tap Time Tracker’a en çok benzeyenden en aza doğru sıralı ve nasıl farklılaştıklarıyla.",
   "heading": "Benzer uygulamalar",
-  "intro": "Time Tracker bir satranç saati gibi çalışır: başlatmak için bir etkinliğe, geçmek için bir başkasına dokunun; aynı anda yalnızca biri çalışır ve geçmiş süreler düzeltilebilir. Bu uygulamalar aynı ya da benzer şekilde çalışır. <strong>En çok benzeyenden en aza doğru</strong> sıralanmıştır.",
+  "intro": "Tap Time Tracker bir satranç saati gibi çalışır: başlatmak için bir etkinliğe, geçmek için bir başkasına dokunun; aynı anda yalnızca biri çalışır ve geçmiş süreler düzeltilebilir. Bu uygulamalar aynı ya da benzer şekilde çalışır. <strong>En çok benzeyenden en aza doğru</strong> sıralanmıştır.",
   "takeaway": {
     "lead": "<strong>Kısacası:</strong> hiçbiri şunların hepsini bir arada sunmuyor:",
     "web": "her yerde çalışan bir web sayfası, tek bir çevrimdışı dosya olarak bile",
@@ -13,6 +13,8 @@
   },
   "source": "kaynak kodu",
   "timeryFor": "for",
+  "rank": "#",
+  "app": "Uygulama",
   "platform": "Platform",
   "similar": "Neden benzer",
   "differences": "Başlıca farklar",
@@ -79,7 +81,7 @@
     },
     "t13": {
       "platform": "Android / Linux",
-      "similar": "Time Tracker’ın örnek aldığı <strong>satranç saati etkileşimi</strong>: büyük düğmeler, tek dokunuş saati karşı tarafa verir.",
+      "similar": "Tap Time Tracker’ın örnek aldığı <strong>satranç saati etkileşimi</strong>: büyük düğmeler, tek dokunuş saati karşı tarafa verir.",
       "differences": "İki oyuncu, geri sayar; kayıt, toplam ya da geçmiş yok"
     }
   },

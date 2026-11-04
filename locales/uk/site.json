@@ -1,10 +1,11 @@
 {
-  "brand": "Time Tracker",
+  "brand": "Tap Time Tracker",
   "openApp": "Відкрити застосунок",
   "footer": {
     "pages": "Сторінки",
     "language": "Мова",
     "home": "Головна",
+    "faq": "Часті запитання",
     "similar": "Схожі застосунки",
     "privacy": "Конфіденційність",
     "terms": "Умови використання",

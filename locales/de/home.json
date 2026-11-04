@@ -1,10 +1,10 @@
 {
-  "title": "Time Tracker — Zeiterfassung mit einem Tipp, die auf deinem Gerät bleibt",
+  "title": "Tap Time Tracker — Zeiterfassung mit einem Tipp, die auf deinem Gerät bleibt",
   "description": "Kostenlose Zeiterfassung mit einem Tipp: ein großer Knopf pro Tätigkeit, beim Wechsel antippen und Tag, Woche und Monat auf einen Blick sehen. Ohne Konto, und was du erfasst, verlässt nie dein Gerät.",
   "og": {
-    "title": "Time Tracker — wisse, wo dein Tag geblieben ist",
+    "title": "Tap Time Tracker — wisse, wo dein Tag geblieben ist",
     "description": "Ein großer Knopf pro Tätigkeit: beim Wechsel antippen und Tag, Woche und Monat auf einen Blick sehen. Kostenlos, ohne Konto, und was du erfasst, verlässt nie dein Gerät.",
-    "imageAlt": "Der Hauptbildschirm von Time Tracker: eine Kachel pro Tätigkeit mit der heutigen Zeit"
+    "imageAlt": "Der Hauptbildschirm von Tap Time Tracker: eine Kachel pro Tätigkeit mit der heutigen Zeit"
   },
   "ld": {
     "description": "Zeiterfassung mit einem Tipp: ein großer Knopf pro Tätigkeit, beim Wechsel antippen und Tag, Woche und Monat sehen. Ohne Konto; alles bleibt auf deinem Gerät.",
@@ -13,26 +13,32 @@
   },
   "hero": {
     "title": "Wisse, wo dein Tag wirklich geblieben ist",
-    "lead": "Zeiterfassung mit einem Tipp: ein großer Knopf für alles, was du tust. Tippe, wenn du wechselst. Am Abend siehst du die Meetings, die Reviews und die „kurzen Fragen“ Stunde für Stunde – ohne einen einzigen Stundenzettel auszufüllen. Und es bleibt deins: kein Konto, und nichts, was du erfasst, verlässt jemals dein Gerät.",
+    "lead": "Tap Time Tracker ist eine kostenlose Zeiterfassung mit einem Tipp: ein großer Knopf für alles, was du tust. Tippe, wenn du wechselst. Am Abend siehst du die Meetings, die Reviews und die „kurzen Fragen“ Stunde für Stunde – ohne einen einzigen Stundenzettel auszufüllen. Und es bleibt deins: kein Konto, und nichts, was du erfasst, verlässt jemals dein Gerät.",
     "demo": "Live-Demo ausprobieren",
     "fine": "Die Demo läuft mit drei Wochen Beispieldaten in einer eigenen Sandbox. Nichts, was du dort tust, berührt deine echte Erfassung. Kostenlos.",
     "imageAlt": "Wechsel zwischen Tätigkeiten: die laufende Kachel leuchtet auf und die heutige Zeitleiste wächst unten mit"
   },
   "switching": {
-    "title": "Wechseln kostet einen Tipp",
+    "title": "Wie funktioniert Zeiterfassung mit einem Tipp?",
     "p1": "Es funktioniert wie eine Schachuhr. Tippe auf Meeting und die Uhr läuft für Meeting; tippe auf Aufgabe und sie springt weiter. Es läuft immer nur eins, also wird nichts doppelt gezählt und nichts fällt durchs Raster.",
     "p2": "Die Knöpfe sind groß genug, um sie ohne Hinsehen zu treffen – auf dem Laptop, auf einem Tablet am Schreibtisch oder auf einem Touchscreen an der Wand.",
     "imageAlt": "Der Hauptbildschirm im dunklen Theme Graphite: eine Kachel pro Tätigkeit mit der heutigen Zeit, die laufende hervorgehoben"
   },
   "backdate": {
-    "title": "Wechsel vergessen? In zwei Tipps korrigiert",
-    "p1": "In einen Anruf geraten und erst zwanzig Minuten später daran gedacht? Halte die Tätigkeit gedrückt und wähle „aktiv seit 10:40“. Die Zeit wird von dem genommen, was gerade lief, also stimmt der Tag weiterhin auf die Minute.",
+    "title": "Wechsel vergessen? Wie korrigiere ich das?",
+    "p1": "Halte die Tätigkeit gedrückt, die eigentlich hätte laufen sollen, und sag ihr, wann sie wirklich begann, etwa „aktiv seit 10:40“. Die Zeit wird von dem genommen, was gerade lief, also stimmt der Tag weiterhin auf die Minute. Zwei Tipps, auch zwanzig Minuten nach dem Anruf, der dich herausgerissen hat.",
+    "howto": "So korrigierst du einen vergessenen Wechsel",
+    "steps": {
+      "s1": "Halte die Tätigkeit gedrückt, die hätte laufen sollen.",
+      "s2": "Wähle, wann sie begann: einen Schnellwert wie <em>vor 15 Min.</em> oder die genaue Uhrzeit mit den Knöpfen − und +.",
+      "s3": "Tippe auf <strong>aktiv seit 10:40</strong>: Die Zeit wandert von dem, was lief, zu dieser Tätigkeit."
+    },
     "p2": "Jede Sitzung des Tages ist direkt da, um sie zu kürzen, zu verschieben oder zu löschen.",
     "imageAlt": "Gedrückthalten einer Tätigkeit öffnet die heutigen Sitzungen und Schnellknöpfe, um sie früher zu starten"
   },
   "privacy": {
-    "title": "Privat durch Bauart, nicht durch Versprechen",
-    "p1": "Die meisten Zeiterfassungen wollen ein Konto und laden dann jede Minute deines Tages in ihre Cloud. Diese hier hat keinen Ort, an den sie etwas schicken könnte. Deine Sitzungen liegen im Speicher deines Browsers auf diesem Gerät, und das ist die einzige Kopie.",
+    "title": "Wer kann sehen, was ich erfasse?",
+    "p1": "Niemand außer dir. Die meisten Zeiterfassungen wollen ein Konto und laden dann jede Minute deines Tages in ihre Cloud. Diese hier hat keinen Ort, an den sie etwas schicken könnte. Deine Sitzungen liegen im Speicher deines Browsers auf diesem Gerät, und das ist die einzige Kopie.",
     "p2": "Keine Anmeldung, keine Werbung, keine Cookies. Erfasse den Zahnarzt, das Vorstellungsgespräch und die lange Mittagspause, ohne dich zu fragen, wer das noch sehen kann."
   },
   "vault": {
@@ -43,14 +49,20 @@
     "export": { "title": "Gehört dir", "text": "Exportiere jederzeit eine Sicherungsdatei und importiere sie auf einem anderen Gerät." }
   },
   "summary": {
-    "title": "Sieh die Woche, nicht nur heute",
+    "title": "Was zeigt die Übersicht?",
     "p1": "Tag, Woche, Monat oder ein beliebiger Zeitraum. Jeder Tag liegt auf derselben Uhr, also fallen späte Starts, lange Mittagspausen und meetinglastige Dienstage sofort ins Auge.",
     "p2": "Versieh Tätigkeiten mit eigenen Kategorien, etwa konzentrierte gegen oberflächliche Arbeit oder allein gegen mit anderen, und die ganze Übersicht gruppiert sich danach neu.",
     "imageAlt": "Die Übersicht wechselt von einem Tag zu einer nach Fokus gruppierten Woche und dann zu einer Monats-Heatmap"
   },
   "phone": {
-    "title": "Passt auch in die Hosentasche",
-    "p1": "Auf dem Handy stehen die Knöpfe zu zweit in einer Reihe und die Menüs gleiten von unten herein. Leg es auf den Startbildschirm und es öffnet sich wie jede andere App.",
+    "title": "Kann ich es auf dem Handy nutzen?",
+    "p1": "Ja. Auf dem Handy stehen die Knöpfe zu zweit in einer Reihe und die Menüs gleiten von unten herein. Leg es auf den Startbildschirm und es öffnet sich wie jede andere App.",
+    "howto": "So legst du Tap Time Tracker auf den Startbildschirm",
+    "steps": {
+      "s1": "Öffne <strong>taptimetracker.app/app/</strong> in Safari auf iPhone oder iPad oder in Chrome auf Android.",
+      "s2": "iPhone und iPad: Tippe auf Teilen, dann auf <strong>Zum Home-Bildschirm</strong>. Android: Öffne das Menü ⋮ und tippe auf <strong>App installieren</strong> oder <strong>Zum Startbildschirm hinzufügen</strong>.",
+      "s3": "Öffne es über das neue Symbol. Es startet direkt in der App, auch offline."
+    },
     "imageAlt": "Die App auf einem Handy: Kacheln, das Tätigkeitsblatt, das Menü Mehr und die Übersicht"
   },
   "private": {
@@ -66,6 +78,18 @@
     "themes": { "title": "Sieben Themes", "text": "Hell, dunkel oder wie das System, oder importiere dein eigenes." },
     "day": { "title": "Dein eigener Tag", "text": "Lass den Tag um 4 Uhr beginnen, wenn du spät arbeitest; er wechselt von selbst." },
     "fullscreen": { "title": "Vollbild", "text": "Lass es auf einem freien Bildschirm als Wanduhr für deine Arbeit laufen." }
+  },
+  "faq": {
+    "title": "Häufige Fragen",
+    "items": {
+      "free": { "q": "Ist Tap Time Tracker kostenlos?", "a": "Ja. Es ist kostenlos, ohne Werbung, ohne Bezahlversion und ohne Konto. Öffne die App in einem modernen Browser und leg los; mit der Live-Demo kannst du sie vorher mit Beispieldaten ausprobieren." },
+      "account": { "q": "Brauche ich ein Konto?", "a": "Nein. Keine Registrierung, keine E-Mail, kein Passwort. Deine Zeiterfassung liegt in dem Browser, in dem du sie öffnest, also gibt es nichts zum Anmelden und nichts zu vergessen." },
+      "data": { "q": "Wo werden meine Daten gespeichert?", "a": "Im eigenen Speicher deines Browsers (IndexedDB) auf diesem Gerät und nirgendwo sonst. Sie werden nie hochgeladen, auch nicht auf diese Website. Den Browser verlassen sie nur in einer Sicherungsdatei, die du selbst exportierst." },
+      "offline": { "q": "Funktioniert es offline?", "a": "Ja. Wenn du die App einmal geöffnet hast, startet sie auch ohne Verbindung, und auf dem Startbildschirm oder Desktop installiert läuft sie wie jede andere App. Die Erfassung braucht nie Internet, weil nichts verschickt wird." },
+      "move": { "q": "Wie bringe ich meine Daten auf ein anderes Gerät?", "a": "Exportiere eine Sicherung: Öffne in der App Einstellungen → Sicherung und tippe auf JSON exportieren. Kopiere die Datei auf das andere Gerät, öffne dort die App und nutze an derselben Stelle JSON importieren. Der Import ersetzt die Daten dieses Profils, also exportiere vorher, falls es schon welche hat." },
+      "several": { "q": "Können zwei Tätigkeiten gleichzeitig laufen?", "a": "Nein, und das mit Absicht. Wie bei einer Schachuhr stoppt der Start einer Tätigkeit die andere, sodass der Tag nie mehr als 24 Stunden ergibt. Tippe auf die laufende, um die Erfassung ganz zu stoppen." },
+      "devices": { "q": "Auf welchen Geräten läuft es?", "a": "Auf allem mit einem modernen Browser: Laptop, Tablet, Handy oder ein Touchscreen an der Wand. Jeder Browser hat seine eigene Erfassung, und es gibt keine Synchronisierung, also nimm eine Sicherungsdatei, um zu wechseln." }
+    }
   },
   "closing": {
     "title": "Gib ihm einen Tag.",

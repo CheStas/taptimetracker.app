@@ -1,8 +1,8 @@
 {
-  "title": "Apps similaires — Time Tracker",
-  "description": "D’autres outils de suivi du temps en un geste, classés du plus au moins proche de Time Tracker, et ce qui les distingue.",
+  "title": "Apps similaires — Tap Time Tracker",
+  "description": "D’autres outils de suivi du temps en un geste, classés du plus au moins proche de Tap Time Tracker, et ce qui les distingue.",
   "heading": "Apps similaires",
-  "intro": "Time Tracker fonctionne comme une pendule d’échecs : touchez une activité pour la démarrer, une autre pour changer ; une seule tourne à la fois, et les temps passés peuvent être corrigés. Ces apps fonctionnent de la même façon ou presque. Elles sont classées <strong>de la plus à la moins proche</strong>.",
+  "intro": "Tap Time Tracker fonctionne comme une pendule d’échecs : touchez une activité pour la démarrer, une autre pour changer ; une seule tourne à la fois, et les temps passés peuvent être corrigés. Ces apps fonctionnent de la même façon ou presque. Elles sont classées <strong>de la plus à la moins proche</strong>.",
   "takeaway": {
     "lead": "<strong>En bref :</strong> aucune ne réunit tout ceci :",
     "web": "une page web qui fonctionne partout, même en un seul fichier hors ligne",
@@ -13,6 +13,8 @@
   },
   "source": "source",
   "timeryFor": "pour",
+  "rank": "#",
+  "app": "App",
   "platform": "Plateforme",
   "similar": "Ce qui est similaire",
   "differences": "Principales différences",
@@ -79,7 +81,7 @@
     },
     "t13": {
       "platform": "Android / Linux",
-      "similar": "L’<strong>interaction de pendule d’échecs</strong> dont Time Tracker s’inspire : de grands boutons, un geste passe la pendule à l’autre côté.",
+      "similar": "L’<strong>interaction de pendule d’échecs</strong> dont Tap Time Tracker s’inspire : de grands boutons, un geste passe la pendule à l’autre côté.",
       "differences": "Deux joueurs, compte à rebours, pas de journal, de totaux ni d’historique"
     }
   },

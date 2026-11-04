@@ -1,10 +1,10 @@
 {
-  "title": "Time Tracker — a one-tap time tracker that stays on your device",
+  "title": "Tap Time Tracker — a one-tap time tracker that stays on your device",
   "description": "A free one-tap time tracker: one big button per activity, tap when you switch, see your day, week and month laid out. No account, and what you track never leaves your device.",
   "og": {
-    "title": "Time Tracker — know where your day went",
+    "title": "Tap Time Tracker — know where your day went",
     "description": "One big button per activity: tap when you switch, see your day, week and month laid out. Free, no account, and what you track never leaves your device.",
-    "imageAlt": "The Time Tracker main screen: one tile per activity with today’s time"
+    "imageAlt": "The Tap Time Tracker main screen: one tile per activity with today’s time"
   },
   "ld": {
     "description": "A one-tap time tracker: one big button per activity, tap when you switch, see your day, week and month. No account; everything stays on your device.",
@@ -13,26 +13,32 @@
   },
   "hero": {
     "title": "Know where your day actually went",
-    "lead": "A one-tap time tracker: one big button for each thing you do. Tap when you switch. By evening you see the meetings, the reviews and the “quick questions” laid out hour by hour, without filling in a single timesheet. And it stays yours: no account, and nothing you track ever leaves your device.",
+    "lead": "Tap Time Tracker is a free one-tap time tracker: one big button for each thing you do. Tap when you switch. By evening you see the meetings, the reviews and the “quick questions” laid out hour by hour, without filling in a single timesheet. And it stays yours: no account, and nothing you track ever leaves your device.",
     "demo": "Try the live demo",
     "fine": "The demo runs on three weeks of sample data in its own sandbox. Nothing you do there touches your real tracker. Free.",
     "imageAlt": "Tapping between activities: the running tile lights up and today’s timeline grows along the bottom"
   },
   "switching": {
-    "title": "Switching takes one tap",
+    "title": "How does one-tap time tracking work?",
     "p1": "It works like a chess clock. Tap Meeting and the clock moves to Meeting; tap Task and it moves on. Only one thing runs at a time, so nothing gets counted twice and nothing slips through the cracks.",
     "p2": "The buttons are big enough to hit without looking, on a laptop, a tablet by the desk or a touchscreen on the wall.",
     "imageAlt": "The main screen in the dark Graphite theme: one tile per activity with today’s time, the running one highlighted"
   },
   "backdate": {
-    "title": "Forgot to switch? Fix it in two taps",
-    "p1": "Got pulled into a call and only remembered twenty minutes later? Hold the activity and say “active since 10:40”. The time is taken from whatever was running, so the day still adds up to the minute.",
+    "title": "Forgot to switch? How do I fix it?",
+    "p1": "Hold the activity that should have been running and tell it when it really started, such as “active since 10:40”. The time is taken from whatever was running, so the day still adds up to the minute. Two taps, even twenty minutes after the call that pulled you away.",
+    "howto": "How to fix a switch you forgot",
+    "steps": {
+      "s1": "Press and hold the activity that should have been running.",
+      "s2": "Pick when it started: a quick choice such as <em>15m ago</em>, or the exact time with the − and + buttons.",
+      "s3": "Tap <strong>active since 10:40</strong>: that time moves over from whatever was running."
+    },
     "p2": "Every session of the day is right there to shorten, move or delete.",
     "imageAlt": "Holding an activity opens today’s sessions and quick buttons to start it earlier"
   },
   "privacy": {
-    "title": "Private by design, not by promise",
-    "p1": "Most trackers want an account, then upload every minute of your day to their cloud. This one has nowhere to send it. Your sessions live in your browser’s own storage on this device, and that is the only copy.",
+    "title": "Who can see what I track?",
+    "p1": "Nobody but you. Most trackers want an account, then upload every minute of your day to their cloud. This one has nowhere to send it. Your sessions live in your browser’s own storage on this device, and that is the only copy.",
     "p2": "No sign-up, no ads, no cookies. Track the dentist, the job interview and the long lunch without wondering who else gets to see them."
   },
   "vault": {
@@ -43,14 +49,20 @@
     "export": { "title": "Yours to take", "text": "Export a backup file any time and import it on another device." }
   },
   "summary": {
-    "title": "See the week, not just today",
+    "title": "What does the summary show?",
     "p1": "Day, week, month or any range you pick. Every day sits on the same clock, so late starts, long lunches and meeting-heavy Tuesdays jump out at a glance.",
     "p2": "Tag activities with your own categories, like deep work versus shallow or alone versus with people, and the whole summary regroups around them.",
     "imageAlt": "The summary moving from a day to a week grouped by focus, then to a month heatmap"
   },
   "phone": {
-    "title": "Fits in your pocket too",
-    "p1": "On a phone the buttons stack two to a row and the menus slide up from the bottom. Add it to your home screen and it opens like any other app.",
+    "title": "Can I use it on my phone?",
+    "p1": "Yes. On a phone the buttons stack two to a row and the menus slide up from the bottom. Add it to your home screen and it opens like any other app.",
+    "howto": "How to add Tap Time Tracker to your home screen",
+    "steps": {
+      "s1": "Open <strong>taptimetracker.app/app/</strong> in Safari on an iPhone or iPad, or in Chrome on Android.",
+      "s2": "iPhone and iPad: tap Share, then <strong>Add to Home Screen</strong>. Android: open the ⋮ menu and tap <strong>Install app</strong> or <strong>Add to Home screen</strong>.",
+      "s3": "Open it from the new icon. It starts straight in the app, even offline."
+    },
     "imageAlt": "The app on a phone: tiles, the activity sheet, the More menu and the summary"
   },
   "private": {
@@ -66,6 +78,18 @@
     "themes": { "title": "Seven themes", "text": "Light, dark or following your system, or import your own." },
     "day": { "title": "Your own day", "text": "Start the day at 4 am if you work late; it rolls over on its own." },
     "fullscreen": { "title": "Full screen", "text": "Leave it running on a spare screen as a wall clock for your work." }
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": {
+      "free": { "q": "Is Tap Time Tracker free?", "a": "Yes. It is free to use, with no ads, no paid tier and no account. Open the app in any modern browser and start tapping; the live demo lets you try it on sample data first." },
+      "account": { "q": "Do I need an account?", "a": "No. There is no sign-up, email or password. Your tracker lives in the browser you open it in, so there is nothing to log in to and nothing to forget." },
+      "data": { "q": "Where is my data stored?", "a": "In your browser’s own storage (IndexedDB) on this device, and nowhere else. It is never uploaded, not even to this site. The only way it leaves the browser is a backup file that you export yourself." },
+      "offline": { "q": "Does it work offline?", "a": "Yes. Once you have opened the app, it starts without a connection, and installed on a home screen or desktop it runs like any other app. Tracking never needs the internet, because nothing is sent anywhere." },
+      "move": { "q": "How do I move my data to another device?", "a": "Export a backup: in the app open Settings → Backup and tap Export JSON. Copy the file to the other device, open the app there and use Import JSON in the same place. Import replaces that profile’s data, so export first if it has any." },
+      "several": { "q": "Can two activities run at the same time?", "a": "No, and that is on purpose. Like a chess clock, starting one activity stops the other, so the day never adds up to more than 24 hours. Tap the running one to stop tracking altogether." },
+      "devices": { "q": "Which devices does it work on?", "a": "Anything with a modern browser: a laptop, a tablet, a phone or a touchscreen on the wall. Each browser keeps its own tracker and there is no sync, so use a backup file to move between them." }
+    }
   },
   "closing": {
     "title": "Give it one day.",

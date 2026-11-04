@@ -1,4 +1,4 @@
-# Time Tracker
+# Tap Time Tracker
 
 A touchscreen "chess clock" for the work day. Tap an activity to start it; tapping another one switches to it, and
 tapping the active one stops everything. It tracks today's total, a total per activity and the current run, and you can

@@ -95,7 +95,7 @@
     "statsLabel": "分享匿名使用统计",
     "statsHint": "只统计哪些界面和功能被使用，从不统计你记录的内容。没有 Cookie，没有账号，不含任何个人信息。",
     "statsDnt": "你的浏览器要求网站不要跟踪，所以在你开启之前此项保持关闭。",
-    "statsPlea": "这由你决定，也可以随时关闭。但请考虑保持开启：Time Tracker 是免费的，这些计数是知道有没有人在用它的唯一方式。如果没人使用，它将不再更新并最终停止服务。",
+    "statsPlea": "这由你决定，也可以随时关闭。但请考虑保持开启：Tap Time Tracker 是免费的，这些计数是知道有没有人在用它的唯一方式。如果没人使用，它将不再更新并最终停止服务。",
     "statsLink": "收集哪些内容"
   },
   "layout": {
@@ -460,7 +460,7 @@
     "resetTitle": "重置今天？",
     "resetStops": "{name}现在停止。",
     "resetBody": "{date}将以 {total} 的记录结束，并开始新的一天。你仍可以在汇总中编辑已结束的日子。",
-    "closeTitle": "关闭 Time Tracker？",
+    "closeTitle": "关闭 Tap Time Tracker？",
     "closeRunning": "应用关闭期间，{name}会继续计时。重新打开应用即可停止或切换。",
     "closeIdle": "当前没有正在计时的活动。",
     "closeYourself": "请自行关闭窗口",
@@ -468,7 +468,7 @@
     "keepsCounting": "{name}会继续计时。"
   },
   "errors": {
-    "notExport": "这不是 Time Tracker 的导出文件",
+    "notExport": "这不是 Tap Time Tracker 的导出文件",
     "itermXml": "无法识别的 XML 文件（需要 iTerm 的 .itermcolors 文件）",
     "jsonTheme": "无法识别的 JSON 主题（需要本应用的主题文件、VS Code 颜色主题或 base16）",
     "themeFile": "无法识别的主题文件（支持：本应用主题 .json、VS Code .json、base16 .yaml/.json、Alacritty .toml、iTerm .itermcolors）"

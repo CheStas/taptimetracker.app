@@ -1,8 +1,8 @@
 {
-  "title": "App simili — Time Tracker",
-  "description": "Altri time tracker con un tocco, ordinati dal più al meno simile a Time Tracker, e in cosa si differenziano.",
+  "title": "App simili — Tap Time Tracker",
+  "description": "Altri time tracker con un tocco, ordinati dal più al meno simile a Tap Time Tracker, e in cosa si differenziano.",
   "heading": "App simili",
-  "intro": "Time Tracker funziona come un orologio da scacchi: tocca un’attività per avviarla, toccane un’altra per cambiare; ne gira una sola alla volta, e i tempi passati si possono correggere. Queste app funzionano allo stesso modo o in modo simile. Sono ordinate <strong>dalla più alla meno simile</strong>.",
+  "intro": "Tap Time Tracker funziona come un orologio da scacchi: tocca un’attività per avviarla, toccane un’altra per cambiare; ne gira una sola alla volta, e i tempi passati si possono correggere. Queste app funzionano allo stesso modo o in modo simile. Sono ordinate <strong>dalla più alla meno simile</strong>.",
   "takeaway": {
     "lead": "<strong>In breve:</strong> nessuna mette insieme tutto questo:",
     "web": "una pagina web che funziona ovunque, anche come singolo file offline",
@@ -13,6 +13,8 @@
   },
   "source": "sorgente",
   "timeryFor": "per",
+  "rank": "#",
+  "app": "App",
   "platform": "Piattaforma",
   "similar": "Perché è simile",
   "differences": "Differenze principali",
@@ -79,7 +81,7 @@
     },
     "t13": {
       "platform": "Android / Linux",
-      "similar": "L’<strong>interazione da orologio da scacchi</strong> a cui si ispira Time Tracker: pulsanti grandi, un tocco passa l’orologio all’altra parte.",
+      "similar": "L’<strong>interazione da orologio da scacchi</strong> a cui si ispira Tap Time Tracker: pulsanti grandi, un tocco passa l’orologio all’altra parte.",
       "differences": "Due giocatori, conto alla rovescia, nessun registro, totale o cronologia"
     }
   },

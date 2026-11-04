@@ -231,7 +231,7 @@ export function Settings({ nav, onBack, onDayEditor, section }: { nav: Nav; onBa
             <h2>{t('settings.sections.about')}</h2>
             <div class="row"><AboutLinks variant="settings" /></div>
             <UsageStats />
-            <p class="muted num small">Time Tracker · {VERSION}</p>
+            <p class="muted num small">Tap Time Tracker · {VERSION}</p>
           </section>
         </div>
       </div>

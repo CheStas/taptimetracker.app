@@ -1,10 +1,10 @@
 {
-  "title": "Time Tracker — cihazınızda kalan tek dokunuşluk zaman takibi",
+  "title": "Tap Time Tracker — cihazınızda kalan tek dokunuşluk zaman takibi",
   "description": "Ücretsiz, tek dokunuşluk zaman takibi: her etkinlik için büyük bir düğme, geçiş yaptığınızda dokunun ve gününüzü, haftanızı, ayınızı bir bakışta görün. Hesap yok ve kaydettikleriniz cihazınızdan asla çıkmaz.",
   "og": {
-    "title": "Time Tracker — gününüzün nereye gittiğini bilin",
+    "title": "Tap Time Tracker — gününüzün nereye gittiğini bilin",
     "description": "Her etkinlik için büyük bir düğme: geçiş yaptığınızda dokunun, gününüzü, haftanızı ve ayınızı bir bakışta görün. Ücretsiz, hesap yok ve kaydettikleriniz cihazınızdan asla çıkmaz.",
-    "imageAlt": "Time Tracker ana ekranı: her etkinlik için bugünkü süresiyle bir kutucuk"
+    "imageAlt": "Tap Time Tracker ana ekranı: her etkinlik için bugünkü süresiyle bir kutucuk"
   },
   "ld": {
     "description": "Tek dokunuşluk zaman takibi: her etkinlik için büyük bir düğme, geçiş yaptığınızda dokunun ve gününüzü, haftanızı, ayınızı görün. Hesap yok; her şey cihazınızda kalır.",
@@ -13,26 +13,32 @@
   },
   "hero": {
     "title": "Gününüzün gerçekte nereye gittiğini bilin",
-    "lead": "Tek dokunuşluk zaman takibi: yaptığınız her iş için büyük bir düğme. Geçiş yaptığınızda dokunun. Akşam olduğunda toplantıları, incelemeleri ve “kısa soruları” saat saat dizilmiş görürsünüz; tek bir puantaj doldurmadan. Üstelik her şey sizde kalır: hesap yok ve kaydettiğiniz hiçbir şey cihazınızdan çıkmaz.",
+    "lead": "Tap Time Tracker, ücretsiz ve tek dokunuşluk bir zaman takibi aracıdır: yaptığınız her iş için büyük bir düğme. Geçiş yaptığınızda dokunun. Akşam olduğunda toplantıları, incelemeleri ve “kısa soruları” saat saat dizilmiş görürsünüz; tek bir puantaj doldurmadan. Üstelik her şey sizde kalır: hesap yok ve kaydettiğiniz hiçbir şey cihazınızdan çıkmaz.",
     "demo": "Canlı demoyu deneyin",
     "fine": "Demo, kendi korumalı alanında üç haftalık örnek veriyle çalışır. Orada yaptığınız hiçbir şey gerçek kayıtlarınıza dokunmaz. Ücretsiz.",
     "imageAlt": "Etkinlikler arasında geçiş: çalışan kutucuk yanar ve alttaki bugünün zaman çizelgesi uzar"
   },
   "switching": {
-    "title": "Geçiş yapmak tek dokunuş",
+    "title": "Tek dokunuşla zaman takibi nasıl çalışır?",
     "p1": "Bir satranç saati gibi çalışır. Toplantı’ya dokunun, saat Toplantı’ya geçer; Görev’e dokunun, devam eder. Aynı anda yalnızca bir şey çalışır; böylece hiçbir şey iki kez sayılmaz, hiçbir şey gözden kaçmaz.",
     "p2": "Düğmeler bakmadan basılabilecek kadar büyüktür; dizüstü bilgisayarda, masanın yanındaki tablette ya da duvardaki dokunmatik ekranda.",
     "imageAlt": "Koyu Graphite temasında ana ekran: her etkinlik için bugünkü süresiyle bir kutucuk, çalışan vurgulu"
   },
   "backdate": {
-    "title": "Geçmeyi mi unuttunuz? İki dokunuşta düzeltin",
-    "p1": "Bir aramaya çekildiniz ve ancak yirmi dakika sonra mı hatırladınız? Etkinliğe basılı tutun ve “10:40’tan beri etkin” deyin. Süre o sırada çalışan etkinlikten alınır; böylece gün dakikası dakikasına tutmaya devam eder.",
+    "title": "Geçmeyi mi unuttunuz? Nasıl düzeltilir?",
+    "p1": "Çalışıyor olması gereken etkinliğe basılı tutun ve gerçekte ne zaman başladığını seçin, örneğin “10:40’tan beri etkin”. Süre o sırada çalışan etkinlikten alınır; böylece gün dakikası dakikasına tutmaya devam eder. Sizi çeken aramadan yirmi dakika sonra bile iki dokunuş yeter.",
+    "howto": "Unutulan bir geçiş nasıl düzeltilir",
+    "steps": {
+      "s1": "Çalışıyor olması gereken etkinliğe basılı tutun.",
+      "s2": "Ne zaman başladığını seçin: <em>15 dk önce</em> gibi hızlı bir seçenek ya da − ve + düğmeleriyle tam saat.",
+      "s3": "<strong>10:40 itibarıyla etkin</strong> düğmesine dokunun: o süre çalışan etkinlikten bu etkinliğe geçer."
+    },
     "p2": "Günün her oturumu kısaltmak, kaydırmak ya da silmek için hemen orada.",
     "imageAlt": "Bir etkinliğe basılı tutmak bugünün oturumlarını ve onu daha erken başlatan hızlı düğmeleri açar"
   },
   "privacy": {
-    "title": "Söz vererek değil, tasarım gereği gizli",
-    "p1": "Çoğu zaman takip aracı bir hesap ister, sonra gününüzün her dakikasını kendi bulutuna yükler. Bunun gönderecek bir yeri yok. Oturumlarınız bu cihazdaki tarayıcınızın kendi depolamasında yaşar ve tek kopya odur.",
+    "title": "Kaydettiklerimi kim görebilir?",
+    "p1": "Sizden başka kimse. Çoğu zaman takip aracı bir hesap ister, sonra gününüzün her dakikasını kendi bulutuna yükler. Bunun gönderecek bir yeri yok. Oturumlarınız bu cihazdaki tarayıcınızın kendi depolamasında yaşar ve tek kopya odur.",
     "p2": "Kayıt yok, reklam yok, çerez yok. Dişçiyi, iş görüşmesini ve uzun öğle yemeğini, başka kimin göreceğini düşünmeden kaydedin."
   },
   "vault": {
@@ -43,14 +49,20 @@
     "export": { "title": "Sizindir, götürün", "text": "İstediğiniz zaman bir yedek dosyası dışa aktarın ve başka bir cihazda içe aktarın." }
   },
   "summary": {
-    "title": "Sadece bugünü değil, haftayı görün",
+    "title": "Özet neyi gösterir?",
     "p1": "Gün, hafta, ay ya da seçtiğiniz herhangi bir aralık. Her gün aynı saat ekseninde durur; geç başlangıçlar, uzun öğle yemekleri ve toplantı dolu salılar hemen göze çarpar.",
     "p2": "Etkinlikleri derin işe karşı yüzeysel iş ya da yalnız karşı insanlarla gibi kendi kategorilerinizle etiketleyin; tüm özet bunlara göre yeniden gruplanır.",
     "imageAlt": "Özet bir günden odağa göre gruplanmış bir haftaya, sonra bir aylık ısı haritasına geçiyor"
   },
   "phone": {
-    "title": "Cebinize de sığar",
-    "p1": "Telefonda düğmeler ikişerli dizilir ve menüler aşağıdan kayarak açılır. Ana ekrana ekleyin, diğer uygulamalar gibi açılsın.",
+    "title": "Telefonumda kullanabilir miyim?",
+    "p1": "Evet. Telefonda düğmeler ikişerli dizilir ve menüler aşağıdan kayarak açılır. Ana ekrana ekleyin, diğer uygulamalar gibi açılsın.",
+    "howto": "Tap Time Tracker ana ekrana nasıl eklenir",
+    "steps": {
+      "s1": "<strong>taptimetracker.app/app/</strong> adresini iPhone veya iPad’de Safari’de, Android’de Chrome’da açın.",
+      "s2": "iPhone ve iPad: Paylaş’a, ardından <strong>Ana Ekrana Ekle</strong>’ye dokunun. Android: ⋮ menüsünü açıp <strong>Uygulamayı yükle</strong> ya da <strong>Ana ekrana ekle</strong>’ye dokunun.",
+      "s3": "Yeni simgeden açın. Çevrimdışıyken bile doğrudan uygulamada başlar."
+    },
     "imageAlt": "Telefonda uygulama: kutucuklar, etkinlik sayfası, Daha fazla menüsü ve özet"
   },
   "private": {
@@ -66,6 +78,18 @@
     "themes": { "title": "Yedi tema", "text": "Açık, koyu ya da sisteme uyan; veya kendi temanızı içe aktarın." },
     "day": { "title": "Kendi gününüz", "text": "Geç saatlere kadar çalışıyorsanız günü sabah 4’te başlatın; kendiliğinden yenilenir." },
     "fullscreen": { "title": "Tam ekran", "text": "Boş bir ekranda işiniz için duvar saati olarak açık bırakın." }
+  },
+  "faq": {
+    "title": "Sık sorulan sorular",
+    "items": {
+      "free": { "q": "Tap Time Tracker ücretsiz mi?", "a": "Evet. Ücretsizdir; reklam, ücretli sürüm ya da hesap yoktur. Uygulamayı herhangi bir modern tarayıcıda açıp dokunmaya başlayın; canlı demo ile önce örnek verilerle deneyebilirsiniz." },
+      "account": { "q": "Hesap gerekiyor mu?", "a": "Hayır. Kayıt, e-posta ya da parola yok. Takibiniz onu açtığınız tarayıcıda yaşar; giriş yapacak ya da unutacak bir şey yoktur." },
+      "data": { "q": "Verilerim nerede saklanıyor?", "a": "Bu cihazdaki tarayıcınızın kendi depolamasında (IndexedDB), başka hiçbir yerde değil. Bu siteye bile asla yüklenmez. Tarayıcıdan çıkmasının tek yolu, kendiniz dışa aktardığınız bir yedek dosyasıdır." },
+      "offline": { "q": "Çevrimdışı çalışır mı?", "a": "Evet. Uygulamayı bir kez açtıktan sonra bağlantı olmadan da başlar; ana ekrana ya da masaüstüne yüklendiğinde diğer uygulamalar gibi çalışır. Hiçbir şey gönderilmediği için takip asla internete ihtiyaç duymaz." },
+      "move": { "q": "Verilerimi başka bir cihaza nasıl taşırım?", "a": "Bir yedek dışa aktarın: uygulamada Ayarlar → Yedek’i açıp JSON dışa aktar’a dokunun. Dosyayı diğer cihaza kopyalayın, orada uygulamayı açın ve aynı yerdeki JSON içe aktar’ı kullanın. İçe aktarma o profilin verilerinin yerini alır; profilde veri varsa önce dışa aktarın." },
+      "several": { "q": "İki etkinlik aynı anda çalışabilir mi?", "a": "Hayır, bu bilerek böyle. Satranç saatinde olduğu gibi bir etkinliği başlatmak diğerini durdurur; böylece gün asla 24 saati aşmaz. Takibi tamamen durdurmak için çalışan etkinliğe dokunun." },
+      "devices": { "q": "Hangi cihazlarda çalışır?", "a": "Modern tarayıcısı olan her şeyde: dizüstü bilgisayar, tablet, telefon ya da duvardaki bir dokunmatik ekran. Her tarayıcı kendi takibini tutar ve eşitleme yoktur; aralarında geçiş için bir yedek dosyası kullanın." }
+    }
   },
   "closing": {
     "title": "Ona bir gün verin.",

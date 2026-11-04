@@ -1,10 +1,10 @@
 {
-  "title": "Time Tracker — un suivi du temps en un geste, qui reste sur votre appareil",
+  "title": "Tap Time Tracker — un suivi du temps en un geste, qui reste sur votre appareil",
   "description": "Un suivi du temps gratuit en un geste : un grand bouton par activité, touchez-le quand vous changez, et voyez votre journée, votre semaine et votre mois d’un coup d’œil. Sans compte, et ce que vous suivez ne quitte jamais votre appareil.",
   "og": {
-    "title": "Time Tracker — sachez où est passée votre journée",
+    "title": "Tap Time Tracker — sachez où est passée votre journée",
     "description": "Un grand bouton par activité : touchez-le quand vous changez, et voyez votre journée, votre semaine et votre mois d’un coup d’œil. Gratuit, sans compte, et ce que vous suivez ne quitte jamais votre appareil.",
-    "imageAlt": "L’écran principal de Time Tracker : une tuile par activité avec le temps du jour"
+    "imageAlt": "L’écran principal de Tap Time Tracker : une tuile par activité avec le temps du jour"
   },
   "ld": {
     "description": "Un suivi du temps en un geste : un grand bouton par activité, touchez-le quand vous changez, et voyez votre journée, votre semaine et votre mois. Sans compte ; tout reste sur votre appareil.",
@@ -13,26 +13,32 @@
   },
   "hero": {
     "title": "Sachez où est vraiment passée votre journée",
-    "lead": "Un suivi du temps en un geste : un grand bouton pour chaque chose que vous faites. Touchez-le quand vous changez. Le soir, vous voyez les réunions, les relectures et les « petites questions » heure par heure, sans remplir une seule feuille de temps. Et tout reste à vous : pas de compte, et rien de ce que vous suivez ne quitte jamais votre appareil.",
+    "lead": "Tap Time Tracker est un suivi du temps gratuit en un geste : un grand bouton pour chaque chose que vous faites. Touchez-le quand vous changez. Le soir, vous voyez les réunions, les relectures et les « petites questions » heure par heure, sans remplir une seule feuille de temps. Et tout reste à vous : pas de compte, et rien de ce que vous suivez ne quitte jamais votre appareil.",
     "demo": "Essayer la démo",
     "fine": "La démo tourne sur trois semaines de données d’exemple dans son propre bac à sable. Rien de ce que vous y faites ne touche votre vrai suivi. Gratuit.",
     "imageAlt": "Passer d’une activité à l’autre : la tuile en cours s’allume et la frise du jour s’allonge en bas"
   },
   "switching": {
-    "title": "Changer ne demande qu’un geste",
+    "title": "Comment fonctionne le suivi du temps en un geste ?",
     "p1": "Ça fonctionne comme une pendule d’échecs. Touchez Réunion et la pendule passe à Réunion ; touchez Tâche et elle continue. Une seule chose tourne à la fois, donc rien n’est compté deux fois et rien ne passe entre les mailles.",
     "p2": "Les boutons sont assez grands pour être touchés sans regarder, sur un portable, une tablette près du bureau ou un écran tactile au mur.",
     "imageAlt": "L’écran principal avec le thème sombre Graphite : une tuile par activité avec le temps du jour, celle en cours mise en avant"
   },
   "backdate": {
-    "title": "Oublié de changer ? Corrigez en deux gestes",
-    "p1": "Embarqué dans un appel et vous n’y avez pensé que vingt minutes plus tard ? Maintenez l’activité et choisissez « active depuis 10:40 ». Le temps est pris sur ce qui tournait, donc la journée reste juste à la minute près.",
+    "title": "Oublié de changer ? Comment corriger ?",
+    "p1": "Maintenez l’activité qui aurait dû tourner et indiquez quand elle a vraiment commencé, par exemple « active depuis 10:40 ». Le temps est pris sur ce qui tournait, donc la journée reste juste à la minute près. Deux gestes, même vingt minutes après l’appel qui vous a happé.",
+    "howto": "Corriger un changement oublié",
+    "steps": {
+      "s1": "Maintenez l’activité qui aurait dû tourner.",
+      "s2": "Choisissez quand elle a commencé : un raccourci comme <em>il y a 15 min</em>, ou l’heure exacte avec les boutons − et +.",
+      "s3": "Touchez <strong>active depuis 10:40</strong> : ce temps passe de ce qui tournait à cette activité."
+    },
     "p2": "Chaque session de la journée est là, prête à être raccourcie, déplacée ou supprimée.",
     "imageAlt": "Maintenir une activité ouvre les sessions du jour et des boutons rapides pour la démarrer plus tôt"
   },
   "privacy": {
-    "title": "Privé par conception, pas par promesse",
-    "p1": "La plupart des outils de suivi demandent un compte, puis envoient chaque minute de votre journée dans leur cloud. Celui-ci n’a nulle part où l’envoyer. Vos sessions vivent dans le stockage de votre navigateur sur cet appareil, et c’est la seule copie.",
+    "title": "Qui peut voir ce que j’enregistre ?",
+    "p1": "Personne d’autre que vous. La plupart des outils de suivi demandent un compte, puis envoient chaque minute de votre journée dans leur cloud. Celui-ci n’a nulle part où l’envoyer. Vos sessions vivent dans le stockage de votre navigateur sur cet appareil, et c’est la seule copie.",
     "p2": "Pas d’inscription, pas de pub, pas de cookies. Suivez le dentiste, l’entretien d’embauche et le long déjeuner sans vous demander qui d’autre peut les voir."
   },
   "vault": {
@@ -43,14 +49,20 @@
     "export": { "title": "À emporter", "text": "Exportez une sauvegarde à tout moment et importez-la sur un autre appareil." }
   },
   "summary": {
-    "title": "Voyez la semaine, pas seulement aujourd’hui",
+    "title": "Que montre le résumé ?",
     "p1": "Jour, semaine, mois ou toute période de votre choix. Chaque jour est sur la même horloge, donc les débuts tardifs, les longs déjeuners et les mardis remplis de réunions sautent aux yeux.",
     "p2": "Étiquetez les activités avec vos propres catégories, comme travail profond ou superficiel, seul ou avec d’autres, et tout le résumé se réorganise autour d’elles.",
     "imageAlt": "Le résumé passe d’une journée à une semaine groupée par concentration, puis à une carte de chaleur du mois"
   },
   "phone": {
-    "title": "Tient aussi dans la poche",
-    "p1": "Sur un téléphone, les boutons se rangent deux par ligne et les menus glissent depuis le bas. Ajoutez-le à l’écran d’accueil et il s’ouvre comme n’importe quelle app.",
+    "title": "Puis-je l’utiliser sur mon téléphone ?",
+    "p1": "Oui. Sur un téléphone, les boutons se rangent deux par ligne et les menus glissent depuis le bas. Ajoutez-le à l’écran d’accueil et il s’ouvre comme n’importe quelle app.",
+    "howto": "Ajouter Tap Time Tracker à l’écran d’accueil",
+    "steps": {
+      "s1": "Ouvrez <strong>taptimetracker.app/app/</strong> dans Safari sur iPhone ou iPad, ou dans Chrome sur Android.",
+      "s2": "iPhone et iPad : touchez Partager, puis <strong>Sur l’écran d’accueil</strong>. Android : ouvrez le menu ⋮ et touchez <strong>Installer l’application</strong> ou <strong>Ajouter à l’écran d’accueil</strong>.",
+      "s3": "Ouvrez-le depuis la nouvelle icône. Il démarre directement dans l’app, même hors ligne."
+    },
     "imageAlt": "L’app sur un téléphone : tuiles, la fiche d’activité, le menu Plus et le résumé"
   },
   "private": {
@@ -66,6 +78,18 @@
     "themes": { "title": "Sept thèmes", "text": "Clair, sombre ou selon le système, ou importez le vôtre." },
     "day": { "title": "Votre propre journée", "text": "Commencez la journée à 4 h si vous travaillez tard ; elle bascule toute seule." },
     "fullscreen": { "title": "Plein écran", "text": "Laissez-le tourner sur un écran libre comme horloge murale de votre travail." }
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "items": {
+      "free": { "q": "Tap Time Tracker est-il gratuit ?", "a": "Oui. Il est gratuit, sans publicité, sans version payante et sans compte. Ouvrez l’app dans n’importe quel navigateur récent et commencez ; la démo en direct permet de l’essayer d’abord sur des données d’exemple." },
+      "account": { "q": "Faut-il un compte ?", "a": "Non. Pas d’inscription, pas d’e-mail, pas de mot de passe. Votre suivi vit dans le navigateur où vous l’ouvrez : rien à quoi se connecter, rien à oublier." },
+      "data": { "q": "Où sont stockées mes données ?", "a": "Dans le stockage propre de votre navigateur (IndexedDB) sur cet appareil, et nulle part ailleurs. Elles ne sont jamais envoyées, pas même à ce site. Elles ne quittent le navigateur que dans un fichier de sauvegarde que vous exportez vous-même." },
+      "offline": { "q": "Fonctionne-t-il hors ligne ?", "a": "Oui. Une fois l’app ouverte, elle démarre sans connexion, et installée sur l’écran d’accueil ou le bureau, elle fonctionne comme n’importe quelle app. Le suivi n’a jamais besoin d’internet, puisque rien n’est envoyé." },
+      "move": { "q": "Comment transférer mes données sur un autre appareil ?", "a": "Exportez une sauvegarde : dans l’app, ouvrez Réglages → Sauvegarde et touchez Exporter en JSON. Copiez le fichier sur l’autre appareil, ouvrez-y l’app et utilisez Importer un JSON au même endroit. L’import remplace les données de ce profil : exportez-les d’abord s’il en a." },
+      "several": { "q": "Deux activités peuvent-elles tourner en même temps ?", "a": "Non, et c’est voulu. Comme avec une pendule d’échecs, lancer une activité arrête l’autre, donc la journée ne dépasse jamais 24 heures. Touchez celle qui tourne pour tout arrêter." },
+      "devices": { "q": "Sur quels appareils fonctionne-t-il ?", "a": "Sur tout appareil doté d’un navigateur récent : ordinateur portable, tablette, téléphone ou écran tactile au mur. Chaque navigateur garde son propre suivi et il n’y a pas de synchronisation : passez de l’un à l’autre avec un fichier de sauvegarde." }
+    }
   },
   "closing": {
     "title": "Donnez-lui une journée.",

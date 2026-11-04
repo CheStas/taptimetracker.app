@@ -1,10 +1,11 @@
 {
-  "brand": "Time Tracker",
+  "brand": "Tap Time Tracker",
   "openApp": "Abrir o app",
   "footer": {
     "pages": "Páginas",
     "language": "Idioma",
     "home": "Início",
+    "faq": "Perguntas frequentes",
     "similar": "Apps parecidos",
     "privacy": "Privacidade",
     "terms": "Termos de uso",

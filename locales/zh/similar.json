@@ -1,8 +1,8 @@
 {
-  "title": "同类应用 — Time Tracker",
-  "description": "其他一键计时工具，按与 Time Tracker 的相似程度从高到低排列，并说明它们的区别。",
+  "title": "同类应用 — Tap Time Tracker",
+  "description": "其他一键计时工具，按与 Tap Time Tracker 的相似程度从高到低排列，并说明它们的区别。",
   "heading": "同类应用",
-  "intro": "Time Tracker 的工作方式就像棋钟：点一项活动开始计时，点另一项就切换过去；同一时间只有一项在计时，过去的时间也可以修正。下面这些应用的工作方式相同或相似，按<strong>相似程度从高到低</strong>排列。",
+  "intro": "Tap Time Tracker 的工作方式就像棋钟：点一项活动开始计时，点另一项就切换过去；同一时间只有一项在计时，过去的时间也可以修正。下面这些应用的工作方式相同或相似，按<strong>相似程度从高到低</strong>排列。",
   "takeaway": {
     "lead": "<strong>简而言之：</strong>没有一款同时具备以下全部特点：",
     "web": "在任何地方都能运行的网页，甚至可以作为单个离线文件",
@@ -13,6 +13,8 @@
   },
   "source": "源代码",
   "timeryFor": "for",
+  "rank": "#",
+  "app": "应用",
   "platform": "平台",
   "similar": "相似之处",
   "differences": "主要区别",
@@ -79,7 +81,7 @@
     },
     "t13": {
       "platform": "Android / Linux",
-      "similar": "Time Tracker 所借鉴的<strong>棋钟交互</strong>：大按钮，点一下就把计时交给另一方。",
+      "similar": "Tap Time Tracker 所借鉴的<strong>棋钟交互</strong>：大按钮，点一下就把计时交给另一方。",
       "differences": "双人使用，倒计时，没有记录、总计或历史"
     }
   },

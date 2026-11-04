@@ -13,7 +13,7 @@ export function Footer({ onSettings }: { onSettings: (section?: string) => void 
     <footer id="footer" class="app-footer">
       <PrivacyNote><button class="lnk lnk-muted" onClick={() => onSettings('backup')}>{t('footer.export')}</button></PrivacyNote>
       <div class="about">
-        <strong>Time Tracker</strong>
+        <strong>Tap Time Tracker</strong>
         <span class="muted">{t('footer.tagline')}</span>
         <span class="muted num small">{VERSION}</span>
       </div>

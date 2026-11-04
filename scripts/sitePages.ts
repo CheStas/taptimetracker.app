@@ -13,6 +13,8 @@ const ROOT = resolve(import.meta.dirname, '..');
 const LOCALES_DIR = resolve(ROOT, 'locales');
 const TEMPLATES = resolve(ROOT, 'src/site/pages');
 export const ORIGIN = 'https://taptimetracker.app';
+/** The site's contact address: in every footer, the privacy page and the publisher's JSON-LD. */
+export const CONTACT = 'contact@taptimetracker.app';
 
 import type { Locale } from '../src/locale.ts';
 export type { Locale };
@@ -89,6 +91,12 @@ export const pageLocales = (page: Page, locales: Locale[]) =>
 /** The URL path of a page in a language, from the site root: "", "similar/", "uk/", "uk/similar/". */
 export const pagePath = (page: Page, code: string, locales: Locale[]) => (code === locales[0].code ? '' : `${code}/`) + page.path;
 
+/** Inline HTML from a locale value as plain text, for JSON-LD. */
+const plain = (s: string) => s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+/** A JSON-LD script; `<` is escaped so no value can close the tag. */
+const jsonLd = (data: object) => `<script type="application/ld+json">\n${JSON.stringify({ '@context': 'https://schema.org', ...data }, null, 2)
+  .replace(/</g, '\\u003c').replace(/^/gm, '    ')}\n  </script>`;
+
 const esc = (s: string) => s.replace(/&(?![a-z#0-9]+;)/gi, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 /** The page's HTML in one language. */
@@ -112,6 +120,16 @@ export function renderPage(page: Page, code: string, locales: Locale[]): string 
   };
   const t = (key: string) => dict[key] ?? fail(`no "${key}" in locales/${code}/${page.id}.json or site.json`);
   const url = (p: Page, c: string) => `${ORIGIN}/${pagePath(p, c, locales)}`;
+  /** The ids under a locale key, in file order: ids('faq.items') -> ['free', 'account', …]. */
+  const ids = (prefix: string) => [...new Set(Object.keys(dict).filter((k) => k.startsWith(`${prefix}.`))
+    .map((k) => k.slice(prefix.length + 1).split('.')[0]))];
+  /** Step lists on this page (`<x>.howto` + `<x>.steps.*`), each shown with {{@steps:x}} and marked up as a HowTo. */
+  const howtos = () => [...new Set(Object.keys(dict).filter((k) => k.endsWith('.howto')).map((k) => k.slice(0, -'.howto'.length)))];
+  let copy = ''; // the template with its copy filled in, for the page's own title and description
+  const meta = (re: RegExp) => plain(copy.match(re)?.[1] ?? fail(`no ${re}`)).replace(/&amp;/g, '&');
+  const publisher = {
+    '@type': 'Organization', name: t('brand'), url: `${ORIGIN}/`, email: CONTACT, logo: `${ORIGIN}/app/icon-512.png`,
+  };
 
   const GEN: Record<string, (arg: string) => string> = {
     lang: () => code,
@@ -126,6 +144,53 @@ export function renderPage(page: Page, code: string, locales: Locale[]): string 
         : []),
     ].join('\n  '),
     url: () => url(page, code),
+    // The page's structured data (SPEC §19): the app, its FAQ and how-tos on the home page; a breadcrumbed WebPage
+    // everywhere else. Built from the same keys as the visible text.
+    ld: () => {
+      if (page.notFound) return '';
+      if (page.id === 'home') {
+        const faq = ids('faq.items');
+        return [
+          jsonLd({
+            '@type': 'WebApplication', name: t('brand'), url: url(page, code), inLanguage: code,
+            description: t('ld.description'), applicationCategory: 'ProductivityApplication',
+            operatingSystem: t('ld.os'), browserRequirements: t('ld.requirements'), image: `${ORIGIN}/og.png`,
+            offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }, publisher,
+          }),
+          ...(faq.length ? [jsonLd({
+            '@type': 'FAQPage', inLanguage: code,
+            mainEntity: faq.map((id) => ({
+              '@type': 'Question', name: plain(t(`faq.items.${id}.q`)),
+              acceptedAnswer: { '@type': 'Answer', text: plain(t(`faq.items.${id}.a`)) },
+            })),
+          })] : []),
+          ...howtos().map((h) => jsonLd({
+            '@type': 'HowTo', name: plain(t(`${h}.howto`)), inLanguage: code,
+            step: ids(`${h}.steps`).map((s, i) => ({ '@type': 'HowToStep', position: i + 1, text: plain(t(`${h}.steps.${s}`)) })),
+          })),
+        ].join('\n  ');
+      }
+      const home = byId('home');
+      return jsonLd({
+        '@type': 'WebPage', name: meta(/<title>([^<]*)<\/title>/), description: meta(/<meta name="description" content="([^"]*)"/),
+        url: url(page, code), inLanguage: code,
+        isPartOf: { '@type': 'WebSite', name: t('brand'), url: `${ORIGIN}/`, publisher },
+        breadcrumb: {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: t('footer.home'), item: url(home, pageLocales(home, locales).some((l) => l.code === code) ? code : en.code) },
+            { '@type': 'ListItem', position: 2, name: t(`footer.${page.id}`), item: url(page, code) },
+          ],
+        },
+      });
+    },
+    faq: () => ids('faq.items').map((id) => `<div class="qa">
+          <h3>${t(`faq.items.${id}.q`)}</h3>
+          <p>${t(`faq.items.${id}.a`)}</p>
+        </div>`).join('\n        '),
+    steps: (h) => `<ol class="steps" aria-label="${esc(plain(t(`${h}.howto`)))}">
+          ${ids(`${h}.steps`).map((s) => `<li>${t(`${h}.steps.${s}`)}</li>`).join('\n          ')}
+        </ol>`,
     ogLocale: () => [`<meta property="og:locale" content="${locale.ogLocale}">`,
       ...available.filter((l) => l.code !== code).map((l) => `<meta property="og:locale:alternate" content="${l.ogLocale}">`)].join('\n  '),
     header: () => `<header class="site-header">
@@ -137,6 +202,9 @@ export function renderPage(page: Page, code: string, locales: Locale[]): string 
         const english = !pageLocales(p, locales).some((l) => l.code === code);
         return `<a href="${href(p.id)}"${english ? ` hreflang="${en.code}"` : ''}>${t(`footer.${p.id}`)}${english ? ` <span class="muted">${t('footer.english')}</span>` : ''}</a>`;
       });
+      // The FAQ (a section of the home page) right after Home, and the contact address last.
+      links.splice(page.id === 'home' ? 0 : 1, 0, `<a href="${page.id === 'home' ? '' : href('home')}#faq">${t('footer.faq')}</a>`);
+      links.push(`<a href="mailto:${CONTACT}">${CONTACT}</a>`);
       // The language picker: a dropdown of real links (crawlable, works without JavaScript), each with its flag and
       // named in its own language; it opens upwards from the current one.
       const flag = (l: Locale, lazy = true) =>
@@ -170,7 +238,7 @@ export function renderPage(page: Page, code: string, locales: Locale[]): string 
 
   const template = readFileSync(resolve(TEMPLATES, `${page.id}.html`), 'utf8');
   // Copy first (it may contain {{@…}}, e.g. a link), then the generated parts.
-  const withCopy = template.replace(/\{\{(?!@)([\w.-]+)(?:\|(attr|json))?\}\}/g, (_, key: string, filter?: string) =>
+  const withCopy = copy = template.replace(/\{\{(?!@)([\w.-]+)(?:\|(attr|json))?\}\}/g, (_, key: string, filter?: string) =>
     filter === 'attr' ? esc(t(key)) : filter === 'json' ? JSON.stringify(t(key)).slice(1, -1) : t(key));
   const html = withCopy.replace(/\{\{@(\w+)(?::([\w-]+))?\}\}/g, (_, name: string, arg = '') =>
     (GEN[name] ?? fail(`unknown {{@${name}}}`))(arg));
