@@ -1,0 +1,75 @@
+{
+  "title": "Time Tracker — cihazınızda kalan tek dokunuşluk zaman takibi",
+  "description": "Ücretsiz, tek dokunuşluk zaman takibi: her etkinlik için büyük bir düğme, geçiş yaptığınızda dokunun ve gününüzü, haftanızı, ayınızı bir bakışta görün. Hesap yok ve kaydettikleriniz cihazınızdan asla çıkmaz.",
+  "og": {
+    "title": "Time Tracker — gününüzün nereye gittiğini bilin",
+    "description": "Her etkinlik için büyük bir düğme: geçiş yaptığınızda dokunun, gününüzü, haftanızı ve ayınızı bir bakışta görün. Ücretsiz, hesap yok ve kaydettikleriniz cihazınızdan asla çıkmaz.",
+    "imageAlt": "Time Tracker ana ekranı: her etkinlik için bugünkü süresiyle bir kutucuk"
+  },
+  "ld": {
+    "description": "Tek dokunuşluk zaman takibi: her etkinlik için büyük bir düğme, geçiş yaptığınızda dokunun ve gününüzü, haftanızı, ayınızı görün. Hesap yok; her şey cihazınızda kalır.",
+    "os": "Herhangi biri (web tarayıcısı)",
+    "requirements": "JavaScript ve IndexedDB destekli modern bir tarayıcı gerekir"
+  },
+  "hero": {
+    "title": "Gününüzün gerçekte nereye gittiğini bilin",
+    "lead": "Tek dokunuşluk zaman takibi: yaptığınız her iş için büyük bir düğme. Geçiş yaptığınızda dokunun. Akşam olduğunda toplantıları, incelemeleri ve “kısa soruları” saat saat dizilmiş görürsünüz; tek bir puantaj doldurmadan. Üstelik her şey sizde kalır: hesap yok ve kaydettiğiniz hiçbir şey cihazınızdan çıkmaz.",
+    "demo": "Canlı demoyu deneyin",
+    "fine": "Demo, kendi korumalı alanında üç haftalık örnek veriyle çalışır. Orada yaptığınız hiçbir şey gerçek kayıtlarınıza dokunmaz. Ücretsiz.",
+    "imageAlt": "Etkinlikler arasında geçiş: çalışan kutucuk yanar ve alttaki bugünün zaman çizelgesi uzar"
+  },
+  "switching": {
+    "title": "Geçiş yapmak tek dokunuş",
+    "p1": "Bir satranç saati gibi çalışır. Toplantı’ya dokunun, saat Toplantı’ya geçer; Görev’e dokunun, devam eder. Aynı anda yalnızca bir şey çalışır; böylece hiçbir şey iki kez sayılmaz, hiçbir şey gözden kaçmaz.",
+    "p2": "Düğmeler bakmadan basılabilecek kadar büyüktür; dizüstü bilgisayarda, masanın yanındaki tablette ya da duvardaki dokunmatik ekranda.",
+    "imageAlt": "Koyu Graphite temasında ana ekran: her etkinlik için bugünkü süresiyle bir kutucuk, çalışan vurgulu"
+  },
+  "backdate": {
+    "title": "Geçmeyi mi unuttunuz? İki dokunuşta düzeltin",
+    "p1": "Bir aramaya çekildiniz ve ancak yirmi dakika sonra mı hatırladınız? Etkinliğe basılı tutun ve “10:40’tan beri etkin” deyin. Süre o sırada çalışan etkinlikten alınır; böylece gün dakikası dakikasına tutmaya devam eder.",
+    "p2": "Günün her oturumu kısaltmak, kaydırmak ya da silmek için hemen orada.",
+    "imageAlt": "Bir etkinliğe basılı tutmak bugünün oturumlarını ve onu daha erken başlatan hızlı düğmeleri açar"
+  },
+  "privacy": {
+    "title": "Söz vererek değil, tasarım gereği gizli",
+    "p1": "Çoğu zaman takip aracı bir hesap ister, sonra gününüzün her dakikasını kendi bulutuna yükler. Bunun gönderecek bir yeri yok. Oturumlarınız bu cihazdaki tarayıcınızın kendi depolamasında yaşar ve tek kopya odur.",
+    "p2": "Kayıt yok, reklam yok, çerez yok. Dişçiyi, iş görüşmesini ve uzun öğle yemeğini, başka kimin göreceğini düşünmeden kaydedin."
+  },
+  "vault": {
+    "label": "Gizli kalanlar",
+    "account": { "title": "Hesap yok", "text": "E-posta yok, şifre yok. Açın ve dokunmaya başlayın." },
+    "device": { "title": "Bu cihazda kalır", "text": "Kaydettiğiniz hiçbir şey hiçbir yere yüklenmez." },
+    "nobody": { "title": "Kimse izlemiyor", "text": "Reklam yok, çerez yok. Site ziyaretleri anonim olarak sayar, kaydettiklerinizi asla; bunu kapatabilirsiniz de." },
+    "export": { "title": "Sizindir, götürün", "text": "İstediğiniz zaman bir yedek dosyası dışa aktarın ve başka bir cihazda içe aktarın." }
+  },
+  "summary": {
+    "title": "Sadece bugünü değil, haftayı görün",
+    "p1": "Gün, hafta, ay ya da seçtiğiniz herhangi bir aralık. Her gün aynı saat ekseninde durur; geç başlangıçlar, uzun öğle yemekleri ve toplantı dolu salılar hemen göze çarpar.",
+    "p2": "Etkinlikleri derin işe karşı yüzeysel iş ya da yalnız karşı insanlarla gibi kendi kategorilerinizle etiketleyin; tüm özet bunlara göre yeniden gruplanır.",
+    "imageAlt": "Özet bir günden odağa göre gruplanmış bir haftaya, sonra bir aylık ısı haritasına geçiyor"
+  },
+  "phone": {
+    "title": "Cebinize de sığar",
+    "p1": "Telefonda düğmeler ikişerli dizilir ve menüler aşağıdan kayarak açılır. Ana ekrana ekleyin, diğer uygulamalar gibi açılsın.",
+    "imageAlt": "Telefonda uygulama: kutucuklar, etkinlik sayfası, Daha fazla menüsü ve özet"
+  },
+  "private": {
+    "title": "Gününüz kimseyi ilgilendirmez",
+    "text": "Hesap yok ve gününüzü gören bir sunucu da yok. Kaydettiğiniz her şey bu cihazdaki bu tarayıcıda kalır. İstediğiniz zaman bir yedek dosyası dışa aktarın ve başka yerde içe aktarın. Site yalnızca ziyaretleri sayar, anonim ve çerezsiz; böylece bakımına değip değmediğini bilirim.",
+    "link": "Nasıl çalışıyor"
+  },
+  "extras": {
+    "label": "Ayrıca",
+    "targets": { "title": "Günlük hedefler", "text": "O bir saatlik molayı verip vermediğinizi bir bakışta görün." },
+    "profiles": { "title": "Profiller", "text": "İşi ve evi ayrı tutun; her birinin kendi düğmeleri ve geçmişi olsun." },
+    "layouts": { "title": "Üç düzen", "text": "Kutucuklar, satırlar ya da daireler; isterseniz kullandıkça büyüyen düğmeler." },
+    "themes": { "title": "Yedi tema", "text": "Açık, koyu ya da sisteme uyan; veya kendi temanızı içe aktarın." },
+    "day": { "title": "Kendi gününüz", "text": "Geç saatlere kadar çalışıyorsanız günü sabah 4’te başlatın; kendiliğinden yenilenir." },
+    "fullscreen": { "title": "Tam ekran", "text": "Boş bir ekranda işiniz için duvar saati olarak açık bırakın." }
+  },
+  "closing": {
+    "title": "Ona bir gün verin.",
+    "lead": "Yarın ilk kahveden son mesaja kadar kaydedin ve akşam zaman çizelgesine bakın. Çoğu kişi şaşırır.",
+    "demo": "Önce demoyu deneyin"
+  }
+}

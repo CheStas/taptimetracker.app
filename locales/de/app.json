@@ -1,0 +1,485 @@
+{
+  "common": {
+    "cancel": "Abbrechen",
+    "ok": "OK",
+    "close": "Schließen",
+    "off": "Aus",
+    "save": "Speichern",
+    "apply": "Übernehmen",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "add": "Hinzufügen",
+    "rename": "Umbenennen",
+    "back": "Zurück"
+  },
+  "time": {
+    "now": "jetzt",
+    "ago": "vor {m} Min."
+  },
+  "dur": {
+    "hms": "{h} Std. {m} Min. {s} s",
+    "ms": "{m} Min. {s} s",
+    "hm": "{h} Std. {m} Min.",
+    "hmShort": "{h}h{m}",
+    "m": "{m} Min.",
+    "sec": "{s} s",
+    "min": "{m} Min."
+  },
+  "target": {
+    "left": "noch {time}",
+    "over": "{time} drüber"
+  },
+  "demo": {
+    "title": "Demo",
+    "text": "Beispieldaten in einem Wegwerf-Profil: probier ruhig alles aus, Neuladen setzt es zurück. Deine eigenen Daten bleiben unberührt.",
+    "start": "Eigenes starten"
+  },
+  "header": {
+    "switchProfile": "Profil wechseln, {name} ist offen",
+    "today": "Heute · {date}",
+    "since": "seit {time}",
+    "now": "Jetzt",
+    "active": "Aktiv",
+    "idle": "Leerlauf",
+    "clock": "Uhr",
+    "app": "App",
+    "reset": "Tag zurücksetzen",
+    "fullscreen": "Vollbild",
+    "leaveFullscreen": "Vollbild verlassen",
+    "close": "App schließen",
+    "more": "Mehr",
+    "moreLabel": "Mehr: Tag zurücksetzen, Vollbild, App schließen",
+    "top": "Nach oben"
+  },
+  "main": {
+    "readyTitle": "Bereit für den Tag",
+    "ready": "{strong} · Tippe auf eine Tätigkeit, um die Erfassung zu starten · gedrückt halten für einen früheren Start",
+    "unused": "Heute nicht genutzt",
+    "tapHint": "Tippen zum Wechseln · die laufende antippen zum Stoppen · gedrückt halten für Sitzungen",
+    "moreBelow": "Weiter unten: Links und Themes",
+    "allGroupsOff": "Nichts anzuzeigen: alle Gruppen sind aus (Einstellungen → Gruppen).",
+    "noActivities": "Keine Tätigkeiten. Füge welche in den Einstellungen hinzu.",
+    "ofToday": "{pct} % von heute",
+    "leftOfTarget": "noch {time} bis zum Ziel von {target}",
+    "overTarget": "{time} über dem Ziel",
+    "running": "Läuft",
+    "idle": "Leerlauf",
+    "runningTag": "(läuft)",
+    "timeline": "Heutige Zeitleiste",
+    "noGroup": "keine Gruppe",
+    "tracked": "erfasst",
+    "idleTotal": "Leerlauf"
+  },
+  "welcome": {
+    "label": "Willkommen",
+    "title": "Neu hier?",
+    "text": "Tippe auf eine Tätigkeit, um den Tag zu starten · gedrückt halten für einen früheren Start.",
+    "ok": "Verstanden"
+  },
+  "footer": {
+    "more": "Mehr in den Einstellungen",
+    "export": "Export in den Einstellungen",
+    "tagline": "Eine Schachuhr für deinen Arbeitstag.",
+    "theme": "Theme",
+    "mainScreen": "Hauptbildschirm",
+    "buttons": "Knöpfe"
+  },
+  "about": {
+    "label": "Über",
+    "what": "Was ist das?",
+    "similar": "Ähnliche Apps",
+    "feedback": "Feedback senden",
+    "offline": "Diese Seite ist auf der Website, die diese Offline-Datei nicht enthält.",
+    "privacyNote": "Datenschutz zuerst: alles, was du erfasst, bleibt in diesem Browser. Kein Konto und keine Internetverbindung nötig. Du bist für deine Daten verantwortlich, also exportiere regelmäßig eine Sicherung.",
+    "statsUnavailable": "Diese Kopie (die Demo, die Offline-Datei oder ein lokaler Build) sendet keine Nutzungsstatistiken.",
+    "statsLabel": "Anonyme Nutzungsstatistiken teilen",
+    "statsHint": "Welche Bildschirme und Funktionen genutzt werden, nie was du erfasst. Keine Cookies, kein Konto, nichts Persönliches.",
+    "statsDnt": "Dein Browser bittet Websites, nicht zu tracken, also ist das aus, bis du es einschaltest.",
+    "statsPlea": "Es ist deine Entscheidung, und du kannst es ausschalten. Bitte überleg dir, es anzulassen: Time Tracker ist kostenlos, und diese Zählungen sind die einzige Möglichkeit zu wissen, ob es jemand nutzt. Wenn niemand, gibt es keine Updates mehr und es wird eingestellt.",
+    "statsLink": "Was erfasst wird"
+  },
+  "layout": {
+    "label": "Knopf-Layout",
+    "tiles": "Kacheln",
+    "rows": "Zeilen",
+    "circles": "Kreise"
+  },
+  "toggles": {
+    "popularity": {
+      "label": "Knopfgröße nach heutiger Nutzung",
+      "hint": "Kacheln werden breiter, Zeilen höher, Kreise größer, je mehr du sie nutzt"
+    },
+    "unusedStrip": {
+      "label": "Ungenutzte Tätigkeiten in eine Leiste verschieben",
+      "hint": "Tätigkeiten ohne Zeit heute werden zu kleinen Chips unter den Knöpfen"
+    },
+    "showTimeline": {
+      "label": "Heutige Zeitleiste anzeigen",
+      "hint": "Der farbige Sitzungsbalken unten auf dem Hauptbildschirm"
+    },
+    "showGroups": {
+      "label": "Gruppensummen anzeigen",
+      "hint": "Zeit pro Gruppe und Leerlauf, in einer Zeile unter der Zeitleiste"
+    },
+    "showFooter": {
+      "label": "Fußzeile anzeigen",
+      "hint": "Links und Schnelleinstellungen unten auf jeder Seite"
+    }
+  },
+  "session": {
+    "session": "Sitzung",
+    "deleteTitle": "Diese Sitzung löschen?",
+    "deleteBody": "{name} · {range} ({duration}). Diese Zeit wird zu Leerlauf. Du kannst sie im Tageseditor wieder hinzufügen.",
+    "editTitle": "{name} bearbeiten",
+    "start": "Start",
+    "end": "Ende",
+    "stillRunning": "Läuft noch"
+  },
+  "popup": {
+    "today": "Heute",
+    "sessions": {
+      "one": "in {n} Sitzung",
+      "other": "in {n} Sitzungen"
+    },
+    "running": "läuft",
+    "noSessions": "Heute keine Sitzungen.",
+    "correct": "Zeitleiste korrigieren",
+    "activeSince": "{name} aktiv seit {time}",
+    "stopSince": "Alles stoppen seit {time}",
+    "editSessions": "Sitzungen bearbeiten…"
+  },
+  "editor": {
+    "title": "Tageseditor",
+    "day": "Tag",
+    "prev": "Vorheriger Tag",
+    "next": "Nächster Tag",
+    "today": "Heute · {date}",
+    "removed": "(entfernt)",
+    "noneToday": "Heute keine Sitzungen.",
+    "noneDay": "Keine Sitzungen an diesem Tag.",
+    "addRange": "Zeitraum hinzufügen",
+    "clearTodayTitle": "Heute leeren?",
+    "clearDayTitle": "Diesen Tag leeren?",
+    "clearBody": "Alle Sitzungen werden gelöscht. Danach kannst du den Tag mit „Zeitraum hinzufügen“ neu aufbauen.",
+    "clearOk": "Tag leeren",
+    "clear": "Ganzen Tag leeren",
+    "idleNone": "Leerlauf (keine)",
+    "from": "Von",
+    "to": "Bis",
+    "keepRunning": "Bis jetzt und weiterlaufen lassen"
+  },
+  "feedback": {
+    "title": "Feedback senden",
+    "offline": "Diese Offline-Datei kann keine Nachrichten senden. Öffne die Online-Version der App, um Feedback zu senden.",
+    "thanks": "Danke",
+    "sent": "Deine Nachricht ist unterwegs. Jede einzelne wird gelesen.",
+    "intro": "Ein Fehler, eine fehlende Funktion oder einfach, dass du sie nutzt: all das hilft zu entscheiden, was als Nächstes kommt.",
+    "message": "Deine Nachricht",
+    "email": "E-Mail",
+    "emailHint": "E-Mail, nur wenn du eine Antwort möchtest",
+    "device": "App-Version und Browser mitsenden",
+    "failed": "Das Senden hat gerade nicht geklappt. Dein Text ist noch da, versuch es gleich noch einmal.",
+    "sending": "Wird gesendet…",
+    "send": "Senden"
+  },
+  "profiles": {
+    "switch": "Profil wechseln",
+    "runningIn": "{name} läuft in {profile}.",
+    "anActivity": "Eine Tätigkeit",
+    "runningNote": "{strong} Sie zählt weiter, während ein anderes Profil offen ist.",
+    "statusRunning": "{name} läuft · heute {time}",
+    "statusIdle": "Leerlauf · zuletzt genutzt am {date}",
+    "statusNew": "Noch nichts erfasst",
+    "open": "Offen",
+    "switchTo": "Wechseln",
+    "manage": "Profile in den Einstellungen hinzufügen, umbenennen oder löschen"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "sectionsLabel": "Bereiche der Einstellungen",
+    "sections": {
+      "profiles": "Profile",
+      "groups": "Gruppen",
+      "categories": "Kategorien",
+      "activities": "Tätigkeiten",
+      "appearance": "Darstellung",
+      "day": "Tag",
+      "device": "Gerät",
+      "backup": "Sicherung",
+      "about": "Über"
+    },
+    "importFailed": "Import fehlgeschlagen: {error}",
+    "up": "Nach oben",
+    "down": "Nach unten",
+    "activityCount": {
+      "one": "{n} Tätigkeit",
+      "other": "{n} Tätigkeiten"
+    },
+    "profiles": {
+      "intro": "Jedes Profil ist ein eigener Arbeitsbereich mit eigenen Tätigkeiten, Gruppen, Tagen, Übersicht, Einstellungen und Sicherung. Es ist immer eins offen; eine laufende Tätigkeit zählt weiter, während du in einem anderen Profil bist. Ein neues Profil startet mit einer Kopie der Einstellungen dieses Profils.",
+      "placeholder": "Name des neuen Profils, z. B. Zuhause",
+      "add": "Profil hinzufügen",
+      "name": "Profilname",
+      "isOpen": "offen",
+      "openOther": "Öffne zuerst ein anderes Profil",
+      "deleteTitle": "Profil „{name}“ löschen?",
+      "deleteBody": "ALLE Tätigkeiten, Tage und die Historie werden gelöscht. Das lässt sich nicht rückgängig machen (exportiere vorher eine Sicherung)."
+    },
+    "groups": {
+      "intro": "Der Hauptbildschirm zeigt die Tätigkeiten eingeschalteter Gruppen sowie die ohne Gruppe. Mehrere Gruppen können gleichzeitig an sein; eine Gruppe bleibt an oder aus, bis du es änderst.",
+      "placeholder": "Gruppen hinzufügen: eine pro Zeile oder durch Kommas getrennt",
+      "name": "Gruppenname",
+      "on": "An",
+      "deleteTitle": "Gruppe „{name}“ löschen?",
+      "deleteBody": "Ihre Tätigkeiten bleiben erhalten und wandern zu „keine Gruppe“."
+    },
+    "categories": {
+      "intro": "Kategorien teilen deine Zeit in der Übersicht auf. Eine Dimension hat Optionen; jede Tätigkeit wählt höchstens eine Option pro Dimension. Tätigkeiten ohne Option zählen als „Nicht festgelegt“, also ergibt jede Dimension 100 %.",
+      "empty": "Noch keine Kategorien",
+      "example": "Zum Beispiel {focus}: {productive} / {nonProductive} oder {company}: {people} / {alone}.",
+      "addExample": "Beispiel „{name}“ hinzufügen",
+      "newName": "Neue Dimension",
+      "addEmpty": "Leere Dimension hinzufügen",
+      "placeholder": "Neue Dimension, z. B. Energie",
+      "add": "Dimension hinzufügen",
+      "dimension": "Dimension",
+      "dimensionName": "Name der Dimension",
+      "set": {
+        "one": "bei {set} von {n} Tätigkeit festgelegt",
+        "other": "bei {set} von {n} Tätigkeiten festgelegt"
+      },
+      "deleteTitle": "Dimension „{name}“ löschen?",
+      "deleteBody": "Jede Tätigkeit verliert ihre Option darin. Sonst ändert sich nichts.",
+      "colorOf": "Farbe von {name}: {color}",
+      "optionName": "Name der Option",
+      "deleteOptionTitle": "Option „{name}“ löschen?",
+      "deleteOptionBody": "Ihre Tätigkeiten werden für {dimension} zu „Nicht festgelegt“.",
+      "addOption": "Option hinzufügen",
+      "newOption": "Neue Option"
+    },
+    "activities": {
+      "taken": "Existiert bereits (Namen sind eindeutig; eine entfernte kann unten wiederhergestellt oder gelöscht werden): {names}",
+      "placeholder": "Tätigkeiten hinzufügen: eine pro Zeile oder durch Kommas getrennt",
+      "removedTitle": "Entfernte Tätigkeiten",
+      "removedIntro": "Entfernte Tätigkeiten behalten ihre Historie; stelle sie jederzeit wieder her. Löschen nimmt eine von dieser Liste, ihre erfasste Zeit bleibt in der Übersicht. Fügst du später eine Tätigkeit mit demselben Namen hinzu, setzt sie diese Historie fort.",
+      "restore": "Wiederherstellen",
+      "deleteTitle": "„{name}“ löschen?",
+      "deleteBody": "Sie verschwindet endgültig von dieser Liste. Ihre erfasste Zeit bleibt in der Übersicht.",
+      "colorLabel": "Farbe von {name}: unter Tätigkeitsfarben ändern",
+      "colorTitle": "Unter Darstellung → Tätigkeitsfarben ändern",
+      "name": "Name",
+      "exists": "Eine Tätigkeit namens „{name}“ existiert bereits.",
+      "group": "Gruppe",
+      "noGroup": "Keine Gruppe",
+      "target": "Ziel",
+      "min": "Min.",
+      "hasTime": "hat heute Zeit",
+      "hideToday": "Heute ausblenden",
+      "remove": "Entfernen",
+      "removeTitle": "„{name}“ entfernen?",
+      "removeBody": "Ihre Historie bleibt erhalten und sie kann wiederhergestellt werden."
+    },
+    "theme": {
+      "lowContrast": "„{name}“ ist installiert, aber diese Tätigkeitsfarben sind auf seinem Hintergrund schwer zu sehen (unter 3:1): {slots}.",
+      "intro": "Ein Theme bestimmt das ganze Aussehen: Flächen, Text und die Tätigkeitsfarben. Dieselbe Idee wie ein Editor- oder Terminal-Theme.",
+      "mode": "Theme-Modus",
+      "fixed": "Fest",
+      "system": "Wie das System",
+      "import": "Theme importieren",
+      "systemNote": "Wie das System: {light} im hellen Modus, {dark} im dunklen Modus. Tippe auf ein Theme, während das System in diesem Modus ist, um es zu ändern (jetzt: {mode}).",
+      "dark": "dunkel",
+      "light": "hell",
+      "name": "Theme-Name",
+      "export": "Exportieren",
+      "deleteTitle": "Theme „{name}“ löschen?",
+      "deleteBody": "Profile, die es nutzen, wechseln zu Paper oder Graphite."
+    },
+    "colors": {
+      "title": "Tätigkeitsfarben",
+      "intro": "Jedes Theme hat 16 Farbplätze, wie eine Terminal-Palette. Eine Tätigkeit wählt einen Platz, also ändert sie ihre Farbe mit dem Theme und bleibt in jedem gut lesbar. Bei mehr Tätigkeiten als Plätzen wiederholen sich die Farben; die Namen stehen immer neben den Farben.",
+      "of": "Farbe von {name}",
+      "slot": "Platz {n}, {name}"
+    },
+    "day": {
+      "reset": "Automatisch zurücksetzen um",
+      "weekStart": "Woche beginnt am",
+      "system": "System ({day})",
+      "weekHint": "für den Zeitraum Woche, den Kalender und die Heatmap",
+      "minSwitch": "Kürzester Wechsel",
+      "minSwitchHint": "kürzere Abschnitte gehen an die nächste (oder vorherige) Tätigkeit",
+      "autoExport": "JSON-Sicherung herunterladen, wenn ein Tag endet",
+      "autoExportHint": "Eine Datei pro abgeschlossenem Tag, in deinen Downloads",
+      "editTimeline": "Zeitleiste bearbeiten…"
+    },
+    "device": {
+      "language": "Sprache",
+      "languageHint": "gilt auf diesem Gerät auch für die Website",
+      "fullscreen": "Im Vollbild starten",
+      "fullscreenHint": "Beim ersten Tippen; das Vollbild-Symbol schaltet um, Esc gedrückt halten zum Verlassen",
+      "awake": "Bildschirm eingeschaltet lassen",
+      "awakeHint": "Solange die App offen und sichtbar ist",
+      "awakeUnavailable": "Hier nicht verfügbar: braucht localhost oder HTTPS"
+    },
+    "backup": {
+      "importTitle": "In dieses Profil importieren?",
+      "importBody": "Der Import ersetzt ALLE Daten und Einstellungen des Profils „{name}“. Andere Profile bleiben unverändert.",
+      "importOk": "Importieren",
+      "importDone": "Import abgeschlossen.",
+      "intro": "Export und Import betreffen nur dieses Profil; der Import ersetzt seine Daten und Einstellungen.",
+      "export": "JSON exportieren",
+      "import": "JSON importieren"
+    }
+  },
+  "slots": {
+    "blue": "Blau",
+    "green": "Grün",
+    "orange": "Orange",
+    "purple": "Lila",
+    "red": "Rot",
+    "cyan": "Cyan",
+    "yellow": "Gelb",
+    "neutral": "Neutral",
+    "pink": "Pink",
+    "teal": "Petrol",
+    "lime": "Limette",
+    "brown": "Braun",
+    "indigo": "Indigo",
+    "olive": "Oliv",
+    "wine": "Weinrot",
+    "slate": "Schiefer"
+  },
+  "seed": {
+    "names": {
+      "default": "Standard",
+      "work": "Arbeit",
+      "meeting": "Meeting",
+      "task": "Aufgabe",
+      "code review": "Code-Review",
+      "communication": "Kommunikation",
+      "setup": "Einrichtung",
+      "break": "Pause",
+      "planning": "Planung",
+      "focus": "Fokus",
+      "productive": "Produktiv",
+      "non-productive": "Unproduktiv",
+      "company": "Gesellschaft",
+      "with people": "Mit anderen",
+      "alone": "Allein"
+    }
+  },
+  "summary": {
+    "title": "Übersicht",
+    "idleFor": "Leerlauf {time}",
+    "notSet": "Nicht festgelegt",
+    "loading": "Wird geladen…",
+    "days": {
+      "one": "{n} Tag",
+      "other": "{n} Tage"
+    },
+    "quick": {
+      "today": "Heute",
+      "yesterday": "Gestern",
+      "thisWeek": "Diese Woche",
+      "lastWeek": "Letzte Woche",
+      "last7": "Letzte 7 Tage",
+      "thisMonth": "Dieser Monat",
+      "lastMonth": "Letzter Monat",
+      "last30": "Letzte 30 Tage"
+    },
+    "kinds": {
+      "day": "Tag",
+      "week": "Woche",
+      "month": "Monat",
+      "custom": "Eigener"
+    },
+    "emptyDay": "Am {date} nichts erfasst",
+    "emptyRange": "Vom {from} bis {to} nichts erfasst",
+    "emptyHint": "Wähle einen anderen Zeitraum oder starte eine Tätigkeit auf dem Hauptbildschirm.",
+    "pickLast": "letzten Tag wählen",
+    "period": "Zeitraum",
+    "periodKind": "Art des Zeitraums",
+    "prevPeriod": "Vorheriger Zeitraum",
+    "nextPeriod": "Nächster Zeitraum",
+    "choosePeriod": "Zeitraum wählen, {label}",
+    "groupBy": "Gruppieren nach",
+    "activity": "Tätigkeit",
+    "nothing": "nichts erfasst",
+    "prevMonth": "Vorheriger Monat",
+    "nextMonth": "Nächster Monat",
+    "quickRanges": "Schnellauswahl",
+    "pickLastHint": "Tippe jetzt auf den letzten Tag. Beide Tage sind enthalten.",
+    "pickFirstHint": "Tippe auf den ersten Tag, dann auf den letzten. Beide Tage sind enthalten.",
+    "shadedHint": "Schattierte Tage haben erfasste Zeit. Wochen beginnen am {day} (Einstellungen → Tag).",
+    "total": "Insgesamt erfasst",
+    "live": "läuft · live",
+    "firstLast": "Erster – letzter",
+    "firstLastHint": "erster Start bis letztes Ende",
+    "idleHint": "Lücken zwischen Tätigkeiten",
+    "switches": "Wechsel",
+    "sessions": {
+      "one": "{n} Sitzung",
+      "other": "{n} Sitzungen"
+    },
+    "avg": "Ø pro erfasstem Tag",
+    "trackedDays": {
+      "one": "{n} erfasster Tag",
+      "other": "{n} erfasste Tage"
+    },
+    "noTrackedDays": "keine erfassten Tage",
+    "previous": "vorher: {time}",
+    "timeline": "Zeitleiste",
+    "tapBlock": "Tippe auf einen Block für Details",
+    "blockLabel": "{name} von {from} bis {to}",
+    "perWeek": "Pro Woche",
+    "perWeekHint": "Balken = Summe nach Gruppe",
+    "avgHint": "gestrichelt: Ø Start {start} · Ende {end} · tippe auf einen Tag für Details",
+    "tapDay": "tippe auf einen Tag für Details",
+    "perDay": "Pro Tag",
+    "openDay": "Tag öffnen",
+    "targetMet": {
+      "one": "Ziel {target} · erreicht an {met} von {n} Tag",
+      "other": "Ziel {target} · erreicht an {met} von {n} Tagen"
+    },
+    "share": "Anteil",
+    "tapOption": "tippe auf eine Option, um ihre Tätigkeiten zu sehen",
+    "avgOver": "Ø über erfasste Tage",
+    "shareOfTime": "Zeitanteil",
+    "donutHours": "{h} Std.",
+    "name": "Name",
+    "totalCol": "Summe",
+    "target": "Ziel",
+    "avgDay": "Ø / Tag",
+    "sessionsTitle": "Sitzungen",
+    "groupLog": "Nach {name} gruppieren",
+    "vsWeek": "ggü. der Vorwoche",
+    "vsMonth": "ggü. {month}",
+    "vsDays": {
+      "one": "ggü. dem Vortag",
+      "other": "ggü. den vorherigen {n} Tagen"
+    },
+    "noDataWeek": "keine Daten in der Vorwoche",
+    "noDataMonth": "keine Daten im {month}",
+    "noDataDays": {
+      "one": "keine Daten am Vortag",
+      "other": "keine Daten in den vorherigen {n} Tagen"
+    }
+  },
+  "dialogs": {
+    "theActivity": "Die Tätigkeit",
+    "resetTitle": "Tag zurücksetzen?",
+    "resetStops": "{name} stoppt jetzt.",
+    "resetBody": "{date} schließt mit {total} erfasst und ein neuer Tag beginnt. Den abgeschlossenen Tag kannst du weiterhin in der Übersicht bearbeiten.",
+    "closeTitle": "Time Tracker schließen?",
+    "closeRunning": "{name} zählt weiter, während die App geschlossen ist. Öffne die App wieder, um zu stoppen oder zu wechseln.",
+    "closeIdle": "Es läuft nichts.",
+    "closeYourself": "Schließe das Fenster selbst",
+    "closeYourselfBody": "Der Browser lässt diese Seite ihr eigenes Fenster nicht schließen. Drücke Alt+F4 oder Strg+W.",
+    "keepsCounting": "{name} zählt weiter."
+  },
+  "errors": {
+    "notExport": "Kein Time-Tracker-Export",
+    "itermXml": "Unbekannte XML-Datei (erwartet: eine iTerm-.itermcolors-Datei)",
+    "jsonTheme": "Unbekanntes JSON-Theme (erwartet: unsere Theme-Datei, ein VS-Code-Farbtheme oder base16)",
+    "themeFile": "Unbekannte Theme-Datei (unterstützt: unser Theme .json, VS Code .json, base16 .yaml/.json, Alacritty .toml, iTerm .itermcolors)"
+  }
+}

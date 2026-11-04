@@ -1,0 +1,485 @@
+{
+  "common": {
+    "cancel": "Annuleren",
+    "ok": "OK",
+    "close": "Sluiten",
+    "off": "Uit",
+    "save": "Opslaan",
+    "apply": "Toepassen",
+    "edit": "Bewerken",
+    "delete": "Verwijderen",
+    "add": "Toevoegen",
+    "rename": "Hernoemen",
+    "back": "Terug"
+  },
+  "time": {
+    "now": "nu",
+    "ago": "{m} min geleden"
+  },
+  "dur": {
+    "hms": "{h} u {m} min {s} s",
+    "ms": "{m} min {s} s",
+    "hm": "{h} u {m} min",
+    "hmShort": "{h}u{m}",
+    "m": "{m} min",
+    "sec": "{s} s",
+    "min": "{m} min"
+  },
+  "target": {
+    "left": "nog {time}",
+    "over": "{time} te veel"
+  },
+  "demo": {
+    "title": "Demo",
+    "text": "Voorbeelddata in een wegwerpprofiel: probeer gerust alles, herladen begint opnieuw. Je eigen data wordt niet aangeraakt.",
+    "start": "Begin je eigen"
+  },
+  "header": {
+    "switchProfile": "Wissel van profiel, {name} is open",
+    "today": "Vandaag · {date}",
+    "since": "sinds {time}",
+    "now": "Nu",
+    "active": "Actief",
+    "idle": "Inactief",
+    "clock": "Klok",
+    "app": "App",
+    "reset": "Dag resetten",
+    "fullscreen": "Volledig scherm",
+    "leaveFullscreen": "Volledig scherm verlaten",
+    "close": "App sluiten",
+    "more": "Meer",
+    "moreLabel": "Meer: dag resetten, volledig scherm, app sluiten",
+    "top": "Terug naar boven"
+  },
+  "main": {
+    "readyTitle": "Klaar om de dag te beginnen",
+    "ready": "{strong} · Tik op een activiteit om te beginnen met bijhouden · houd ingedrukt voor een eerdere start",
+    "unused": "Vandaag niet gebruikt",
+    "tapHint": "Tik om te wisselen · tik op de lopende om te stoppen · houd ingedrukt voor sessies",
+    "moreBelow": "Verder naar beneden: links en thema’s",
+    "allGroupsOff": "Niets te tonen: alle groepen staan uit (Instellingen → Groepen).",
+    "noActivities": "Geen activiteiten. Voeg er een paar toe in Instellingen.",
+    "ofToday": "{pct}% van vandaag",
+    "leftOfTarget": "nog {time} tot het doel van {target}",
+    "overTarget": "{time} boven het doel",
+    "running": "Loopt",
+    "idle": "Inactief",
+    "runningTag": "(loopt)",
+    "timeline": "Tijdlijn van vandaag",
+    "noGroup": "geen groep",
+    "tracked": "bijgehouden",
+    "idleTotal": "inactief"
+  },
+  "welcome": {
+    "label": "Welkom",
+    "title": "Nieuw hier?",
+    "text": "Tik op een activiteit om de dag te beginnen · houd ingedrukt voor een eerdere start.",
+    "ok": "Begrepen"
+  },
+  "footer": {
+    "more": "Meer in Instellingen",
+    "export": "Exporteren in Instellingen",
+    "tagline": "Een schaakklok voor je werkdag.",
+    "theme": "Thema",
+    "mainScreen": "Hoofdscherm",
+    "buttons": "Knoppen"
+  },
+  "about": {
+    "label": "Over",
+    "what": "Wat is het?",
+    "similar": "Vergelijkbare apps",
+    "feedback": "Feedback sturen",
+    "offline": "Deze pagina staat op de website, die dit offline bestand niet bevat.",
+    "privacyNote": "Privacy voorop: alles wat je bijhoudt blijft in deze browser. Geen account en geen internetverbinding nodig. Je bent zelf verantwoordelijk voor je data, dus exporteer regelmatig een back-up.",
+    "statsUnavailable": "Deze kopie (de demo, het offline bestand of een lokale build) stuurt geen gebruiksstatistieken.",
+    "statsLabel": "Anonieme gebruiksstatistieken delen",
+    "statsHint": "Welke schermen en functies worden gebruikt, nooit wat je bijhoudt. Geen cookies, geen account, niets persoonlijks.",
+    "statsDnt": "Je browser vraagt sites om niet te volgen, dus dit staat uit tot je het aanzet.",
+    "statsPlea": "Het is jouw keuze, en je kunt het uitzetten. Overweeg wel om het aan te laten: Time Tracker is gratis, en deze tellingen zijn de enige manier om te weten dat iemand het gebruikt. Als niemand het gebruikt, komen er geen updates meer en wordt het stopgezet.",
+    "statsLink": "Wat er wordt verzameld"
+  },
+  "layout": {
+    "label": "Knopindeling",
+    "tiles": "Tegels",
+    "rows": "Rijen",
+    "circles": "Cirkels"
+  },
+  "toggles": {
+    "popularity": {
+      "label": "Knopgrootte volgens gebruik van vandaag",
+      "hint": "Tegels worden breder, rijen hoger en cirkels groter naarmate je ze gebruikt"
+    },
+    "unusedStrip": {
+      "label": "Ongebruikte activiteiten naar een strook verplaatsen",
+      "hint": "Activiteiten zonder tijd vandaag worden kleine chips onder de knoppen"
+    },
+    "showTimeline": {
+      "label": "Tijdlijn van vandaag tonen",
+      "hint": "De gekleurde sessiebalk onderaan het hoofdscherm"
+    },
+    "showGroups": {
+      "label": "Groepstotalen tonen",
+      "hint": "Tijd per groep en inactieve tijd, op één regel onder de tijdlijn"
+    },
+    "showFooter": {
+      "label": "Voettekst tonen",
+      "hint": "Links en snelle instellingen onderaan elke pagina"
+    }
+  },
+  "session": {
+    "session": "Sessie",
+    "deleteTitle": "Deze sessie verwijderen?",
+    "deleteBody": "{name} · {range} ({duration}). Deze tijd wordt inactief. Je kunt hem terugzetten in de dageditor.",
+    "editTitle": "{name} bewerken",
+    "start": "Start",
+    "end": "Einde",
+    "stillRunning": "Loopt nog"
+  },
+  "popup": {
+    "today": "Vandaag",
+    "sessions": {
+      "one": "in {n} sessie",
+      "other": "in {n} sessies"
+    },
+    "running": "loopt",
+    "noSessions": "Vandaag geen sessies.",
+    "correct": "Tijdlijn corrigeren",
+    "activeSince": "{name} actief sinds {time}",
+    "stopSince": "Alles stoppen sinds {time}",
+    "editSessions": "Sessies bewerken…"
+  },
+  "editor": {
+    "title": "Dageditor",
+    "day": "Dag",
+    "prev": "Vorige dag",
+    "next": "Volgende dag",
+    "today": "Vandaag · {date}",
+    "removed": "(weggehaald)",
+    "noneToday": "Vandaag geen sessies.",
+    "noneDay": "Geen sessies op deze dag.",
+    "addRange": "Periode toevoegen",
+    "clearTodayTitle": "Vandaag leegmaken?",
+    "clearDayTitle": "Deze dag leegmaken?",
+    "clearBody": "Alle sessies worden verwijderd. Daarna kun je de dag opnieuw opbouwen met ‘Periode toevoegen’.",
+    "clearOk": "Dag leegmaken",
+    "clear": "Hele dag leegmaken",
+    "idleNone": "inactief (geen)",
+    "from": "Van",
+    "to": "Tot",
+    "keepRunning": "Tot nu en laten doorlopen"
+  },
+  "feedback": {
+    "title": "Feedback sturen",
+    "offline": "Dit offline bestand kan geen berichten versturen. Open de online versie van de app om feedback te sturen.",
+    "thanks": "Bedankt",
+    "sent": "Je bericht is onderweg. Elk bericht wordt gelezen.",
+    "intro": "Een bug, een ontbrekende functie, of gewoon dat je het gebruikt: het helpt allemaal om te bepalen wat er hierna komt.",
+    "message": "Je bericht",
+    "email": "E-mail",
+    "emailHint": "E-mail, alleen als je een antwoord wilt",
+    "device": "App-versie en browser meesturen",
+    "failed": "Versturen lukte nu niet. Je tekst staat er nog, probeer het zo opnieuw.",
+    "sending": "Versturen…",
+    "send": "Versturen"
+  },
+  "profiles": {
+    "switch": "Wissel van profiel",
+    "runningIn": "{name} loopt in {profile}.",
+    "anActivity": "Een activiteit",
+    "runningNote": "{strong} Ze blijft tellen terwijl een ander profiel open is.",
+    "statusRunning": "{name} loopt · vandaag {time}",
+    "statusIdle": "Inactief · laatst gebruikt op {date}",
+    "statusNew": "Nog niets bijgehouden",
+    "open": "Open",
+    "switchTo": "Wisselen",
+    "manage": "Profielen toevoegen, hernoemen of verwijderen in Instellingen"
+  },
+  "settings": {
+    "title": "Instellingen",
+    "sectionsLabel": "Onderdelen van de instellingen",
+    "sections": {
+      "profiles": "Profielen",
+      "groups": "Groepen",
+      "categories": "Categorieën",
+      "activities": "Activiteiten",
+      "appearance": "Weergave",
+      "day": "Dag",
+      "device": "Apparaat",
+      "backup": "Back-up",
+      "about": "Over"
+    },
+    "importFailed": "Importeren mislukt: {error}",
+    "up": "Omhoog",
+    "down": "Omlaag",
+    "activityCount": {
+      "one": "{n} activiteit",
+      "other": "{n} activiteiten"
+    },
+    "profiles": {
+      "intro": "Elk profiel is een aparte werkruimte met eigen activiteiten, groepen, dagen, overzicht, instellingen en back-up. Er is er één tegelijk open; een lopende activiteit blijft tellen terwijl je in een ander profiel bent. Een nieuw profiel begint met een kopie van de instellingen van dit profiel.",
+      "placeholder": "Naam van het nieuwe profiel, bijv. Thuis",
+      "add": "Profiel toevoegen",
+      "name": "Profielnaam",
+      "isOpen": "open",
+      "openOther": "Open eerst een ander profiel",
+      "deleteTitle": "Het profiel ‘{name}’ verwijderen?",
+      "deleteBody": "AL zijn activiteiten, dagen en geschiedenis worden verwijderd. Dit kan niet ongedaan worden gemaakt (exporteer eerst een back-up)."
+    },
+    "groups": {
+      "intro": "Het hoofdscherm toont activiteiten van groepen die aan staan, plus activiteiten zonder groep. Meerdere groepen kunnen tegelijk aan staan; een groep blijft aan of uit tot je dat verandert.",
+      "placeholder": "Groepen toevoegen: één per regel of gescheiden door komma’s",
+      "name": "Groepsnaam",
+      "on": "Aan",
+      "deleteTitle": "De groep ‘{name}’ verwijderen?",
+      "deleteBody": "De activiteiten blijven bestaan en gaan naar ‘geen groep’."
+    },
+    "categories": {
+      "intro": "Categorieën verdelen je tijd in het Overzicht. Een dimensie heeft opties; elke activiteit kiest hooguit één optie per dimensie. Activiteiten zonder optie tellen als ‘Niet ingesteld’, dus elke dimensie telt op tot 100%.",
+      "empty": "Nog geen categorieën",
+      "example": "Bijvoorbeeld {focus}: {productive} / {nonProductive}, of {company}: {people} / {alone}.",
+      "addExample": "Voorbeeld ‘{name}’ toevoegen",
+      "newName": "Nieuwe dimensie",
+      "addEmpty": "Lege dimensie toevoegen",
+      "placeholder": "Nieuwe dimensie, bijv. Energie",
+      "add": "Dimensie toevoegen",
+      "dimension": "Dimensie",
+      "dimensionName": "Naam van de dimensie",
+      "set": {
+        "one": "ingesteld voor {set} van {n} activiteit",
+        "other": "ingesteld voor {set} van {n} activiteiten"
+      },
+      "deleteTitle": "De dimensie ‘{name}’ verwijderen?",
+      "deleteBody": "Elke activiteit verliest haar optie daarin. Verder verandert er niets.",
+      "colorOf": "Kleur van {name}: {color}",
+      "optionName": "Naam van de optie",
+      "deleteOptionTitle": "De optie ‘{name}’ verwijderen?",
+      "deleteOptionBody": "De activiteiten ervan worden ‘Niet ingesteld’ voor {dimension}.",
+      "addOption": "Optie toevoegen",
+      "newOption": "Nieuwe optie"
+    },
+    "activities": {
+      "taken": "Bestaat al (namen zijn uniek; een weggehaalde kan hieronder worden hersteld of verwijderd): {names}",
+      "placeholder": "Activiteiten toevoegen: één per regel of gescheiden door komma’s",
+      "removedTitle": "Weggehaalde activiteiten",
+      "removedIntro": "Weggehaalde activiteiten behouden hun geschiedenis; zet ze terug wanneer je wilt. Verwijderen haalt er een definitief van deze lijst, en de bijgehouden tijd blijft in het overzicht. Voeg je later een activiteit met dezelfde naam toe, dan loopt die geschiedenis door.",
+      "restore": "Herstellen",
+      "deleteTitle": "‘{name}’ verwijderen?",
+      "deleteBody": "Ze verdwijnt voorgoed van deze lijst. De bijgehouden tijd blijft in het overzicht.",
+      "colorLabel": "Kleur van {name}: wijzig in Activiteitskleuren",
+      "colorTitle": "Wijzig in Weergave → Activiteitskleuren",
+      "name": "Naam",
+      "exists": "Er bestaat al een activiteit met de naam ‘{name}’.",
+      "group": "Groep",
+      "noGroup": "Geen groep",
+      "target": "doel",
+      "min": "min",
+      "hasTime": "heeft tijd vandaag",
+      "hideToday": "Vandaag verbergen",
+      "remove": "Weghalen",
+      "removeTitle": "‘{name}’ weghalen?",
+      "removeBody": "De geschiedenis blijft bewaard en ze kan worden hersteld."
+    },
+    "theme": {
+      "lowContrast": "‘{name}’ is geïnstalleerd, maar deze activiteitskleuren zijn slecht zichtbaar op de achtergrond (onder 3:1): {slots}.",
+      "intro": "Een thema bepaalt het hele uiterlijk: vlakken, tekst en de activiteitskleuren. Hetzelfde idee als een editor- of terminalthema.",
+      "mode": "Themamodus",
+      "fixed": "Vast",
+      "system": "Systeem volgen",
+      "import": "Thema importeren",
+      "systemNote": "Systeem volgen: {light} in de lichte modus, {dark} in de donkere modus. Tik op een thema terwijl het systeem in die modus staat om het te wijzigen (nu: {mode}).",
+      "dark": "donker",
+      "light": "licht",
+      "name": "Themanaam",
+      "export": "Exporteren",
+      "deleteTitle": "Het thema ‘{name}’ verwijderen?",
+      "deleteBody": "Profielen die het gebruiken schakelen over naar Paper of Graphite."
+    },
+    "colors": {
+      "title": "Activiteitskleuren",
+      "intro": "Elk thema heeft 16 kleurvakken, zoals een terminalpalet. Een activiteit kiest een vak, dus ze verandert van kleur met het thema en blijft in elk thema leesbaar. Met meer activiteiten dan vakken herhalen de kleuren zich; namen staan altijd naast de kleuren.",
+      "of": "Kleur van {name}",
+      "slot": "Vak {n}, {name}"
+    },
+    "day": {
+      "reset": "Automatisch resetten om",
+      "weekStart": "Week begint op",
+      "system": "Systeem ({day})",
+      "weekHint": "gebruikt door de periode Week, de kalender en de heatmap",
+      "minSwitch": "Kortste wissel",
+      "minSwitchHint": "kortere stukken gaan naar de volgende (of vorige) activiteit",
+      "autoExport": "Een JSON-back-up downloaden als een dag sluit",
+      "autoExportHint": "Eén bestand per gesloten dag, in je downloads",
+      "editTimeline": "Tijdlijn bewerken…"
+    },
+    "device": {
+      "language": "Taal",
+      "languageHint": "ook gebruikt door de website op dit apparaat",
+      "fullscreen": "Starten in volledig scherm",
+      "fullscreenHint": "Bij de eerste tik; het pictogram voor volledig scherm schakelt, houd Esc ingedrukt om te verlaten",
+      "awake": "Scherm aan houden",
+      "awakeHint": "Zolang de app open en zichtbaar is",
+      "awakeUnavailable": "Hier niet beschikbaar: vereist localhost of HTTPS"
+    },
+    "backup": {
+      "importTitle": "Importeren in dit profiel?",
+      "importBody": "Importeren vervangt ALLE data en instellingen van het profiel ‘{name}’. Andere profielen veranderen niet.",
+      "importOk": "Importeren",
+      "importDone": "Importeren voltooid.",
+      "intro": "Exporteren en importeren gelden alleen voor dit profiel; importeren vervangt de data en instellingen ervan.",
+      "export": "JSON exporteren",
+      "import": "JSON importeren"
+    }
+  },
+  "slots": {
+    "blue": "blauw",
+    "green": "groen",
+    "orange": "oranje",
+    "purple": "paars",
+    "red": "rood",
+    "cyan": "cyaan",
+    "yellow": "geel",
+    "neutral": "neutraal",
+    "pink": "roze",
+    "teal": "blauwgroen",
+    "lime": "limoen",
+    "brown": "bruin",
+    "indigo": "indigo",
+    "olive": "olijf",
+    "wine": "wijnrood",
+    "slate": "leisteen"
+  },
+  "seed": {
+    "names": {
+      "default": "Standaard",
+      "work": "Werk",
+      "meeting": "Meeting",
+      "task": "Taak",
+      "code review": "Codereview",
+      "communication": "Communicatie",
+      "setup": "Inrichten",
+      "break": "Pauze",
+      "planning": "Planning",
+      "focus": "Focus",
+      "productive": "Productief",
+      "non-productive": "Niet productief",
+      "company": "Gezelschap",
+      "with people": "Met anderen",
+      "alone": "Alleen"
+    }
+  },
+  "summary": {
+    "title": "Overzicht",
+    "idleFor": "inactief {time}",
+    "notSet": "Niet ingesteld",
+    "loading": "Laden…",
+    "days": {
+      "one": "{n} dag",
+      "other": "{n} dagen"
+    },
+    "quick": {
+      "today": "Vandaag",
+      "yesterday": "Gisteren",
+      "thisWeek": "Deze week",
+      "lastWeek": "Vorige week",
+      "last7": "Afgelopen 7 dagen",
+      "thisMonth": "Deze maand",
+      "lastMonth": "Vorige maand",
+      "last30": "Afgelopen 30 dagen"
+    },
+    "kinds": {
+      "day": "Dag",
+      "week": "Week",
+      "month": "Maand",
+      "custom": "Aangepast"
+    },
+    "emptyDay": "Niets bijgehouden op {date}",
+    "emptyRange": "Niets bijgehouden van {from} tot {to}",
+    "emptyHint": "Kies een andere periode, of start een activiteit op het hoofdscherm.",
+    "pickLast": "kies de laatste dag",
+    "period": "Periode",
+    "periodKind": "Soort periode",
+    "prevPeriod": "Vorige periode",
+    "nextPeriod": "Volgende periode",
+    "choosePeriod": "Periode kiezen, {label}",
+    "groupBy": "Groeperen op",
+    "activity": "Activiteit",
+    "nothing": "niets bijgehouden",
+    "prevMonth": "Vorige maand",
+    "nextMonth": "Volgende maand",
+    "quickRanges": "Snelle periodes",
+    "pickLastHint": "Tik nu op de laatste dag. Beide dagen tellen mee.",
+    "pickFirstHint": "Tik op de eerste dag en dan op de laatste. Beide dagen tellen mee.",
+    "shadedHint": "Gearceerde dagen hebben bijgehouden tijd. Weken beginnen op {day} (Instellingen → Dag).",
+    "total": "Totaal bijgehouden",
+    "live": "loopt · live",
+    "firstLast": "Eerste – laatste",
+    "firstLastHint": "eerste start tot laatste einde",
+    "idleHint": "gaten tussen activiteiten",
+    "switches": "Wissels",
+    "sessions": {
+      "one": "{n} sessie",
+      "other": "{n} sessies"
+    },
+    "avg": "Gem. per bijgehouden dag",
+    "trackedDays": {
+      "one": "{n} bijgehouden dag",
+      "other": "{n} bijgehouden dagen"
+    },
+    "noTrackedDays": "geen bijgehouden dagen",
+    "previous": "vorige: {time}",
+    "timeline": "Tijdlijn",
+    "tapBlock": "Tik op een blok voor details",
+    "blockLabel": "{name} van {from} tot {to}",
+    "perWeek": "Per week",
+    "perWeekHint": "balk = totaal per groep",
+    "avgHint": "gestippeld: gem. start {start} · einde {end} · tik op een dag voor details",
+    "tapDay": "tik op een dag voor details",
+    "perDay": "Per dag",
+    "openDay": "Dag openen",
+    "targetMet": {
+      "one": "doel {target} · gehaald op {met} van {n} dag",
+      "other": "doel {target} · gehaald op {met} van {n} dagen"
+    },
+    "share": "Aandeel",
+    "tapOption": "tik op een optie om de activiteiten ervan te zien",
+    "avgOver": "gem. over bijgehouden dagen",
+    "shareOfTime": "Aandeel van de tijd",
+    "donutHours": "{h} u",
+    "name": "Naam",
+    "totalCol": "Totaal",
+    "target": "Doel",
+    "avgDay": "Gem. / dag",
+    "sessionsTitle": "Sessies",
+    "groupLog": "Groeperen op {name}",
+    "vsWeek": "t.o.v. de vorige week",
+    "vsMonth": "t.o.v. {month}",
+    "vsDays": {
+      "one": "t.o.v. de vorige dag",
+      "other": "t.o.v. de vorige {n} dagen"
+    },
+    "noDataWeek": "geen data in de vorige week",
+    "noDataMonth": "geen data in {month}",
+    "noDataDays": {
+      "one": "geen data op de vorige dag",
+      "other": "geen data in de vorige {n} dagen"
+    }
+  },
+  "dialogs": {
+    "theActivity": "De activiteit",
+    "resetTitle": "De dag resetten?",
+    "resetStops": "{name} stopt nu.",
+    "resetBody": "{date} sluit met {total} bijgehouden en een nieuwe dag begint. Je kunt de gesloten dag nog steeds bewerken via het Overzicht.",
+    "closeTitle": "Time Tracker sluiten?",
+    "closeRunning": "{name} blijft tellen terwijl de app gesloten is. Open de app opnieuw om te stoppen of te wisselen.",
+    "closeIdle": "Er loopt niets.",
+    "closeYourself": "Sluit het venster zelf",
+    "closeYourselfBody": "De browser laat deze pagina haar eigen venster niet sluiten. Druk op Alt+F4 of Ctrl+W.",
+    "keepsCounting": "{name} blijft tellen."
+  },
+  "errors": {
+    "notExport": "Geen Time Tracker-export",
+    "itermXml": "Onbekend XML-bestand (verwacht: een iTerm-bestand .itermcolors)",
+    "jsonTheme": "Onbekend JSON-thema (verwacht: ons themabestand, een VS Code-kleurthema of base16)",
+    "themeFile": "Onbekend themabestand (ondersteund: ons thema .json, VS Code .json, base16 .yaml/.json, Alacritty .toml, iTerm .itermcolors)"
+  }
+}

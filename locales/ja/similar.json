@@ -1,0 +1,87 @@
+{
+  "title": "類似アプリ — Time Tracker",
+  "description": "ワンタップで使える他の時間記録アプリを、Time Tracker に近い順に並べ、違いをまとめました。",
+  "heading": "類似アプリ",
+  "intro": "Time Tracker は対局時計のように動きます。活動をタップすると開始、別の活動をタップすると切り替わり、同時に動くのはひとつだけ。過去の時間も修正できます。以下のアプリは同じか、似た仕組みで動きます。<strong>似ている順</strong>に並べています。",
+  "takeaway": {
+    "lead": "<strong>まとめ：</strong>次のすべてを備えたものはありません。",
+    "web": "どこでも動く Web ページ（オフラインの単一ファイルとしても動作）",
+    "touch": "タッチスクリーンと壁掛けディスプレイ向けのレイアウト",
+    "backdate": "ほかの活動から時間を差し引く「〜から開始」のさかのぼり記録",
+    "offline": "アカウント不要で、端末にとどまるストレージ",
+    "closest": "いちばん近いのはスマートフォンのネイティブアプリ、TickTappy、aTimeLogger、Simple Time Tracker です。"
+  },
+  "source": "出典",
+  "timeryFor": "for",
+  "platform": "プラットフォーム",
+  "similar": "似ている点",
+  "differences": "主な違い",
+  "tools": {
+    "t1": {
+      "platform": "iPhone、iPad、Mac、Watch。無料 + プレミアム（同期）",
+      "similar": "色分けされたタグボタン：タップで開始、<strong>もう一度タップで停止</strong>、別のタグを開始すると<strong>実行中のものが止まる</strong>。<strong>過去の時刻からタイマーを開始</strong>（例：30 分前）、開始・停止後の素早い時間調整、過去の記録の編集、履歴を残したままのタグのアーカイブ、日・週のサマリー。オフライン、アカウント不要。",
+      "differences": "Apple 専用。Web ページではない。壁掛け表示モードなし"
+    },
+    "t2": {
+      "platform": "iOS",
+      "similar": "<strong>ワンタップ</strong>で活動を開始・停止。一時停止と再開、複数の活動の同時実行（任意）、レポート。",
+      "differences": "ネイティブアプリ。複数の活動を同時に動かせる（任意）。キオスク向けレイアウトではない"
+    },
+    "t3": {
+      "platform": "Android + Wear OS。オープンソース（GPL-3.0）",
+      "similar": "活動ボタンのグリッドから<strong>ワンクリック</strong>で開始。記録の履歴、統計、バックアップ、ホーム画面ウィジェット。記録は分割したり、活動を変更したりできる。",
+      "differences": "Android 専用。Web アプリではない"
+    },
+    "t4": {
+      "platform": "iOS",
+      "similar": "<strong>ワンタップ</strong>で活動を開始・停止・<strong>切り替え</strong>。実行中の記録の開始時刻を動かせる。",
+      "differences": "Apple 専用。分割された記録は時間がたつと調整できない"
+    },
+    "t5": {
+      "platform": "iOS",
+      "similar": "<strong>ワンタップ</strong>でタスクの記録を開始・停止。タスクごとのレポート。",
+      "differences": "ネイティブアプリ。切り替えや一時停止の挙動は説明されていない"
+    },
+    "t6": {
+      "platform": "8 面または 12 面の物理トラッカー + アプリ。サブスクリプション",
+      "similar": "「動いている活動はひとつだけ」という同じ考え方を<strong>物理デバイス</strong>で。サイコロを転がして活動を切り替え、オフにするかダブルタップで停止。記録し忘れた時間はカレンダー風のエディターで修正。",
+      "differences": "ハードウェアが必要。クラウドアカウント。画面上のボタンなし（<a href=\"https://www.timedoctor.com/blog/timeular-vs-timeflip/\">比較</a>）"
+    },
+    "t7": {
+      "platform": "Web（共有端末）。Clockify の無料機能",
+      "similar": "<strong>共有端末・キオスク</strong>向けの Web ページ。出退勤や、<strong>プロジェクト・タスク</strong>や休憩の切り替えができ、レポートは Clockify で確認（<a href=\"https://clockify.me/help/track-time-and-expenses/clock-in-and-out-via-kiosk\">ヘルプ</a>）。",
+      "differences": "チーム向け（PIN/QR でサインイン）。クラウドのみ。活動ごとのボタンボードなし"
+    },
+    "t8": {
+      "platform": "Web アプリ。オープンソース（GPL-3.0）、セルフホストまたはホスト版",
+      "similar": "Web ベースで、記録を編集できる<strong>インタラクティブなタイムライン</strong>。プロジェクトの代わりにタグ。日・週・月の<strong>目標</strong>、レポート（PDF/CSV）、ポモドーロモード（<a href=\"https://www.linuxlinks.com/timetagger-web-based-time-tracking-solution/\">概要</a>）。",
+      "differences": "Python サーバー。大きなボタンのタッチボードではない。タップでの切り替えなし"
+    },
+    "t9": {
+      "platform": "Toggl（クラウド）の iOS/Mac クライアント",
+      "similar": "<strong>保存したタイマーをワンクリックで開始</strong>。記録の編集と分割。Toggl ではブロックをドラッグして開始・終了時刻を変更できる（<a href=\"https://clockk.com/alt/does-toggl-have-a-timer\">ガイド</a>）。",
+      "differences": "クラウドアカウント。デスクトップ・スマートフォン向け UI。無料プランは制限あり"
+    },
+    "t10": {
+      "platform": "静的 Web ページ（素の JS、Bootstrap）、localStorage モード",
+      "similar": "<strong>技術構成</strong>がいちばん近い：素の JS、ブラウザーのストレージ、活動ごとに開始・停止と合計時間を持つカード。",
+      "differences": "自動切り替え、日ごとの合計表示、さかのぼり記録はなし"
+    },
+    "t11": {
+      "platform": "オフライン PWA（Next.js）、IndexedDB",
+      "similar": "<strong>ストレージの方式</strong>が似ている（オフライン、IndexedDB、再読み込みしても消えない）。",
+      "differences": "開始・停止・ラップのストップウォッチで、活動ボードではない"
+    },
+    "t12": {
+      "platform": "オープンソースの Web・デスクトップ向け時間記録ツール",
+      "similar": "プロジェクトやタスク、タイマー、レポートを備えた一般的な時間記録。セルフホスト可能、またはローカルファースト（<a href=\"https://super-productivity.com/blog/best-open-source-time-tracking-apps-2026/\">比較</a>）。",
+      "differences": "プロジェクト・請求向け。ワンタップの活動ボードなし"
+    },
+    "t13": {
+      "platform": "Android / Linux",
+      "similar": "Time Tracker のお手本になった<strong>対局時計の操作</strong>：大きなボタン、ワンタップで時計を相手側に渡す。",
+      "differences": "2 人用、カウントダウン、記録・合計・履歴なし"
+    }
+  },
+  "sources": "2026 年 10 月に調査。説明は各アプリのストア掲載情報やドキュメント、第三者のまとめによるもので、インストールやテストは行っていません。"
+}

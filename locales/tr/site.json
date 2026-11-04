@@ -1,0 +1,18 @@
+{
+  "brand": "Time Tracker",
+  "openApp": "Uygulamayı aç",
+  "footer": {
+    "pages": "Sayfalar",
+    "language": "Dil",
+    "home": "Ana sayfa",
+    "similar": "Benzer uygulamalar",
+    "privacy": "Gizlilik",
+    "terms": "Kullanım koşulları",
+    "english": "(İngilizce)"
+  },
+  "banner": {
+    "text": "Bu sayfa Türkçe olarak da mevcut.",
+    "go": "Türkçe oku",
+    "close": "Kapat"
+  }
+}

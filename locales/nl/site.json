@@ -1,0 +1,18 @@
+{
+  "brand": "Time Tracker",
+  "openApp": "Open de app",
+  "footer": {
+    "pages": "Pagina’s",
+    "language": "Taal",
+    "home": "Home",
+    "similar": "Vergelijkbare apps",
+    "privacy": "Privacy",
+    "terms": "Gebruiksvoorwaarden",
+    "english": "(in het Engels)"
+  },
+  "banner": {
+    "text": "Deze pagina is ook in het Nederlands beschikbaar.",
+    "go": "Lees in het Nederlands",
+    "close": "Sluiten"
+  }
+}

@@ -1,0 +1,494 @@
+{
+  "common": {
+    "cancel": "Annuler",
+    "ok": "OK",
+    "close": "Fermer",
+    "off": "Non",
+    "save": "Enregistrer",
+    "apply": "Appliquer",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "add": "Ajouter",
+    "rename": "Renommer",
+    "back": "Retour"
+  },
+  "time": {
+    "now": "maintenant",
+    "ago": "il y a {m} min"
+  },
+  "dur": {
+    "hms": "{h} h {m} min {s} s",
+    "ms": "{m} min {s} s",
+    "hm": "{h} h {m} min",
+    "hmShort": "{h}h{m}",
+    "m": "{m} min",
+    "sec": "{s} s",
+    "min": "{m} min"
+  },
+  "target": {
+    "left": "encore {time}",
+    "over": "{time} de trop"
+  },
+  "demo": {
+    "title": "Démo",
+    "text": "Des données d’exemple dans un profil jetable : essayez librement, un rechargement repart de zéro. Vos propres données ne sont pas touchées.",
+    "start": "Commencer le vôtre"
+  },
+  "header": {
+    "switchProfile": "Changer de profil, {name} est ouvert",
+    "today": "Aujourd’hui · {date}",
+    "since": "depuis {time}",
+    "now": "Maintenant",
+    "active": "Actif",
+    "idle": "Inactif",
+    "clock": "Horloge",
+    "app": "App",
+    "reset": "Réinitialiser la journée",
+    "fullscreen": "Plein écran",
+    "leaveFullscreen": "Quitter le plein écran",
+    "close": "Fermer l’app",
+    "more": "Plus",
+    "moreLabel": "Plus : réinitialiser la journée, plein écran, fermer l’app",
+    "top": "Retour en haut"
+  },
+  "main": {
+    "readyTitle": "Prêt à commencer la journée",
+    "ready": "{strong} · Touchez une activité pour commencer le suivi · maintenez-la pour choisir un début plus tôt",
+    "unused": "Pas utilisées aujourd’hui",
+    "tapHint": "Touchez pour changer · touchez celle en cours pour arrêter · maintenez pour les sessions",
+    "moreBelow": "Plus bas : liens et thèmes",
+    "allGroupsOff": "Rien à afficher : tous les groupes sont désactivés (Réglages → Groupes).",
+    "noActivities": "Aucune activité. Ajoutez-en dans les Réglages.",
+    "ofToday": "{pct} % de la journée",
+    "leftOfTarget": "encore {time} pour l’objectif de {target}",
+    "overTarget": "{time} au-delà de l’objectif",
+    "running": "En cours",
+    "idle": "Inactif",
+    "runningTag": "(en cours)",
+    "timeline": "Frise du jour",
+    "noGroup": "sans groupe",
+    "tracked": "suivi",
+    "idleTotal": "inactif"
+  },
+  "welcome": {
+    "label": "Bienvenue",
+    "title": "Nouveau ici ?",
+    "text": "Touchez une activité pour commencer la journée · maintenez-la pour choisir un début plus tôt.",
+    "ok": "Compris"
+  },
+  "footer": {
+    "more": "Plus dans les Réglages",
+    "export": "Exporter dans les Réglages",
+    "tagline": "Une pendule d’échecs pour votre journée de travail.",
+    "theme": "Thème",
+    "mainScreen": "Écran principal",
+    "buttons": "Boutons"
+  },
+  "about": {
+    "label": "À propos",
+    "what": "Qu’est-ce que c’est ?",
+    "similar": "Apps similaires",
+    "feedback": "Envoyer un avis",
+    "offline": "Cette page est sur le site web, que ce fichier hors ligne n’inclut pas.",
+    "privacyNote": "La confidentialité d’abord : tout ce que vous suivez reste dans ce navigateur. Pas de compte ni de connexion internet nécessaires. Vous êtes responsable de vos données, alors exportez régulièrement une sauvegarde.",
+    "statsUnavailable": "Cette copie (la démo, le fichier hors ligne ou une version locale) n’envoie aucune statistique d’utilisation.",
+    "statsLabel": "Partager des statistiques d’utilisation anonymes",
+    "statsHint": "Quels écrans et fonctions sont utilisés, jamais ce que vous suivez. Pas de cookies, pas de compte, rien de personnel.",
+    "statsDnt": "Votre navigateur demande aux sites de ne pas vous pister, donc c’est désactivé jusqu’à ce que vous l’activiez.",
+    "statsPlea": "C’est votre choix, et vous pouvez le désactiver. Pensez quand même à le laisser activé : Time Tracker est gratuit, et ces comptages sont le seul moyen de savoir si quelqu’un l’utilise. Si personne ne l’utilise, il ne recevra plus de mises à jour et sera abandonné.",
+    "statsLink": "Ce qui est collecté"
+  },
+  "layout": {
+    "label": "Disposition des boutons",
+    "tiles": "Tuiles",
+    "rows": "Lignes",
+    "circles": "Cercles"
+  },
+  "toggles": {
+    "popularity": {
+      "label": "Taille des boutons selon l’usage du jour",
+      "hint": "Les tuiles s’élargissent, les lignes grandissent, les cercles grossissent à mesure que vous les utilisez"
+    },
+    "unusedStrip": {
+      "label": "Déplacer les activités inutilisées dans une bande",
+      "hint": "Les activités sans temps aujourd’hui deviennent de petites pastilles sous les boutons"
+    },
+    "showTimeline": {
+      "label": "Afficher la frise du jour",
+      "hint": "La barre de sessions colorée en bas de l’écran principal"
+    },
+    "showGroups": {
+      "label": "Afficher les totaux par groupe",
+      "hint": "Le temps par groupe et le temps inactif, sur une ligne sous la frise"
+    },
+    "showFooter": {
+      "label": "Afficher le pied de page",
+      "hint": "Les liens et les réglages rapides en bas de chaque page"
+    }
+  },
+  "session": {
+    "session": "Session",
+    "deleteTitle": "Supprimer cette session ?",
+    "deleteBody": "{name} · {range} ({duration}). Ce temps devient inactif. Vous pouvez le rajouter dans l’éditeur de journée.",
+    "editTitle": "Modifier {name}",
+    "start": "Début",
+    "end": "Fin",
+    "stillRunning": "Toujours en cours"
+  },
+  "popup": {
+    "today": "Aujourd’hui",
+    "sessions": {
+      "one": "en {n} session",
+      "many": "en {n} sessions",
+      "other": "en {n} sessions"
+    },
+    "running": "en cours",
+    "noSessions": "Aucune session aujourd’hui.",
+    "correct": "Corriger la frise",
+    "activeSince": "{name} active depuis {time}",
+    "stopSince": "Tout arrêter depuis {time}",
+    "editSessions": "Modifier les sessions…"
+  },
+  "editor": {
+    "title": "Éditeur de journée",
+    "day": "Jour",
+    "prev": "Jour précédent",
+    "next": "Jour suivant",
+    "today": "Aujourd’hui · {date}",
+    "removed": "(retirée)",
+    "noneToday": "Aucune session aujourd’hui.",
+    "noneDay": "Aucune session ce jour-là.",
+    "addRange": "Ajouter une plage",
+    "clearTodayTitle": "Vider aujourd’hui ?",
+    "clearDayTitle": "Vider ce jour ?",
+    "clearBody": "Toutes ses sessions sont supprimées. Vous pourrez ensuite reconstruire la journée avec « Ajouter une plage ».",
+    "clearOk": "Vider le jour",
+    "clear": "Vider tout le jour",
+    "idleNone": "inactif (aucune)",
+    "from": "De",
+    "to": "À",
+    "keepRunning": "Jusqu’à maintenant et continuer"
+  },
+  "feedback": {
+    "title": "Envoyer un avis",
+    "offline": "Ce fichier hors ligne ne peut pas envoyer de messages. Ouvrez la version en ligne de l’app pour envoyer un avis.",
+    "thanks": "Merci",
+    "sent": "Votre message est en route. Chacun d’eux est lu.",
+    "intro": "Un bug, une fonction qui manque, ou simplement que vous l’utilisez : tout aide à décider de la suite.",
+    "message": "Votre message",
+    "email": "E-mail",
+    "emailHint": "E-mail, seulement si vous voulez une réponse",
+    "device": "Inclure la version de l’app et le navigateur",
+    "failed": "L’envoi n’a pas abouti pour l’instant. Votre texte est toujours là, réessayez dans un moment.",
+    "sending": "Envoi…",
+    "send": "Envoyer"
+  },
+  "profiles": {
+    "switch": "Changer de profil",
+    "runningIn": "{name} tourne dans {profile}.",
+    "anActivity": "Une activité",
+    "runningNote": "{strong} Elle continue de compter pendant qu’un autre profil est ouvert.",
+    "statusRunning": "{name} en cours · {time} aujourd’hui",
+    "statusIdle": "Inactif · dernière utilisation le {date}",
+    "statusNew": "Rien de suivi pour l’instant",
+    "open": "Ouvert",
+    "switchTo": "Changer",
+    "manage": "Ajoutez, renommez ou supprimez des profils dans les Réglages"
+  },
+  "settings": {
+    "title": "Réglages",
+    "sectionsLabel": "Sections des réglages",
+    "sections": {
+      "profiles": "Profils",
+      "groups": "Groupes",
+      "categories": "Catégories",
+      "activities": "Activités",
+      "appearance": "Apparence",
+      "day": "Journée",
+      "device": "Appareil",
+      "backup": "Sauvegarde",
+      "about": "À propos"
+    },
+    "importFailed": "Échec de l’import : {error}",
+    "up": "Monter",
+    "down": "Descendre",
+    "activityCount": {
+      "one": "{n} activité",
+      "many": "{n} activités",
+      "other": "{n} activités"
+    },
+    "profiles": {
+      "intro": "Chaque profil est un espace de travail à part, avec ses propres activités, groupes, jours, résumé, réglages et sauvegarde. Un seul est ouvert à la fois ; une activité en cours continue de compter pendant que vous êtes dans un autre profil. Un nouveau profil démarre avec une copie des réglages de ce profil.",
+      "placeholder": "Nom du nouveau profil, p. ex. Maison",
+      "add": "Ajouter un profil",
+      "name": "Nom du profil",
+      "isOpen": "ouvert",
+      "openOther": "Ouvrez d’abord un autre profil",
+      "deleteTitle": "Supprimer le profil « {name} » ?",
+      "deleteBody": "TOUTES ses activités, journées et son historique sont supprimés. C’est irréversible (exportez d’abord une sauvegarde)."
+    },
+    "groups": {
+      "intro": "L’écran principal affiche les activités des groupes activés, ainsi que celles sans groupe. Plusieurs groupes peuvent être activés en même temps ; un groupe reste activé ou désactivé jusqu’à ce que vous le changiez.",
+      "placeholder": "Ajouter des groupes : un par ligne ou séparés par des virgules",
+      "name": "Nom du groupe",
+      "on": "Activé",
+      "deleteTitle": "Supprimer le groupe « {name} » ?",
+      "deleteBody": "Ses activités sont conservées et passent dans « sans groupe »."
+    },
+    "categories": {
+      "intro": "Les catégories répartissent votre temps dans le Résumé. Une dimension a des options ; chaque activité choisit au plus une option par dimension. Les activités sans option comptent comme « Non défini », donc chaque dimension fait 100 %.",
+      "empty": "Pas encore de catégories",
+      "example": "Par exemple, {focus} : {productive} / {nonProductive}, ou {company} : {people} / {alone}.",
+      "addExample": "Ajouter l’exemple « {name} »",
+      "newName": "Nouvelle dimension",
+      "addEmpty": "Ajouter une dimension vide",
+      "placeholder": "Nouvelle dimension, p. ex. Énergie",
+      "add": "Ajouter une dimension",
+      "dimension": "Dimension",
+      "dimensionName": "Nom de la dimension",
+      "set": {
+        "one": "définie pour {set} sur {n} activité",
+        "many": "définie pour {set} sur {n} activités",
+        "other": "définie pour {set} sur {n} activités"
+      },
+      "deleteTitle": "Supprimer la dimension « {name} » ?",
+      "deleteBody": "Chaque activité perd son option dans cette dimension. Rien d’autre ne change.",
+      "colorOf": "Couleur de {name} : {color}",
+      "optionName": "Nom de l’option",
+      "deleteOptionTitle": "Supprimer l’option « {name} » ?",
+      "deleteOptionBody": "Ses activités passent à « Non défini » pour {dimension}.",
+      "addOption": "Ajouter une option",
+      "newOption": "Nouvelle option"
+    },
+    "activities": {
+      "taken": "Existe déjà (les noms sont uniques ; une activité retirée peut être restaurée ou supprimée ci-dessous) : {names}",
+      "placeholder": "Ajouter des activités : une par ligne ou séparées par des virgules",
+      "removedTitle": "Activités retirées",
+      "removedIntro": "Les activités retirées gardent leur historique ; restaurez-les quand vous voulez. Supprimer en retire une de cette liste, et son temps suivi reste dans le résumé. Ajouter plus tard une activité du même nom reprend cet historique.",
+      "restore": "Restaurer",
+      "deleteTitle": "Supprimer « {name} » ?",
+      "deleteBody": "Elle quitte cette liste définitivement. Son temps suivi reste dans le résumé.",
+      "colorLabel": "Couleur de {name} : à changer dans Couleurs des activités",
+      "colorTitle": "À changer dans Apparence → Couleurs des activités",
+      "name": "Nom",
+      "exists": "Une activité nommée « {name} » existe déjà.",
+      "group": "Groupe",
+      "noGroup": "Sans groupe",
+      "target": "objectif",
+      "min": "min",
+      "hasTime": "a du temps aujourd’hui",
+      "hideToday": "Masquer aujourd’hui",
+      "remove": "Retirer",
+      "removeTitle": "Retirer « {name} » ?",
+      "removeBody": "Son historique est conservé et elle peut être restaurée."
+    },
+    "theme": {
+      "lowContrast": "« {name} » est installé, mais ces couleurs d’activité se voient mal sur son fond (moins de 3:1) : {slots}.",
+      "intro": "Un thème définit tout l’aspect : surfaces, texte et couleurs des activités. Le même principe qu’un thème d’éditeur ou de terminal.",
+      "mode": "Mode du thème",
+      "fixed": "Fixe",
+      "system": "Selon le système",
+      "import": "Importer un thème",
+      "systemNote": "Selon le système : {light} en mode clair, {dark} en mode sombre. Touchez un thème pendant que le système est dans ce mode pour le changer (actuellement : {mode}).",
+      "dark": "sombre",
+      "light": "clair",
+      "name": "Nom du thème",
+      "export": "Exporter",
+      "deleteTitle": "Supprimer le thème « {name} » ?",
+      "deleteBody": "Les profils qui l’utilisent passent à Paper ou Graphite."
+    },
+    "colors": {
+      "title": "Couleurs des activités",
+      "intro": "Chaque thème a 16 emplacements de couleur, comme une palette de terminal. Une activité choisit un emplacement, donc elle change de couleur avec le thème et reste lisible dans chacun. S’il y a plus d’activités que d’emplacements, les couleurs se répètent ; les noms sont toujours affichés à côté des couleurs.",
+      "of": "Couleur de {name}",
+      "slot": "Emplacement {n}, {name}"
+    },
+    "day": {
+      "reset": "Réinitialisation automatique à",
+      "weekStart": "La semaine commence le",
+      "system": "Système ({day})",
+      "weekHint": "utilisé par la période Semaine, le calendrier et la carte de chaleur",
+      "minSwitch": "Changement minimal",
+      "minSwitchHint": "les passages plus courts vont à l’activité suivante (ou précédente)",
+      "autoExport": "Télécharger une sauvegarde JSON quand une journée se termine",
+      "autoExportHint": "Un fichier par journée terminée, dans vos téléchargements",
+      "editTimeline": "Modifier la frise…"
+    },
+    "device": {
+      "language": "Langue",
+      "languageHint": "utilisée aussi par le site web sur cet appareil",
+      "fullscreen": "Démarrer en plein écran",
+      "fullscreenHint": "Au premier toucher ; l’icône plein écran bascule, maintenez Échap pour quitter",
+      "awake": "Garder l’écran allumé",
+      "awakeHint": "Tant que l’app est ouverte et visible",
+      "awakeUnavailable": "Indisponible ici : nécessite localhost ou HTTPS"
+    },
+    "backup": {
+      "importTitle": "Importer dans ce profil ?",
+      "importBody": "L’import remplace TOUTES les données et tous les réglages du profil « {name} ». Les autres profils ne changent pas.",
+      "importOk": "Importer",
+      "importDone": "Import terminé.",
+      "intro": "L’export et l’import ne concernent que ce profil ; l’import remplace ses données et ses réglages.",
+      "export": "Exporter en JSON",
+      "import": "Importer un JSON"
+    }
+  },
+  "slots": {
+    "blue": "bleu",
+    "green": "vert",
+    "orange": "orange",
+    "purple": "violet",
+    "red": "rouge",
+    "cyan": "cyan",
+    "yellow": "jaune",
+    "neutral": "neutre",
+    "pink": "rose",
+    "teal": "bleu canard",
+    "lime": "citron vert",
+    "brown": "brun",
+    "indigo": "indigo",
+    "olive": "olive",
+    "wine": "lie-de-vin",
+    "slate": "ardoise"
+  },
+  "seed": {
+    "names": {
+      "default": "Principal",
+      "work": "Travail",
+      "meeting": "Réunion",
+      "task": "Tâche",
+      "code review": "Revue de code",
+      "communication": "Communication",
+      "setup": "Configuration",
+      "break": "Pause",
+      "planning": "Planification",
+      "focus": "Concentration",
+      "productive": "Productif",
+      "non-productive": "Non productif",
+      "company": "Compagnie",
+      "with people": "Avec d’autres",
+      "alone": "Seul"
+    }
+  },
+  "summary": {
+    "title": "Résumé",
+    "idleFor": "inactif {time}",
+    "notSet": "Non défini",
+    "loading": "Chargement…",
+    "days": {
+      "one": "{n} jour",
+      "many": "{n} jours",
+      "other": "{n} jours"
+    },
+    "quick": {
+      "today": "Aujourd’hui",
+      "yesterday": "Hier",
+      "thisWeek": "Cette semaine",
+      "lastWeek": "La semaine dernière",
+      "last7": "7 derniers jours",
+      "thisMonth": "Ce mois-ci",
+      "lastMonth": "Le mois dernier",
+      "last30": "30 derniers jours"
+    },
+    "kinds": {
+      "day": "Jour",
+      "week": "Semaine",
+      "month": "Mois",
+      "custom": "Personnalisée"
+    },
+    "emptyDay": "Rien de suivi le {date}",
+    "emptyRange": "Rien de suivi du {from} au {to}",
+    "emptyHint": "Choisissez une autre période ou démarrez une activité sur l’écran principal.",
+    "pickLast": "choisissez le dernier jour",
+    "period": "Période",
+    "periodKind": "Type de période",
+    "prevPeriod": "Période précédente",
+    "nextPeriod": "Période suivante",
+    "choosePeriod": "Choisir la période, {label}",
+    "groupBy": "Grouper par",
+    "activity": "Activité",
+    "nothing": "rien de suivi",
+    "prevMonth": "Mois précédent",
+    "nextMonth": "Mois suivant",
+    "quickRanges": "Périodes rapides",
+    "pickLastHint": "Touchez maintenant le dernier jour. Les deux jours sont inclus.",
+    "pickFirstHint": "Touchez le premier jour, puis le dernier. Les deux jours sont inclus.",
+    "shadedHint": "Les jours ombrés ont du temps suivi. Les semaines commencent le {day} (Réglages → Journée).",
+    "total": "Total suivi",
+    "live": "en cours · en direct",
+    "firstLast": "Premier – dernier",
+    "firstLastHint": "du premier début à la dernière fin",
+    "idleHint": "trous entre les activités",
+    "switches": "Changements",
+    "sessions": {
+      "one": "{n} session",
+      "many": "{n} sessions",
+      "other": "{n} sessions"
+    },
+    "avg": "Moyenne par jour suivi",
+    "trackedDays": {
+      "one": "{n} jour suivi",
+      "many": "{n} jours suivis",
+      "other": "{n} jours suivis"
+    },
+    "noTrackedDays": "aucun jour suivi",
+    "previous": "précédent : {time}",
+    "timeline": "Frise",
+    "tapBlock": "Touchez un bloc pour les détails",
+    "blockLabel": "{name} de {from} à {to}",
+    "perWeek": "Par semaine",
+    "perWeekHint": "barre = total par groupe",
+    "avgHint": "pointillés : début moyen {start} · fin {end} · touchez un jour pour les détails",
+    "tapDay": "touchez un jour pour les détails",
+    "perDay": "Par jour",
+    "openDay": "Ouvrir le jour",
+    "targetMet": {
+      "one": "objectif {target} · atteint {met} jour sur {n}",
+      "many": "objectif {target} · atteint {met} jours sur {n}",
+      "other": "objectif {target} · atteint {met} jours sur {n}"
+    },
+    "share": "Part",
+    "tapOption": "touchez une option pour voir ses activités",
+    "avgOver": "moyenne sur les jours suivis",
+    "shareOfTime": "Part du temps",
+    "donutHours": "{h} h",
+    "name": "Nom",
+    "totalCol": "Total",
+    "target": "Objectif",
+    "avgDay": "Moy. / jour",
+    "sessionsTitle": "Sessions",
+    "groupLog": "Grouper par {name}",
+    "vsWeek": "par rapport à la semaine précédente",
+    "vsMonth": "par rapport à {month}",
+    "vsDays": {
+      "one": "par rapport à la veille",
+      "many": "par rapport aux {n} jours précédents",
+      "other": "par rapport aux {n} jours précédents"
+    },
+    "noDataWeek": "pas de données la semaine précédente",
+    "noDataMonth": "pas de données en {month}",
+    "noDataDays": {
+      "one": "pas de données la veille",
+      "many": "pas de données les {n} jours précédents",
+      "other": "pas de données les {n} jours précédents"
+    }
+  },
+  "dialogs": {
+    "theActivity": "L’activité",
+    "resetTitle": "Réinitialiser la journée ?",
+    "resetStops": "{name} s’arrête maintenant.",
+    "resetBody": "La journée du {date} se termine avec {total} suivi et une nouvelle journée commence. Vous pouvez toujours modifier la journée terminée depuis le Résumé.",
+    "closeTitle": "Fermer Time Tracker ?",
+    "closeRunning": "{name} continue de compter pendant que l’app est fermée. Rouvrez l’app pour l’arrêter ou changer.",
+    "closeIdle": "Rien ne tourne.",
+    "closeYourself": "Fermez la fenêtre vous-même",
+    "closeYourselfBody": "Le navigateur ne laisse pas cette page fermer sa propre fenêtre. Appuyez sur Alt+F4 ou Ctrl+W.",
+    "keepsCounting": "{name} continue de compter."
+  },
+  "errors": {
+    "notExport": "Ce n’est pas un export de Time Tracker",
+    "itermXml": "Fichier XML inconnu (attendu : un fichier .itermcolors d’iTerm)",
+    "jsonTheme": "Thème JSON inconnu (attendu : notre fichier de thème, un thème de couleurs VS Code ou base16)",
+    "themeFile": "Fichier de thème inconnu (pris en charge : notre thème .json, VS Code .json, base16 .yaml/.json, Alacritty .toml, iTerm .itermcolors)"
+  }
+}

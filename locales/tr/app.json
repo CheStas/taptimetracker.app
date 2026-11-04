@@ -1,0 +1,485 @@
+{
+  "common": {
+    "cancel": "İptal",
+    "ok": "Tamam",
+    "close": "Kapat",
+    "off": "Kapalı",
+    "save": "Kaydet",
+    "apply": "Uygula",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "add": "Ekle",
+    "rename": "Yeniden adlandır",
+    "back": "Geri"
+  },
+  "time": {
+    "now": "şimdi",
+    "ago": "{m} dk önce"
+  },
+  "dur": {
+    "hms": "{h} sa {m} dk {s} sn",
+    "ms": "{m} dk {s} sn",
+    "hm": "{h} sa {m} dk",
+    "hmShort": "{h}s{m}",
+    "m": "{m} dk",
+    "sec": "{s} sn",
+    "min": "{m} dk"
+  },
+  "target": {
+    "left": "{time} kaldı",
+    "over": "{time} fazla"
+  },
+  "demo": {
+    "title": "Demo",
+    "text": "Geçici bir profilde örnek veriler: gönlünüzce deneyin, yeniden yüklemek baştan başlatır. Kendi verilerinize dokunulmaz.",
+    "start": "Kendinizinkini başlatın"
+  },
+  "header": {
+    "switchProfile": "Profil değiştir, {name} açık",
+    "today": "Bugün · {date}",
+    "since": "{time} itibarıyla",
+    "now": "Şimdi",
+    "active": "Etkin",
+    "idle": "Boşta",
+    "clock": "Saat",
+    "app": "Uygulama",
+    "reset": "Günü sıfırla",
+    "fullscreen": "Tam ekran",
+    "leaveFullscreen": "Tam ekrandan çık",
+    "close": "Uygulamayı kapat",
+    "more": "Daha fazla",
+    "moreLabel": "Daha fazla: günü sıfırla, tam ekran, uygulamayı kapat",
+    "top": "Başa dön"
+  },
+  "main": {
+    "readyTitle": "Güne başlamaya hazır",
+    "ready": "{strong} · Takibe başlamak için bir etkinliğe dokunun · daha erken bir başlangıç için basılı tutun",
+    "unused": "Bugün kullanılmadı",
+    "tapHint": "Geçmek için dokunun · durdurmak için çalışana dokunun · oturumlar için basılı tutun",
+    "moreBelow": "Aşağıda: bağlantılar ve temalar",
+    "allGroupsOff": "Gösterilecek bir şey yok: tüm gruplar kapalı (Ayarlar → Gruplar).",
+    "noActivities": "Etkinlik yok. Ayarlar’dan biraz ekleyin.",
+    "ofToday": "bugünün %{pct} kadarı",
+    "leftOfTarget": "{target} hedefine {time} kaldı",
+    "overTarget": "hedefin {time} üzerinde",
+    "running": "Çalışıyor",
+    "idle": "Boşta",
+    "runningTag": "(çalışıyor)",
+    "timeline": "Bugünün zaman çizelgesi",
+    "noGroup": "grupsuz",
+    "tracked": "kaydedilen",
+    "idleTotal": "boşta"
+  },
+  "welcome": {
+    "label": "Hoş geldiniz",
+    "title": "Yeni misiniz?",
+    "text": "Güne başlamak için bir etkinliğe dokunun · daha erken bir başlangıç için basılı tutun.",
+    "ok": "Anladım"
+  },
+  "footer": {
+    "more": "Ayarlar’da daha fazlası",
+    "export": "Ayarlar’dan dışa aktar",
+    "tagline": "İş gününüz için bir satranç saati.",
+    "theme": "Tema",
+    "mainScreen": "Ana ekran",
+    "buttons": "Düğmeler"
+  },
+  "about": {
+    "label": "Hakkında",
+    "what": "Bu nedir?",
+    "similar": "Benzer uygulamalar",
+    "feedback": "Geri bildirim gönder",
+    "offline": "Bu sayfa web sitesinde; bu çevrimdışı dosya onu içermiyor.",
+    "privacyNote": "Önce gizlilik: kaydettiğiniz her şey bu tarayıcıda kalır. Hesap ya da internet bağlantısı gerekmez. Verileriniz sizin sorumluluğunuzda, bu yüzden düzenli olarak yedek alın.",
+    "statsUnavailable": "Bu kopya (demo, çevrimdışı dosya ya da yerel derleme) kullanım istatistiği göndermez.",
+    "statsLabel": "Anonim kullanım istatistiklerini paylaş",
+    "statsHint": "Hangi ekranların ve özelliklerin kullanıldığı; kaydettikleriniz asla. Çerez yok, hesap yok, kişisel hiçbir şey yok.",
+    "statsDnt": "Tarayıcınız sitelerden izleme yapmamalarını istiyor, bu yüzden siz açana kadar bu kapalı.",
+    "statsPlea": "Karar sizin ve kapatabilirsiniz. Yine de açık bırakmayı düşünün: Time Tracker ücretsizdir ve bu sayımlar, birinin onu kullandığını bilmenin tek yoludur. Kimse kullanmıyorsa güncelleme almaz ve kullanımdan kaldırılır.",
+    "statsLink": "Neler toplanıyor"
+  },
+  "layout": {
+    "label": "Düğme düzeni",
+    "tiles": "Kutucuklar",
+    "rows": "Satırlar",
+    "circles": "Daireler"
+  },
+  "toggles": {
+    "popularity": {
+      "label": "Düğmeleri bugünkü kullanıma göre boyutlandır",
+      "hint": "Kullandıkça kutucuklar genişler, satırlar uzar, daireler büyür"
+    },
+    "unusedStrip": {
+      "label": "Kullanılmayan etkinlikleri bir şeride taşı",
+      "hint": "Bugün süresi olmayan etkinlikler düğmelerin altında küçük çiplere dönüşür"
+    },
+    "showTimeline": {
+      "label": "Bugünün zaman çizelgesini göster",
+      "hint": "Ana ekranın altındaki renkli oturum çubuğu"
+    },
+    "showGroups": {
+      "label": "Grup toplamlarını göster",
+      "hint": "Grup başına süre ve boşta geçen süre, zaman çizelgesinin altında tek satırda"
+    },
+    "showFooter": {
+      "label": "Alt bilgiyi göster",
+      "hint": "Her sayfanın altındaki bağlantılar ve hızlı ayarlar"
+    }
+  },
+  "session": {
+    "session": "Oturum",
+    "deleteTitle": "Bu oturum silinsin mi?",
+    "deleteBody": "{name} · {range} ({duration}). Bu süre boşta sayılır. Gün düzenleyicisinde geri ekleyebilirsiniz.",
+    "editTitle": "{name} düzenle",
+    "start": "Başlangıç",
+    "end": "Bitiş",
+    "stillRunning": "Hâlâ çalışıyor"
+  },
+  "popup": {
+    "today": "Bugün",
+    "sessions": {
+      "one": "{n} oturumda",
+      "other": "{n} oturumda"
+    },
+    "running": "çalışıyor",
+    "noSessions": "Bugün oturum yok.",
+    "correct": "Zaman çizelgesini düzelt",
+    "activeSince": "{name}, {time} itibarıyla etkin",
+    "stopSince": "{time} itibarıyla hepsini durdur",
+    "editSessions": "Oturumları düzenle…"
+  },
+  "editor": {
+    "title": "Gün düzenleyicisi",
+    "day": "Gün",
+    "prev": "Önceki gün",
+    "next": "Sonraki gün",
+    "today": "Bugün · {date}",
+    "removed": "(kaldırıldı)",
+    "noneToday": "Bugün oturum yok.",
+    "noneDay": "Bu günde oturum yok.",
+    "addRange": "Aralık ekle",
+    "clearTodayTitle": "Bugün temizlensin mi?",
+    "clearDayTitle": "Bu gün temizlensin mi?",
+    "clearBody": "Tüm oturumları silinir. Ardından günü “Aralık ekle” ile yeniden oluşturabilirsiniz.",
+    "clearOk": "Günü temizle",
+    "clear": "Tüm günü temizle",
+    "idleNone": "boşta (yok)",
+    "from": "Başlangıç",
+    "to": "Bitiş",
+    "keepRunning": "Şimdiye kadar ve çalışmaya devam"
+  },
+  "feedback": {
+    "title": "Geri bildirim gönder",
+    "offline": "Bu çevrimdışı dosya mesaj gönderemez. Geri bildirim göndermek için uygulamanın çevrimiçi sürümünü açın.",
+    "thanks": "Teşekkürler",
+    "sent": "Mesajınız yolda. Her biri okunuyor.",
+    "intro": "Bir hata, eksik bir özellik ya da sadece kullandığınızı söylemek: hepsi sırada ne olacağına karar vermeye yardımcı olur.",
+    "message": "Mesajınız",
+    "email": "E-posta",
+    "emailHint": "E-posta, yalnızca yanıt istiyorsanız",
+    "device": "Uygulama sürümünü ve tarayıcıyı ekle",
+    "failed": "Şu anda gönderilemedi. Metniniz hâlâ burada, birazdan tekrar deneyin.",
+    "sending": "Gönderiliyor…",
+    "send": "Gönder"
+  },
+  "profiles": {
+    "switch": "Profil değiştir",
+    "runningIn": "{name}, {profile} profilinde çalışıyor.",
+    "anActivity": "Bir etkinlik",
+    "runningNote": "{strong} Başka bir profil açıkken saymaya devam eder.",
+    "statusRunning": "{name} çalışıyor · bugün {time}",
+    "statusIdle": "Boşta · son kullanım {date}",
+    "statusNew": "Henüz bir şey kaydedilmedi",
+    "open": "Açık",
+    "switchTo": "Geç",
+    "manage": "Profilleri Ayarlar’dan ekleyin, yeniden adlandırın ya da silin"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "sectionsLabel": "Ayar bölümleri",
+    "sections": {
+      "profiles": "Profiller",
+      "groups": "Gruplar",
+      "categories": "Kategoriler",
+      "activities": "Etkinlikler",
+      "appearance": "Görünüm",
+      "day": "Gün",
+      "device": "Cihaz",
+      "backup": "Yedek",
+      "about": "Hakkında"
+    },
+    "importFailed": "İçe aktarma başarısız: {error}",
+    "up": "Yukarı taşı",
+    "down": "Aşağı taşı",
+    "activityCount": {
+      "one": "{n} etkinlik",
+      "other": "{n} etkinlik"
+    },
+    "profiles": {
+      "intro": "Her profil kendi etkinlikleri, grupları, günleri, özeti, ayarları ve yedeği olan ayrı bir çalışma alanıdır. Aynı anda yalnızca biri açıktır; siz başka bir profildeyken çalışan bir etkinlik saymaya devam eder. Yeni bir profil, bu profilin ayarlarının bir kopyasıyla başlar.",
+      "placeholder": "Yeni profil adı, ör. Ev",
+      "add": "Profil ekle",
+      "name": "Profil adı",
+      "isOpen": "açık",
+      "openOther": "Önce başka bir profil açın",
+      "deleteTitle": "“{name}” profili silinsin mi?",
+      "deleteBody": "TÜM etkinlikleri, günleri ve geçmişi silinir. Bu geri alınamaz (önce bir yedek dışa aktarın)."
+    },
+    "groups": {
+      "intro": "Ana ekran açık grupların etkinliklerini ve grubu olmayanları gösterir. Aynı anda birden çok grup açık olabilir; bir grup siz değiştirene kadar açık ya da kapalı kalır.",
+      "placeholder": "Grup ekleyin: her satıra bir tane ya da virgülle ayırarak",
+      "name": "Grup adı",
+      "on": "Açık",
+      "deleteTitle": "“{name}” grubu silinsin mi?",
+      "deleteBody": "Etkinlikleri korunur ve “grupsuz”a taşınır."
+    },
+    "categories": {
+      "intro": "Kategoriler Özet’te sürenizi böler. Bir boyutun seçenekleri vardır; her etkinlik boyut başına en fazla bir seçenek seçer. Seçeneği olmayan etkinlikler “Belirtilmedi” sayılır, böylece her boyut %100 eder.",
+      "empty": "Henüz kategori yok",
+      "example": "Örneğin {focus}: {productive} / {nonProductive} ya da {company}: {people} / {alone}.",
+      "addExample": "“{name}” örneğini ekle",
+      "newName": "Yeni boyut",
+      "addEmpty": "Boş bir boyut ekle",
+      "placeholder": "Yeni boyut, ör. Enerji",
+      "add": "Boyut ekle",
+      "dimension": "Boyut",
+      "dimensionName": "Boyut adı",
+      "set": {
+        "one": "{n} etkinlikten {set} tanesinde belirtildi",
+        "other": "{n} etkinlikten {set} tanesinde belirtildi"
+      },
+      "deleteTitle": "“{name}” boyutu silinsin mi?",
+      "deleteBody": "Her etkinlik bu boyuttaki seçeneğini kaybeder. Başka hiçbir şey değişmez.",
+      "colorOf": "{name} rengi: {color}",
+      "optionName": "Seçenek adı",
+      "deleteOptionTitle": "“{name}” seçeneği silinsin mi?",
+      "deleteOptionBody": "Etkinlikleri {dimension} için “Belirtilmedi” olur.",
+      "addOption": "Seçenek ekle",
+      "newOption": "Yeni seçenek"
+    },
+    "activities": {
+      "taken": "Zaten var (adlar benzersizdir; kaldırılmış biri aşağıda geri yüklenebilir ya da silinebilir): {names}",
+      "placeholder": "Etkinlik ekleyin: her satıra bir tane ya da virgülle ayırarak",
+      "removedTitle": "Kaldırılan etkinlikler",
+      "removedIntro": "Kaldırılan etkinlikler geçmişlerini korur; istediğiniz zaman geri yükleyin. Silmek onu bu listeden çıkarır, kaydedilen süresi özette kalır. Daha sonra aynı adla bir etkinlik eklemek o geçmişi sürdürür.",
+      "restore": "Geri yükle",
+      "deleteTitle": "“{name}” silinsin mi?",
+      "deleteBody": "Bu listeden kalıcı olarak çıkar. Kaydedilen süresi özette kalır.",
+      "colorLabel": "{name} rengi: Etkinlik renkleri’nden değiştirin",
+      "colorTitle": "Görünüm → Etkinlik renkleri’nden değiştirin",
+      "name": "Ad",
+      "exists": "“{name}” adında bir etkinlik zaten var.",
+      "group": "Grup",
+      "noGroup": "Grupsuz",
+      "target": "hedef",
+      "min": "dk",
+      "hasTime": "bugün süresi var",
+      "hideToday": "Bugün gizle",
+      "remove": "Kaldır",
+      "removeTitle": "“{name}” kaldırılsın mı?",
+      "removeBody": "Geçmişi korunur ve geri yüklenebilir."
+    },
+    "theme": {
+      "lowContrast": "“{name}” yüklendi, ancak bu etkinlik renkleri arka planında zor görünüyor (3:1’in altında): {slots}.",
+      "intro": "Bir tema tüm görünümü belirler: yüzeyler, metin ve etkinlik renkleri. Bir düzenleyici ya da terminal temasıyla aynı fikir.",
+      "mode": "Tema modu",
+      "fixed": "Sabit",
+      "system": "Sistemi izle",
+      "import": "Tema içe aktar",
+      "systemNote": "Sistemi izle: açık modda {light}, koyu modda {dark}. Değiştirmek için sistem o moddayken bir temaya dokunun (şu an: {mode}).",
+      "dark": "koyu",
+      "light": "açık",
+      "name": "Tema adı",
+      "export": "Dışa aktar",
+      "deleteTitle": "“{name}” teması silinsin mi?",
+      "deleteBody": "Onu kullanan profiller Paper ya da Graphite’e geçer."
+    },
+    "colors": {
+      "title": "Etkinlik renkleri",
+      "intro": "Her temanın bir terminal paleti gibi 16 renk yuvası vardır. Bir etkinlik bir yuva seçer; böylece temayla birlikte renk değiştirir ve her birinde okunaklı kalır. Yuvadan çok etkinlik varsa renkler tekrarlanır; adlar her zaman renklerin yanında gösterilir.",
+      "of": "{name} rengi",
+      "slot": "Yuva {n}, {name}"
+    },
+    "day": {
+      "reset": "Otomatik sıfırlama saati",
+      "weekStart": "Hafta başlangıcı",
+      "system": "Sistem ({day})",
+      "weekHint": "Hafta dönemi, takvim ve ısı haritası tarafından kullanılır",
+      "minSwitch": "En kısa geçiş",
+      "minSwitchHint": "daha kısa süreler sonraki (ya da önceki) etkinliğe aktarılır",
+      "autoExport": "Bir gün kapandığında JSON yedeği indir",
+      "autoExportHint": "Kapanan her gün için bir dosya, indirilenler klasörünüze",
+      "editTimeline": "Zaman çizelgesini düzenle…"
+    },
+    "device": {
+      "language": "Dil",
+      "languageHint": "bu cihazda web sitesi için de kullanılır",
+      "fullscreen": "Tam ekranda başlat",
+      "fullscreenHint": "İlk dokunuşta; tam ekran simgesi açıp kapatır, çıkmak için Esc’yi basılı tutun",
+      "awake": "Ekranı açık tut",
+      "awakeHint": "Uygulama açık ve görünürken",
+      "awakeUnavailable": "Burada kullanılamaz: localhost ya da HTTPS gerekir"
+    },
+    "backup": {
+      "importTitle": "Bu profile içe aktarılsın mı?",
+      "importBody": "İçe aktarma, “{name}” profilinin TÜM verilerini ve ayarlarını değiştirir. Diğer profiller değişmez.",
+      "importOk": "İçe aktar",
+      "importDone": "İçe aktarma tamamlandı.",
+      "intro": "Dışa ve içe aktarma yalnızca bu profili kapsar; içe aktarma verilerini ve ayarlarını değiştirir.",
+      "export": "JSON dışa aktar",
+      "import": "JSON içe aktar"
+    }
+  },
+  "slots": {
+    "blue": "mavi",
+    "green": "yeşil",
+    "orange": "turuncu",
+    "purple": "mor",
+    "red": "kırmızı",
+    "cyan": "camgöbeği",
+    "yellow": "sarı",
+    "neutral": "nötr",
+    "pink": "pembe",
+    "teal": "petrol mavisi",
+    "lime": "limon yeşili",
+    "brown": "kahverengi",
+    "indigo": "çivit",
+    "olive": "zeytin",
+    "wine": "bordo",
+    "slate": "arduvaz"
+  },
+  "seed": {
+    "names": {
+      "default": "Varsayılan",
+      "work": "İş",
+      "meeting": "Toplantı",
+      "task": "Görev",
+      "code review": "Kod incelemesi",
+      "communication": "İletişim",
+      "setup": "Kurulum",
+      "break": "Mola",
+      "planning": "Planlama",
+      "focus": "Odak",
+      "productive": "Verimli",
+      "non-productive": "Verimsiz",
+      "company": "Birliktelik",
+      "with people": "İnsanlarla",
+      "alone": "Yalnız"
+    }
+  },
+  "summary": {
+    "title": "Özet",
+    "idleFor": "boşta {time}",
+    "notSet": "Belirtilmedi",
+    "loading": "Yükleniyor…",
+    "days": {
+      "one": "{n} gün",
+      "other": "{n} gün"
+    },
+    "quick": {
+      "today": "Bugün",
+      "yesterday": "Dün",
+      "thisWeek": "Bu hafta",
+      "lastWeek": "Geçen hafta",
+      "last7": "Son 7 gün",
+      "thisMonth": "Bu ay",
+      "lastMonth": "Geçen ay",
+      "last30": "Son 30 gün"
+    },
+    "kinds": {
+      "day": "Gün",
+      "week": "Hafta",
+      "month": "Ay",
+      "custom": "Özel"
+    },
+    "emptyDay": "{date} tarihinde kayıt yok",
+    "emptyRange": "{from} – {to} arasında kayıt yok",
+    "emptyHint": "Başka bir dönem seçin ya da ana ekranda bir etkinlik başlatın.",
+    "pickLast": "son günü seçin",
+    "period": "Dönem",
+    "periodKind": "Dönem türü",
+    "prevPeriod": "Önceki dönem",
+    "nextPeriod": "Sonraki dönem",
+    "choosePeriod": "Dönem seçin, {label}",
+    "groupBy": "Gruplandır",
+    "activity": "Etkinlik",
+    "nothing": "kayıt yok",
+    "prevMonth": "Önceki ay",
+    "nextMonth": "Sonraki ay",
+    "quickRanges": "Hızlı aralıklar",
+    "pickLastHint": "Şimdi son güne dokunun. İki gün de dahildir.",
+    "pickFirstHint": "Önce ilk güne, sonra son güne dokunun. İki gün de dahildir.",
+    "shadedHint": "Gölgeli günlerde kaydedilmiş süre var. Haftalar {day} günü başlar (Ayarlar → Gün).",
+    "total": "Toplam kayıt",
+    "live": "çalışıyor · canlı",
+    "firstLast": "İlk – son",
+    "firstLastHint": "ilk başlangıçtan son bitişe",
+    "idleHint": "etkinlikler arasındaki boşluklar",
+    "switches": "Geçişler",
+    "sessions": {
+      "one": "{n} oturum",
+      "other": "{n} oturum"
+    },
+    "avg": "Kayıtlı gün başına ortalama",
+    "trackedDays": {
+      "one": "{n} kayıtlı gün",
+      "other": "{n} kayıtlı gün"
+    },
+    "noTrackedDays": "kayıtlı gün yok",
+    "previous": "önceki: {time}",
+    "timeline": "Zaman çizelgesi",
+    "tapBlock": "Ayrıntılar için bir bloğa dokunun",
+    "blockLabel": "{name} {from} – {to}",
+    "perWeek": "Haftalık",
+    "perWeekHint": "çubuk = gruba göre toplam",
+    "avgHint": "kesikli: ortalama başlangıç {start} · bitiş {end} · ayrıntılar için bir güne dokunun",
+    "tapDay": "ayrıntılar için bir güne dokunun",
+    "perDay": "Günlük",
+    "openDay": "Günü aç",
+    "targetMet": {
+      "one": "hedef {target} · {n} günün {met} gününde tuttu",
+      "other": "hedef {target} · {n} günün {met} gününde tuttu"
+    },
+    "share": "Pay",
+    "tapOption": "etkinliklerini görmek için bir seçeneğe dokunun",
+    "avgOver": "kayıtlı günlerin ortalaması",
+    "shareOfTime": "Zaman payı",
+    "donutHours": "{h} sa",
+    "name": "Ad",
+    "totalCol": "Toplam",
+    "target": "Hedef",
+    "avgDay": "Ort. / gün",
+    "sessionsTitle": "Oturumlar",
+    "groupLog": "{name} ile gruplandır",
+    "vsWeek": "önceki haftaya göre",
+    "vsMonth": "{month} ayına göre",
+    "vsDays": {
+      "one": "önceki güne göre",
+      "other": "önceki {n} güne göre"
+    },
+    "noDataWeek": "önceki haftada veri yok",
+    "noDataMonth": "{month} ayında veri yok",
+    "noDataDays": {
+      "one": "önceki günde veri yok",
+      "other": "önceki {n} günde veri yok"
+    }
+  },
+  "dialogs": {
+    "theActivity": "Etkinlik",
+    "resetTitle": "Gün sıfırlansın mı?",
+    "resetStops": "{name} şimdi durur.",
+    "resetBody": "{date}, {total} kayıtla kapanır ve yeni bir gün başlar. Kapanan günü Özet’ten düzenlemeye devam edebilirsiniz.",
+    "closeTitle": "Time Tracker kapatılsın mı?",
+    "closeRunning": "{name}, uygulama kapalıyken saymaya devam eder. Durdurmak ya da geçmek için uygulamayı yeniden açın.",
+    "closeIdle": "Çalışan bir şey yok.",
+    "closeYourself": "Pencereyi kendiniz kapatın",
+    "closeYourselfBody": "Tarayıcı bu sayfanın kendi penceresini kapatmasına izin vermiyor. Alt+F4 ya da Ctrl+W’ye basın.",
+    "keepsCounting": "{name} saymaya devam ediyor."
+  },
+  "errors": {
+    "notExport": "Bir Time Tracker dışa aktarımı değil",
+    "itermXml": "Bilinmeyen XML dosyası (bir iTerm .itermcolors dosyası bekleniyordu)",
+    "jsonTheme": "Bilinmeyen JSON teması (bizim tema dosyamız, bir VS Code renk teması ya da base16 bekleniyordu)",
+    "themeFile": "Bilinmeyen tema dosyası (desteklenenler: bizim tema .json, VS Code .json, base16 .yaml/.json, Alacritty .toml, iTerm .itermcolors)"
+  }
+}

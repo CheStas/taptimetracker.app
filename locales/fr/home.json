@@ -1,0 +1,75 @@
+{
+  "title": "Time Tracker — un suivi du temps en un geste, qui reste sur votre appareil",
+  "description": "Un suivi du temps gratuit en un geste : un grand bouton par activité, touchez-le quand vous changez, et voyez votre journée, votre semaine et votre mois d’un coup d’œil. Sans compte, et ce que vous suivez ne quitte jamais votre appareil.",
+  "og": {
+    "title": "Time Tracker — sachez où est passée votre journée",
+    "description": "Un grand bouton par activité : touchez-le quand vous changez, et voyez votre journée, votre semaine et votre mois d’un coup d’œil. Gratuit, sans compte, et ce que vous suivez ne quitte jamais votre appareil.",
+    "imageAlt": "L’écran principal de Time Tracker : une tuile par activité avec le temps du jour"
+  },
+  "ld": {
+    "description": "Un suivi du temps en un geste : un grand bouton par activité, touchez-le quand vous changez, et voyez votre journée, votre semaine et votre mois. Sans compte ; tout reste sur votre appareil.",
+    "os": "Tous (navigateur web)",
+    "requirements": "Nécessite un navigateur récent avec JavaScript et IndexedDB"
+  },
+  "hero": {
+    "title": "Sachez où est vraiment passée votre journée",
+    "lead": "Un suivi du temps en un geste : un grand bouton pour chaque chose que vous faites. Touchez-le quand vous changez. Le soir, vous voyez les réunions, les relectures et les « petites questions » heure par heure, sans remplir une seule feuille de temps. Et tout reste à vous : pas de compte, et rien de ce que vous suivez ne quitte jamais votre appareil.",
+    "demo": "Essayer la démo",
+    "fine": "La démo tourne sur trois semaines de données d’exemple dans son propre bac à sable. Rien de ce que vous y faites ne touche votre vrai suivi. Gratuit.",
+    "imageAlt": "Passer d’une activité à l’autre : la tuile en cours s’allume et la frise du jour s’allonge en bas"
+  },
+  "switching": {
+    "title": "Changer ne demande qu’un geste",
+    "p1": "Ça fonctionne comme une pendule d’échecs. Touchez Réunion et la pendule passe à Réunion ; touchez Tâche et elle continue. Une seule chose tourne à la fois, donc rien n’est compté deux fois et rien ne passe entre les mailles.",
+    "p2": "Les boutons sont assez grands pour être touchés sans regarder, sur un portable, une tablette près du bureau ou un écran tactile au mur.",
+    "imageAlt": "L’écran principal avec le thème sombre Graphite : une tuile par activité avec le temps du jour, celle en cours mise en avant"
+  },
+  "backdate": {
+    "title": "Oublié de changer ? Corrigez en deux gestes",
+    "p1": "Embarqué dans un appel et vous n’y avez pensé que vingt minutes plus tard ? Maintenez l’activité et choisissez « active depuis 10:40 ». Le temps est pris sur ce qui tournait, donc la journée reste juste à la minute près.",
+    "p2": "Chaque session de la journée est là, prête à être raccourcie, déplacée ou supprimée.",
+    "imageAlt": "Maintenir une activité ouvre les sessions du jour et des boutons rapides pour la démarrer plus tôt"
+  },
+  "privacy": {
+    "title": "Privé par conception, pas par promesse",
+    "p1": "La plupart des outils de suivi demandent un compte, puis envoient chaque minute de votre journée dans leur cloud. Celui-ci n’a nulle part où l’envoyer. Vos sessions vivent dans le stockage de votre navigateur sur cet appareil, et c’est la seule copie.",
+    "p2": "Pas d’inscription, pas de pub, pas de cookies. Suivez le dentiste, l’entretien d’embauche et le long déjeuner sans vous demander qui d’autre peut les voir."
+  },
+  "vault": {
+    "label": "Ce qui reste privé",
+    "account": { "title": "Pas de compte", "text": "Pas d’e-mail, pas de mot de passe. Ouvrez et commencez." },
+    "device": { "title": "Reste sur cet appareil", "text": "Rien de ce que vous suivez n’est jamais envoyé nulle part." },
+    "nobody": { "title": "Personne ne regarde", "text": "Pas de pub, pas de cookies. Le site compte les visites anonymement, jamais ce que vous suivez, et vous pouvez le désactiver." },
+    "export": { "title": "À emporter", "text": "Exportez une sauvegarde à tout moment et importez-la sur un autre appareil." }
+  },
+  "summary": {
+    "title": "Voyez la semaine, pas seulement aujourd’hui",
+    "p1": "Jour, semaine, mois ou toute période de votre choix. Chaque jour est sur la même horloge, donc les débuts tardifs, les longs déjeuners et les mardis remplis de réunions sautent aux yeux.",
+    "p2": "Étiquetez les activités avec vos propres catégories, comme travail profond ou superficiel, seul ou avec d’autres, et tout le résumé se réorganise autour d’elles.",
+    "imageAlt": "Le résumé passe d’une journée à une semaine groupée par concentration, puis à une carte de chaleur du mois"
+  },
+  "phone": {
+    "title": "Tient aussi dans la poche",
+    "p1": "Sur un téléphone, les boutons se rangent deux par ligne et les menus glissent depuis le bas. Ajoutez-le à l’écran d’accueil et il s’ouvre comme n’importe quelle app.",
+    "imageAlt": "L’app sur un téléphone : tuiles, la fiche d’activité, le menu Plus et le résumé"
+  },
+  "private": {
+    "title": "Votre journée ne regarde que vous",
+    "text": "Pas de compte, et aucun serveur qui voit jamais votre journée. Tout ce que vous suivez reste dans ce navigateur, sur cet appareil. Exportez une sauvegarde quand vous voulez et importez-la ailleurs. Le site ne compte que les visites, anonymement et sans cookies, pour que je sache qu’il vaut la peine d’être maintenu.",
+    "link": "Comment ça marche"
+  },
+  "extras": {
+    "label": "Aussi inclus",
+    "targets": { "title": "Objectifs quotidiens", "text": "Voyez d’un coup d’œil si vous avez pris cette heure de pause." },
+    "profiles": { "title": "Profils", "text": "Séparez travail et maison, chacun avec ses boutons et son historique." },
+    "layouts": { "title": "Trois dispositions", "text": "Tuiles, lignes ou cercles, et des boutons qui grandissent avec l’usage si vous voulez." },
+    "themes": { "title": "Sept thèmes", "text": "Clair, sombre ou selon le système, ou importez le vôtre." },
+    "day": { "title": "Votre propre journée", "text": "Commencez la journée à 4 h si vous travaillez tard ; elle bascule toute seule." },
+    "fullscreen": { "title": "Plein écran", "text": "Laissez-le tourner sur un écran libre comme horloge murale de votre travail." }
+  },
+  "closing": {
+    "title": "Donnez-lui une journée.",
+    "lead": "Suivez demain du premier café au dernier message et regardez la frise le soir. La plupart des gens sont surpris.",
+    "demo": "Essayer d’abord la démo"
+  }
+}

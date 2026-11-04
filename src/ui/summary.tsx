@@ -18,7 +18,7 @@ import { Icon } from './icons.tsx';
 import { AppHeader, type Nav } from './header.tsx';
 import { Footer } from './footer.tsx';
 import { useAppState, useNow } from './hooks.tsx';
-import { locale, t, tn, type Key } from '../i18n.ts';
+import { intlLocale, t, tn, type Key } from '../i18n.ts';
 
 // ---------- shared with the day editor ----------
 
@@ -87,11 +87,11 @@ export function TimelineBar({ from, to, segments, lookup }: { from: number; to: 
 // ---------- labels ----------
 
 const MIN = 60000;
-const fmtMD = (n: DayNum) => dayDate(n).toLocaleDateString(locale(), { month: 'short', day: 'numeric' });
-const fmtDow = (n: DayNum) => dayDate(n).toLocaleDateString(locale(), { weekday: 'short' });
-const fmtMonth = (n: DayNum) => dayDate(n).toLocaleDateString(locale(), { month: 'long', year: 'numeric' });
+const fmtMD = (n: DayNum) => dayDate(n).toLocaleDateString(intlLocale(), { month: 'short', day: 'numeric' });
+const fmtDow = (n: DayNum) => dayDate(n).toLocaleDateString(intlLocale(), { weekday: 'short' });
+const fmtMonth = (n: DayNum) => dayDate(n).toLocaleDateString(intlLocale(), { month: 'long', year: 'numeric' });
 /** "September", "вересень": the month on its own (standalone form where the language has one). */
-const fmtMonthName = (n: DayNum) => new Intl.DateTimeFormat(locale(), { month: 'long' }).format(dayDate(n));
+const fmtMonthName = (n: DayNum) => new Intl.DateTimeFormat(intlLocale(), { month: 'long' }).format(dayDate(n));
 /** "Wed 28" */
 const fmtDowDate = (n: DayNum) => `${fmtDow(n)} ${ymd(n)[2]}`;
 const days = (n: number) => tn('summary.days', n);
@@ -326,7 +326,7 @@ function PeriodCard({ period, setPeriod, today, weekStart, byDay }: PeriodCardPr
 }
 
 /** Day number 3 (1970-01-04) is a Sunday, so 3 + w is weekday w. */
-const weekdayName = (w: number, style: 'short' | 'long') => dayDate(3 + w).toLocaleDateString(locale(), { weekday: style });
+const weekdayName = (w: number, style: 'short' | 'long') => dayDate(3 + w).toLocaleDateString(intlLocale(), { weekday: style });
 const weekdayHeads = (weekStart: number) => Array.from({ length: 7 }, (_, i) => weekdayName((weekStart + i) % 7, 'short').slice(0, 2));
 
 /** Day and Week: the week strip; Custom up to 14 days: one cell per day; Month and longer (up to 62 days): a month grid. */

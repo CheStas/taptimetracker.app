@@ -20,7 +20,7 @@ import { AboutLinks, LayoutSwitch, MAIN_TOGGLES, PrivacyNote, UsageStats, VERSIO
 import { AppHeader, type Nav } from './header.tsx';
 import { Footer } from './footer.tsx';
 import { confirmDialog, useAppState } from './hooks.tsx';
-import { APP_LOCALES, locale, seedName, setLocale, t, tn, tx, type Key } from '../i18n.ts';
+import { APP_LOCALES, intlLocale, locale, seedName, setLocale, t, tn, tx, type Key } from '../i18n.ts';
 import { LOCALES } from '../locale.ts';
 
 const MIN_SWITCH = [0, 15, 30, 60, 120, 180, 300];
@@ -30,8 +30,8 @@ const SECTIONS = ['profiles', 'groups', 'categories', 'activities', 'appearance'
 const WEEK_STARTS: WeekStart[] = ['system', 1, 0, 6];
 /** A weekday's name in the app's language, capitalized (0 = Sunday; 7 Jan 2024 was a Sunday). */
 const weekdayName = (w: number) => {
-  const name = new Date(2024, 0, 7 + w).toLocaleDateString(locale(), { weekday: 'long' });
-  return name.charAt(0).toLocaleUpperCase(locale()) + name.slice(1);
+  const name = new Date(2024, 0, 7 + w).toLocaleDateString(intlLocale(), { weekday: 'long' });
+  return name.charAt(0).toLocaleUpperCase(intlLocale()) + name.slice(1);
 };
 const slotLabel = (i: number) => t('settings.colors.slot', { n: i + 1, name: t(`slots.${SLOT_NAMES[i]}` as Key) });
 

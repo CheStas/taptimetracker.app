@@ -1,5 +1,5 @@
 // Small formatting and browser helpers shared by the views. Units and date names follow the app's language (§21.4).
-import { locale, t } from '../i18n.ts';
+import { intlLocale, t } from '../i18n.ts';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
@@ -55,10 +55,10 @@ export const fmtRange = (start: number, end: number | null) => `${fmtClock(start
 export const fmtSwitch = (s: number) => (s === 0 ? t('common.off') : s < 60 ? t('dur.sec', { s }) : t('dur.min', { m: s / 60 }));
 
 /** "Thu, Oct 22" */
-export const fmtDayShort = (ts: number) => new Date(ts).toLocaleDateString(locale(), { weekday: 'short', day: 'numeric', month: 'short' });
+export const fmtDayShort = (ts: number) => new Date(ts).toLocaleDateString(intlLocale(), { weekday: 'short', day: 'numeric', month: 'short' });
 
 export const fmtDate = (ts: number) =>
-  new Date(ts).toLocaleDateString(locale(), { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+  new Date(ts).toLocaleDateString(intlLocale(), { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
 
 export function download(filename: string, data: unknown) {
   const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));

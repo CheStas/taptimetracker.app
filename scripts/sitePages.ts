@@ -14,7 +14,8 @@ const LOCALES_DIR = resolve(ROOT, 'locales');
 const TEMPLATES = resolve(ROOT, 'src/site/pages');
 export const ORIGIN = 'https://taptimetracker.app';
 
-export interface Locale { code: string; name: string; ogLocale: string }
+import type { Locale } from '../src/locale.ts';
+export type { Locale };
 export interface Page {
   id: string;
   /** The URL path below the language prefix: '' for the home page, 'similar/' … ('404.html' is a file, not a folder.) */
@@ -136,14 +137,23 @@ export function renderPage(page: Page, code: string, locales: Locale[]): string 
         const english = !pageLocales(p, locales).some((l) => l.code === code);
         return `<a href="${href(p.id)}"${english ? ` hreflang="${en.code}"` : ''}>${t(`footer.${p.id}`)}${english ? ` <span class="muted">${t('footer.english')}</span>` : ''}</a>`;
       });
+      // The language picker: a dropdown of real links (crawlable, works without JavaScript), each with its flag and
+      // named in its own language; it opens upwards from the current one.
+      const flag = (l: Locale, lazy = true) =>
+        `<img class="flag" src="${root}flags/${l.flag}.svg" alt="" width="20" height="15"${lazy ? ' loading="lazy"' : ''}>`;
       const langs = locales.map((l) => {
         const target = !page.notFound && available.some((a) => a.code === l.code) ? page : byId('home');
         const current = l.code === code ? ' aria-current="true"' : '';
-        return `<a href="${root}${pagePath(target, l.code, locales)}" hreflang="${l.code}" lang="${l.code}" data-locale="${l.code}"${current}>${l.name}</a>`;
+        return `<li><a href="${root}${pagePath(target, l.code, locales)}" hreflang="${l.code}" lang="${l.code}" data-locale="${l.code}"${current}>${flag(l)}<span>${l.name}</span></a></li>`;
       });
       return `<footer class="site-footer">
     <nav class="pages" aria-label="${esc(t('footer.pages'))}">${links.join('\n      ')}</nav>
-    <nav class="langs" aria-label="${esc(t('footer.language'))}">${langs.join('\n      ')}</nav>
+    <details class="langs">
+      <summary aria-label="${esc(t('footer.language'))}: ${esc(locale.name)}">${flag(locale, false)}<span>${locale.name}</span></summary>
+      <ul aria-label="${esc(t('footer.language'))}">
+        ${langs.join('\n        ')}
+      </ul>
+    </details>
   </footer>`;
     },
     // One hidden suggestion per other language this page exists in, written in that language; src/site/site.ts shows
@@ -165,7 +175,7 @@ export function renderPage(page: Page, code: string, locales: Locale[]): string 
   const html = withCopy.replace(/\{\{@(\w+)(?::([\w-]+))?\}\}/g, (_, name: string, arg = '') =>
     (GEN[name] ?? fail(`unknown {{@${name}}}`))(arg));
   return html
-    .replace('<html>', `<html lang="${code}" data-locales="${locales.map((l) => l.code).join(' ')}">`)
+    .replace('<html>', `<html lang="${code}"${locale.dir ? ` dir="${locale.dir}"` : ''} data-locales="${locales.map((l) => l.code).join(' ')}">`)
     .replace('<body>', `<body class="${page.body}">`);
 }
 

@@ -613,13 +613,22 @@ them in the repo root.
   namespace bound as `FEEDBACK` (503 until it is bound). No IP or country is stored.
 
 ## 21. Languages
-English (default) and Ukrainian. A language is added with config and copy only, no code: an entry in
+English (default), Ukrainian, Spanish, German, French, Japanese, Portuguese (Brazilian), Turkish, Italian, Persian,
+Dutch (also for Flemish) and Chinese (Mandarin, Simplified). A language is added with config and copy only, no code: an entry in
 `locales/locales.json` and a folder `locales/<code>/` with the same files as `locales/en/`. No i18n library: the site
 is generated at build time and the app uses a small typed `t()` (`src/i18n.ts`).
 
 ### 21.1 Locale files
-- `locales/locales.json`: the languages in switcher order, `{ "code": "uk", "name": "Українська", "ogLocale": "uk_UA" }`;
-  the first one (`en`) is the default. Codes are ISO 639-1 language codes (`uk`, never the country code `ua`).
+- `locales/locales.json`: the languages in switcher order,
+  `{ "code": "uk", "name": "Українська", "ogLocale": "uk_UA", "flag": "ua" }`; the first one (`en`) is the default.
+  Codes are ISO 639-1 language codes (`uk`, never the country code `ua`; `zh` is Simplified Chinese, `pt` Brazilian
+  Portuguese, `nl` also serves Flemish visitors). Optional: `"dir": "rtl"` for right-to-left scripts (Persian) and
+  `"intl"`, the tag used for dates and numbers when it differs from the code (Persian: `fa-u-ca-gregory-nu-latn`, the
+  Gregorian calendar and Latin digits, so months match the app's periods and digits match its durations).
+- `flag` is a country code for `public/flags/<flag>.svg` (4:3, from flag-icons, MIT, `LICENSE.txt` next to them):
+  English 🇬🇧, Ukrainian 🇺🇦, Spanish 🇪🇸 (the civil flag, without the 80 KB coat of arms), German 🇩🇪, French 🇫🇷,
+  Japanese 🇯🇵, Portuguese 🇧🇷, Turkish 🇹🇷, Italian 🇮🇹, Persian 🇮🇷, Dutch 🇳🇱, Chinese 🇨🇳. SVG files, not emoji:
+  Windows shows flag emoji as two letters.
 - `locales/<code>/site.json`: the strings every site page shares (header, footer, switcher, language banner).
 - `locales/<code>/<page>.json`: one file per site page (`home`, `similar`, …): title, description, Open Graph text and
   the page's copy (`404` for the not-found page). Values may contain inline HTML (links, `<strong>`, `<em>`).
@@ -644,9 +653,14 @@ is generated at build time and the app uses a small typed `t()` (`src/i18n.ts`).
 - **English-only pages** (privacy, terms) are linked from the footer of every language; on a non-English page the link
   says "(English)" and has `hreflang="en"`. There is no `/uk/privacy/`: an English copy under a Ukrainian address would
   be duplicate content.
-- **Language switcher** in every site footer: one real link per language (crawlable), named in its own language, the
+- **Language picker** in every site footer, at the end of the row: a select-like button with the current language's
+  flag and name that opens a list upwards (`<details>`, so it works without JavaScript; a click outside or Esc closes
+  it). The list has one real link per language (crawlable), each with its flag and named in its own language, the
   current one marked (`aria-current`). It points to the same page in that language, or that language's home page when
-  the page does not exist in it. Choosing one saves it (below).
+  the page does not exist in it. Choosing one saves it (below). Flags in the list load lazily, only when it opens.
+- **Right-to-left** (Persian): `<html dir="rtl">`; the site and app layouts use logical CSS properties
+  (`margin-inline-start`, `inset-inline-end`, `text-align: start`), so they mirror. Time axes (the timelines, hour
+  ticks, the per-day bars) stay left to right, and text inside them picks its own direction (`unicode-bidi: plaintext`).
 - **No automatic redirects** by `Accept-Language` or saved choice: search engines crawl without that header, so every
   URL always serves its own language.
 - **Language banner** (top of the page, above the header): shown when the preferred language differs from the page's
@@ -660,16 +674,20 @@ is generated at build time and the app uses a small typed `t()` (`src/i18n.ts`).
 ### 21.3 Fonts
 Geist Sans has no Cyrillic, so the site and the app use `@fontsource/geist` and `@fontsource/geist-mono` (Latin,
 Latin Extended and Cyrillic). The subsets are split by `unicode-range`, so an English page only downloads Latin.
+Geist has no Japanese, Chinese or Arabic script: those characters fall back to the system font (`system-ui`), so those
+pages download no extra font.
 
 ### 21.4 The app
 - One address for all languages: `/app/` (also the PWA's scope and the demo); the app is `noindex`, so its language
   does not need a URL. Language = localStorage `locale` if it names a language the app has, else the first browser
-  language it has, else English. `<html lang>` follows it.
+  language it has, else English (by language only: `zh-TW` gets Simplified Chinese, `pt-PT` Brazilian Portuguese).
+  `<html lang>` and `<html dir>` follow it.
 - **Settings → Device → Language:** a select with every language in its own name; changing it saves `locale` and
   re-renders the app at once. The single-file build has the same setting.
 - `t('key', { name: … })` with `{name}` placeholders, `tx` for sentences with elements in them (a link, `<strong>`). Counts use the language's plural rules (`Intl.PluralRules`): a
   plural value is an object with the forms that language needs (English `one`/`other`; Ukrainian `one`/`few`/`many`/
-  `other`, as in 1 хвилина, 2 хвилини, 5 хвилин). English is bundled; other languages are loaded on start
+  `other`, as in 1 хвилина, 2 хвилини, 5 хвилин; Spanish, French, Italian and Portuguese add `many` for millions;
+  Japanese and Chinese only `other`). English is bundled; other languages are loaded on start
   (`import()`), so the app downloads only its own.
 - **Dates** (weekday, month names) use the app's language through `Intl.DateTimeFormat`; durations use the
   language's units ("8h 43m" / "8 год 43 хв"). The first day of the week still follows the browser's region (§8 Week

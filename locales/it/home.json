@@ -1,0 +1,75 @@
+{
+  "title": "Time Tracker — registra il tempo con un tocco, e tutto resta sul tuo dispositivo",
+  "description": "Un time tracker gratuito con un tocco: un grande pulsante per attività, toccalo quando cambi e vedi la tua giornata, settimana e mese a colpo d’occhio. Nessun account, e ciò che registri non lascia mai il tuo dispositivo.",
+  "og": {
+    "title": "Time Tracker — scopri dove è finita la tua giornata",
+    "description": "Un grande pulsante per attività: toccalo quando cambi e vedi giornata, settimana e mese a colpo d’occhio. Gratis, senza account, e ciò che registri non lascia mai il tuo dispositivo.",
+    "imageAlt": "La schermata principale di Time Tracker: una tessera per attività con il tempo di oggi"
+  },
+  "ld": {
+    "description": "Un time tracker con un tocco: un grande pulsante per attività, toccalo quando cambi e vedi giornata, settimana e mese. Nessun account; tutto resta sul tuo dispositivo.",
+    "os": "Qualsiasi (browser web)",
+    "requirements": "Richiede un browser moderno con JavaScript e IndexedDB"
+  },
+  "hero": {
+    "title": "Scopri dove è finita davvero la tua giornata",
+    "lead": "Un time tracker con un tocco: un grande pulsante per ogni cosa che fai. Toccalo quando cambi. In serata vedi le riunioni, le revisioni e le “domande veloci” ora per ora, senza compilare un solo foglio ore. E resta tutto tuo: nessun account, e niente di ciò che registri lascia mai il tuo dispositivo.",
+    "demo": "Prova la demo",
+    "fine": "La demo usa tre settimane di dati di esempio in un ambiente separato. Niente di ciò che fai lì tocca il tuo tracker vero. Gratis.",
+    "imageAlt": "Toccando tra le attività: la tessera attiva si illumina e la linea temporale di oggi cresce in basso"
+  },
+  "switching": {
+    "title": "Cambiare costa un tocco",
+    "p1": "Funziona come un orologio da scacchi. Tocca Riunione e l’orologio passa a Riunione; tocca Compito e va avanti. Gira una sola cosa alla volta, quindi niente viene contato due volte e niente sfugge.",
+    "p2": "I pulsanti sono abbastanza grandi da colpirli senza guardare, su un portatile, un tablet accanto alla scrivania o un touchscreen a parete.",
+    "imageAlt": "La schermata principale con il tema scuro Graphite: una tessera per attività con il tempo di oggi, quella attiva evidenziata"
+  },
+  "backdate": {
+    "title": "Dimenticato di cambiare? Sistema in due tocchi",
+    "p1": "Trascinato in una chiamata e te ne sei ricordato venti minuti dopo? Tieni premuta l’attività e scegli “attiva dalle 10:40”. Il tempo viene tolto a ciò che era in corso, così la giornata torna al minuto.",
+    "p2": "Ogni sessione della giornata è lì, pronta da accorciare, spostare o eliminare.",
+    "imageAlt": "Tenere premuta un’attività apre le sessioni di oggi e i pulsanti rapidi per avviarla prima"
+  },
+  "privacy": {
+    "title": "Privato per progetto, non per promessa",
+    "p1": "La maggior parte dei time tracker vuole un account e poi carica ogni minuto della tua giornata nel suo cloud. Questo non ha dove mandarlo. Le tue sessioni vivono nella memoria del browser su questo dispositivo, ed è l’unica copia.",
+    "p2": "Niente registrazione, niente pubblicità, niente cookie. Registra il dentista, il colloquio di lavoro e il pranzo lungo senza chiederti chi altro può vederli."
+  },
+  "vault": {
+    "label": "Cosa resta privato",
+    "account": { "title": "Nessun account", "text": "Niente e-mail, niente password. Apri e inizia a toccare." },
+    "device": { "title": "Resta su questo dispositivo", "text": "Niente di ciò che registri viene mai caricato da nessuna parte." },
+    "nobody": { "title": "Nessuno che sbircia", "text": "Niente pubblicità, niente cookie. Il sito conta le visite in modo anonimo, mai ciò che registri, e puoi disattivarlo." },
+    "export": { "title": "Tuo da portare via", "text": "Esporta un file di backup quando vuoi e importalo su un altro dispositivo." }
+  },
+  "summary": {
+    "title": "Guarda la settimana, non solo oggi",
+    "p1": "Giorno, settimana, mese o qualsiasi intervallo scegli. Ogni giorno sta sullo stesso orologio, così inizi in ritardo, pranzi lunghi e martedì pieni di riunioni saltano all’occhio.",
+    "p2": "Etichetta le attività con categorie tue, come lavoro profondo contro superficiale o da solo contro con altri, e tutto il riepilogo si riorganizza attorno a loro.",
+    "imageAlt": "Il riepilogo passa da un giorno a una settimana raggruppata per concentrazione, poi a una mappa di calore del mese"
+  },
+  "phone": {
+    "title": "Sta anche in tasca",
+    "p1": "Sul telefono i pulsanti si dispongono due per riga e i menu scorrono dal basso. Aggiungilo alla schermata Home e si apre come qualsiasi altra app.",
+    "imageAlt": "L’app su un telefono: tessere, il foglio dell’attività, il menu Altro e il riepilogo"
+  },
+  "private": {
+    "title": "La tua giornata non riguarda nessun altro",
+    "text": "Nessun account, e nessun server che veda mai la tua giornata. Tutto ciò che registri resta in questo browser, su questo dispositivo. Esporta un file di backup quando vuoi e importalo altrove. Il sito conta solo le visite, in modo anonimo e senza cookie, così so che vale la pena mantenerlo.",
+    "link": "Come funziona"
+  },
+  "extras": {
+    "label": "Incluso anche",
+    "targets": { "title": "Obiettivi giornalieri", "text": "Vedi a colpo d’occhio se ti sei preso quell’ora di pause." },
+    "profiles": { "title": "Profili", "text": "Tieni separati lavoro e casa, ognuno con i suoi pulsanti e la sua cronologia." },
+    "layouts": { "title": "Tre layout", "text": "Tessere, righe o cerchi, e se vuoi pulsanti che crescono con l’uso." },
+    "themes": { "title": "Sette temi", "text": "Chiaro, scuro o come il sistema, oppure importa il tuo." },
+    "day": { "title": "La tua giornata", "text": "Fai iniziare la giornata alle 4 se lavori fino a tardi; si rinnova da sola." },
+    "fullscreen": { "title": "Schermo intero", "text": "Lascialo acceso su uno schermo libero come orologio da parete del tuo lavoro." }
+  },
+  "closing": {
+    "title": "Dagli una giornata.",
+    "lead": "Domani registra tutto dal primo caffè all’ultimo messaggio e guarda la linea temporale la sera. Quasi tutti restano sorpresi.",
+    "demo": "Prima prova la demo"
+  }
+}

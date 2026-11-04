@@ -46,6 +46,18 @@ describe('site pages', () => {
     expect(html).toContain('<a href="../uk/" hreflang="uk" lang="uk" data-locale="uk">');
   });
 
+  it('mark right-to-left languages with dir', () => {
+    expect(renderPage(page('home'), 'fa', locales)).toContain('<html lang="fa" dir="rtl"');
+    expect(renderPage(page('home'), 'ja', locales)).not.toContain('dir="rtl"');
+  });
+
+  it('pick the language from a dropdown of links with flags, the current one shown and marked', () => {
+    const html = renderPage(page('similar'), 'de', locales);
+    expect(html).toContain('<summary aria-label="Sprache: Deutsch"><img class="flag" src="../../flags/de.svg"');
+    for (const l of locales) expect(html).toContain(`hreflang="${l.code}" lang="${l.code}" data-locale="${l.code}"`);
+    expect(html).toMatch(/data-locale="de" aria-current="true"><img class="flag" src="\.\.\/\.\.\/flags\/de\.svg"[^>]*loading="lazy">/);
+  });
+
   it('serve the not-found page from any depth, unindexed and unlisted', () => {
     expect(pagePath(page('404'), 'uk', locales)).toBe('uk/404.html');
     const html = renderPage(page('404'), 'uk', locales);

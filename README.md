@@ -108,8 +108,9 @@ See `docs/SPEC.md` §20 for what is collected; the privacy page (`src/site/pages
 - Switches shorter than a minute are not counted (the time goes to the next or previous activity); change the
   threshold in **Settings → Day → Minimum switch**. The same section sets the reset hour and the first day of the week.
 - The screen stays on while the app is open; turn this off in **Settings → Device → Keep the screen on**.
-- **Language:** English or Ukrainian, from the browser's languages; change it in **Settings → Device → Language** or
-  with the switcher in the website's footer. The website has its own URL per language (`/uk/`, …).
+- **Language:** English, Ukrainian, Spanish, German, French, Japanese, Portuguese, Turkish, Italian, Persian, Dutch
+  or Chinese, from the browser's languages; change it in **Settings → Device → Language** or with the flag picker in
+  the website's footer. The website has its own URL per language (`/uk/`, `/de/`, …).
 - **Esc** goes back (popup → screen → main). In full screen, hold Esc to leave full screen.
 
 ## Languages

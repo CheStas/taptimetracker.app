@@ -2,8 +2,19 @@
 // docs/SPEC.md). The choice is localStorage `locale`, so a language picked on the site carries over to the app.
 import list from '../locales/locales.json';
 
-export interface Locale { code: string; name: string; ogLocale: string }
-export const LOCALES: Locale[] = list;
+export interface Locale {
+  code: string;
+  /** In its own language, for the switcher and the setting. */
+  name: string;
+  ogLocale: string;
+  /** The flag shown next to the name (public/flags/<flag>.svg, a country code). */
+  flag: string;
+  /** 'rtl' for right-to-left scripts (Persian). */
+  dir?: 'rtl';
+  /** The tag for Intl (dates, numbers) when it is not the code: Persian uses the Gregorian calendar and Latin digits, like the rest of the app. */
+  intl?: string;
+}
+export const LOCALES = list as Locale[];
 export const DEFAULT_LOCALE = LOCALES[0].code;
 const KEY = 'locale';
 

@@ -1,4 +1,14 @@
 [
-  { "code": "en", "name": "English", "ogLocale": "en_US" },
-  { "code": "uk", "name": "Українська", "ogLocale": "uk_UA" }
+  { "code": "en", "name": "English", "ogLocale": "en_US", "flag": "gb" },
+  { "code": "es", "name": "Español", "ogLocale": "es_ES", "flag": "es" },
+  { "code": "de", "name": "Deutsch", "ogLocale": "de_DE", "flag": "de" },
+  { "code": "fr", "name": "Français", "ogLocale": "fr_FR", "flag": "fr" },
+  { "code": "ja", "name": "日本語", "ogLocale": "ja_JP", "flag": "jp" },
+  { "code": "pt", "name": "Português", "ogLocale": "pt_BR", "flag": "br" },
+  { "code": "tr", "name": "Türkçe", "ogLocale": "tr_TR", "flag": "tr" },
+  { "code": "it", "name": "Italiano", "ogLocale": "it_IT", "flag": "it" },
+  { "code": "fa", "name": "فارسی", "ogLocale": "fa_IR", "flag": "ir", "dir": "rtl", "intl": "fa-u-ca-gregory-nu-latn" },
+  { "code": "nl", "name": "Nederlands", "ogLocale": "nl_NL", "flag": "nl" },
+  { "code": "zh", "name": "中文", "ogLocale": "zh_CN", "flag": "cn" },
+  { "code": "uk", "name": "Українська", "ogLocale": "uk_UA", "flag": "ua" }
 ]
