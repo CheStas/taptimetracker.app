@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { PAGES, checkLocales, loadLocales, pageLocales, pagePath, renderPage, sitemap } from '../scripts/sitePages.ts';
+import { CONTACT, PAGES, checkLocales, loadLocales, pageLocales, pagePath, renderPage, sitemap } from '../scripts/sitePages.ts';
 import { matchLocale } from '../src/locale.ts';
 
 const locales = loadLocales();
@@ -83,5 +83,54 @@ describe('matchLocale', () => {
     expect(matchLocale(['de-DE', 'uk-UA', 'en'], ['en', 'uk'])).toBe('uk');
     expect(matchLocale(['EN-gb'], ['en', 'uk'])).toBe('en');
     expect(matchLocale(['ru', 'pl'], ['en', 'uk'])).toBeUndefined();
+  });
+});
+
+describe('structured data and answers', () => {
+  /** Every JSON-LD block of a page, parsed. */
+  const ld = (html: string) => [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
+
+  it('describe the app, its FAQ and its how-tos on the home page, in its language', () => {
+    for (const l of locales) {
+      const html = renderPage(page('home'), l.code, locales);
+      const types = ld(html).map((d) => d['@type']);
+      expect(types).toEqual(['WebApplication', 'FAQPage', 'HowTo', 'HowTo']);
+      const [app, faq, ...howtos] = ld(html);
+      expect(app.name).toBe('Tap Time Tracker');
+      expect(app.publisher.email).toBe(CONTACT);
+      expect(faq.inLanguage).toBe(l.code);
+      // Every question in the markup is a visible heading, and every step a visible list item.
+      expect(faq.mainEntity.length).toBe(7);
+      for (const q of faq.mainEntity) expect(html).toContain(`<h3>${q.name}</h3>`);
+      for (const h of howtos) expect(h.step.length).toBe(3);
+      expect(html).toContain('<section class="faq" id="faq">');
+      expect(html.match(/<ol class="steps"/g)?.length).toBe(2);
+    }
+  });
+
+  it('give every other listed page a WebPage with breadcrumbs, and the similar page its ranked list', () => {
+    const [webPage, list] = ld(renderPage(page('similar'), 'de', locales));
+    expect(webPage['@type']).toBe('WebPage');
+    expect(webPage.name).toBe('Ähnliche Apps — Tap Time Tracker');
+    expect(webPage.breadcrumb.itemListElement.map((i: { item: string }) => i.item))
+      .toEqual(['https://taptimetracker.app/de/', 'https://taptimetracker.app/de/similar/']);
+    expect(list['@type']).toBe('ItemList');
+    expect(list.itemListElement[0]).toMatchObject({ position: 1, name: 'TickTappy' });
+    const privacy = ld(renderPage(page('privacy'), 'en', locales));
+    expect(privacy[0].breadcrumb.itemListElement[1].name).toBe('Privacy');
+    expect(ld(renderPage(page('404'), 'en', locales))).toEqual([]);
+  });
+
+  it('compare the similar apps in a table', () => {
+    const html = renderPage(page('similar'), 'en', locales);
+    expect(html).toContain('<table class="tools">');
+    expect(html.match(/<th scope="row">/g)?.length).toBe(13);
+  });
+
+  it('link the FAQ and the contact address from every footer', () => {
+    expect(renderPage(page('home'), 'en', locales)).toContain('<a href="#faq">FAQ</a>');
+    const html = renderPage(page('similar'), 'uk', locales);
+    expect(html).toContain('<a href="../../uk/#faq">Часті запитання</a>');
+    expect(html).toContain(`<a href="mailto:${CONTACT}">${CONTACT}</a>`);
   });
 });

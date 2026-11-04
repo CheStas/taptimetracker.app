@@ -1,8 +1,8 @@
 {
-  "title": "Apps parecidos — Time Tracker",
-  "description": "Outros registros de tempo de um toque, do mais ao menos parecido com o Time Tracker, e no que eles diferem.",
+  "title": "Apps parecidos — Tap Time Tracker",
+  "description": "Outros registros de tempo de um toque, do mais ao menos parecido com o Tap Time Tracker, e no que eles diferem.",
   "heading": "Apps parecidos",
-  "intro": "O Time Tracker funciona como um relógio de xadrez: toque numa atividade para começá-la, toque em outra para trocar; só uma corre por vez, e tempos passados podem ser corrigidos. Estes apps funcionam do mesmo jeito ou de forma parecida. Estão ordenados <strong>do mais ao menos parecido</strong>.",
+  "intro": "O Tap Time Tracker funciona como um relógio de xadrez: toque numa atividade para começá-la, toque em outra para trocar; só uma corre por vez, e tempos passados podem ser corrigidos. Estes apps funcionam do mesmo jeito ou de forma parecida. Estão ordenados <strong>do mais ao menos parecido</strong>.",
   "takeaway": {
     "lead": "<strong>Resumindo:</strong> nenhum reúne tudo isto:",
     "web": "uma página web que roda em qualquer lugar, até como um único arquivo offline",
@@ -13,6 +13,8 @@
   },
   "source": "código-fonte",
   "timeryFor": "para",
+  "rank": "#",
+  "app": "App",
   "platform": "Plataforma",
   "similar": "No que é parecido",
   "differences": "Principais diferenças",
@@ -79,7 +81,7 @@
     },
     "t13": {
       "platform": "Android / Linux",
-      "similar": "A <strong>interação de relógio de xadrez</strong> em que o Time Tracker se inspira: botões grandes, um toque passa o relógio para o outro lado.",
+      "similar": "A <strong>interação de relógio de xadrez</strong> em que o Tap Time Tracker se inspira: botões grandes, um toque passa o relógio para o outro lado.",
       "differences": "Dois jogadores, contagem regressiva, sem registro, totais ou histórico"
     }
   },

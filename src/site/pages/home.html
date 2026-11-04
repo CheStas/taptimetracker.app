@@ -17,21 +17,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="{{og.imageAlt|attr}}">
   <meta name="twitter:card" content="summary_large_image">
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "{{brand|json}}",
-      "url": "{{@url}}",
-      "inLanguage": "{{@lang}}",
-      "description": "{{ld.description|json}}",
-      "applicationCategory": "ProductivityApplication",
-      "operatingSystem": "{{ld.os|json}}",
-      "browserRequirements": "{{ld.requirements|json}}",
-      "image": "https://taptimetracker.app/og.png",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-    }
-  </script>
+  {{@ld}}
   <link rel="icon" href="{{@root}}favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/src/site/site.css">
   <script type="module" src="/src/site/site.ts"></script>
@@ -69,6 +55,7 @@
       <div class="copy">
         <h2>{{backdate.title}}</h2>
         <p>{{backdate.p1}}</p>
+        {{@steps:backdate}}
         <p>{{backdate.p2}}</p>
       </div>
       <figure class="shot">
@@ -107,6 +94,7 @@
       <div class="copy">
         <h2>{{phone.title}}</h2>
         <p>{{phone.p1}}</p>
+        {{@steps:phone}}
       </div>
       <figure class="shot">
         <img src="/docs/screenshots/demo-phone.webp" width="300" height="649" loading="lazy"
@@ -128,6 +116,13 @@
         <li><strong>{{extras.day.title}}</strong> {{extras.day.text}}</li>
         <li><strong>{{extras.fullscreen.title}}</strong> {{extras.fullscreen.text}}</li>
       </ul>
+    </section>
+
+    <section class="faq" id="faq">
+      <h2>{{faq.title}}</h2>
+      <div class="qa-list">
+        {{@faq}}
+      </div>
     </section>
 
     <section class="closing">

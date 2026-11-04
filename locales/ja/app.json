@@ -95,7 +95,7 @@
     "statsLabel": "匿名の利用統計を共有する",
     "statsHint": "どの画面や機能が使われているかだけで、記録内容は送りません。Cookie なし、アカウントなし、個人情報なし。",
     "statsDnt": "ブラウザーがサイトにトラッキングしないよう求めているため、オンにするまでオフのままです。",
-    "statsPlea": "決めるのはあなたで、いつでもオフにできます。それでも、できればオンのままにしてください。Time Tracker は無料で、このカウントが誰かに使われていると知る唯一の手段です。誰も使っていなければ、更新は止まり、提供も終了します。",
+    "statsPlea": "決めるのはあなたで、いつでもオフにできます。それでも、できればオンのままにしてください。Tap Time Tracker は無料で、このカウントが誰かに使われていると知る唯一の手段です。誰も使っていなければ、更新は止まり、提供も終了します。",
     "statsLink": "収集される内容"
   },
   "layout": {
@@ -460,7 +460,7 @@
     "resetTitle": "1日をリセットしますか？",
     "resetStops": "{name} は今すぐ停止します。",
     "resetBody": "{date} は合計 {total} の記録で締めくくられ、新しい 1日が始まります。締めた日はサマリーからいつでも編集できます。",
-    "closeTitle": "Time Tracker を閉じますか？",
+    "closeTitle": "Tap Time Tracker を閉じますか？",
     "closeRunning": "アプリを閉じている間も {name} のカウントは続きます。停止や切り替えはアプリを開き直して行ってください。",
     "closeIdle": "実行中のものはありません。",
     "closeYourself": "ウィンドウはご自身で閉じてください",
@@ -468,7 +468,7 @@
     "keepsCounting": "{name} のカウントは続きます。"
   },
   "errors": {
-    "notExport": "Time Tracker の書き出しファイルではありません",
+    "notExport": "Tap Time Tracker の書き出しファイルではありません",
     "itermXml": "不明な XML ファイルです（iTerm の .itermcolors ファイルが必要です）",
     "jsonTheme": "不明な JSON テーマです（このアプリのテーマファイル、VS Code のカラーテーマ、または base16 が必要です）",
     "themeFile": "不明なテーマファイルです（対応形式：このアプリのテーマ .json、VS Code .json、base16 .yaml/.json、Alacritty .toml、iTerm .itermcolors）"

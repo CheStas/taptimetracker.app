@@ -1,8 +1,8 @@
 {
-  "title": "Similar apps — Time Tracker",
-  "description": "Other one-tap time trackers, ordered from most to least similar to Time Tracker, and how they differ.",
+  "title": "Similar apps — Tap Time Tracker",
+  "description": "Other one-tap time trackers, ordered from most to least similar to Tap Time Tracker, and how they differ.",
   "heading": "Similar apps",
-  "intro": "Time Tracker works like a chess clock: tap an activity to start it, tap another to switch, only one runs at a time, and past times can be corrected. These apps work in the same or a similar way. They are ordered <strong>from most to least similar</strong>.",
+  "intro": "Tap Time Tracker works like a chess clock: tap an activity to start it, tap another to switch, only one runs at a time, and past times can be corrected. These apps work in the same or a similar way. They are ordered <strong>from most to least similar</strong>.",
   "takeaway": {
     "lead": "<strong>In short:</strong> none of them combines all of the following:",
     "web": "a web page that runs anywhere, even as a single offline file",
@@ -13,6 +13,8 @@
   },
   "source": "source",
   "timeryFor": "for",
+  "rank": "#",
+  "app": "App",
   "platform": "Platform",
   "similar": "Why it is similar",
   "differences": "Main differences",
@@ -79,7 +81,7 @@
     },
     "t13": {
       "platform": "Android / Linux",
-      "similar": "The <strong>chess-clock interaction</strong> Time Tracker is modelled on: big buttons, one tap hands the clock to the other side.",
+      "similar": "The <strong>chess-clock interaction</strong> Tap Time Tracker is modelled on: big buttons, one tap hands the clock to the other side.",
       "differences": "Two players, counts down, no logging, totals or history"
     }
   },

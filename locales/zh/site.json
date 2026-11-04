@@ -1,10 +1,11 @@
 {
-  "brand": "Time Tracker",
+  "brand": "Tap Time Tracker",
   "openApp": "打开应用",
   "footer": {
     "pages": "页面",
     "language": "语言",
     "home": "首页",
+    "faq": "常见问题",
     "similar": "同类应用",
     "privacy": "隐私",
     "terms": "使用条款",

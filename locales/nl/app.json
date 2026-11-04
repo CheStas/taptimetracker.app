@@ -95,7 +95,7 @@
     "statsLabel": "Anonieme gebruiksstatistieken delen",
     "statsHint": "Welke schermen en functies worden gebruikt, nooit wat je bijhoudt. Geen cookies, geen account, niets persoonlijks.",
     "statsDnt": "Je browser vraagt sites om niet te volgen, dus dit staat uit tot je het aanzet.",
-    "statsPlea": "Het is jouw keuze, en je kunt het uitzetten. Overweeg wel om het aan te laten: Time Tracker is gratis, en deze tellingen zijn de enige manier om te weten dat iemand het gebruikt. Als niemand het gebruikt, komen er geen updates meer en wordt het stopgezet.",
+    "statsPlea": "Het is jouw keuze, en je kunt het uitzetten. Overweeg wel om het aan te laten: Tap Time Tracker is gratis, en deze tellingen zijn de enige manier om te weten dat iemand het gebruikt. Als niemand het gebruikt, komen er geen updates meer en wordt het stopgezet.",
     "statsLink": "Wat er wordt verzameld"
   },
   "layout": {
@@ -469,7 +469,7 @@
     "resetTitle": "De dag resetten?",
     "resetStops": "{name} stopt nu.",
     "resetBody": "{date} sluit met {total} bijgehouden en een nieuwe dag begint. Je kunt de gesloten dag nog steeds bewerken via het Overzicht.",
-    "closeTitle": "Time Tracker sluiten?",
+    "closeTitle": "Tap Time Tracker sluiten?",
     "closeRunning": "{name} blijft tellen terwijl de app gesloten is. Open de app opnieuw om te stoppen of te wisselen.",
     "closeIdle": "Er loopt niets.",
     "closeYourself": "Sluit het venster zelf",
@@ -477,7 +477,7 @@
     "keepsCounting": "{name} blijft tellen."
   },
   "errors": {
-    "notExport": "Geen Time Tracker-export",
+    "notExport": "Geen Tap Time Tracker-export",
     "itermXml": "Onbekend XML-bestand (verwacht: een iTerm-bestand .itermcolors)",
     "jsonTheme": "Onbekend JSON-thema (verwacht: ons themabestand, een VS Code-kleurthema of base16)",
     "themeFile": "Onbekend themabestand (ondersteund: ons thema .json, VS Code .json, base16 .yaml/.json, Alacritty .toml, iTerm .itermcolors)"

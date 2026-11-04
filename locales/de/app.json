@@ -95,7 +95,7 @@
     "statsLabel": "Anonyme Nutzungsstatistiken teilen",
     "statsHint": "Welche Bildschirme und Funktionen genutzt werden, nie was du erfasst. Keine Cookies, kein Konto, nichts Persönliches.",
     "statsDnt": "Dein Browser bittet Websites, nicht zu tracken, also ist das aus, bis du es einschaltest.",
-    "statsPlea": "Es ist deine Entscheidung, und du kannst es ausschalten. Bitte überleg dir, es anzulassen: Time Tracker ist kostenlos, und diese Zählungen sind die einzige Möglichkeit zu wissen, ob es jemand nutzt. Wenn niemand, gibt es keine Updates mehr und es wird eingestellt.",
+    "statsPlea": "Es ist deine Entscheidung, und du kannst es ausschalten. Bitte überleg dir, es anzulassen: Tap Time Tracker ist kostenlos, und diese Zählungen sind die einzige Möglichkeit zu wissen, ob es jemand nutzt. Wenn niemand, gibt es keine Updates mehr und es wird eingestellt.",
     "statsLink": "Was erfasst wird"
   },
   "layout": {
@@ -469,7 +469,7 @@
     "resetTitle": "Tag zurücksetzen?",
     "resetStops": "{name} stoppt jetzt.",
     "resetBody": "{date} schließt mit {total} erfasst und ein neuer Tag beginnt. Den abgeschlossenen Tag kannst du weiterhin in der Übersicht bearbeiten.",
-    "closeTitle": "Time Tracker schließen?",
+    "closeTitle": "Tap Time Tracker schließen?",
     "closeRunning": "{name} zählt weiter, während die App geschlossen ist. Öffne die App wieder, um zu stoppen oder zu wechseln.",
     "closeIdle": "Es läuft nichts.",
     "closeYourself": "Schließe das Fenster selbst",

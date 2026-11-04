@@ -95,7 +95,7 @@
     "statsLabel": "Anonim kullanım istatistiklerini paylaş",
     "statsHint": "Hangi ekranların ve özelliklerin kullanıldığı; kaydettikleriniz asla. Çerez yok, hesap yok, kişisel hiçbir şey yok.",
     "statsDnt": "Tarayıcınız sitelerden izleme yapmamalarını istiyor, bu yüzden siz açana kadar bu kapalı.",
-    "statsPlea": "Karar sizin ve kapatabilirsiniz. Yine de açık bırakmayı düşünün: Time Tracker ücretsizdir ve bu sayımlar, birinin onu kullandığını bilmenin tek yoludur. Kimse kullanmıyorsa güncelleme almaz ve kullanımdan kaldırılır.",
+    "statsPlea": "Karar sizin ve kapatabilirsiniz. Yine de açık bırakmayı düşünün: Tap Time Tracker ücretsizdir ve bu sayımlar, birinin onu kullandığını bilmenin tek yoludur. Kimse kullanmıyorsa güncelleme almaz ve kullanımdan kaldırılır.",
     "statsLink": "Neler toplanıyor"
   },
   "layout": {
@@ -469,7 +469,7 @@
     "resetTitle": "Gün sıfırlansın mı?",
     "resetStops": "{name} şimdi durur.",
     "resetBody": "{date}, {total} kayıtla kapanır ve yeni bir gün başlar. Kapanan günü Özet’ten düzenlemeye devam edebilirsiniz.",
-    "closeTitle": "Time Tracker kapatılsın mı?",
+    "closeTitle": "Tap Time Tracker kapatılsın mı?",
     "closeRunning": "{name}, uygulama kapalıyken saymaya devam eder. Durdurmak ya da geçmek için uygulamayı yeniden açın.",
     "closeIdle": "Çalışan bir şey yok.",
     "closeYourself": "Pencereyi kendiniz kapatın",
@@ -477,7 +477,7 @@
     "keepsCounting": "{name} saymaya devam ediyor."
   },
   "errors": {
-    "notExport": "Bir Time Tracker dışa aktarımı değil",
+    "notExport": "Bir Tap Time Tracker dışa aktarımı değil",
     "itermXml": "Bilinmeyen XML dosyası (bir iTerm .itermcolors dosyası bekleniyordu)",
     "jsonTheme": "Bilinmeyen JSON teması (bizim tema dosyamız, bir VS Code renk teması ya da base16 bekleniyordu)",
     "themeFile": "Bilinmeyen tema dosyası (desteklenenler: bizim tema .json, VS Code .json, base16 .yaml/.json, Alacritty .toml, iTerm .itermcolors)"

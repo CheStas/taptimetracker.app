@@ -95,7 +95,7 @@
     "statsLabel": "Condividi statistiche d’uso anonime",
     "statsHint": "Quali schermate e funzioni vengono usate, mai ciò che registri. Niente cookie, niente account, niente di personale.",
     "statsDnt": "Il tuo browser chiede ai siti di non tracciare, quindi resta disattivato finché non lo attivi.",
-    "statsPlea": "La scelta è tua, e puoi disattivarlo. Però pensa a lasciarlo attivo: Time Tracker è gratuito, e questi conteggi sono l’unico modo per sapere se qualcuno lo usa. Se nessuno lo usa, non riceverà più aggiornamenti e verrà ritirato.",
+    "statsPlea": "La scelta è tua, e puoi disattivarlo. Però pensa a lasciarlo attivo: Tap Time Tracker è gratuito, e questi conteggi sono l’unico modo per sapere se qualcuno lo usa. Se nessuno lo usa, non riceverà più aggiornamenti e verrà ritirato.",
     "statsLink": "Cosa viene raccolto"
   },
   "layout": {
@@ -478,7 +478,7 @@
     "resetTitle": "Azzerare la giornata?",
     "resetStops": "{name} si ferma ora.",
     "resetBody": "{date} si chiude con {total} registrato e inizia una nuova giornata. Puoi ancora modificare la giornata chiusa dal Riepilogo.",
-    "closeTitle": "Chiudere Time Tracker?",
+    "closeTitle": "Chiudere Tap Time Tracker?",
     "closeRunning": "{name} continua a contare mentre l’app è chiusa. Riapri l’app per fermarla o cambiare.",
     "closeIdle": "Non c’è niente in corso.",
     "closeYourself": "Chiudi tu la finestra",
@@ -486,7 +486,7 @@
     "keepsCounting": "{name} continua a contare."
   },
   "errors": {
-    "notExport": "Non è un’esportazione di Time Tracker",
+    "notExport": "Non è un’esportazione di Tap Time Tracker",
     "itermXml": "File XML sconosciuto (era atteso un file .itermcolors di iTerm)",
     "jsonTheme": "Tema JSON sconosciuto (era atteso il nostro file di tema, un tema colori di VS Code o base16)",
     "themeFile": "File di tema sconosciuto (supportati: il nostro tema .json, VS Code .json, base16 .yaml/.json, Alacritty .toml, iTerm .itermcolors)"

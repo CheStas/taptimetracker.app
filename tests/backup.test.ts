@@ -93,7 +93,7 @@ test('exports from before the rename (app "activity-tracker") still import', () 
 });
 
 test('other files are rejected', () => {
-  assert.throws(() => readImport({ app: 'something-else' }, 'pB', ids()), /Not a Time Tracker export/);
+  assert.throws(() => readImport({ app: 'something-else' }, 'pB', ids()), /Not a Tap Time Tracker export/);
   assert.throws(() => readImport(null, 'pB', ids()));
 });
 

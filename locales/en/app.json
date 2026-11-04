@@ -95,7 +95,7 @@
     "statsLabel": "Share anonymous usage stats",
     "statsHint": "Which screens and features get used, never what you track. No cookies, no account, nothing personal.",
     "statsDnt": "Your browser asks sites not to track, so this is off until you turn it on.",
-    "statsPlea": "It is your choice, and you can turn it off. Please consider leaving it on: Time Tracker is free, and these counts are the only way to know anyone uses it. If nobody does, it gets no more updates and will be retired.",
+    "statsPlea": "It is your choice, and you can turn it off. Please consider leaving it on: Tap Time Tracker is free, and these counts are the only way to know anyone uses it. If nobody does, it gets no more updates and will be retired.",
     "statsLink": "What is collected"
   },
   "layout": {
@@ -469,7 +469,7 @@
     "resetTitle": "Reset the day?",
     "resetStops": "{name} stops now.",
     "resetBody": "{date} closes with {total} tracked and a new day starts. You can still edit the closed day from Summary.",
-    "closeTitle": "Close Time Tracker?",
+    "closeTitle": "Close Tap Time Tracker?",
     "closeRunning": "{name} keeps counting while the app is closed. Open the app again to stop it or switch.",
     "closeIdle": "Nothing is running.",
     "closeYourself": "Close the window yourself",
@@ -477,7 +477,7 @@
     "keepsCounting": "{name} keeps counting."
   },
   "errors": {
-    "notExport": "Not a Time Tracker export",
+    "notExport": "Not a Tap Time Tracker export",
     "itermXml": "Unknown XML file (expected an iTerm .itermcolors file)",
     "jsonTheme": "Unknown JSON theme (expected our theme file, a VS Code color theme or base16)",
     "themeFile": "Unknown theme file (supported: our theme .json, VS Code .json, base16 .yaml/.json, Alacritty .toml, iTerm .itermcolors)"

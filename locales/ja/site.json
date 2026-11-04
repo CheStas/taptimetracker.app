@@ -1,10 +1,11 @@
 {
-  "brand": "Time Tracker",
+  "brand": "Tap Time Tracker",
   "openApp": "アプリを開く",
   "footer": {
     "pages": "ページ",
     "language": "言語",
     "home": "ホーム",
+    "faq": "よくある質問",
     "similar": "類似アプリ",
     "privacy": "プライバシー",
     "terms": "利用規約",

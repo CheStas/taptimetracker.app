@@ -1,8 +1,8 @@
 {
-  "title": "Ähnliche Apps — Time Tracker",
-  "description": "Andere Zeiterfassungen mit einem Tipp, geordnet von am ähnlichsten bis am wenigsten ähnlich zu Time Tracker, und worin sie sich unterscheiden.",
+  "title": "Ähnliche Apps — Tap Time Tracker",
+  "description": "Andere Zeiterfassungen mit einem Tipp, geordnet von am ähnlichsten bis am wenigsten ähnlich zu Tap Time Tracker, und worin sie sich unterscheiden.",
   "heading": "Ähnliche Apps",
-  "intro": "Time Tracker funktioniert wie eine Schachuhr: Tippe auf eine Tätigkeit, um sie zu starten, auf eine andere, um zu wechseln; es läuft immer nur eine, und vergangene Zeiten lassen sich korrigieren. Diese Apps funktionieren genauso oder ähnlich. Sie sind <strong>von am ähnlichsten bis am wenigsten ähnlich</strong> geordnet.",
+  "intro": "Tap Time Tracker funktioniert wie eine Schachuhr: Tippe auf eine Tätigkeit, um sie zu starten, auf eine andere, um zu wechseln; es läuft immer nur eine, und vergangene Zeiten lassen sich korrigieren. Diese Apps funktionieren genauso oder ähnlich. Sie sind <strong>von am ähnlichsten bis am wenigsten ähnlich</strong> geordnet.",
   "takeaway": {
     "lead": "<strong>Kurz gesagt:</strong> keine vereint all das:",
     "web": "eine Webseite, die überall läuft, sogar als einzelne Offline-Datei",
@@ -13,6 +13,8 @@
   },
   "source": "Quelle",
   "timeryFor": "für",
+  "rank": "#",
+  "app": "App",
   "platform": "Plattform",
   "similar": "Was ähnlich ist",
   "differences": "Wichtigste Unterschiede",
@@ -79,7 +81,7 @@
     },
     "t13": {
       "platform": "Android / Linux",
-      "similar": "Die <strong>Schachuhr-Bedienung</strong>, nach der Time Tracker gestaltet ist: große Knöpfe, ein Tipp gibt die Uhr an die andere Seite weiter.",
+      "similar": "Die <strong>Schachuhr-Bedienung</strong>, nach der Tap Time Tracker gestaltet ist: große Knöpfe, ein Tipp gibt die Uhr an die andere Seite weiter.",
       "differences": "Zwei Spieler, zählt herunter, kein Protokoll, keine Summen oder Historie"
     }
   },

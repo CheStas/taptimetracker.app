@@ -1,10 +1,10 @@
 {
-  "title": "Time Tracker — registra il tempo con un tocco, e tutto resta sul tuo dispositivo",
+  "title": "Tap Time Tracker — registra il tempo con un tocco, e tutto resta sul tuo dispositivo",
   "description": "Un time tracker gratuito con un tocco: un grande pulsante per attività, toccalo quando cambi e vedi la tua giornata, settimana e mese a colpo d’occhio. Nessun account, e ciò che registri non lascia mai il tuo dispositivo.",
   "og": {
-    "title": "Time Tracker — scopri dove è finita la tua giornata",
+    "title": "Tap Time Tracker — scopri dove è finita la tua giornata",
     "description": "Un grande pulsante per attività: toccalo quando cambi e vedi giornata, settimana e mese a colpo d’occhio. Gratis, senza account, e ciò che registri non lascia mai il tuo dispositivo.",
-    "imageAlt": "La schermata principale di Time Tracker: una tessera per attività con il tempo di oggi"
+    "imageAlt": "La schermata principale di Tap Time Tracker: una tessera per attività con il tempo di oggi"
   },
   "ld": {
     "description": "Un time tracker con un tocco: un grande pulsante per attività, toccalo quando cambi e vedi giornata, settimana e mese. Nessun account; tutto resta sul tuo dispositivo.",
@@ -13,26 +13,32 @@
   },
   "hero": {
     "title": "Scopri dove è finita davvero la tua giornata",
-    "lead": "Un time tracker con un tocco: un grande pulsante per ogni cosa che fai. Toccalo quando cambi. In serata vedi le riunioni, le revisioni e le “domande veloci” ora per ora, senza compilare un solo foglio ore. E resta tutto tuo: nessun account, e niente di ciò che registri lascia mai il tuo dispositivo.",
+    "lead": "Tap Time Tracker è un time tracker gratuito con un tocco: un grande pulsante per ogni cosa che fai. Toccalo quando cambi. In serata vedi le riunioni, le revisioni e le “domande veloci” ora per ora, senza compilare un solo foglio ore. E resta tutto tuo: nessun account, e niente di ciò che registri lascia mai il tuo dispositivo.",
     "demo": "Prova la demo",
     "fine": "La demo usa tre settimane di dati di esempio in un ambiente separato. Niente di ciò che fai lì tocca il tuo tracker vero. Gratis.",
     "imageAlt": "Toccando tra le attività: la tessera attiva si illumina e la linea temporale di oggi cresce in basso"
   },
   "switching": {
-    "title": "Cambiare costa un tocco",
+    "title": "Come funziona il time tracking con un tocco?",
     "p1": "Funziona come un orologio da scacchi. Tocca Riunione e l’orologio passa a Riunione; tocca Compito e va avanti. Gira una sola cosa alla volta, quindi niente viene contato due volte e niente sfugge.",
     "p2": "I pulsanti sono abbastanza grandi da colpirli senza guardare, su un portatile, un tablet accanto alla scrivania o un touchscreen a parete.",
     "imageAlt": "La schermata principale con il tema scuro Graphite: una tessera per attività con il tempo di oggi, quella attiva evidenziata"
   },
   "backdate": {
-    "title": "Dimenticato di cambiare? Sistema in due tocchi",
-    "p1": "Trascinato in una chiamata e te ne sei ricordato venti minuti dopo? Tieni premuta l’attività e scegli “attiva dalle 10:40”. Il tempo viene tolto a ciò che era in corso, così la giornata torna al minuto.",
+    "title": "Dimenticato di cambiare? Come si sistema?",
+    "p1": "Tieni premuta l’attività che avrebbe dovuto essere in corso e indica quando è iniziata davvero, ad esempio “attiva dalle 10:40”. Il tempo viene tolto a ciò che era in corso, così la giornata torna al minuto. Bastano due tocchi, anche venti minuti dopo la chiamata che ti ha distratto.",
+    "howto": "Come sistemare un cambio dimenticato",
+    "steps": {
+      "s1": "Tieni premuta l’attività che avrebbe dovuto essere in corso.",
+      "s2": "Scegli quando è iniziata: una scorciatoia come <em>15 min fa</em> o l’ora esatta con i pulsanti − e +.",
+      "s3": "Tocca <strong>attiva dalle 10:40</strong>: quel tempo passa da ciò che era in corso a questa attività."
+    },
     "p2": "Ogni sessione della giornata è lì, pronta da accorciare, spostare o eliminare.",
     "imageAlt": "Tenere premuta un’attività apre le sessioni di oggi e i pulsanti rapidi per avviarla prima"
   },
   "privacy": {
-    "title": "Privato per progetto, non per promessa",
-    "p1": "La maggior parte dei time tracker vuole un account e poi carica ogni minuto della tua giornata nel suo cloud. Questo non ha dove mandarlo. Le tue sessioni vivono nella memoria del browser su questo dispositivo, ed è l’unica copia.",
+    "title": "Chi può vedere ciò che registro?",
+    "p1": "Nessuno tranne te. La maggior parte dei time tracker vuole un account e poi carica ogni minuto della tua giornata nel suo cloud. Questo non ha dove mandarlo. Le tue sessioni vivono nella memoria del browser su questo dispositivo, ed è l’unica copia.",
     "p2": "Niente registrazione, niente pubblicità, niente cookie. Registra il dentista, il colloquio di lavoro e il pranzo lungo senza chiederti chi altro può vederli."
   },
   "vault": {
@@ -43,14 +49,20 @@
     "export": { "title": "Tuo da portare via", "text": "Esporta un file di backup quando vuoi e importalo su un altro dispositivo." }
   },
   "summary": {
-    "title": "Guarda la settimana, non solo oggi",
+    "title": "Cosa mostra il riepilogo?",
     "p1": "Giorno, settimana, mese o qualsiasi intervallo scegli. Ogni giorno sta sullo stesso orologio, così inizi in ritardo, pranzi lunghi e martedì pieni di riunioni saltano all’occhio.",
     "p2": "Etichetta le attività con categorie tue, come lavoro profondo contro superficiale o da solo contro con altri, e tutto il riepilogo si riorganizza attorno a loro.",
     "imageAlt": "Il riepilogo passa da un giorno a una settimana raggruppata per concentrazione, poi a una mappa di calore del mese"
   },
   "phone": {
-    "title": "Sta anche in tasca",
-    "p1": "Sul telefono i pulsanti si dispongono due per riga e i menu scorrono dal basso. Aggiungilo alla schermata Home e si apre come qualsiasi altra app.",
+    "title": "Posso usarlo sul telefono?",
+    "p1": "Sì. Sul telefono i pulsanti si dispongono due per riga e i menu scorrono dal basso. Aggiungilo alla schermata Home e si apre come qualsiasi altra app.",
+    "howto": "Come aggiungere Tap Time Tracker alla schermata Home",
+    "steps": {
+      "s1": "Apri <strong>taptimetracker.app/app/</strong> in Safari su iPhone o iPad, oppure in Chrome su Android.",
+      "s2": "iPhone e iPad: tocca Condividi, poi <strong>Aggiungi alla schermata Home</strong>. Android: apri il menu ⋮ e tocca <strong>Installa app</strong> o <strong>Aggiungi a schermata Home</strong>.",
+      "s3": "Aprilo dalla nuova icona. Si avvia direttamente nell’app, anche offline."
+    },
     "imageAlt": "L’app su un telefono: tessere, il foglio dell’attività, il menu Altro e il riepilogo"
   },
   "private": {
@@ -66,6 +78,18 @@
     "themes": { "title": "Sette temi", "text": "Chiaro, scuro o come il sistema, oppure importa il tuo." },
     "day": { "title": "La tua giornata", "text": "Fai iniziare la giornata alle 4 se lavori fino a tardi; si rinnova da sola." },
     "fullscreen": { "title": "Schermo intero", "text": "Lascialo acceso su uno schermo libero come orologio da parete del tuo lavoro." }
+  },
+  "faq": {
+    "title": "Domande frequenti",
+    "items": {
+      "free": { "q": "Tap Time Tracker è gratuito?", "a": "Sì. È gratuito, senza pubblicità, senza versione a pagamento e senza account. Apri l’app in un qualsiasi browser moderno e inizia a toccare; la demo dal vivo ti permette di provarla prima con dati di esempio." },
+      "account": { "q": "Serve un account?", "a": "No. Niente registrazione, email o password. Il tuo tracker vive nel browser in cui lo apri, quindi non c’è niente a cui accedere e niente da dimenticare." },
+      "data": { "q": "Dove vengono salvati i miei dati?", "a": "Nella memoria del tuo browser (IndexedDB) su questo dispositivo, e da nessun’altra parte. Non vengono mai caricati, nemmeno su questo sito. L’unico modo in cui lasciano il browser è un file di backup che esporti tu." },
+      "offline": { "q": "Funziona offline?", "a": "Sì. Dopo averla aperta una volta, l’app si avvia senza connessione e, installata nella schermata Home o sul desktop, funziona come qualsiasi altra app. Registrare non richiede mai internet, perché non viene inviato nulla." },
+      "move": { "q": "Come sposto i miei dati su un altro dispositivo?", "a": "Esporta un backup: nell’app apri Impostazioni → Backup e tocca Esporta JSON. Copia il file sull’altro dispositivo, apri lì l’app e usa Importa JSON nello stesso punto. L’importazione sostituisce i dati di quel profilo, quindi esporta prima se ne contiene." },
+      "several": { "q": "Due attività possono essere in corso insieme?", "a": "No, ed è voluto. Come con un orologio da scacchi, avviare un’attività ferma l’altra, così la giornata non supera mai le 24 ore. Tocca quella in corso per smettere di registrare." },
+      "devices": { "q": "Su quali dispositivi funziona?", "a": "Su qualsiasi cosa abbia un browser moderno: un portatile, un tablet, un telefono o un touchscreen a parete. Ogni browser ha il suo tracker e non c’è sincronizzazione, quindi usa un file di backup per passare dall’uno all’altro." }
+    }
   },
   "closing": {
     "title": "Dagli una giornata.",

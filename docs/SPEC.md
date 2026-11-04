@@ -1,4 +1,4 @@
-| Terms of use: free, as is, may be retired; backups are the user's job; feedback may be used freely. || Privacy: tracked data stays in the browser; anonymous usage stats (§20) with an on/off switch; feedback; hosting. |# Time Tracker — Specification
+# Tap Time Tracker — Specification
 
 This document is the authoritative spec: it covers requirements plus every decision made since. Update it whenever a requirement changes.
 
@@ -173,7 +173,7 @@ theme (§16). Top to bottom:
     regularly.**" and, on the right, an "Export in Settings" link (opens Settings → Backup), styled like "More in
     Settings". The same note, without the link (the Export button is right below), heads Settings → Backup (§8).
   - Then three columns that wrap on narrow screens:
-  1. "Time Tracker", "A chess clock for your work day.", the version.
+  1. "Tap Time Tracker", "A chess clock for your work day.", the version.
   2. Links: What is it? (the site's landing page, §19), Similar apps (`/similar/`, §19), Send feedback (the feedback form, §18, §20). In the
      single-file build What is it? and Similar apps open a popup saying the page is on the website.
   3. **Quick settings** (the same settings as in Settings, changed for the open profile immediately):
@@ -205,7 +205,7 @@ theme (§16). Top to bottom:
 - **Full screen is optional.** The ⛶ button toggles document full screen. The "Start in full screen" setting enters it
   on the first tap, because browsers require a user gesture. While in full screen, Esc is captured (Keyboard Lock) so
   it keeps meaning "back"; **hold Esc** (about 2 s) to leave full screen.
-- **⏻ Close app:** asks first ("Close Time Tracker?" · "Task keeps counting while the app is closed. Open the app
+- **⏻ Close app:** asks first ("Close Tap Time Tracker?" · "Task keeps counting while the app is closed. Open the app
   again to stop it or switch." / idle: "Nothing is running." · Cancel / **Close app**), then closes the window, which
   also stops `start.sh` and its server. A running activity keeps counting while the app is closed (time is derived
   from the start timestamp). When the browser refuses to let the page close the window (a normal tab or a `file://`
@@ -546,7 +546,8 @@ Every popup uses one dialog component.
 | `/app/?demo` | `app/index.html` | The demo: the app on sample data in a throwaway database (below). |
 | `/privacy/` | `src/site/pages/privacy.html` | Privacy: no account, no server, data stays in the browser. English only. |
 | `/terms/` | `src/site/pages/terms.html` | Terms of use: free, as is, backups are the user's job. English only. |
-| `/similar/`, `/uk/similar/` | `src/site/pages/similar.html` | Similar apps: one card per tool, most similar first, then ideas worth borrowing. A normal page with its text in locale files; `docs/SIMILAR-TOOLS.md` stays as the research notes behind it and is not built. Linked from the landing footer and the app's Similar apps. |
+| `/similar/`, `/uk/similar/` | `src/site/pages/similar.html` | Similar apps: a comparison table (rank, app, platform, why it is similar, main differences), most similar first; below 760 px each row becomes a card with labelled fields. A normal page with its text in locale files; `docs/SIMILAR-TOOLS.md` stays as the research notes behind it and is not built. Linked from the landing footer and the app's Similar apps. |
+| `/llms.txt` | `public/llms.txt` | Plain-text summary for AI crawlers (below). |
 | `/404.html`, `/uk/404.html` | `src/site/pages/404.html` | Not found (below): served with status 404 for any missing URL. Not a page of its own. |
 
 The site pages are generated per language at build time from these templates (§21); there are no HTML files for
@@ -563,6 +564,26 @@ them in the repo root.
   every language it exists in, with its alternates; §21). The app (`app/`) is `noindex`, so
   the landing page is what ranks and `app/?demo` is never a duplicate. Copy says "time tracker", the phrase people
   search for ("activity tracker" means fitness bands).
+- **Name:** the product is **Tap Time Tracker** (matches the domain), never translated, in every language: page titles,
+  `og:site_name`, JSON-LD, the app's title and strings, the manifest `name` (`short_name` and the iOS home-screen
+  title are **Tap Tracker**, short enough for an icon label). A generic "Time Tracker" can't be told apart from the
+  category by search and AI engines. Internal ids (the `time-tracker` database, the backup format) stay unchanged.
+- **Contact:** `contact@taptimetracker.app` (`CONTACT` in `scripts/sitePages.ts`), a `mailto:` link in every site
+  footer and on the privacy page.
+- **Structured data (JSON-LD):** the landing page has `WebApplication` (with a `publisher` Organization: name, URL,
+  logo, contact email), `FAQPage` from the FAQ section and one `HowTo` per step list on the page (backdating, adding
+  to the home screen); all generated from the same locale keys as the visible text, so they always match. Every other
+  listed page has `WebPage` with a `BreadcrumbList` (Home → page); `/similar/` also has an `ItemList` of the apps in
+  rank order. The not-found page has none.
+- **Answer-first copy (AEO):** the landing page's feature rows are headed by the questions people ask ("How does
+  one-tap time tracking work?", "Forgot to switch? How do I fix it?", "Who can see what I track?", "What does the
+  summary show?", "Can I use it on my phone?"), each followed by a direct answer of about 40–60 words. The hero lead
+  opens with a definition: "Tap Time Tracker is a free one-tap time tracker…".
+- **FAQ:** a section on the landing page (`#faq`), before the closing call to action: questions as `<h3>` with a short
+  answer each (is it free, account, where data is stored, offline, moving data to another device, several activities
+  at once, which devices). The footer of every page links to it (the home page in that language + `#faq`).
+- **`/llms.txt`:** a plain-text summary for AI crawlers (`public/llms.txt`, English): what the product is, key facts
+  and links to the pages and languages.
 - **Landing page:** hand-written copy (not spec wording), in this order: hero (headline, a lead that ends on privacy:
   no account, nothing leaves the device; **Try the live demo** → `app/?demo`, **Open the app**, a line saying the demo
   is sandboxed, the main-screen animation); five feature rows that alternate text and image (one-tap switching, backdating

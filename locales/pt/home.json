@@ -1,10 +1,10 @@
 {
-  "title": "Time Tracker — um registro de tempo de um toque que fica no seu dispositivo",
+  "title": "Tap Time Tracker — um registro de tempo de um toque que fica no seu dispositivo",
   "description": "Um registro de tempo gratuito de um toque: um botão grande por atividade, toque quando trocar e veja seu dia, semana e mês organizados. Sem conta, e o que você registra nunca sai do seu dispositivo.",
   "og": {
-    "title": "Time Tracker — saiba para onde foi o seu dia",
+    "title": "Tap Time Tracker — saiba para onde foi o seu dia",
     "description": "Um botão grande por atividade: toque quando trocar e veja seu dia, semana e mês organizados. Grátis, sem conta, e o que você registra nunca sai do seu dispositivo.",
-    "imageAlt": "A tela principal do Time Tracker: um bloco por atividade com o tempo de hoje"
+    "imageAlt": "A tela principal do Tap Time Tracker: um bloco por atividade com o tempo de hoje"
   },
   "ld": {
     "description": "Um registro de tempo de um toque: um botão grande por atividade, toque quando trocar e veja seu dia, semana e mês. Sem conta; tudo fica no seu dispositivo.",
@@ -13,26 +13,32 @@
   },
   "hero": {
     "title": "Saiba para onde o seu dia realmente foi",
-    "lead": "Um registro de tempo de um toque: um botão grande para cada coisa que você faz. Toque quando trocar. À noite você vê as reuniões, as revisões e as “perguntinhas rápidas” hora a hora, sem preencher uma única folha de horas. E tudo continua seu: sem conta, e nada do que você registra sai do seu dispositivo.",
+    "lead": "Tap Time Tracker é um registro de tempo gratuito de um toque: um botão grande para cada coisa que você faz. Toque quando trocar. À noite você vê as reuniões, as revisões e as “perguntinhas rápidas” hora a hora, sem preencher uma única folha de horas. E tudo continua seu: sem conta, e nada do que você registra sai do seu dispositivo.",
     "demo": "Experimente a demo",
     "fine": "A demo roda com três semanas de dados de exemplo em um ambiente isolado. Nada do que você fizer lá afeta o seu registro de verdade. Grátis.",
     "imageAlt": "Tocando entre atividades: o bloco ativo acende e a linha do tempo de hoje cresce na parte de baixo"
   },
   "switching": {
-    "title": "Trocar leva um toque",
+    "title": "Como funciona o registro de tempo de um toque?",
     "p1": "Funciona como um relógio de xadrez. Toque em Reunião e o relógio passa para Reunião; toque em Tarefa e ele segue em frente. Só uma coisa corre por vez, então nada é contado duas vezes e nada escapa.",
     "p2": "Os botões são grandes o bastante para acertar sem olhar, no notebook, num tablet ao lado da mesa ou numa tela touch na parede.",
     "imageAlt": "A tela principal no tema escuro Graphite: um bloco por atividade com o tempo de hoje, o ativo em destaque"
   },
   "backdate": {
-    "title": "Esqueceu de trocar? Corrija em dois toques",
-    "p1": "Foi puxado para uma ligação e só lembrou vinte minutos depois? Segure a atividade e escolha “ativa desde 10:40”. O tempo é tirado do que estava rodando, então o dia continua fechando no minuto.",
+    "title": "Esqueceu de trocar? Como corrigir?",
+    "p1": "Segure a atividade que deveria estar rodando e diga quando ela começou de verdade, por exemplo “ativa desde 10:40”. O tempo é tirado do que estava rodando, então o dia continua fechando no minuto. São dois toques, mesmo vinte minutos depois da ligação que te puxou.",
+    "howto": "Como corrigir uma troca esquecida",
+    "steps": {
+      "s1": "Segure a atividade que deveria estar rodando.",
+      "s2": "Escolha quando ela começou: um atalho como <em>há 15 min</em> ou o horário exato com os botões − e +.",
+      "s3": "Toque em <strong>ativa desde 10:40</strong>: esse tempo passa do que estava rodando para esta atividade."
+    },
     "p2": "Todas as sessões do dia estão ali para encurtar, mover ou apagar.",
     "imageAlt": "Segurar uma atividade abre as sessões de hoje e botões rápidos para começá-la mais cedo"
   },
   "privacy": {
-    "title": "Privado por projeto, não por promessa",
-    "p1": "A maioria dos apps de registro de tempo pede uma conta e depois envia cada minuto do seu dia para a nuvem. Este não tem para onde enviar. Suas sessões ficam no armazenamento do seu navegador neste dispositivo, e essa é a única cópia.",
+    "title": "Quem pode ver o que eu registro?",
+    "p1": "Ninguém além de você. A maioria dos apps de registro de tempo pede uma conta e depois envia cada minuto do seu dia para a nuvem. Este não tem para onde enviar. Suas sessões ficam no armazenamento do seu navegador neste dispositivo, e essa é a única cópia.",
     "p2": "Sem cadastro, sem anúncios, sem cookies. Registre o dentista, a entrevista de emprego e o almoço demorado sem se perguntar quem mais pode ver."
   },
   "vault": {
@@ -43,14 +49,20 @@
     "export": { "title": "Seu para levar", "text": "Exporte um arquivo de backup quando quiser e importe em outro dispositivo." }
   },
   "summary": {
-    "title": "Veja a semana, não só o dia",
+    "title": "O que o resumo mostra?",
     "p1": "Dia, semana, mês ou qualquer período que você escolher. Todo dia fica no mesmo relógio, então começos atrasados, almoços longos e terças cheias de reuniões saltam aos olhos.",
     "p2": "Marque as atividades com suas próprias categorias, como trabalho focado ou raso, sozinho ou com pessoas, e todo o resumo se reorganiza em torno delas.",
     "imageAlt": "O resumo passando de um dia para uma semana agrupada por foco e depois para um mapa de calor do mês"
   },
   "phone": {
-    "title": "Cabe no bolso também",
-    "p1": "No celular os botões ficam dois por linha e os menus deslizam de baixo para cima. Adicione à tela inicial e ele abre como qualquer outro app.",
+    "title": "Posso usar no celular?",
+    "p1": "Sim. No celular os botões ficam dois por linha e os menus deslizam de baixo para cima. Adicione à tela inicial e ele abre como qualquer outro app.",
+    "howto": "Como adicionar o Tap Time Tracker à tela inicial",
+    "steps": {
+      "s1": "Abra <strong>taptimetracker.app/app/</strong> no Safari em um iPhone ou iPad, ou no Chrome no Android.",
+      "s2": "iPhone e iPad: toque em Compartilhar e depois em <strong>Adicionar à Tela de Início</strong>. Android: abra o menu ⋮ e toque em <strong>Instalar app</strong> ou <strong>Adicionar à tela inicial</strong>.",
+      "s3": "Abra pelo novo ícone. Ele abre direto no app, mesmo offline."
+    },
     "imageAlt": "O app no celular: blocos, a folha da atividade, o menu Mais e o resumo"
   },
   "private": {
@@ -66,6 +78,18 @@
     "themes": { "title": "Sete temas", "text": "Claro, escuro ou seguindo o sistema, ou importe o seu." },
     "day": { "title": "Seu próprio dia", "text": "Comece o dia às 4 da manhã se você trabalha até tarde; ele vira sozinho." },
     "fullscreen": { "title": "Tela cheia", "text": "Deixe rodando numa tela sobrando como relógio de parede do seu trabalho." }
+  },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "items": {
+      "free": { "q": "O Tap Time Tracker é gratuito?", "a": "Sim. É gratuito, sem anúncios, sem versão paga e sem conta. Abra o app em qualquer navegador moderno e comece a tocar; a demonstração ao vivo deixa você testar antes com dados de exemplo." },
+      "account": { "q": "Preciso de uma conta?", "a": "Não. Não há cadastro, e-mail nem senha. Seu registro fica no navegador em que você o abre, então não há onde entrar nem nada para esquecer." },
+      "data": { "q": "Onde meus dados ficam guardados?", "a": "No armazenamento do seu próprio navegador (IndexedDB) neste dispositivo, e em nenhum outro lugar. Eles nunca são enviados, nem mesmo para este site. A única forma de saírem do navegador é um arquivo de backup que você mesmo exporta." },
+      "offline": { "q": "Funciona offline?", "a": "Sim. Depois que você abre o app uma vez, ele inicia sem conexão, e instalado na tela inicial ou na área de trabalho funciona como qualquer outro app. Registrar nunca precisa de internet, porque nada é enviado." },
+      "move": { "q": "Como passo meus dados para outro dispositivo?", "a": "Exporte um backup: no app, abra Configurações → Backup e toque em Exportar JSON. Copie o arquivo para o outro dispositivo, abra o app lá e use Importar JSON no mesmo lugar. A importação substitui os dados daquele perfil, então exporte antes se ele já tiver algum." },
+      "several": { "q": "Duas atividades podem rodar ao mesmo tempo?", "a": "Não, e isso é proposital. Como num relógio de xadrez, iniciar uma atividade para a outra, então o dia nunca soma mais de 24 horas. Toque na que está rodando para parar de registrar." },
+      "devices": { "q": "Em quais dispositivos funciona?", "a": "Em qualquer um com navegador moderno: notebook, tablet, celular ou uma tela sensível ao toque na parede. Cada navegador guarda seu próprio registro e não há sincronização, então use um arquivo de backup para trocar de um para outro." }
+    }
   },
   "closing": {
     "title": "Dê um dia a ele.",

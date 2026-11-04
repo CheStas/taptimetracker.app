@@ -1,8 +1,8 @@
 {
-  "title": "Vergelijkbare apps — Time Tracker",
-  "description": "Andere tijdregistratie-apps met één tik, gerangschikt van meest tot minst vergelijkbaar met Time Tracker, en waarin ze verschillen.",
+  "title": "Vergelijkbare apps — Tap Time Tracker",
+  "description": "Andere tijdregistratie-apps met één tik, gerangschikt van meest tot minst vergelijkbaar met Tap Time Tracker, en waarin ze verschillen.",
   "heading": "Vergelijkbare apps",
-  "intro": "Time Tracker werkt als een schaakklok: tik op een activiteit om haar te starten, tik op een andere om te wisselen; er loopt er maar één tegelijk, en eerdere tijden kun je corrigeren. Deze apps werken op dezelfde of een vergelijkbare manier. Ze staan <strong>van meest tot minst vergelijkbaar</strong>.",
+  "intro": "Tap Time Tracker werkt als een schaakklok: tik op een activiteit om haar te starten, tik op een andere om te wisselen; er loopt er maar één tegelijk, en eerdere tijden kun je corrigeren. Deze apps werken op dezelfde of een vergelijkbare manier. Ze staan <strong>van meest tot minst vergelijkbaar</strong>.",
   "takeaway": {
     "lead": "<strong>Kort gezegd:</strong> geen enkele combineert al het volgende:",
     "web": "een webpagina die overal draait, zelfs als één offline bestand",
@@ -13,6 +13,8 @@
   },
   "source": "broncode",
   "timeryFor": "for",
+  "rank": "#",
+  "app": "App",
   "platform": "Platform",
   "similar": "Waarom vergelijkbaar",
   "differences": "Belangrijkste verschillen",
@@ -79,7 +81,7 @@
     },
     "t13": {
       "platform": "Android / Linux",
-      "similar": "De <strong>schaakklokbediening</strong> waarop Time Tracker is gebaseerd: grote knoppen, één tik geeft de klok aan de andere kant.",
+      "similar": "De <strong>schaakklokbediening</strong> waarop Tap Time Tracker is gebaseerd: grote knoppen, één tik geeft de klok aan de andere kant.",
       "differences": "Twee spelers, telt af, geen logboek, totalen of geschiedenis"
     }
   },
