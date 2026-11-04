@@ -1,0 +1,476 @@
+{
+  "common": {
+    "cancel": "取消",
+    "ok": "确定",
+    "close": "关闭",
+    "off": "关",
+    "save": "保存",
+    "apply": "应用",
+    "edit": "编辑",
+    "delete": "删除",
+    "add": "添加",
+    "rename": "重命名",
+    "back": "返回"
+  },
+  "time": {
+    "now": "现在",
+    "ago": "{m} 分钟前"
+  },
+  "dur": {
+    "hms": "{h}小时{m}分{s}秒",
+    "ms": "{m}分{s}秒",
+    "hm": "{h}小时{m}分",
+    "hmShort": "{h}h{m}",
+    "m": "{m}分",
+    "sec": "{s}秒",
+    "min": "{m}分钟"
+  },
+  "target": {
+    "left": "还剩 {time}",
+    "over": "超出 {time}"
+  },
+  "demo": {
+    "title": "演示",
+    "text": "这是一个临时个人资料中的示例数据：随便试，刷新后会重新开始。你自己的数据不会受影响。",
+    "start": "开始使用你自己的"
+  },
+  "header": {
+    "switchProfile": "切换个人资料，当前为 {name}",
+    "today": "今天 · {date}",
+    "since": "自 {time} 起",
+    "now": "现在",
+    "active": "计时中",
+    "idle": "空闲",
+    "clock": "时钟",
+    "app": "应用",
+    "reset": "重置今天",
+    "fullscreen": "全屏",
+    "leaveFullscreen": "退出全屏",
+    "close": "关闭应用",
+    "more": "更多",
+    "moreLabel": "更多：重置今天、全屏、关闭应用",
+    "top": "回到顶部"
+  },
+  "main": {
+    "readyTitle": "准备开始新的一天",
+    "ready": "{strong} · 点一项活动开始计时 · 长按可设置更早的开始时间",
+    "unused": "今天未使用",
+    "tapHint": "点一下切换 · 点正在计时的停止 · 长按查看会话",
+    "moreBelow": "下方还有：链接和主题",
+    "allGroupsOff": "没有可显示的内容：所有分组都已关闭（设置 → 分组）。",
+    "noActivities": "还没有活动。请在设置中添加。",
+    "ofToday": "占今天的 {pct}%",
+    "leftOfTarget": "距 {target} 目标还差 {time}",
+    "overTarget": "超出目标 {time}",
+    "running": "计时中",
+    "idle": "空闲",
+    "runningTag": "（计时中）",
+    "timeline": "今天的时间线",
+    "noGroup": "未分组",
+    "tracked": "已记录",
+    "idleTotal": "空闲"
+  },
+  "welcome": {
+    "label": "欢迎",
+    "title": "第一次使用？",
+    "text": "点一项活动开始新的一天 · 长按可设置更早的开始时间。",
+    "ok": "知道了"
+  },
+  "footer": {
+    "more": "在设置中查看更多",
+    "export": "在设置中导出",
+    "tagline": "为你的工作日准备的棋钟。",
+    "theme": "主题",
+    "mainScreen": "主界面",
+    "buttons": "按钮"
+  },
+  "about": {
+    "label": "关于",
+    "what": "这是什么？",
+    "similar": "同类应用",
+    "feedback": "发送反馈",
+    "offline": "此页面在网站上，这个离线文件中不包含。",
+    "privacyNote": "隐私优先：你记录的一切都保存在这个浏览器中。无需账号，也无需联网。你需要自己负责数据安全，所以请定期导出备份。",
+    "statsUnavailable": "此副本（演示、离线文件或本地构建）不发送使用统计。",
+    "statsLabel": "分享匿名使用统计",
+    "statsHint": "只统计哪些界面和功能被使用，从不统计你记录的内容。没有 Cookie，没有账号，不含任何个人信息。",
+    "statsDnt": "你的浏览器要求网站不要跟踪，所以在你开启之前此项保持关闭。",
+    "statsPlea": "这由你决定，也可以随时关闭。但请考虑保持开启：Time Tracker 是免费的，这些计数是知道有没有人在用它的唯一方式。如果没人使用，它将不再更新并最终停止服务。",
+    "statsLink": "收集哪些内容"
+  },
+  "layout": {
+    "label": "按钮布局",
+    "tiles": "方块",
+    "rows": "行",
+    "circles": "圆形"
+  },
+  "toggles": {
+    "popularity": {
+      "label": "按今天的使用情况调整按钮大小",
+      "hint": "用得越多，方块越宽、行越高、圆形越大"
+    },
+    "unusedStrip": {
+      "label": "把未使用的活动移到一条横栏中",
+      "hint": "今天还没有时长的活动会变成按钮下方的小标签"
+    },
+    "showTimeline": {
+      "label": "显示今天的时间线",
+      "hint": "主界面底部的彩色会话条"
+    },
+    "showGroups": {
+      "label": "显示分组合计",
+      "hint": "每个分组的时长和空闲时长，显示在时间线下方的一行中"
+    },
+    "showFooter": {
+      "label": "显示页脚",
+      "hint": "每个页面底部的链接和快捷设置"
+    }
+  },
+  "session": {
+    "session": "会话",
+    "deleteTitle": "删除这个会话？",
+    "deleteBody": "{name} · {range}（{duration}）。这段时间会变为空闲。你可以在日编辑器中重新添加。",
+    "editTitle": "编辑{name}",
+    "start": "开始",
+    "end": "结束",
+    "stillRunning": "仍在计时"
+  },
+  "popup": {
+    "today": "今天",
+    "sessions": {
+      "other": "共 {n} 个会话"
+    },
+    "running": "计时中",
+    "noSessions": "今天没有会话。",
+    "correct": "修正时间线",
+    "activeSince": "{name}从 {time} 开始",
+    "stopSince": "从 {time} 起全部停止",
+    "editSessions": "编辑会话…"
+  },
+  "editor": {
+    "title": "日编辑器",
+    "day": "日期",
+    "prev": "前一天",
+    "next": "后一天",
+    "today": "今天 · {date}",
+    "removed": "（已移除）",
+    "noneToday": "今天没有会话。",
+    "noneDay": "这一天没有会话。",
+    "addRange": "添加时间段",
+    "clearTodayTitle": "清空今天？",
+    "clearDayTitle": "清空这一天？",
+    "clearBody": "这一天的所有会话都会被删除。之后你可以用“添加时间段”重新填写这一天。",
+    "clearOk": "清空这一天",
+    "clear": "清空整天",
+    "idleNone": "空闲（无）",
+    "from": "从",
+    "to": "到",
+    "keepRunning": "到现在并继续计时"
+  },
+  "feedback": {
+    "title": "发送反馈",
+    "offline": "这个离线文件无法发送消息。请打开在线版应用来发送反馈。",
+    "thanks": "谢谢",
+    "sent": "你的消息已发出。每一条都会被认真阅读。",
+    "intro": "无论是 bug、缺少的功能，还是只想说一声你在用它，都能帮助决定下一步做什么。",
+    "message": "你的消息",
+    "email": "邮箱",
+    "emailHint": "邮箱，仅在你希望得到回复时填写",
+    "device": "附上应用版本和浏览器信息",
+    "failed": "暂时无法发送。你输入的内容还在，请稍后再试。",
+    "sending": "正在发送…",
+    "send": "发送"
+  },
+  "profiles": {
+    "switch": "切换个人资料",
+    "runningIn": "{name}正在 {profile} 中计时。",
+    "anActivity": "某项活动",
+    "runningNote": "{strong} 打开其他个人资料时，它会继续计时。",
+    "statusRunning": "{name}计时中 · 今天 {time}",
+    "statusIdle": "空闲 · 上次使用于 {date}",
+    "statusNew": "还没有任何记录",
+    "open": "当前",
+    "switchTo": "切换",
+    "manage": "在设置中添加、重命名或删除个人资料"
+  },
+  "settings": {
+    "title": "设置",
+    "sectionsLabel": "设置分区",
+    "sections": {
+      "profiles": "个人资料",
+      "groups": "分组",
+      "categories": "分类",
+      "activities": "活动",
+      "appearance": "外观",
+      "day": "一天",
+      "device": "设备",
+      "backup": "备份",
+      "about": "关于"
+    },
+    "importFailed": "导入失败：{error}",
+    "up": "上移",
+    "down": "下移",
+    "activityCount": {
+      "other": "{n} 项活动"
+    },
+    "profiles": {
+      "intro": "每个个人资料都是一个独立的工作空间，拥有各自的活动、分组、日期记录、汇总、设置和备份。同一时间只能打开一个；当你在其他个人资料中时，正在计时的活动会继续计时。新建的个人资料会复制当前个人资料的设置。",
+      "placeholder": "新个人资料名称，例如：家",
+      "add": "添加个人资料",
+      "name": "个人资料名称",
+      "isOpen": "当前",
+      "openOther": "请先打开另一个个人资料",
+      "deleteTitle": "删除个人资料“{name}”？",
+      "deleteBody": "它的所有活动、日期记录和历史都会被删除。此操作无法撤销（请先导出备份）。"
+    },
+    "groups": {
+      "intro": "主界面会显示已开启分组中的活动，以及未分组的活动。可以同时开启多个分组；分组的开关状态会一直保持，直到你更改。",
+      "placeholder": "添加分组：每行一个，或用逗号分隔",
+      "name": "分组名称",
+      "on": "开启",
+      "deleteTitle": "删除分组“{name}”？",
+      "deleteBody": "其中的活动会保留，并移到“未分组”。"
+    },
+    "categories": {
+      "intro": "分类用于在汇总中拆分你的时间。每个维度有若干选项；每项活动在每个维度中最多选择一个选项。未选择的活动计为“未设置”，因此每个维度合计都是 100%。",
+      "empty": "还没有分类",
+      "example": "例如，{focus}：{productive} / {nonProductive}，或 {company}：{people} / {alone}。",
+      "addExample": "添加示例“{name}”",
+      "newName": "新维度",
+      "addEmpty": "添加空维度",
+      "placeholder": "新维度，例如：精力",
+      "add": "添加维度",
+      "dimension": "维度",
+      "dimensionName": "维度名称",
+      "set": {
+        "other": "{n} 项活动中已设置 {set} 项"
+      },
+      "deleteTitle": "删除维度“{name}”？",
+      "deleteBody": "所有活动在该维度中的选项都会被移除。其他内容不变。",
+      "colorOf": "{name}的颜色：{color}",
+      "optionName": "选项名称",
+      "deleteOptionTitle": "删除选项“{name}”？",
+      "deleteOptionBody": "这些活动在“{dimension}”中会变为“未设置”。",
+      "addOption": "添加选项",
+      "newOption": "新选项"
+    },
+    "activities": {
+      "taken": "已存在（名称不能重复；已移除的活动可在下方恢复或删除）：{names}",
+      "placeholder": "添加活动：每行一个，或用逗号分隔",
+      "removedTitle": "已移除的活动",
+      "removedIntro": "已移除的活动会保留历史，可以随时恢复。删除会把它从这个列表中去掉，但已记录的时间仍保留在汇总中。以后添加同名活动时，会接着这段历史继续记录。",
+      "restore": "恢复",
+      "deleteTitle": "删除“{name}”？",
+      "deleteBody": "它将永久从这个列表中消失。已记录的时间仍保留在汇总中。",
+      "colorLabel": "{name}的颜色：在“活动颜色”中更改",
+      "colorTitle": "在 外观 → 活动颜色 中更改",
+      "name": "名称",
+      "exists": "已经有名为“{name}”的活动。",
+      "group": "分组",
+      "noGroup": "未分组",
+      "target": "目标",
+      "min": "分钟",
+      "hasTime": "今天有记录",
+      "hideToday": "今天隐藏",
+      "remove": "移除",
+      "removeTitle": "移除“{name}”？",
+      "removeBody": "它的历史会保留，之后可以恢复。"
+    },
+    "theme": {
+      "lowContrast": "“{name}”已安装，但这些活动颜色在它的背景上不易看清（对比度低于 3:1）：{slots}。",
+      "intro": "主题决定整体外观：背景、文字和活动颜色。与编辑器或终端主题的思路相同。",
+      "mode": "主题模式",
+      "fixed": "固定",
+      "system": "跟随系统",
+      "import": "导入主题",
+      "systemNote": "跟随系统：浅色模式下使用 {light}，深色模式下使用 {dark}。在系统处于该模式时点一个主题即可更改（当前：{mode}）。",
+      "dark": "深色",
+      "light": "浅色",
+      "name": "主题名称",
+      "export": "导出",
+      "deleteTitle": "删除主题“{name}”？",
+      "deleteBody": "使用该主题的个人资料会切换到 Paper 或 Graphite。"
+    },
+    "colors": {
+      "title": "活动颜色",
+      "intro": "每个主题有 16 个颜色槽，就像终端调色板一样。活动选择的是一个颜色槽，所以颜色会随主题变化，并在每个主题中都清晰可读。活动多于颜色槽时颜色会重复；名称始终显示在颜色旁边。",
+      "of": "{name}的颜色",
+      "slot": "颜色槽 {n}，{name}"
+    },
+    "day": {
+      "reset": "自动重置时间",
+      "weekStart": "每周开始于",
+      "system": "系统（{day}）",
+      "weekHint": "用于“周”时间段、日历和热力图",
+      "minSwitch": "最短切换",
+      "minSwitchHint": "更短的片段会并入下一项（或上一项）活动",
+      "autoExport": "一天结束时下载 JSON 备份",
+      "autoExportHint": "每个结束的日子一个文件，保存在下载文件夹中",
+      "editTimeline": "编辑时间线…"
+    },
+    "device": {
+      "language": "语言",
+      "languageHint": "在这台设备上也用于网站",
+      "fullscreen": "以全屏方式启动",
+      "fullscreenHint": "在第一次点按时；全屏图标可切换，长按 Esc 退出",
+      "awake": "保持屏幕常亮",
+      "awakeHint": "在应用打开且可见时",
+      "awakeUnavailable": "此处不可用：需要 localhost 或 HTTPS"
+    },
+    "backup": {
+      "importTitle": "导入到这个个人资料？",
+      "importBody": "导入会替换个人资料“{name}”的全部数据和设置。其他个人资料不受影响。",
+      "importOk": "导入",
+      "importDone": "导入完成。",
+      "intro": "导出和导入只针对这个个人资料；导入会替换它的数据和设置。",
+      "export": "导出 JSON",
+      "import": "导入 JSON"
+    }
+  },
+  "slots": {
+    "blue": "蓝色",
+    "green": "绿色",
+    "orange": "橙色",
+    "purple": "紫色",
+    "red": "红色",
+    "cyan": "青色",
+    "yellow": "黄色",
+    "neutral": "中性色",
+    "pink": "粉色",
+    "teal": "蓝绿色",
+    "lime": "青柠色",
+    "brown": "棕色",
+    "indigo": "靛蓝色",
+    "olive": "橄榄色",
+    "wine": "酒红色",
+    "slate": "石板灰"
+  },
+  "seed": {
+    "names": {
+      "default": "默认",
+      "work": "工作",
+      "meeting": "会议",
+      "task": "任务",
+      "code review": "代码评审",
+      "communication": "沟通",
+      "setup": "准备工作",
+      "break": "休息",
+      "planning": "计划",
+      "focus": "专注度",
+      "productive": "高效",
+      "non-productive": "低效",
+      "company": "陪伴",
+      "with people": "和他人一起",
+      "alone": "独自"
+    }
+  },
+  "summary": {
+    "title": "汇总",
+    "idleFor": "空闲 {time}",
+    "notSet": "未设置",
+    "loading": "正在加载…",
+    "days": {
+      "other": "{n} 天"
+    },
+    "quick": {
+      "today": "今天",
+      "yesterday": "昨天",
+      "thisWeek": "本周",
+      "lastWeek": "上周",
+      "last7": "最近 7 天",
+      "thisMonth": "本月",
+      "lastMonth": "上月",
+      "last30": "最近 30 天"
+    },
+    "kinds": {
+      "day": "日",
+      "week": "周",
+      "month": "月",
+      "custom": "自定义"
+    },
+    "emptyDay": "{date}没有记录",
+    "emptyRange": "{from}至{to}没有记录",
+    "emptyHint": "选择其他时间段，或在主界面开始一项活动。",
+    "pickLast": "选择最后一天",
+    "period": "时间段",
+    "periodKind": "时间段类型",
+    "prevPeriod": "上一时间段",
+    "nextPeriod": "下一时间段",
+    "choosePeriod": "选择时间段，{label}",
+    "groupBy": "分组方式",
+    "activity": "活动",
+    "nothing": "没有记录",
+    "prevMonth": "上个月",
+    "nextMonth": "下个月",
+    "quickRanges": "快速选择",
+    "pickLastHint": "现在点最后一天。两天都包含在内。",
+    "pickFirstHint": "先点第一天，再点最后一天。两天都包含在内。",
+    "shadedHint": "有底色的日子有记录。每周从{day}开始（设置 → 一天）。",
+    "total": "记录总计",
+    "live": "计时中 · 实时",
+    "firstLast": "最早 – 最晚",
+    "firstLastHint": "从第一次开始到最后一次结束",
+    "idleHint": "活动之间的空档",
+    "switches": "切换次数",
+    "sessions": {
+      "other": "{n} 个会话"
+    },
+    "avg": "每个记录日平均",
+    "trackedDays": {
+      "other": "{n} 个记录日"
+    },
+    "noTrackedDays": "没有记录日",
+    "previous": "上期：{time}",
+    "timeline": "时间线",
+    "tapBlock": "点时间块查看详情",
+    "blockLabel": "{name} {from} 至 {to}",
+    "perWeek": "按周",
+    "perWeekHint": "条形 = 按分组的合计",
+    "avgHint": "虚线：平均开始 {start} · 结束 {end} · 点某一天查看详情",
+    "tapDay": "点某一天查看详情",
+    "perDay": "按天",
+    "openDay": "打开这一天",
+    "targetMet": {
+      "other": "目标 {target} · {n} 天中有 {met} 天达成"
+    },
+    "share": "占比",
+    "tapOption": "点一个选项查看其活动",
+    "avgOver": "记录日平均",
+    "shareOfTime": "时间占比",
+    "donutHours": "{h}小时",
+    "name": "名称",
+    "totalCol": "合计",
+    "target": "目标",
+    "avgDay": "日均",
+    "sessionsTitle": "会话",
+    "groupLog": "按{name}分组",
+    "vsWeek": "对比上一周",
+    "vsMonth": "对比{month}",
+    "vsDays": {
+      "other": "对比之前 {n} 天"
+    },
+    "noDataWeek": "上一周没有数据",
+    "noDataMonth": "{month}没有数据",
+    "noDataDays": {
+      "other": "之前 {n} 天没有数据"
+    }
+  },
+  "dialogs": {
+    "theActivity": "该活动",
+    "resetTitle": "重置今天？",
+    "resetStops": "{name}现在停止。",
+    "resetBody": "{date}将以 {total} 的记录结束，并开始新的一天。你仍可以在汇总中编辑已结束的日子。",
+    "closeTitle": "关闭 Time Tracker？",
+    "closeRunning": "应用关闭期间，{name}会继续计时。重新打开应用即可停止或切换。",
+    "closeIdle": "当前没有正在计时的活动。",
+    "closeYourself": "请自行关闭窗口",
+    "closeYourselfBody": "浏览器不允许此页面关闭自己的窗口。请按 Alt+F4 或 Ctrl+W。",
+    "keepsCounting": "{name}会继续计时。"
+  },
+  "errors": {
+    "notExport": "这不是 Time Tracker 的导出文件",
+    "itermXml": "无法识别的 XML 文件（需要 iTerm 的 .itermcolors 文件）",
+    "jsonTheme": "无法识别的 JSON 主题（需要本应用的主题文件、VS Code 颜色主题或 base16）",
+    "themeFile": "无法识别的主题文件（支持：本应用主题 .json、VS Code .json、base16 .yaml/.json、Alacritty .toml、iTerm .itermcolors）"
+  }
+}

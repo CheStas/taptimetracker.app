@@ -38,6 +38,20 @@ document.addEventListener('click', (e) => {
   else if (/(^|\/)app\/(\?|$)/.test(a.getAttribute('href') ?? '')) saveLocale(pageLocale);
 });
 
+// The footer's language picker (a <details>): a click outside it or Esc closes it.
+const picker = document.querySelector<HTMLDetailsElement>('details.langs');
+if (picker) {
+  document.addEventListener('click', (e) => {
+    if (picker.open && !picker.contains(e.target as Node)) picker.open = false;
+  });
+  picker.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && picker.open) {
+      picker.open = false;
+      picker.querySelector('summary')?.focus();
+    }
+  });
+}
+
 // The banner: never a redirect, only a suggestion when this page exists in the preferred language (§21.2).
 const banners = [...document.querySelectorAll<HTMLElement>('.lang-banner')];
 const want = preferredLocale((document.documentElement.dataset.locales ?? '').split(' '));

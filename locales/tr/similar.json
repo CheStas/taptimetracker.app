@@ -1,0 +1,87 @@
+{
+  "title": "Benzer uygulamalar — Time Tracker",
+  "description": "Diğer tek dokunuşluk zaman takip uygulamaları; Time Tracker’a en çok benzeyenden en aza doğru sıralı ve nasıl farklılaştıklarıyla.",
+  "heading": "Benzer uygulamalar",
+  "intro": "Time Tracker bir satranç saati gibi çalışır: başlatmak için bir etkinliğe, geçmek için bir başkasına dokunun; aynı anda yalnızca biri çalışır ve geçmiş süreler düzeltilebilir. Bu uygulamalar aynı ya da benzer şekilde çalışır. <strong>En çok benzeyenden en aza doğru</strong> sıralanmıştır.",
+  "takeaway": {
+    "lead": "<strong>Kısacası:</strong> hiçbiri şunların hepsini bir arada sunmuyor:",
+    "web": "her yerde çalışan bir web sayfası, tek bir çevrimdışı dosya olarak bile",
+    "touch": "dokunmatik ekran ve duvar ekranı düzeni",
+    "backdate": "süreyi diğer etkinliklerden alan “şu saatten beri etkin…” geriye dönük kayıt",
+    "offline": "hesap gerektirmeyen, cihazda kalan depolama",
+    "closest": "En yakın olanlar yerel telefon uygulamaları: TickTappy, aTimeLogger ve Simple Time Tracker."
+  },
+  "source": "kaynak kodu",
+  "timeryFor": "for",
+  "platform": "Platform",
+  "similar": "Neden benzer",
+  "differences": "Başlıca farklar",
+  "tools": {
+    "t1": {
+      "platform": "iPhone, iPad, Mac, Watch; ücretsiz + premium (eşitleme)",
+      "similar": "Renkli etiket düğmeleri: başlatmak için dokunun, <strong>durdurmak için yeniden dokunun</strong>, başka bir etiketi başlatmak <strong>çalışanı durdurur</strong>. <strong>Geçmişte bir zamanlayıcı başlatma</strong> (ör. 30 dk önce), başlat/durdur sonrası hızlı süre ayarı, geçmiş kayıtları düzenleme, geçmişi kaybetmeden etiket arşivleme, günlük/haftalık özetler. Çevrimdışı, hesapsız.",
+      "differences": "Yalnızca Apple; web sayfası değil; duvar ekranı modu yok"
+    },
+    "t2": {
+      "platform": "iOS",
+      "similar": "Bir etkinliği <strong>tek dokunuşla</strong> başlatır ve durdurur; duraklat/sürdür; isteğe bağlı eşzamanlı etkinlikler; raporlar.",
+      "differences": "Yerel uygulama; birden çok etkinlik aynı anda çalışabilir (isteğe bağlı); kiosk düzeni değil"
+    },
+    "t3": {
+      "platform": "Android + Wear OS; açık kaynak (GPL-3.0)",
+      "similar": "Etkinlik düğmelerinden oluşan bir ızgaradan <strong>tek tıkla</strong> başlatır; kayıt geçmişi, istatistikler, yedekler, ana ekran widget’ları; bir kayıt bölünebilir ve etkinliği değiştirilebilir.",
+      "differences": "Yalnızca Android; web uygulaması değil"
+    },
+    "t4": {
+      "platform": "iOS",
+      "similar": "Etkinlikleri başlatmak, durdurmak ya da <strong>değiştirmek</strong> için <strong>tek dokunuş</strong>; çalışan bir kaydın başlangıç saati kaydırılabilir.",
+      "differences": "Yalnızca Apple; bölünmüş kayıtlar bir süre sonra ayarlanamaz"
+    },
+    "t5": {
+      "platform": "iOS",
+      "similar": "Görev takibini <strong>tek dokunuşla</strong> başlatır ve durdurur; görev başına raporlar.",
+      "differences": "Yerel uygulama; geçiş ve duraklatma davranışı açıklanmamış"
+    },
+    "t6": {
+      "platform": "Fiziksel 8 veya 12 yüzlü takip zarı + uygulama; abonelik",
+      "similar": "Aynı “tek etkin etkinlik” fikri <strong>fiziksel bir cihaz</strong> olarak: etkinliği değiştirmek için zarı çevirin, durdurmak için kapatın ya da iki kez dokunun. Unutulan süre takvim benzeri bir düzenleyicide düzeltilir.",
+      "differences": "Donanım gerekir; bulut hesabı; ekranda düğme yok (<a href=\"https://www.timedoctor.com/blog/timeular-vs-timeflip/\">karşılaştırma</a>)"
+    },
+    "t7": {
+      "platform": "Web, paylaşılan bir cihazda; Clockify’ın ücretsiz özelliği",
+      "similar": "<strong>Paylaşılan cihaz / kiosk</strong> web sayfası: kişiler giriş yapar ve <strong>proje ya da görev</strong> ve mola arasında geçer; raporlar Clockify’da (<a href=\"https://clockify.me/help/track-time-and-expenses/clock-in-and-out-via-kiosk\">yardım</a>).",
+      "differences": "Ekipler için yapılmış (PIN/QR ile giriş); yalnızca bulut; etkinlik başına düğme panosu yok"
+    },
+    "t8": {
+      "platform": "Web uygulaması; açık kaynak (GPL-3.0), kendi sunucunuzda veya barındırılan",
+      "similar": "Web tabanlı, kayıtları düzenlemek için <strong>etkileşimli bir zaman çizelgesi</strong>; projeler yerine etiketler; günlük/haftalık/aylık <strong>hedefler</strong>; raporlar (PDF/CSV); Pomodoro modu (<a href=\"https://www.linuxlinks.com/timetagger-web-based-time-tracking-solution/\">genel bakış</a>).",
+      "differences": "Python sunucusu; büyük düğmeli dokunmatik pano değil; dokunarak geçiş yok"
+    },
+    "t9": {
+      "platform": "Toggl (bulut) için iOS/Mac istemcisi",
+      "similar": "<strong>Tek tıkla başlatılan kayıtlı zamanlayıcılar</strong>; kayıtları düzenleme ve bölme; Toggl’da başlangıç ya da bitiş saatini değiştirmek için bir bloğu sürüklersiniz (<a href=\"https://clockk.com/alt/does-toggl-have-a-timer\">rehber</a>).",
+      "differences": "Bulut hesabı; masaüstü/telefon arayüzü; ücretsiz paket sınırlı"
+    },
+    "t10": {
+      "platform": "Statik web sayfası (saf JS, Bootstrap), localStorage modu",
+      "similar": "En yakın <strong>teknoloji yığını</strong>: saf JS, tarayıcı depolaması, başlat/durdur ve saat toplamı olan etkinlik başına bir kart.",
+      "differences": "Otomatik geçiş, günlük toplam görünümü ya da geriye dönük kayıt yok"
+    },
+    "t11": {
+      "platform": "Çevrimdışı PWA (Next.js), IndexedDB",
+      "similar": "Benzer <strong>depolama yaklaşımı</strong> (çevrimdışı, IndexedDB, yeniden yüklemelerde kaybolmaz).",
+      "differences": "Başlat/durdur/tur kronometresi, etkinlik panosu değil"
+    },
+    "t12": {
+      "platform": "Açık kaynaklı web/masaüstü zaman takip araçları",
+      "similar": "Projeler/görevler, zamanlayıcılar ve raporlarla genel zaman takibi; kendi sunucunuzda barındırılabilir ya da local-first (<a href=\"https://super-productivity.com/blog/best-open-source-time-tracking-apps-2026/\">karşılaştırma</a>).",
+      "differences": "Proje ve faturalama odaklı; tek dokunuşluk etkinlik panosu yok"
+    },
+    "t13": {
+      "platform": "Android / Linux",
+      "similar": "Time Tracker’ın örnek aldığı <strong>satranç saati etkileşimi</strong>: büyük düğmeler, tek dokunuş saati karşı tarafa verir.",
+      "differences": "İki oyuncu, geri sayar; kayıt, toplam ya da geçmiş yok"
+    }
+  },
+  "sources": "Ekim 2026’da araştırıldı. Açıklamalar her uygulamanın kendi mağaza sayfasından ya da belgelerinden ve üçüncü taraf özetlerden alınmıştır; hiçbir şey kurulmadı veya test edilmedi."
+}

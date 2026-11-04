@@ -1,0 +1,75 @@
+{
+  "title": "Time Tracker — Zeiterfassung mit einem Tipp, die auf deinem Gerät bleibt",
+  "description": "Kostenlose Zeiterfassung mit einem Tipp: ein großer Knopf pro Tätigkeit, beim Wechsel antippen und Tag, Woche und Monat auf einen Blick sehen. Ohne Konto, und was du erfasst, verlässt nie dein Gerät.",
+  "og": {
+    "title": "Time Tracker — wisse, wo dein Tag geblieben ist",
+    "description": "Ein großer Knopf pro Tätigkeit: beim Wechsel antippen und Tag, Woche und Monat auf einen Blick sehen. Kostenlos, ohne Konto, und was du erfasst, verlässt nie dein Gerät.",
+    "imageAlt": "Der Hauptbildschirm von Time Tracker: eine Kachel pro Tätigkeit mit der heutigen Zeit"
+  },
+  "ld": {
+    "description": "Zeiterfassung mit einem Tipp: ein großer Knopf pro Tätigkeit, beim Wechsel antippen und Tag, Woche und Monat sehen. Ohne Konto; alles bleibt auf deinem Gerät.",
+    "os": "Beliebig (Webbrowser)",
+    "requirements": "Benötigt einen modernen Browser mit JavaScript und IndexedDB"
+  },
+  "hero": {
+    "title": "Wisse, wo dein Tag wirklich geblieben ist",
+    "lead": "Zeiterfassung mit einem Tipp: ein großer Knopf für alles, was du tust. Tippe, wenn du wechselst. Am Abend siehst du die Meetings, die Reviews und die „kurzen Fragen“ Stunde für Stunde – ohne einen einzigen Stundenzettel auszufüllen. Und es bleibt deins: kein Konto, und nichts, was du erfasst, verlässt jemals dein Gerät.",
+    "demo": "Live-Demo ausprobieren",
+    "fine": "Die Demo läuft mit drei Wochen Beispieldaten in einer eigenen Sandbox. Nichts, was du dort tust, berührt deine echte Erfassung. Kostenlos.",
+    "imageAlt": "Wechsel zwischen Tätigkeiten: die laufende Kachel leuchtet auf und die heutige Zeitleiste wächst unten mit"
+  },
+  "switching": {
+    "title": "Wechseln kostet einen Tipp",
+    "p1": "Es funktioniert wie eine Schachuhr. Tippe auf Meeting und die Uhr läuft für Meeting; tippe auf Aufgabe und sie springt weiter. Es läuft immer nur eins, also wird nichts doppelt gezählt und nichts fällt durchs Raster.",
+    "p2": "Die Knöpfe sind groß genug, um sie ohne Hinsehen zu treffen – auf dem Laptop, auf einem Tablet am Schreibtisch oder auf einem Touchscreen an der Wand.",
+    "imageAlt": "Der Hauptbildschirm im dunklen Theme Graphite: eine Kachel pro Tätigkeit mit der heutigen Zeit, die laufende hervorgehoben"
+  },
+  "backdate": {
+    "title": "Wechsel vergessen? In zwei Tipps korrigiert",
+    "p1": "In einen Anruf geraten und erst zwanzig Minuten später daran gedacht? Halte die Tätigkeit gedrückt und wähle „aktiv seit 10:40“. Die Zeit wird von dem genommen, was gerade lief, also stimmt der Tag weiterhin auf die Minute.",
+    "p2": "Jede Sitzung des Tages ist direkt da, um sie zu kürzen, zu verschieben oder zu löschen.",
+    "imageAlt": "Gedrückthalten einer Tätigkeit öffnet die heutigen Sitzungen und Schnellknöpfe, um sie früher zu starten"
+  },
+  "privacy": {
+    "title": "Privat durch Bauart, nicht durch Versprechen",
+    "p1": "Die meisten Zeiterfassungen wollen ein Konto und laden dann jede Minute deines Tages in ihre Cloud. Diese hier hat keinen Ort, an den sie etwas schicken könnte. Deine Sitzungen liegen im Speicher deines Browsers auf diesem Gerät, und das ist die einzige Kopie.",
+    "p2": "Keine Anmeldung, keine Werbung, keine Cookies. Erfasse den Zahnarzt, das Vorstellungsgespräch und die lange Mittagspause, ohne dich zu fragen, wer das noch sehen kann."
+  },
+  "vault": {
+    "label": "Was privat bleibt",
+    "account": { "title": "Kein Konto", "text": "Keine E-Mail, kein Passwort. Öffnen und lostippen." },
+    "device": { "title": "Bleibt auf diesem Gerät", "text": "Nichts, was du erfasst, wird jemals irgendwohin hochgeladen." },
+    "nobody": { "title": "Niemand liest mit", "text": "Keine Werbung, keine Cookies. Die Website zählt Besuche anonym, nie das, was du erfasst, und du kannst das abschalten." },
+    "export": { "title": "Gehört dir", "text": "Exportiere jederzeit eine Sicherungsdatei und importiere sie auf einem anderen Gerät." }
+  },
+  "summary": {
+    "title": "Sieh die Woche, nicht nur heute",
+    "p1": "Tag, Woche, Monat oder ein beliebiger Zeitraum. Jeder Tag liegt auf derselben Uhr, also fallen späte Starts, lange Mittagspausen und meetinglastige Dienstage sofort ins Auge.",
+    "p2": "Versieh Tätigkeiten mit eigenen Kategorien, etwa konzentrierte gegen oberflächliche Arbeit oder allein gegen mit anderen, und die ganze Übersicht gruppiert sich danach neu.",
+    "imageAlt": "Die Übersicht wechselt von einem Tag zu einer nach Fokus gruppierten Woche und dann zu einer Monats-Heatmap"
+  },
+  "phone": {
+    "title": "Passt auch in die Hosentasche",
+    "p1": "Auf dem Handy stehen die Knöpfe zu zweit in einer Reihe und die Menüs gleiten von unten herein. Leg es auf den Startbildschirm und es öffnet sich wie jede andere App.",
+    "imageAlt": "Die App auf einem Handy: Kacheln, das Tätigkeitsblatt, das Menü Mehr und die Übersicht"
+  },
+  "private": {
+    "title": "Dein Tag geht niemanden etwas an",
+    "text": "Kein Konto und kein Server, der deinen Tag je zu sehen bekommt. Alles, was du erfasst, bleibt in diesem Browser auf diesem Gerät. Exportiere eine Sicherungsdatei, wann immer du willst, und importiere sie anderswo. Die Website zählt nur Besuche, anonym und ohne Cookies, damit ich weiß, dass sich die Pflege lohnt.",
+    "link": "Wie das funktioniert"
+  },
+  "extras": {
+    "label": "Außerdem dabei",
+    "targets": { "title": "Tagesziele", "text": "Sieh auf einen Blick, ob du die Stunde Pause wirklich gemacht hast." },
+    "profiles": { "title": "Profile", "text": "Halte Arbeit und Zuhause getrennt, jedes mit eigenen Knöpfen und eigener Historie." },
+    "layouts": { "title": "Drei Layouts", "text": "Kacheln, Zeilen oder Kreise, und auf Wunsch Knöpfe, die mit der Nutzung wachsen." },
+    "themes": { "title": "Sieben Themes", "text": "Hell, dunkel oder wie das System, oder importiere dein eigenes." },
+    "day": { "title": "Dein eigener Tag", "text": "Lass den Tag um 4 Uhr beginnen, wenn du spät arbeitest; er wechselt von selbst." },
+    "fullscreen": { "title": "Vollbild", "text": "Lass es auf einem freien Bildschirm als Wanduhr für deine Arbeit laufen." }
+  },
+  "closing": {
+    "title": "Gib ihm einen Tag.",
+    "lead": "Erfasse morgen alles vom ersten Kaffee bis zur letzten Nachricht und sieh dir abends die Zeitleiste an. Die meisten sind überrascht.",
+    "demo": "Erst die Demo ausprobieren"
+  }
+}

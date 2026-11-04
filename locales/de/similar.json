@@ -1,0 +1,87 @@
+{
+  "title": "Ähnliche Apps — Time Tracker",
+  "description": "Andere Zeiterfassungen mit einem Tipp, geordnet von am ähnlichsten bis am wenigsten ähnlich zu Time Tracker, und worin sie sich unterscheiden.",
+  "heading": "Ähnliche Apps",
+  "intro": "Time Tracker funktioniert wie eine Schachuhr: Tippe auf eine Tätigkeit, um sie zu starten, auf eine andere, um zu wechseln; es läuft immer nur eine, und vergangene Zeiten lassen sich korrigieren. Diese Apps funktionieren genauso oder ähnlich. Sie sind <strong>von am ähnlichsten bis am wenigsten ähnlich</strong> geordnet.",
+  "takeaway": {
+    "lead": "<strong>Kurz gesagt:</strong> keine vereint all das:",
+    "web": "eine Webseite, die überall läuft, sogar als einzelne Offline-Datei",
+    "touch": "ein Layout für Touchscreens und Wandbildschirme",
+    "backdate": "rückwirkendes „aktiv seit…“, das die Zeit anderen Tätigkeiten abzieht",
+    "offline": "Speicherung, die auf dem Gerät bleibt, ohne Konto",
+    "closest": "Am nächsten kommen native Handy-Apps: TickTappy, aTimeLogger und Simple Time Tracker."
+  },
+  "source": "Quelle",
+  "timeryFor": "für",
+  "platform": "Plattform",
+  "similar": "Was ähnlich ist",
+  "differences": "Wichtigste Unterschiede",
+  "tools": {
+    "t1": {
+      "platform": "iPhone, iPad, Mac, Watch; kostenlos + Premium (Sync)",
+      "similar": "Farbige Tag-Knöpfe: antippen zum Starten, <strong>erneut antippen zum Stoppen</strong>, ein anderes Tag zu starten <strong>stoppt das laufende</strong>. <strong>Timer in der Vergangenheit starten</strong> (z. B. vor 30 Min.), schnelle Zeitkorrektur nach Start/Stopp, Bearbeiten vergangener Einträge, Archivieren von Tags ohne Verlust der Historie, Tages- und Wochenübersichten. Offline, ohne Konto.",
+      "differences": "Nur Apple; keine Webseite; kein Wandbildschirm-Modus"
+    },
+    "t2": {
+      "platform": "iOS",
+      "similar": "Startet und stoppt eine Tätigkeit mit <strong>einem Tipp</strong>; Pause/Fortsetzen; optional gleichzeitige Tätigkeiten; Berichte.",
+      "differences": "Native App; mehrere Tätigkeiten können gleichzeitig laufen (optional); kein Kiosk-Layout"
+    },
+    "t3": {
+      "platform": "Android + Wear OS; Open Source (GPL-3.0)",
+      "similar": "Startet Tätigkeiten mit <strong>einem Klick</strong> aus einem Raster von Knöpfen; Verlauf, Statistiken, Sicherungen, Widgets für den Startbildschirm; ein Eintrag lässt sich teilen und seine Tätigkeit ändern.",
+      "differences": "Nur Android; keine Web-App"
+    },
+    "t4": {
+      "platform": "iOS",
+      "similar": "<strong>Ein Tipp</strong> zum Starten, Stoppen oder <strong>Wechseln</strong> von Tätigkeiten; die Startzeit eines laufenden Eintrags lässt sich verschieben.",
+      "differences": "Nur Apple; segmentierte Einträge lassen sich nach einer Weile nicht mehr anpassen"
+    },
+    "t5": {
+      "platform": "iOS",
+      "similar": "Startet und stoppt die Erfassung einer Aufgabe mit <strong>einem Tipp</strong>; Berichte pro Aufgabe.",
+      "differences": "Native App; Wechsel- und Pausenverhalten nicht beschrieben"
+    },
+    "t6": {
+      "platform": "Physischer 8- oder 12-seitiger Tracker-Würfel + App; Abo",
+      "similar": "Dieselbe Idee „eine aktive Tätigkeit“ als <strong>physisches Gerät</strong>: Würfel drehen, um die Tätigkeit zu wechseln, ausschalten oder doppelt antippen zum Stoppen. Vergessene Zeit wird in einem kalenderartigen Editor korrigiert.",
+      "differences": "Braucht Hardware; Cloud-Konto; keine Knöpfe auf dem Bildschirm (<a href=\"https://www.timedoctor.com/blog/timeular-vs-timeflip/\">Vergleich</a>)"
+    },
+    "t7": {
+      "platform": "Web, auf einem gemeinsam genutzten Gerät; kostenlose Funktion von Clockify",
+      "similar": "Eine Webseite für <strong>gemeinsame Geräte / Kiosk</strong>: Leute stempeln ein und <strong>wechseln Projekte oder Aufgaben</strong> und Pausen; Berichte in Clockify (<a href=\"https://clockify.me/help/track-time-and-expenses/clock-in-and-out-via-kiosk\">Hilfe</a>).",
+      "differences": "Für Teams gebaut (Anmeldung per PIN/QR); nur Cloud; keine Knopftafel pro Tätigkeit"
+    },
+    "t8": {
+      "platform": "Web-App; Open Source (GPL-3.0), selbst gehostet oder gehostet",
+      "similar": "Webbasiert, mit einer <strong>interaktiven Zeitleiste</strong> zum Bearbeiten von Einträgen; Tags statt Projekte; tägliche, wöchentliche und monatliche <strong>Ziele</strong>; Berichte (PDF/CSV); Pomodoro-Modus (<a href=\"https://www.linuxlinks.com/timetagger-web-based-time-tracking-solution/\">Überblick</a>).",
+      "differences": "Python-Server; keine Touch-Tafel mit großen Knöpfen; kein Wechsel per Tipp"
+    },
+    "t9": {
+      "platform": "iOS/Mac-Client für Toggl (Cloud)",
+      "similar": "<strong>Gespeicherte Timer, mit einem Klick gestartet</strong>; Einträge bearbeiten und teilen; in Toggl ziehst du einen Block, um Start oder Ende zu ändern (<a href=\"https://clockk.com/alt/does-toggl-have-a-timer\">Anleitung</a>).",
+      "differences": "Cloud-Konto; Desktop-/Handy-Oberfläche; kostenlose Stufe ist eingeschränkt"
+    },
+    "t10": {
+      "platform": "Statische Webseite (reines JS, Bootstrap), localStorage-Modus",
+      "similar": "Der ähnlichste <strong>Technik-Stack</strong>: reines JS, Browserspeicher, eine Karte pro Tätigkeit mit Start/Stopp und Stundensumme.",
+      "differences": "Kein automatischer Wechsel, keine Tagessummen-Ansicht, kein rückwirkendes Erfassen"
+    },
+    "t11": {
+      "platform": "Offline-PWA (Next.js), IndexedDB",
+      "similar": "Ähnlicher <strong>Speicheransatz</strong> (offline, IndexedDB, übersteht Neuladen).",
+      "differences": "Eine Stoppuhr mit Start/Stopp/Runde, keine Tätigkeitstafel"
+    },
+    "t12": {
+      "platform": "Open-Source-Zeiterfassungen für Web und Desktop",
+      "similar": "Allgemeine Zeiterfassung mit Projekten/Aufgaben, Timern und Berichten; selbst hostbar oder local-first (<a href=\"https://super-productivity.com/blog/best-open-source-time-tracking-apps-2026/\">Vergleich</a>).",
+      "differences": "Auf Projekte und Abrechnung ausgerichtet; keine Tätigkeitstafel mit einem Tipp"
+    },
+    "t13": {
+      "platform": "Android / Linux",
+      "similar": "Die <strong>Schachuhr-Bedienung</strong>, nach der Time Tracker gestaltet ist: große Knöpfe, ein Tipp gibt die Uhr an die andere Seite weiter.",
+      "differences": "Zwei Spieler, zählt herunter, kein Protokoll, keine Summen oder Historie"
+    }
+  },
+  "sources": "Recherchiert im Oktober 2026. Die Beschreibungen stammen aus den Store-Einträgen oder Dokumentationen der Apps sowie aus Zusammenfassungen Dritter; nichts wurde installiert oder getestet."
+}

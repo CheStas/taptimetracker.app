@@ -4,7 +4,7 @@
 // against the English file.
 import type { ComponentChildren } from 'preact';
 import en from '../locales/en/app.json';
-import { DEFAULT_LOCALE, preferredLocale, saveLocale } from './locale.ts';
+import { DEFAULT_LOCALE, LOCALES, preferredLocale, saveLocale } from './locale.ts';
 
 type Plural = Partial<Record<Intl.LDMLPluralRule, string>> & { other: string };
 type Tree = typeof en;
@@ -63,8 +63,10 @@ export function seedName(name: string): string {
   return (lookup(tree, 'seed.names') as Record<string, string> | undefined)?.[name.trim().toLowerCase()] ?? name;
 }
 
-/** The app's language code, for Intl (dates, numbers). */
+/** The app's language code. */
 export const locale = () => current;
+/** The app's language for Intl (dates, numbers): fa → fa-u-ca-gregory-nu-latn (locales.json `intl`). */
+export const intlLocale = () => LOCALES.find((l) => l.code === current)?.intl ?? current;
 
 async function load(code: string) {
   const file = loaders[`../locales/${code}/app.json`] as (() => Promise<{ default: unknown }>) | undefined;
@@ -72,6 +74,7 @@ async function load(code: string) {
   current = file ? code : DEFAULT_LOCALE;
   rules = new Intl.PluralRules(current);
   document.documentElement.lang = current;
+  document.documentElement.dir = LOCALES.find((l) => l.code === current)?.dir ?? 'ltr';
 }
 
 /** On start: the saved choice, else the browser's languages, else English. */

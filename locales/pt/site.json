@@ -1,0 +1,18 @@
+{
+  "brand": "Time Tracker",
+  "openApp": "Abrir o app",
+  "footer": {
+    "pages": "Páginas",
+    "language": "Idioma",
+    "home": "Início",
+    "similar": "Apps parecidos",
+    "privacy": "Privacidade",
+    "terms": "Termos de uso",
+    "english": "(em inglês)"
+  },
+  "banner": {
+    "text": "Esta página está disponível em português.",
+    "go": "Ver em português",
+    "close": "Fechar"
+  }
+}

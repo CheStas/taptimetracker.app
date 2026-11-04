@@ -1,0 +1,75 @@
+{
+  "title": "Time Tracker — un registro de tiempo de un toque que se queda en tu dispositivo",
+  "description": "Un registro de tiempo gratuito de un solo toque: un botón grande por actividad, tócalo al cambiar y ve tu día, semana y mes de un vistazo. Sin cuenta, y lo que registras nunca sale de tu dispositivo.",
+  "og": {
+    "title": "Time Tracker — descubre a dónde se fue tu día",
+    "description": "Un botón grande por actividad: tócalo al cambiar y ve tu día, semana y mes de un vistazo. Gratis, sin cuenta, y lo que registras nunca sale de tu dispositivo.",
+    "imageAlt": "La pantalla principal de Time Tracker: un mosaico por actividad con el tiempo de hoy"
+  },
+  "ld": {
+    "description": "Un registro de tiempo de un toque: un botón grande por actividad, tócalo al cambiar y ve tu día, semana y mes. Sin cuenta; todo se queda en tu dispositivo.",
+    "os": "Cualquiera (navegador web)",
+    "requirements": "Requiere un navegador moderno con JavaScript e IndexedDB"
+  },
+  "hero": {
+    "title": "Descubre a dónde se fue realmente tu día",
+    "lead": "Un registro de tiempo de un toque: un botón grande para cada cosa que haces. Tócalo cuando cambies. Por la tarde ves las reuniones, las revisiones y las «preguntas rápidas» hora a hora, sin rellenar ni una sola hoja de horas. Y es solo tuyo: sin cuenta, y nada de lo que registras sale nunca de tu dispositivo.",
+    "demo": "Prueba la demo",
+    "fine": "La demo funciona con tres semanas de datos de ejemplo en su propio espacio aislado. Nada de lo que hagas ahí toca tu registro real. Gratis.",
+    "imageAlt": "Tocando entre actividades: el mosaico activo se ilumina y la línea de tiempo de hoy crece en la parte inferior"
+  },
+  "switching": {
+    "title": "Cambiar cuesta un toque",
+    "p1": "Funciona como un reloj de ajedrez. Toca Reunión y el reloj pasa a Reunión; toca Tarea y sigue adelante. Solo corre una cosa a la vez, así que nada se cuenta dos veces y nada se escapa.",
+    "p2": "Los botones son lo bastante grandes como para acertar sin mirar, en un portátil, una tableta junto al escritorio o una pantalla táctil en la pared.",
+    "imageAlt": "La pantalla principal con el tema oscuro Graphite: un mosaico por actividad con el tiempo de hoy, el activo resaltado"
+  },
+  "backdate": {
+    "title": "¿Olvidaste cambiar? Arréglalo en dos toques",
+    "p1": "¿Te metieron en una llamada y te acordaste veinte minutos después? Mantén pulsada la actividad y elige «activa desde las 10:40». El tiempo se quita de lo que estaba en marcha, así que el día sigue cuadrando al minuto.",
+    "p2": "Todas las sesiones del día están ahí para acortarlas, moverlas o borrarlas.",
+    "imageAlt": "Mantener pulsada una actividad abre las sesiones de hoy y botones rápidos para empezarla antes"
+  },
+  "privacy": {
+    "title": "Privado por diseño, no por promesa",
+    "p1": "La mayoría de los registros de tiempo te piden una cuenta y luego suben cada minuto de tu día a su nube. Este no tiene a dónde enviarlo. Tus sesiones viven en el almacenamiento de tu navegador en este dispositivo, y esa es la única copia.",
+    "p2": "Sin registro, sin anuncios, sin cookies. Registra el dentista, la entrevista de trabajo y la comida larga sin preguntarte quién más puede verlos."
+  },
+  "vault": {
+    "label": "Lo que queda en privado",
+    "account": { "title": "Sin cuenta", "text": "Sin correo ni contraseña. Ábrelo y empieza a tocar." },
+    "device": { "title": "Se queda en este dispositivo", "text": "Nada de lo que registras se sube nunca a ninguna parte." },
+    "nobody": { "title": "Nadie mirando", "text": "Sin anuncios ni cookies. El sitio cuenta las visitas de forma anónima, nunca lo que registras, y puedes desactivarlo." },
+    "export": { "title": "Tuyo para llevártelo", "text": "Exporta una copia de seguridad cuando quieras e impórtala en otro dispositivo." }
+  },
+  "summary": {
+    "title": "Mira la semana, no solo el día",
+    "p1": "Día, semana, mes o el periodo que elijas. Cada día está en el mismo reloj, así que los comienzos tardíos, las comidas largas y los martes llenos de reuniones saltan a la vista.",
+    "p2": "Etiqueta las actividades con tus propias categorías, como trabajo profundo frente a superficial o a solas frente a con gente, y todo el resumen se reorganiza en torno a ellas.",
+    "imageAlt": "El resumen pasando de un día a una semana agrupada por concentración y luego a un mapa de calor del mes"
+  },
+  "phone": {
+    "title": "También cabe en tu bolsillo",
+    "p1": "En el móvil los botones se colocan de dos en dos y los menús se deslizan desde abajo. Añádelo a la pantalla de inicio y se abre como cualquier otra app.",
+    "imageAlt": "La app en un móvil: mosaicos, la hoja de actividad, el menú Más y el resumen"
+  },
+  "private": {
+    "title": "Tu día no es asunto de nadie más",
+    "text": "Sin cuenta, y sin ningún servidor que vea tu día. Todo lo que registras se queda en este navegador, en este dispositivo. Exporta una copia de seguridad cuando quieras e impórtala en cualquier otro sitio. El sitio solo cuenta visitas, de forma anónima y sin cookies, para que yo sepa que vale la pena mantenerlo.",
+    "link": "Cómo funciona"
+  },
+  "extras": {
+    "label": "También incluye",
+    "targets": { "title": "Objetivos diarios", "text": "Comprueba de un vistazo si te tomaste esa hora de descansos." },
+    "profiles": { "title": "Perfiles", "text": "Separa el trabajo y la casa, cada uno con sus botones y su historial." },
+    "layouts": { "title": "Tres diseños", "text": "Mosaicos, filas o círculos, y botones que crecen con el uso si quieres." },
+    "themes": { "title": "Siete temas", "text": "Claro, oscuro o según el sistema, o importa el tuyo." },
+    "day": { "title": "Tu propio día", "text": "Empieza el día a las 4 de la mañana si trabajas hasta tarde; cambia solo." },
+    "fullscreen": { "title": "Pantalla completa", "text": "Déjalo en una pantalla libre como reloj de pared para tu trabajo." }
+  },
+  "closing": {
+    "title": "Dale un día.",
+    "lead": "Registra mañana desde el primer café hasta el último mensaje y mira la línea de tiempo por la tarde. La mayoría se sorprende.",
+    "demo": "Prueba antes la demo"
+  }
+}

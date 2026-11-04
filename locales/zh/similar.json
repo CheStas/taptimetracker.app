@@ -1,0 +1,87 @@
+{
+  "title": "同类应用 — Time Tracker",
+  "description": "其他一键计时工具，按与 Time Tracker 的相似程度从高到低排列，并说明它们的区别。",
+  "heading": "同类应用",
+  "intro": "Time Tracker 的工作方式就像棋钟：点一项活动开始计时，点另一项就切换过去；同一时间只有一项在计时，过去的时间也可以修正。下面这些应用的工作方式相同或相似，按<strong>相似程度从高到低</strong>排列。",
+  "takeaway": {
+    "lead": "<strong>简而言之：</strong>没有一款同时具备以下全部特点：",
+    "web": "在任何地方都能运行的网页，甚至可以作为单个离线文件",
+    "touch": "适合触摸屏和墙面显示屏的布局",
+    "backdate": "“从……开始”的补记功能，会从其他活动中扣除这段时间",
+    "offline": "数据留在设备上，无需账号",
+    "closest": "最接近的是手机原生应用：TickTappy、aTimeLogger 和 Simple Time Tracker。"
+  },
+  "source": "源代码",
+  "timeryFor": "for",
+  "platform": "平台",
+  "similar": "相似之处",
+  "differences": "主要区别",
+  "tools": {
+    "t1": {
+      "platform": "iPhone、iPad、Mac、Watch；免费 + 高级版（同步）",
+      "similar": "彩色标签按钮：点一下开始，<strong>再点一下停止</strong>，开始另一个标签会<strong>停止正在计时的标签</strong>。<strong>可从过去的时间开始计时</strong>（例如 30 分钟前），开始或停止后可快速调整时间，可编辑过去的记录，归档标签不丢失历史，提供每日和每周汇总。离线，无需账号。",
+      "differences": "仅限 Apple；不是网页；没有墙面显示模式"
+    },
+    "t2": {
+      "platform": "iOS",
+      "similar": "<strong>点一下</strong>即可开始和停止活动；可暂停和继续；可选同时进行多项活动；提供报告。",
+      "differences": "原生应用；可同时运行多项活动（可选）；不是信息亭式布局"
+    },
+    "t3": {
+      "platform": "Android + Wear OS；开源（GPL-3.0）",
+      "similar": "从活动按钮网格中<strong>点一下</strong>即可开始；记录历史、统计、备份、主屏幕小组件；一条记录可以拆分，也可以更改其活动。",
+      "differences": "仅限 Android；不是网页应用"
+    },
+    "t4": {
+      "platform": "iOS",
+      "similar": "<strong>点一下</strong>即可开始、停止或<strong>切换</strong>活动；可以移动正在进行的记录的开始时间。",
+      "differences": "仅限 Apple；分段记录过一段时间后无法再调整"
+    },
+    "t5": {
+      "platform": "iOS",
+      "similar": "<strong>点一下</strong>即可开始和停止任务计时；按任务生成报告。",
+      "differences": "原生应用；未说明切换和暂停的方式"
+    },
+    "t6": {
+      "platform": "8 面或 12 面实体计时骰子 + 应用；订阅制",
+      "similar": "同样是“只有一项活动在进行”的思路，但做成了<strong>实体设备</strong>：翻转骰子切换活动，关闭或双击即可停止。忘记记录的时间可以在类似日历的编辑器里修正。",
+      "differences": "需要硬件；需要云账号；屏幕上没有按钮（<a href=\"https://www.timedoctor.com/blog/timeular-vs-timeflip/\">对比</a>）"
+    },
+    "t7": {
+      "platform": "网页，在共享设备上使用；Clockify 的免费功能",
+      "similar": "<strong>共享设备／信息亭</strong>网页：员工打卡上下班，并在<strong>项目、任务</strong>和休息之间切换；报告在 Clockify 中查看（<a href=\"https://clockify.me/help/track-time-and-expenses/clock-in-and-out-via-kiosk\">帮助</a>）。",
+      "differences": "为团队设计（PIN 或二维码登录）；仅限云端；没有按活动划分的按钮面板"
+    },
+    "t8": {
+      "platform": "网页应用；开源（GPL-3.0），可自托管或使用托管版",
+      "similar": "基于网页，带有可编辑记录的<strong>交互式时间线</strong>；用标签代替项目；支持每日、每周和每月<strong>目标</strong>；报告（PDF/CSV）；番茄钟模式（<a href=\"https://www.linuxlinks.com/timetagger-web-based-time-tracking-solution/\">概览</a>）。",
+      "differences": "需要 Python 服务器；不是大按钮触摸面板；不能点一下切换"
+    },
+    "t9": {
+      "platform": "Toggl（云端）的 iOS/Mac 客户端",
+      "similar": "<strong>保存的计时器点一下就能启动</strong>；可编辑和拆分记录；在 Toggl 中拖动时间块即可更改开始或结束时间（<a href=\"https://clockk.com/alt/does-toggl-have-a-timer\">指南</a>）。",
+      "differences": "需要云账号；桌面和手机界面；免费版有限制"
+    },
+    "t10": {
+      "platform": "静态网页（原生 JS、Bootstrap），localStorage 模式",
+      "similar": "<strong>技术栈</strong>最接近：原生 JS、浏览器存储，每项活动一张卡片，可开始和停止并显示总小时数。",
+      "differences": "没有自动切换、每日总计视图或补记功能"
+    },
+    "t11": {
+      "platform": "离线 PWA（Next.js），IndexedDB",
+      "similar": "<strong>存储方式</strong>相似（离线、IndexedDB、刷新后数据不丢失）。",
+      "differences": "是一个开始／停止／计圈的秒表，而不是活动面板"
+    },
+    "t12": {
+      "platform": "开源的网页和桌面计时工具",
+      "similar": "通用时间记录，带有项目／任务、计时器和报告；可自托管或本地优先（<a href=\"https://super-productivity.com/blog/best-open-source-time-tracking-apps-2026/\">对比</a>）。",
+      "differences": "面向项目和计费；没有一键活动面板"
+    },
+    "t13": {
+      "platform": "Android / Linux",
+      "similar": "Time Tracker 所借鉴的<strong>棋钟交互</strong>：大按钮，点一下就把计时交给另一方。",
+      "differences": "双人使用，倒计时，没有记录、总计或历史"
+    }
+  },
+  "sources": "调研于 2026 年 10 月。描述来自各应用自己的商店页面或文档，以及第三方总结；没有安装或测试任何应用。"
+}

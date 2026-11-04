@@ -1,0 +1,476 @@
+{
+  "common": {
+    "cancel": "キャンセル",
+    "ok": "OK",
+    "close": "閉じる",
+    "off": "オフ",
+    "save": "保存",
+    "apply": "適用",
+    "edit": "編集",
+    "delete": "削除",
+    "add": "追加",
+    "rename": "名前を変更",
+    "back": "戻る"
+  },
+  "time": {
+    "now": "今",
+    "ago": "{m} 分前"
+  },
+  "dur": {
+    "hms": "{h}時間{m}分{s}秒",
+    "ms": "{m}分{s}秒",
+    "hm": "{h}時間{m}分",
+    "hmShort": "{h}h{m}",
+    "m": "{m}分",
+    "sec": "{s}秒",
+    "min": "{m}分"
+  },
+  "target": {
+    "left": "残り {time}",
+    "over": "{time} 超過"
+  },
+  "demo": {
+    "title": "デモ",
+    "text": "使い捨てのプロフィールに入ったサンプルデータです。自由に試してください。再読み込みで元に戻ります。あなた自身のデータには触れません。",
+    "start": "自分の記録を始める"
+  },
+  "header": {
+    "switchProfile": "プロフィールを切り替え（{name} を表示中）",
+    "today": "今日 · {date}",
+    "since": "{time} から",
+    "now": "現在",
+    "active": "記録中",
+    "idle": "空き時間",
+    "clock": "時計",
+    "app": "アプリ",
+    "reset": "1日をリセット",
+    "fullscreen": "全画面",
+    "leaveFullscreen": "全画面を終了",
+    "close": "アプリを閉じる",
+    "more": "その他",
+    "moreLabel": "その他：1日をリセット、全画面、アプリを閉じる",
+    "top": "トップへ戻る"
+  },
+  "main": {
+    "readyTitle": "1日を始める準備ができました",
+    "ready": "{strong} · 活動をタップして記録を開始 · 長押しで開始時刻をさかのぼる",
+    "unused": "今日は未使用",
+    "tapHint": "タップで切り替え · 実行中のものをタップで停止 · 長押しでセッション",
+    "moreBelow": "下にリンクとテーマがあります",
+    "allGroupsOff": "表示するものがありません：すべてのグループがオフです（設定 → グループ）。",
+    "noActivities": "活動がありません。設定で追加してください。",
+    "ofToday": "今日の {pct}%",
+    "leftOfTarget": "目標 {target} まで残り {time}",
+    "overTarget": "目標を {time} 超過",
+    "running": "実行中",
+    "idle": "空き時間",
+    "runningTag": "（実行中）",
+    "timeline": "今日のタイムライン",
+    "noGroup": "グループなし",
+    "tracked": "記録",
+    "idleTotal": "空き"
+  },
+  "welcome": {
+    "label": "ようこそ",
+    "title": "はじめてですか？",
+    "text": "活動をタップして 1日を始めましょう · 長押しで開始時刻をさかのぼれます。",
+    "ok": "わかった"
+  },
+  "footer": {
+    "more": "設定でさらに",
+    "export": "設定で書き出す",
+    "tagline": "仕事の 1日のための対局時計。",
+    "theme": "テーマ",
+    "mainScreen": "メイン画面",
+    "buttons": "ボタン"
+  },
+  "about": {
+    "label": "このアプリについて",
+    "what": "これは何？",
+    "similar": "類似アプリ",
+    "feedback": "フィードバックを送る",
+    "offline": "このページは Web サイトにあり、このオフラインファイルには含まれていません。",
+    "privacyNote": "プライバシー第一：記録した内容はすべてこのブラウザーにとどまります。アカウントもインターネット接続も不要です。データの管理はあなたの責任なので、定期的にバックアップを書き出してください。",
+    "statsUnavailable": "このコピー（デモ、オフラインファイル、ローカルビルド）は利用統計を送信しません。",
+    "statsLabel": "匿名の利用統計を共有する",
+    "statsHint": "どの画面や機能が使われているかだけで、記録内容は送りません。Cookie なし、アカウントなし、個人情報なし。",
+    "statsDnt": "ブラウザーがサイトにトラッキングしないよう求めているため、オンにするまでオフのままです。",
+    "statsPlea": "決めるのはあなたで、いつでもオフにできます。それでも、できればオンのままにしてください。Time Tracker は無料で、このカウントが誰かに使われていると知る唯一の手段です。誰も使っていなければ、更新は止まり、提供も終了します。",
+    "statsLink": "収集される内容"
+  },
+  "layout": {
+    "label": "ボタンのレイアウト",
+    "tiles": "タイル",
+    "rows": "行",
+    "circles": "円"
+  },
+  "toggles": {
+    "popularity": {
+      "label": "今日の使用量に応じてボタンの大きさを変える",
+      "hint": "使うほどタイルは広く、行は高く、円は大きくなります"
+    },
+    "unusedStrip": {
+      "label": "未使用の活動を帯にまとめる",
+      "hint": "今日まだ時間のない活動は、ボタンの下の小さなチップになります"
+    },
+    "showTimeline": {
+      "label": "今日のタイムラインを表示",
+      "hint": "メイン画面の下にある色付きのセッションバー"
+    },
+    "showGroups": {
+      "label": "グループ別の合計を表示",
+      "hint": "グループごとの時間と空き時間を、タイムラインの下に 1 行で"
+    },
+    "showFooter": {
+      "label": "フッターを表示",
+      "hint": "各ページの下部にあるリンクとクイック設定"
+    }
+  },
+  "session": {
+    "session": "セッション",
+    "deleteTitle": "このセッションを削除しますか？",
+    "deleteBody": "{name} · {range}（{duration}）。この時間は空き時間になります。1日エディターで追加し直せます。",
+    "editTitle": "{name} を編集",
+    "start": "開始",
+    "end": "終了",
+    "stillRunning": "実行中"
+  },
+  "popup": {
+    "today": "今日",
+    "sessions": {
+      "other": "{n} セッション"
+    },
+    "running": "実行中",
+    "noSessions": "今日のセッションはありません。",
+    "correct": "タイムラインを修正",
+    "activeSince": "{name} を {time} から開始",
+    "stopSince": "{time} からすべて停止",
+    "editSessions": "セッションを編集…"
+  },
+  "editor": {
+    "title": "1日エディター",
+    "day": "日",
+    "prev": "前の日",
+    "next": "次の日",
+    "today": "今日 · {date}",
+    "removed": "（削除済み）",
+    "noneToday": "今日のセッションはありません。",
+    "noneDay": "この日のセッションはありません。",
+    "addRange": "範囲を追加",
+    "clearTodayTitle": "今日を消去しますか？",
+    "clearDayTitle": "この日を消去しますか？",
+    "clearBody": "その日のセッションがすべて削除されます。そのあと「範囲を追加」で 1日を作り直せます。",
+    "clearOk": "日を消去",
+    "clear": "1日をすべて消去",
+    "idleNone": "空き時間（なし）",
+    "from": "開始",
+    "to": "終了",
+    "keepRunning": "今まで、このまま継続"
+  },
+  "feedback": {
+    "title": "フィードバックを送る",
+    "offline": "このオフラインファイルからはメッセージを送れません。オンライン版のアプリを開いてフィードバックを送ってください。",
+    "thanks": "ありがとうございます",
+    "sent": "メッセージを送信しました。すべてに目を通しています。",
+    "intro": "不具合、ほしい機能、あるいは使っているという一言だけでも、次に何をするかを決める助けになります。",
+    "message": "メッセージ",
+    "email": "メールアドレス",
+    "emailHint": "メールアドレス（返信がほしい場合のみ）",
+    "device": "アプリのバージョンとブラウザーを含める",
+    "failed": "今は送信できませんでした。入力した文章は残っているので、少ししてからもう一度お試しください。",
+    "sending": "送信中…",
+    "send": "送信"
+  },
+  "profiles": {
+    "switch": "プロフィールを切り替え",
+    "runningIn": "{profile} で {name} が実行中です。",
+    "anActivity": "ある活動",
+    "runningNote": "{strong} ほかのプロフィールを開いている間もカウントは続きます。",
+    "statusRunning": "{name} 実行中 · 今日 {time}",
+    "statusIdle": "停止中 · 最終使用 {date}",
+    "statusNew": "まだ記録はありません",
+    "open": "表示中",
+    "switchTo": "切り替え",
+    "manage": "プロフィールの追加・名前変更・削除は設定で"
+  },
+  "settings": {
+    "title": "設定",
+    "sectionsLabel": "設定の項目",
+    "sections": {
+      "profiles": "プロフィール",
+      "groups": "グループ",
+      "categories": "カテゴリー",
+      "activities": "活動",
+      "appearance": "外観",
+      "day": "1日",
+      "device": "端末",
+      "backup": "バックアップ",
+      "about": "このアプリについて"
+    },
+    "importFailed": "読み込みに失敗しました：{error}",
+    "up": "上へ",
+    "down": "下へ",
+    "activityCount": {
+      "other": "{n} 件の活動"
+    },
+    "profiles": {
+      "intro": "プロフィールはそれぞれ独立した作業スペースで、活動、グループ、日々の記録、サマリー、設定、バックアップを別々に持ちます。開けるのは一度にひとつ。実行中の活動は、別のプロフィールにいる間もカウントを続けます。新しいプロフィールは、このプロフィールの設定をコピーして始まります。",
+      "placeholder": "新しいプロフィール名（例：自宅）",
+      "add": "プロフィールを追加",
+      "name": "プロフィール名",
+      "isOpen": "表示中",
+      "openOther": "先に別のプロフィールを開いてください",
+      "deleteTitle": "プロフィール「{name}」を削除しますか？",
+      "deleteBody": "活動、日々の記録、履歴がすべて削除されます。元に戻せません（先にバックアップを書き出してください）。"
+    },
+    "groups": {
+      "intro": "メイン画面には、オンになっているグループの活動と、グループに属さない活動が表示されます。複数のグループを同時にオンにでき、変更するまでオン・オフはそのままです。",
+      "placeholder": "グループを追加：1 行にひとつ、またはカンマ区切り",
+      "name": "グループ名",
+      "on": "オン",
+      "deleteTitle": "グループ「{name}」を削除しますか？",
+      "deleteBody": "活動は残り、「グループなし」に移ります。"
+    },
+    "categories": {
+      "intro": "カテゴリーはサマリーで時間を分類します。ディメンションには選択肢があり、各活動はディメンションごとに最大ひとつの選択肢を選びます。選んでいない活動は「未設定」として数えるので、どのディメンションも合計 100% になります。",
+      "empty": "カテゴリーはまだありません",
+      "example": "たとえば {focus}：{productive} / {nonProductive}、または {company}：{people} / {alone}。",
+      "addExample": "例「{name}」を追加",
+      "newName": "新しいディメンション",
+      "addEmpty": "空のディメンションを追加",
+      "placeholder": "新しいディメンション（例：エネルギー）",
+      "add": "ディメンションを追加",
+      "dimension": "ディメンション",
+      "dimensionName": "ディメンション名",
+      "set": {
+        "other": "{n} 件中 {set} 件の活動に設定済み"
+      },
+      "deleteTitle": "ディメンション「{name}」を削除しますか？",
+      "deleteBody": "すべての活動からこのディメンションの選択肢が外れます。ほかは何も変わりません。",
+      "colorOf": "{name} の色：{color}",
+      "optionName": "選択肢の名前",
+      "deleteOptionTitle": "選択肢「{name}」を削除しますか？",
+      "deleteOptionBody": "その活動は {dimension} で「未設定」になります。",
+      "addOption": "選択肢を追加",
+      "newOption": "新しい選択肢"
+    },
+    "activities": {
+      "taken": "すでに存在します（名前は重複できません。削除した活動は下で復元または完全に削除できます）：{names}",
+      "placeholder": "活動を追加：1 行にひとつ、またはカンマ区切り",
+      "removedTitle": "外した活動",
+      "removedIntro": "外した活動の履歴は残っているので、いつでも復元できます。「削除」するとこのリストから消えますが、記録した時間はサマリーに残ります。あとで同じ名前の活動を追加すると、その履歴の続きになります。",
+      "restore": "復元",
+      "deleteTitle": "「{name}」を削除しますか？",
+      "deleteBody": "このリストから完全に消えます。記録した時間はサマリーに残ります。",
+      "colorLabel": "{name} の色：活動の色で変更",
+      "colorTitle": "外観 → 活動の色で変更",
+      "name": "名前",
+      "exists": "「{name}」という活動はすでにあります。",
+      "group": "グループ",
+      "noGroup": "グループなし",
+      "target": "目標",
+      "min": "分",
+      "hasTime": "今日の記録あり",
+      "hideToday": "今日は隠す",
+      "remove": "外す",
+      "removeTitle": "「{name}」を外しますか？",
+      "removeBody": "履歴は残り、復元できます。"
+    },
+    "theme": {
+      "lowContrast": "「{name}」をインストールしましたが、次の活動の色は背景に対して見えにくくなっています（3:1 未満）：{slots}。",
+      "intro": "テーマは見た目全体を決めます。背景、文字、活動の色。エディターやターミナルのテーマと同じ考え方です。",
+      "mode": "テーマのモード",
+      "fixed": "固定",
+      "system": "システムに合わせる",
+      "import": "テーマを読み込む",
+      "systemNote": "システムに合わせる：ライトモードでは {light}、ダークモードでは {dark}。変更するには、システムがそのモードのときにテーマをタップします（現在：{mode}）。",
+      "dark": "ダーク",
+      "light": "ライト",
+      "name": "テーマ名",
+      "export": "書き出す",
+      "deleteTitle": "テーマ「{name}」を削除しますか？",
+      "deleteBody": "このテーマを使っているプロフィールは Paper または Graphite に切り替わります。"
+    },
+    "colors": {
+      "title": "活動の色",
+      "intro": "各テーマにはターミナルのパレットのように 16 色の枠があります。活動は枠を選ぶので、テーマに合わせて色が変わり、どのテーマでも読みやすいままです。活動が枠より多いと色は繰り返されますが、色の横には必ず名前が表示されます。",
+      "of": "{name} の色",
+      "slot": "枠 {n}、{name}"
+    },
+    "day": {
+      "reset": "自動リセットの時刻",
+      "weekStart": "週の始まり",
+      "system": "システム（{day}）",
+      "weekHint": "期間「週」、カレンダー、ヒートマップで使います",
+      "minSwitch": "最短の切り替え",
+      "minSwitchHint": "これより短い区間は次（または前）の活動に含めます",
+      "autoExport": "1日が終わったら JSON バックアップをダウンロード",
+      "autoExportHint": "終わった 1日ごとに 1 ファイル、ダウンロードフォルダーへ",
+      "editTimeline": "タイムラインを編集…"
+    },
+    "device": {
+      "language": "言語",
+      "languageHint": "この端末では Web サイトにも適用されます",
+      "fullscreen": "全画面で開始",
+      "fullscreenHint": "最初のタップで。全画面アイコンで切り替え、Esc 長押しで終了",
+      "awake": "画面をオンのままにする",
+      "awakeHint": "アプリが開いて表示されている間",
+      "awakeUnavailable": "ここでは使えません：localhost または HTTPS が必要です"
+    },
+    "backup": {
+      "importTitle": "このプロフィールに読み込みますか？",
+      "importBody": "読み込むと、プロフィール「{name}」のデータと設定がすべて置き換わります。ほかのプロフィールは変わりません。",
+      "importOk": "読み込む",
+      "importDone": "読み込みが完了しました。",
+      "intro": "書き出しと読み込みはこのプロフィールだけが対象です。読み込むとデータと設定が置き換わります。",
+      "export": "JSON を書き出す",
+      "import": "JSON を読み込む"
+    }
+  },
+  "slots": {
+    "blue": "青",
+    "green": "緑",
+    "orange": "オレンジ",
+    "purple": "紫",
+    "red": "赤",
+    "cyan": "シアン",
+    "yellow": "黄",
+    "neutral": "ニュートラル",
+    "pink": "ピンク",
+    "teal": "ティール",
+    "lime": "ライム",
+    "brown": "茶",
+    "indigo": "藍",
+    "olive": "オリーブ",
+    "wine": "ワイン",
+    "slate": "スレート"
+  },
+  "seed": {
+    "names": {
+      "default": "メイン",
+      "work": "仕事",
+      "meeting": "会議",
+      "task": "タスク",
+      "code review": "コードレビュー",
+      "communication": "連絡",
+      "setup": "準備",
+      "break": "休憩",
+      "planning": "計画",
+      "focus": "集中",
+      "productive": "生産的",
+      "non-productive": "非生産的",
+      "company": "一緒にいる人",
+      "with people": "誰かと",
+      "alone": "ひとり"
+    }
+  },
+  "summary": {
+    "title": "サマリー",
+    "idleFor": "空き {time}",
+    "notSet": "未設定",
+    "loading": "読み込み中…",
+    "days": {
+      "other": "{n} 日"
+    },
+    "quick": {
+      "today": "今日",
+      "yesterday": "昨日",
+      "thisWeek": "今週",
+      "lastWeek": "先週",
+      "last7": "過去 7 日間",
+      "thisMonth": "今月",
+      "lastMonth": "先月",
+      "last30": "過去 30 日間"
+    },
+    "kinds": {
+      "day": "日",
+      "week": "週",
+      "month": "月",
+      "custom": "カスタム"
+    },
+    "emptyDay": "{date} の記録はありません",
+    "emptyRange": "{from}〜{to} の記録はありません",
+    "emptyHint": "別の期間を選ぶか、メイン画面で活動を開始してください。",
+    "pickLast": "最終日を選択",
+    "period": "期間",
+    "periodKind": "期間の種類",
+    "prevPeriod": "前の期間",
+    "nextPeriod": "次の期間",
+    "choosePeriod": "期間を選択、{label}",
+    "groupBy": "グループ化",
+    "activity": "活動",
+    "nothing": "記録なし",
+    "prevMonth": "前の月",
+    "nextMonth": "次の月",
+    "quickRanges": "クイック選択",
+    "pickLastHint": "次に最終日をタップしてください。両方の日が含まれます。",
+    "pickFirstHint": "最初の日をタップし、次に最終日をタップします。両方の日が含まれます。",
+    "shadedHint": "色の付いた日には記録があります。週の始まりは{day}です（設定 → 1日）。",
+    "total": "記録の合計",
+    "live": "実行中 · ライブ",
+    "firstLast": "最初 – 最後",
+    "firstLastHint": "最初の開始から最後の終了まで",
+    "idleHint": "活動と活動のあいだ",
+    "switches": "切り替え",
+    "sessions": {
+      "other": "{n} セッション"
+    },
+    "avg": "記録日あたりの平均",
+    "trackedDays": {
+      "other": "記録日 {n} 日"
+    },
+    "noTrackedDays": "記録日なし",
+    "previous": "前回：{time}",
+    "timeline": "タイムライン",
+    "tapBlock": "ブロックをタップで詳細",
+    "blockLabel": "{name} {from}〜{to}",
+    "perWeek": "週ごと",
+    "perWeekHint": "バー = グループ別の合計",
+    "avgHint": "破線：平均開始 {start} · 終了 {end} · 日をタップで詳細",
+    "tapDay": "日をタップで詳細",
+    "perDay": "日ごと",
+    "openDay": "日を開く",
+    "targetMet": {
+      "other": "目標 {target} · {n} 日中 {met} 日達成"
+    },
+    "share": "割合",
+    "tapOption": "選択肢をタップすると活動が表示されます",
+    "avgOver": "記録日の平均",
+    "shareOfTime": "時間の割合",
+    "donutHours": "{h}時間",
+    "name": "名前",
+    "totalCol": "合計",
+    "target": "目標",
+    "avgDay": "平均 / 日",
+    "sessionsTitle": "セッション",
+    "groupLog": "{name}でグループ化",
+    "vsWeek": "前週との比較",
+    "vsMonth": "{month}との比較",
+    "vsDays": {
+      "other": "直前の {n} 日間との比較"
+    },
+    "noDataWeek": "前週のデータなし",
+    "noDataMonth": "{month}のデータなし",
+    "noDataDays": {
+      "other": "直前の {n} 日間のデータなし"
+    }
+  },
+  "dialogs": {
+    "theActivity": "活動",
+    "resetTitle": "1日をリセットしますか？",
+    "resetStops": "{name} は今すぐ停止します。",
+    "resetBody": "{date} は合計 {total} の記録で締めくくられ、新しい 1日が始まります。締めた日はサマリーからいつでも編集できます。",
+    "closeTitle": "Time Tracker を閉じますか？",
+    "closeRunning": "アプリを閉じている間も {name} のカウントは続きます。停止や切り替えはアプリを開き直して行ってください。",
+    "closeIdle": "実行中のものはありません。",
+    "closeYourself": "ウィンドウはご自身で閉じてください",
+    "closeYourselfBody": "ブラウザーの制限で、このページは自分のウィンドウを閉じられません。Alt+F4 または Ctrl+W を押してください。",
+    "keepsCounting": "{name} のカウントは続きます。"
+  },
+  "errors": {
+    "notExport": "Time Tracker の書き出しファイルではありません",
+    "itermXml": "不明な XML ファイルです（iTerm の .itermcolors ファイルが必要です）",
+    "jsonTheme": "不明な JSON テーマです（このアプリのテーマファイル、VS Code のカラーテーマ、または base16 が必要です）",
+    "themeFile": "不明なテーマファイルです（対応形式：このアプリのテーマ .json、VS Code .json、base16 .yaml/.json、Alacritty .toml、iTerm .itermcolors）"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "title": "Time Tracker — um registro de tempo de um toque que fica no seu dispositivo",
+  "description": "Um registro de tempo gratuito de um toque: um botão grande por atividade, toque quando trocar e veja seu dia, semana e mês organizados. Sem conta, e o que você registra nunca sai do seu dispositivo.",
+  "og": {
+    "title": "Time Tracker — saiba para onde foi o seu dia",
+    "description": "Um botão grande por atividade: toque quando trocar e veja seu dia, semana e mês organizados. Grátis, sem conta, e o que você registra nunca sai do seu dispositivo.",
+    "imageAlt": "A tela principal do Time Tracker: um bloco por atividade com o tempo de hoje"
+  },
+  "ld": {
+    "description": "Um registro de tempo de um toque: um botão grande por atividade, toque quando trocar e veja seu dia, semana e mês. Sem conta; tudo fica no seu dispositivo.",
+    "os": "Qualquer um (navegador web)",
+    "requirements": "Requer um navegador moderno com JavaScript e IndexedDB"
+  },
+  "hero": {
+    "title": "Saiba para onde o seu dia realmente foi",
+    "lead": "Um registro de tempo de um toque: um botão grande para cada coisa que você faz. Toque quando trocar. À noite você vê as reuniões, as revisões e as “perguntinhas rápidas” hora a hora, sem preencher uma única folha de horas. E tudo continua seu: sem conta, e nada do que você registra sai do seu dispositivo.",
+    "demo": "Experimente a demo",
+    "fine": "A demo roda com três semanas de dados de exemplo em um ambiente isolado. Nada do que você fizer lá afeta o seu registro de verdade. Grátis.",
+    "imageAlt": "Tocando entre atividades: o bloco ativo acende e a linha do tempo de hoje cresce na parte de baixo"
+  },
+  "switching": {
+    "title": "Trocar leva um toque",
+    "p1": "Funciona como um relógio de xadrez. Toque em Reunião e o relógio passa para Reunião; toque em Tarefa e ele segue em frente. Só uma coisa corre por vez, então nada é contado duas vezes e nada escapa.",
+    "p2": "Os botões são grandes o bastante para acertar sem olhar, no notebook, num tablet ao lado da mesa ou numa tela touch na parede.",
+    "imageAlt": "A tela principal no tema escuro Graphite: um bloco por atividade com o tempo de hoje, o ativo em destaque"
+  },
+  "backdate": {
+    "title": "Esqueceu de trocar? Corrija em dois toques",
+    "p1": "Foi puxado para uma ligação e só lembrou vinte minutos depois? Segure a atividade e escolha “ativa desde 10:40”. O tempo é tirado do que estava rodando, então o dia continua fechando no minuto.",
+    "p2": "Todas as sessões do dia estão ali para encurtar, mover ou apagar.",
+    "imageAlt": "Segurar uma atividade abre as sessões de hoje e botões rápidos para começá-la mais cedo"
+  },
+  "privacy": {
+    "title": "Privado por projeto, não por promessa",
+    "p1": "A maioria dos apps de registro de tempo pede uma conta e depois envia cada minuto do seu dia para a nuvem. Este não tem para onde enviar. Suas sessões ficam no armazenamento do seu navegador neste dispositivo, e essa é a única cópia.",
+    "p2": "Sem cadastro, sem anúncios, sem cookies. Registre o dentista, a entrevista de emprego e o almoço demorado sem se perguntar quem mais pode ver."
+  },
+  "vault": {
+    "label": "O que fica privado",
+    "account": { "title": "Sem conta", "text": "Sem e-mail, sem senha. Abra e comece a tocar." },
+    "device": { "title": "Fica neste dispositivo", "text": "Nada do que você registra é enviado para lugar nenhum." },
+    "nobody": { "title": "Ninguém espiando", "text": "Sem anúncios, sem cookies. O site conta visitas de forma anônima, nunca o que você registra, e você pode desativar isso." },
+    "export": { "title": "Seu para levar", "text": "Exporte um arquivo de backup quando quiser e importe em outro dispositivo." }
+  },
+  "summary": {
+    "title": "Veja a semana, não só o dia",
+    "p1": "Dia, semana, mês ou qualquer período que você escolher. Todo dia fica no mesmo relógio, então começos atrasados, almoços longos e terças cheias de reuniões saltam aos olhos.",
+    "p2": "Marque as atividades com suas próprias categorias, como trabalho focado ou raso, sozinho ou com pessoas, e todo o resumo se reorganiza em torno delas.",
+    "imageAlt": "O resumo passando de um dia para uma semana agrupada por foco e depois para um mapa de calor do mês"
+  },
+  "phone": {
+    "title": "Cabe no bolso também",
+    "p1": "No celular os botões ficam dois por linha e os menus deslizam de baixo para cima. Adicione à tela inicial e ele abre como qualquer outro app.",
+    "imageAlt": "O app no celular: blocos, a folha da atividade, o menu Mais e o resumo"
+  },
+  "private": {
+    "title": "Seu dia não é da conta de ninguém",
+    "text": "Sem conta, e nenhum servidor que veja o seu dia. Tudo o que você registra fica neste navegador, neste dispositivo. Exporte um backup quando quiser e importe em qualquer outro lugar. O site só conta visitas, de forma anônima e sem cookies, para eu saber que vale a pena mantê-lo.",
+    "link": "Como isso funciona"
+  },
+  "extras": {
+    "label": "Também incluído",
+    "targets": { "title": "Metas diárias", "text": "Veja num relance se você tirou aquela hora de pausas." },
+    "profiles": { "title": "Perfis", "text": "Separe trabalho e casa, cada um com seus botões e seu histórico." },
+    "layouts": { "title": "Três layouts", "text": "Blocos, linhas ou círculos, e botões que crescem com o uso, se quiser." },
+    "themes": { "title": "Sete temas", "text": "Claro, escuro ou seguindo o sistema, ou importe o seu." },
+    "day": { "title": "Seu próprio dia", "text": "Comece o dia às 4 da manhã se você trabalha até tarde; ele vira sozinho." },
+    "fullscreen": { "title": "Tela cheia", "text": "Deixe rodando numa tela sobrando como relógio de parede do seu trabalho." }
+  },
+  "closing": {
+    "title": "Dê um dia a ele.",
+    "lead": "Registre amanhã do primeiro café até a última mensagem e olhe a linha do tempo à noite. A maioria das pessoas se surpreende.",
+    "demo": "Experimente a demo primeiro"
+  }
+}

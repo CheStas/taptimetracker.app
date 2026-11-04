@@ -1,0 +1,87 @@
+{
+  "title": "Apps parecidos — Time Tracker",
+  "description": "Outros registros de tempo de um toque, do mais ao menos parecido com o Time Tracker, e no que eles diferem.",
+  "heading": "Apps parecidos",
+  "intro": "O Time Tracker funciona como um relógio de xadrez: toque numa atividade para começá-la, toque em outra para trocar; só uma corre por vez, e tempos passados podem ser corrigidos. Estes apps funcionam do mesmo jeito ou de forma parecida. Estão ordenados <strong>do mais ao menos parecido</strong>.",
+  "takeaway": {
+    "lead": "<strong>Resumindo:</strong> nenhum reúne tudo isto:",
+    "web": "uma página web que roda em qualquer lugar, até como um único arquivo offline",
+    "touch": "um layout para tela touch e tela de parede",
+    "backdate": "o “ativa desde…” retroativo que tira o tempo das outras atividades",
+    "offline": "armazenamento que fica no dispositivo, sem conta",
+    "closest": "Os mais próximos são apps nativos de celular: TickTappy, aTimeLogger e Simple Time Tracker."
+  },
+  "source": "código-fonte",
+  "timeryFor": "para",
+  "platform": "Plataforma",
+  "similar": "No que é parecido",
+  "differences": "Principais diferenças",
+  "tools": {
+    "t1": {
+      "platform": "iPhone, iPad, Mac, Watch; grátis + premium (sincronização)",
+      "similar": "Botões de etiqueta coloridos: toque para começar, <strong>toque de novo para parar</strong>, começar outra etiqueta <strong>para a que está rodando</strong>. <strong>Começar um cronômetro no passado</strong> (ex.: 30 min atrás), ajuste rápido do tempo depois de começar/parar, edição de registros passados, arquivamento de etiquetas sem perder o histórico, resumos por dia e semana. Offline, sem conta.",
+      "differences": "Só Apple; não é uma página web; sem modo de tela de parede"
+    },
+    "t2": {
+      "platform": "iOS",
+      "similar": "Começa e para uma atividade com <strong>um toque</strong>; pausar/retomar; atividades simultâneas opcionais; relatórios.",
+      "differences": "App nativo; várias atividades podem rodar ao mesmo tempo (opcional); não tem layout de quiosque"
+    },
+    "t3": {
+      "platform": "Android + Wear OS; código aberto (GPL-3.0)",
+      "similar": "Começa atividades com <strong>um clique</strong> numa grade de botões; histórico, estatísticas, backups, widgets na tela inicial; um registro pode ser dividido e ter a atividade trocada.",
+      "differences": "Só Android; não é um app web"
+    },
+    "t4": {
+      "platform": "iOS",
+      "similar": "<strong>Um toque</strong> para começar, parar ou <strong>trocar</strong> de atividade; o horário de início de um registro em andamento pode ser movido.",
+      "differences": "Só Apple; registros segmentados não podem ser ajustados depois de um tempo"
+    },
+    "t5": {
+      "platform": "iOS",
+      "similar": "Começa e para o registro de tarefas com <strong>um toque</strong>; relatórios por tarefa.",
+      "differences": "App nativo; comportamento de troca e pausa não descrito"
+    },
+    "t6": {
+      "platform": "Dado físico de 8 ou 12 lados + app; assinatura",
+      "similar": "A mesma ideia de “uma atividade ativa” num <strong>dispositivo físico</strong>: vire o dado para trocar de atividade, desligue ou toque duas vezes para parar. O tempo esquecido é corrigido num editor tipo calendário.",
+      "differences": "Precisa de hardware; conta na nuvem; sem botões na tela (<a href=\"https://www.timedoctor.com/blog/timeular-vs-timeflip/\">comparação</a>)"
+    },
+    "t7": {
+      "platform": "Web, num dispositivo compartilhado; recurso gratuito do Clockify",
+      "similar": "Uma página web de <strong>dispositivo compartilhado / quiosque</strong>: as pessoas batem o ponto e <strong>trocam de projeto ou tarefa</strong> e de pausa; relatórios no Clockify (<a href=\"https://clockify.me/help/track-time-and-expenses/clock-in-and-out-via-kiosk\">ajuda</a>).",
+      "differences": "Feito para equipes (acesso por PIN/QR); só na nuvem; sem painel de botões por atividade"
+    },
+    "t8": {
+      "platform": "App web; código aberto (GPL-3.0), auto-hospedado ou hospedado",
+      "similar": "Baseado na web, com uma <strong>linha do tempo interativa</strong> para editar registros; etiquetas em vez de projetos; <strong>metas</strong> diárias, semanais e mensais; relatórios (PDF/CSV); modo Pomodoro (<a href=\"https://www.linuxlinks.com/timetagger-web-based-time-tracking-solution/\">visão geral</a>).",
+      "differences": "Servidor em Python; não é um painel touch de botões grandes; sem troca com um toque"
+    },
+    "t9": {
+      "platform": "Cliente iOS/Mac para o Toggl (nuvem)",
+      "similar": "<strong>Cronômetros salvos iniciados com um clique</strong>; edição e divisão de registros; no Toggl você arrasta um bloco para mudar o início ou o fim (<a href=\"https://clockk.com/alt/does-toggl-have-a-timer\">guia</a>).",
+      "differences": "Conta na nuvem; interface de desktop/celular; o plano grátis é limitado"
+    },
+    "t10": {
+      "platform": "Página web estática (JS puro, Bootstrap), modo localStorage",
+      "similar": "A <strong>stack técnica</strong> mais próxima: JS puro, armazenamento do navegador, um cartão por atividade com iniciar/parar e um total de horas.",
+      "differences": "Sem troca automática, visão de totais por dia ou registro retroativo"
+    },
+    "t11": {
+      "platform": "PWA offline (Next.js), IndexedDB",
+      "similar": "<strong>Abordagem de armazenamento</strong> parecida (offline, IndexedDB, sobrevive a recarregamentos).",
+      "differences": "Um cronômetro de iniciar/parar/volta, não um painel de atividades"
+    },
+    "t12": {
+      "platform": "Registros de tempo de código aberto para web e desktop",
+      "similar": "Registro de tempo geral com projetos/tarefas, cronômetros e relatórios; auto-hospedáveis ou local-first (<a href=\"https://super-productivity.com/blog/best-open-source-time-tracking-apps-2026/\">comparação</a>).",
+      "differences": "Voltados a projetos e faturamento; sem painel de atividades de um toque"
+    },
+    "t13": {
+      "platform": "Android / Linux",
+      "similar": "A <strong>interação de relógio de xadrez</strong> em que o Time Tracker se inspira: botões grandes, um toque passa o relógio para o outro lado.",
+      "differences": "Dois jogadores, contagem regressiva, sem registro, totais ou histórico"
+    }
+  },
+  "sources": "Pesquisado em outubro de 2026. As descrições vêm da página ou documentação de cada app e de resumos de terceiros; nada foi instalado ou testado."
+}

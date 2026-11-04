@@ -1,0 +1,18 @@
+{
+  "brand": "Time Tracker",
+  "openApp": "打开应用",
+  "footer": {
+    "pages": "页面",
+    "language": "语言",
+    "home": "首页",
+    "similar": "同类应用",
+    "privacy": "隐私",
+    "terms": "使用条款",
+    "english": "（英文）"
+  },
+  "banner": {
+    "text": "本页面提供中文版本。",
+    "go": "查看中文版",
+    "close": "关闭"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "title": "Vergelijkbare apps — Time Tracker",
+  "description": "Andere tijdregistratie-apps met één tik, gerangschikt van meest tot minst vergelijkbaar met Time Tracker, en waarin ze verschillen.",
+  "heading": "Vergelijkbare apps",
+  "intro": "Time Tracker werkt als een schaakklok: tik op een activiteit om haar te starten, tik op een andere om te wisselen; er loopt er maar één tegelijk, en eerdere tijden kun je corrigeren. Deze apps werken op dezelfde of een vergelijkbare manier. Ze staan <strong>van meest tot minst vergelijkbaar</strong>.",
+  "takeaway": {
+    "lead": "<strong>Kort gezegd:</strong> geen enkele combineert al het volgende:",
+    "web": "een webpagina die overal draait, zelfs als één offline bestand",
+    "touch": "een indeling voor touchscreens en wandschermen",
+    "backdate": "‘actief sinds…’ achteraf, dat de tijd van andere activiteiten afhaalt",
+    "offline": "opslag die op het apparaat blijft, zonder account",
+    "closest": "Het dichtst in de buurt komen native telefoonapps: TickTappy, aTimeLogger en Simple Time Tracker."
+  },
+  "source": "broncode",
+  "timeryFor": "for",
+  "platform": "Platform",
+  "similar": "Waarom vergelijkbaar",
+  "differences": "Belangrijkste verschillen",
+  "tools": {
+    "t1": {
+      "platform": "iPhone, iPad, Mac, Watch; gratis + premium (synchronisatie)",
+      "similar": "Gekleurde labelknoppen: tik om te starten, <strong>tik nogmaals om te stoppen</strong>, een ander label starten <strong>stopt het lopende</strong>. <strong>Een timer in het verleden starten</strong> (bijv. 30 min geleden), snel de tijd bijstellen na starten/stoppen, eerdere registraties bewerken, labels archiveren zonder geschiedenis te verliezen, dag- en weekoverzichten. Offline, geen account.",
+      "differences": "Alleen Apple; geen webpagina; geen wandschermmodus"
+    },
+    "t2": {
+      "platform": "iOS",
+      "similar": "Start en stopt een activiteit met <strong>één tik</strong>; pauzeren/hervatten; optioneel gelijktijdige activiteiten; rapporten.",
+      "differences": "Native app; meerdere activiteiten kunnen tegelijk lopen (optioneel); geen kioskindeling"
+    },
+    "t3": {
+      "platform": "Android + Wear OS; open source (GPL-3.0)",
+      "similar": "Start activiteiten met <strong>één klik</strong> vanuit een raster van knoppen; registratiegeschiedenis, statistieken, back-ups, widgets op het beginscherm; een registratie kan worden gesplitst en van activiteit veranderd.",
+      "differences": "Alleen Android; geen webapp"
+    },
+    "t4": {
+      "platform": "iOS",
+      "similar": "<strong>Eén tik</strong> om activiteiten te starten, te stoppen of te <strong>wisselen</strong>; de starttijd van een lopende registratie kan worden verschoven.",
+      "differences": "Alleen Apple; gesegmenteerde registraties kunnen na een tijdje niet meer worden aangepast"
+    },
+    "t5": {
+      "platform": "iOS",
+      "similar": "Start en stopt het bijhouden van een taak met <strong>één tik</strong>; rapporten per taak.",
+      "differences": "Native app; wissel- en pauzegedrag niet beschreven"
+    },
+    "t6": {
+      "platform": "Fysieke tracker-dobbelsteen met 8 of 12 zijden + app; abonnement",
+      "similar": "Hetzelfde idee van ‘één actieve activiteit’ als <strong>fysiek apparaat</strong>: draai de dobbelsteen om van activiteit te wisselen, zet hem uit of tik twee keer om te stoppen. Vergeten tijd wordt hersteld in een agenda-achtige editor.",
+      "differences": "Hardware nodig; cloudaccount; geen knoppen op het scherm (<a href=\"https://www.timedoctor.com/blog/timeular-vs-timeflip/\">vergelijking</a>)"
+    },
+    "t7": {
+      "platform": "Web, op een gedeeld apparaat; gratis functie van Clockify",
+      "similar": "Een webpagina voor een <strong>gedeeld apparaat / kiosk</strong>: mensen klokken in en <strong>wisselen van project of taak</strong> en pauze; rapporten in Clockify (<a href=\"https://clockify.me/help/track-time-and-expenses/clock-in-and-out-via-kiosk\">help</a>).",
+      "differences": "Gemaakt voor teams (inloggen met pincode/QR); alleen cloud; geen knoppenbord per activiteit"
+    },
+    "t8": {
+      "platform": "Webapp; open source (GPL-3.0), zelf hosten of gehost",
+      "similar": "Webgebaseerd, met een <strong>interactieve tijdlijn</strong> om registraties te bewerken; labels in plaats van projecten; dag-, week- en maand<strong>doelen</strong>; rapporten (PDF/CSV); Pomodoro-modus (<a href=\"https://www.linuxlinks.com/timetagger-web-based-time-tracking-solution/\">overzicht</a>).",
+      "differences": "Python-server; geen touchbord met grote knoppen; geen wisselen met een tik"
+    },
+    "t9": {
+      "platform": "iOS/Mac-client voor Toggl (cloud)",
+      "similar": "<strong>Opgeslagen timers die met één klik starten</strong>; registraties bewerken en splitsen; in Toggl sleep je een blok om de start- of eindtijd te wijzigen (<a href=\"https://clockk.com/alt/does-toggl-have-a-timer\">handleiding</a>).",
+      "differences": "Cloudaccount; desktop-/telefooninterface; het gratis abonnement is beperkt"
+    },
+    "t10": {
+      "platform": "Statische webpagina (pure JS, Bootstrap), localStorage-modus",
+      "similar": "De meest vergelijkbare <strong>techniek</strong>: pure JS, browseropslag, één kaart per activiteit met start/stop en een urentotaal.",
+      "differences": "Geen automatisch wisselen, geen overzicht van dagtotalen en geen registratie achteraf"
+    },
+    "t11": {
+      "platform": "Offline PWA (Next.js), IndexedDB",
+      "similar": "Vergelijkbare <strong>opslagaanpak</strong> (offline, IndexedDB, overleeft herladen).",
+      "differences": "Een stopwatch met start/stop/ronde, geen activiteitenbord"
+    },
+    "t12": {
+      "platform": "Opensource-tijdregistratie voor web en desktop",
+      "similar": "Algemene tijdregistratie met projecten/taken, timers en rapporten; zelf te hosten of local-first (<a href=\"https://super-productivity.com/blog/best-open-source-time-tracking-apps-2026/\">vergelijking</a>).",
+      "differences": "Gericht op projecten en facturering; geen activiteitenbord met één tik"
+    },
+    "t13": {
+      "platform": "Android / Linux",
+      "similar": "De <strong>schaakklokbediening</strong> waarop Time Tracker is gebaseerd: grote knoppen, één tik geeft de klok aan de andere kant.",
+      "differences": "Twee spelers, telt af, geen logboek, totalen of geschiedenis"
+    }
+  },
+  "sources": "Onderzocht in oktober 2026. De beschrijvingen komen uit de eigen vermelding of documentatie van elke app en uit samenvattingen van derden; er is niets geïnstalleerd of getest."
+}

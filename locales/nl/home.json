@@ -1,0 +1,75 @@
+{
+  "title": "Time Tracker — tijdregistratie met één tik die op je apparaat blijft",
+  "description": "Gratis tijdregistratie met één tik: één grote knop per activiteit, tik als je wisselt en zie je dag, week en maand overzichtelijk op een rij. Geen account, en wat je bijhoudt verlaat nooit je apparaat.",
+  "og": {
+    "title": "Time Tracker — weet waar je dag gebleven is",
+    "description": "Eén grote knop per activiteit: tik als je wisselt en zie je dag, week en maand op een rij. Gratis, geen account, en wat je bijhoudt verlaat nooit je apparaat.",
+    "imageAlt": "Het hoofdscherm van Time Tracker: één tegel per activiteit met de tijd van vandaag"
+  },
+  "ld": {
+    "description": "Tijdregistratie met één tik: één grote knop per activiteit, tik als je wisselt en zie je dag, week en maand. Geen account; alles blijft op je apparaat.",
+    "os": "Elk (webbrowser)",
+    "requirements": "Vereist een moderne browser met JavaScript en IndexedDB"
+  },
+  "hero": {
+    "title": "Weet waar je dag echt gebleven is",
+    "lead": "Tijdregistratie met één tik: één grote knop voor alles wat je doet. Tik als je wisselt. ’s Avonds zie je de meetings, de reviews en de ‘snelle vraagjes’ uur voor uur op een rij, zonder ook maar één urenstaat in te vullen. En het blijft van jou: geen account, en niets wat je bijhoudt verlaat ooit je apparaat.",
+    "demo": "Probeer de live demo",
+    "fine": "De demo draait op drie weken voorbeelddata in een eigen zandbak. Niets wat je daar doet raakt je echte registratie. Gratis.",
+    "imageAlt": "Tikken tussen activiteiten: de lopende tegel licht op en de tijdlijn van vandaag groeit onderaan mee"
+  },
+  "switching": {
+    "title": "Wisselen kost één tik",
+    "p1": "Het werkt als een schaakklok. Tik op Meeting en de klok loopt voor Meeting; tik op Taak en hij gaat verder. Er loopt maar één ding tegelijk, dus niets wordt dubbel geteld en niets glipt erdoorheen.",
+    "p2": "De knoppen zijn groot genoeg om zonder te kijken te raken, op een laptop, een tablet naast je bureau of een touchscreen aan de muur.",
+    "imageAlt": "Het hoofdscherm in het donkere thema Graphite: één tegel per activiteit met de tijd van vandaag, de lopende gemarkeerd"
+  },
+  "backdate": {
+    "title": "Vergeten te wisselen? In twee tikken hersteld",
+    "p1": "In een gesprek getrokken en pas twintig minuten later eraan gedacht? Houd de activiteit ingedrukt en kies ‘actief sinds 10:40’. De tijd gaat af van wat er liep, dus de dag klopt nog steeds tot op de minuut.",
+    "p2": "Elke sessie van de dag staat er klaar om in te korten, te verschuiven of te verwijderen.",
+    "imageAlt": "Een activiteit ingedrukt houden opent de sessies van vandaag en snelknoppen om haar eerder te starten"
+  },
+  "privacy": {
+    "title": "Privé door ontwerp, niet door belofte",
+    "p1": "De meeste tijdregistratie-apps willen een account en uploaden daarna elke minuut van je dag naar hun cloud. Deze kan het nergens heen sturen. Je sessies staan in de opslag van je browser op dit apparaat, en dat is de enige kopie.",
+    "p2": "Geen aanmelding, geen advertenties, geen cookies. Houd de tandarts, het sollicitatiegesprek en de lange lunch bij zonder je af te vragen wie er nog meekijkt."
+  },
+  "vault": {
+    "label": "Wat privé blijft",
+    "account": { "title": "Geen account", "text": "Geen e-mail, geen wachtwoord. Openen en tikken maar." },
+    "device": { "title": "Blijft op dit apparaat", "text": "Niets wat je bijhoudt wordt ooit ergens heen geüpload." },
+    "nobody": { "title": "Niemand kijkt mee", "text": "Geen advertenties, geen cookies. De site telt bezoeken anoniem, nooit wat je bijhoudt, en je kunt dat uitzetten." },
+    "export": { "title": "Neem het mee", "text": "Exporteer wanneer je wilt een back-upbestand en importeer het op een ander apparaat." }
+  },
+  "summary": {
+    "title": "Zie de week, niet alleen vandaag",
+    "p1": "Dag, week, maand of elke periode die je kiest. Elke dag staat op dezelfde klok, dus late starts, lange lunches en dinsdagen vol meetings springen er meteen uit.",
+    "p2": "Geef activiteiten je eigen categorieën, zoals diep werk tegenover ondiep of alleen tegenover met anderen, en het hele overzicht groepeert zich daarnaar.",
+    "imageAlt": "Het overzicht gaat van een dag naar een week gegroepeerd op focus, en dan naar een heatmap van de maand"
+  },
+  "phone": {
+    "title": "Past ook in je broekzak",
+    "p1": "Op een telefoon staan de knoppen twee per rij en schuiven de menu’s van onderen in beeld. Zet hem op je beginscherm en hij opent als elke andere app.",
+    "imageAlt": "De app op een telefoon: tegels, het activiteitenblad, het menu Meer en het overzicht"
+  },
+  "private": {
+    "title": "Je dag gaat niemand iets aan",
+    "text": "Geen account, en geen server die je dag ooit te zien krijgt. Alles wat je bijhoudt blijft in deze browser op dit apparaat. Exporteer een back-upbestand wanneer je wilt en importeer het waar je maar wilt. De site telt alleen bezoeken, anoniem en zonder cookies, zodat ik weet dat het de moeite waard is om te onderhouden.",
+    "link": "Hoe dat werkt"
+  },
+  "extras": {
+    "label": "Ook inbegrepen",
+    "targets": { "title": "Dagdoelen", "text": "Zie in één oogopslag of je dat uur pauze echt hebt genomen." },
+    "profiles": { "title": "Profielen", "text": "Houd werk en thuis gescheiden, elk met eigen knoppen en geschiedenis." },
+    "layouts": { "title": "Drie indelingen", "text": "Tegels, rijen of cirkels, en als je wilt knoppen die meegroeien met het gebruik." },
+    "themes": { "title": "Zeven thema’s", "text": "Licht, donker of zoals je systeem, of importeer je eigen thema." },
+    "day": { "title": "Je eigen dag", "text": "Laat de dag om 4 uur ’s ochtends beginnen als je laat werkt; hij wisselt vanzelf." },
+    "fullscreen": { "title": "Volledig scherm", "text": "Laat hem draaien op een vrij scherm als wandklok voor je werk." }
+  },
+  "closing": {
+    "title": "Geef het één dag.",
+    "lead": "Houd morgen alles bij van de eerste koffie tot het laatste bericht en bekijk ’s avonds de tijdlijn. De meeste mensen zijn verrast.",
+    "demo": "Probeer eerst de demo"
+  }
+}

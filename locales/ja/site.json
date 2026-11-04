@@ -1,0 +1,18 @@
+{
+  "brand": "Time Tracker",
+  "openApp": "アプリを開く",
+  "footer": {
+    "pages": "ページ",
+    "language": "言語",
+    "home": "ホーム",
+    "similar": "類似アプリ",
+    "privacy": "プライバシー",
+    "terms": "利用規約",
+    "english": "（英語）"
+  },
+  "banner": {
+    "text": "このページは日本語でもご覧いただけます。",
+    "go": "日本語で見る",
+    "close": "閉じる"
+  }
+}
