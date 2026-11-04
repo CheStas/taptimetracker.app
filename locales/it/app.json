@@ -46,9 +46,8 @@
     "reset": "Azzera la giornata",
     "fullscreen": "Schermo intero",
     "leaveFullscreen": "Esci da schermo intero",
-    "close": "Chiudi l’app",
     "more": "Altro",
-    "moreLabel": "Altro: azzera la giornata, schermo intero, chiudi l’app",
+    "moreLabel": "Altro: azzera la giornata, schermo intero, tieni lo schermo acceso",
     "top": "Torna su"
   },
   "main": {
@@ -82,16 +81,18 @@
     "tagline": "Un orologio da scacchi per la tua giornata di lavoro.",
     "theme": "Tema",
     "mainScreen": "Schermata principale",
-    "buttons": "Pulsanti"
+    "buttons": "Pulsanti",
+    "screen": "Schermo",
+    "screenOn": "Resta acceso",
+    "screenOff": "Può spegnersi"
   },
   "about": {
     "label": "Informazioni",
     "what": "Che cos’è?",
     "similar": "App simili",
     "feedback": "Invia un feedback",
-    "offline": "Questa pagina è sul sito web, che questo file offline non include.",
     "privacyNote": "Prima la privacy: tutto ciò che registri resta in questo browser. Non servono né account né connessione internet. Sei responsabile dei tuoi dati, quindi esporta regolarmente un backup.",
-    "statsUnavailable": "Questa copia (la demo, il file offline o una build locale) non invia statistiche d’uso.",
+    "statsUnavailable": "Questa copia (la demo o una build locale) non invia statistiche d’uso.",
     "statsLabel": "Condividi statistiche d’uso anonime",
     "statsHint": "Quali schermate e funzioni vengono usate, mai ciò che registri. Niente cookie, niente account, niente di personale.",
     "statsDnt": "Il tuo browser chiede ai siti di non tracciare, quindi resta disattivato finché non lo attivi.",
@@ -171,7 +172,6 @@
   },
   "feedback": {
     "title": "Invia un feedback",
-    "offline": "Questo file offline non può inviare messaggi. Apri la versione online dell’app per inviare un feedback.",
     "thanks": "Grazie",
     "sent": "Il tuo messaggio è in viaggio. Vengono letti tutti.",
     "intro": "Un bug, una funzione che manca o semplicemente che la usi: tutto aiuta a decidere cosa viene dopo.",
@@ -477,13 +477,7 @@
     "theActivity": "L’attività",
     "resetTitle": "Azzerare la giornata?",
     "resetStops": "{name} si ferma ora.",
-    "resetBody": "{date} si chiude con {total} registrato e inizia una nuova giornata. Puoi ancora modificare la giornata chiusa dal Riepilogo.",
-    "closeTitle": "Chiudere Tap Time Tracker?",
-    "closeRunning": "{name} continua a contare mentre l’app è chiusa. Riapri l’app per fermarla o cambiare.",
-    "closeIdle": "Non c’è niente in corso.",
-    "closeYourself": "Chiudi tu la finestra",
-    "closeYourselfBody": "Il browser non permette a questa pagina di chiudere la propria finestra. Premi Alt+F4 o Ctrl+W.",
-    "keepsCounting": "{name} continua a contare."
+    "resetBody": "{date} si chiude con {total} registrato e inizia una nuova giornata. Puoi ancora modificare la giornata chiusa dal Riepilogo."
   },
   "errors": {
     "notExport": "Non è un’esportazione di Tap Time Tracker",

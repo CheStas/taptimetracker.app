@@ -46,9 +46,8 @@
     "reset": "Reiniciar o dia",
     "fullscreen": "Tela cheia",
     "leaveFullscreen": "Sair da tela cheia",
-    "close": "Fechar o app",
     "more": "Mais",
-    "moreLabel": "Mais: reiniciar o dia, tela cheia, fechar o app",
+    "moreLabel": "Mais: reiniciar o dia, tela cheia, manter a tela ligada",
     "top": "Voltar ao topo"
   },
   "main": {
@@ -82,16 +81,18 @@
     "tagline": "Um relógio de xadrez para o seu dia de trabalho.",
     "theme": "Tema",
     "mainScreen": "Tela principal",
-    "buttons": "Botões"
+    "buttons": "Botões",
+    "screen": "Tela",
+    "screenOn": "Fica ligada",
+    "screenOff": "Pode desligar"
   },
   "about": {
     "label": "Sobre",
     "what": "O que é?",
     "similar": "Apps parecidos",
     "feedback": "Enviar feedback",
-    "offline": "Esta página fica no site, que este arquivo offline não inclui.",
     "privacyNote": "Privacidade em primeiro lugar: tudo o que você registra fica neste navegador. Não precisa de conta nem de internet. Você é responsável pelos seus dados, então exporte um backup com frequência.",
-    "statsUnavailable": "Esta cópia (a demo, o arquivo offline ou um build local) não envia estatísticas de uso.",
+    "statsUnavailable": "Esta cópia (a demo ou um build local) não envia estatísticas de uso.",
     "statsLabel": "Compartilhar estatísticas de uso anônimas",
     "statsHint": "Quais telas e recursos são usados, nunca o que você registra. Sem cookies, sem conta, nada pessoal.",
     "statsDnt": "Seu navegador pede aos sites para não rastrear, então isto fica desativado até você ativar.",
@@ -171,7 +172,6 @@
   },
   "feedback": {
     "title": "Enviar feedback",
-    "offline": "Este arquivo offline não envia mensagens. Abra a versão online do app para enviar feedback.",
     "thanks": "Obrigado",
     "sent": "Sua mensagem está a caminho. Todas são lidas.",
     "intro": "Um bug, um recurso que falta ou só que você usa: tudo ajuda a decidir o que vem a seguir.",
@@ -477,13 +477,7 @@
     "theActivity": "A atividade",
     "resetTitle": "Reiniciar o dia?",
     "resetStops": "{name} para agora.",
-    "resetBody": "{date} fecha com {total} registrado e um novo dia começa. Você ainda pode editar o dia fechado pelo Resumo.",
-    "closeTitle": "Fechar o Tap Time Tracker?",
-    "closeRunning": "{name} continua contando enquanto o app está fechado. Abra o app de novo para parar ou trocar.",
-    "closeIdle": "Nada está rodando.",
-    "closeYourself": "Feche a janela você mesmo",
-    "closeYourselfBody": "O navegador não deixa esta página fechar a própria janela. Pressione Alt+F4 ou Ctrl+W.",
-    "keepsCounting": "{name} continua contando."
+    "resetBody": "{date} fecha com {total} registrado e um novo dia começa. Você ainda pode editar o dia fechado pelo Resumo."
   },
   "errors": {
     "notExport": "Não é uma exportação do Tap Time Tracker",

@@ -1,12 +1,11 @@
 // The "about" links (footer, welcome strip, Settings → About), the quick theme and main screen switches, the privacy
-// note and the usage stats switch. "What is it?" and "Similar apps" open the site's pages (placeholders in the
-// single-file build); "Send feedback" opens the feedback form.
+// note and the usage stats switch. "What is it?" and "Similar apps" open the site's pages; "Send feedback"
+// opens the feedback form.
 import type { ComponentChildren } from 'preact';
 import { state, pickTheme, systemDark, setSetting } from '../state.ts';
 import { resolveTheme, type Theme } from '../theme.ts';
 import type { Layout } from '../types.ts';
 import { Icon, type IconName } from './icons.tsx';
-import { messageDialog } from './hooks.tsx';
 import { openFeedback } from './feedback.tsx';
 import { browserOptsOut, setStatsOn, statsAvailable, statsChoice, statsOn } from '../analytics.ts';
 import { useState } from 'preact/hooks';
@@ -15,9 +14,8 @@ import { locale, t, type Key } from '../i18n.ts';
 export const VERSION = `v${__APP_VERSION__}`;
 
 // The site pages sit next to the app (app/ → ../), English at the root and other languages under their code; the
-// app links to its own language's page where there is one. The single-file build has no site around it.
-const SITE = import.meta.env.MODE === 'single' ? null : '../';
-const sitePage = (path: string) => `${SITE}${locale() !== 'en' && __SITE_PAGES__[path]?.includes(locale()) ? `${locale()}/` : ''}${path}`;
+// app links to its own language's page where there is one.
+const sitePage = (path: string) => `../${locale() !== 'en' && __SITE_PAGES__[path]?.includes(locale()) ? `${locale()}/` : ''}${path}`;
 
 const LINKS: { id: string; label: Key; path?: string }[] = [
   { id: 'what', label: 'about.what', path: '' },
@@ -25,11 +23,7 @@ const LINKS: { id: string; label: Key; path?: string }[] = [
   { id: 'feedback', label: 'about.feedback' },
 ];
 
-const openLink = (link: (typeof LINKS)[number]) => link.id === 'feedback'
-  ? openFeedback(VERSION)
-  : messageDialog(t(link.label), t('about.offline'));
-
-/** The three links (a page link, or a button for a placeholder); `variant` picks the look of the place they are in. */
+/** The three links (a page link, or a button for the feedback form); `variant` picks the look of the place they are in. */
 export function AboutLinks({ variant }: { variant: 'strip' | 'footer' | 'settings' }) {
   return (
     <>
@@ -40,9 +34,9 @@ export function AboutLinks({ variant }: { variant: 'strip' | 'footer' | 'setting
             {t(l.label)}
           </>
         );
-        return SITE && l.path !== undefined
+        return l.path !== undefined
           ? <a key={l.id} class={`lnk lnk-${variant}`} href={sitePage(l.path)}>{content}</a>
-          : <button key={l.id} class={`lnk lnk-${variant}`} onClick={() => openLink(l)}>{content}</button>;
+          : <button key={l.id} class={`lnk lnk-${variant}`} onClick={() => openFeedback(VERSION)}>{content}</button>;
       })}
     </>
   );
@@ -108,6 +102,28 @@ export function MainScreenSwitch() {
           onClick={() => setSetting(m.key, !s[m.key] as never)}
         ><Icon name={m.icon!} /></button>
       ))}
+    </div>
+  );
+}
+
+/** Whether this browser can keep the screen on (Wake Lock; needs a secure context). */
+export const wakeLockAvailable = () => 'wakeLock' in navigator;
+
+/** Footer: Keep the screen on as two choices, Stays on / Can turn off. */
+export function ScreenSwitch() {
+  const on = state.profile.settings.keepAwake;
+  const available = wakeLockAvailable();
+  const seg = (value: boolean, label: string) => (
+    <button
+      class="seg" aria-pressed={available && on === value} disabled={!available}
+      onClick={() => on !== value && setSetting('keepAwake', value)}
+    ><span class="seg-label">{label}</span></button>
+  );
+  return (
+    // Not in a .quick-row: its labels stay on a phone (they are the only content).
+    <div class="segmented screen-switch" role="group" aria-label={t('settings.device.awake')}>
+      {seg(true, t('footer.screenOn'))}
+      {seg(false, t('footer.screenOff'))}
     </div>
   );
 }

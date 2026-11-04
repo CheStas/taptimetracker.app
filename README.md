@@ -23,17 +23,12 @@ npm install
 ```
 
 ## Run
+It is a website and an installable PWA: open it in a browser, or install it from the browser's menu. There is no
+launcher script or desktop entry; close it like any tab or app window. Locally:
 ```sh
-scripts/start.sh             # app window (resizable, closable) — the main way to run it
-scripts/start.sh --kiosk     # locked full screen, no window controls
-scripts/start.sh --browser   # normal browser window with tabs
+npm run dev                          # Vite dev server with hot reload
+npm run build && npx serve dist      # the built site; the app is at /app/
 ```
-`start.sh` is a bash script: run it directly (or with `bash`), not with `node`. It rebuilds `dist/` when the sources
-changed, then serves it on `http://localhost:8765` and opens the app at `/app/`. The npm shortcuts do the same:
-`npm start`, `npm run start:browser`, `npm run start:kiosk`.
-
-Closing the window (or the in-app ⏻ button) also stops the script and its local server.
-To start it at login, copy `time-tracker.desktop` to `~/.config/autostart/` and fix the path in `Exec=`.
 
 ### Develop
 ```sh
@@ -46,13 +41,6 @@ npm run screenshots # regenerate docs/screenshots and the demo animations (needs
 ```
 The driver behind the last two (and how to script your own checks) is described in
 [.claude/skills/run-time-tracker/SKILL.md](.claude/skills/run-time-tracker/SKILL.md).
-
-### Optional: plain HTML file
-```sh
-npm run build:single   # -> dist-single/time-tracker.html, open it by double-click
-```
-This file does not keep the screen on, and its data is **separate** from `scripts/start.sh` (a different browser
-origin). Use export/import to move data between them. Rebuild it after code changes.
 
 ### Optional: any static web server
 Run `npm run build` and copy `dist/` to any static host (a subpath works too). The root is the landing page (with
@@ -107,7 +95,8 @@ See `docs/SPEC.md` §20 for what is collected; the privacy page (`src/site/pages
   adding the same name again continues it.
 - Switches shorter than a minute are not counted (the time goes to the next or previous activity); change the
   threshold in **Settings → Day → Minimum switch**. The same section sets the reset hour and the first day of the week.
-- The screen stays on while the app is open; turn this off in **Settings → Device → Keep the screen on**.
+- The screen stays on while the app is open; switch it in the footer (Screen), in the ⋯ More menu on a phone, or in
+  **Settings → Device → Keep the screen on**.
 - **Language:** English, Ukrainian, Spanish, German, French, Japanese, Portuguese, Turkish, Italian, Persian, Dutch
   or Chinese, from the browser's languages; change it in **Settings → Device → Language** or with the flag picker in
   the website's footer. The website has its own URL per language (`/uk/`, `/de/`, …).
@@ -125,8 +114,8 @@ sitemap generated (see [SPEC §21](docs/SPEC.md#21-languages)).
 - First-run profiles, groups, activities and default settings come from [`config/seed.json`](config/seed.json).
   Edit it before the first start (or on a fresh profile/origin); later changes are made in Settings.
 - Imported themes are shared by all profiles; an export embeds the imported themes its profile uses.
-- Stored in IndexedDB in the Chromium profile `~/.local/share/time-tracker/chromium`, for the origin
-  `http://localhost:8765`. Always use the same port and profile, or you will see an empty database.
+- Stored in IndexedDB in the browser, per site address (origin): `localhost:5173` (dev), a local server and the
+  website each have their own database.
 - Back up with **Settings → Export JSON**, one file per profile. **Import JSON** replaces only the open profile. You can also turn on auto-export on day close.
 
 ## Tests

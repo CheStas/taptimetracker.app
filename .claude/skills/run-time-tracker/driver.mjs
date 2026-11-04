@@ -312,11 +312,9 @@ async function docs(browser) {
   await shot(page, '02-popups/3-delete-session');
   await page.click('.modal-confirm button:has-text("Cancel")');
   await page.keyboard.press('Escape');
-  for (const [label, name] of [['Reset day', '4-reset-day'], ['Close app', '5-close-app']]) {
-    await page.click(`button[aria-label="${label}"]`);
-    await shot(page, `02-popups/${name}`);
-    await page.click('.modal-confirm button:has-text("Cancel")');
-  }
+  await page.click('button[aria-label="Reset day"]');
+  await shot(page, '02-popups/4-reset-day');
+  await page.click('.modal-confirm button:has-text("Cancel")');
   await setting(page, 'Rows');
   await shot(page, '01-main-screen/2-rows');
   await setting(page, 'Circles');

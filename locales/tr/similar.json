@@ -5,7 +5,7 @@
   "intro": "Tap Time Tracker bir satranç saati gibi çalışır: başlatmak için bir etkinliğe, geçmek için bir başkasına dokunun; aynı anda yalnızca biri çalışır ve geçmiş süreler düzeltilebilir. Bu uygulamalar aynı ya da benzer şekilde çalışır. <strong>En çok benzeyenden en aza doğru</strong> sıralanmıştır.",
   "takeaway": {
     "lead": "<strong>Kısacası:</strong> hiçbiri şunların hepsini bir arada sunmuyor:",
-    "web": "her yerde çalışan bir web sayfası, tek bir çevrimdışı dosya olarak bile",
+    "web": "her yerde çalışan ve çevrimdışı çalışan bir uygulama olarak yüklenebilen bir web sayfası",
     "touch": "dokunmatik ekran ve duvar ekranı düzeni",
     "backdate": "süreyi diğer etkinliklerden alan “şu saatten beri etkin…” geriye dönük kayıt",
     "offline": "hesap gerektirmeyen, cihazda kalan depolama",

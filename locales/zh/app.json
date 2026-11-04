@@ -46,9 +46,8 @@
     "reset": "重置今天",
     "fullscreen": "全屏",
     "leaveFullscreen": "退出全屏",
-    "close": "关闭应用",
     "more": "更多",
-    "moreLabel": "更多：重置今天、全屏、关闭应用",
+    "moreLabel": "更多：重置今天、全屏、保持屏幕常亮",
     "top": "回到顶部"
   },
   "main": {
@@ -82,16 +81,18 @@
     "tagline": "为你的工作日准备的棋钟。",
     "theme": "主题",
     "mainScreen": "主界面",
-    "buttons": "按钮"
+    "buttons": "按钮",
+    "screen": "屏幕",
+    "screenOn": "保持常亮",
+    "screenOff": "可自动关闭"
   },
   "about": {
     "label": "关于",
     "what": "这是什么？",
     "similar": "同类应用",
     "feedback": "发送反馈",
-    "offline": "此页面在网站上，这个离线文件中不包含。",
     "privacyNote": "隐私优先：你记录的一切都保存在这个浏览器中。无需账号，也无需联网。你需要自己负责数据安全，所以请定期导出备份。",
-    "statsUnavailable": "此副本（演示、离线文件或本地构建）不发送使用统计。",
+    "statsUnavailable": "此副本（演示或本地构建）不发送使用统计。",
     "statsLabel": "分享匿名使用统计",
     "statsHint": "只统计哪些界面和功能被使用，从不统计你记录的内容。没有 Cookie，没有账号，不含任何个人信息。",
     "statsDnt": "你的浏览器要求网站不要跟踪，所以在你开启之前此项保持关闭。",
@@ -169,7 +170,6 @@
   },
   "feedback": {
     "title": "发送反馈",
-    "offline": "这个离线文件无法发送消息。请打开在线版应用来发送反馈。",
     "thanks": "谢谢",
     "sent": "你的消息已发出。每一条都会被认真阅读。",
     "intro": "无论是 bug、缺少的功能，还是只想说一声你在用它，都能帮助决定下一步做什么。",
@@ -459,13 +459,7 @@
     "theActivity": "该活动",
     "resetTitle": "重置今天？",
     "resetStops": "{name}现在停止。",
-    "resetBody": "{date}将以 {total} 的记录结束，并开始新的一天。你仍可以在汇总中编辑已结束的日子。",
-    "closeTitle": "关闭 Tap Time Tracker？",
-    "closeRunning": "应用关闭期间，{name}会继续计时。重新打开应用即可停止或切换。",
-    "closeIdle": "当前没有正在计时的活动。",
-    "closeYourself": "请自行关闭窗口",
-    "closeYourselfBody": "浏览器不允许此页面关闭自己的窗口。请按 Alt+F4 或 Ctrl+W。",
-    "keepsCounting": "{name}会继续计时。"
+    "resetBody": "{date}将以 {total} 的记录结束，并开始新的一天。你仍可以在汇总中编辑已结束的日子。"
   },
   "errors": {
     "notExport": "这不是 Tap Time Tracker 的导出文件",

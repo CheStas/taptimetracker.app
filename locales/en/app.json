@@ -46,9 +46,8 @@
     "reset": "Reset day",
     "fullscreen": "Full screen",
     "leaveFullscreen": "Leave full screen",
-    "close": "Close app",
     "more": "More",
-    "moreLabel": "More: reset day, full screen, close app",
+    "moreLabel": "More: reset day, full screen, keep the screen on",
     "top": "Back to top"
   },
   "main": {
@@ -82,16 +81,18 @@
     "tagline": "A chess clock for your work day.",
     "theme": "Theme",
     "mainScreen": "Main screen",
-    "buttons": "Buttons"
+    "buttons": "Buttons",
+    "screen": "Screen",
+    "screenOn": "Stays on",
+    "screenOff": "Can turn off"
   },
   "about": {
     "label": "About",
     "what": "What is it?",
     "similar": "Similar apps",
     "feedback": "Send feedback",
-    "offline": "This page is on the website, which this offline file does not include.",
     "privacyNote": "Privacy first: everything you track stays in this browser. No account and no internet connection needed. You are responsible for your data, so export a backup regularly.",
-    "statsUnavailable": "This copy (the demo, the offline file or a local build) sends no usage stats.",
+    "statsUnavailable": "This copy (the demo or a local build) sends no usage stats.",
     "statsLabel": "Share anonymous usage stats",
     "statsHint": "Which screens and features get used, never what you track. No cookies, no account, nothing personal.",
     "statsDnt": "Your browser asks sites not to track, so this is off until you turn it on.",
@@ -170,7 +171,6 @@
   },
   "feedback": {
     "title": "Send feedback",
-    "offline": "This offline file cannot send messages. Open the online version of the app to send feedback.",
     "thanks": "Thank you",
     "sent": "Your message is on its way. Every one of them is read.",
     "intro": "A bug, a missing feature, or just that you use it: all of it helps decide what comes next.",
@@ -468,13 +468,7 @@
     "theActivity": "The activity",
     "resetTitle": "Reset the day?",
     "resetStops": "{name} stops now.",
-    "resetBody": "{date} closes with {total} tracked and a new day starts. You can still edit the closed day from Summary.",
-    "closeTitle": "Close Tap Time Tracker?",
-    "closeRunning": "{name} keeps counting while the app is closed. Open the app again to stop it or switch.",
-    "closeIdle": "Nothing is running.",
-    "closeYourself": "Close the window yourself",
-    "closeYourselfBody": "The browser does not let this page close its own window. Press Alt+F4 or Ctrl+W.",
-    "keepsCounting": "{name} keeps counting."
+    "resetBody": "{date} closes with {total} tracked and a new day starts. You can still edit the closed day from Summary."
   },
   "errors": {
     "notExport": "Not a Tap Time Tracker export",

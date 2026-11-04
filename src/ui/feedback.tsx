@@ -7,8 +7,8 @@ import { t } from '../i18n.ts';
 
 const MAX_MESSAGE = 4000;
 
-/** The endpoint next to the app (app/ → ../api/feedback); null in the single-file build, which has no site. */
-export const FEEDBACK_URL = import.meta.env.MODE === 'single' ? null : '../api/feedback';
+/** The endpoint next to the app (app/ → ../api/feedback). */
+export const FEEDBACK_URL = '../api/feedback';
 
 export function openFeedback(version: string) {
   openModal((close) => <FeedbackForm version={version} close={close} />, { size: 'activity' });
@@ -21,14 +21,6 @@ function FeedbackForm({ version, close }: { version: string; close: () => void }
   const [withDevice, setWithDevice] = useState(true);
   const device = `${version} · ${navigator.userAgent}`;
 
-  if (!FEEDBACK_URL) {
-    return (
-      <div class="dialog-body">
-        <h2 class="dialog-title">{t('feedback.title')}</h2>
-        <p class="dialog-text">{t('feedback.offline')}</p>
-      </div>
-    );
-  }
   if (status === 'sent') {
     return (
       <div class="dialog-body">

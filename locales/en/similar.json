@@ -5,7 +5,7 @@
   "intro": "Tap Time Tracker works like a chess clock: tap an activity to start it, tap another to switch, only one runs at a time, and past times can be corrected. These apps work in the same or a similar way. They are ordered <strong>from most to least similar</strong>.",
   "takeaway": {
     "lead": "<strong>In short:</strong> none of them combines all of the following:",
-    "web": "a web page that runs anywhere, even as a single offline file",
+    "web": "a web page that runs anywhere and installs as an app that works offline",
     "touch": "a touchscreen and wall-display layout",
     "backdate": "“active since…” backdating that takes the time away from other activities",
     "offline": "storage that stays on the device, with no account",

@@ -16,7 +16,7 @@ import { findTheme, lowContrastSlots, parseThemeFile, slotColor, themeFile, SLOT
 import { resolveWeekStart } from '../stats.ts';
 import { download, isoDay, fmtSwitch, slug } from './util.ts';
 import { Icon } from './icons.tsx';
-import { AboutLinks, LayoutSwitch, MAIN_TOGGLES, PrivacyNote, UsageStats, VERSION, currentTheme, toggleHint, toggleLabel } from './about.tsx';
+import { AboutLinks, LayoutSwitch, MAIN_TOGGLES, PrivacyNote, UsageStats, VERSION, currentTheme, toggleHint, toggleLabel, wakeLockAvailable } from './about.tsx';
 import { AppHeader, type Nav } from './header.tsx';
 import { Footer } from './footer.tsx';
 import { confirmDialog, useAppState } from './hooks.tsx';
@@ -212,7 +212,7 @@ export function Settings({ nav, onBack, onDayEditor, section }: { nav: Nav; onBa
               </Check>
               <Check
                 checked={s.keepAwake} onChange={(v) => setSetting('keepAwake', v)}
-                hint={t('wakeLock' in navigator ? 'settings.device.awakeHint' : 'settings.device.awakeUnavailable')}
+                hint={t(wakeLockAvailable() ? 'settings.device.awakeHint' : 'settings.device.awakeUnavailable')}
               >
                 {t('settings.device.awake')}
               </Check>

@@ -46,9 +46,8 @@
     "reset": "Réinitialiser la journée",
     "fullscreen": "Plein écran",
     "leaveFullscreen": "Quitter le plein écran",
-    "close": "Fermer l’app",
     "more": "Plus",
-    "moreLabel": "Plus : réinitialiser la journée, plein écran, fermer l’app",
+    "moreLabel": "Plus : réinitialiser la journée, plein écran, garder l’écran allumé",
     "top": "Retour en haut"
   },
   "main": {
@@ -82,16 +81,18 @@
     "tagline": "Une pendule d’échecs pour votre journée de travail.",
     "theme": "Thème",
     "mainScreen": "Écran principal",
-    "buttons": "Boutons"
+    "buttons": "Boutons",
+    "screen": "Écran",
+    "screenOn": "Reste allumé",
+    "screenOff": "Peut s’éteindre"
   },
   "about": {
     "label": "À propos",
     "what": "Qu’est-ce que c’est ?",
     "similar": "Apps similaires",
     "feedback": "Envoyer un avis",
-    "offline": "Cette page est sur le site web, que ce fichier hors ligne n’inclut pas.",
     "privacyNote": "La confidentialité d’abord : tout ce que vous suivez reste dans ce navigateur. Pas de compte ni de connexion internet nécessaires. Vous êtes responsable de vos données, alors exportez régulièrement une sauvegarde.",
-    "statsUnavailable": "Cette copie (la démo, le fichier hors ligne ou une version locale) n’envoie aucune statistique d’utilisation.",
+    "statsUnavailable": "Cette copie (la démo ou une version locale) n’envoie aucune statistique d’utilisation.",
     "statsLabel": "Partager des statistiques d’utilisation anonymes",
     "statsHint": "Quels écrans et fonctions sont utilisés, jamais ce que vous suivez. Pas de cookies, pas de compte, rien de personnel.",
     "statsDnt": "Votre navigateur demande aux sites de ne pas vous pister, donc c’est désactivé jusqu’à ce que vous l’activiez.",
@@ -171,7 +172,6 @@
   },
   "feedback": {
     "title": "Envoyer un avis",
-    "offline": "Ce fichier hors ligne ne peut pas envoyer de messages. Ouvrez la version en ligne de l’app pour envoyer un avis.",
     "thanks": "Merci",
     "sent": "Votre message est en route. Chacun d’eux est lu.",
     "intro": "Un bug, une fonction qui manque, ou simplement que vous l’utilisez : tout aide à décider de la suite.",
@@ -477,13 +477,7 @@
     "theActivity": "L’activité",
     "resetTitle": "Réinitialiser la journée ?",
     "resetStops": "{name} s’arrête maintenant.",
-    "resetBody": "La journée du {date} se termine avec {total} suivi et une nouvelle journée commence. Vous pouvez toujours modifier la journée terminée depuis le Résumé.",
-    "closeTitle": "Fermer Tap Time Tracker ?",
-    "closeRunning": "{name} continue de compter pendant que l’app est fermée. Rouvrez l’app pour l’arrêter ou changer.",
-    "closeIdle": "Rien ne tourne.",
-    "closeYourself": "Fermez la fenêtre vous-même",
-    "closeYourselfBody": "Le navigateur ne laisse pas cette page fermer sa propre fenêtre. Appuyez sur Alt+F4 ou Ctrl+W.",
-    "keepsCounting": "{name} continue de compter."
+    "resetBody": "La journée du {date} se termine avec {total} suivi et une nouvelle journée commence. Vous pouvez toujours modifier la journée terminée depuis le Résumé."
   },
   "errors": {
     "notExport": "Ce n’est pas un export de Tap Time Tracker",

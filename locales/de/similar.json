@@ -5,7 +5,7 @@
   "intro": "Tap Time Tracker funktioniert wie eine Schachuhr: Tippe auf eine Tätigkeit, um sie zu starten, auf eine andere, um zu wechseln; es läuft immer nur eine, und vergangene Zeiten lassen sich korrigieren. Diese Apps funktionieren genauso oder ähnlich. Sie sind <strong>von am ähnlichsten bis am wenigsten ähnlich</strong> geordnet.",
   "takeaway": {
     "lead": "<strong>Kurz gesagt:</strong> keine vereint all das:",
-    "web": "eine Webseite, die überall läuft, sogar als einzelne Offline-Datei",
+    "web": "eine Webseite, die überall läuft und sich als offlinefähige App installieren lässt",
     "touch": "ein Layout für Touchscreens und Wandbildschirme",
     "backdate": "rückwirkendes „aktiv seit…“, das die Zeit anderen Tätigkeiten abzieht",
     "offline": "Speicherung, die auf dem Gerät bleibt, ohne Konto",

@@ -371,6 +371,7 @@ button.fill-c:hover { background: var(--c); filter: brightness(1.06); }
 .menu-title { margin: 0 0 6px; font-size: 13px; font-weight: 600; color: var(--muted); }
 .menu-item { justify-content: flex-start; gap: 14px; min-height: 56px; padding: 0 12px; border: 0; background: transparent; font-size: 16px; }
 .menu-item svg { width: 22px; height: 22px; }
+.menu-check { margin-inline-start: auto; display: flex; color: var(--accent); }
 .menu .wide { margin-top: 8px; }
 
 @media (max-width: 600px) {
@@ -497,6 +498,7 @@ button.fill-c:hover { background: var(--c); filter: brightness(1.06); }
 .cat-label { min-width: 62px; }
 .seg.small { min-height: 38px; padding: 0 12px; font-size: 13px; gap: 6px; color: var(--muted); }
 .seg.small[aria-pressed="true"] { color: var(--text); }
+.screen-switch { align-self: flex-start; }
 .seg .dot { width: 8px; height: 8px; }
 .chip-select { position: relative; display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); font-size: 13px; }
 .chip-select .dot { width: 8px; height: 8px; }

@@ -46,9 +46,8 @@
     "reset": "Günü sıfırla",
     "fullscreen": "Tam ekran",
     "leaveFullscreen": "Tam ekrandan çık",
-    "close": "Uygulamayı kapat",
     "more": "Daha fazla",
-    "moreLabel": "Daha fazla: günü sıfırla, tam ekran, uygulamayı kapat",
+    "moreLabel": "Daha fazla: günü sıfırla, tam ekran, ekranı açık tut",
     "top": "Başa dön"
   },
   "main": {
@@ -82,16 +81,18 @@
     "tagline": "İş gününüz için bir satranç saati.",
     "theme": "Tema",
     "mainScreen": "Ana ekran",
-    "buttons": "Düğmeler"
+    "buttons": "Düğmeler",
+    "screen": "Ekran",
+    "screenOn": "Açık kalır",
+    "screenOff": "Kapanabilir"
   },
   "about": {
     "label": "Hakkında",
     "what": "Bu nedir?",
     "similar": "Benzer uygulamalar",
     "feedback": "Geri bildirim gönder",
-    "offline": "Bu sayfa web sitesinde; bu çevrimdışı dosya onu içermiyor.",
     "privacyNote": "Önce gizlilik: kaydettiğiniz her şey bu tarayıcıda kalır. Hesap ya da internet bağlantısı gerekmez. Verileriniz sizin sorumluluğunuzda, bu yüzden düzenli olarak yedek alın.",
-    "statsUnavailable": "Bu kopya (demo, çevrimdışı dosya ya da yerel derleme) kullanım istatistiği göndermez.",
+    "statsUnavailable": "Bu kopya (demo ya da yerel derleme) kullanım istatistiği göndermez.",
     "statsLabel": "Anonim kullanım istatistiklerini paylaş",
     "statsHint": "Hangi ekranların ve özelliklerin kullanıldığı; kaydettikleriniz asla. Çerez yok, hesap yok, kişisel hiçbir şey yok.",
     "statsDnt": "Tarayıcınız sitelerden izleme yapmamalarını istiyor, bu yüzden siz açana kadar bu kapalı.",
@@ -170,7 +171,6 @@
   },
   "feedback": {
     "title": "Geri bildirim gönder",
-    "offline": "Bu çevrimdışı dosya mesaj gönderemez. Geri bildirim göndermek için uygulamanın çevrimiçi sürümünü açın.",
     "thanks": "Teşekkürler",
     "sent": "Mesajınız yolda. Her biri okunuyor.",
     "intro": "Bir hata, eksik bir özellik ya da sadece kullandığınızı söylemek: hepsi sırada ne olacağına karar vermeye yardımcı olur.",
@@ -468,13 +468,7 @@
     "theActivity": "Etkinlik",
     "resetTitle": "Gün sıfırlansın mı?",
     "resetStops": "{name} şimdi durur.",
-    "resetBody": "{date}, {total} kayıtla kapanır ve yeni bir gün başlar. Kapanan günü Özet’ten düzenlemeye devam edebilirsiniz.",
-    "closeTitle": "Tap Time Tracker kapatılsın mı?",
-    "closeRunning": "{name}, uygulama kapalıyken saymaya devam eder. Durdurmak ya da geçmek için uygulamayı yeniden açın.",
-    "closeIdle": "Çalışan bir şey yok.",
-    "closeYourself": "Pencereyi kendiniz kapatın",
-    "closeYourselfBody": "Tarayıcı bu sayfanın kendi penceresini kapatmasına izin vermiyor. Alt+F4 ya da Ctrl+W’ye basın.",
-    "keepsCounting": "{name} saymaya devam ediyor."
+    "resetBody": "{date}, {total} kayıtla kapanır ve yeni bir gün başlar. Kapanan günü Özet’ten düzenlemeye devam edebilirsiniz."
   },
   "errors": {
     "notExport": "Bir Tap Time Tracker dışa aktarımı değil",
