@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.9.0](https://github.com/CheStas/taptimetracker.app/compare/v0.8.0...v0.9.0) (2026-11-04)
+
+
+### Features
+
+* **app:** translate the app (English, Ukrainian) with a language setting shared with the site ([260acd4](https://github.com/CheStas/taptimetracker.app/commit/260acd48f298c4c4eb9cff23080ce62f556aa430))
+* **i18n:** add Spanish, German, French, Japanese, Portuguese, Turkish, Italian, Persian, Dutch and Chinese with a flag language picker ([1f8b8e2](https://github.com/CheStas/taptimetracker.app/commit/1f8b8e2c48e74756b70281c50f162dfc5fea92cf))
+* **site:** add a 404 page per language, served with status 404 ([93f036b](https://github.com/CheStas/taptimetracker.app/commit/93f036b56d831e1a1552e9e3f641afb87e0fb538))
+* **site:** build the site pages per language with hreflang, a language switcher and banner ([1b0100f](https://github.com/CheStas/taptimetracker.app/commit/1b0100fdaed3273b73010085a380884f68c0c4fe))
+
 ## [0.8.0](https://github.com/CheStas/taptimetracker.app/compare/v0.7.0...v0.8.0) (2026-11-02)
 
 
