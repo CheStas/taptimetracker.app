@@ -31,7 +31,6 @@ All popups share one dialog: a centered card on wide screens, a bottom sheet on 
 | --- | --- |
 | ![Activity popup](02-popups/1-activity-long-press.png) **Hold an activity**: today's sessions in time order, correct the timeline ("active since …", "stop all since …") | ![Switch profile](02-popups/2-switch-profile.png) **Switch profile**: each profile's status, a warning while something runs |
 | ![Delete session](02-popups/3-delete-session.png) **Delete a session** asks first | ![Reset day](02-popups/4-reset-day.png) **Reset day** says what happens to the running activity |
-| ![Close app](02-popups/5-close-app.png) **Close app** | |
 
 ## 3. Summary
 
@@ -56,5 +55,5 @@ timeline or per-day rows, the share, and the day's sessions.
 
 | | | |
 | --- | --- | --- |
-| ![Main](phone/1-main-tiles.png) Main screen | ![Activity sheet](phone/2-activity-sheet.png) Activity popup as a sheet | ![More menu](phone/3-more-menu.png) ⋯ More: reset, full screen, close |
+| ![Main](phone/1-main-tiles.png) Main screen | ![Activity sheet](phone/2-activity-sheet.png) Activity popup as a sheet | ![More menu](phone/3-more-menu.png) ⋯ More: reset, full screen, screen on |
 | ![Summary day](phone/4-summary-day.png) Summary, Day | ![Summary week](phone/5-summary-week.png) Summary, Week | ![Categories](phone/6-settings-categories.png) Settings, Categories |

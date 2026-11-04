@@ -5,7 +5,7 @@
   "intro": "O Tap Time Tracker funciona como um relógio de xadrez: toque numa atividade para começá-la, toque em outra para trocar; só uma corre por vez, e tempos passados podem ser corrigidos. Estes apps funcionam do mesmo jeito ou de forma parecida. Estão ordenados <strong>do mais ao menos parecido</strong>.",
   "takeaway": {
     "lead": "<strong>Resumindo:</strong> nenhum reúne tudo isto:",
-    "web": "uma página web que roda em qualquer lugar, até como um único arquivo offline",
+    "web": "uma página web que roda em qualquer lugar e se instala como app que funciona offline",
     "touch": "um layout para tela touch e tela de parede",
     "backdate": "o “ativa desde…” retroativo que tira o tempo das outras atividades",
     "offline": "armazenamento que fica no dispositivo, sem conta",

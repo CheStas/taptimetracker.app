@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Time Tracker
-Comment=Touchscreen time tracking chess clock
-# Adjust the path, then copy this file to ~/.config/autostart/
-Exec=/home/admin/projects/time-tracker/scripts/start.sh
-Terminal=false
-X-GNOME-Autostart-enabled=true

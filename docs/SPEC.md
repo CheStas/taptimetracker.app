@@ -14,12 +14,10 @@ A full-screen web app for a Linux PC/laptop with a touchscreen. It works like a 
 |---|---|
 | Stack | Preact + TypeScript, built with Vite (`npm run build` → `dist/`). Pure timeline logic lives in `src/timeline.ts` (no DOM, no storage), tested with Vitest. Development: `npm run dev` (Vite dev server, a different origin, so its data is separate). |
 | Storage | IndexedDB in the browser profile; `navigator.storage.persist()` requested |
-| Serving | `python3 -m http.server 8765 --bind 127.0.0.1 --directory dist` (localhost is a secure context, needed for Wake Lock); the app is at `http://localhost:8765/app/`. The origin `http://localhost:8765` is unchanged (IndexedDB is per origin, not per path), so data from earlier versions is kept. |
+| Serving | A website or an installed PWA only: there is no launcher script, desktop entry or single-file build. Locally, `npm run dev` or any static server on `dist/` (localhost is a secure context, needed for Wake Lock). |
 | Site | `dist/` is a small static site (§19): the landing page at the root, the app under `app/`, plain pages next to it. |
-| Main run | `scripts/start.sh`: rebuilds `dist/` when sources are newer (needs `npm`; with no `npm` it serves the existing build), then opens Chromium with a dedicated profile. Modes: **app window** (default; title bar, resizable, closable), `--kiosk` (locked full screen), `--browser` (normal window with tabs). All modes share the same data. The script and its server exit when the window closes. |
 | Static hosting | The built `dist/` folder works from any static web server, including a subpath, because Vite builds with relative paths (`base: './'`). Data is per browser, per device, per site address (IndexedDB); there is no sync. Use **HTTPS** for screen keep-awake and persistent storage. Plain HTTP works too: IDs fall back to `crypto.getRandomValues` because `crypto.randomUUID` needs a secure context. Safari may evict data after about 7 days without visits unless the site is added to the home screen. |
-| Plain HTML (optional) | `npm run build:single` builds `dist-single/time-tracker.html` (all JS and CSS inlined via `vite-plugin-singlefile`), a single file to open by double-click (browsers block module files on `file://`). No screen keep-awake. **Its data is separate** from the localhost version (a different origin); move data between them with export/import. Rebuild after code changes. |
-| Device | Linux PC/laptop touchscreen; the layout is responsive, with large touch targets |
+| Device | Any browser: a touchscreen PC or laptop, a tablet or a phone; the layout is responsive, with large touch targets. The app never closes its own window: the browser tab or the installed app's window does that. |
 | Backup | JSON export/import in settings, **one profile per file** (§12); optional automatic JSON download when a day closes |
 | Seed data | `config/seed.json`, bundled at build time (§14) |
 
@@ -116,7 +114,7 @@ theme (§16). Top to bottom:
      While idle: a neutral dot and "Idle", no duration (one timer only: a separate "since switch" timer would always
      show the same value).
    - Right: "Clock" + `HH:MM`, then round 44 px icon buttons on the `chip` background: Summary, Settings, Reset day,
-     Full screen toggle (the icon reflects the state), Close app.
+     Full screen toggle (the icon reflects the state).
 3. **Buttons area** (`flex: 1`) in one of three layouts (Settings → Main screen → Buttons). Every layout shows the
    same elements: color square, name (one line, ellipsis), share of today in %, a running chip (pulsing dot + run)
    while active, the total in mono, and the progress with its text.
@@ -156,8 +154,9 @@ theme (§16). Top to bottom:
 - **Tap:** switch activity, or stop if the button is already active.
 - **Long-press (600 ms):** opens the activity popup (§7).
 - **Phone (below 760 px wide):** the header wraps; the profile button shows only the initial and the clock is hidden.
-  Summary and Settings stay; Reset day, Full screen and Close app move into a **⋯ More** button that opens a
-  bottom-sheet menu (56 px rows, then Cancel; each item opens its own flow). Tiles: two per row (basis 150 px), min
+  Summary and Settings stay; Reset day and Full screen move into a **⋯ More** button that opens a
+  bottom-sheet menu (56 px rows, then Cancel; each item opens its own flow), with a third item **Keep the screen on**
+  showing its state (a check when on; a tap toggles it and closes the menu; not shown where Wake Lock is unavailable). Tiles: two per row (basis 150 px), min
   height 140 px, padding 16 px, total 32 px. Rows: padding 12 × 16 px, total 24 px. Circles: 62 % of the desktop
   diameter, total 22 px. The buttons area scrolls inside the viewport; header, timeline and totals stay put.
   **Touch screens** (`pointer: coarse`, all layouts): the buttons take no swipes (they are for tap and hold), so the
@@ -174,8 +173,7 @@ theme (§16). Top to bottom:
     Settings". The same note, without the link (the Export button is right below), heads Settings → Backup (§8).
   - Then three columns that wrap on narrow screens:
   1. "Tap Time Tracker", "A chess clock for your work day.", the version.
-  2. Links: What is it? (the site's landing page, §19), Similar apps (`/similar/`, §19), Send feedback (the feedback form, §18, §20). In the
-     single-file build What is it? and Similar apps open a popup saying the page is on the website.
+  2. Links: What is it? (the site's landing page, §19), Similar apps (`/similar/`, §19), Send feedback (the feedback form, §18, §20).
   3. **Quick settings** (the same settings as in Settings, changed for the open profile immediately):
      - **Theme:** one round swatch per installed theme (its background and two activity colors), the current one
        ringed, "Theme · <name>" and a "More in Settings" link (opens Settings → Appearance). A tap applies the theme,
@@ -185,15 +183,18 @@ theme (§16). Top to bottom:
        44 px icon toggles (`aria-pressed`, tooltip and label = the Settings label): *Size buttons by today's usage*
        and *Move unused activities to a strip*; a pressed toggle is filled `text` with a `surface` icon. A "More in
        Settings" link opens Settings → Appearance → Main screen.
+     - **Screen:** "Screen · Stays on" / "Screen · Can turn off" and a two-option segmented control **Stays on** /
+       **Can turn off** (labels shown on a phone too; group label = the Settings label *Keep the screen on*), with a
+       "More in Settings" link (opens Settings → Device). The same setting as in Settings (§10), so it can be flipped
+       without leaving the page. Where Wake Lock is unavailable both options are disabled and the heading says
+       "Not available here: needs localhost or HTTPS".
 - **Welcome strip** (top, above the header) while the profile's `introDismissed` is false: "New here?", the first-run
   hint, the same three links, compact theme swatches and a **Got it** button that sets `introDismissed = true` for
   good. The footer and the more hint stay below as usual; afterwards the links are in the footer and in Settings → About.
 - **Who is new:** only the profile opened on a first run (an empty database) starts with `introDismissed = false`.
   Other seeded profiles, profiles added later, imports and upgrades from earlier versions start with `true`.
-- **Kiosk:** in `--kiosk` mode the page still scrolls by touch; *Show the footer* off hides the footer and the more
-  hint (the empty space at the end stays).
 
-### 6.2 Navigation, full screen, closing
+### 6.2 Navigation, full screen, reset
 - **Esc = back**, following a fixed hierarchy with no loops: open popup → closes it; Day editor → where it was opened
   from (Settings, Summary, or Main via the activity popup); Settings and Summary → Main. On Main, Esc does nothing.
 - **Hash routes:** each view has an address: `#/` (Main), `#/summary`, `#/settings`, `#/settings/<section id>`
@@ -205,11 +206,8 @@ theme (§16). Top to bottom:
 - **Full screen is optional.** The ⛶ button toggles document full screen. The "Start in full screen" setting enters it
   on the first tap, because browsers require a user gesture. While in full screen, Esc is captured (Keyboard Lock) so
   it keeps meaning "back"; **hold Esc** (about 2 s) to leave full screen.
-- **⏻ Close app:** asks first ("Close Tap Time Tracker?" · "Task keeps counting while the app is closed. Open the app
-  again to stop it or switch." / idle: "Nothing is running." · Cancel / **Close app**), then closes the window, which
-  also stops `start.sh` and its server. A running activity keeps counting while the app is closed (time is derived
-  from the start timestamp). When the browser refuses to let the page close the window (a normal tab or a `file://`
-  page), the dialog "Close the window yourself" says to use Alt+F4 / Ctrl+W.
+- **No close button.** A page cannot close a browser tab, and an installed app has its own window controls. A running
+  activity keeps counting while the app is closed (time is derived from the start timestamp).
 - **Reset day** asks first: "Reset the day?" · "Task stops now. Wed, Oct 28 closes with 8h 43m tracked and a new day
   starts. You can still edit the closed day from Summary." (without a running activity the first sentence is
   dropped) · Cancel / **Reset day** (danger).
@@ -220,7 +218,7 @@ day total, "Now" and the clock stay in view and the app buttons stay in the same
 - **Left:** on Main the profile button; on every other page a round 44 px **back** button and the page name, 20 px
   semibold, with "· <profile>" muted (the profile name hidden below 760 px). Back = Esc (§6.2).
 - **Middle:** "Today" and "Now" exactly as on Main, ticking live.
-- **Right:** the clock and the same icon buttons (Summary, Settings, Reset day, Full screen, Close app; ⋯ More on a
+- **Right:** the clock and the same icon buttons (Summary, Settings, Reset day, Full screen; ⋯ More on a
   phone). The button of the page that is open is marked (`aria-current="page"`, filled `text` with a `surface`
   icon) and does nothing.
 - Controls that used to sit in a page's own header move to the top of its content: the Summary's period switcher
@@ -349,13 +347,13 @@ The period (Day, Week, Month, Custom) changes what each block shows, not the ord
   (`summaryGroupBy`; back to Activity when the dimension is deleted).
 
 ## 10. Keeping the screen awake
-- Settings → **Keep the screen on** (default on). While it is on and the page is visible, the app holds a screen Wake
+- Settings → **Keep the screen on** (default on), also in the footer's quick settings and the phone's ⋯ More menu
+  (§6, §6.1), since it is often switched during the day. While it is on and the page is visible, the app holds a screen Wake
   Lock (`navigator.wakeLock.request('screen')`), requested again on `visibilitychange`; turning it off releases it.
 - Chromium turns the Wake Lock into a desktop idle inhibitor (D-Bus screensaver/session inhibit on GNOME and KDE,
-  X11 and Wayland), so `scripts/start.sh` no longer changes system settings (`xset`, `gsettings`, `systemd-inhibit`):
-  the in-app setting alone decides, in every mode.
-- The Wake Lock needs a secure context (localhost or HTTPS); the plain HTML file and plain-HTTP hosting cannot keep
-  the screen on. Settings says so when it is not available.
+  X11 and Wayland): the in-app setting alone decides.
+- The Wake Lock needs a secure context (localhost or HTTPS); plain-HTTP hosting cannot keep the screen on. Settings
+  and the footer say so when it is not available.
 
 ## 12. Profiles
 A profile is a separate workspace, like a separate copy of the app: its own activities, groups, days, segments,
@@ -400,8 +398,8 @@ Groups are a soft way to separate activities inside one profile, for people who 
 - **Delete group:** its activities move to "no group"; nothing else changes.
 
 ## 14. Seed config
-`config/seed.json` holds every default that used to be in the code. It is imported at build time (so it also works
-in the single-file build); `scripts/start.sh` rebuilds when it changes. It is applied **only on first run** (an empty
+`config/seed.json` holds every default that used to be in the code. It is imported at build time (rebuild after
+changing it). It is applied **only on first run** (an empty
 database); after that everything is edited in Settings.
 - `palette`: the order in which new activities get color slots, as slot numbers 1–16 or hex colors (a hex color
   means its nearest Paper slot); new activities take the next slot in this order and wrap around
@@ -530,7 +528,7 @@ Every popup uses one dialog component.
 - Esc, the round × (popups with content) and a tap on the scrim close it; confirms and the menu have Cancel instead.
 - Confirms are Cancel (secondary, `chip`) + the action (primary = accent, or danger = slot 5 for destructive actions),
   right-aligned, 140–220 px wide, 48 px high; they stretch side by side on a phone. Messages have one OK.
-- Used for: profile switcher (§12), activity popup and delete session (§7), reset day and close app (§6.2), the
+- Used for: profile switcher (§12), activity popup and delete session (§7), reset day (§6.2), the
   feedback form (message, optional email, "Include the app version and browser" ticked, showing exactly what is sent;
   POST to `/api/feedback`; Thank you on success, the text kept with a notice on failure), the
   phone More menu (§6), and the confirmations in Settings and the day editor.
@@ -616,12 +614,11 @@ them in the repo root.
   view is still counted (§20), so broken links show up in the stats.
   `npm run dev` does the same (the site plugin answers unhandled page views with it); `npx serve dist` only knows
   the root `404.html`, so it shows English everywhere. `npx wrangler dev` after a build is the faithful preview.
-- `public/` is copied as is (no `sitemap.xml` there: the build writes it). The single-file build (`--mode single`) builds only the app and drops the favicon and
-  manifest links.
+- `public/` is copied as is (no `sitemap.xml` there: the build writes it).
 
 ## 20. Usage stats and feedback
 - **Usage stats** (`src/analytics.ts`): Umami Cloud, loaded only when the build sets `VITE_UMAMI_ID` (optionally
-  `VITE_UMAMI_SRC`), never in the demo, the single-file build or on localhost. No cookies. Page views are sent by the
+  `VITE_UMAMI_SRC`), never in the demo or on localhost. No cookies. Page views are sent by the
   code (auto-track off) as path + hash route. Events, with fixed values only (never names, times or typed text):
   `tap` (first tap per page load), `export`, `import`, `profile-add`, `theme` (built-in id or `custom`),
   `theme-import`, `setting` (key + value, a fixed list of settings), `feedback`, and once a day per device `usage`
@@ -704,7 +701,7 @@ pages download no extra font.
   language it has, else English (by language only: `zh-TW` gets Simplified Chinese, `pt-PT` Brazilian Portuguese).
   `<html lang>` and `<html dir>` follow it.
 - **Settings → Device → Language:** a select with every language in its own name; changing it saves `locale` and
-  re-renders the app at once. The single-file build has the same setting.
+  re-renders the app at once.
 - `t('key', { name: … })` with `{name}` placeholders, `tx` for sentences with elements in them (a link, `<strong>`). Counts use the language's plural rules (`Intl.PluralRules`): a
   plural value is an object with the forms that language needs (English `one`/`other`; Ukrainian `one`/`few`/`many`/
   `other`, as in 1 хвилина, 2 хвилини, 5 хвилин; Spanish, French, Italian and Portuguese add `many` for millions;

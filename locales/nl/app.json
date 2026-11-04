@@ -46,9 +46,8 @@
     "reset": "Dag resetten",
     "fullscreen": "Volledig scherm",
     "leaveFullscreen": "Volledig scherm verlaten",
-    "close": "App sluiten",
     "more": "Meer",
-    "moreLabel": "Meer: dag resetten, volledig scherm, app sluiten",
+    "moreLabel": "Meer: dag resetten, volledig scherm, scherm aan houden",
     "top": "Terug naar boven"
   },
   "main": {
@@ -82,16 +81,18 @@
     "tagline": "Een schaakklok voor je werkdag.",
     "theme": "Thema",
     "mainScreen": "Hoofdscherm",
-    "buttons": "Knoppen"
+    "buttons": "Knoppen",
+    "screen": "Scherm",
+    "screenOn": "Blijft aan",
+    "screenOff": "Mag uit"
   },
   "about": {
     "label": "Over",
     "what": "Wat is het?",
     "similar": "Vergelijkbare apps",
     "feedback": "Feedback sturen",
-    "offline": "Deze pagina staat op de website, die dit offline bestand niet bevat.",
     "privacyNote": "Privacy voorop: alles wat je bijhoudt blijft in deze browser. Geen account en geen internetverbinding nodig. Je bent zelf verantwoordelijk voor je data, dus exporteer regelmatig een back-up.",
-    "statsUnavailable": "Deze kopie (de demo, het offline bestand of een lokale build) stuurt geen gebruiksstatistieken.",
+    "statsUnavailable": "Deze kopie (de demo of een lokale build) stuurt geen gebruiksstatistieken.",
     "statsLabel": "Anonieme gebruiksstatistieken delen",
     "statsHint": "Welke schermen en functies worden gebruikt, nooit wat je bijhoudt. Geen cookies, geen account, niets persoonlijks.",
     "statsDnt": "Je browser vraagt sites om niet te volgen, dus dit staat uit tot je het aanzet.",
@@ -170,7 +171,6 @@
   },
   "feedback": {
     "title": "Feedback sturen",
-    "offline": "Dit offline bestand kan geen berichten versturen. Open de online versie van de app om feedback te sturen.",
     "thanks": "Bedankt",
     "sent": "Je bericht is onderweg. Elk bericht wordt gelezen.",
     "intro": "Een bug, een ontbrekende functie, of gewoon dat je het gebruikt: het helpt allemaal om te bepalen wat er hierna komt.",
@@ -468,13 +468,7 @@
     "theActivity": "De activiteit",
     "resetTitle": "De dag resetten?",
     "resetStops": "{name} stopt nu.",
-    "resetBody": "{date} sluit met {total} bijgehouden en een nieuwe dag begint. Je kunt de gesloten dag nog steeds bewerken via het Overzicht.",
-    "closeTitle": "Tap Time Tracker sluiten?",
-    "closeRunning": "{name} blijft tellen terwijl de app gesloten is. Open de app opnieuw om te stoppen of te wisselen.",
-    "closeIdle": "Er loopt niets.",
-    "closeYourself": "Sluit het venster zelf",
-    "closeYourselfBody": "De browser laat deze pagina haar eigen venster niet sluiten. Druk op Alt+F4 of Ctrl+W.",
-    "keepsCounting": "{name} blijft tellen."
+    "resetBody": "{date} sluit met {total} bijgehouden en een nieuwe dag begint. Je kunt de gesloten dag nog steeds bewerken via het Overzicht."
   },
   "errors": {
     "notExport": "Geen Tap Time Tracker-export",

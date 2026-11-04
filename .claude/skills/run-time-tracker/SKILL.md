@@ -49,8 +49,8 @@ node .claude/skills/run-time-tracker/driver.mjs do --phone "ss check/phone-first
 | `ss <name> [full]` | screenshot to `out/<name>.png` (`full` = whole page) |
 | `text <sel>`, `eval <js>` | print innerText / the JSON of a page expression |
 
-Options: `--phone`, `--url <url>` (another server, e.g. `http://localhost:8765/app/`), `--out <dir>`.
-Useful selectors: `.act` (main buttons, `.act.active` running), `.prof` (profile button), `button[aria-label="Summary"|"Settings"|"Reset day"|"Close app"]`,
+Options: `--phone`, `--url <url>` (another server, e.g. `http://localhost:3000/app/`), `--out <dir>`.
+Useful selectors: `.act` (main buttons, `.act.active` running), `.prof` (profile button), `button[aria-label="Summary"|"Settings"|"Reset day"]`,
 `button[aria-label^="More"]` (phone), `.modal` / `.modal-confirm` (dialogs), `.period-kinds`, `.group-by`, `.period-label`, `.picker`,
 `button.day-row`, `.share-row.option`, `.blocks.big .block`.
 
@@ -79,8 +79,8 @@ magick docs/screenshots/demo-main.webp -coalesce .claude/skills/run-time-tracker
 
 ## Human path
 
-`npm run dev` (hot reload, its own origin and data) or `scripts/start.sh` (built app on :8765 in a Chromium app
-window, the real data). Both open a window; not useful headless.
+`npm run dev` (hot reload, its own origin and data) in a browser, or the deployed site / installed PWA (the real
+data). Not useful headless.
 
 ## Gotchas
 

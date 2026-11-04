@@ -46,9 +46,8 @@
     "reset": "Reiniciar el día",
     "fullscreen": "Pantalla completa",
     "leaveFullscreen": "Salir de pantalla completa",
-    "close": "Cerrar la app",
     "more": "Más",
-    "moreLabel": "Más: reiniciar el día, pantalla completa, cerrar la app",
+    "moreLabel": "Más: reiniciar el día, pantalla completa, mantener la pantalla encendida",
     "top": "Volver arriba"
   },
   "main": {
@@ -82,16 +81,18 @@
     "tagline": "Un reloj de ajedrez para tu jornada.",
     "theme": "Tema",
     "mainScreen": "Pantalla principal",
-    "buttons": "Botones"
+    "buttons": "Botones",
+    "screen": "Pantalla",
+    "screenOn": "Siempre encendida",
+    "screenOff": "Puede apagarse"
   },
   "about": {
     "label": "Acerca de",
     "what": "¿Qué es?",
     "similar": "Apps similares",
     "feedback": "Enviar comentarios",
-    "offline": "Esta página está en el sitio web, que este archivo sin conexión no incluye.",
     "privacyNote": "La privacidad primero: todo lo que registras se queda en este navegador. Sin cuenta y sin necesidad de conexión a internet. Eres responsable de tus datos, así que exporta una copia de seguridad con regularidad.",
-    "statsUnavailable": "Esta copia (la demo, el archivo sin conexión o una compilación local) no envía estadísticas de uso.",
+    "statsUnavailable": "Esta copia (la demo o una compilación local) no envía estadísticas de uso.",
     "statsLabel": "Compartir estadísticas de uso anónimas",
     "statsHint": "Qué pantallas y funciones se usan, nunca lo que registras. Sin cookies, sin cuenta, nada personal.",
     "statsDnt": "Tu navegador pide a los sitios que no rastreen, así que esto está desactivado hasta que lo actives.",
@@ -171,7 +172,6 @@
   },
   "feedback": {
     "title": "Enviar comentarios",
-    "offline": "Este archivo sin conexión no puede enviar mensajes. Abre la versión en línea de la app para enviar comentarios.",
     "thanks": "Gracias",
     "sent": "Tu mensaje va de camino. Se leen todos.",
     "intro": "Un fallo, una función que falta o simplemente que la usas: todo ayuda a decidir qué viene después.",
@@ -477,13 +477,7 @@
     "theActivity": "La actividad",
     "resetTitle": "¿Reiniciar el día?",
     "resetStops": "{name} se detiene ahora.",
-    "resetBody": "{date} se cierra con {total} registrado y empieza un día nuevo. Aún puedes editar el día cerrado desde el Resumen.",
-    "closeTitle": "¿Cerrar Tap Time Tracker?",
-    "closeRunning": "{name} sigue contando mientras la app está cerrada. Vuelve a abrir la app para pararla o cambiar.",
-    "closeIdle": "No hay nada en marcha.",
-    "closeYourself": "Cierra tú la ventana",
-    "closeYourselfBody": "El navegador no deja que esta página cierre su propia ventana. Pulsa Alt+F4 o Ctrl+W.",
-    "keepsCounting": "{name} sigue contando."
+    "resetBody": "{date} se cierra con {total} registrado y empieza un día nuevo. Aún puedes editar el día cerrado desde el Resumen."
   },
   "errors": {
     "notExport": "No es una exportación de Tap Time Tracker",

@@ -46,9 +46,8 @@
     "reset": "Tag zurücksetzen",
     "fullscreen": "Vollbild",
     "leaveFullscreen": "Vollbild verlassen",
-    "close": "App schließen",
     "more": "Mehr",
-    "moreLabel": "Mehr: Tag zurücksetzen, Vollbild, App schließen",
+    "moreLabel": "Mehr: Tag zurücksetzen, Vollbild, Bildschirm eingeschaltet lassen",
     "top": "Nach oben"
   },
   "main": {
@@ -82,16 +81,18 @@
     "tagline": "Eine Schachuhr für deinen Arbeitstag.",
     "theme": "Theme",
     "mainScreen": "Hauptbildschirm",
-    "buttons": "Knöpfe"
+    "buttons": "Knöpfe",
+    "screen": "Bildschirm",
+    "screenOn": "Bleibt an",
+    "screenOff": "Darf ausgehen"
   },
   "about": {
     "label": "Über",
     "what": "Was ist das?",
     "similar": "Ähnliche Apps",
     "feedback": "Feedback senden",
-    "offline": "Diese Seite ist auf der Website, die diese Offline-Datei nicht enthält.",
     "privacyNote": "Datenschutz zuerst: alles, was du erfasst, bleibt in diesem Browser. Kein Konto und keine Internetverbindung nötig. Du bist für deine Daten verantwortlich, also exportiere regelmäßig eine Sicherung.",
-    "statsUnavailable": "Diese Kopie (die Demo, die Offline-Datei oder ein lokaler Build) sendet keine Nutzungsstatistiken.",
+    "statsUnavailable": "Diese Kopie (die Demo oder ein lokaler Build) sendet keine Nutzungsstatistiken.",
     "statsLabel": "Anonyme Nutzungsstatistiken teilen",
     "statsHint": "Welche Bildschirme und Funktionen genutzt werden, nie was du erfasst. Keine Cookies, kein Konto, nichts Persönliches.",
     "statsDnt": "Dein Browser bittet Websites, nicht zu tracken, also ist das aus, bis du es einschaltest.",
@@ -170,7 +171,6 @@
   },
   "feedback": {
     "title": "Feedback senden",
-    "offline": "Diese Offline-Datei kann keine Nachrichten senden. Öffne die Online-Version der App, um Feedback zu senden.",
     "thanks": "Danke",
     "sent": "Deine Nachricht ist unterwegs. Jede einzelne wird gelesen.",
     "intro": "Ein Fehler, eine fehlende Funktion oder einfach, dass du sie nutzt: all das hilft zu entscheiden, was als Nächstes kommt.",
@@ -468,13 +468,7 @@
     "theActivity": "Die Tätigkeit",
     "resetTitle": "Tag zurücksetzen?",
     "resetStops": "{name} stoppt jetzt.",
-    "resetBody": "{date} schließt mit {total} erfasst und ein neuer Tag beginnt. Den abgeschlossenen Tag kannst du weiterhin in der Übersicht bearbeiten.",
-    "closeTitle": "Tap Time Tracker schließen?",
-    "closeRunning": "{name} zählt weiter, während die App geschlossen ist. Öffne die App wieder, um zu stoppen oder zu wechseln.",
-    "closeIdle": "Es läuft nichts.",
-    "closeYourself": "Schließe das Fenster selbst",
-    "closeYourselfBody": "Der Browser lässt diese Seite ihr eigenes Fenster nicht schließen. Drücke Alt+F4 oder Strg+W.",
-    "keepsCounting": "{name} zählt weiter."
+    "resetBody": "{date} schließt mit {total} erfasst und ein neuer Tag beginnt. Den abgeschlossenen Tag kannst du weiterhin in der Übersicht bearbeiten."
   },
   "errors": {
     "notExport": "Kein Time-Tracker-Export",

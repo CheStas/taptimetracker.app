@@ -1,6 +1,6 @@
 // Anonymous usage stats (Umami Cloud): page views and a few named events, never what you track (no activity, group,
-// category or profile names, no times). The build turns it on with VITE_UMAMI_ID; it stays off in the demo, the
-// single-file build and on localhost. The visitor's choice is in localStorage, shared by the app and the site pages;
+// category or profile names, no times). The build turns it on with VITE_UMAMI_ID; it stays off in the demo and on
+// localhost. The visitor's choice is in localStorage, shared by the app and the site pages;
 // without a choice, Do Not Track or Global Privacy Control make it off. Without the script everything works the same.
 
 const ID: string | undefined = import.meta.env.VITE_UMAMI_ID;
@@ -23,7 +23,7 @@ const storage = {
 
 /** Whether this copy can send stats at all. */
 export function statsAvailable() {
-  if (!ID || import.meta.env.MODE === 'single' || typeof location === 'undefined') return false;
+  if (!ID || typeof location === 'undefined') return false;
   if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return false;
   return !new URLSearchParams(location.search).has('demo');
 }

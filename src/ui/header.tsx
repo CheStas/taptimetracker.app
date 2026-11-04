@@ -1,13 +1,14 @@
 // The header every page shares (profile button or back + page name, Today, Now, clock, app buttons), the floating
 // "Back to top" button and the hover label of timeline blocks.
 import { useEffect, useLayoutEffect, useRef, useState } from 'preact/hooks';
-import { activeSegment, activityById, firstStart, todayTotal } from '../state.ts';
+import { activeSegment, activityById, firstStart, setSetting, state as appState, todayTotal } from '../state.ts';
 import { DEMO } from '../db.ts';
 import { slotColor } from '../theme.ts';
 import { fmtDur, fmtHMS, fmtClock, fmtDayShort } from './util.ts';
 import { Icon, type IconName } from './icons.tsx';
 import { openModal, useAppState, useNow } from './hooks.tsx';
 import { t } from '../i18n.ts';
+import { wakeLockAvailable } from './about.tsx';
 
 /** What the header buttons do; App passes the same object to every page. */
 export interface Nav {
@@ -16,7 +17,6 @@ export interface Nav {
   onSummary: () => void;
   onReset: () => void;
   onFullscreen: () => void;
-  onQuit: () => void;
 }
 
 export type Page = 'main' | 'summary' | 'settings' | 'day-editor';
@@ -90,7 +90,6 @@ export function AppHeader({ nav, page, title, onBack }: Props) {
             <button class="icon round hide-sm" aria-label={t(fullscreen ? 'header.leaveFullscreen' : 'header.fullscreen')} title={t('header.fullscreen')} onClick={nav.onFullscreen}>
               <Icon name={fullscreen ? 'minimize' : 'maximize'} />
             </button>
-            <button class="icon round hide-sm" aria-label={t('header.close')} title={t('header.close')} onClick={nav.onQuit}><Icon name="power" /></button>
             <button class="icon round show-sm" aria-label={t('header.moreLabel')} title={t('header.more')} onClick={() => openMoreMenu(nav, fullscreen)}>
               <Icon name="more" />
             </button>
@@ -101,8 +100,9 @@ export function AppHeader({ nav, page, title, onBack }: Props) {
   );
 }
 
-/** Phone: Reset day, Full screen and Close app live in a ⋯ menu (a bottom sheet). */
-function openMoreMenu({ onReset, onFullscreen, onQuit }: Nav, fullscreen: boolean) {
+/** Phone: Reset day, Full screen and Keep the screen on live in a ⋯ menu (a bottom sheet). */
+function openMoreMenu({ onReset, onFullscreen }: Nav, fullscreen: boolean) {
+  const awake = appState.profile.settings.keepAwake;
   const item = (close: () => void, icon: IconName, label: string, fn: () => void) => (
     <button class="menu-item" onClick={() => {
       close();
@@ -114,7 +114,12 @@ function openMoreMenu({ onReset, onFullscreen, onQuit }: Nav, fullscreen: boolea
       <h2 class="menu-title">{t('header.more')}</h2>
       {item(close, 'reset', t('header.reset'), onReset)}
       {item(close, fullscreen ? 'minimize' : 'maximize', t(fullscreen ? 'header.leaveFullscreen' : 'header.fullscreen'), onFullscreen)}
-      {item(close, 'power', t('header.close'), onQuit)}
+      {wakeLockAvailable() && (
+        <button class="menu-item" role="menuitemcheckbox" aria-checked={awake} onClick={() => {
+          close();
+          setSetting('keepAwake', !awake);
+        }}><Icon name="screen" />{t('settings.device.awake')}{awake && <span class="menu-check"><Icon name="check" /></span>}</button>
+      )}
       <button class="secondary wide" onClick={close}>{t('common.cancel')}</button>
     </div>
   ), { size: 'menu', closeButton: false });
