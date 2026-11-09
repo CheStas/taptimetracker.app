@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.11.0](https://github.com/CheStas/taptimetracker.app/compare/v0.10.0...v0.11.0) (2026-11-09)
+
+
+### Features
+
+* **app:** add a mini window that stays on top of other apps ([8a25b85](https://github.com/CheStas/taptimetracker.app/commit/8a25b853d9291cba9a76cd75b188aa154781a4c5))
+* **site:** explain what can be tracked and the mini window on the landing page ([9d7ad46](https://github.com/CheStas/taptimetracker.app/commit/9d7ad46f56369c9f4a946a90752f9159ebf46cac))
+
+
+### Bug Fixes
+
+* **analytics:** send the daily usage event only once the day has tracked time ([049f83c](https://github.com/CheStas/taptimetracker.app/commit/049f83c5db1dbfa8333d6962a10c13d71a460d4e))
+
 ## [0.10.0](https://github.com/CheStas/taptimetracker.app/compare/v0.9.0...v0.10.0) (2026-11-04)
 
 
