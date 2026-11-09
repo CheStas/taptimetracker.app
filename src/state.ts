@@ -2,7 +2,7 @@
 // installed themes.
 // All mutations go through here.
 import * as db from './db.ts';
-import { assign, switchTo, closeAt, totals, dayTotal, openSegment, uuid } from './timeline.ts';
+import { assign, switchTo, closeAt, totals, dayTotal, openSegment, uuid, cycleTarget, lastActivityId } from './timeline.ts';
 import { seed, seedRecords, newActivity, nameKey, withDefaults, normalizeActivity, DEFAULT_SETTINGS } from './seed.ts';
 import { profileExport, readImport, normalizeGroup } from './backup.ts';
 import { sampleExport } from './sample.ts';
@@ -223,6 +223,18 @@ export function tap(activityId: string, now = Date.now()) {
   const target = open?.activityId === activityId ? null : activityId;
   trackOnce('tap');
   commit(state.day, switchTo(state.segments, target, now, state.profile.settings.minSwitchSec * 1000, opts(state.day)));
+}
+
+/** Mini window Next / Previous: switch to the next or previous main-screen button (wrapping), as a tap. */
+export function cycleActivity(dir: 1 | -1, now = Date.now()) {
+  const id = cycleTarget(visibleActivities().map((a) => a.id), activeSegment()?.activityId ?? null, lastActivityId(state.segments), dir);
+  if (id) tap(id, now);
+}
+
+/** Stop the running activity, as a tap on its button; nothing while idle. */
+export function stopActive(now = Date.now()) {
+  const open = activeSegment();
+  if (open) tap(open.activityId, now);
 }
 
 /** assign(activityId|null, from, to|null) on a day (default today), clamped to that day and now. */

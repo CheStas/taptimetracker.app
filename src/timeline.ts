@@ -131,3 +131,19 @@ export function switchTo(segments: Segment[], activityId: string | null, now: nu
   }
   return assign(segments, activityId, now, null, opts);
 }
+
+/**
+ * The mini window's Next (dir 1) / Previous (dir -1): the activity after or before the running one in `ids` (the main
+ * screen's order), wrapping around. While idle it steps from the activity that ran last today (`lastId`), or starts at
+ * the first (Next) or last (Previous) one. Null when there is nothing to switch to.
+ */
+export function cycleTarget(ids: string[], activeId: string | null, lastId: string | null, dir: 1 | -1): string | null {
+  if (!ids.length) return null;
+  const i = ids.indexOf(activeId ?? lastId ?? '');
+  const next = i < 0 ? ids[dir > 0 ? 0 : ids.length - 1] : ids[(i + dir + ids.length) % ids.length];
+  return next === activeId ? null : next;
+}
+
+/** The activity of today's latest segment (by start), or null before anything is tracked. */
+export const lastActivityId = (segments: Segment[]) =>
+  segments.reduce<Segment | null>((last, s) => (!last || s.start > last.start ? s : last), null)?.activityId ?? null;

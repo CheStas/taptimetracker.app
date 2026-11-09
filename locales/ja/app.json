@@ -46,9 +46,17 @@
     "reset": "1日をリセット",
     "fullscreen": "全画面",
     "leaveFullscreen": "全画面を終了",
+    "miniWindow": "ミニウィンドウ",
+    "closeMiniWindow": "ミニウィンドウを閉じる",
     "more": "その他",
     "moreLabel": "その他：1日をリセット、全画面、画面をオンのままにする",
     "top": "トップへ戻る"
+  },
+  "mini": {
+    "today": "今日",
+    "previous": "前の活動",
+    "stop": "停止",
+    "next": "次の活動"
   },
   "main": {
     "readyTitle": "1日を始める準備ができました",

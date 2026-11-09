@@ -46,9 +46,17 @@
     "reset": "Dag resetten",
     "fullscreen": "Volledig scherm",
     "leaveFullscreen": "Volledig scherm verlaten",
+    "miniWindow": "Minivenster",
+    "closeMiniWindow": "Minivenster sluiten",
     "more": "Meer",
     "moreLabel": "Meer: dag resetten, volledig scherm, scherm aan houden",
     "top": "Terug naar boven"
+  },
+  "mini": {
+    "today": "Vandaag",
+    "previous": "Vorige activiteit",
+    "stop": "Stoppen",
+    "next": "Volgende activiteit"
   },
   "main": {
     "readyTitle": "Klaar om de dag te beginnen",

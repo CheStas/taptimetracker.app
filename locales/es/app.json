@@ -46,9 +46,17 @@
     "reset": "Reiniciar el día",
     "fullscreen": "Pantalla completa",
     "leaveFullscreen": "Salir de pantalla completa",
+    "miniWindow": "Mini ventana",
+    "closeMiniWindow": "Cerrar la mini ventana",
     "more": "Más",
     "moreLabel": "Más: reiniciar el día, pantalla completa, mantener la pantalla encendida",
     "top": "Volver arriba"
+  },
+  "mini": {
+    "today": "Hoy",
+    "previous": "Actividad anterior",
+    "stop": "Detener",
+    "next": "Actividad siguiente"
   },
   "main": {
     "readyTitle": "Listo para empezar el día",

@@ -46,9 +46,17 @@
     "reset": "Günü sıfırla",
     "fullscreen": "Tam ekran",
     "leaveFullscreen": "Tam ekrandan çık",
+    "miniWindow": "Mini pencere",
+    "closeMiniWindow": "Mini pencereyi kapat",
     "more": "Daha fazla",
     "moreLabel": "Daha fazla: günü sıfırla, tam ekran, ekranı açık tut",
     "top": "Başa dön"
+  },
+  "mini": {
+    "today": "Bugün",
+    "previous": "Önceki etkinlik",
+    "stop": "Durdur",
+    "next": "Sonraki etkinlik"
   },
   "main": {
     "readyTitle": "Güne başlamaya hazır",

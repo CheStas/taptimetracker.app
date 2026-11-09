@@ -46,9 +46,17 @@
     "reset": "Tag zurücksetzen",
     "fullscreen": "Vollbild",
     "leaveFullscreen": "Vollbild verlassen",
+    "miniWindow": "Mini-Fenster",
+    "closeMiniWindow": "Mini-Fenster schließen",
     "more": "Mehr",
     "moreLabel": "Mehr: Tag zurücksetzen, Vollbild, Bildschirm eingeschaltet lassen",
     "top": "Nach oben"
+  },
+  "mini": {
+    "today": "Heute",
+    "previous": "Vorherige Tätigkeit",
+    "stop": "Stoppen",
+    "next": "Nächste Tätigkeit"
   },
   "main": {
     "readyTitle": "Bereit für den Tag",

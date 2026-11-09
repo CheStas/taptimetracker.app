@@ -46,9 +46,17 @@
     "reset": "Reset day",
     "fullscreen": "Full screen",
     "leaveFullscreen": "Leave full screen",
+    "miniWindow": "Mini window",
+    "closeMiniWindow": "Close the mini window",
     "more": "More",
     "moreLabel": "More: reset day, full screen, keep the screen on",
     "top": "Back to top"
+  },
+  "mini": {
+    "today": "Today",
+    "previous": "Previous activity",
+    "stop": "Stop",
+    "next": "Next activity"
   },
   "main": {
     "readyTitle": "Ready to start the day",

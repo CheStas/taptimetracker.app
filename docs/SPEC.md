@@ -114,7 +114,7 @@ theme (§16). Top to bottom:
      While idle: a neutral dot and "Idle", no duration (one timer only: a separate "since switch" timer would always
      show the same value).
    - Right: "Clock" + `HH:MM`, then round 44 px icon buttons on the `chip` background: Summary, Settings, Reset day,
-     Full screen toggle (the icon reflects the state).
+     Mini window (where available, §11), Full screen toggle (the icon reflects the state).
 3. **Buttons area** (`flex: 1`) in one of three layouts (Settings → Main screen → Buttons). Every layout shows the
    same elements: color square, name (one line, ellipsis), share of today in %, a running chip (pulsing dot + run)
    while active, the total in mono, and the progress with its text.
@@ -218,8 +218,8 @@ day total, "Now" and the clock stay in view and the app buttons stay in the same
 - **Left:** on Main the profile button; on every other page a round 44 px **back** button and the page name, 20 px
   semibold, with "· <profile>" muted (the profile name hidden below 760 px). Back = Esc (§6.2).
 - **Middle:** "Today" and "Now" exactly as on Main, ticking live.
-- **Right:** the clock and the same icon buttons (Summary, Settings, Reset day, Full screen; ⋯ More on a
-  phone). The button of the page that is open is marked (`aria-current="page"`, filled `text` with a `surface`
+- **Right:** the clock and the same icon buttons (Summary, Settings, Reset day, Mini window, Full screen; ⋯ More
+  on a phone). The button of the page that is open is marked (`aria-current="page"`, filled `text` with a `surface`
   icon) and does nothing.
 - Controls that used to sit in a page's own header move to the top of its content: the Summary's period switcher
   (§9), the day editor's ‹ day › stepper (§8).
@@ -354,6 +354,37 @@ The period (Day, Week, Month, Custom) changes what each block shows, not the ord
   X11 and Wayland): the in-app setting alone decides.
 - The Wake Lock needs a secure context (localhost or HTTPS); plain-HTTP hosting cannot keep the screen on. Settings
   and the footer say so when it is not available.
+
+## 11. Mini window
+A small always-on-top window, like a video's picture-in-picture, so the timer stays in view and the activity can be
+switched while working in other apps.
+- **Document Picture-in-Picture** (`documentPictureInPicture.requestWindow`): desktop Chrome and Edge 116+. Where the
+  API is missing (Firefox, Safari, phones, tablets) every entry point is hidden; there is no fallback (a video-based
+  picture-in-picture may come later).
+- **Open:** a round 44 px icon button **Mini window** in the header (§6, §6.3), between Reset day and Full screen,
+  and an item in the phone's ⋯ More menu when the window is that narrow. Browsers only open it from a click. While it
+  is open the button is pressed (`aria-pressed`) and a tap closes it. Opening it does not hide or minimize the app.
+- **Size:** opens at 320 × 132 px; the user can move and resize it (the browser remembers its position). The content
+  scales to the window and never scrolls.
+- **Content** (one profile: the open one; it follows a profile switch):
+  1. **Now:** a color dot, the active activity's name (one line, ellipsis) and its current run (`m:ss` under an hour,
+     `h:mm:ss` after), the same as the header's "Now" (§6); while idle a neutral dot, "Idle" and no duration.
+  2. **Today:** the day total `h:mm:ss`, muted label.
+  3. **Three buttons** (min 44 px, icons with a tooltip and label): **Previous** ‹, **Stop** ■, **Next** ›.
+  Everything ticks live every second. Colors, fonts and light/dark come from the current theme (§16), and follow a
+  theme change; the active activity's slot color fills the Now row as on its main-screen button.
+- **Next / Previous** switch to the next or previous activity in the order of the main screen's buttons: the
+  activities it shows (not removed, not hidden for today, in a group that is on, plus the active one, §3, §13), in
+  the profile's order, unused ones included; the list wraps around. While idle, Next starts the activity after the
+  one that ran last today (the first one when nothing ran yet) and Previous the one before it (the last one when
+  nothing ran). With no activities both are disabled.
+- **Stop** stops the active activity, the same as tapping the active button; disabled while idle.
+- Every switch is a normal tap (`assign(X, now, null)`), so the short-switch rule (§4.2) applies: clicking Next a
+  few times to reach an activity leaves no entries for the ones passed on the way.
+- No long-press, settings or popups in it; Esc does nothing there. The main window and the mini window show the same
+  state at once.
+- **Closing:** its own close button, the header button, or the app's tab/window closing or reloading (the browser
+  closes it then). It is not reopened on the next start: nothing is stored.
 
 ## 12. Profiles
 A profile is a separate workspace, like a separate copy of the app: its own activities, groups, days, segments,

@@ -285,7 +285,7 @@ a.got-it { display: inline-flex; align-items: center; text-decoration: none; }
 .theme-switch { display: flex; flex-direction: column; gap: 10px; }
 .quick-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 /* Icon toggle: chip when off, filled with the text color when on. */
-button.icon.round.toggle[aria-pressed="true"], button.icon.round.current { background: var(--text); color: var(--surface); }
+button.icon.round.toggle[aria-pressed="true"], .app-header button.icon.round[aria-pressed="true"], button.icon.round.current { background: var(--text); color: var(--surface); }
 
 /* Note box (privacy note): footer, full width, and Settings → Backup. */
 .note {
@@ -725,3 +725,22 @@ button.day-row:hover { background: color-mix(in srgb, var(--text) 3%, transparen
 [dir='rtl'] :is(.day-timeline, .timeline, .ticks, .blocks, .axis-labels, .day-bar) { direction: ltr; }
 /* Text inside them ("1 ساعت 21 دقیقه") still reads right to left. */
 [dir='rtl'] :is(.day-timeline, .timeline, .blocks) :is(span, div) { unicode-bidi: plaintext; }
+
+/* Mini window (§11): its own document, sized by the user; text scales with the window's height. */
+body.mini-body { height: 100vh; overflow: hidden; }
+.mini { height: 100%; display: flex; flex-direction: column; gap: 8px; padding: 10px; }
+.mini-now {
+  flex: 1; min-height: 0; display: flex; align-items: center; gap: 10px; padding: 0 14px; border-radius: 12px;
+  background: var(--surface); border: 1px solid var(--line); font-size: clamp(15px, 13vh, 34px); font-weight: 600;
+}
+.mini-now .dot { width: .5em; height: .5em; border-radius: 50%; flex: none; background: var(--line); }
+.mini-now.active { background: var(--c); border-color: var(--c); color: var(--on-accent); }
+.mini-now.active .dot { background: var(--on-accent); }
+.mini-name { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-transform: var(--names-case); }
+.mini-run { font-weight: 500; }
+.mini-bottom { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.mini-total { display: flex; flex-direction: column; min-width: 0; }
+.mini-total .k { font-size: 11px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.mini-total .num { font-size: clamp(15px, 12vh, 30px); font-weight: 600; }
+.mini-buttons { display: flex; gap: 6px; flex: none; }
+.mini-buttons button.icon.round { width: clamp(32px, 14vw, 44px); height: clamp(32px, 14vw, 44px); min-width: 0; }

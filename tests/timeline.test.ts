@@ -1,6 +1,6 @@
 import { test } from 'vitest';
 import assert from 'node:assert/strict';
-import { assign, totals, dayTotal, gaps, sessionsFor, closeAt, switchTo } from '../src/timeline.ts';
+import { assign, totals, dayTotal, gaps, sessionsFor, closeAt, switchTo, cycleTarget, lastActivityId } from '../src/timeline.ts';
 import type { Segment } from '../src/types.ts';
 
 const T = (hhmm: string) => {
@@ -138,4 +138,35 @@ test('minMs 0 disables merging', () => {
   let s = switchTo([], 'A', T('09:00'), 0, opts);
   s = switchTo(s, 'B', T('09:00') + 5 * SEC, 0, opts);
   assert.equal(s.length, 2);
+});
+
+test('cycleTarget: next/previous wrap around the list', () => {
+  const ids = ['a', 'b', 'c'];
+  assert.equal(cycleTarget(ids, 'a', null, 1), 'b');
+  assert.equal(cycleTarget(ids, 'c', null, 1), 'a');
+  assert.equal(cycleTarget(ids, 'a', null, -1), 'c');
+  assert.equal(cycleTarget(ids, 'b', 'a', -1), 'a');
+});
+
+test('cycleTarget: while idle it steps from the last one, else starts at an end', () => {
+  const ids = ['a', 'b', 'c'];
+  assert.equal(cycleTarget(ids, null, 'b', 1), 'c');
+  assert.equal(cycleTarget(ids, null, 'b', -1), 'a');
+  assert.equal(cycleTarget(ids, null, null, 1), 'a');
+  assert.equal(cycleTarget(ids, null, null, -1), 'c');
+  assert.equal(cycleTarget(ids, null, 'gone', 1), 'a');
+});
+
+test('cycleTarget: nothing to switch to', () => {
+  assert.equal(cycleTarget([], null, null, 1), null);
+  assert.equal(cycleTarget(['a'], 'a', null, 1), null);
+  assert.equal(cycleTarget(['a'], null, 'a', 1), 'a');
+});
+
+test('lastActivityId: the latest segment by start', () => {
+  let s = tap([], 'A1', '09:00');
+  s = tap(s, 'A2', '10:00');
+  s = closeAt(s, T('11:00'), opts);
+  assert.equal(lastActivityId(s), 'A2');
+  assert.equal(lastActivityId([]), null);
 });
