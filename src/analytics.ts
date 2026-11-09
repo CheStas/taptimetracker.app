@@ -91,12 +91,20 @@ export function trackOnce(name: string, data?: EventData) {
   track(name, data);
 }
 
-/** An event sent at most once per calendar day on this device (the daily "how is it used" snapshot). */
+let dailyQueued: string | null = null; // the day whose daily event this page load already queued or sent
+/**
+ * An event sent at most once per calendar day on this device (the daily "how is it used" snapshot). The day counts as
+ * done only once the script is there and the event goes out, and `data` is read at that moment; if the script never
+ * loads, the next page load tries again.
+ */
 export function trackDaily(name: string, data: () => EventData) {
   const today = new Date().toDateString();
-  if (!statsOn() || storage.get(LAST_DAY) === today) return;
-  storage.set(LAST_DAY, today);
-  track(name, data());
+  if (dailyQueued === today || !statsOn() || storage.get(LAST_DAY) === today) return;
+  dailyQueued = today;
+  send((u) => {
+    storage.set(LAST_DAY, today);
+    u.track(name, data());
+  });
 }
 
 /** A count as a range, so the stats show the shape of use and not exact numbers. */

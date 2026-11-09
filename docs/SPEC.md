@@ -622,7 +622,10 @@ them in the repo root.
   code (auto-track off) as path + hash route. Events, with fixed values only (never names, times or typed text):
   `tap` (first tap per page load), `export`, `import`, `profile-add`, `theme` (built-in id or `custom`),
   `theme-import`, `setting` (key + value, a fixed list of settings), `feedback`, and once a day per device `usage`
-  (activities, groups, categories and profiles as ranges, layout, theme mode, installed).
+  (activities, groups, categories and profiles as ranges, layout, theme mode, installed). `usage` is checked at start
+  and on every state change and goes out the first time the current day has tracked time (a segment), so a first
+  visit that never taps does not report the seed setup. The day is marked sent only once the Umami script has loaded
+  and the event is sent; a blocked or failed script leaves it for the next page load.
 - **Choice:** localStorage `usage-stats` = `on`/`off`, shared by the app (Settings → About) and the privacy page.
   Without a choice it is on, unless the browser sends Do Not Track or Global Privacy Control. Off also sets Umami's own
   `umami.disabled`.
