@@ -36,6 +36,16 @@
     "p2": "Chaque session de la journée est là, prête à être raccourcie, déplacée ou supprimée.",
     "imageAlt": "Maintenir une activité ouvre les sessions du jour et des boutons rapides pour la démarrer plus tôt"
   },
+  "track": {
+    "title": "Que puis-je suivre ?",
+    "p1": "Tout ce qui vous prend du temps. Les boutons sont à vous : ajoutez des activités dans les Réglages, un nom ou toute une liste d’un coup, comme Réunion, Tâche, Revue de code, E-mails et Pause. Renommez-les, réordonnez-les ou retirez-les quand votre travail change ; une activité retirée garde son historique.",
+    "p2": "Puis rangez-les selon votre façon de voir la journée. Rien de tout cela n’est obligatoire : de simples boutons suffisent.",
+    "label": "Façons d’organiser vos activités",
+    "activities": { "title": "Activités", "text": "N’importe quel nom, une couleur du thème et un objectif quotidien facultatif, comme deux heures de concentration ou une heure de pauses." },
+    "groups": { "title": "Groupes", "text": "Rassemblez les activités en ensembles comme Travail et Maison, et désactivez un ensemble pour masquer ses boutons. Plusieurs groupes peuvent être actifs à la fois, et les totaux montrent le temps par groupe." },
+    "categories": { "title": "Catégories", "text": "Étiquetez les activités à votre manière : travail de fond ou superficiel, facturable ou non, un client ou un projet. Le résumé se regroupe selon n’importe laquelle." },
+    "hide": { "title": "Masquer aujourd’hui", "text": "Une activité dont vous n’aurez pas besoin aujourd’hui s’efface et revient demain." }
+  },
   "privacy": {
     "title": "Qui peut voir ce que j’enregistre ?",
     "p1": "Personne d’autre que vous. La plupart des outils de suivi demandent un compte, puis envoient chaque minute de votre journée dans leur cloud. Celui-ci n’a nulle part où l’envoyer. Vos sessions vivent dans le stockage de votre navigateur sur cet appareil, et c’est la seule copie.",
@@ -53,6 +63,12 @@
     "p1": "Jour, semaine, mois ou toute période de votre choix. Chaque jour est sur la même horloge, donc les débuts tardifs, les longs déjeuners et les mardis remplis de réunions sautent aux yeux.",
     "p2": "Étiquetez les activités avec vos propres catégories, comme travail profond ou superficiel, seul ou avec d’autres, et tout le résumé se réorganise autour d’elles.",
     "imageAlt": "Le résumé passe d’une journée à une semaine groupée par concentration, puis à une carte de chaleur du mois"
+  },
+  "mini": {
+    "title": "Puis-je garder le minuteur sous les yeux en travaillant ?",
+    "p1": "Oui. Ouvrez la mini-fenêtre depuis l’en-tête de l’app : une petite fenêtre qui flotte au-dessus de vos autres applications, comme une vidéo en incrustation. Elle montre ce qui tourne, depuis combien de temps, et le total du jour.",
+    "p2": "Trois boutons lui suffisent : l’activité précédente ou suivante, dans l’ordre de vos boutons, et arrêter. Passer par quelques activités pour atteindre la bonne ne laisse aucune entrée parasite. Elle fonctionne dans Chrome et Edge sur ordinateur ; les autres navigateurs ne proposent pas encore ce type de fenêtre.",
+    "imageAlt": "La mini-fenêtre : Code Review en cours depuis 42 minutes, le total du jour et des boutons pour l’activité précédente, arrêter et l’activité suivante"
   },
   "phone": {
     "title": "Puis-je l’utiliser sur mon téléphone ?",
@@ -84,10 +100,12 @@
     "items": {
       "free": { "q": "Tap Time Tracker est-il gratuit ?", "a": "Oui. Il est gratuit, sans publicité, sans version payante et sans compte. Ouvrez l’app dans n’importe quel navigateur récent et commencez ; la démo en direct permet de l’essayer d’abord sur des données d’exemple." },
       "account": { "q": "Faut-il un compte ?", "a": "Non. Pas d’inscription, pas d’e-mail, pas de mot de passe. Votre suivi vit dans le navigateur où vous l’ouvrez : rien à quoi se connecter, rien à oublier." },
+      "what": { "q": "Que puis-je suivre avec l’app ?", "a": "Toute activité que vous ajoutez dans les Réglages : réunions, tâches, revues, e-mails, pauses, trajets ou temps d’entraînement. Rangez-les en groupes comme Travail et Maison, étiquetez-les avec vos propres catégories comme travail de fond ou un client, et donnez à chacune un objectif quotidien si vous le souhaitez." },
       "data": { "q": "Où sont stockées mes données ?", "a": "Dans le stockage propre de votre navigateur (IndexedDB) sur cet appareil, et nulle part ailleurs. Elles ne sont jamais envoyées, pas même à ce site. Elles ne quittent le navigateur que dans un fichier de sauvegarde que vous exportez vous-même." },
       "offline": { "q": "Fonctionne-t-il hors ligne ?", "a": "Oui. Une fois l’app ouverte, elle démarre sans connexion, et installée sur l’écran d’accueil ou le bureau, elle fonctionne comme n’importe quelle app. Le suivi n’a jamais besoin d’internet, puisque rien n’est envoyé." },
       "move": { "q": "Comment transférer mes données sur un autre appareil ?", "a": "Exportez une sauvegarde : dans l’app, ouvrez Réglages → Sauvegarde et touchez Exporter en JSON. Copiez le fichier sur l’autre appareil, ouvrez-y l’app et utilisez Importer un JSON au même endroit. L’import remplace les données de ce profil : exportez-les d’abord s’il en a." },
       "several": { "q": "Deux activités peuvent-elles tourner en même temps ?", "a": "Non, et c’est voulu. Comme avec une pendule d’échecs, lancer une activité arrête l’autre, donc la journée ne dépasse jamais 24 heures. Touchez celle qui tourne pour tout arrêter." },
+      "mini": { "q": "Le minuteur peut-il rester au-dessus des autres fenêtres ?", "a": "Oui, dans Chrome et Edge sur ordinateur : la mini-fenêtre de l’en-tête de l’app flotte au-dessus de vos autres applications et change ou arrête une activité en un clic. Firefox, Safari et les téléphones ne proposent pas encore ce type de fenêtre, le bouton n’y apparaît donc pas. Sous Linux avec Wayland, c’est le bureau qui décide de ce qui reste au premier plan ; dans KDE Plasma, une règle de fenêtre qui la garde au-dessus des autres fait l’affaire." },
       "devices": { "q": "Sur quels appareils fonctionne-t-il ?", "a": "Sur tout appareil doté d’un navigateur récent : ordinateur portable, tablette, téléphone ou écran tactile au mur. Chaque navigateur garde son propre suivi et il n’y a pas de synchronisation : passez de l’un à l’autre avec un fichier de sauvegarde." }
     }
   },

@@ -100,7 +100,7 @@ describe('structured data and answers', () => {
       expect(app.publisher.email).toBe(CONTACT);
       expect(faq.inLanguage).toBe(l.code);
       // Every question in the markup is a visible heading, and every step a visible list item.
-      expect(faq.mainEntity.length).toBe(7);
+      expect(faq.mainEntity.length).toBe(9);
       for (const q of faq.mainEntity) expect(html).toContain(`<h3>${q.name}</h3>`);
       for (const h of howtos) expect(h.step.length).toBe(3);
       expect(html).toContain('<section class="faq" id="faq">');

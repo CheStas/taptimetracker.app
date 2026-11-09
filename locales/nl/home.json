@@ -36,6 +36,16 @@
     "p2": "Elke sessie van de dag staat er klaar om in te korten, te verschuiven of te verwijderen.",
     "imageAlt": "Een activiteit ingedrukt houden opent de sessies van vandaag en snelknoppen om haar eerder te starten"
   },
+  "track": {
+    "title": "Wat kan ik bijhouden?",
+    "p1": "Alles waar je tijd aan besteedt. De knoppen zijn van jou: voeg activiteiten toe in Instellingen, één naam of een hele lijst tegelijk, zoals Overleg, Taak, Code review, E-mail en Pauze. Hernoem, herorden of verwijder ze als je werk verandert; een verwijderde activiteit houdt haar geschiedenis.",
+    "p2": "Orden ze daarna zoals jij over je dag denkt. Niets hiervan is verplicht: gewone knoppen werken prima.",
+    "label": "Manieren om je activiteiten te ordenen",
+    "activities": { "title": "Activiteiten", "text": "Elke naam, een kleur uit het thema en een optioneel dagdoel, zoals twee uur focus of een uur pauze." },
+    "groups": { "title": "Groepen", "text": "Zet activiteiten in sets als Werk en Thuis en zet een set uit om de knoppen ervan te verbergen. Er kunnen meerdere groepen tegelijk aan staan, en de totalen tonen de tijd per groep." },
+    "categories": { "title": "Categorieën", "text": "Label activiteiten op jouw manier: diep of oppervlakkig werk, factureerbaar of niet, een klant of een project. Het overzicht groepeert opnieuw op elk daarvan." },
+    "hide": { "title": "Vandaag verbergen", "text": "Een activiteit die je vandaag niet nodig hebt, gaat opzij en is morgen terug." }
+  },
   "privacy": {
     "title": "Wie kan zien wat ik bijhoud?",
     "p1": "Niemand behalve jij. De meeste tijdregistratie-apps willen een account en uploaden daarna elke minuut van je dag naar hun cloud. Deze kan het nergens heen sturen. Je sessies staan in de opslag van je browser op dit apparaat, en dat is de enige kopie.",
@@ -53,6 +63,12 @@
     "p1": "Dag, week, maand of elke periode die je kiest. Elke dag staat op dezelfde klok, dus late starts, lange lunches en dinsdagen vol meetings springen er meteen uit.",
     "p2": "Geef activiteiten je eigen categorieën, zoals diep werk tegenover ondiep of alleen tegenover met anderen, en het hele overzicht groepeert zich daarnaar.",
     "imageAlt": "Het overzicht gaat van een dag naar een week gegroepeerd op focus, en dan naar een heatmap van de maand"
+  },
+  "mini": {
+    "title": "Kan ik de timer in beeld houden terwijl ik werk?",
+    "p1": "Ja. Open het minivenster vanuit de kopbalk van de app: een klein venster dat boven je andere apps zweeft, zoals een video in beeld-in-beeld. Het toont wat er loopt, hoe lang al, en het totaal van vandaag.",
+    "p2": "Drie knoppen zijn genoeg: de vorige of volgende activiteit, in de volgorde van je knoppen, en stoppen. Door een paar activiteiten heen klikken om de juiste te bereiken laat geen losse registraties achter. Het werkt in Chrome en Edge op de desktop; andere browsers bieden zulke vensters nog niet.",
+    "imageAlt": "Het minivenster: Code Review loopt al 42 minuten, het totaal van vandaag en knoppen voor de vorige activiteit, stoppen en de volgende activiteit"
   },
   "phone": {
     "title": "Kan ik het op mijn telefoon gebruiken?",
@@ -84,10 +100,12 @@
     "items": {
       "free": { "q": "Is Tap Time Tracker gratis?", "a": "Ja. Het is gratis, zonder advertenties, zonder betaalde versie en zonder account. Open de app in een moderne browser en begin met tikken; met de live demo probeer je hem eerst op voorbeelddata." },
       "account": { "q": "Heb ik een account nodig?", "a": "Nee. Geen registratie, geen e-mail, geen wachtwoord. Je tijdregistratie staat in de browser waarin je hem opent, dus er is niets om in te loggen en niets om te vergeten." },
+      "what": { "q": "Wat kan ik ermee bijhouden?", "a": "Elke activiteit die je in Instellingen toevoegt: overleg, taken, reviews, e-mail, pauzes, woon-werkverkeer of oefentijd. Verdeel ze in groepen als Werk en Thuis, label ze met je eigen categorieën zoals diep werk of een klant, en geef elke activiteit een dagdoel als je wilt." },
       "data": { "q": "Waar worden mijn gegevens opgeslagen?", "a": "In de eigen opslag van je browser (IndexedDB) op dit apparaat, en nergens anders. Ze worden nooit geüpload, ook niet naar deze site. Ze verlaten de browser alleen in een back-upbestand dat je zelf exporteert." },
       "offline": { "q": "Werkt het offline?", "a": "Ja. Als je de app één keer hebt geopend, start hij ook zonder verbinding, en op je beginscherm of bureaublad geïnstalleerd werkt hij als elke andere app. Bijhouden heeft nooit internet nodig, want er wordt niets verstuurd." },
       "move": { "q": "Hoe zet ik mijn gegevens over naar een ander apparaat?", "a": "Exporteer een back-up: open in de app Instellingen → Back-up en tik op JSON exporteren. Kopieer het bestand naar het andere apparaat, open daar de app en gebruik JSON importeren op dezelfde plek. Importeren vervangt de gegevens van dat profiel, dus exporteer eerst als er al iets in staat." },
       "several": { "q": "Kunnen twee activiteiten tegelijk lopen?", "a": "Nee, en dat is met opzet. Net als bij een schaakklok stopt het starten van de ene activiteit de andere, dus de dag telt nooit op tot meer dan 24 uur. Tik op de lopende om helemaal te stoppen." },
+      "mini": { "q": "Kan de timer boven andere vensters blijven?", "a": "Ja, in Chrome en Edge op de desktop: het minivenster in de kopbalk van de app zweeft boven je andere apps en wisselt of stopt activiteiten met één klik. Firefox, Safari en telefoons bieden zulke vensters nog niet, dus daar verschijnt de knop niet. Op Linux met Wayland bepaalt de desktop wat bovenop blijft; in KDE Plasma lost een vensterregel die het boven andere vensters houdt dat op." },
       "devices": { "q": "Op welke apparaten werkt het?", "a": "Op alles met een moderne browser: een laptop, een tablet, een telefoon of een touchscreen aan de muur. Elke browser houdt zijn eigen registratie bij en er is geen synchronisatie, dus gebruik een back-upbestand om over te stappen." }
     }
   },

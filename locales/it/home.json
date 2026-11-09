@@ -36,6 +36,16 @@
     "p2": "Ogni sessione della giornata è lì, pronta da accorciare, spostare o eliminare.",
     "imageAlt": "Tenere premuta un’attività apre le sessioni di oggi e i pulsanti rapidi per avviarla prima"
   },
+  "track": {
+    "title": "Cosa posso tracciare?",
+    "p1": "Tutto ciò in cui passi il tempo. I pulsanti sono tuoi: aggiungi le attività nelle Impostazioni, un nome alla volta o un intero elenco in un colpo, come Riunione, Task, Code review, Email e Pausa. Rinominale, riordinale o rimuovile quando il tuo lavoro cambia; un’attività rimossa conserva la sua cronologia.",
+    "p2": "Poi organizzale come pensi alla tua giornata. Niente di tutto questo è obbligatorio: anche i semplici pulsanti vanno benissimo.",
+    "label": "Modi per organizzare le tue attività",
+    "activities": { "title": "Attività", "text": "Qualsiasi nome, un colore del tema e un obiettivo giornaliero facoltativo, come due ore di concentrazione o un’ora di pause." },
+    "groups": { "title": "Gruppi", "text": "Raccogli le attività in insiemi come Lavoro e Casa e spegni un insieme per nasconderne i pulsanti. Possono essere attivi più gruppi insieme, e i totali mostrano il tempo per gruppo." },
+    "categories": { "title": "Categorie", "text": "Etichetta le attività a modo tuo: lavoro profondo o superficiale, fatturabile o no, un cliente o un progetto. Il riepilogo si raggruppa secondo una qualsiasi di queste." },
+    "hide": { "title": "Nascondi oggi", "text": "Un’attività che oggi non ti serve si fa da parte e torna domani." }
+  },
   "privacy": {
     "title": "Chi può vedere ciò che registro?",
     "p1": "Nessuno tranne te. La maggior parte dei time tracker vuole un account e poi carica ogni minuto della tua giornata nel suo cloud. Questo non ha dove mandarlo. Le tue sessioni vivono nella memoria del browser su questo dispositivo, ed è l’unica copia.",
@@ -53,6 +63,12 @@
     "p1": "Giorno, settimana, mese o qualsiasi intervallo scegli. Ogni giorno sta sullo stesso orologio, così inizi in ritardo, pranzi lunghi e martedì pieni di riunioni saltano all’occhio.",
     "p2": "Etichetta le attività con categorie tue, come lavoro profondo contro superficiale o da solo contro con altri, e tutto il riepilogo si riorganizza attorno a loro.",
     "imageAlt": "Il riepilogo passa da un giorno a una settimana raggruppata per concentrazione, poi a una mappa di calore del mese"
+  },
+  "mini": {
+    "title": "Posso tenere il timer in vista mentre lavoro?",
+    "p1": "Sì. Apri la mini finestra dall’intestazione dell’app: una piccola finestra che resta sopra le altre app, come un video in picture-in-picture. Mostra cosa è in corso, da quanto e il totale di oggi.",
+    "p2": "Le bastano tre pulsanti: l’attività precedente o la successiva, nell’ordine dei tuoi pulsanti, e stop. Scorrere qualche attività per arrivare a quella giusta non lascia voci inutili. Funziona in Chrome ed Edge su desktop; gli altri browser non offrono ancora finestre di questo tipo.",
+    "imageAlt": "La mini finestra: Code Review in corso da 42 minuti, il totale di oggi e i pulsanti per l’attività precedente, stop e l’attività successiva"
   },
   "phone": {
     "title": "Posso usarlo sul telefono?",
@@ -84,10 +100,12 @@
     "items": {
       "free": { "q": "Tap Time Tracker è gratuito?", "a": "Sì. È gratuito, senza pubblicità, senza versione a pagamento e senza account. Apri l’app in un qualsiasi browser moderno e inizia a toccare; la demo dal vivo ti permette di provarla prima con dati di esempio." },
       "account": { "q": "Serve un account?", "a": "No. Niente registrazione, email o password. Il tuo tracker vive nel browser in cui lo apri, quindi non c’è niente a cui accedere e niente da dimenticare." },
+      "what": { "q": "Cosa posso tracciare con l’app?", "a": "Qualsiasi attività aggiunta nelle Impostazioni: riunioni, task, revisioni, email, pause, il tragitto o il tempo di pratica. Raggruppale in insiemi come Lavoro e Casa, etichettale con categorie tue come lavoro profondo o un cliente e dai a ciascuna un obiettivo giornaliero." },
       "data": { "q": "Dove vengono salvati i miei dati?", "a": "Nella memoria del tuo browser (IndexedDB) su questo dispositivo, e da nessun’altra parte. Non vengono mai caricati, nemmeno su questo sito. L’unico modo in cui lasciano il browser è un file di backup che esporti tu." },
       "offline": { "q": "Funziona offline?", "a": "Sì. Dopo averla aperta una volta, l’app si avvia senza connessione e, installata nella schermata Home o sul desktop, funziona come qualsiasi altra app. Registrare non richiede mai internet, perché non viene inviato nulla." },
       "move": { "q": "Come sposto i miei dati su un altro dispositivo?", "a": "Esporta un backup: nell’app apri Impostazioni → Backup e tocca Esporta JSON. Copia il file sull’altro dispositivo, apri lì l’app e usa Importa JSON nello stesso punto. L’importazione sostituisce i dati di quel profilo, quindi esporta prima se ne contiene." },
       "several": { "q": "Due attività possono essere in corso insieme?", "a": "No, ed è voluto. Come con un orologio da scacchi, avviare un’attività ferma l’altra, così la giornata non supera mai le 24 ore. Tocca quella in corso per smettere di registrare." },
+      "mini": { "q": "Il timer può restare sopra le altre finestre?", "a": "Sì, in Chrome ed Edge su desktop: la mini finestra nell’intestazione dell’app resta sopra le altre app e cambia o ferma le attività con un clic. Firefox, Safari e i telefoni non offrono ancora finestre di questo tipo, quindi lì il pulsante non compare. Su Linux con Wayland è il desktop a decidere cosa resta in primo piano; in KDE Plasma basta una regola della finestra che la tenga sopra le altre." },
       "devices": { "q": "Su quali dispositivi funziona?", "a": "Su qualsiasi cosa abbia un browser moderno: un portatile, un tablet, un telefono o un touchscreen a parete. Ogni browser ha il suo tracker e non c’è sincronizzazione, quindi usa un file di backup per passare dall’uno all’altro." }
     }
   },

@@ -36,6 +36,16 @@
     "p2": "Every session of the day is right there to shorten, move or delete.",
     "imageAlt": "Holding an activity opens today’s sessions and quick buttons to start it earlier"
   },
+  "track": {
+    "title": "What can I track?",
+    "p1": "Anything you spend time on. The buttons are yours: add activities in Settings, one name or a whole list at once, such as Meeting, Task, Code review, Email and Break. Rename, reorder or remove them whenever your work changes; a removed activity keeps its history.",
+    "p2": "Then sort them the way you think about your day. None of it is required: plain buttons work fine.",
+    "label": "Ways to organize your activities",
+    "activities": { "title": "Activities", "text": "Any name, a color from the theme and an optional daily target, such as two hours of focus or an hour of breaks." },
+    "groups": { "title": "Groups", "text": "Put activities into sets like Work and Home and switch a set off to hide its buttons. Several groups can be on at once, and the totals show time per group." },
+    "categories": { "title": "Categories", "text": "Tag activities your own way: deep or shallow work, billable or not, a client or a project. The summary regroups around any of them." },
+    "hide": { "title": "Hide for today", "text": "An activity you will not need today steps aside and is back tomorrow." }
+  },
   "privacy": {
     "title": "Who can see what I track?",
     "p1": "Nobody but you. Most trackers want an account, then upload every minute of your day to their cloud. This one has nowhere to send it. Your sessions live in your browser’s own storage on this device, and that is the only copy.",
@@ -53,6 +63,12 @@
     "p1": "Day, week, month or any range you pick. Every day sits on the same clock, so late starts, long lunches and meeting-heavy Tuesdays jump out at a glance.",
     "p2": "Tag activities with your own categories, like deep work versus shallow or alone versus with people, and the whole summary regroups around them.",
     "imageAlt": "The summary moving from a day to a week grouped by focus, then to a month heatmap"
+  },
+  "mini": {
+    "title": "Can I keep the timer in view while I work?",
+    "p1": "Yes. Open the mini window from the app’s header: a small window that floats over your other apps, like a video in picture-in-picture. It shows what is running, for how long, and today’s total.",
+    "p2": "Three buttons are all it needs: the previous or next activity, in the order of your buttons, and stop. Clicking past a few activities to reach the right one leaves no stray entries. It works in desktop Chrome and Edge; other browsers do not offer such windows yet.",
+    "imageAlt": "The mini window: Code Review running for 42 minutes, today’s total, and buttons for the previous activity, stop and the next activity"
   },
   "phone": {
     "title": "Can I use it on my phone?",
@@ -84,10 +100,12 @@
     "items": {
       "free": { "q": "Is Tap Time Tracker free?", "a": "Yes. It is free to use, with no ads, no paid tier and no account. Open the app in any modern browser and start tapping; the live demo lets you try it on sample data first." },
       "account": { "q": "Do I need an account?", "a": "No. There is no sign-up, email or password. Your tracker lives in the browser you open it in, so there is nothing to log in to and nothing to forget." },
+      "what": { "q": "What can I track with it?", "a": "Any activity you add in Settings: meetings, tasks, reviews, email, breaks, a commute or practice time. Sort them into groups such as Work and Home, tag them with your own categories such as deep work or a client, and give any of them a daily target." },
       "data": { "q": "Where is my data stored?", "a": "In your browser’s own storage (IndexedDB) on this device, and nowhere else. It is never uploaded, not even to this site. The only way it leaves the browser is a backup file that you export yourself." },
       "offline": { "q": "Does it work offline?", "a": "Yes. Once you have opened the app, it starts without a connection, and installed on a home screen or desktop it runs like any other app. Tracking never needs the internet, because nothing is sent anywhere." },
       "move": { "q": "How do I move my data to another device?", "a": "Export a backup: in the app open Settings → Backup and tap Export JSON. Copy the file to the other device, open the app there and use Import JSON in the same place. Import replaces that profile’s data, so export first if it has any." },
       "several": { "q": "Can two activities run at the same time?", "a": "No, and that is on purpose. Like a chess clock, starting one activity stops the other, so the day never adds up to more than 24 hours. Tap the running one to stop tracking altogether." },
+      "mini": { "q": "Can the timer stay on top of other windows?", "a": "Yes, in desktop Chrome and Edge: the mini window in the app’s header floats over your other apps and switches or stops activities with one click. Firefox, Safari and phones do not offer such windows yet, so the button does not show there. On Linux with Wayland the desktop decides what stays on top; in KDE Plasma a window rule that keeps it above other windows does the job." },
       "devices": { "q": "Which devices does it work on?", "a": "Anything with a modern browser: a laptop, a tablet, a phone or a touchscreen on the wall. Each browser keeps its own tracker and there is no sync, so use a backup file to move between them." }
     }
   },

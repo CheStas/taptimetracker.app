@@ -36,6 +36,16 @@
     "p2": "Günün her oturumu kısaltmak, kaydırmak ya da silmek için hemen orada.",
     "imageAlt": "Bir etkinliğe basılı tutmak bugünün oturumlarını ve onu daha erken başlatan hızlı düğmeleri açar"
   },
+  "track": {
+    "title": "Neleri takip edebilirim?",
+    "p1": "Zaman harcadığınız her şeyi. Düğmeler sizin: Ayarlar’dan etkinlik ekleyin, tek tek ya da bir kerede bütün bir liste olarak; örneğin Toplantı, Görev, Kod incelemesi, E-posta ve Mola. İşiniz değiştikçe yeniden adlandırın, sıralayın ya da kaldırın; kaldırılan bir etkinlik geçmişini korur.",
+    "p2": "Sonra onları gününüzü nasıl düşünüyorsanız öyle düzenleyin. Bunların hiçbiri zorunlu değil: sade düğmeler de gayet iyi çalışır.",
+    "label": "Etkinliklerinizi düzenlemenin yolları",
+    "activities": { "title": "Etkinlikler", "text": "Dilediğiniz bir ad, temadan bir renk ve isteğe bağlı bir günlük hedef; örneğin iki saat odaklanma ya da bir saat mola." },
+    "groups": { "title": "Gruplar", "text": "Etkinlikleri İş ve Ev gibi kümelere ayırın, bir kümeyi kapatarak düğmelerini gizleyin. Aynı anda birden çok grup açık olabilir ve toplamlar her grubun süresini gösterir." },
+    "categories": { "title": "Kategoriler", "text": "Etkinlikleri kendi yönteminizle etiketleyin: derin ya da yüzeysel iş, faturalanabilir ya da değil, bir müşteri ya da bir proje. Özet bunlardan herhangi birine göre yeniden gruplanır." },
+    "hide": { "title": "Bugün gizle", "text": "Bugün ihtiyacınız olmayacak bir etkinlik kenara çekilir ve yarın geri gelir." }
+  },
   "privacy": {
     "title": "Kaydettiklerimi kim görebilir?",
     "p1": "Sizden başka kimse. Çoğu zaman takip aracı bir hesap ister, sonra gününüzün her dakikasını kendi bulutuna yükler. Bunun gönderecek bir yeri yok. Oturumlarınız bu cihazdaki tarayıcınızın kendi depolamasında yaşar ve tek kopya odur.",
@@ -53,6 +63,12 @@
     "p1": "Gün, hafta, ay ya da seçtiğiniz herhangi bir aralık. Her gün aynı saat ekseninde durur; geç başlangıçlar, uzun öğle yemekleri ve toplantı dolu salılar hemen göze çarpar.",
     "p2": "Etkinlikleri derin işe karşı yüzeysel iş ya da yalnız karşı insanlarla gibi kendi kategorilerinizle etiketleyin; tüm özet bunlara göre yeniden gruplanır.",
     "imageAlt": "Özet bir günden odağa göre gruplanmış bir haftaya, sonra bir aylık ısı haritasına geçiyor"
+  },
+  "mini": {
+    "title": "Çalışırken sayacı göz önünde tutabilir miyim?",
+    "p1": "Evet. Uygulamanın üst çubuğundan mini pencereyi açın: diğer uygulamalarınızın üzerinde duran küçük bir pencere, tıpkı resim içinde resim modundaki bir video gibi. Neyin çalıştığını, ne kadar süredir çalıştığını ve bugünün toplamını gösterir.",
+    "p2": "Üç düğme yeter: düğmelerinizin sırasına göre önceki ya da sonraki etkinlik ve durdur. Doğru etkinliğe ulaşmak için birkaçının üzerinden geçmek gereksiz kayıt bırakmaz. Masaüstünde Chrome ve Edge’de çalışır; diğer tarayıcılar henüz bu tür pencereler sunmuyor.",
+    "imageAlt": "Mini pencere: 42 dakikadır çalışan Code Review, bugünün toplamı ve önceki etkinlik, durdur ve sonraki etkinlik düğmeleri"
   },
   "phone": {
     "title": "Telefonumda kullanabilir miyim?",
@@ -84,10 +100,12 @@
     "items": {
       "free": { "q": "Tap Time Tracker ücretsiz mi?", "a": "Evet. Ücretsizdir; reklam, ücretli sürüm ya da hesap yoktur. Uygulamayı herhangi bir modern tarayıcıda açıp dokunmaya başlayın; canlı demo ile önce örnek verilerle deneyebilirsiniz." },
       "account": { "q": "Hesap gerekiyor mu?", "a": "Hayır. Kayıt, e-posta ya da parola yok. Takibiniz onu açtığınız tarayıcıda yaşar; giriş yapacak ya da unutacak bir şey yoktur." },
+      "what": { "q": "Uygulamayla neleri takip edebilirim?", "a": "Ayarlar’dan eklediğiniz her etkinliği: toplantılar, görevler, incelemeler, e-posta, molalar, yol ya da pratik süresi. Onları İş ve Ev gibi gruplara ayırın, derin çalışma ya da müşteri gibi kendi kategorilerinizle etiketleyin ve istediğinize günlük bir hedef verin." },
       "data": { "q": "Verilerim nerede saklanıyor?", "a": "Bu cihazdaki tarayıcınızın kendi depolamasında (IndexedDB), başka hiçbir yerde değil. Bu siteye bile asla yüklenmez. Tarayıcıdan çıkmasının tek yolu, kendiniz dışa aktardığınız bir yedek dosyasıdır." },
       "offline": { "q": "Çevrimdışı çalışır mı?", "a": "Evet. Uygulamayı bir kez açtıktan sonra bağlantı olmadan da başlar; ana ekrana ya da masaüstüne yüklendiğinde diğer uygulamalar gibi çalışır. Hiçbir şey gönderilmediği için takip asla internete ihtiyaç duymaz." },
       "move": { "q": "Verilerimi başka bir cihaza nasıl taşırım?", "a": "Bir yedek dışa aktarın: uygulamada Ayarlar → Yedek’i açıp JSON dışa aktar’a dokunun. Dosyayı diğer cihaza kopyalayın, orada uygulamayı açın ve aynı yerdeki JSON içe aktar’ı kullanın. İçe aktarma o profilin verilerinin yerini alır; profilde veri varsa önce dışa aktarın." },
       "several": { "q": "İki etkinlik aynı anda çalışabilir mi?", "a": "Hayır, bu bilerek böyle. Satranç saatinde olduğu gibi bir etkinliği başlatmak diğerini durdurur; böylece gün asla 24 saati aşmaz. Takibi tamamen durdurmak için çalışan etkinliğe dokunun." },
+      "mini": { "q": "Sayaç diğer pencerelerin üzerinde kalabilir mi?", "a": "Evet, masaüstünde Chrome ve Edge’de: uygulamanın üst çubuğundaki mini pencere diğer uygulamalarınızın üzerinde durur ve tek tıkla etkinlik değiştirir ya da durdurur. Firefox, Safari ve telefonlar henüz bu tür pencereler sunmadığından orada düğme görünmez. Wayland kullanan Linux’ta neyin üstte kalacağına masaüstü karar verir; KDE Plasma’da pencereyi diğerlerinin üstünde tutan bir pencere kuralı işi görür." },
       "devices": { "q": "Hangi cihazlarda çalışır?", "a": "Modern tarayıcısı olan her şeyde: dizüstü bilgisayar, tablet, telefon ya da duvardaki bir dokunmatik ekran. Her tarayıcı kendi takibini tutar ve eşitleme yoktur; aralarında geçiş için bir yedek dosyası kullanın." }
     }
   },
