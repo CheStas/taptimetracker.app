@@ -66,15 +66,15 @@
 
     <section class="feature">
       <div class="copy">
-        <h2>{{privacy.title}}</h2>
-        <p>{{privacy.p1}}</p>
-        <p>{{privacy.p2}}</p>
+        <h2>{{track.title}}</h2>
+        <p>{{track.p1}}</p>
+        <p>{{track.p2}}</p>
       </div>
-      <ul class="vault" aria-label="{{vault.label|attr}}">
-        <li><strong>{{vault.account.title}}</strong> {{vault.account.text}}</li>
-        <li><strong>{{vault.device.title}}</strong> {{vault.device.text}}</li>
-        <li><strong>{{vault.nobody.title}}</strong> {{vault.nobody.text}}</li>
-        <li><strong>{{vault.export.title}}</strong> {{vault.export.text}}</li>
+      <ul class="vault kinds" aria-label="{{track.label|attr}}">
+        <li><strong>{{track.activities.title}}</strong> {{track.activities.text}}</li>
+        <li><strong>{{track.groups.title}}</strong> {{track.groups.text}}</li>
+        <li><strong>{{track.categories.title}}</strong> {{track.categories.text}}</li>
+        <li><strong>{{track.hide.title}}</strong> {{track.hide.text}}</li>
       </ul>
     </section>
 
@@ -87,6 +87,32 @@
       <figure class="shot">
         <img src="/docs/screenshots/demo-summary.webp" width="960" height="600" loading="lazy"
           alt="{{summary.imageAlt|attr}}">
+      </figure>
+    </section>
+
+    <section class="feature">
+      <div class="copy">
+        <h2>{{privacy.title}}</h2>
+        <p>{{privacy.p1}}</p>
+        <p>{{privacy.p2}}</p>
+      </div>
+      <ul class="vault" aria-label="{{vault.label|attr}}">
+        <li><strong>{{vault.account.title}}</strong> {{vault.account.text}}</li>
+        <li><strong>{{vault.device.title}}</strong> {{vault.device.text}}</li>
+        <li><strong>{{vault.nobody.title}}</strong> {{vault.nobody.text}}</li>
+        <li><strong>{{vault.export.title}}</strong> {{vault.export.text}}</li>
+      </ul>
+    </section>
+
+    <section class="feature flip mini">
+      <div class="copy">
+        <h2>{{mini.title}}</h2>
+        <p>{{mini.p1}}</p>
+        <p>{{mini.p2}}</p>
+      </div>
+      <figure class="shot">
+        <img src="/docs/screenshots/01-main-screen/6-mini-window.png" width="320" height="132" loading="lazy"
+          alt="{{mini.imageAlt|attr}}">
       </figure>
     </section>
 

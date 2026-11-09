@@ -36,6 +36,16 @@
     "p2": "Todas las sesiones del día están ahí para acortarlas, moverlas o borrarlas.",
     "imageAlt": "Mantener pulsada una actividad abre las sesiones de hoy y botones rápidos para empezarla antes"
   },
+  "track": {
+    "title": "¿Qué puedo registrar?",
+    "p1": "Todo aquello en lo que se te va el tiempo. Los botones son tuyos: añade actividades en Ajustes, un nombre o una lista entera de una vez, como Reunión, Tarea, Revisión de código, Correo y Descanso. Renómbralas, reordénalas o quítalas cuando cambie tu trabajo; una actividad quitada conserva su historial.",
+    "p2": "Luego ordénalas según cómo piensas tu día. Nada de esto es obligatorio: los botones sin más funcionan bien.",
+    "label": "Formas de organizar tus actividades",
+    "activities": { "title": "Actividades", "text": "Cualquier nombre, un color del tema y un objetivo diario opcional, como dos horas de concentración o una hora de descansos." },
+    "groups": { "title": "Grupos", "text": "Reúne actividades en conjuntos como Trabajo y Casa y apaga un conjunto para ocultar sus botones. Puede haber varios grupos activos a la vez, y los totales muestran el tiempo de cada grupo." },
+    "categories": { "title": "Categorías", "text": "Etiqueta las actividades a tu manera: trabajo profundo o superficial, facturable o no, un cliente o un proyecto. El resumen se reagrupa según cualquiera de ellas." },
+    "hide": { "title": "Ocultar hoy", "text": "Una actividad que hoy no vas a necesitar se aparta y vuelve mañana." }
+  },
   "privacy": {
     "title": "¿Quién puede ver lo que registro?",
     "p1": "Nadie más que tú. La mayoría de los registros de tiempo te piden una cuenta y luego suben cada minuto de tu día a su nube. Este no tiene a dónde enviarlo. Tus sesiones viven en el almacenamiento de tu navegador en este dispositivo, y esa es la única copia.",
@@ -53,6 +63,12 @@
     "p1": "Día, semana, mes o el periodo que elijas. Cada día está en el mismo reloj, así que los comienzos tardíos, las comidas largas y los martes llenos de reuniones saltan a la vista.",
     "p2": "Etiqueta las actividades con tus propias categorías, como trabajo profundo frente a superficial o a solas frente a con gente, y todo el resumen se reorganiza en torno a ellas.",
     "imageAlt": "El resumen pasando de un día a una semana agrupada por concentración y luego a un mapa de calor del mes"
+  },
+  "mini": {
+    "title": "¿Puedo tener el temporizador a la vista mientras trabajo?",
+    "p1": "Sí. Abre la mini ventana desde la cabecera de la app: una ventana pequeña que flota sobre tus otras aplicaciones, como un vídeo en imagen dentro de imagen. Muestra qué está en marcha, desde hace cuánto y el total de hoy.",
+    "p2": "Le bastan tres botones: la actividad anterior o la siguiente, en el orden de tus botones, y detener. Pasar por varias actividades hasta llegar a la correcta no deja entradas sueltas. Funciona en Chrome y Edge de escritorio; otros navegadores aún no ofrecen este tipo de ventanas.",
+    "imageAlt": "La mini ventana: Code Review en marcha desde hace 42 minutos, el total de hoy y botones para la actividad anterior, detener y la siguiente"
   },
   "phone": {
     "title": "¿Puedo usarlo en el móvil?",
@@ -84,10 +100,12 @@
     "items": {
       "free": { "q": "¿Tap Time Tracker es gratis?", "a": "Sí. Es gratis, sin anuncios, sin versión de pago y sin cuenta. Abre la app en cualquier navegador moderno y empieza a tocar; la demo en vivo te deja probarla antes con datos de ejemplo." },
       "account": { "q": "¿Necesito una cuenta?", "a": "No. No hay registro, ni correo, ni contraseña. Tu registro vive en el navegador donde lo abres, así que no hay nada en lo que iniciar sesión ni nada que olvidar." },
+      "what": { "q": "¿Qué puedo registrar con la app?", "a": "Cualquier actividad que añadas en Ajustes: reuniones, tareas, revisiones, correo, descansos, el trayecto o tiempo de práctica. Agrúpalas en conjuntos como Trabajo y Casa, etiquétalas con tus propias categorías, como trabajo profundo o un cliente, y ponle a cualquiera un objetivo diario." },
       "data": { "q": "¿Dónde se guardan mis datos?", "a": "En el almacenamiento propio de tu navegador (IndexedDB) en este dispositivo, y en ningún otro sitio. Nunca se suben, ni siquiera a este sitio. La única forma de que salgan del navegador es un archivo de copia de seguridad que exportas tú." },
       "offline": { "q": "¿Funciona sin conexión?", "a": "Sí. Una vez que has abierto la app, arranca sin conexión, y añadida a la pantalla de inicio o al escritorio funciona como cualquier otra app. Registrar nunca necesita internet, porque no se envía nada a ningún sitio." },
       "move": { "q": "¿Cómo paso mis datos a otro dispositivo?", "a": "Exporta una copia: en la app abre Ajustes → Copia de seguridad y toca Exportar JSON. Copia el archivo al otro dispositivo, abre allí la app y usa Importar JSON en el mismo sitio. La importación sustituye los datos de ese perfil, así que exporta antes si tiene alguno." },
       "several": { "q": "¿Pueden correr dos actividades a la vez?", "a": "No, y es a propósito. Como en un reloj de ajedrez, al iniciar una actividad se detiene la otra, así que el día nunca suma más de 24 horas. Toca la que está en marcha para dejar de registrar." },
+      "mini": { "q": "¿Puede el temporizador quedarse encima de otras ventanas?", "a": "Sí, en Chrome y Edge de escritorio: la mini ventana de la cabecera de la app flota sobre tus otras aplicaciones y cambia o detiene actividades con un clic. Firefox, Safari y los móviles aún no ofrecen este tipo de ventanas, así que allí el botón no aparece. En Linux con Wayland es el escritorio quien decide qué queda encima; en KDE Plasma basta una regla de ventana que la mantenga sobre las demás." },
       "devices": { "q": "¿En qué dispositivos funciona?", "a": "En cualquiera con un navegador moderno: un portátil, una tableta, un móvil o una pantalla táctil en la pared. Cada navegador guarda su propio registro y no hay sincronización, así que usa un archivo de copia para pasar de uno a otro." }
     }
   },

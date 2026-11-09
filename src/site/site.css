@@ -68,6 +68,14 @@ h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.1; letter-spacing: -0.02e
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='11' width='16' height='10' rx='2'/%3E%3Cpath d='M8 11V7a4 4 0 0 1 8 0v4'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 .vault strong { display: block; color: var(--text); font-weight: 600; }
+/* "What can I track?": the same card with activity-colored squares instead of locks. */
+.vault.kinds li::before { mask: none; width: 18px; height: 18px; top: 24px; inset-inline-start: 4px; border-radius: 5px; }
+.vault.kinds li:nth-child(1)::before { background: var(--slot-1); }
+.vault.kinds li:nth-child(2)::before { background: var(--slot-2); }
+.vault.kinds li:nth-child(3)::before { background: var(--slot-3); }
+.vault.kinds li:nth-child(4)::before { background: var(--slot-4); }
+/* The mini window is a small window: shown at its own size, not stretched to the column. */
+.feature.mini .shot img { max-width: 400px; margin-inline: auto; }
 
 .private { max-width: 680px; margin-inline: auto; text-align: center; padding: 40px 24px; border-radius: 20px; background: var(--chip); }
 .private p { color: var(--muted); margin: 0; }

@@ -605,18 +605,22 @@ them in the repo root.
   listed page has `WebPage` with a `BreadcrumbList` (Home → page); `/similar/` also has an `ItemList` of the apps in
   rank order. The not-found page has none.
 - **Answer-first copy (AEO):** the landing page's feature rows are headed by the questions people ask ("How does
-  one-tap time tracking work?", "Forgot to switch? How do I fix it?", "Who can see what I track?", "What does the
-  summary show?", "Can I use it on my phone?"), each followed by a direct answer of about 40–60 words. The hero lead
+  one-tap time tracking work?", "Forgot to switch? How do I fix it?", "What can I track?", "What does the summary
+  show?", "Who can see what I track?", "Can I keep the timer in view while I work?", "Can I use it on my phone?"), each followed by a direct answer of about 40–60 words. The hero lead
   opens with a definition: "Tap Time Tracker is a free one-tap time tracker…".
 - **FAQ:** a section on the landing page (`#faq`), before the closing call to action: questions as `<h3>` with a short
-  answer each (is it free, account, where data is stored, offline, moving data to another device, several activities
-  at once, which devices). The footer of every page links to it (the home page in that language + `#faq`).
+  answer each (is it free, account, what can be tracked, several activities at once, the mini window staying on top
+  (with the Wayland / KDE window-rule note), where data is stored, offline, moving data to another device, which
+  devices). The footer of every page links to it (the home page in that language + `#faq`).
 - **`/llms.txt`:** a plain-text summary for AI crawlers (`public/llms.txt`, English): what the product is, key facts
   and links to the pages and languages.
 - **Landing page:** hand-written copy (not spec wording), in this order: hero (headline, a lead that ends on privacy:
   no account, nothing leaves the device; **Try the live demo** → `app/?demo`, **Open the app**, a line saying the demo
-  is sandboxed, the main-screen animation); five feature rows that alternate text and image (one-tap switching, backdating
-  via hold, privacy with a card of four promises instead of a screenshot, the Summary animation, the phone animation); a privacy
+  is sandboxed, the main-screen animation); seven feature rows that alternate text and image (one-tap switching,
+  backdating via hold, what can be tracked with a card of activities, groups, categories and hide for today (activity-colored
+  squares instead of a screenshot), the Summary animation, privacy with a card of four promises, the mini window (a
+  2× screenshot of it at its own size, `docs/screenshots/01-main-screen/6-mini-window.png`, made by hand, not by
+  `npm run screenshots`), the phone animation); a privacy
   panel that repeats the promise; a grid of smaller features; a closing call to action. Privacy is a main selling
   point, so it appears in all three places. Images are `docs/screenshots/` (`npm run screenshots`), bundled
   by Vite from the `<img src>`; all but the hero load lazily. Below 760 px the rows stack, text first.

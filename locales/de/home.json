@@ -36,6 +36,16 @@
     "p2": "Jede Sitzung des Tages ist direkt da, um sie zu kürzen, zu verschieben oder zu löschen.",
     "imageAlt": "Gedrückthalten einer Tätigkeit öffnet die heutigen Sitzungen und Schnellknöpfe, um sie früher zu starten"
   },
+  "track": {
+    "title": "Was kann ich erfassen?",
+    "p1": "Alles, wofür du Zeit aufwendest. Die Buttons gehören dir: Lege Tätigkeiten in den Einstellungen an, einzeln oder als ganze Liste auf einmal, etwa Meeting, Aufgabe, Code-Review, E-Mail und Pause. Benenne sie um, ordne sie neu oder entferne sie, wenn sich deine Arbeit ändert; eine entfernte Tätigkeit behält ihren Verlauf.",
+    "p2": "Dann sortiere sie so, wie du über deinen Tag denkst. Nichts davon ist Pflicht: Einfache Buttons funktionieren genauso gut.",
+    "label": "So ordnest du deine Tätigkeiten",
+    "activities": { "title": "Tätigkeiten", "text": "Ein beliebiger Name, eine Farbe aus dem Theme und ein optionales Tagesziel, etwa zwei Stunden Fokus oder eine Stunde Pausen." },
+    "groups": { "title": "Gruppen", "text": "Fasse Tätigkeiten zu Sets wie Arbeit und Zuhause zusammen und schalte ein Set aus, um seine Buttons auszublenden. Mehrere Gruppen können gleichzeitig an sein, und die Summen zeigen die Zeit pro Gruppe." },
+    "categories": { "title": "Kategorien", "text": "Verschlagworte Tätigkeiten auf deine Art: tiefe oder flache Arbeit, abrechenbar oder nicht, ein Kunde oder ein Projekt. Die Übersicht gruppiert sich nach jeder davon neu." },
+    "hide": { "title": "Heute ausblenden", "text": "Eine Tätigkeit, die du heute nicht brauchst, tritt zur Seite und ist morgen wieder da." }
+  },
   "privacy": {
     "title": "Wer kann sehen, was ich erfasse?",
     "p1": "Niemand außer dir. Die meisten Zeiterfassungen wollen ein Konto und laden dann jede Minute deines Tages in ihre Cloud. Diese hier hat keinen Ort, an den sie etwas schicken könnte. Deine Sitzungen liegen im Speicher deines Browsers auf diesem Gerät, und das ist die einzige Kopie.",
@@ -53,6 +63,12 @@
     "p1": "Tag, Woche, Monat oder ein beliebiger Zeitraum. Jeder Tag liegt auf derselben Uhr, also fallen späte Starts, lange Mittagspausen und meetinglastige Dienstage sofort ins Auge.",
     "p2": "Versieh Tätigkeiten mit eigenen Kategorien, etwa konzentrierte gegen oberflächliche Arbeit oder allein gegen mit anderen, und die ganze Übersicht gruppiert sich danach neu.",
     "imageAlt": "Die Übersicht wechselt von einem Tag zu einer nach Fokus gruppierten Woche und dann zu einer Monats-Heatmap"
+  },
+  "mini": {
+    "title": "Kann ich den Timer beim Arbeiten im Blick behalten?",
+    "p1": "Ja. Öffne das Mini-Fenster über die Kopfzeile der App: ein kleines Fenster, das über deinen anderen Apps schwebt, wie ein Video im Bild-im-Bild-Modus. Es zeigt, was gerade läuft, wie lange schon und die Summe von heute.",
+    "p2": "Drei Buttons reichen ihm: vorherige oder nächste Tätigkeit, in der Reihenfolge deiner Buttons, und Stopp. Klickst du dich durch ein paar Tätigkeiten zur richtigen, bleiben keine überflüssigen Einträge zurück. Es funktioniert in Chrome und Edge auf dem Desktop; andere Browser bieten solche Fenster noch nicht an.",
+    "imageAlt": "Das Mini-Fenster: Code Review läuft seit 42 Minuten, die Summe von heute und Buttons für die vorherige Tätigkeit, Stopp und die nächste Tätigkeit"
   },
   "phone": {
     "title": "Kann ich es auf dem Handy nutzen?",
@@ -84,10 +100,12 @@
     "items": {
       "free": { "q": "Ist Tap Time Tracker kostenlos?", "a": "Ja. Es ist kostenlos, ohne Werbung, ohne Bezahlversion und ohne Konto. Öffne die App in einem modernen Browser und leg los; mit der Live-Demo kannst du sie vorher mit Beispieldaten ausprobieren." },
       "account": { "q": "Brauche ich ein Konto?", "a": "Nein. Keine Registrierung, keine E-Mail, kein Passwort. Deine Zeiterfassung liegt in dem Browser, in dem du sie öffnest, also gibt es nichts zum Anmelden und nichts zu vergessen." },
+      "what": { "q": "Was kann ich damit erfassen?", "a": "Jede Tätigkeit, die du in den Einstellungen anlegst: Meetings, Aufgaben, Reviews, E-Mails, Pausen, den Arbeitsweg oder Übungszeit. Ordne sie Gruppen wie Arbeit und Zuhause zu, versieh sie mit eigenen Kategorien wie Fokusarbeit oder einem Kunden und gib jeder davon ein Tagesziel." },
       "data": { "q": "Wo werden meine Daten gespeichert?", "a": "Im eigenen Speicher deines Browsers (IndexedDB) auf diesem Gerät und nirgendwo sonst. Sie werden nie hochgeladen, auch nicht auf diese Website. Den Browser verlassen sie nur in einer Sicherungsdatei, die du selbst exportierst." },
       "offline": { "q": "Funktioniert es offline?", "a": "Ja. Wenn du die App einmal geöffnet hast, startet sie auch ohne Verbindung, und auf dem Startbildschirm oder Desktop installiert läuft sie wie jede andere App. Die Erfassung braucht nie Internet, weil nichts verschickt wird." },
       "move": { "q": "Wie bringe ich meine Daten auf ein anderes Gerät?", "a": "Exportiere eine Sicherung: Öffne in der App Einstellungen → Sicherung und tippe auf JSON exportieren. Kopiere die Datei auf das andere Gerät, öffne dort die App und nutze an derselben Stelle JSON importieren. Der Import ersetzt die Daten dieses Profils, also exportiere vorher, falls es schon welche hat." },
       "several": { "q": "Können zwei Tätigkeiten gleichzeitig laufen?", "a": "Nein, und das mit Absicht. Wie bei einer Schachuhr stoppt der Start einer Tätigkeit die andere, sodass der Tag nie mehr als 24 Stunden ergibt. Tippe auf die laufende, um die Erfassung ganz zu stoppen." },
+      "mini": { "q": "Kann der Timer über anderen Fenstern bleiben?", "a": "Ja, in Chrome und Edge auf dem Desktop: Das Mini-Fenster aus der Kopfzeile der App schwebt über deinen anderen Apps und wechselt oder stoppt Tätigkeiten mit einem Klick. Firefox, Safari und Smartphones bieten solche Fenster noch nicht an, dort fehlt der Button daher. Unter Linux mit Wayland entscheidet der Desktop, was oben bleibt; in KDE Plasma hilft eine Fensterregel, die es über anderen Fenstern hält." },
       "devices": { "q": "Auf welchen Geräten läuft es?", "a": "Auf allem mit einem modernen Browser: Laptop, Tablet, Handy oder ein Touchscreen an der Wand. Jeder Browser hat seine eigene Erfassung, und es gibt keine Synchronisierung, also nimm eine Sicherungsdatei, um zu wechseln." }
     }
   },

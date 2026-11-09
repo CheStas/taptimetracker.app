@@ -21,7 +21,7 @@ stop. The header shows today's total and what is running; the timeline and group
 | --- | --- |
 | ![Tiles](01-main-screen/1-tiles.png) **Tiles** (default): share of today, running chip, total, progress bar (toward the target when one is set) | ![Rows](01-main-screen/2-rows.png) **Rows**: the same elements in a centered column |
 | ![Circles](01-main-screen/3-circles.png) **Circles**: a progress ring around each circle | ![Graphite theme](01-main-screen/4-graphite-theme.png) **Graphite**, one of 7 built-in themes |
-| ![Empty day](01-main-screen/5-empty-day.png) **Empty day**: every activity is a button, with the "Ready to start the day" hint | |
+| ![Empty day](01-main-screen/5-empty-day.png) **Empty day**: every activity is a button, with the "Ready to start the day" hint | ![Mini window](01-main-screen/6-mini-window.png) **Mini window** (desktop Chrome and Edge): always on top, previous / stop / next. Taken by hand at 2×; `npm run screenshots` does not make it |
 
 ## 2. Popups
 

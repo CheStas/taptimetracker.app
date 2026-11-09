@@ -36,6 +36,16 @@
     "p2": "Todas as sessões do dia estão ali para encurtar, mover ou apagar.",
     "imageAlt": "Segurar uma atividade abre as sessões de hoje e botões rápidos para começá-la mais cedo"
   },
+  "track": {
+    "title": "O que posso registrar?",
+    "p1": "Tudo em que você gasta tempo. Os botões são seus: adicione atividades em Configurações, um nome ou uma lista inteira de uma vez, como Reunião, Tarefa, Revisão de código, E-mail e Pausa. Renomeie, reordene ou remova quando seu trabalho mudar; uma atividade removida mantém o histórico.",
+    "p2": "Depois organize do jeito que você pensa o seu dia. Nada disso é obrigatório: botões simples funcionam muito bem.",
+    "label": "Formas de organizar suas atividades",
+    "activities": { "title": "Atividades", "text": "Qualquer nome, uma cor do tema e uma meta diária opcional, como duas horas de foco ou uma hora de pausas." },
+    "groups": { "title": "Grupos", "text": "Junte atividades em conjuntos como Trabalho e Casa e desligue um conjunto para esconder os botões dele. Vários grupos podem ficar ligados ao mesmo tempo, e os totais mostram o tempo por grupo." },
+    "categories": { "title": "Categorias", "text": "Marque as atividades do seu jeito: trabalho profundo ou raso, faturável ou não, um cliente ou um projeto. O resumo se reagrupa por qualquer uma delas." },
+    "hide": { "title": "Ocultar hoje", "text": "Uma atividade de que você não vai precisar hoje sai do caminho e volta amanhã." }
+  },
   "privacy": {
     "title": "Quem pode ver o que eu registro?",
     "p1": "Ninguém além de você. A maioria dos apps de registro de tempo pede uma conta e depois envia cada minuto do seu dia para a nuvem. Este não tem para onde enviar. Suas sessões ficam no armazenamento do seu navegador neste dispositivo, e essa é a única cópia.",
@@ -53,6 +63,12 @@
     "p1": "Dia, semana, mês ou qualquer período que você escolher. Todo dia fica no mesmo relógio, então começos atrasados, almoços longos e terças cheias de reuniões saltam aos olhos.",
     "p2": "Marque as atividades com suas próprias categorias, como trabalho focado ou raso, sozinho ou com pessoas, e todo o resumo se reorganiza em torno delas.",
     "imageAlt": "O resumo passando de um dia para uma semana agrupada por foco e depois para um mapa de calor do mês"
+  },
+  "mini": {
+    "title": "Posso manter o cronômetro à vista enquanto trabalho?",
+    "p1": "Sim. Abra a minijanela pelo cabeçalho do app: uma janela pequena que flutua sobre os seus outros apps, como um vídeo em picture-in-picture. Ela mostra o que está rodando, há quanto tempo e o total de hoje.",
+    "p2": "Três botões bastam: a atividade anterior ou a próxima, na ordem dos seus botões, e parar. Passar por algumas atividades até chegar à certa não deixa registros soltos. Funciona no Chrome e no Edge para computador; outros navegadores ainda não oferecem esse tipo de janela.",
+    "imageAlt": "A minijanela: Code Review rodando há 42 minutos, o total de hoje e botões para a atividade anterior, parar e a próxima atividade"
   },
   "phone": {
     "title": "Posso usar no celular?",
@@ -84,10 +100,12 @@
     "items": {
       "free": { "q": "O Tap Time Tracker é gratuito?", "a": "Sim. É gratuito, sem anúncios, sem versão paga e sem conta. Abra o app em qualquer navegador moderno e comece a tocar; a demonstração ao vivo deixa você testar antes com dados de exemplo." },
       "account": { "q": "Preciso de uma conta?", "a": "Não. Não há cadastro, e-mail nem senha. Seu registro fica no navegador em que você o abre, então não há onde entrar nem nada para esquecer." },
+      "what": { "q": "O que posso registrar com o app?", "a": "Qualquer atividade que você adicionar em Configurações: reuniões, tarefas, revisões, e-mail, pausas, o trajeto ou tempo de prática. Separe em grupos como Trabalho e Casa, marque com suas próprias categorias, como trabalho focado ou um cliente, e dê a qualquer uma delas uma meta diária." },
       "data": { "q": "Onde meus dados ficam guardados?", "a": "No armazenamento do seu próprio navegador (IndexedDB) neste dispositivo, e em nenhum outro lugar. Eles nunca são enviados, nem mesmo para este site. A única forma de saírem do navegador é um arquivo de backup que você mesmo exporta." },
       "offline": { "q": "Funciona offline?", "a": "Sim. Depois que você abre o app uma vez, ele inicia sem conexão, e instalado na tela inicial ou na área de trabalho funciona como qualquer outro app. Registrar nunca precisa de internet, porque nada é enviado." },
       "move": { "q": "Como passo meus dados para outro dispositivo?", "a": "Exporte um backup: no app, abra Configurações → Backup e toque em Exportar JSON. Copie o arquivo para o outro dispositivo, abra o app lá e use Importar JSON no mesmo lugar. A importação substitui os dados daquele perfil, então exporte antes se ele já tiver algum." },
       "several": { "q": "Duas atividades podem rodar ao mesmo tempo?", "a": "Não, e isso é proposital. Como num relógio de xadrez, iniciar uma atividade para a outra, então o dia nunca soma mais de 24 horas. Toque na que está rodando para parar de registrar." },
+      "mini": { "q": "O cronômetro pode ficar por cima de outras janelas?", "a": "Sim, no Chrome e no Edge para computador: a minijanela do cabeçalho do app flutua sobre os seus outros apps e troca ou para atividades com um clique. Firefox, Safari e celulares ainda não oferecem esse tipo de janela, então o botão não aparece neles. No Linux com Wayland, quem decide o que fica por cima é o ambiente de trabalho; no KDE Plasma, uma regra de janela que a mantenha acima das outras resolve." },
       "devices": { "q": "Em quais dispositivos funciona?", "a": "Em qualquer um com navegador moderno: notebook, tablet, celular ou uma tela sensível ao toque na parede. Cada navegador guarda seu próprio registro e não há sincronização, então use um arquivo de backup para trocar de um para outro." }
     }
   },
