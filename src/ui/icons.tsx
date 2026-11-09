@@ -7,6 +7,8 @@ const PATHS = {
   maximize: '<path d="M4 9V4h5"/><path d="M20 9V4h-5"/><path d="M4 15v5h5"/><path d="M20 15v5h-5"/>',
   minimize: '<path d="M9 4v5H4"/><path d="M15 4v5h5"/><path d="M9 20v-5H4"/><path d="M15 20v-5h5"/>',
   screen: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M9 20h6"/><path d="M12 16v4"/>',
+  pip: '<rect x="3" y="5" width="18" height="14" rx="2"/><rect x="12" y="11" width="6" height="5" rx="1"/>',
+  stop: '<rect x="7" y="7" width="10" height="10" rx="1.5"/>',
   check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
   back: '<path d="M19 12H5"/><path d="M11 6l-6 6 6 6"/>',
   prev: '<path d="m15 18-6-6 6-6"/>',

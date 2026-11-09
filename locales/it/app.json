@@ -46,9 +46,17 @@
     "reset": "Azzera la giornata",
     "fullscreen": "Schermo intero",
     "leaveFullscreen": "Esci da schermo intero",
+    "miniWindow": "Mini finestra",
+    "closeMiniWindow": "Chiudi la mini finestra",
     "more": "Altro",
     "moreLabel": "Altro: azzera la giornata, schermo intero, tieni lo schermo acceso",
     "top": "Torna su"
+  },
+  "mini": {
+    "today": "Oggi",
+    "previous": "Attività precedente",
+    "stop": "Ferma",
+    "next": "Attività successiva"
   },
   "main": {
     "readyTitle": "Pronto a iniziare la giornata",

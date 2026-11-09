@@ -9,6 +9,7 @@ import { Icon, type IconName } from './icons.tsx';
 import { openModal, useAppState, useNow } from './hooks.tsx';
 import { t } from '../i18n.ts';
 import { wakeLockAvailable } from './about.tsx';
+import { miniWindowAvailable, toggleMiniWindow, useMiniWindowOpen } from './miniWindow.tsx';
 
 /** What the header buttons do; App passes the same object to every page. */
 export interface Nav {
@@ -33,6 +34,7 @@ export function AppHeader({ nav, page, title, onBack }: Props) {
   const state = useAppState();
   const now = useNow();
   const fullscreen = useFullscreen();
+  const mini = useMiniWindowOpen();
   const open = activeSegment();
   const active = open && activityById(open.activityId);
   const first = firstStart();
@@ -87,10 +89,16 @@ export function AppHeader({ nav, page, title, onBack }: Props) {
             {navButton('summary', t('summary.title'), 'summary', nav.onSummary)}
             {navButton('settings', t('settings.title'), 'settings', () => nav.onSettings())}
             <button class="icon round hide-sm" aria-label={t('header.reset')} title={t('header.reset')} onClick={nav.onReset}><Icon name="reset" /></button>
+            {miniWindowAvailable() && (
+              <button
+                class="icon round hide-sm" aria-pressed={mini} onClick={toggleMiniWindow}
+                aria-label={t('header.miniWindow')} title={t(mini ? 'header.closeMiniWindow' : 'header.miniWindow')}
+              ><Icon name="pip" /></button>
+            )}
             <button class="icon round hide-sm" aria-label={t(fullscreen ? 'header.leaveFullscreen' : 'header.fullscreen')} title={t('header.fullscreen')} onClick={nav.onFullscreen}>
               <Icon name={fullscreen ? 'minimize' : 'maximize'} />
             </button>
-            <button class="icon round show-sm" aria-label={t('header.moreLabel')} title={t('header.more')} onClick={() => openMoreMenu(nav, fullscreen)}>
+            <button class="icon round show-sm" aria-label={t('header.moreLabel')} title={t('header.more')} onClick={() => openMoreMenu(nav, fullscreen, mini)}>
               <Icon name="more" />
             </button>
           </nav>
@@ -100,8 +108,8 @@ export function AppHeader({ nav, page, title, onBack }: Props) {
   );
 }
 
-/** Phone: Reset day, Full screen and Keep the screen on live in a ⋯ menu (a bottom sheet). */
-function openMoreMenu({ onReset, onFullscreen }: Nav, fullscreen: boolean) {
+/** Phone: Reset day, Full screen, the mini window (where available) and Keep the screen on live in a ⋯ menu (a bottom sheet). */
+function openMoreMenu({ onReset, onFullscreen }: Nav, fullscreen: boolean, mini: boolean) {
   const awake = appState.profile.settings.keepAwake;
   const item = (close: () => void, icon: IconName, label: string, fn: () => void) => (
     <button class="menu-item" onClick={() => {
@@ -114,6 +122,7 @@ function openMoreMenu({ onReset, onFullscreen }: Nav, fullscreen: boolean) {
       <h2 class="menu-title">{t('header.more')}</h2>
       {item(close, 'reset', t('header.reset'), onReset)}
       {item(close, fullscreen ? 'minimize' : 'maximize', t(fullscreen ? 'header.leaveFullscreen' : 'header.fullscreen'), onFullscreen)}
+      {miniWindowAvailable() && item(close, 'pip', t(mini ? 'header.closeMiniWindow' : 'header.miniWindow'), toggleMiniWindow)}
       {wakeLockAvailable() && (
         <button class="menu-item" role="menuitemcheckbox" aria-checked={awake} onClick={() => {
           close();

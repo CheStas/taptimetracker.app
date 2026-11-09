@@ -46,9 +46,17 @@
     "reset": "Réinitialiser la journée",
     "fullscreen": "Plein écran",
     "leaveFullscreen": "Quitter le plein écran",
+    "miniWindow": "Mini-fenêtre",
+    "closeMiniWindow": "Fermer la mini-fenêtre",
     "more": "Plus",
     "moreLabel": "Plus : réinitialiser la journée, plein écran, garder l’écran allumé",
     "top": "Retour en haut"
+  },
+  "mini": {
+    "today": "Aujourd’hui",
+    "previous": "Activité précédente",
+    "stop": "Arrêter",
+    "next": "Activité suivante"
   },
   "main": {
     "readyTitle": "Prêt à commencer la journée",

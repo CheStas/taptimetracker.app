@@ -70,8 +70,10 @@ See `docs/SPEC.md` §20 for what is collected; the privacy page (`src/site/pages
 - **Long-press** a row to see its sessions and to set "active since…" or "stop all since…"; "Edit sessions…" opens
   the day editor, where ‹ › step to earlier days so any day can be corrected.
 - Header: the profile button (with more than one profile), today's total, what is running, the clock, and round
-  icons for summary, settings, reset day (archives the day), full screen and close. Below the buttons: the strip of
+  icons for summary, settings, reset day (archives the day), mini window and full screen. Below the buttons: the strip of
   unused activities, today's timeline and the group totals; scroll down for the footer (links, quick theme switch).
+- **Mini window** (desktop Chrome and Edge): a small always-on-top window with the running activity, today's total
+  and ‹ ■ › buttons to switch to the previous or next activity or stop, while you work in other apps.
 - **Profiles** (Settings → Profiles): separate workspaces, e.g. "Work" and "Home", each with its own activities,
   days, summary, settings (appearance too) and backup file. Only one is open at a time; switch with the profile
   button in the header. A new profile starts with a copy of the open profile's settings.

@@ -46,9 +46,17 @@
     "reset": "Reiniciar o dia",
     "fullscreen": "Tela cheia",
     "leaveFullscreen": "Sair da tela cheia",
+    "miniWindow": "Minijanela",
+    "closeMiniWindow": "Fechar a minijanela",
     "more": "Mais",
     "moreLabel": "Mais: reiniciar o dia, tela cheia, manter a tela ligada",
     "top": "Voltar ao topo"
+  },
+  "mini": {
+    "today": "Hoje",
+    "previous": "Atividade anterior",
+    "stop": "Parar",
+    "next": "Próxima atividade"
   },
   "main": {
     "readyTitle": "Pronto para começar o dia",

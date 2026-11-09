@@ -46,9 +46,17 @@
     "reset": "重置今天",
     "fullscreen": "全屏",
     "leaveFullscreen": "退出全屏",
+    "miniWindow": "迷你窗口",
+    "closeMiniWindow": "关闭迷你窗口",
     "more": "更多",
     "moreLabel": "更多：重置今天、全屏、保持屏幕常亮",
     "top": "回到顶部"
+  },
+  "mini": {
+    "today": "今天",
+    "previous": "上一个活动",
+    "stop": "停止",
+    "next": "下一个活动"
   },
   "main": {
     "readyTitle": "准备开始新的一天",
