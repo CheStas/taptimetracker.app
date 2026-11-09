@@ -122,7 +122,7 @@ function applyTheme() {
   } catch {}
 }
 
-/** The daily "how is it used" event: counts as ranges and fixed setting values, no names. */
+/** The daily "how is it used" snapshot: counts as ranges and fixed setting values, no names. */
 const usageSnapshot = () => {
   const s = state.profile.settings;
   return {
@@ -136,6 +136,14 @@ const usageSnapshot = () => {
   };
 };
 
+/**
+ * The daily usage event, sent only once something has been tracked in the current day,
+ * so a first visit that only looks around does not report the seed setup.
+ */
+const dailyUsage = () => {
+  if (state.segments.length > 0) trackDaily('usage', usageSnapshot);
+};
+
 async function start() {
   if (!DEMO) navigator.storage?.persist?.();
   // The PWA's service worker (public/app/sw.js): installable without the browser's address bar, and offline. Not in dev.
@@ -147,13 +155,14 @@ async function start() {
   await init();
   applyTheme();
   startStats();
-  trackDaily('usage', usageSnapshot);
+  dailyUsage();
   // Follow system: switch with the OS setting (notify re-renders what shows the current theme).
   darkQuery.addEventListener('change', notify);
   subscribe((ev, payload) => {
     if (ev === 'change') {
       applyTheme();
       syncWakeLock();
+      dailyUsage();
     }
     if (ev === 'dayClosed' && payload && state.profile.settings.autoExport) {
       const profile = state.profiles.length > 1 ? `${slug(payload.profile)}-` : '';
