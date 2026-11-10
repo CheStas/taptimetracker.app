@@ -1,6 +1,8 @@
 {
   "brand": "Tap Time Tracker",
   "openApp": "打开应用",
+  "ogImageAlt": "Tap Time Tracker 主界面：每项活动一个方块，显示今天的时长",
+  "updated": "最后更新：{date}",
   "footer": {
     "pages": "页面",
     "language": "语言",

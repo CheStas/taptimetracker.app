@@ -1,6 +1,8 @@
 {
   "brand": "Tap Time Tracker",
   "openApp": "App öffnen",
+  "ogImageAlt": "Der Hauptbildschirm von Tap Time Tracker: eine Kachel pro Tätigkeit mit der heutigen Zeit",
+  "updated": "Zuletzt aktualisiert am {date}",
   "footer": {
     "pages": "Seiten",
     "language": "Sprache",

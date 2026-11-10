@@ -1,10 +1,9 @@
 {
-  "title": "Tap Time Tracker — registra il tempo con un tocco, e tutto resta sul tuo dispositivo",
-  "description": "Un time tracker gratuito con un tocco: un grande pulsante per attività, toccalo quando cambi e vedi la tua giornata, settimana e mese a colpo d’occhio. Nessun account, e ciò che registri non lascia mai il tuo dispositivo.",
+  "title": "Tap Time Tracker — time tracker privato con un tocco",
+  "description": "Time tracker gratuito con un tocco: un pulsante per attività, toccalo quando cambi e vedi giorno, settimana e mese. Nessun account; i dati restano tuoi.",
   "og": {
     "title": "Tap Time Tracker — scopri dove è finita la tua giornata",
-    "description": "Un grande pulsante per attività: toccalo quando cambi e vedi giornata, settimana e mese a colpo d’occhio. Gratis, senza account, e ciò che registri non lascia mai il tuo dispositivo.",
-    "imageAlt": "La schermata principale di Tap Time Tracker: una tessera per attività con il tempo di oggi"
+    "description": "Un grande pulsante per attività: toccalo quando cambi e vedi giornata, settimana e mese a colpo d’occhio. Gratis, senza account, e ciò che registri non lascia mai il tuo dispositivo."
   },
   "ld": {
     "description": "Un time tracker con un tocco: un grande pulsante per attività, toccalo quando cambi e vedi giornata, settimana e mese. Nessun account; tutto resta sul tuo dispositivo.",
@@ -99,19 +98,24 @@
     "title": "Domande frequenti",
     "items": {
       "free": { "q": "Tap Time Tracker è gratuito?", "a": "Sì. È gratuito, senza pubblicità, senza versione a pagamento e senza account. Apri l’app in un qualsiasi browser moderno e inizia a toccare; la demo dal vivo ti permette di provarla prima con dati di esempio." },
+      "staysFree": { "q": "Resterà gratuito?", "a": "Sì. Tutto ciò che fa oggi resterà gratuito. Se un giorno arriveranno extra a pagamento, saranno aggiunte, mai un prezzo per ciò che oggi è gratis." },
       "account": { "q": "Serve un account?", "a": "No. Niente registrazione, email o password. Il tuo tracker vive nel browser in cui lo apri, quindi non c’è niente a cui accedere e niente da dimenticare." },
       "what": { "q": "Cosa posso tracciare con l’app?", "a": "Qualsiasi attività aggiunta nelle Impostazioni: riunioni, task, revisioni, email, pause, il tragitto o il tempo di pratica. Raggruppale in insiemi come Lavoro e Casa, etichettale con categorie tue come lavoro profondo o un cliente e dai a ciascuna un obiettivo giornaliero." },
+      "clients": { "q": "Posso registrare il tempo per clienti o lavoro fatturabile?", "a": "Sì, con le categorie: etichetta le attività con un cliente, un progetto o fatturabile o no, e il riepilogo mostra le ore di ciascuno in un giorno, una settimana, un mese o qualsiasi intervallo. Conta solo il tempo; non ci sono tariffe orarie né fatture." },
       "data": { "q": "Dove vengono salvati i miei dati?", "a": "Nella memoria del tuo browser (IndexedDB) su questo dispositivo, e da nessun’altra parte. Non vengono mai caricati, nemmeno su questo sito. L’unico modo in cui lasciano il browser è un file di backup che esporti tu." },
       "offline": { "q": "Funziona offline?", "a": "Sì. Dopo averla aperta una volta, l’app si avvia senza connessione e, installata nella schermata Home o sul desktop, funziona come qualsiasi altra app. Registrare non richiede mai internet, perché non viene inviato nulla." },
       "move": { "q": "Come sposto i miei dati su un altro dispositivo?", "a": "Esporta un backup: nell’app apri Impostazioni → Backup e tocca Esporta JSON. Copia il file sull’altro dispositivo, apri lì l’app e usa Importa JSON nello stesso punto. L’importazione sostituisce i dati di quel profilo, quindi esporta prima se ne contiene." },
+      "csv": { "q": "Posso esportare in CSV o Excel?", "a": "Non ancora: l’esportazione in CSV è prevista in una versione futura. Oggi l’esportazione è un file di backup JSON (Impostazioni → Backup → Esporta JSON) che contiene tutto e si importa su qualsiasi dispositivo, e il riepilogo mostra i totali per attività, gruppo o categoria." },
       "several": { "q": "Due attività possono essere in corso insieme?", "a": "No, ed è voluto. Come con un orologio da scacchi, avviare un’attività ferma l’altra, così la giornata non supera mai le 24 ore. Tocca quella in corso per smettere di registrare." },
       "mini": { "q": "Il timer può restare sopra le altre finestre?", "a": "Sì, in Chrome ed Edge su desktop: la mini finestra nell’intestazione dell’app resta sopra le altre app e cambia o ferma le attività con un clic. Firefox, Safari e i telefoni non offrono ancora finestre di questo tipo, quindi lì il pulsante non compare. Su Linux con Wayland è il desktop a decidere cosa resta in primo piano; in KDE Plasma basta una regola della finestra che la tenga sopra le altre." },
-      "devices": { "q": "Su quali dispositivi funziona?", "a": "Su qualsiasi cosa abbia un browser moderno: un portatile, un tablet, un telefono o un touchscreen a parete. Ogni browser ha il suo tracker e non c’è sincronizzazione, quindi usa un file di backup per passare dall’uno all’altro." }
+      "devices": { "q": "Su quali dispositivi funziona?", "a": "Su qualsiasi cosa abbia un browser moderno: un portatile, un tablet, un telefono o un touchscreen a parete. Ogni browser ha il suo tracker e non c’è sincronizzazione, quindi usa un file di backup per passare dall’uno all’altro." },
+      "iphone": { "q": "Esiste un’app per iPhone o Android?", "a": "È un’app web che si installa come un’app. Apri taptimetracker.app/app/ in Safari o Chrome e aggiungila alla schermata Home: avrà la sua icona, si aprirà senza la barra del browser e funzionerà offline. Non c’è nulla da scaricare da un app store." }
     }
   },
   "closing": {
     "title": "Dagli una giornata.",
     "lead": "Domani registra tutto dal primo caffè all’ultimo messaggio e guarda la linea temporale la sera. Quasi tutti restano sorpresi.",
-    "demo": "Prima prova la demo"
+    "demo": "Prima prova la demo",
+    "compare": "Il confronto con 13 time tracker simili"
   }
 }

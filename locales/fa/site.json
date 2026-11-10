@@ -1,6 +1,8 @@
 {
   "brand": "Tap Time Tracker",
   "openApp": "باز کردن برنامه",
+  "ogImageAlt": "صفحهٔ اصلی Tap Time Tracker: برای هر کار یک کاشی با زمان امروز",
+  "updated": "آخرین به‌روزرسانی: {date}",
   "footer": {
     "pages": "صفحه‌ها",
     "language": "زبان",

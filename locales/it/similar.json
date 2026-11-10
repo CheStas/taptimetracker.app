@@ -1,15 +1,17 @@
 {
-  "title": "App simili — Tap Time Tracker",
-  "description": "Altri time tracker con un tocco, ordinati dal più al meno simile a Tap Time Tracker, e in cosa si differenziano.",
-  "heading": "App simili",
+  "title": "13 time tracker con un tocco a confronto — Tap Time Tracker",
+  "description": "TickTappy, aTimeLogger, Simple Time Tracker, Timeular e altri 9 time tracker con un tocco, ordinati per somiglianza con Tap Time Tracker.",
+  "heading": "Time tracker con un tocco a confronto",
   "intro": "Tap Time Tracker funziona come un orologio da scacchi: tocca un’attività per avviarla, toccane un’altra per cambiare; ne gira una sola alla volta, e i tempi passati si possono correggere. Queste app funzionano allo stesso modo o in modo simile. Sono ordinate <strong>dalla più alla meno simile</strong>.",
+  "best": { "q": "Quale app somiglia di più a Tap Time Tracker?", "a": "Dipende dal dispositivo. Su iPhone, iPad e Mac la più vicina è TickTappy: etichette che si cambiano con un tocco e timer avviati nel passato. aTimeLogger è lo storico registro con un tocco per iOS, e Simple Time Tracker la scelta open source per Android. Nessuna funziona nel browser." },
+  "different": { "q": "Cosa fa Tap Time Tracker che loro non fanno?" },
+  "compare": { "q": "Come si confrontano le 13 app?", "a": "Ogni riga mostra dove funziona l’app, cosa ha in comune con Tap Time Tracker e in cosa si differenzia." },
   "takeaway": {
     "lead": "<strong>In breve:</strong> nessuna mette insieme tutto questo:",
     "web": "una pagina web che funziona ovunque e si installa come app che funziona offline",
     "touch": "un layout per touchscreen e schermi a parete",
     "backdate": "un “attiva dalle…” retroattivo che toglie il tempo alle altre attività",
-    "offline": "dati che restano sul dispositivo, senza account",
-    "closest": "Le più vicine sono app native per telefono: TickTappy, aTimeLogger e Simple Time Tracker."
+    "offline": "dati che restano sul dispositivo, senza account"
   },
   "source": "sorgente",
   "timeryFor": "per",

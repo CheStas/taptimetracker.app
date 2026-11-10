@@ -1,6 +1,8 @@
 {
   "brand": "Tap Time Tracker",
   "openApp": "Open de app",
+  "ogImageAlt": "Het hoofdscherm van Tap Time Tracker: één tegel per activiteit met de tijd van vandaag",
+  "updated": "Laatst bijgewerkt op {date}",
   "footer": {
     "pages": "Pagina’s",
     "language": "Taal",

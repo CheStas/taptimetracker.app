@@ -1,10 +1,9 @@
 {
-  "title": "Tap Time Tracker — um registro de tempo de um toque que fica no seu dispositivo",
-  "description": "Um registro de tempo gratuito de um toque: um botão grande por atividade, toque quando trocar e veja seu dia, semana e mês organizados. Sem conta, e o que você registra nunca sai do seu dispositivo.",
+  "title": "Tap Time Tracker — registro de tempo privado de um toque",
+  "description": "Registro de tempo grátis de um toque: um botão por atividade, toque ao trocar e veja seu dia, semana e mês. Sem conta; nada sai do seu dispositivo.",
   "og": {
     "title": "Tap Time Tracker — saiba para onde foi o seu dia",
-    "description": "Um botão grande por atividade: toque quando trocar e veja seu dia, semana e mês organizados. Grátis, sem conta, e o que você registra nunca sai do seu dispositivo.",
-    "imageAlt": "A tela principal do Tap Time Tracker: um bloco por atividade com o tempo de hoje"
+    "description": "Um botão grande por atividade: toque quando trocar e veja seu dia, semana e mês organizados. Grátis, sem conta, e o que você registra nunca sai do seu dispositivo."
   },
   "ld": {
     "description": "Um registro de tempo de um toque: um botão grande por atividade, toque quando trocar e veja seu dia, semana e mês. Sem conta; tudo fica no seu dispositivo.",
@@ -99,19 +98,24 @@
     "title": "Perguntas frequentes",
     "items": {
       "free": { "q": "O Tap Time Tracker é gratuito?", "a": "Sim. É gratuito, sem anúncios, sem versão paga e sem conta. Abra o app em qualquer navegador moderno e comece a tocar; a demonstração ao vivo deixa você testar antes com dados de exemplo." },
+      "staysFree": { "q": "Vai continuar grátis?", "a": "Sim. Tudo o que ele faz hoje continua grátis. Se um dia vierem extras pagos, eles serão acréscimos, nunca um preço para o que hoje é grátis." },
       "account": { "q": "Preciso de uma conta?", "a": "Não. Não há cadastro, e-mail nem senha. Seu registro fica no navegador em que você o abre, então não há onde entrar nem nada para esquecer." },
       "what": { "q": "O que posso registrar com o app?", "a": "Qualquer atividade que você adicionar em Configurações: reuniões, tarefas, revisões, e-mail, pausas, o trajeto ou tempo de prática. Separe em grupos como Trabalho e Casa, marque com suas próprias categorias, como trabalho focado ou um cliente, e dê a qualquer uma delas uma meta diária." },
+      "clients": { "q": "Posso registrar o tempo de clientes ou trabalho faturável?", "a": "Sim, com categorias: marque as atividades com um cliente, um projeto ou faturável ou não, e o resumo mostra as horas de cada um em um dia, uma semana, um mês ou qualquer período. Ele só conta tempo; não há valor por hora nem faturas." },
       "data": { "q": "Onde meus dados ficam guardados?", "a": "No armazenamento do seu próprio navegador (IndexedDB) neste dispositivo, e em nenhum outro lugar. Eles nunca são enviados, nem mesmo para este site. A única forma de saírem do navegador é um arquivo de backup que você mesmo exporta." },
       "offline": { "q": "Funciona offline?", "a": "Sim. Depois que você abre o app uma vez, ele inicia sem conexão, e instalado na tela inicial ou na área de trabalho funciona como qualquer outro app. Registrar nunca precisa de internet, porque nada é enviado." },
       "move": { "q": "Como passo meus dados para outro dispositivo?", "a": "Exporte um backup: no app, abra Configurações → Backup e toque em Exportar JSON. Copie o arquivo para o outro dispositivo, abra o app lá e use Importar JSON no mesmo lugar. A importação substitui os dados daquele perfil, então exporte antes se ele já tiver algum." },
+      "csv": { "q": "Posso exportar para CSV ou Excel?", "a": "Ainda não: a exportação em CSV está prevista para uma versão futura. Hoje a exportação é um arquivo de backup em JSON (Configurações → Backup → Exportar JSON) que guarda tudo e pode ser importado em qualquer dispositivo, e o resumo mostra os totais por atividade, grupo ou categoria." },
       "several": { "q": "Duas atividades podem rodar ao mesmo tempo?", "a": "Não, e isso é proposital. Como num relógio de xadrez, iniciar uma atividade para a outra, então o dia nunca soma mais de 24 horas. Toque na que está rodando para parar de registrar." },
       "mini": { "q": "O cronômetro pode ficar por cima de outras janelas?", "a": "Sim, no Chrome e no Edge para computador: a minijanela do cabeçalho do app flutua sobre os seus outros apps e troca ou para atividades com um clique. Firefox, Safari e celulares ainda não oferecem esse tipo de janela, então o botão não aparece neles. No Linux com Wayland, quem decide o que fica por cima é o ambiente de trabalho; no KDE Plasma, uma regra de janela que a mantenha acima das outras resolve." },
-      "devices": { "q": "Em quais dispositivos funciona?", "a": "Em qualquer um com navegador moderno: notebook, tablet, celular ou uma tela sensível ao toque na parede. Cada navegador guarda seu próprio registro e não há sincronização, então use um arquivo de backup para trocar de um para outro." }
+      "devices": { "q": "Em quais dispositivos funciona?", "a": "Em qualquer um com navegador moderno: notebook, tablet, celular ou uma tela sensível ao toque na parede. Cada navegador guarda seu próprio registro e não há sincronização, então use um arquivo de backup para trocar de um para outro." },
+      "iphone": { "q": "Existe app para iPhone ou Android?", "a": "É um app web que se instala como um app. Abra taptimetracker.app/app/ no Safari ou no Chrome e adicione à tela de início: ele ganha um ícone próprio, abre sem a barra do navegador e funciona offline. Não há nada para baixar de uma loja de apps." }
     }
   },
   "closing": {
     "title": "Dê um dia a ele.",
     "lead": "Registre amanhã do primeiro café até a última mensagem e olhe a linha do tempo à noite. A maioria das pessoas se surpreende.",
-    "demo": "Experimente a demo primeiro"
+    "demo": "Experimente a demo primeiro",
+    "compare": "Como ele se compara a 13 registros de tempo parecidos"
   }
 }

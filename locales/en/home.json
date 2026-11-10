@@ -1,10 +1,9 @@
 {
-  "title": "Tap Time Tracker — a one-tap time tracker that stays on your device",
-  "description": "A free one-tap time tracker: one big button per activity, tap when you switch, see your day, week and month laid out. No account, and what you track never leaves your device.",
+  "title": "Tap Time Tracker — free, private one-tap time tracker",
+  "description": "A free one-tap time tracker: one big button per activity, tap when you switch, see your day, week and month. No account; nothing leaves your device.",
   "og": {
     "title": "Tap Time Tracker — know where your day went",
-    "description": "One big button per activity: tap when you switch, see your day, week and month laid out. Free, no account, and what you track never leaves your device.",
-    "imageAlt": "The Tap Time Tracker main screen: one tile per activity with today’s time"
+    "description": "One big button per activity: tap when you switch, see your day, week and month laid out. Free, no account, and what you track never leaves your device."
   },
   "ld": {
     "description": "A one-tap time tracker: one big button per activity, tap when you switch, see your day, week and month. No account; everything stays on your device.",
@@ -99,19 +98,24 @@
     "title": "Frequently asked questions",
     "items": {
       "free": { "q": "Is Tap Time Tracker free?", "a": "Yes. It is free to use, with no ads, no paid tier and no account. Open the app in any modern browser and start tapping; the live demo lets you try it on sample data first." },
+      "staysFree": { "q": "Will it stay free?", "a": "Yes. Everything it does today stays free. If paid extras ever come, they will be additions, never a price on what is free now." },
       "account": { "q": "Do I need an account?", "a": "No. There is no sign-up, email or password. Your tracker lives in the browser you open it in, so there is nothing to log in to and nothing to forget." },
       "what": { "q": "What can I track with it?", "a": "Any activity you add in Settings: meetings, tasks, reviews, email, breaks, a commute or practice time. Sort them into groups such as Work and Home, tag them with your own categories such as deep work or a client, and give any of them a daily target." },
+      "clients": { "q": "Can I track time for clients or billable work?", "a": "Yes, with categories: tag activities with a client, a project, or billable versus not, and the summary shows the hours for each over a day, week, month or any range. It counts time only; there are no hourly rates or invoices." },
       "data": { "q": "Where is my data stored?", "a": "In your browser’s own storage (IndexedDB) on this device, and nowhere else. It is never uploaded, not even to this site. The only way it leaves the browser is a backup file that you export yourself." },
       "offline": { "q": "Does it work offline?", "a": "Yes. Once you have opened the app, it starts without a connection, and installed on a home screen or desktop it runs like any other app. Tracking never needs the internet, because nothing is sent anywhere." },
       "move": { "q": "How do I move my data to another device?", "a": "Export a backup: in the app open Settings → Backup and tap Export JSON. Copy the file to the other device, open the app there and use Import JSON in the same place. Import replaces that profile’s data, so export first if it has any." },
+      "csv": { "q": "Can I export to CSV or Excel?", "a": "Not yet: CSV export is planned for a future release. Today the export is a JSON backup file (Settings → Backup → Export JSON) that holds everything and imports on any device, and the summary shows the totals per activity, group or category." },
       "several": { "q": "Can two activities run at the same time?", "a": "No, and that is on purpose. Like a chess clock, starting one activity stops the other, so the day never adds up to more than 24 hours. Tap the running one to stop tracking altogether." },
       "mini": { "q": "Can the timer stay on top of other windows?", "a": "Yes, in desktop Chrome and Edge: the mini window in the app’s header floats over your other apps and switches or stops activities with one click. Firefox, Safari and phones do not offer such windows yet, so the button does not show there. On Linux with Wayland the desktop decides what stays on top; in KDE Plasma a window rule that keeps it above other windows does the job." },
-      "devices": { "q": "Which devices does it work on?", "a": "Anything with a modern browser: a laptop, a tablet, a phone or a touchscreen on the wall. Each browser keeps its own tracker and there is no sync, so use a backup file to move between them." }
+      "devices": { "q": "Which devices does it work on?", "a": "Anything with a modern browser: a laptop, a tablet, a phone or a touchscreen on the wall. Each browser keeps its own tracker and there is no sync, so use a backup file to move between them." },
+      "iphone": { "q": "Is there an iPhone or Android app?", "a": "It is a web app that installs like one. Open taptimetracker.app/app/ in Safari or Chrome and add it to your home screen: it gets its own icon, opens without the browser bar and works offline. There is nothing to download from an app store." }
     }
   },
   "closing": {
     "title": "Give it one day.",
     "lead": "Track tomorrow from the first coffee to the last message and look at the timeline in the evening. Most people are surprised.",
-    "demo": "Try the demo first"
+    "demo": "Try the demo first",
+    "compare": "How it compares with 13 similar time trackers"
   }
 }

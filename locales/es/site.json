@@ -1,6 +1,8 @@
 {
   "brand": "Tap Time Tracker",
   "openApp": "Abrir la app",
+  "ogImageAlt": "La pantalla principal de Tap Time Tracker: un mosaico por actividad con el tiempo de hoy",
+  "updated": "Última actualización: {date}",
   "footer": {
     "pages": "Páginas",
     "language": "Idioma",

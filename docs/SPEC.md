@@ -575,7 +575,7 @@ Every popup uses one dialog component.
 | `/app/?demo` | `app/index.html` | The demo: the app on sample data in a throwaway database (below). |
 | `/privacy/` | `src/site/pages/privacy.html` | Privacy: no account, no server, data stays in the browser. English only. |
 | `/terms/` | `src/site/pages/terms.html` | Terms of use: free, as is, backups are the user's job. English only. |
-| `/similar/`, `/uk/similar/` | `src/site/pages/similar.html` | Similar apps: a comparison table (rank, app, platform, why it is similar, main differences), most similar first; below 760 px each row becomes a card with labelled fields. A normal page with its text in locale files; `docs/SIMILAR-TOOLS.md` stays as the research notes behind it and is not built. Linked from the landing footer and the app's Similar apps. |
+| `/similar/`, `/uk/similar/` | `src/site/pages/similar.html` | Similar apps, titled "13 one-tap time tracker apps compared" (the footer link stays "Similar apps"): an intro, three question `<h2>`s with short answers (which app is most like it, what it does that they don't, how they compare), then a comparison table (rank, app, platform, why it is similar, main differences), most similar first; below 760 px each row becomes a card with labelled fields. A normal page with its text in locale files; `docs/SIMILAR-TOOLS.md` stays as the research notes behind it and is not built. Linked from the landing footer, the landing page's closing section ("How it compares with 13 similar time trackers") and the app's Similar apps. |
 | `/llms.txt` | `public/llms.txt` | Plain-text summary for AI crawlers (below). |
 | `/404.html`, `/uk/404.html` | `src/site/pages/404.html` | Not found (below): served with status 404 for any missing URL. Not a page of its own. |
 
@@ -587,10 +587,18 @@ them in the repo root.
 - The pages are plain HTML, so they load fast and can be indexed. Their only script is `src/site/site.ts`: usage stats
   (§20) and the privacy page's on/off switch.
 - **Search and link previews:** the site lives at `https://taptimetracker.app/`. Every site page has a
-  `<link rel="canonical">` to its own URL there (each language its own); the landing page also has Open Graph and
-  Twitter card tags (image `public/og.png`, 1200×630, written by `npm run screenshots`) and `WebApplication` JSON-LD,
-  translated. `public/robots.txt` points to `sitemap.xml`, which the build writes from the page list (every page in
-  every language it exists in, with its alternates; §21). The app (`app/`) is `noindex`, so
+  `<link rel="canonical">` to its own URL there (each language its own) and Open Graph and Twitter card tags (image
+  `public/og.png`, 1200×630, written by `npm run screenshots`, with the translated `ogImageAlt` from `site.json`):
+  the page's `og.title` / `og.description` when its locale file has them (the landing page), else its title and
+  description. `public/robots.txt` points to `sitemap.xml`, which the build writes from the page list (every page in
+  every language it exists in, with its alternates and a `<lastmod>`; §21).
+- **Titles and descriptions** fit in a search result: titles at most 60 characters, descriptions at most 160 (aim for
+  155), in every language (a test checks).
+- **Last updated:** every listed page has an `updated` date in `PAGES` (`scripts/sitePages.ts`), changed by hand
+  with the page's content. It is the sitemap `lastmod`, the JSON-LD `dateModified`, and a visible "Last updated
+  10 November 2026" line (`{{@updated}}`, in the page's language: privacy and terms under the heading, the landing
+  page under the FAQ, `/similar/` under the table).
+- **`/favicon.ico`:** 16/32/48 px, made from `public/app/icon-512.png`, for tools that ask for it instead of the SVG. The app (`app/`) is `noindex`, so
   the landing page is what ranks and `app/?demo` is never a duplicate. Copy says "time tracker", the phrase people
   search for ("activity tracker" means fitness bands).
 - **Name:** the product is **Tap Time Tracker** (matches the domain), never translated, in every language: page titles,
@@ -600,18 +608,21 @@ them in the repo root.
 - **Contact:** `contact@taptimetracker.app` (`CONTACT` in `scripts/sitePages.ts`), a `mailto:` link in every site
   footer and on the privacy page.
 - **Structured data (JSON-LD):** the landing page has `WebApplication` (with a `publisher` Organization: name, URL,
-  logo, contact email), `FAQPage` from the FAQ section and one `HowTo` per step list on the page (backdating, adding
+  logo, contact email; `screenshot` (og.png), `featureList` (the names of the features the page shows: no account,
+  stays on this device, the ways to organize and the extras), `softwareVersion` (package.json) and `dateModified`), `FAQPage` from the FAQ section and one `HowTo` per step list on the page (backdating, adding
   to the home screen); all generated from the same locale keys as the visible text, so they always match. Every other
-  listed page has `WebPage` with a `BreadcrumbList` (Home → page); `/similar/` also has an `ItemList` of the apps in
+  listed page has `WebPage` (with `dateModified`) and a `BreadcrumbList` (Home → page); `/similar/` also has an `ItemList` of the apps in
   rank order. The not-found page has none.
 - **Answer-first copy (AEO):** the landing page's feature rows are headed by the questions people ask ("How does
   one-tap time tracking work?", "Forgot to switch? How do I fix it?", "What can I track?", "What does the summary
   show?", "Who can see what I track?", "Can I keep the timer in view while I work?", "Can I use it on my phone?"), each followed by a direct answer of about 40–60 words. The hero lead
   opens with a definition: "Tap Time Tracker is a free one-tap time tracker…".
 - **FAQ:** a section on the landing page (`#faq`), before the closing call to action: questions as `<h3>` with a short
-  answer each (is it free, account, what can be tracked, several activities at once, the mini window staying on top
-  (with the Wayland / KDE window-rule note), where data is stored, offline, moving data to another device, which
-  devices). The footer of every page links to it (the home page in that language + `#faq`).
+  answer each (is it free, will it stay free (everything it does today stays free; paid extras, if any, would be
+  additions), account, what can be tracked, clients and billable work (categories; no rates or invoices), where data
+  is stored, offline, moving data to another device, CSV/Excel export (not yet, planned; JSON backup today), several
+  activities at once, the mini window staying on top (with the Wayland / KDE window-rule note), which devices, an
+  iPhone or Android app (a web app that installs from the browser; no app store)). The footer of every page links to it (the home page in that language + `#faq`).
 - **`/llms.txt`:** a plain-text summary for AI crawlers (`public/llms.txt`, English): what the product is, key facts
   and links to the pages and languages.
 - **Landing page:** hand-written copy (not spec wording), in this order: hero (headline, a lead that ends on privacy:

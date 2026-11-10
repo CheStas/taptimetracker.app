@@ -1,10 +1,9 @@
 {
-  "title": "Tap Time Tracker — un suivi du temps en un geste, qui reste sur votre appareil",
-  "description": "Un suivi du temps gratuit en un geste : un grand bouton par activité, touchez-le quand vous changez, et voyez votre journée, votre semaine et votre mois d’un coup d’œil. Sans compte, et ce que vous suivez ne quitte jamais votre appareil.",
+  "title": "Tap Time Tracker — suivi du temps privé, en un geste",
+  "description": "Suivi du temps gratuit en un geste : un bouton par activité, touchez quand vous changez, voyez jour, semaine, mois. Sans compte ; rien ne quitte l’appareil.",
   "og": {
     "title": "Tap Time Tracker — sachez où est passée votre journée",
-    "description": "Un grand bouton par activité : touchez-le quand vous changez, et voyez votre journée, votre semaine et votre mois d’un coup d’œil. Gratuit, sans compte, et ce que vous suivez ne quitte jamais votre appareil.",
-    "imageAlt": "L’écran principal de Tap Time Tracker : une tuile par activité avec le temps du jour"
+    "description": "Un grand bouton par activité : touchez-le quand vous changez, et voyez votre journée, votre semaine et votre mois d’un coup d’œil. Gratuit, sans compte, et ce que vous suivez ne quitte jamais votre appareil."
   },
   "ld": {
     "description": "Un suivi du temps en un geste : un grand bouton par activité, touchez-le quand vous changez, et voyez votre journée, votre semaine et votre mois. Sans compte ; tout reste sur votre appareil.",
@@ -99,19 +98,24 @@
     "title": "Questions fréquentes",
     "items": {
       "free": { "q": "Tap Time Tracker est-il gratuit ?", "a": "Oui. Il est gratuit, sans publicité, sans version payante et sans compte. Ouvrez l’app dans n’importe quel navigateur récent et commencez ; la démo en direct permet de l’essayer d’abord sur des données d’exemple." },
+      "staysFree": { "q": "Restera-t-il gratuit ?", "a": "Oui. Tout ce qu’il fait aujourd’hui restera gratuit. Si des options payantes arrivent un jour, elles s’ajouteront, sans jamais rendre payant ce qui est gratuit aujourd’hui." },
       "account": { "q": "Faut-il un compte ?", "a": "Non. Pas d’inscription, pas d’e-mail, pas de mot de passe. Votre suivi vit dans le navigateur où vous l’ouvrez : rien à quoi se connecter, rien à oublier." },
       "what": { "q": "Que puis-je suivre avec l’app ?", "a": "Toute activité que vous ajoutez dans les Réglages : réunions, tâches, revues, e-mails, pauses, trajets ou temps d’entraînement. Rangez-les en groupes comme Travail et Maison, étiquetez-les avec vos propres catégories comme travail de fond ou un client, et donnez à chacune un objectif quotidien si vous le souhaitez." },
+      "clients": { "q": "Puis-je suivre le temps passé pour des clients ou du travail facturable ?", "a": "Oui, avec les catégories : étiquetez les activités avec un client, un projet ou facturable ou non, et le résumé affiche les heures de chacun sur une journée, une semaine, un mois ou n’importe quelle période. Il compte le temps seulement ; il n’y a ni taux horaire ni facture." },
       "data": { "q": "Où sont stockées mes données ?", "a": "Dans le stockage propre de votre navigateur (IndexedDB) sur cet appareil, et nulle part ailleurs. Elles ne sont jamais envoyées, pas même à ce site. Elles ne quittent le navigateur que dans un fichier de sauvegarde que vous exportez vous-même." },
       "offline": { "q": "Fonctionne-t-il hors ligne ?", "a": "Oui. Une fois l’app ouverte, elle démarre sans connexion, et installée sur l’écran d’accueil ou le bureau, elle fonctionne comme n’importe quelle app. Le suivi n’a jamais besoin d’internet, puisque rien n’est envoyé." },
       "move": { "q": "Comment transférer mes données sur un autre appareil ?", "a": "Exportez une sauvegarde : dans l’app, ouvrez Réglages → Sauvegarde et touchez Exporter en JSON. Copiez le fichier sur l’autre appareil, ouvrez-y l’app et utilisez Importer un JSON au même endroit. L’import remplace les données de ce profil : exportez-les d’abord s’il en a." },
+      "csv": { "q": "Puis-je exporter en CSV ou vers Excel ?", "a": "Pas encore : l’export CSV est prévu dans une prochaine version. Aujourd’hui, l’export est un fichier de sauvegarde JSON (Réglages → Sauvegarde → Exporter en JSON) qui contient tout et s’importe sur n’importe quel appareil, et le résumé affiche les totaux par activité, groupe ou catégorie." },
       "several": { "q": "Deux activités peuvent-elles tourner en même temps ?", "a": "Non, et c’est voulu. Comme avec une pendule d’échecs, lancer une activité arrête l’autre, donc la journée ne dépasse jamais 24 heures. Touchez celle qui tourne pour tout arrêter." },
       "mini": { "q": "Le minuteur peut-il rester au-dessus des autres fenêtres ?", "a": "Oui, dans Chrome et Edge sur ordinateur : la mini-fenêtre de l’en-tête de l’app flotte au-dessus de vos autres applications et change ou arrête une activité en un clic. Firefox, Safari et les téléphones ne proposent pas encore ce type de fenêtre, le bouton n’y apparaît donc pas. Sous Linux avec Wayland, c’est le bureau qui décide de ce qui reste au premier plan ; dans KDE Plasma, une règle de fenêtre qui la garde au-dessus des autres fait l’affaire." },
-      "devices": { "q": "Sur quels appareils fonctionne-t-il ?", "a": "Sur tout appareil doté d’un navigateur récent : ordinateur portable, tablette, téléphone ou écran tactile au mur. Chaque navigateur garde son propre suivi et il n’y a pas de synchronisation : passez de l’un à l’autre avec un fichier de sauvegarde." }
+      "devices": { "q": "Sur quels appareils fonctionne-t-il ?", "a": "Sur tout appareil doté d’un navigateur récent : ordinateur portable, tablette, téléphone ou écran tactile au mur. Chaque navigateur garde son propre suivi et il n’y a pas de synchronisation : passez de l’un à l’autre avec un fichier de sauvegarde." },
+      "iphone": { "q": "Existe-t-il une app iPhone ou Android ?", "a": "C’est une app web qui s’installe comme une app. Ouvrez taptimetracker.app/app/ dans Safari ou Chrome et ajoutez-la à l’écran d’accueil : elle a sa propre icône, s’ouvre sans la barre du navigateur et fonctionne hors ligne. Rien à télécharger depuis une boutique d’apps." }
     }
   },
   "closing": {
     "title": "Donnez-lui une journée.",
     "lead": "Suivez demain du premier café au dernier message et regardez la frise le soir. La plupart des gens sont surpris.",
-    "demo": "Essayer d’abord la démo"
+    "demo": "Essayer d’abord la démo",
+    "compare": "Comparaison avec 13 outils de suivi du temps similaires"
   }
 }

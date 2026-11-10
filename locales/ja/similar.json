@@ -1,15 +1,17 @@
 {
-  "title": "類似アプリ — Tap Time Tracker",
-  "description": "ワンタップで使える他の時間記録アプリを、Tap Time Tracker に近い順に並べ、違いをまとめました。",
-  "heading": "類似アプリ",
+  "title": "ワンタップ時間記録アプリ 13 選の比較 — Tap Time Tracker",
+  "description": "TickTappy、aTimeLogger、Simple Time Tracker、Timeular など 13 のワンタップ時間記録アプリを、Tap Time Tracker に近い順に比較。",
+  "heading": "ワンタップ時間記録アプリの比較",
   "intro": "Tap Time Tracker は対局時計のように動きます。活動をタップすると開始、別の活動をタップすると切り替わり、同時に動くのはひとつだけ。過去の時間も修正できます。以下のアプリは同じか、似た仕組みで動きます。<strong>似ている順</strong>に並べています。",
+  "best": { "q": "Tap Time Tracker にいちばん近いアプリは？", "a": "端末によります。iPhone・iPad・Mac なら TickTappy がいちばん近く、タップで切り替わるタグと過去から始められるタイマーがあります。aTimeLogger は iOS の定番のワンタップ記録アプリ、Simple Time Tracker は Android のオープンソースの選択肢です。どれもブラウザでは動きません。" },
+  "different": { "q": "Tap Time Tracker にしかできないことは？" },
+  "compare": { "q": "13 のアプリはどう違いますか？", "a": "各行に、アプリが動く環境、Tap Time Tracker との共通点、違いを示しています。" },
   "takeaway": {
     "lead": "<strong>まとめ：</strong>次のすべてを備えたものはありません。",
     "web": "どこでも動く Web ページ（オフラインで動くアプリとしてインストールも可能）",
     "touch": "タッチスクリーンと壁掛けディスプレイ向けのレイアウト",
     "backdate": "ほかの活動から時間を差し引く「〜から開始」のさかのぼり記録",
-    "offline": "アカウント不要で、端末にとどまるストレージ",
-    "closest": "いちばん近いのはスマートフォンのネイティブアプリ、TickTappy、aTimeLogger、Simple Time Tracker です。"
+    "offline": "アカウント不要で、端末にとどまるストレージ"
   },
   "source": "出典",
   "timeryFor": "for",

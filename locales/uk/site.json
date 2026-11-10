@@ -1,6 +1,8 @@
 {
   "brand": "Tap Time Tracker",
   "openApp": "Відкрити застосунок",
+  "ogImageAlt": "Головний екран Tap Time Tracker: плитка для кожної справи з часом за сьогодні",
+  "updated": "Оновлено {date}",
   "footer": {
     "pages": "Сторінки",
     "language": "Мова",

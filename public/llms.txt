@@ -10,8 +10,8 @@ Key facts:
 - What can be tracked: any activity the user adds in Settings (one name or a whole list at once), each with a color and an optional daily target. Activities can be sorted into groups (e.g. Work and Home, switched on and off), tagged with the user's own categories (e.g. deep vs. shallow work, a client), and hidden for the day.
 - Summary of a day, week, month or any range on one clock, grouped by your own categories; daily targets; profiles; three layouts; seven themes plus imported ones; full-screen / wall-display use.
 - Mini window (desktop Chrome and Edge): a small always-on-top picture-in-picture window with the running activity, its time, today's total and previous / stop / next buttons, for switching while working in other apps.
-- Runs on any modern browser (laptop, tablet, phone, touchscreen) and offline once opened; installable to the home screen or desktop. No sync between devices: data moves with an exported JSON backup file.
-- Free, with no paid tier. Available in English, Spanish, German, French, Japanese, Portuguese, Turkish, Italian, Persian, Dutch, Chinese and Ukrainian.
+- Runs on any modern browser (laptop, tablet, phone, touchscreen) and offline once opened; installable to the home screen or desktop. No sync between devices: data moves with an exported JSON backup file. There is no CSV or Excel export yet (planned). Time for clients or billable work is tracked with categories; there are no hourly rates or invoices.
+- Free, with no paid tier; everything it does today stays free, and any paid extras would be additions. Available in English, Spanish, German, French, Japanese, Portuguese, Turkish, Italian, Persian, Dutch, Chinese and Ukrainian.
 - Contact: contact@taptimetracker.app
 
 ## Pages
