@@ -650,6 +650,9 @@ them in the repo root.
   `npm run dev` does the same (the site plugin answers unhandled page views with it); `npx serve dist` only knows
   the root `404.html`, so it shows English everywhere. `npx wrangler dev` after a build is the faithful preview.
 - `public/` is copied as is (no `sitemap.xml` there: the build writes it).
+- **Caching:** `public/_headers` (read by Cloudflare, not served) gives `/assets/*`, whose file names all carry a
+  content hash, `Cache-Control: public, max-age=31536000, immutable`. Everything else keeps Cloudflare's default
+  (`max-age=0, must-revalidate`), so pages, `sw.js` and the manifest pick up a deploy at once.
 
 ## 20. Usage stats and feedback
 - **Usage stats** (`src/analytics.ts`): Umami Cloud, loaded only when the build sets `VITE_UMAMI_ID` (optionally
