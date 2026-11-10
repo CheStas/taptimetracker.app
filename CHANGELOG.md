@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.12.0](https://github.com/CheStas/taptimetracker.app/compare/v0.11.0...v0.12.0) (2026-11-10)
+
+
+### Features
+
+* **site:** sharpen search and AI answers across the site ([6ee27e1](https://github.com/CheStas/taptimetracker.app/commit/6ee27e132a346bcd9b519188757d01345410801a))
+
+
+### Performance
+
+* **site:** cache hashed assets for a year ([789666e](https://github.com/CheStas/taptimetracker.app/commit/789666e51121d5d64ce4c5dd5ba680df978e42c1))
+
 ## [0.11.0](https://github.com/CheStas/taptimetracker.app/compare/v0.10.0...v0.11.0) (2026-11-09)
 
 
