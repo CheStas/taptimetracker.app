@@ -1,15 +1,17 @@
 {
-  "title": "Apps parecidos — Tap Time Tracker",
-  "description": "Outros registros de tempo de um toque, do mais ao menos parecido com o Tap Time Tracker, e no que eles diferem.",
-  "heading": "Apps parecidos",
+  "title": "13 apps de registro de tempo de um toque — Tap Time Tracker",
+  "description": "TickTappy, aTimeLogger, Simple Time Tracker, Timeular e mais 9 apps de registro de tempo de um toque, ordenados pela semelhança com o Tap Time Tracker.",
+  "heading": "Apps de registro de tempo de um toque, comparados",
   "intro": "O Tap Time Tracker funciona como um relógio de xadrez: toque numa atividade para começá-la, toque em outra para trocar; só uma corre por vez, e tempos passados podem ser corrigidos. Estes apps funcionam do mesmo jeito ou de forma parecida. Estão ordenados <strong>do mais ao menos parecido</strong>.",
+  "best": { "q": "Qual app é mais parecido com o Tap Time Tracker?", "a": "Depende do seu dispositivo. No iPhone, iPad e Mac, o mais próximo é o TickTappy: etiquetas que trocam com um toque e timers iniciados no passado. O aTimeLogger é o registro de um toque tradicional do iOS, e o Simple Time Tracker a opção de código aberto para Android. Nenhum deles roda no navegador." },
+  "different": { "q": "O que o Tap Time Tracker faz que eles não fazem?" },
+  "compare": { "q": "Como os 13 apps se comparam?", "a": "Cada linha mostra onde o app roda, o que ele tem em comum com o Tap Time Tracker e no que difere." },
   "takeaway": {
     "lead": "<strong>Resumindo:</strong> nenhum reúne tudo isto:",
     "web": "uma página web que roda em qualquer lugar e se instala como app que funciona offline",
     "touch": "um layout para tela touch e tela de parede",
     "backdate": "o “ativa desde…” retroativo que tira o tempo das outras atividades",
-    "offline": "armazenamento que fica no dispositivo, sem conta",
-    "closest": "Os mais próximos são apps nativos de celular: TickTappy, aTimeLogger e Simple Time Tracker."
+    "offline": "armazenamento que fica no dispositivo, sem conta"
   },
   "source": "código-fonte",
   "timeryFor": "para",

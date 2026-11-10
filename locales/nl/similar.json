@@ -1,15 +1,17 @@
 {
-  "title": "Vergelijkbare apps — Tap Time Tracker",
-  "description": "Andere tijdregistratie-apps met één tik, gerangschikt van meest tot minst vergelijkbaar met Tap Time Tracker, en waarin ze verschillen.",
-  "heading": "Vergelijkbare apps",
+  "title": "13 tijdregistratie-apps met één tik — Tap Time Tracker",
+  "description": "TickTappy, aTimeLogger, Simple Time Tracker, Timeular en nog 9 tijdregistratie-apps met één tik, gerangschikt op gelijkenis met Tap Time Tracker.",
+  "heading": "Tijdregistratie-apps met één tik vergeleken",
   "intro": "Tap Time Tracker werkt als een schaakklok: tik op een activiteit om haar te starten, tik op een andere om te wisselen; er loopt er maar één tegelijk, en eerdere tijden kun je corrigeren. Deze apps werken op dezelfde of een vergelijkbare manier. Ze staan <strong>van meest tot minst vergelijkbaar</strong>.",
+  "best": { "q": "Welke app lijkt het meest op Tap Time Tracker?", "a": "Dat hangt af van je apparaat. Op iPhone, iPad en Mac komt TickTappy het dichtst in de buurt: labels die je met één tik wisselt en timers die in het verleden starten. aTimeLogger is de vertrouwde één-tik-logger voor iOS, en Simple Time Tracker de opensourcekeuze voor Android. Geen van allen werkt in de browser." },
+  "different": { "q": "Wat doet Tap Time Tracker dat zij niet doen?" },
+  "compare": { "q": "Hoe verhouden de 13 apps zich tot elkaar?", "a": "Elke rij laat zien waar de app draait, wat hij gemeen heeft met Tap Time Tracker en waarin hij verschilt." },
   "takeaway": {
     "lead": "<strong>Kort gezegd:</strong> geen enkele combineert al het volgende:",
     "web": "een webpagina die overal draait en zich laat installeren als app die offline werkt",
     "touch": "een indeling voor touchscreens en wandschermen",
     "backdate": "‘actief sinds…’ achteraf, dat de tijd van andere activiteiten afhaalt",
-    "offline": "opslag die op het apparaat blijft, zonder account",
-    "closest": "Het dichtst in de buurt komen native telefoonapps: TickTappy, aTimeLogger en Simple Time Tracker."
+    "offline": "opslag die op het apparaat blijft, zonder account"
   },
   "source": "broncode",
   "timeryFor": "for",

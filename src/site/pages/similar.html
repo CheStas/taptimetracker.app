@@ -106,6 +106,9 @@
   <main>
     <h1>{{heading}}</h1>
     <p>{{intro}}</p>
+    <h2>{{best.q}}</h2>
+    <p>{{best.a}}</p>
+    <h2>{{different.q}}</h2>
     <p>{{takeaway.lead}}</p>
     <ul>
       <li>{{takeaway.web}}</li>
@@ -113,7 +116,8 @@
       <li>{{takeaway.backdate}}</li>
       <li>{{takeaway.offline}}</li>
     </ul>
-    <p>{{takeaway.closest}}</p>
+    <h2>{{compare.q}}</h2>
+    <p>{{compare.a}}</p>
     <div class="compare">
       <table class="tools">
         <thead>
@@ -222,6 +226,7 @@
     </div>
 
     <p class="fine">{{sources}}</p>
+    {{@updated}}
   </main>
   {{@footer}}
 </body>

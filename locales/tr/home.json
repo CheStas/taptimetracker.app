@@ -1,10 +1,9 @@
 {
-  "title": "Tap Time Tracker — cihazınızda kalan tek dokunuşluk zaman takibi",
-  "description": "Ücretsiz, tek dokunuşluk zaman takibi: her etkinlik için büyük bir düğme, geçiş yaptığınızda dokunun ve gününüzü, haftanızı, ayınızı bir bakışta görün. Hesap yok ve kaydettikleriniz cihazınızdan asla çıkmaz.",
+  "title": "Tap Time Tracker — size özel, tek dokunuşluk zaman takibi",
+  "description": "Ücretsiz, tek dokunuşluk zaman takibi: her etkinliğe bir düğme, geçerken dokunun; gününüzü, haftanızı ve ayınızı görün. Hesap yok; veriler cihazdan çıkmaz.",
   "og": {
     "title": "Tap Time Tracker — gününüzün nereye gittiğini bilin",
-    "description": "Her etkinlik için büyük bir düğme: geçiş yaptığınızda dokunun, gününüzü, haftanızı ve ayınızı bir bakışta görün. Ücretsiz, hesap yok ve kaydettikleriniz cihazınızdan asla çıkmaz.",
-    "imageAlt": "Tap Time Tracker ana ekranı: her etkinlik için bugünkü süresiyle bir kutucuk"
+    "description": "Her etkinlik için büyük bir düğme: geçiş yaptığınızda dokunun, gününüzü, haftanızı ve ayınızı bir bakışta görün. Ücretsiz, hesap yok ve kaydettikleriniz cihazınızdan asla çıkmaz."
   },
   "ld": {
     "description": "Tek dokunuşluk zaman takibi: her etkinlik için büyük bir düğme, geçiş yaptığınızda dokunun ve gününüzü, haftanızı, ayınızı görün. Hesap yok; her şey cihazınızda kalır.",
@@ -99,19 +98,24 @@
     "title": "Sık sorulan sorular",
     "items": {
       "free": { "q": "Tap Time Tracker ücretsiz mi?", "a": "Evet. Ücretsizdir; reklam, ücretli sürüm ya da hesap yoktur. Uygulamayı herhangi bir modern tarayıcıda açıp dokunmaya başlayın; canlı demo ile önce örnek verilerle deneyebilirsiniz." },
+      "staysFree": { "q": "Ücretsiz kalacak mı?", "a": "Evet. Bugün yaptığı her şey ücretsiz kalacak. Bir gün ücretli ekstralar gelirse, bunlar ek olacak; şu an ücretsiz olan hiçbir şey ücretli olmayacak." },
       "account": { "q": "Hesap gerekiyor mu?", "a": "Hayır. Kayıt, e-posta ya da parola yok. Takibiniz onu açtığınız tarayıcıda yaşar; giriş yapacak ya da unutacak bir şey yoktur." },
       "what": { "q": "Uygulamayla neleri takip edebilirim?", "a": "Ayarlar’dan eklediğiniz her etkinliği: toplantılar, görevler, incelemeler, e-posta, molalar, yol ya da pratik süresi. Onları İş ve Ev gibi gruplara ayırın, derin çalışma ya da müşteri gibi kendi kategorilerinizle etiketleyin ve istediğinize günlük bir hedef verin." },
+      "clients": { "q": "Müşteriler veya faturalanabilir iş için zaman takibi yapabilir miyim?", "a": "Evet, kategorilerle: etkinlikleri bir müşteri, bir proje ya da faturalanabilir olup olmamasıyla etiketleyin; özet her biri için saatleri bir gün, hafta, ay ya da istediğiniz bir aralıkta gösterir. Yalnızca zamanı sayar; saatlik ücret veya fatura yoktur." },
       "data": { "q": "Verilerim nerede saklanıyor?", "a": "Bu cihazdaki tarayıcınızın kendi depolamasında (IndexedDB), başka hiçbir yerde değil. Bu siteye bile asla yüklenmez. Tarayıcıdan çıkmasının tek yolu, kendiniz dışa aktardığınız bir yedek dosyasıdır." },
       "offline": { "q": "Çevrimdışı çalışır mı?", "a": "Evet. Uygulamayı bir kez açtıktan sonra bağlantı olmadan da başlar; ana ekrana ya da masaüstüne yüklendiğinde diğer uygulamalar gibi çalışır. Hiçbir şey gönderilmediği için takip asla internete ihtiyaç duymaz." },
       "move": { "q": "Verilerimi başka bir cihaza nasıl taşırım?", "a": "Bir yedek dışa aktarın: uygulamada Ayarlar → Yedek’i açıp JSON dışa aktar’a dokunun. Dosyayı diğer cihaza kopyalayın, orada uygulamayı açın ve aynı yerdeki JSON içe aktar’ı kullanın. İçe aktarma o profilin verilerinin yerini alır; profilde veri varsa önce dışa aktarın." },
+      "csv": { "q": "CSV veya Excel’e aktarabilir miyim?", "a": "Henüz değil: CSV dışa aktarma gelecek bir sürüm için planlanıyor. Bugün dışa aktarma, her şeyi içeren ve her cihaza içe aktarılabilen bir JSON yedek dosyasıdır (Ayarlar → Yedek → JSON dışa aktar); özet de etkinlik, grup veya kategori başına toplamları gösterir." },
       "several": { "q": "İki etkinlik aynı anda çalışabilir mi?", "a": "Hayır, bu bilerek böyle. Satranç saatinde olduğu gibi bir etkinliği başlatmak diğerini durdurur; böylece gün asla 24 saati aşmaz. Takibi tamamen durdurmak için çalışan etkinliğe dokunun." },
       "mini": { "q": "Sayaç diğer pencerelerin üzerinde kalabilir mi?", "a": "Evet, masaüstünde Chrome ve Edge’de: uygulamanın üst çubuğundaki mini pencere diğer uygulamalarınızın üzerinde durur ve tek tıkla etkinlik değiştirir ya da durdurur. Firefox, Safari ve telefonlar henüz bu tür pencereler sunmadığından orada düğme görünmez. Wayland kullanan Linux’ta neyin üstte kalacağına masaüstü karar verir; KDE Plasma’da pencereyi diğerlerinin üstünde tutan bir pencere kuralı işi görür." },
-      "devices": { "q": "Hangi cihazlarda çalışır?", "a": "Modern tarayıcısı olan her şeyde: dizüstü bilgisayar, tablet, telefon ya da duvardaki bir dokunmatik ekran. Her tarayıcı kendi takibini tutar ve eşitleme yoktur; aralarında geçiş için bir yedek dosyası kullanın." }
+      "devices": { "q": "Hangi cihazlarda çalışır?", "a": "Modern tarayıcısı olan her şeyde: dizüstü bilgisayar, tablet, telefon ya da duvardaki bir dokunmatik ekran. Her tarayıcı kendi takibini tutar ve eşitleme yoktur; aralarında geçiş için bir yedek dosyası kullanın." },
+      "iphone": { "q": "iPhone veya Android uygulaması var mı?", "a": "Uygulama gibi yüklenen bir web uygulaması. taptimetracker.app/app/ adresini Safari ya da Chrome’da açıp ana ekranınıza ekleyin: kendi simgesi olur, tarayıcı çubuğu olmadan açılır ve çevrimdışı çalışır. Uygulama mağazasından indirilecek bir şey yoktur." }
     }
   },
   "closing": {
     "title": "Ona bir gün verin.",
     "lead": "Yarın ilk kahveden son mesaja kadar kaydedin ve akşam zaman çizelgesine bakın. Çoğu kişi şaşırır.",
-    "demo": "Önce demoyu deneyin"
+    "demo": "Önce demoyu deneyin",
+    "compare": "13 benzer zaman takip uygulamasıyla karşılaştırma"
   }
 }

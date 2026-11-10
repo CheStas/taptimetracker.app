@@ -1,6 +1,8 @@
 {
   "brand": "Tap Time Tracker",
   "openApp": "Apri l’app",
+  "ogImageAlt": "La schermata principale di Tap Time Tracker: una tessera per attività con il tempo di oggi",
+  "updated": "Ultimo aggiornamento: {date}",
   "footer": {
     "pages": "Pagine",
     "language": "Lingua",

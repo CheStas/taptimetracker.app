@@ -1,15 +1,17 @@
 {
-  "title": "Apps similaires — Tap Time Tracker",
-  "description": "D’autres outils de suivi du temps en un geste, classés du plus au moins proche de Tap Time Tracker, et ce qui les distingue.",
-  "heading": "Apps similaires",
+  "title": "13 apps de suivi du temps en un geste — Tap Time Tracker",
+  "description": "TickTappy, aTimeLogger, Simple Time Tracker, Timeular et 9 autres outils de suivi du temps en un geste, classés par proximité avec Tap Time Tracker.",
+  "heading": "Les apps de suivi du temps en un geste, comparées",
   "intro": "Tap Time Tracker fonctionne comme une pendule d’échecs : touchez une activité pour la démarrer, une autre pour changer ; une seule tourne à la fois, et les temps passés peuvent être corrigés. Ces apps fonctionnent de la même façon ou presque. Elles sont classées <strong>de la plus à la moins proche</strong>.",
+  "best": { "q": "Quelle app ressemble le plus à Tap Time Tracker ?", "a": "Cela dépend de votre appareil. Sur iPhone, iPad et Mac, TickTappy est la plus proche : des étiquettes qu’on change d’un geste et des minuteurs démarrés dans le passé. aTimeLogger est le journal en un geste de longue date sur iOS, et Simple Time Tracker le choix open source sur Android. Aucune ne fonctionne dans le navigateur." },
+  "different": { "q": "Que fait Tap Time Tracker qu’elles ne font pas ?" },
+  "compare": { "q": "Comment se comparent les 13 apps ?", "a": "Chaque ligne indique où l’app fonctionne, ce qu’elle partage avec Tap Time Tracker et ce qui l’en distingue." },
   "takeaway": {
     "lead": "<strong>En bref :</strong> aucune ne réunit tout ceci :",
     "web": "une page web qui fonctionne partout et s’installe comme une app utilisable hors ligne",
     "touch": "une disposition pour écran tactile et affichage mural",
     "backdate": "un « actif depuis… » rétroactif qui retire ce temps aux autres activités",
-    "offline": "un stockage qui reste sur l’appareil, sans compte",
-    "closest": "Les plus proches sont des apps natives pour téléphone : TickTappy, aTimeLogger et Simple Time Tracker."
+    "offline": "un stockage qui reste sur l’appareil, sans compte"
   },
   "source": "source",
   "timeryFor": "pour",

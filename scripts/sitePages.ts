@@ -28,17 +28,22 @@ export interface Page {
   englishOnly?: boolean;
   /** The not-found page: served at any missing URL, so root-relative links; not in the footer, sitemap or app links. */
   notFound?: boolean;
+  /** When the page's content last changed (YYYY-MM-DD), set by hand with the change: shown as {{@updated}}, and the
+   *  page's JSON-LD dateModified and sitemap lastmod. Every listed page has one. */
+  updated?: string;
 }
 
 /** Footer order. A new page is a template, an entry here and its locale files. */
 export const PAGES: Page[] = [
-  { id: 'home', path: '', body: 'landing' },
-  { id: 'similar', path: 'similar/', body: 'similar' },
-  { id: 'privacy', path: 'privacy/', body: 'legal', englishOnly: true },
-  { id: 'terms', path: 'terms/', body: 'legal', englishOnly: true },
+  { id: 'home', path: '', body: 'landing', updated: '2026-11-10' },
+  { id: 'similar', path: 'similar/', body: 'similar', updated: '2026-11-10' },
+  { id: 'privacy', path: 'privacy/', body: 'legal', englishOnly: true, updated: '2026-11-04' },
+  { id: 'terms', path: 'terms/', body: 'legal', englishOnly: true, updated: '2026-11-04' },
   { id: '404', path: '404.html', body: 'not-found', notFound: true },
 ];
 const listed = PAGES.filter((p) => !p.notFound);
+/** The app's version (package.json), for the WebApplication's softwareVersion. */
+const VERSION: string = JSON.parse(readFileSync(resolve(ROOT, 'package.json'), 'utf8')).version;
 
 type Dict = Record<string, string>;
 const readJson = (file: string) => JSON.parse(readFileSync(file, 'utf8'));
@@ -131,18 +136,38 @@ export function renderPage(page: Page, code: string, locales: Locale[]): string 
     '@type': 'Organization', name: t('brand'), url: `${ORIGIN}/`, email: CONTACT, logo: `${ORIGIN}/app/icon-512.png`,
   };
 
+  const updated = () => page.updated ?? fail('no "updated" date in PAGES');
+  const ogLocale = () => [`<meta property="og:locale" content="${locale.ogLocale}">`,
+    ...available.filter((l) => l.code !== code).map((l) => `<meta property="og:locale:alternate" content="${l.ogLocale}">`)];
+
   const GEN: Record<string, (arg: string) => string> = {
     lang: () => code,
     root: () => root,
     href,
     app: () => `${root}app/`,
+    // Canonical, hreflang and the link preview (Open Graph + Twitter card) of every listed page. The preview uses the
+    // page's `og.title` / `og.description` when its locale file has them, else its <title> and description.
     seo: () => [
       `<link rel="canonical" href="${url(page, code)}">`,
       ...(available.length > 1
         ? [...available.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${url(page, l.code)}">`),
           `<link rel="alternate" hreflang="x-default" href="${url(page, en.code)}">`]
         : []),
+      `<meta property="og:type" content="website">`,
+      `<meta property="og:site_name" content="${esc(t('brand'))}">`,
+      `<meta property="og:url" content="${url(page, code)}">`,
+      `<meta property="og:title" content="${esc(dict['og.title'] ?? meta(/<title>([^<]*)<\/title>/))}">`,
+      `<meta property="og:description" content="${esc(dict['og.description'] ?? meta(/<meta name="description" content="([^"]*)"/))}">`,
+      ...ogLocale(),
+      `<meta property="og:image" content="${ORIGIN}/og.png">`,
+      `<meta property="og:image:width" content="1200">`,
+      `<meta property="og:image:height" content="630">`,
+      `<meta property="og:image:alt" content="${esc(t('ogImageAlt'))}">`,
+      `<meta name="twitter:card" content="summary_large_image">`,
     ].join('\n  '),
+    // "Last updated 10 November 2026", in the page's language (English day first, as the site's copy writes dates).
+    updated: () => `<p class="updated">${t('updated').replace('{date}', new Intl.DateTimeFormat(code === en.code ? 'en-GB' : locale.intl ?? code,
+      { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${updated()}T00:00:00Z`)))}</p>`,
     url: () => url(page, code),
     // The page's structured data (SPEC §19): the app, its FAQ and how-tos on the home page; a breadcrumbed WebPage
     // everywhere else. Built from the same keys as the visible text.
@@ -155,6 +180,11 @@ export function renderPage(page: Page, code: string, locales: Locale[]): string 
             '@type': 'WebApplication', name: t('brand'), url: url(page, code), inLanguage: code,
             description: t('ld.description'), applicationCategory: 'ProductivityApplication',
             operatingSystem: t('ld.os'), browserRequirements: t('ld.requirements'), image: `${ORIGIN}/og.png`,
+            screenshot: { '@type': 'ImageObject', url: `${ORIGIN}/og.png`, caption: t('ogImageAlt'), width: 1200, height: 630 },
+            // The feature names the page already shows: no account, on-device storage, ways to organize, the extras.
+            featureList: ['vault.account', 'vault.device', ...['track', 'extras'].flatMap((s) => ids(s)
+              .filter((id) => dict[`${s}.${id}.title`]).map((id) => `${s}.${id}`))].map((k) => plain(t(`${k}.title`))),
+            softwareVersion: VERSION, dateModified: updated(),
             offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }, publisher,
           }),
           ...(faq.length ? [jsonLd({
@@ -173,7 +203,7 @@ export function renderPage(page: Page, code: string, locales: Locale[]): string 
       const home = byId('home');
       return jsonLd({
         '@type': 'WebPage', name: meta(/<title>([^<]*)<\/title>/), description: meta(/<meta name="description" content="([^"]*)"/),
-        url: url(page, code), inLanguage: code,
+        url: url(page, code), inLanguage: code, dateModified: updated(),
         isPartOf: { '@type': 'WebSite', name: t('brand'), url: `${ORIGIN}/`, publisher },
         breadcrumb: {
           '@type': 'BreadcrumbList',
@@ -191,8 +221,6 @@ export function renderPage(page: Page, code: string, locales: Locale[]): string 
     steps: (h) => `<ol class="steps" aria-label="${esc(plain(t(`${h}.howto`)))}">
           ${ids(`${h}.steps`).map((s) => `<li>${t(`${h}.steps.${s}`)}</li>`).join('\n          ')}
         </ol>`,
-    ogLocale: () => [`<meta property="og:locale" content="${locale.ogLocale}">`,
-      ...available.filter((l) => l.code !== code).map((l) => `<meta property="og:locale:alternate" content="${l.ogLocale}">`)].join('\n  '),
     header: () => `<header class="site-header">
     <a class="brand" href="${href('home')}"><img src="${root}favicon.svg" alt=""><span>${t('brand')}</span></a>
     <a class="button" href="${root}app/">${t('openApp')}</a>
@@ -259,7 +287,8 @@ export function sitemap(locales: Locale[]): string {
         ? available.map((a) => `\n    <xhtml:link rel="alternate" hreflang="${a.code}" href="${ORIGIN}/${pagePath(page, a.code, locales)}"/>`).join('')
           + `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${ORIGIN}/${pagePath(page, locales[0].code, locales)}"/>`
         : '';
-      return `  <url>\n    <loc>${ORIGIN}/${pagePath(page, l.code, locales)}</loc>${alts}\n  </url>`;
+      const lastmod = page.updated ? `\n    <lastmod>${page.updated}</lastmod>` : '';
+      return `  <url>\n    <loc>${ORIGIN}/${pagePath(page, l.code, locales)}</loc>${lastmod}${alts}\n  </url>`;
     });
   });
   return `<?xml version="1.0" encoding="UTF-8"?>

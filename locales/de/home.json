@@ -1,10 +1,9 @@
 {
-  "title": "Tap Time Tracker — Zeiterfassung mit einem Tipp, die auf deinem Gerät bleibt",
-  "description": "Kostenlose Zeiterfassung mit einem Tipp: ein großer Knopf pro Tätigkeit, beim Wechsel antippen und Tag, Woche und Monat auf einen Blick sehen. Ohne Konto, und was du erfasst, verlässt nie dein Gerät.",
+  "title": "Tap Time Tracker — private Zeiterfassung mit einem Tipp",
+  "description": "Kostenlose Zeiterfassung mit einem Tipp: ein Knopf pro Tätigkeit, beim Wechsel antippen, Tag, Woche, Monat sehen. Ohne Konto; nichts verlässt dein Gerät.",
   "og": {
     "title": "Tap Time Tracker — wisse, wo dein Tag geblieben ist",
-    "description": "Ein großer Knopf pro Tätigkeit: beim Wechsel antippen und Tag, Woche und Monat auf einen Blick sehen. Kostenlos, ohne Konto, und was du erfasst, verlässt nie dein Gerät.",
-    "imageAlt": "Der Hauptbildschirm von Tap Time Tracker: eine Kachel pro Tätigkeit mit der heutigen Zeit"
+    "description": "Ein großer Knopf pro Tätigkeit: beim Wechsel antippen und Tag, Woche und Monat auf einen Blick sehen. Kostenlos, ohne Konto, und was du erfasst, verlässt nie dein Gerät."
   },
   "ld": {
     "description": "Zeiterfassung mit einem Tipp: ein großer Knopf pro Tätigkeit, beim Wechsel antippen und Tag, Woche und Monat sehen. Ohne Konto; alles bleibt auf deinem Gerät.",
@@ -99,19 +98,24 @@
     "title": "Häufige Fragen",
     "items": {
       "free": { "q": "Ist Tap Time Tracker kostenlos?", "a": "Ja. Es ist kostenlos, ohne Werbung, ohne Bezahlversion und ohne Konto. Öffne die App in einem modernen Browser und leg los; mit der Live-Demo kannst du sie vorher mit Beispieldaten ausprobieren." },
+      "staysFree": { "q": "Bleibt es kostenlos?", "a": "Ja. Alles, was es heute kann, bleibt kostenlos. Falls es je bezahlte Extras gibt, kommen sie dazu – nie als Preis für das, was jetzt kostenlos ist." },
       "account": { "q": "Brauche ich ein Konto?", "a": "Nein. Keine Registrierung, keine E-Mail, kein Passwort. Deine Zeiterfassung liegt in dem Browser, in dem du sie öffnest, also gibt es nichts zum Anmelden und nichts zu vergessen." },
       "what": { "q": "Was kann ich damit erfassen?", "a": "Jede Tätigkeit, die du in den Einstellungen anlegst: Meetings, Aufgaben, Reviews, E-Mails, Pausen, den Arbeitsweg oder Übungszeit. Ordne sie Gruppen wie Arbeit und Zuhause zu, versieh sie mit eigenen Kategorien wie Fokusarbeit oder einem Kunden und gib jeder davon ein Tagesziel." },
+      "clients": { "q": "Kann ich Zeit für Kunden oder abrechenbare Arbeit erfassen?", "a": "Ja, mit Kategorien: Versieh Tätigkeiten mit einem Kunden, einem Projekt oder abrechenbar oder nicht, und die Übersicht zeigt die Stunden für jede davon über einen Tag, eine Woche, einen Monat oder einen beliebigen Zeitraum. Sie zählt nur Zeit; Stundensätze oder Rechnungen gibt es nicht." },
       "data": { "q": "Wo werden meine Daten gespeichert?", "a": "Im eigenen Speicher deines Browsers (IndexedDB) auf diesem Gerät und nirgendwo sonst. Sie werden nie hochgeladen, auch nicht auf diese Website. Den Browser verlassen sie nur in einer Sicherungsdatei, die du selbst exportierst." },
       "offline": { "q": "Funktioniert es offline?", "a": "Ja. Wenn du die App einmal geöffnet hast, startet sie auch ohne Verbindung, und auf dem Startbildschirm oder Desktop installiert läuft sie wie jede andere App. Die Erfassung braucht nie Internet, weil nichts verschickt wird." },
       "move": { "q": "Wie bringe ich meine Daten auf ein anderes Gerät?", "a": "Exportiere eine Sicherung: Öffne in der App Einstellungen → Sicherung und tippe auf JSON exportieren. Kopiere die Datei auf das andere Gerät, öffne dort die App und nutze an derselben Stelle JSON importieren. Der Import ersetzt die Daten dieses Profils, also exportiere vorher, falls es schon welche hat." },
+      "csv": { "q": "Kann ich nach CSV oder Excel exportieren?", "a": "Noch nicht: Ein CSV-Export ist für eine künftige Version geplant. Heute ist der Export eine JSON-Sicherungsdatei (Einstellungen → Sicherung → JSON exportieren), die alles enthält und sich auf jedem Gerät importieren lässt, und die Übersicht zeigt die Summen pro Tätigkeit, Gruppe oder Kategorie." },
       "several": { "q": "Können zwei Tätigkeiten gleichzeitig laufen?", "a": "Nein, und das mit Absicht. Wie bei einer Schachuhr stoppt der Start einer Tätigkeit die andere, sodass der Tag nie mehr als 24 Stunden ergibt. Tippe auf die laufende, um die Erfassung ganz zu stoppen." },
       "mini": { "q": "Kann der Timer über anderen Fenstern bleiben?", "a": "Ja, in Chrome und Edge auf dem Desktop: Das Mini-Fenster aus der Kopfzeile der App schwebt über deinen anderen Apps und wechselt oder stoppt Tätigkeiten mit einem Klick. Firefox, Safari und Smartphones bieten solche Fenster noch nicht an, dort fehlt der Button daher. Unter Linux mit Wayland entscheidet der Desktop, was oben bleibt; in KDE Plasma hilft eine Fensterregel, die es über anderen Fenstern hält." },
-      "devices": { "q": "Auf welchen Geräten läuft es?", "a": "Auf allem mit einem modernen Browser: Laptop, Tablet, Handy oder ein Touchscreen an der Wand. Jeder Browser hat seine eigene Erfassung, und es gibt keine Synchronisierung, also nimm eine Sicherungsdatei, um zu wechseln." }
+      "devices": { "q": "Auf welchen Geräten läuft es?", "a": "Auf allem mit einem modernen Browser: Laptop, Tablet, Handy oder ein Touchscreen an der Wand. Jeder Browser hat seine eigene Erfassung, und es gibt keine Synchronisierung, also nimm eine Sicherungsdatei, um zu wechseln." },
+      "iphone": { "q": "Gibt es eine iPhone- oder Android-App?", "a": "Es ist eine Web-App, die sich wie eine App installieren lässt. Öffne taptimetracker.app/app/ in Safari oder Chrome und füge sie zum Home-Bildschirm hinzu: Sie bekommt ein eigenes Symbol, öffnet sich ohne Browserleiste und läuft offline. Aus einem App Store muss nichts geladen werden." }
     }
   },
   "closing": {
     "title": "Gib ihm einen Tag.",
     "lead": "Erfasse morgen alles vom ersten Kaffee bis zur letzten Nachricht und sieh dir abends die Zeitleiste an. Die meisten sind überrascht.",
-    "demo": "Erst die Demo ausprobieren"
+    "demo": "Erst die Demo ausprobieren",
+    "compare": "Im Vergleich: 13 ähnliche Zeiterfassungen"
   }
 }

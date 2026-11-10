@@ -1,15 +1,17 @@
 {
-  "title": "Ähnliche Apps — Tap Time Tracker",
-  "description": "Andere Zeiterfassungen mit einem Tipp, geordnet von am ähnlichsten bis am wenigsten ähnlich zu Tap Time Tracker, und worin sie sich unterscheiden.",
-  "heading": "Ähnliche Apps",
+  "title": "13 Ein-Tipp-Zeiterfassungen im Vergleich — Tap Time Tracker",
+  "description": "TickTappy, aTimeLogger, Simple Time Tracker, Timeular und 9 weitere Zeiterfassungen mit einem Tipp, geordnet nach Ähnlichkeit zu Tap Time Tracker.",
+  "heading": "Zeiterfassungs-Apps mit einem Tipp im Vergleich",
   "intro": "Tap Time Tracker funktioniert wie eine Schachuhr: Tippe auf eine Tätigkeit, um sie zu starten, auf eine andere, um zu wechseln; es läuft immer nur eine, und vergangene Zeiten lassen sich korrigieren. Diese Apps funktionieren genauso oder ähnlich. Sie sind <strong>von am ähnlichsten bis am wenigsten ähnlich</strong> geordnet.",
+  "best": { "q": "Welche App ist Tap Time Tracker am ähnlichsten?", "a": "Das hängt vom Gerät ab. Auf iPhone, iPad und Mac kommt TickTappy am nächsten: Tags, die mit einem Tipp wechseln, und Timer, die in der Vergangenheit starten. aTimeLogger ist der bewährte Ein-Tipp-Logger für iOS, Simple Time Tracker die Open-Source-Wahl für Android. Keine davon läuft im Browser." },
+  "different": { "q": "Was kann Tap Time Tracker, was sie nicht können?" },
+  "compare": { "q": "Wie schneiden die 13 Apps im Vergleich ab?", "a": "Jede Zeile zeigt, wo die App läuft, was sie mit Tap Time Tracker gemeinsam hat und worin sie sich unterscheidet." },
   "takeaway": {
     "lead": "<strong>Kurz gesagt:</strong> keine vereint all das:",
     "web": "eine Webseite, die überall läuft und sich als offlinefähige App installieren lässt",
     "touch": "ein Layout für Touchscreens und Wandbildschirme",
     "backdate": "rückwirkendes „aktiv seit…“, das die Zeit anderen Tätigkeiten abzieht",
-    "offline": "Speicherung, die auf dem Gerät bleibt, ohne Konto",
-    "closest": "Am nächsten kommen native Handy-Apps: TickTappy, aTimeLogger und Simple Time Tracker."
+    "offline": "Speicherung, die auf dem Gerät bleibt, ohne Konto"
   },
   "source": "Quelle",
   "timeryFor": "für",

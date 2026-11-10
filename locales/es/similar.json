@@ -1,15 +1,17 @@
 {
-  "title": "Apps similares — Tap Time Tracker",
-  "description": "Otros registros de tiempo de un toque, ordenados de más a menos parecidos a Tap Time Tracker, y en qué se diferencian.",
-  "heading": "Apps similares",
+  "title": "13 apps de registro de tiempo de un toque — Tap Time Tracker",
+  "description": "TickTappy, aTimeLogger, Simple Time Tracker, Timeular y 9 apps más de registro de tiempo de un toque, ordenadas por su parecido con Tap Time Tracker.",
+  "heading": "Apps de registro de tiempo de un toque, comparadas",
   "intro": "Tap Time Tracker funciona como un reloj de ajedrez: toca una actividad para empezarla, toca otra para cambiar, solo corre una a la vez y los tiempos pasados se pueden corregir. Estas apps funcionan igual o de forma parecida. Están ordenadas <strong>de más a menos parecidas</strong>.",
+  "best": { "q": "¿Qué app se parece más a Tap Time Tracker?", "a": "Depende de tu dispositivo. En iPhone, iPad y Mac, la más parecida es TickTappy: etiquetas que se cambian con un toque y temporizadores iniciados en el pasado. aTimeLogger es el registro de un toque de siempre en iOS, y Simple Time Tracker la opción de código abierto para Android. Ninguna funciona en el navegador." },
+  "different": { "q": "¿Qué hace Tap Time Tracker que ellas no?" },
+  "compare": { "q": "¿Cómo se comparan las 13 apps?", "a": "Cada fila muestra dónde funciona la app, qué comparte con Tap Time Tracker y en qué se diferencia." },
   "takeaway": {
     "lead": "<strong>En resumen:</strong> ninguna reúne todo lo siguiente:",
     "web": "una página web que funciona en cualquier sitio y se instala como app que funciona sin conexión",
     "touch": "un diseño para pantalla táctil y pantalla de pared",
     "backdate": "un «activa desde…» retroactivo que quita ese tiempo a otras actividades",
-    "offline": "almacenamiento que se queda en el dispositivo, sin cuenta",
-    "closest": "Las más parecidas son apps nativas de móvil: TickTappy, aTimeLogger y Simple Time Tracker."
+    "offline": "almacenamiento que se queda en el dispositivo, sin cuenta"
   },
   "source": "fuente",
   "timeryFor": "para",

@@ -1,6 +1,8 @@
 {
   "brand": "Tap Time Tracker",
   "openApp": "アプリを開く",
+  "ogImageAlt": "Tap Time Tracker のメイン画面：活動ごとのタイルと今日の時間",
+  "updated": "最終更新：{date}",
   "footer": {
     "pages": "ページ",
     "language": "言語",

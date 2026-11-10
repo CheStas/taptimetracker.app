@@ -93,6 +93,7 @@ h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.1; letter-spacing: -0.02e
 .qa p { margin: 0; color: var(--muted); }
 .closing { text-align: center; }
 .closing .lead { max-width: 560px; margin-inline: auto; margin-bottom: 28px; }
+.closing .fine { margin-top: 24px; }
 
 .site-footer { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding-block: 24px; border-top: 1px solid var(--line); font-size: 14px; }
 .site-footer a { color: var(--muted); }
@@ -146,6 +147,7 @@ h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.1; letter-spacing: -0.02e
 .similar main > p, .similar main > ul { max-width: 760px; color: var(--muted); }
 .similar li + li { margin-top: 6px; }
 .similar strong { color: var(--text); font-weight: 600; }
+.similar main > h2 { font-size: 22px; line-height: 1.25; margin: 36px 0 10px; }
 .compare {
   margin: 32px 0 0; border-radius: 14px; border: 1px solid var(--line); background: var(--surface);
   box-shadow: 0 10px 30px var(--shadow); overflow: hidden;
@@ -198,7 +200,9 @@ h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.1; letter-spacing: -0.02e
 .legal main p, .legal main li { color: var(--muted); }
 .legal main strong { color: var(--text); font-weight: 600; }
 .legal main li + li { margin-top: 6px; }
-.legal .updated { font-size: 14px; }
+/* "Last updated …": the date the page last changed (privacy, terms, end of the FAQ and the similar apps). */
+.updated { font-size: 14px; color: var(--muted); }
+.faq .updated { text-align: center; margin: 32px 0 0; }
 .choice { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 16px 20px; border-radius: 14px; background: var(--chip); }
 .choice .button { min-height: 40px; cursor: pointer; font: inherit; font-weight: 600; }
 

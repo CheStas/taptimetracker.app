@@ -70,8 +70,42 @@ describe('site pages', () => {
     expect(sitemap(locales)).not.toContain('404');
   });
 
+  it('give every listed page a link preview, and none to the not-found page', () => {
+    for (const p of PAGES.filter((x) => !x.notFound)) {
+      for (const l of pageLocales(p, locales)) {
+        const html = renderPage(p, l.code, locales);
+        for (const tag of ['og:title', 'og:description', 'og:url', 'og:image', 'og:image:alt', 'og:locale']) {
+          expect(html, `${p.id} ${l.code} ${tag}`).toMatch(new RegExp(`<meta property="${tag}" content="[^"]+">`));
+        }
+        expect(html).toContain('<meta name="twitter:card" content="summary_large_image">');
+      }
+    }
+    // The home page keeps its own preview text; other pages fall back to their title.
+    expect(renderPage(page('home'), 'en', locales)).toContain('<meta property="og:title" content="Tap Time Tracker — know where your day went">');
+    expect(renderPage(page('privacy'), 'en', locales)).toContain('<meta property="og:title" content="Privacy — Tap Time Tracker">');
+    expect(renderPage(page('404'), 'en', locales)).not.toContain('og:');
+  });
+
+  it('show when a page last changed, in its language', () => {
+    expect(renderPage(page('privacy'), 'en', locales)).toContain('<p class="updated">Last updated 4 November 2026</p>');
+    expect(renderPage(page('home'), 'de', locales)).toContain('<p class="updated">Zuletzt aktualisiert am 10. November 2026</p>');
+  });
+
+  it('keep the titles and descriptions short enough to show in full in search results', () => {
+    for (const p of PAGES.filter((x) => !x.notFound)) {
+      for (const l of pageLocales(p, locales)) {
+        const html = renderPage(p, l.code, locales);
+        const title = html.match(/<title>([^<]*)<\/title>/)![1];
+        const description = html.match(/<meta name="description" content="([^"]*)"/)![1].replace(/&[a-z]+;/g, '_');
+        expect(title.length, `${p.id} ${l.code} title`).toBeLessThanOrEqual(60);
+        expect(description.length, `${p.id} ${l.code} description`).toBeLessThanOrEqual(160);
+      }
+    }
+  });
+
   it('list every page and language in the sitemap', () => {
     const xml = sitemap(locales);
+    expect(xml).toContain('<loc>https://taptimetracker.app/uk/similar/</loc>\n    <lastmod>2026-11-10</lastmod>');
     expect(xml).toContain('<loc>https://taptimetracker.app/uk/similar/</loc>');
     expect(xml).toContain('<loc>https://taptimetracker.app/privacy/</loc>');
     expect(xml).not.toContain('uk/privacy');
@@ -98,9 +132,12 @@ describe('structured data and answers', () => {
       const [app, faq, ...howtos] = ld(html);
       expect(app.name).toBe('Tap Time Tracker');
       expect(app.publisher.email).toBe(CONTACT);
+      expect(app.softwareVersion).toMatch(/^\d+\.\d+\.\d+$/);
+      expect(app.dateModified).toBe(page('home').updated);
+      expect(app.featureList.length).toBe(12);
       expect(faq.inLanguage).toBe(l.code);
       // Every question in the markup is a visible heading, and every step a visible list item.
-      expect(faq.mainEntity.length).toBe(9);
+      expect(faq.mainEntity.length).toBe(13);
       for (const q of faq.mainEntity) expect(html).toContain(`<h3>${q.name}</h3>`);
       for (const h of howtos) expect(h.step.length).toBe(3);
       expect(html).toContain('<section class="faq" id="faq">');
@@ -111,7 +148,8 @@ describe('structured data and answers', () => {
   it('give every other listed page a WebPage with breadcrumbs, and the similar page its ranked list', () => {
     const [webPage, list] = ld(renderPage(page('similar'), 'de', locales));
     expect(webPage['@type']).toBe('WebPage');
-    expect(webPage.name).toBe('Ähnliche Apps — Tap Time Tracker');
+    expect(webPage.name).toBe('13 Ein-Tipp-Zeiterfassungen im Vergleich — Tap Time Tracker');
+    expect(webPage.dateModified).toBe(page('similar').updated);
     expect(webPage.breadcrumb.itemListElement.map((i: { item: string }) => i.item))
       .toEqual(['https://taptimetracker.app/de/', 'https://taptimetracker.app/de/similar/']);
     expect(list['@type']).toBe('ItemList');
@@ -121,14 +159,16 @@ describe('structured data and answers', () => {
     expect(ld(renderPage(page('404'), 'en', locales))).toEqual([]);
   });
 
-  it('compare the similar apps in a table', () => {
+  it('compare the similar apps in a table, after question headings with short answers', () => {
     const html = renderPage(page('similar'), 'en', locales);
+    expect(html.match(/<h2>[^<]*\?<\/h2>/g)?.length).toBe(3);
     expect(html).toContain('<table class="tools">');
     expect(html.match(/<th scope="row">/g)?.length).toBe(13);
   });
 
   it('link the FAQ and the contact address from every footer', () => {
     expect(renderPage(page('home'), 'en', locales)).toContain('<a href="#faq">FAQ</a>');
+    expect(renderPage(page('home'), 'en', locales)).toContain('<p class="fine"><a href="./similar/">');
     const html = renderPage(page('similar'), 'uk', locales);
     expect(html).toContain('<a href="../../uk/#faq">Часті запитання</a>');
     expect(html).toContain(`<a href="mailto:${CONTACT}">${CONTACT}</a>`);

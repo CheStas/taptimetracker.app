@@ -1,6 +1,8 @@
 {
   "brand": "Tap Time Tracker",
   "openApp": "Uygulamayı aç",
+  "ogImageAlt": "Tap Time Tracker ana ekranı: her etkinlik için bugünkü süresiyle bir kutucuk",
+  "updated": "Son güncelleme: {date}",
   "footer": {
     "pages": "Sayfalar",
     "language": "Dil",

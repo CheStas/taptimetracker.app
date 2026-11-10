@@ -1,15 +1,17 @@
 {
-  "title": "Benzer uygulamalar — Tap Time Tracker",
-  "description": "Diğer tek dokunuşluk zaman takip uygulamaları; Tap Time Tracker’a en çok benzeyenden en aza doğru sıralı ve nasıl farklılaştıklarıyla.",
-  "heading": "Benzer uygulamalar",
+  "title": "13 tek dokunuşluk zaman takip uygulaması — Tap Time Tracker",
+  "description": "TickTappy, aTimeLogger, Simple Time Tracker, Timeular ve 9 tek dokunuşluk zaman takip uygulaması daha, Tap Time Tracker’a benzerliğine göre sıralı.",
+  "heading": "Tek dokunuşluk zaman takip uygulamaları karşılaştırması",
   "intro": "Tap Time Tracker bir satranç saati gibi çalışır: başlatmak için bir etkinliğe, geçmek için bir başkasına dokunun; aynı anda yalnızca biri çalışır ve geçmiş süreler düzeltilebilir. Bu uygulamalar aynı ya da benzer şekilde çalışır. <strong>En çok benzeyenden en aza doğru</strong> sıralanmıştır.",
+  "best": { "q": "Tap Time Tracker’a en çok benzeyen uygulama hangisi?", "a": "Cihazınıza bağlı. iPhone, iPad ve Mac’te en yakını TickTappy: tek dokunuşla geçilen etiketler ve geçmişte başlatılan zamanlayıcılar. aTimeLogger iOS’un köklü tek dokunuşluk kayıt uygulaması, Simple Time Tracker ise Android için açık kaynak seçenek. Hiçbiri tarayıcıda çalışmaz." },
+  "different": { "q": "Tap Time Tracker onların yapmadığı neyi yapar?" },
+  "compare": { "q": "13 uygulama nasıl karşılaştırılır?", "a": "Her satır, uygulamanın nerede çalıştığını, Tap Time Tracker ile ortak yönünü ve farkını gösterir." },
   "takeaway": {
     "lead": "<strong>Kısacası:</strong> hiçbiri şunların hepsini bir arada sunmuyor:",
     "web": "her yerde çalışan ve çevrimdışı çalışan bir uygulama olarak yüklenebilen bir web sayfası",
     "touch": "dokunmatik ekran ve duvar ekranı düzeni",
     "backdate": "süreyi diğer etkinliklerden alan “şu saatten beri etkin…” geriye dönük kayıt",
-    "offline": "hesap gerektirmeyen, cihazda kalan depolama",
-    "closest": "En yakın olanlar yerel telefon uygulamaları: TickTappy, aTimeLogger ve Simple Time Tracker."
+    "offline": "hesap gerektirmeyen, cihazda kalan depolama"
   },
   "source": "kaynak kodu",
   "timeryFor": "for",
