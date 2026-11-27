@@ -110,4 +110,6 @@ export interface Settings {
   summaryGroupLog: boolean;
   /** The Summary period used last. */
   summaryPeriod: PeriodKind;
+  /** Summary share chart: a donut or horizontal bars. */
+  summaryShareChart: 'donut' | 'bars';
 }

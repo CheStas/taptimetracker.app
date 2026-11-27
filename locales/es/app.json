@@ -14,7 +14,8 @@
   },
   "time": {
     "now": "ahora",
-    "ago": "hace {m} min"
+    "ago": "hace {m} min",
+    "time": "Hora"
   },
   "dur": {
     "hms": "{h} h {m} min {s} s",
@@ -236,37 +237,41 @@
       "deleteBody": "Se eliminan TODAS sus actividades, días e historial. No se puede deshacer (exporta antes una copia de seguridad)."
     },
     "groups": {
-      "intro": "La pantalla principal muestra las actividades de los grupos activados, además de las que no tienen grupo. Puede haber varios grupos activados a la vez; un grupo sigue activado o desactivado hasta que lo cambies.",
+      "intro": "La pantalla principal muestra las actividades de los grupos activados y las que no tienen grupo. Puede haber varios grupos activados a la vez; un grupo sigue activado o desactivado hasta que lo cambies. Los grupos no cambian el Resumen: para sumar el tiempo por tipo de trabajo, usa Categorías.",
       "placeholder": "Añadir grupos: uno por línea o separados por comas",
       "name": "Nombre del grupo",
       "on": "Activado",
       "deleteTitle": "¿Eliminar el grupo «{name}»?",
-      "deleteBody": "Sus actividades se conservan y pasan a «sin grupo»."
+      "deleteBody": "Sus actividades se conservan y pasan a «sin grupo».",
+      "purpose": "Mostrar u ocultar botones en la pantalla principal"
     },
     "categories": {
-      "intro": "Las categorías reparten tu tiempo en el Resumen. Una dimensión tiene opciones; cada actividad elige como mucho una opción por dimensión. Las actividades sin opción cuentan como «Sin definir», así que cada dimensión suma el 100 %.",
+      "intro": "Crea una lista de categorías, por ejemplo «Tipo de trabajo», añade sus categorías (Tareas, Reuniones, Descansos) y toca las actividades que pertenecen a cada una. En el Resumen, Agrupar por → Tipo de trabajo muestra entonces el tiempo por categoría. Las actividades sin categoría cuentan como «Sin definir», así que una lista siempre suma 100 %. Las categorías no cambian la pantalla principal: para mostrar u ocultar botones, usa Grupos.",
       "empty": "Aún no hay categorías",
-      "example": "Por ejemplo, {focus}: {productive} / {nonProductive}, o {company}: {people} / {alone}.",
+      "example": "Por ejemplo, {list}: {a} / {b} / {c}. Luego elige Agrupar por → {list} en el Resumen.",
       "addExample": "Añadir el ejemplo «{name}»",
-      "newName": "Nueva dimensión",
-      "addEmpty": "Añadir una dimensión vacía",
-      "placeholder": "Nueva dimensión, p. ej. Energía",
-      "add": "Añadir dimensión",
-      "dimension": "Dimensión",
-      "dimensionName": "Nombre de la dimensión",
+      "newName": "Nueva lista de categorías",
+      "addEmpty": "Añadir una lista vacía",
+      "placeholder": "Nueva lista de categorías, p. ej. Cliente",
+      "add": "Añadir lista",
+      "dimension": "Lista de categorías · en Resumen → Agrupar por",
+      "dimensionName": "Nombre de la lista de categorías",
       "set": {
         "one": "definida en {set} de {n} actividad",
         "many": "definida en {set} de {n} actividades",
         "other": "definida en {set} de {n} actividades"
       },
-      "deleteTitle": "¿Eliminar la dimensión «{name}»?",
-      "deleteBody": "Todas las actividades pierden su opción en ella. Nada más cambia.",
+      "deleteTitle": "¿Eliminar la lista de categorías «{name}»?",
+      "deleteBody": "Cada actividad pierde su categoría en ella. Nada más cambia.",
       "colorOf": "Color de {name}: {color}",
-      "optionName": "Nombre de la opción",
-      "deleteOptionTitle": "¿Eliminar la opción «{name}»?",
+      "optionName": "Nombre de la categoría",
+      "deleteOptionTitle": "¿Eliminar la categoría «{name}»?",
       "deleteOptionBody": "Sus actividades pasan a «Sin definir» en {dimension}.",
-      "addOption": "Añadir una opción",
-      "newOption": "Nueva opción"
+      "addOption": "Añadir una categoría",
+      "newOption": "Nueva categoría",
+      "purpose": "Sumar el tiempo en el Resumen",
+      "activitiesIn": "Actividades en {name}",
+      "moveFrom": "Ahora en {name}; toca para moverla aquí"
     },
     "activities": {
       "taken": "Ya existe (los nombres son únicos; una retirada se puede restaurar o eliminar abajo): {names}",
@@ -375,7 +380,11 @@
       "non-productive": "No productivo",
       "company": "Compañía",
       "with people": "Con gente",
-      "alone": "A solas"
+      "alone": "A solas",
+      "work type": "Tipo de trabajo",
+      "tasks": "Tareas",
+      "meetings": "Reuniones",
+      "breaks": "Descansos"
     }
   },
   "summary": {
@@ -456,7 +465,7 @@
       "other": "objetivo {target} · cumplido {met} de {n} días"
     },
     "share": "Proporción",
-    "tapOption": "toca una opción para ver sus actividades",
+    "tapOption": "toca una categoría para ver sus actividades",
     "avgOver": "media de los días registrados",
     "shareOfTime": "Proporción del tiempo",
     "donutHours": "{h} h",
@@ -479,6 +488,11 @@
       "one": "sin datos el día anterior",
       "many": "sin datos en los {n} días anteriores",
       "other": "sin datos en los {n} días anteriores"
+    },
+    "chart": "Gráfico",
+    "charts": {
+      "donut": "Anillo",
+      "bars": "Barras"
     }
   },
   "dialogs": {

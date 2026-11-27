@@ -123,9 +123,10 @@ async function openProfile(profile: Profile) {
   const [groups, categories, activities, days] = await Promise.all([
     db.getAllOf('groups', profile.id), db.getAllOf('categories', profile.id), db.getAllOf('activities', profile.id), db.getAllOf('days', profile.id),
   ]);
-  const day = days.find((d) => d.endedAt === null) ?? (await startDay(profile.id, Date.now()));
-  const segments = await db.segmentsOfDay(day.id);
   profile.settings = withDefaults(profile.settings); // settings added since the profile was stored
+  const open = days.find((d) => d.endedAt === null);
+  const day = open ? await backdateStart(open, days, profile.settings.resetHour) : await startDay(profile.id, dayStart(Date.now(), days, profile.settings.resetHour));
+  const segments = await db.segmentsOfDay(day.id);
   // Activities from before color slots: store them once with their slot.
   const upgraded = activities.filter((a) => typeof a.colorSlot !== 'number').map(normalizeActivity);
   if (upgraded.length) await db.put('activities', ...upgraded);
@@ -134,6 +135,21 @@ async function openProfile(profile: Profile) {
   Object.assign(state, { profile, groups: byOrder(groups.map(normalizeGroup)), categories: dims, activities: byOrder(all), day, segments, pastDay: null });
   await checkRollover(Date.now());
   emit('change');
+}
+
+/** Where a day opened at `at` starts: the last reset boundary, or the end of a day closed after it (§5). */
+function dayStart(at: number, days: Day[], resetHour: number) {
+  const ends = days.filter((d) => d.endedAt !== null && d.endedAt <= at).map((d) => d.endedAt!);
+  return Math.min(at, Math.max(lastBoundaryBefore(at, resetHour), ...ends));
+}
+
+/** An open day that started at the first app start (older versions) moves back to its day start, once. */
+async function backdateStart(day: Day, days: Day[], resetHour: number) {
+  const start = dayStart(day.startedAt, days.filter((d) => d.id !== day.id), resetHour);
+  if (start >= day.startedAt) return day;
+  const moved = { ...day, startedAt: start };
+  await db.put('days', moved);
+  return moved;
 }
 
 async function startDay(profileId: string, at: number) {

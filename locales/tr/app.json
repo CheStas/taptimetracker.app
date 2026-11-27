@@ -14,7 +14,8 @@
   },
   "time": {
     "now": "şimdi",
-    "ago": "{m} dk önce"
+    "ago": "{m} dk önce",
+    "time": "Saat"
   },
   "dur": {
     "hms": "{h} sa {m} dk {s} sn",
@@ -234,36 +235,40 @@
       "deleteBody": "TÜM etkinlikleri, günleri ve geçmişi silinir. Bu geri alınamaz (önce bir yedek dışa aktarın)."
     },
     "groups": {
-      "intro": "Ana ekran açık grupların etkinliklerini ve grubu olmayanları gösterir. Aynı anda birden çok grup açık olabilir; bir grup siz değiştirene kadar açık ya da kapalı kalır.",
+      "intro": "Ana ekran, açık grupların etkinliklerini ve grubu olmayanları gösterir. Aynı anda birden çok grup açık olabilir; bir grup siz değiştirene kadar açık ya da kapalı kalır. Gruplar Özet’i değiştirmez: zamanı iş türüne göre toplamak için Kategorileri kullanın.",
       "placeholder": "Grup ekleyin: her satıra bir tane ya da virgülle ayırarak",
       "name": "Grup adı",
       "on": "Açık",
       "deleteTitle": "“{name}” grubu silinsin mi?",
-      "deleteBody": "Etkinlikleri korunur ve “grupsuz”a taşınır."
+      "deleteBody": "Etkinlikleri korunur ve “grupsuz”a taşınır.",
+      "purpose": "Ana ekrandaki düğmeleri göster veya gizle"
     },
     "categories": {
-      "intro": "Kategoriler Özet’te sürenizi böler. Bir boyutun seçenekleri vardır; her etkinlik boyut başına en fazla bir seçenek seçer. Seçeneği olmayan etkinlikler “Belirtilmedi” sayılır, böylece her boyut %100 eder.",
+      "intro": "Bir kategori listesi oluşturun, örneğin “İş türü”, kategorilerini ekleyin (Görevler, Toplantılar, Molalar) ve her birine ait etkinliklere dokunun. Özet’te Grupla → İş türü, zamanı kategoriye göre gösterir. Kategorisi olmayan etkinlikler “Belirtilmedi” sayılır, böylece bir liste her zaman %100 eder. Kategoriler ana ekranı değiştirmez: düğmeleri göstermek veya gizlemek için Grupları kullanın.",
       "empty": "Henüz kategori yok",
-      "example": "Örneğin {focus}: {productive} / {nonProductive} ya da {company}: {people} / {alone}.",
+      "example": "Örneğin {list}: {a} / {b} / {c}. Sonra Özet’te Grupla → {list} seçin.",
       "addExample": "“{name}” örneğini ekle",
-      "newName": "Yeni boyut",
-      "addEmpty": "Boş bir boyut ekle",
-      "placeholder": "Yeni boyut, ör. Enerji",
-      "add": "Boyut ekle",
-      "dimension": "Boyut",
-      "dimensionName": "Boyut adı",
+      "newName": "Yeni kategori listesi",
+      "addEmpty": "Boş liste ekle",
+      "placeholder": "Yeni kategori listesi, ör. Müşteri",
+      "add": "Liste ekle",
+      "dimension": "Kategori listesi · Özet → Grupla’da görünür",
+      "dimensionName": "Kategori listesi adı",
       "set": {
         "one": "{n} etkinlikten {set} tanesinde belirtildi",
         "other": "{n} etkinlikten {set} tanesinde belirtildi"
       },
-      "deleteTitle": "“{name}” boyutu silinsin mi?",
-      "deleteBody": "Her etkinlik bu boyuttaki seçeneğini kaybeder. Başka hiçbir şey değişmez.",
+      "deleteTitle": "“{name}” kategori listesi silinsin mi?",
+      "deleteBody": "Her etkinlik bu listedeki kategorisini kaybeder. Başka hiçbir şey değişmez.",
       "colorOf": "{name} rengi: {color}",
-      "optionName": "Seçenek adı",
-      "deleteOptionTitle": "“{name}” seçeneği silinsin mi?",
-      "deleteOptionBody": "Etkinlikleri {dimension} için “Belirtilmedi” olur.",
-      "addOption": "Seçenek ekle",
-      "newOption": "Yeni seçenek"
+      "optionName": "Kategori adı",
+      "deleteOptionTitle": "“{name}” kategorisi silinsin mi?",
+      "deleteOptionBody": "Etkinlikleri {dimension} içinde “Belirtilmedi” olur.",
+      "addOption": "Kategori ekle",
+      "newOption": "Yeni kategori",
+      "purpose": "Özet’te zamanı topla",
+      "activitiesIn": "{name} içindeki etkinlikler",
+      "moveFrom": "Şu an {name} içinde; buraya taşımak için dokunun"
     },
     "activities": {
       "taken": "Zaten var (adlar benzersizdir; kaldırılmış biri aşağıda geri yüklenebilir ya da silinebilir): {names}",
@@ -372,7 +377,11 @@
       "non-productive": "Verimsiz",
       "company": "Birliktelik",
       "with people": "İnsanlarla",
-      "alone": "Yalnız"
+      "alone": "Yalnız",
+      "work type": "İş türü",
+      "tasks": "Görevler",
+      "meetings": "Toplantılar",
+      "breaks": "Molalar"
     }
   },
   "summary": {
@@ -449,7 +458,7 @@
       "other": "hedef {target} · {n} günün {met} gününde tuttu"
     },
     "share": "Pay",
-    "tapOption": "etkinliklerini görmek için bir seçeneğe dokunun",
+    "tapOption": "etkinliklerini görmek için bir kategoriye dokunun",
     "avgOver": "kayıtlı günlerin ortalaması",
     "shareOfTime": "Zaman payı",
     "donutHours": "{h} sa",
@@ -470,6 +479,11 @@
     "noDataDays": {
       "one": "önceki günde veri yok",
       "other": "önceki {n} günde veri yok"
+    },
+    "chart": "Grafik",
+    "charts": {
+      "donut": "Halka",
+      "bars": "Çubuklar"
     }
   },
   "dialogs": {

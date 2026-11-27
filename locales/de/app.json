@@ -14,7 +14,8 @@
   },
   "time": {
     "now": "jetzt",
-    "ago": "vor {m} Min."
+    "ago": "vor {m} Min.",
+    "time": "Uhrzeit"
   },
   "dur": {
     "hms": "{h} Std. {m} Min. {s} s",
@@ -234,36 +235,40 @@
       "deleteBody": "ALLE Tätigkeiten, Tage und die Historie werden gelöscht. Das lässt sich nicht rückgängig machen (exportiere vorher eine Sicherung)."
     },
     "groups": {
-      "intro": "Der Hauptbildschirm zeigt die Tätigkeiten eingeschalteter Gruppen sowie die ohne Gruppe. Mehrere Gruppen können gleichzeitig an sein; eine Gruppe bleibt an oder aus, bis du es änderst.",
+      "intro": "Der Hauptbildschirm zeigt die Aktivitäten eingeschalteter Gruppen und die ohne Gruppe. Mehrere Gruppen können gleichzeitig an sein; eine Gruppe bleibt an oder aus, bis du es änderst. Gruppen ändern die Übersicht nicht: Um Zeit nach Art der Arbeit zusammenzuzählen, nutze Kategorien.",
       "placeholder": "Gruppen hinzufügen: eine pro Zeile oder durch Kommas getrennt",
       "name": "Gruppenname",
       "on": "An",
       "deleteTitle": "Gruppe „{name}“ löschen?",
-      "deleteBody": "Ihre Tätigkeiten bleiben erhalten und wandern zu „keine Gruppe“."
+      "deleteBody": "Ihre Tätigkeiten bleiben erhalten und wandern zu „keine Gruppe“.",
+      "purpose": "Buttons auf dem Hauptbildschirm ein- oder ausblenden"
     },
     "categories": {
-      "intro": "Kategorien teilen deine Zeit in der Übersicht auf. Eine Dimension hat Optionen; jede Tätigkeit wählt höchstens eine Option pro Dimension. Tätigkeiten ohne Option zählen als „Nicht festgelegt“, also ergibt jede Dimension 100 %.",
+      "intro": "Lege eine Kategorienliste an, zum Beispiel „Arbeitsart“, füge ihre Kategorien hinzu (Aufgaben, Meetings, Pausen) und tippe die Aktivitäten an, die jeweils dazugehören. In der Übersicht zeigt Gruppieren nach → Arbeitsart dann die Zeit pro Kategorie. Aktivitäten ohne Kategorie zählen als „Nicht gesetzt“, so ergibt eine Liste immer 100 %. Kategorien ändern den Hauptbildschirm nicht: Um Buttons ein- oder auszublenden, nutze Gruppen.",
       "empty": "Noch keine Kategorien",
-      "example": "Zum Beispiel {focus}: {productive} / {nonProductive} oder {company}: {people} / {alone}.",
+      "example": "Zum Beispiel {list}: {a} / {b} / {c}. Dann in der Übersicht Gruppieren nach → {list} wählen.",
       "addExample": "Beispiel „{name}“ hinzufügen",
-      "newName": "Neue Dimension",
-      "addEmpty": "Leere Dimension hinzufügen",
-      "placeholder": "Neue Dimension, z. B. Energie",
-      "add": "Dimension hinzufügen",
-      "dimension": "Dimension",
-      "dimensionName": "Name der Dimension",
+      "newName": "Neue Kategorienliste",
+      "addEmpty": "Leere Liste hinzufügen",
+      "placeholder": "Neue Kategorienliste, z. B. Kunde",
+      "add": "Liste hinzufügen",
+      "dimension": "Kategorienliste · in der Übersicht unter Gruppieren nach",
+      "dimensionName": "Name der Kategorienliste",
       "set": {
         "one": "bei {set} von {n} Tätigkeit festgelegt",
         "other": "bei {set} von {n} Tätigkeiten festgelegt"
       },
-      "deleteTitle": "Dimension „{name}“ löschen?",
-      "deleteBody": "Jede Tätigkeit verliert ihre Option darin. Sonst ändert sich nichts.",
+      "deleteTitle": "Kategorienliste „{name}“ löschen?",
+      "deleteBody": "Jede Aktivität verliert ihre Kategorie darin. Sonst ändert sich nichts.",
       "colorOf": "Farbe von {name}: {color}",
-      "optionName": "Name der Option",
-      "deleteOptionTitle": "Option „{name}“ löschen?",
-      "deleteOptionBody": "Ihre Tätigkeiten werden für {dimension} zu „Nicht festgelegt“.",
-      "addOption": "Option hinzufügen",
-      "newOption": "Neue Option"
+      "optionName": "Name der Kategorie",
+      "deleteOptionTitle": "Kategorie „{name}“ löschen?",
+      "deleteOptionBody": "Ihre Aktivitäten werden in {dimension} zu „Nicht gesetzt“.",
+      "addOption": "Kategorie hinzufügen",
+      "newOption": "Neue Kategorie",
+      "purpose": "Zeit in der Übersicht zusammenzählen",
+      "activitiesIn": "Aktivitäten in {name}",
+      "moveFrom": "Jetzt in {name}; tippen, um sie hierher zu verschieben"
     },
     "activities": {
       "taken": "Existiert bereits (Namen sind eindeutig; eine entfernte kann unten wiederhergestellt oder gelöscht werden): {names}",
@@ -372,7 +377,11 @@
       "non-productive": "Unproduktiv",
       "company": "Gesellschaft",
       "with people": "Mit anderen",
-      "alone": "Allein"
+      "alone": "Allein",
+      "work type": "Arbeitsart",
+      "tasks": "Aufgaben",
+      "meetings": "Meetings",
+      "breaks": "Pausen"
     }
   },
   "summary": {
@@ -449,7 +458,7 @@
       "other": "Ziel {target} · erreicht an {met} von {n} Tagen"
     },
     "share": "Anteil",
-    "tapOption": "tippe auf eine Option, um ihre Tätigkeiten zu sehen",
+    "tapOption": "tippe auf eine Kategorie, um ihre Aktivitäten zu sehen",
     "avgOver": "Ø über erfasste Tage",
     "shareOfTime": "Zeitanteil",
     "donutHours": "{h} Std.",
@@ -470,6 +479,11 @@
     "noDataDays": {
       "one": "keine Daten am Vortag",
       "other": "keine Daten in den vorherigen {n} Tagen"
+    },
+    "chart": "Diagramm",
+    "charts": {
+      "donut": "Ring",
+      "bars": "Balken"
     }
   },
   "dialogs": {

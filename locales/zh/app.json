@@ -14,7 +14,8 @@
   },
   "time": {
     "now": "现在",
-    "ago": "{m} 分钟前"
+    "ago": "{m} 分钟前",
+    "time": "时间"
   },
   "dur": {
     "hms": "{h}小时{m}分{s}秒",
@@ -232,35 +233,39 @@
       "deleteBody": "它的所有活动、日期记录和历史都会被删除。此操作无法撤销（请先导出备份）。"
     },
     "groups": {
-      "intro": "主界面会显示已开启分组中的活动，以及未分组的活动。可以同时开启多个分组；分组的开关状态会一直保持，直到你更改。",
+      "intro": "主屏幕显示已开启分组中的活动，以及没有分组的活动。可以同时开启多个分组；分组会保持开启或关闭，直到你更改。分组不会改变汇总：要按工作类型合计时间，请使用类别。",
       "placeholder": "添加分组：每行一个，或用逗号分隔",
       "name": "分组名称",
       "on": "开启",
       "deleteTitle": "删除分组“{name}”？",
-      "deleteBody": "其中的活动会保留，并移到“未分组”。"
+      "deleteBody": "其中的活动会保留，并移到“未分组”。",
+      "purpose": "在主屏幕上显示或隐藏按钮"
     },
     "categories": {
-      "intro": "分类用于在汇总中拆分你的时间。每个维度有若干选项；每项活动在每个维度中最多选择一个选项。未选择的活动计为“未设置”，因此每个维度合计都是 100%。",
+      "intro": "创建一个类别列表，例如“工作类型”，添加其中的类别（任务、会议、休息），然后点按属于每个类别的活动。在汇总中选择“分组依据”→“工作类型”，即可看到每个类别的时间。不属于任何类别的活动计为“未设置”，因此一个列表总是合计为 100%。类别不会改变主屏幕：要显示或隐藏按钮，请使用分组。",
       "empty": "还没有分类",
-      "example": "例如，{focus}：{productive} / {nonProductive}，或 {company}：{people} / {alone}。",
+      "example": "例如，{list}：{a} / {b} / {c}。然后在汇总中选择“分组依据”→ {list}。",
       "addExample": "添加示例“{name}”",
-      "newName": "新维度",
-      "addEmpty": "添加空维度",
-      "placeholder": "新维度，例如：精力",
-      "add": "添加维度",
-      "dimension": "维度",
-      "dimensionName": "维度名称",
+      "newName": "新的类别列表",
+      "addEmpty": "添加空列表",
+      "placeholder": "新的类别列表，例如 客户",
+      "add": "添加列表",
+      "dimension": "类别列表 · 显示在 汇总 →“分组依据”",
+      "dimensionName": "类别列表名称",
       "set": {
         "other": "{n} 项活动中已设置 {set} 项"
       },
-      "deleteTitle": "删除维度“{name}”？",
-      "deleteBody": "所有活动在该维度中的选项都会被移除。其他内容不变。",
+      "deleteTitle": "删除类别列表“{name}”？",
+      "deleteBody": "每个活动都会失去在其中的类别。其他不变。",
       "colorOf": "{name}的颜色：{color}",
-      "optionName": "选项名称",
-      "deleteOptionTitle": "删除选项“{name}”？",
-      "deleteOptionBody": "这些活动在“{dimension}”中会变为“未设置”。",
-      "addOption": "添加选项",
-      "newOption": "新选项"
+      "optionName": "类别名称",
+      "deleteOptionTitle": "删除类别“{name}”？",
+      "deleteOptionBody": "其活动在 {dimension} 中变为“未设置”。",
+      "addOption": "添加类别",
+      "newOption": "新类别",
+      "purpose": "在汇总中合计时间",
+      "activitiesIn": "{name} 中的活动",
+      "moveFrom": "目前在 {name}；点按移到这里"
     },
     "activities": {
       "taken": "已存在（名称不能重复；已移除的活动可在下方恢复或删除）：{names}",
@@ -369,7 +374,11 @@
       "non-productive": "低效",
       "company": "陪伴",
       "with people": "和他人一起",
-      "alone": "独自"
+      "alone": "独自",
+      "work type": "工作类型",
+      "tasks": "任务",
+      "meetings": "会议",
+      "breaks": "休息"
     }
   },
   "summary": {
@@ -442,7 +451,7 @@
       "other": "目标 {target} · {n} 天中有 {met} 天达成"
     },
     "share": "占比",
-    "tapOption": "点一个选项查看其活动",
+    "tapOption": "点按类别查看其活动",
     "avgOver": "记录日平均",
     "shareOfTime": "时间占比",
     "donutHours": "{h}小时",
@@ -461,6 +470,11 @@
     "noDataMonth": "{month}没有数据",
     "noDataDays": {
       "other": "之前 {n} 天没有数据"
+    },
+    "chart": "图表",
+    "charts": {
+      "donut": "环形",
+      "bars": "条形"
     }
   },
   "dialogs": {

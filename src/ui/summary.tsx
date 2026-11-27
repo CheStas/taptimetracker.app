@@ -243,9 +243,9 @@ const nameIn = (records: Map<string, Day>) => (activityId: string, dayId: string
   (dayId ? records.get(dayId)?.snapshot?.activities?.[activityId]?.name : undefined) ?? activityById(activityId)?.name ?? '?';
 type NameOf = ReturnType<typeof nameIn>;
 
-const Card = ({ label, title, hint, children, class: cls = '' }: { label: string; title: ComponentChildren; hint?: ComponentChildren; children: ComponentChildren; class?: string }) => (
+const Card = ({ label, title, hint, extra, children, class: cls = '' }: { label: string; title: ComponentChildren; hint?: ComponentChildren; extra?: ComponentChildren; children: ComponentChildren; class?: string }) => (
   <section class={`card ${cls}`} aria-label={label}>
-    <div class="card-head"><h2>{title}</h2>{hint && <span class="card-hint">{hint}</span>}</div>
+    <div class="card-head"><h2>{title}</h2>{hint && <span class="card-hint">{hint}</span>}{extra}</div>
     {children}
   </section>
 );
@@ -640,13 +640,24 @@ function PerDay({ period, stats, g, nameOf, resetHour, weekStart, onOpenDay }: {
   );
 }
 
-// ---------- share: donut + table ----------
+// ---------- share: donut or bars + table, highlighted together ----------
 
 const R = 60;
 const CIRC = 2 * Math.PI * R;
 
 function Share({ period, stats, g, nameOf }: { period: Period; stats: PeriodStats; g: Grouping; nameOf: NameOf }) {
   const [open, setOpen] = useState<Record<string, boolean>>({});
+  // The highlighted item: a group key (activity, or option with a dimension) and, inside an option, one activity.
+  const [hi, setHi] = useState<{ k: string; act?: string } | null>(null);
+  const chart = state.profile.settings.summaryShareChart ?? 'donut';
+  const hover = (k: string, act?: string) => ({
+    onMouseEnter: () => setHi({ k, act }),
+    onMouseLeave: () => setHi(null),
+    onFocus: () => setHi({ k, act }),
+    onBlur: () => setHi(null),
+  });
+  const isHi = (k: string) => hi?.k === k;
+  const hiCls = (on: boolean) => (on ? ' hi' : hi ? ' lo' : '');
   const isDay = period.kind === 'day';
   const groups = totalsBy(stats.byActivity, g.keyOf);
   const total = stats.total;
@@ -655,12 +666,12 @@ function Share({ period, stats, g, nameOf }: { period: Period; stats: PeriodStat
   const avg = (ms: number) => (stats.tracked ? fmtHours(ms / stats.tracked) : '—');
   let acc = 0;
 
-  const actRow = (id: string, ms: number, nested: boolean) => {
+  const actRow = (id: string, ms: number, nested: boolean, k = id) => {
     const a = activityById(id);
     const target = a?.targetMin ? a.targetMin * MIN : 0;
     const over = target && ms > target;
     return (
-      <div key={id} class={`share-row${nested ? ' nested' : ''}`}>
+      <div key={id} class={`share-row${nested ? ' nested' : ''}${nested ? (hi?.act === id ? ' hi' : '') : hiCls(isHi(k))}`} {...hover(k, nested ? id : undefined)}>
         <span class="share-name">
           <span class="share-line">
             <span class="sq" style={{ background: slotColor(a?.colorSlot ?? 0) }} />
@@ -683,26 +694,57 @@ function Share({ period, stats, g, nameOf }: { period: Period; stats: PeriodStat
     );
   };
 
+  const keyName = (k: string) => (g.dim ? g.name(k) : nameOf(k, dayId));
+  const hiGroup = hi && groups.find(([k]) => k === hi.k);
+  // Tapping a segment or bar toggles its highlight (touch has no hover).
+  const tap = (k: string) => () => setHi(isHi(k) ? null : { k });
+  const top = groups[0]?.[1].total ?? 1;
+
   return (
     <Card
       label={t('summary.share')} title={<>{t('summary.share')} <span class="muted">· {g.dim?.name ?? t('summary.activity')}</span></>}
       hint={g.dim ? t('summary.tapOption') : isDay ? '' : t('summary.avgOver')}
+      extra={
+        <span class="segmented share-chart" role="group" aria-label={t('summary.chart')}>
+          {(['donut', 'bars'] as const).map((c) => (
+            <button key={c} class="seg small" aria-pressed={chart === c} onClick={() => setSetting('summaryShareChart', c)}>{t(`summary.charts.${c}`)}</button>
+          ))}
+        </span>
+      }
     >
-      <div class="share">
-        <svg class="donut" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label={t('summary.shareOfTime')}>
-          <circle cx="80" cy="80" r={R} fill="none" stroke="var(--track)" stroke-width="22" />
-          {groups.map(([k, v]) => {
-            const len = (v.total / total) * CIRC;
-            const el = (
-              <circle key={k} cx="80" cy="80" r={R} fill="none" stroke={g.color(k)} stroke-width="22" transform="rotate(-90 80 80)"
-                stroke-dasharray={`${Math.max(len - 1.5, 0)} ${CIRC}`} stroke-dashoffset={-acc} />
-            );
-            acc += len;
-            return el;
-          })}
-          <text x="80" y="80" text-anchor="middle" class="donut-total">{t('summary.donutHours', { h: Math.round(total / 3600000) })}</text>
-          <text x="80" y="97" text-anchor="middle" class="donut-sub">{t('main.tracked')}</text>
-        </svg>
+      <div class={`share ${chart}`}>
+        {chart === 'donut' ? (
+          <svg class="donut" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label={t('summary.shareOfTime')}>
+            <circle cx="80" cy="80" r={R} fill="none" stroke="var(--track)" stroke-width="22" />
+            {groups.map(([k, v]) => {
+              const len = (v.total / total) * CIRC;
+              const el = (
+                <circle key={k} class={`seg-arc${hiCls(isHi(k))}`} cx="80" cy="80" r={R} fill="none" stroke={g.color(k)} stroke-width="22" transform="rotate(-90 80 80)"
+                  stroke-dasharray={`${Math.max(len - 1.5, 0)} ${CIRC}`} stroke-dashoffset={-acc} {...hover(k)} onClick={tap(k)}>
+                  <title>{`${keyName(k)} · ${fmtHours(v.total)} · ${pct(v.total)}`}</title>
+                </circle>
+              );
+              acc += len;
+              return el;
+            })}
+            {hiGroup ? <>
+              <text x="80" y="80" text-anchor="middle" class="donut-total">{pct(hiGroup[1].total)}</text>
+              <text x="80" y="97" text-anchor="middle" class="donut-sub">{keyName(hiGroup[0]).length > 18 ? `${keyName(hiGroup[0]).slice(0, 17)}…` : keyName(hiGroup[0])}</text>
+            </> : <>
+              <text x="80" y="80" text-anchor="middle" class="donut-total">{t('summary.donutHours', { h: Math.round(total / 3600000) })}</text>
+              <text x="80" y="97" text-anchor="middle" class="donut-sub">{t('main.tracked')}</text>
+            </>}
+          </svg>
+        ) : (
+          <div class="share-bars" role="img" aria-label={t('summary.shareOfTime')}>
+            {groups.map(([k, v]) => (
+              <div key={k} class={`share-bar${hiCls(isHi(k))}`} {...hover(k)} onClick={tap(k)}>
+                <span class="share-bar-label"><span class="ellipsis">{keyName(k)}</span><span class="num muted">{pct(v.total)}</span></span>
+                <span class="share-bar-track"><span style={{ width: `${(v.total / top) * 100}%`, background: g.color(k) }} /></span>
+              </div>
+            ))}
+          </div>
+        )}
         <div class="share-table">
           <div class="share-row head"><span>{t('summary.name')}</span><span>{t('summary.totalCol')}</span><span>{t('summary.share')}</span><span class="hide-sm">{t(isDay ? 'summary.target' : 'summary.avgDay')}</span></div>
           {g.dim
@@ -711,7 +753,7 @@ function Share({ period, stats, g, nameOf }: { period: Period; stats: PeriodStat
               const acts = [...v.activities].sort((x, y) => stats.byActivity.get(y)! - stats.byActivity.get(x)!);
               return (
                 <div key={k}>
-                  <button class="share-row option" aria-expanded={on} onClick={() => setOpen({ ...open, [k]: !on })}>
+                  <button class={`share-row option${hiCls(isHi(k))}`} aria-expanded={on} onClick={() => setOpen({ ...open, [k]: !on })} {...hover(k)}>
                     <span class="share-line">
                       <span class={`chev-r${on ? ' open' : ''}`}><Icon name="chevronRight" /></span>
                       <span class="sq" style={{ background: g.color(k) }} />
@@ -722,7 +764,7 @@ function Share({ period, stats, g, nameOf }: { period: Period; stats: PeriodStat
                     <span class="num muted">{pct(v.total)}</span>
                     <span class="num muted c4 hide-sm">{isDay ? '' : avg(v.total)}</span>
                   </button>
-                  {on && acts.map((id) => actRow(id, stats.byActivity.get(id)!, true))}
+                  {on && acts.map((id) => actRow(id, stats.byActivity.get(id)!, true, k))}
                 </div>
               );
             })

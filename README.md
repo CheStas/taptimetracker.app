@@ -83,9 +83,10 @@ See `docs/SPEC.md` §20 for what is collected; the privacy page (`src/site/pages
 - **Summary** (header chart icon): a Day, Week, Month or Custom period with ‹ › and a calendar picker; figure tiles,
   the day's timeline or one row per day, the share per activity, and the day's sessions. It ticks live while an
   activity runs.
-- **Categories** (Settings → Categories): dimensions such as Focus (Productive / Non-productive) or Company (With
-  people / Alone). Each activity picks at most one option per dimension; the Summary can group time by any dimension,
-  with the rest shown as "Not set".
+- **Categories** (Settings → Categories): category lists such as Work type (Tasks / Meetings / Breaks); tap the
+  activities that belong to each category. Each activity is in at most one category per list; Summary → Group by
+  adds time up by any list, with the rest shown as "Not set". Groups, by contrast, only show or hide buttons on the
+  main screen.
 - **Settings → Appearance → Theme:** 7 built-in themes (Paper, Graphite, Dune, Tokyo Night, Gruvbox Dark, Nord,
   Solarized Light), fixed or following the system's light/dark mode. **Import theme** reads our own theme files,
   VS Code color themes, base16 (`.yaml`/`.json`), Alacritty `.toml` and iTerm `.itermcolors`. Each activity has one of

@@ -14,7 +14,8 @@
   },
   "time": {
     "now": "maintenant",
-    "ago": "il y a {m} min"
+    "ago": "il y a {m} min",
+    "time": "Heure"
   },
   "dur": {
     "hms": "{h} h {m} min {s} s",
@@ -236,37 +237,41 @@
       "deleteBody": "TOUTES ses activités, journées et son historique sont supprimés. C’est irréversible (exportez d’abord une sauvegarde)."
     },
     "groups": {
-      "intro": "L’écran principal affiche les activités des groupes activés, ainsi que celles sans groupe. Plusieurs groupes peuvent être activés en même temps ; un groupe reste activé ou désactivé jusqu’à ce que vous le changiez.",
+      "intro": "L’écran principal montre les activités des groupes activés et celles sans groupe. Plusieurs groupes peuvent être activés en même temps ; un groupe reste activé ou désactivé jusqu’à ce que vous le changiez. Les groupes ne changent pas le Résumé : pour additionner le temps par type de travail, utilisez les Catégories.",
       "placeholder": "Ajouter des groupes : un par ligne ou séparés par des virgules",
       "name": "Nom du groupe",
       "on": "Activé",
       "deleteTitle": "Supprimer le groupe « {name} » ?",
-      "deleteBody": "Ses activités sont conservées et passent dans « sans groupe »."
+      "deleteBody": "Ses activités sont conservées et passent dans « sans groupe ».",
+      "purpose": "Afficher ou masquer des boutons sur l’écran principal"
     },
     "categories": {
-      "intro": "Les catégories répartissent votre temps dans le Résumé. Une dimension a des options ; chaque activité choisit au plus une option par dimension. Les activités sans option comptent comme « Non défini », donc chaque dimension fait 100 %.",
+      "intro": "Créez une liste de catégories, par exemple « Type de travail », ajoutez ses catégories (Tâches, Réunions, Pauses) et touchez les activités qui appartiennent à chacune. Dans le Résumé, Grouper par → Type de travail montre alors le temps par catégorie. Les activités sans catégorie comptent comme « Non défini », donc une liste fait toujours 100 %. Les catégories ne changent pas l’écran principal : pour afficher ou masquer des boutons, utilisez les Groupes.",
       "empty": "Pas encore de catégories",
-      "example": "Par exemple, {focus} : {productive} / {nonProductive}, ou {company} : {people} / {alone}.",
+      "example": "Par exemple, {list} : {a} / {b} / {c}. Puis choisissez Grouper par → {list} dans le Résumé.",
       "addExample": "Ajouter l’exemple « {name} »",
-      "newName": "Nouvelle dimension",
-      "addEmpty": "Ajouter une dimension vide",
-      "placeholder": "Nouvelle dimension, p. ex. Énergie",
-      "add": "Ajouter une dimension",
-      "dimension": "Dimension",
-      "dimensionName": "Nom de la dimension",
+      "newName": "Nouvelle liste de catégories",
+      "addEmpty": "Ajouter une liste vide",
+      "placeholder": "Nouvelle liste de catégories, p. ex. Client",
+      "add": "Ajouter la liste",
+      "dimension": "Liste de catégories · dans Résumé → Grouper par",
+      "dimensionName": "Nom de la liste de catégories",
       "set": {
         "one": "définie pour {set} sur {n} activité",
         "many": "définie pour {set} sur {n} activités",
         "other": "définie pour {set} sur {n} activités"
       },
-      "deleteTitle": "Supprimer la dimension « {name} » ?",
-      "deleteBody": "Chaque activité perd son option dans cette dimension. Rien d’autre ne change.",
+      "deleteTitle": "Supprimer la liste de catégories « {name} » ?",
+      "deleteBody": "Chaque activité perd sa catégorie dans cette liste. Rien d’autre ne change.",
       "colorOf": "Couleur de {name} : {color}",
-      "optionName": "Nom de l’option",
-      "deleteOptionTitle": "Supprimer l’option « {name} » ?",
-      "deleteOptionBody": "Ses activités passent à « Non défini » pour {dimension}.",
-      "addOption": "Ajouter une option",
-      "newOption": "Nouvelle option"
+      "optionName": "Nom de la catégorie",
+      "deleteOptionTitle": "Supprimer la catégorie « {name} » ?",
+      "deleteOptionBody": "Ses activités passent à « Non défini » dans {dimension}.",
+      "addOption": "Ajouter une catégorie",
+      "newOption": "Nouvelle catégorie",
+      "purpose": "Additionner le temps dans le Résumé",
+      "activitiesIn": "Activités dans {name}",
+      "moveFrom": "Actuellement dans {name} ; touchez pour la déplacer ici"
     },
     "activities": {
       "taken": "Existe déjà (les noms sont uniques ; une activité retirée peut être restaurée ou supprimée ci-dessous) : {names}",
@@ -375,7 +380,11 @@
       "non-productive": "Non productif",
       "company": "Compagnie",
       "with people": "Avec d’autres",
-      "alone": "Seul"
+      "alone": "Seul",
+      "work type": "Type de travail",
+      "tasks": "Tâches",
+      "meetings": "Réunions",
+      "breaks": "Pauses"
     }
   },
   "summary": {
@@ -456,7 +465,7 @@
       "other": "objectif {target} · atteint {met} jours sur {n}"
     },
     "share": "Part",
-    "tapOption": "touchez une option pour voir ses activités",
+    "tapOption": "touchez une catégorie pour voir ses activités",
     "avgOver": "moyenne sur les jours suivis",
     "shareOfTime": "Part du temps",
     "donutHours": "{h} h",
@@ -479,6 +488,11 @@
       "one": "pas de données la veille",
       "many": "pas de données les {n} jours précédents",
       "other": "pas de données les {n} jours précédents"
+    },
+    "chart": "Graphique",
+    "charts": {
+      "donut": "Anneau",
+      "bars": "Barres"
     }
   },
   "dialogs": {
