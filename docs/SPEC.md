@@ -92,7 +92,10 @@ Example: task since 09:00, meeting tapped at 10:00:00 by mistake, task tapped ag
 from 09:00, no meeting entry. Backdating from the popup and the day editor is not affected.
 
 ## 5. Day
-- A day starts with the first app start, or when the previous day ends.
+- A day starts at the last reset boundary (§5, reset hour) or, when a day ended after that boundary (manual reset),
+  where that day ended. Opening the app for the first time at 10:00 still lets the popup and the day editor go back
+  to the reset hour. A stored open day that started later than this (older versions started it at the first app
+  start) is moved back once when the profile opens.
 - **Manual reset** (button on the main screen): stops the active segment at now, closes the day (archive and snapshot),
   and starts a new day.
 - **Automatic rollover:** at the configured reset hour (default **00:00** local time). The open segment is closed at the
@@ -241,6 +244,10 @@ hidden under open dialogs. Label "Back to top".
   60m ago (the matching one is marked), then "▶ Task active since 21:05" (activity color fill, `assign(X, t, null)`)
   and "■ Stop all since 21:05" (`assign(null, t, null)`).
 - **Edit sessions…:** closes the popup and opens the day editor (§8) on today.
+- **Time picker** (here, in the session editor and in Add range): the steps move by minutes across the hour and across
+  midnight, clamped to the day (§4.1). The time itself is a text field (24 h, numeric keyboard): type "9:05", "905",
+  "0905", "21.30" or "21" and press Enter or leave the field. The time is taken on the day's date nearest to the
+  current value, then clamped to the day; anything else goes back to the current value; Escape cancels.
 
 ## 8. Settings
 A two-column page: a section list on the left (stacked above the content on narrow screens) and the content on the
@@ -251,11 +258,20 @@ least 44 px tall, with a visible focus ring.
   the section; the section in view is highlighted.
 - **Every setting belongs to the open profile** (§12), appearance included; imported themes are shared (§16).
 - **Profiles:** open (switch to), rename, add, delete (§12)
+- **Groups vs Categories:** both sections start with a one-line purpose under the heading, so the two are not
+  confused: Groups "Show or hide buttons on the main screen", Categories "Add up time in the Summary". The intro of
+  each says when to use the other one.
 - **Groups:** add, rename, on/off, reorder, delete (§13)
-- **Categories** (§17): an intro line, then one card per dimension: a header with the name field, "5 of 7 activities
-  set", ↑ ↓ and Delete; one row per option with a 44 px color button (opens the 16 swatches in place), name field,
-  "3 activities", ↑ ↓, Delete; an "Add an option" field + Add. Then a "New dimension" field + **Add dimension**.
-  Empty state: "No categories yet", an example, **Add "Focus" example** and **Add an empty dimension**.
+- **Categories** (§17). The UI never says "dimension" or "option": a dimension is a **category list** (its name is
+  what Summary → Group by shows, e.g. "Work type") and its options are its **categories** (Tasks, Meetings, Breaks).
+  An intro line, then one card per list: a header with the name field (label "Category list · shown in Summary →
+  Group by"), "5 of 7 activities set", ↑ ↓ and Delete; one row per category with a 44 px color button (opens the 16
+  swatches in place), name field, ↑ ↓, Delete, and under it **one chip per live activity**: a filled chip (category
+  color) is in this category; a tap on another chip moves that activity into this category (out of any other
+  category of the same list), a tap on a filled chip takes it out (Not set). Then an "Add a category" field + Add.
+  Under the cards a "New category list" field + **Add list**. Empty state: "No categories yet", the example "Work
+  type: Tasks / Meetings / Breaks, then Summary → Group by → Work type", **Add "Work type" example** and **Add an
+  empty list**. The per-activity pickers in Activities stay as a second way to set the same thing.
 - **Activities:** add, rename (names unique, §3), group, daily target, reorder, hide for today, remove (soft),
   restore removed, delete removed from the list. The color swatch is read-only and links to Activity colors. Under
   each activity, one picker per dimension, labelled with its name: 2–3 options → a segmented control (the options +
@@ -328,11 +344,16 @@ The period (Day, Week, Month, Custom) changes what each block shows, not the ord
    into one dashed line "Sat 24 – Sun 25 · nothing tracked". A tap opens a detail strip (each group's time that day
    and "Open day ›"); one at a time. Rows are 44 px (bar 28 px), in Month 36 px (bar 20 px). Ranges longer than 45 days
    show one row per week (stacked totals by group, no time axis).
-6. **Share:** a 160 px donut (total in the middle) and a table Name · Total · Share · *Avg / day* (Week, Month,
+6. **Share:** a **Donut · Bars** switch in the card header (remembered per profile as `summaryShareChart`, Donut
+   by default). Donut: a 160 px donut (total in the middle). Bars: one horizontal bar per row of the table, largest
+   first, its length relative to the largest, with the name and share. Next to it a table Name · Total · Share · *Avg / day* (Week, Month,
    Custom) or *Target* (Day: "11m left" / "5m over" in the danger color, with a thin bar). By activity: one row per
    activity, largest first, "(removed)" after removed ones, and for activities with a target "target 2h 00m · met on 3
    of 5 days". By a dimension: one row per option plus "Not set", each expandable to its activities. On a phone the
    4th column is hidden and the donut sits above the table.
+   **Linked highlight:** hovering (or tapping, on touch) a donut segment, a bar or a table row highlights the same
+   item in both: the segment gets wider (and the others fade), the bar and the row turn bold. With a dimension, an
+   activity row inside an option highlights its option in the chart.
 7. **Sessions** (Day): "Sessions · 20 sessions", the checkbox "Group by <dimension>" (when Group by is a dimension; on
    by default, remembered as `summaryGroupLog`), and **Edit sessions…** (opens the day editor on that day; back returns
    to the summary). Rows: color square, name, "12:14 – 13:29", duration; idle rows have a dashed empty square. Grouped:
@@ -537,7 +558,7 @@ A file with only 8 slots is accepted; 9–16 are derived (below).
     exported and deleted. Deleting one that profiles use makes them fall back as above.
 
 ## 17. Categories
-A **dimension** is one way to split time (Focus, Company, Billing); it has **options** (Productive /
+In the UI a dimension is a **category list** and its options are **categories** (§8). A **dimension** is one way to split time (Focus, Company, Billing); it has **options** (Productive /
 Non-productive). Stored per profile in the IndexedDB store `categories`:
 `{id, profileId, name, order, options: [{id, name, colorSlot, order}]}`.
 - An activity has at most one option per dimension (`activity.categories`: dimension id → option id; a missing key is

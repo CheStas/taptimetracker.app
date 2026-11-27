@@ -14,7 +14,8 @@
   },
   "time": {
     "now": "agora",
-    "ago": "há {m} min"
+    "ago": "há {m} min",
+    "time": "Hora"
   },
   "dur": {
     "hms": "{h} h {m} min {s} s",
@@ -236,37 +237,41 @@
       "deleteBody": "TODAS as atividades, dias e o histórico dele são excluídos. Não dá para desfazer (exporte um backup antes)."
     },
     "groups": {
-      "intro": "A tela principal mostra as atividades dos grupos ativados, além das que não têm grupo. Vários grupos podem estar ativados ao mesmo tempo; um grupo fica ativado ou desativado até você mudar.",
+      "intro": "A tela principal mostra as atividades dos grupos ligados e as que não têm grupo. Vários grupos podem estar ligados ao mesmo tempo; um grupo fica ligado ou desligado até você mudar. Os grupos não mudam o Resumo: para somar o tempo por tipo de trabalho, use Categorias.",
       "placeholder": "Adicionar grupos: um por linha ou separados por vírgula",
       "name": "Nome do grupo",
       "on": "Ativado",
       "deleteTitle": "Excluir o grupo “{name}”?",
-      "deleteBody": "As atividades dele são mantidas e vão para “sem grupo”."
+      "deleteBody": "As atividades dele são mantidas e vão para “sem grupo”.",
+      "purpose": "Mostrar ou ocultar botões na tela principal"
     },
     "categories": {
-      "intro": "As categorias dividem o seu tempo no Resumo. Uma dimensão tem opções; cada atividade escolhe no máximo uma opção por dimensão. Atividades sem opção contam como “Não definido”, então cada dimensão soma 100%.",
+      "intro": "Crie uma lista de categorias, por exemplo “Tipo de trabalho”, adicione as categorias (Tarefas, Reuniões, Pausas) e toque nas atividades que pertencem a cada uma. No Resumo, Agrupar por → Tipo de trabalho mostra então o tempo por categoria. Atividades sem categoria contam como “Não definido”, então uma lista sempre soma 100%. As categorias não mudam a tela principal: para mostrar ou ocultar botões, use Grupos.",
       "empty": "Ainda não há categorias",
-      "example": "Por exemplo, {focus}: {productive} / {nonProductive}, ou {company}: {people} / {alone}.",
+      "example": "Por exemplo, {list}: {a} / {b} / {c}. Depois escolha Agrupar por → {list} no Resumo.",
       "addExample": "Adicionar o exemplo “{name}”",
-      "newName": "Nova dimensão",
-      "addEmpty": "Adicionar uma dimensão vazia",
-      "placeholder": "Nova dimensão, ex.: Energia",
-      "add": "Adicionar dimensão",
-      "dimension": "Dimensão",
-      "dimensionName": "Nome da dimensão",
+      "newName": "Nova lista de categorias",
+      "addEmpty": "Adicionar uma lista vazia",
+      "placeholder": "Nova lista de categorias, ex. Cliente",
+      "add": "Adicionar lista",
+      "dimension": "Lista de categorias · em Resumo → Agrupar por",
+      "dimensionName": "Nome da lista de categorias",
       "set": {
         "one": "definida em {set} de {n} atividade",
         "many": "definida em {set} de {n} atividades",
         "other": "definida em {set} de {n} atividades"
       },
-      "deleteTitle": "Excluir a dimensão “{name}”?",
-      "deleteBody": "Todas as atividades perdem a opção dela. Nada mais muda.",
+      "deleteTitle": "Excluir a lista de categorias “{name}”?",
+      "deleteBody": "Cada atividade perde a sua categoria nela. Nada mais muda.",
       "colorOf": "Cor de {name}: {color}",
-      "optionName": "Nome da opção",
-      "deleteOptionTitle": "Excluir a opção “{name}”?",
-      "deleteOptionBody": "As atividades dela ficam como “Não definido” em {dimension}.",
-      "addOption": "Adicionar uma opção",
-      "newOption": "Nova opção"
+      "optionName": "Nome da categoria",
+      "deleteOptionTitle": "Excluir a categoria “{name}”?",
+      "deleteOptionBody": "As atividades dela ficam “Não definido” em {dimension}.",
+      "addOption": "Adicionar uma categoria",
+      "newOption": "Nova categoria",
+      "purpose": "Somar o tempo no Resumo",
+      "activitiesIn": "Atividades em {name}",
+      "moveFrom": "Agora em {name}; toque para mover para cá"
     },
     "activities": {
       "taken": "Já existe (os nomes são únicos; uma removida pode ser restaurada ou excluída abaixo): {names}",
@@ -375,7 +380,11 @@
       "non-productive": "Improdutivo",
       "company": "Companhia",
       "with people": "Com pessoas",
-      "alone": "Sozinho"
+      "alone": "Sozinho",
+      "work type": "Tipo de trabalho",
+      "tasks": "Tarefas",
+      "meetings": "Reuniões",
+      "breaks": "Pausas"
     }
   },
   "summary": {
@@ -456,7 +465,7 @@
       "other": "meta {target} · cumprida em {met} de {n} dias"
     },
     "share": "Parcela",
-    "tapOption": "toque numa opção para ver as atividades dela",
+    "tapOption": "toque numa categoria para ver as atividades",
     "avgOver": "média dos dias registrados",
     "shareOfTime": "Parcela do tempo",
     "donutHours": "{h} h",
@@ -479,6 +488,11 @@
       "one": "sem dados no dia anterior",
       "many": "sem dados nos {n} dias anteriores",
       "other": "sem dados nos {n} dias anteriores"
+    },
+    "chart": "Gráfico",
+    "charts": {
+      "donut": "Anel",
+      "bars": "Barras"
     }
   },
   "dialogs": {

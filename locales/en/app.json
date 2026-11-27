@@ -14,7 +14,8 @@
   },
   "time": {
     "now": "now",
-    "ago": "{m}m ago"
+    "ago": "{m}m ago",
+    "time": "Time"
   },
   "dur": {
     "hms": "{h}h {m}m {s}s",
@@ -234,36 +235,40 @@
       "deleteBody": "ALL its activities, days and history are deleted. This cannot be undone (export a backup first)."
     },
     "groups": {
-      "intro": "The main screen shows activities of groups that are on, plus those without a group. Several groups can be on at once; a group stays on or off until you change it.",
+      "intro": "The main screen shows activities of groups that are on, plus those without a group. Several groups can be on at once; a group stays on or off until you change it. Groups don’t change the Summary: to add up time by kind of work, use Categories.",
       "placeholder": "Add groups: one per line or comma-separated",
       "name": "Group name",
       "on": "On",
       "deleteTitle": "Delete the group “{name}”?",
-      "deleteBody": "Its activities are kept and move to “no group”."
+      "deleteBody": "Its activities are kept and move to “no group”.",
+      "purpose": "Show or hide buttons on the main screen"
     },
     "categories": {
-      "intro": "Categories split your time in the Summary. A dimension has options; each activity picks at most one option per dimension. Activities without one count as “Not set”, so every dimension adds up to 100%.",
+      "intro": "Make a category list, for example “Work type”, add its categories (Tasks, Meetings, Breaks) and tap the activities that belong to each. In the Summary, Group by → Work type then shows the time per category. Activities in none count as “Not set”, so a list always adds up to 100%. Categories don’t change the main screen: to show or hide buttons, use Groups.",
       "empty": "No categories yet",
-      "example": "For example, {focus}: {productive} / {nonProductive}, or {company}: {people} / {alone}.",
+      "example": "For example, {list}: {a} / {b} / {c}. Then pick Group by → {list} in the Summary.",
       "addExample": "Add “{name}” example",
-      "newName": "New dimension",
-      "addEmpty": "Add an empty dimension",
-      "placeholder": "New dimension, e.g. Energy",
-      "add": "Add dimension",
-      "dimension": "Dimension",
-      "dimensionName": "Dimension name",
+      "newName": "New category list",
+      "addEmpty": "Add an empty list",
+      "placeholder": "New category list, e.g. Client",
+      "add": "Add list",
+      "dimension": "Category list · shown in Summary → Group by",
+      "dimensionName": "Category list name",
       "set": {
         "one": "{set} of {n} activity set",
         "other": "{set} of {n} activities set"
       },
-      "deleteTitle": "Delete the dimension “{name}”?",
-      "deleteBody": "Every activity loses its option of it. Nothing else changes.",
+      "deleteTitle": "Delete the category list “{name}”?",
+      "deleteBody": "Every activity loses its category in it. Nothing else changes.",
       "colorOf": "Color of {name}: {color}",
-      "optionName": "Option name",
-      "deleteOptionTitle": "Delete the option “{name}”?",
-      "deleteOptionBody": "Its activities become “Not set” for {dimension}.",
-      "addOption": "Add an option",
-      "newOption": "New option"
+      "optionName": "Category name",
+      "deleteOptionTitle": "Delete the category “{name}”?",
+      "deleteOptionBody": "Its activities become “Not set” in {dimension}.",
+      "addOption": "Add a category",
+      "newOption": "New category",
+      "purpose": "Add up time in the Summary",
+      "activitiesIn": "Activities in {name}",
+      "moveFrom": "Now in {name}; tap to move it here"
     },
     "activities": {
       "taken": "Already exists (names are unique; a removed one can be restored or deleted below): {names}",
@@ -372,7 +377,11 @@
       "non-productive": "Non-productive",
       "company": "Company",
       "with people": "With people",
-      "alone": "Alone"
+      "alone": "Alone",
+      "work type": "Work type",
+      "tasks": "Tasks",
+      "meetings": "Meetings",
+      "breaks": "Breaks"
     }
   },
   "summary": {
@@ -449,7 +458,7 @@
       "other": "target {target} · met on {met} of {n} days"
     },
     "share": "Share",
-    "tapOption": "tap an option to see its activities",
+    "tapOption": "tap a category to see its activities",
     "avgOver": "avg over tracked days",
     "shareOfTime": "Share of time",
     "donutHours": "{h}h",
@@ -470,6 +479,11 @@
     "noDataDays": {
       "one": "no data in the previous day",
       "other": "no data in the previous {n} days"
+    },
+    "chart": "Chart",
+    "charts": {
+      "donut": "Donut",
+      "bars": "Bars"
     }
   },
   "dialogs": {

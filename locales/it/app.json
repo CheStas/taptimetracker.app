@@ -14,7 +14,8 @@
   },
   "time": {
     "now": "ora",
-    "ago": "{m} min fa"
+    "ago": "{m} min fa",
+    "time": "Ora"
   },
   "dur": {
     "hms": "{h} h {m} min {s} s",
@@ -236,37 +237,41 @@
       "deleteBody": "TUTTE le sue attività, i giorni e la cronologia vengono eliminati. Non si può annullare (esporta prima un backup)."
     },
     "groups": {
-      "intro": "La schermata principale mostra le attività dei gruppi attivi, più quelle senza gruppo. Più gruppi possono essere attivi insieme; un gruppo resta attivo o disattivato finché non lo cambi.",
+      "intro": "La schermata principale mostra le attività dei gruppi attivi e quelle senza gruppo. Più gruppi possono essere attivi insieme; un gruppo resta attivo o disattivo finché non lo cambi. I gruppi non cambiano il Riepilogo: per sommare il tempo per tipo di lavoro, usa le Categorie.",
       "placeholder": "Aggiungi gruppi: uno per riga o separati da virgole",
       "name": "Nome del gruppo",
       "on": "Attivo",
       "deleteTitle": "Eliminare il gruppo “{name}”?",
-      "deleteBody": "Le sue attività restano e passano a “nessun gruppo”."
+      "deleteBody": "Le sue attività restano e passano a “nessun gruppo”.",
+      "purpose": "Mostra o nascondi i pulsanti nella schermata principale"
     },
     "categories": {
-      "intro": "Le categorie suddividono il tuo tempo nel Riepilogo. Una dimensione ha delle opzioni; ogni attività sceglie al massimo un’opzione per dimensione. Le attività senza opzione contano come “Non impostato”, così ogni dimensione fa 100%.",
+      "intro": "Crea un elenco di categorie, ad esempio «Tipo di lavoro», aggiungi le sue categorie (Attività, Riunioni, Pause) e tocca le attività che appartengono a ciascuna. Nel Riepilogo, Raggruppa per → Tipo di lavoro mostra poi il tempo per categoria. Le attività senza categoria contano come «Non impostato», quindi un elenco fa sempre 100%. Le categorie non cambiano la schermata principale: per mostrare o nascondere i pulsanti, usa i Gruppi.",
       "empty": "Ancora nessuna categoria",
-      "example": "Per esempio {focus}: {productive} / {nonProductive}, oppure {company}: {people} / {alone}.",
+      "example": "Ad esempio, {list}: {a} / {b} / {c}. Poi scegli Raggruppa per → {list} nel Riepilogo.",
       "addExample": "Aggiungi l’esempio “{name}”",
-      "newName": "Nuova dimensione",
-      "addEmpty": "Aggiungi una dimensione vuota",
-      "placeholder": "Nuova dimensione, es. Energia",
-      "add": "Aggiungi dimensione",
-      "dimension": "Dimensione",
-      "dimensionName": "Nome della dimensione",
+      "newName": "Nuovo elenco di categorie",
+      "addEmpty": "Aggiungi un elenco vuoto",
+      "placeholder": "Nuovo elenco di categorie, es. Cliente",
+      "add": "Aggiungi elenco",
+      "dimension": "Elenco di categorie · in Riepilogo → Raggruppa per",
+      "dimensionName": "Nome dell’elenco di categorie",
       "set": {
         "one": "impostata per {set} attività su {n}",
         "many": "impostata per {set} attività su {n}",
         "other": "impostata per {set} attività su {n}"
       },
-      "deleteTitle": "Eliminare la dimensione “{name}”?",
-      "deleteBody": "Ogni attività perde la sua opzione in questa dimensione. Nient’altro cambia.",
+      "deleteTitle": "Eliminare l’elenco di categorie «{name}»?",
+      "deleteBody": "Ogni attività perde la sua categoria in questo elenco. Nient’altro cambia.",
       "colorOf": "Colore di {name}: {color}",
-      "optionName": "Nome dell’opzione",
-      "deleteOptionTitle": "Eliminare l’opzione “{name}”?",
-      "deleteOptionBody": "Le sue attività diventano “Non impostato” per {dimension}.",
-      "addOption": "Aggiungi un’opzione",
-      "newOption": "Nuova opzione"
+      "optionName": "Nome della categoria",
+      "deleteOptionTitle": "Eliminare la categoria «{name}»?",
+      "deleteOptionBody": "Le sue attività diventano «Non impostato» in {dimension}.",
+      "addOption": "Aggiungi una categoria",
+      "newOption": "Nuova categoria",
+      "purpose": "Somma il tempo nel Riepilogo",
+      "activitiesIn": "Attività in {name}",
+      "moveFrom": "Ora in {name}; tocca per spostarla qui"
     },
     "activities": {
       "taken": "Esiste già (i nomi sono unici; una rimossa si può ripristinare o eliminare qui sotto): {names}",
@@ -375,7 +380,11 @@
       "non-productive": "Non produttivo",
       "company": "Compagnia",
       "with people": "Con altri",
-      "alone": "Da solo"
+      "alone": "Da solo",
+      "work type": "Tipo di lavoro",
+      "tasks": "Compiti",
+      "meetings": "Riunioni",
+      "breaks": "Pause"
     }
   },
   "summary": {
@@ -456,7 +465,7 @@
       "other": "obiettivo {target} · raggiunto in {met} giorni su {n}"
     },
     "share": "Quota",
-    "tapOption": "tocca un’opzione per vederne le attività",
+    "tapOption": "tocca una categoria per vederne le attività",
     "avgOver": "media sui giorni registrati",
     "shareOfTime": "Quota di tempo",
     "donutHours": "{h} h",
@@ -479,6 +488,11 @@
       "one": "nessun dato nel giorno precedente",
       "many": "nessun dato nei {n} giorni precedenti",
       "other": "nessun dato nei {n} giorni precedenti"
+    },
+    "chart": "Grafico",
+    "charts": {
+      "donut": "Anello",
+      "bars": "Barre"
     }
   },
   "dialogs": {

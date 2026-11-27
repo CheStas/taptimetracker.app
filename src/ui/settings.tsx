@@ -92,6 +92,7 @@ export function Settings({ nav, onBack, onDayEditor, section }: { nav: Nav; onBa
           </section>
           <section id="groups">
             <h2>{t('settings.sections.groups')}</h2>
+            <p class="purpose">{t('settings.groups.purpose')}</p>
             <p class="muted">{t('settings.groups.intro')}</p>
             <ul class="act-list">
               {state.groups.map((g, i) => <GroupRow key={g.id} g={g} first={i === 0} last={i === state.groups.length - 1} />)}
@@ -103,17 +104,20 @@ export function Settings({ nav, onBack, onDayEditor, section }: { nav: Nav; onBa
           </section>
           <section id="categories">
             <h2>{t('settings.sections.categories')}</h2>
+            <p class="purpose">{t('settings.categories.purpose')}</p>
             <p class="muted">{t('settings.categories.intro')}</p>
             {state.categories.length === 0 ? (
               <div class="empty-dims">
                 <strong>{t('settings.categories.empty')}</strong>
                 <span class="muted">{tx('settings.categories.example', {
-                  focus: <strong>{seedName('Focus')}</strong>, company: <strong>{seedName('Company')}</strong>,
-                  productive: seedName('Productive'), nonProductive: seedName('Non-productive'), people: seedName('With people'), alone: seedName('Alone'),
+                  list: <strong>{seedName('Work type')}</strong>,
+                  a: seedName('Tasks'), b: seedName('Meetings'), c: seedName('Breaks'),
                 })}</span>
                 <div class="row-buttons">
-                  <button class="primary" onClick={() => addDimension(seedName('Focus'), [{ name: seedName('Productive'), colorSlot: 1 }, { name: seedName('Non-productive'), colorSlot: 7 }])}>
-                    {t('settings.categories.addExample', { name: seedName('Focus') })}
+                  <button class="primary" onClick={() => addDimension(seedName('Work type'), [
+                    { name: seedName('Tasks'), colorSlot: 1 }, { name: seedName('Meetings'), colorSlot: 4 }, { name: seedName('Breaks'), colorSlot: 7 },
+                  ])}>
+                    {t('settings.categories.addExample', { name: seedName('Work type') })}
                   </button>
                   <button class="secondary" onClick={() => addDimension(t('settings.categories.newName'))}>{t('settings.categories.addEmpty')}</button>
                 </div>
@@ -379,7 +383,10 @@ function ActivityColors({ list }: { list: Activity[] }) {
   );
 }
 
-/** A dimension: name, how many activities have an option of it, reorder and delete; its options; add an option. */
+/**
+ * A dimension ("category list" in the UI): name, how many activities have an option of it, reorder and delete; its
+ * options ("categories"), each with a chip per live activity to put it in or take it out; add an option.
+ */
 function DimensionCard({ d, first, last }: { d: Dimension; first: boolean; last: boolean }) {
   const state = useAppState();
   const [openColor, setOpenColor] = useState<string | null>(null);
@@ -406,7 +413,6 @@ function DimensionCard({ d, first, last }: { d: Dimension; first: boolean; last:
         }}>{t('common.delete')}</button>
       </div>
       {d.options.map((o, i) => {
-        const count = live.filter((a) => a.categories?.[d.id] === o.id).length;
         const open = openColor === o.id;
         return (
           <div key={o.id} class="opt-row">
@@ -420,7 +426,6 @@ function DimensionCard({ d, first, last }: { d: Dimension; first: boolean; last:
                 if (name) updateOption(d.id, o.id, { name });
               }}
             />
-            <span class="muted small opt-count">{tn('settings.activityCount', count)}</span>
             <button disabled={i === 0} aria-label={t('settings.up')} onClick={() => moveOption(d.id, o.id, -1)}>↑</button>
             <button disabled={i === d.options.length - 1} aria-label={t('settings.down')} onClick={() => moveOption(d.id, o.id, 1)}>↓</button>
             <button class="danger ghost" onClick={async () => {
@@ -431,6 +436,21 @@ function DimensionCard({ d, first, last }: { d: Dimension; first: boolean; last:
                 <SlotSwatches value={o.colorSlot} label={t('settings.colors.of', { name: o.name })} onPick={(slot) => updateOption(d.id, o.id, { colorSlot: slot })} />
               </div>
             )}
+            <div class="chips opt-acts" role="group" aria-label={t('settings.categories.activitiesIn', { name: o.name })}>
+              {live.map((a) => {
+                const inIt = a.categories?.[d.id] === o.id;
+                const other = !inIt && optionOf(a, d);
+                return (
+                  <button
+                    key={a.id} class={`chip${inIt ? ' active' : ''}`} style={{ '--c': slotColor(o.colorSlot) }} aria-pressed={inIt}
+                    title={other ? t('settings.categories.moveFrom', { name: other.name }) : undefined}
+                    onClick={() => setActivityOption(a.id, d.id, inIt ? null : o.id)}
+                  >
+                    {other && <span class="dot" style={{ background: slotColor(other.colorSlot) }} />}{a.name}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         );
       })}

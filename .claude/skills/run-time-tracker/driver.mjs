@@ -153,7 +153,7 @@ async function ss(page, name, full = false) {
 
 /**
  * STEPS for `do` (each one argument; quote it):
- *   seed | goto main|summary|settings[#section] | click <selector> | hold <selector> | press <key> | fill <selector>=<text>
+ *   seed | goto main|summary|settings[#section] | click <selector> | hold <selector> | hover <selector> | press <key> | fill <selector>=<text>
  *   layout Tiles|Rows|Circles | theme <name> | scroll <y> | wait <ms> | ss <name> [full] | text <selector> | eval <js>
  */
 async function step(page, line) {
@@ -164,6 +164,7 @@ async function step(page, line) {
     case 'goto': return goto(page, arg);
     case 'click': return page.locator(arg).first().click();
     case 'hold': return hold(page, arg);
+    case 'hover': return page.locator(arg).first().hover();
     case 'press': return page.keyboard.press(arg);
     case 'fill': {
       const [sel, ...text] = arg.split('=');

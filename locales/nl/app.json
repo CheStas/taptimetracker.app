@@ -14,7 +14,8 @@
   },
   "time": {
     "now": "nu",
-    "ago": "{m} min geleden"
+    "ago": "{m} min geleden",
+    "time": "Tijd"
   },
   "dur": {
     "hms": "{h} u {m} min {s} s",
@@ -234,36 +235,40 @@
       "deleteBody": "AL zijn activiteiten, dagen en geschiedenis worden verwijderd. Dit kan niet ongedaan worden gemaakt (exporteer eerst een back-up)."
     },
     "groups": {
-      "intro": "Het hoofdscherm toont activiteiten van groepen die aan staan, plus activiteiten zonder groep. Meerdere groepen kunnen tegelijk aan staan; een groep blijft aan of uit tot je dat verandert.",
+      "intro": "Het hoofdscherm toont activiteiten van groepen die aan staan, plus activiteiten zonder groep. Meerdere groepen kunnen tegelijk aan staan; een groep blijft aan of uit tot je het verandert. Groepen veranderen het Overzicht niet: om tijd per soort werk op te tellen, gebruik je Categorieën.",
       "placeholder": "Groepen toevoegen: één per regel of gescheiden door komma’s",
       "name": "Groepsnaam",
       "on": "Aan",
       "deleteTitle": "De groep ‘{name}’ verwijderen?",
-      "deleteBody": "De activiteiten blijven bestaan en gaan naar ‘geen groep’."
+      "deleteBody": "De activiteiten blijven bestaan en gaan naar ‘geen groep’.",
+      "purpose": "Knoppen op het hoofdscherm tonen of verbergen"
     },
     "categories": {
-      "intro": "Categorieën verdelen je tijd in het Overzicht. Een dimensie heeft opties; elke activiteit kiest hooguit één optie per dimensie. Activiteiten zonder optie tellen als ‘Niet ingesteld’, dus elke dimensie telt op tot 100%.",
+      "intro": "Maak een categorielijst, bijvoorbeeld ‘Soort werk’, voeg de categorieën toe (Taken, Vergaderingen, Pauzes) en tik op de activiteiten die bij elke categorie horen. In het Overzicht toont Groeperen op → Soort werk dan de tijd per categorie. Activiteiten zonder categorie tellen als ‘Niet ingesteld’, dus een lijst komt altijd op 100%. Categorieën veranderen het hoofdscherm niet: om knoppen te tonen of te verbergen, gebruik je Groepen.",
       "empty": "Nog geen categorieën",
-      "example": "Bijvoorbeeld {focus}: {productive} / {nonProductive}, of {company}: {people} / {alone}.",
+      "example": "Bijvoorbeeld {list}: {a} / {b} / {c}. Kies daarna Groeperen op → {list} in het Overzicht.",
       "addExample": "Voorbeeld ‘{name}’ toevoegen",
-      "newName": "Nieuwe dimensie",
-      "addEmpty": "Lege dimensie toevoegen",
-      "placeholder": "Nieuwe dimensie, bijv. Energie",
-      "add": "Dimensie toevoegen",
-      "dimension": "Dimensie",
-      "dimensionName": "Naam van de dimensie",
+      "newName": "Nieuwe categorielijst",
+      "addEmpty": "Lege lijst toevoegen",
+      "placeholder": "Nieuwe categorielijst, bijv. Klant",
+      "add": "Lijst toevoegen",
+      "dimension": "Categorielijst · in Overzicht → Groeperen op",
+      "dimensionName": "Naam van de categorielijst",
       "set": {
         "one": "ingesteld voor {set} van {n} activiteit",
         "other": "ingesteld voor {set} van {n} activiteiten"
       },
-      "deleteTitle": "De dimensie ‘{name}’ verwijderen?",
-      "deleteBody": "Elke activiteit verliest haar optie daarin. Verder verandert er niets.",
+      "deleteTitle": "Categorielijst ‘{name}’ verwijderen?",
+      "deleteBody": "Elke activiteit verliest haar categorie in deze lijst. Verder verandert er niets.",
       "colorOf": "Kleur van {name}: {color}",
-      "optionName": "Naam van de optie",
-      "deleteOptionTitle": "De optie ‘{name}’ verwijderen?",
-      "deleteOptionBody": "De activiteiten ervan worden ‘Niet ingesteld’ voor {dimension}.",
-      "addOption": "Optie toevoegen",
-      "newOption": "Nieuwe optie"
+      "optionName": "Naam van de categorie",
+      "deleteOptionTitle": "Categorie ‘{name}’ verwijderen?",
+      "deleteOptionBody": "De activiteiten worden ‘Niet ingesteld’ in {dimension}.",
+      "addOption": "Categorie toevoegen",
+      "newOption": "Nieuwe categorie",
+      "purpose": "Tijd optellen in het Overzicht",
+      "activitiesIn": "Activiteiten in {name}",
+      "moveFrom": "Nu in {name}; tik om hierheen te verplaatsen"
     },
     "activities": {
       "taken": "Bestaat al (namen zijn uniek; een weggehaalde kan hieronder worden hersteld of verwijderd): {names}",
@@ -372,7 +377,11 @@
       "non-productive": "Niet productief",
       "company": "Gezelschap",
       "with people": "Met anderen",
-      "alone": "Alleen"
+      "alone": "Alleen",
+      "work type": "Soort werk",
+      "tasks": "Taken",
+      "meetings": "Vergaderingen",
+      "breaks": "Pauzes"
     }
   },
   "summary": {
@@ -449,7 +458,7 @@
       "other": "doel {target} · gehaald op {met} van {n} dagen"
     },
     "share": "Aandeel",
-    "tapOption": "tik op een optie om de activiteiten ervan te zien",
+    "tapOption": "tik op een categorie om de activiteiten te zien",
     "avgOver": "gem. over bijgehouden dagen",
     "shareOfTime": "Aandeel van de tijd",
     "donutHours": "{h} u",
@@ -470,6 +479,11 @@
     "noDataDays": {
       "one": "geen data op de vorige dag",
       "other": "geen data in de vorige {n} dagen"
+    },
+    "chart": "Grafiek",
+    "charts": {
+      "donut": "Ring",
+      "bars": "Balken"
     }
   },
   "dialogs": {

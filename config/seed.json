@@ -19,7 +19,8 @@
     "weekStart": "system",
     "summaryGroupBy": "activity",
     "summaryGroupLog": true,
-    "summaryPeriod": "day"
+    "summaryPeriod": "day",
+    "summaryShareChart": "donut"
   },
   "profiles": [
     {
