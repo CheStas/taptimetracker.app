@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.0](https://github.com/CheStas/taptimetracker.app/compare/v0.12.0...v0.13.0) (2026-11-27)
+
+
+### Features
+
+* **app:** type or step any time back to the reset hour, linked share highlight with donut/bars, clearer categories ([7bf5f66](https://github.com/CheStas/taptimetracker.app/commit/7bf5f66fa37f6a47018fee2a3537fa15a517ed9b))
+
 ## [0.12.0](https://github.com/CheStas/taptimetracker.app/compare/v0.11.0...v0.12.0) (2026-11-10)
 
 
